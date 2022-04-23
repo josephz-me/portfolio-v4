@@ -42,10 +42,10 @@ export default function Home() {
 
       <main className="grid grid-cols-12 gap-6">
         <img
-          src={"/zhang-icon.svg"}
+          src={"/zhang-icon-white.svg"}
           className={`${
             scrollY > 200
-              ? "bg-[rgba(0,0,0,.8)]"
+              ? "bg-[rgba(0,0,0,.8)] fill-black"
               : "bg-[rgba(255,255,255,.05)] "
           } w-16 h-16 fixed z-10 text-white rounded-sm p-4 transition duration-[300ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
         />
