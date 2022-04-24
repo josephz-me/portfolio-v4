@@ -68,7 +68,7 @@ export default function Home() {
               scrollY > 200
                 ? "bg-[rgba(50,50,50,.8)]"
                 : "bg-[rgba(255,255,255,.05)]"
-            } w-[64px] h-[64px] col-start-1 col-end-3 p-3 fixed z-10 text-[rgba(255,255,255,.9)] rounded-sm p-2 transition duration-[300ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
+            } w-[48px] h-[48px] col-start-1 col-end-3 p-3 fixed z-10 text-[rgba(255,255,255,.9)] rounded-md p-2 transition duration-[300ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
           />
 
           <motion.p
@@ -79,11 +79,11 @@ export default function Home() {
                 : "text-[rgba(255,255,255,.9)]"
             }  sticky top-[2rem] pt-2 grid mt-24 md:m-0 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-9 transition duration-[300ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
           >
-            I'm a designer interested in all things related to digital
+            I&apos;m a designer interested in all things related to digital
             toolmaking, multimodal interaction, and systems thinking. I believe
             good design reflects artistic values focused around emotion and
-            play. I’m a fourth year undergrad at Carnegie Mellon studying
-            Communication Design and Human-Computer Interaction
+            play. I&apos;m a fourth year undergrad at Carnegie Mellon studying
+            Communication Design and Human-Computer Interaction.
           </motion.p>
 
           <motion.p
@@ -170,6 +170,7 @@ export default function Home() {
           </p>
           <a
             target="_blank"
+            rel="noreferrer"
             href="/josephzhang-resume.pdf"
             className="col-start-1 md:col-start-5"
           >
@@ -177,6 +178,7 @@ export default function Home() {
           </a>
           <a
             target="_blank"
+            rel="noreferrer"
             href="https://www.linkedin.com/in/josephzme/"
             className="col-start-3 md:col-start-7"
           >
@@ -184,6 +186,7 @@ export default function Home() {
           </a>
           <a
             target="_blank"
+            rel="noreferrer"
             href="https://twitter.com/__joz"
             className="col-start-5 md:col-start-9"
           >
@@ -191,6 +194,7 @@ export default function Home() {
           </a>
           <a
             target="_blank"
+            rel="noreferrer"
             href="mailto:jxsephz@gmail.com"
             className="col-start-7 md:col-start-11"
           >
