@@ -16,7 +16,7 @@ export default function CardVideo(props) {
         style={{ display: isVideoLoaded ? "none" : "block" }}
       /> */}
       <video
-        className="object-cover w-full h-full"
+        className="object-cover w-full h-full rounded-md"
         autoPlay
         playsInline
         loop
