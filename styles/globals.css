@@ -13,7 +13,7 @@ p {
   letter-spacing: 0.08em;
   line-height: 150%;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.9);
+  /* color: rgba(255, 255, 255, 0.9); */
 }
 
 html,

@@ -13,9 +13,6 @@ const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.05,
-    },
   },
 };
 
@@ -64,20 +61,23 @@ export default function Home() {
           exit={{ opacity: 0 }}
           className="grid grid-cols-12 gap-6"
         >
-          <motion.p
+          <motion.img
             variants={item}
+            src={"/zhang-icon-white.svg"}
             className={`${
-              scrollY > 200 ? "bg-[rgba(50,50,50,.8)]" : ""
-            } col-start-1 col-end-3 fixed z-10 text-white rounded-sm p-2 transition duration-[300ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
-          >
-            Joseph Z
-          </motion.p>
+              scrollY > 200
+                ? "bg-[rgba(50,50,50,.8)]"
+                : "bg-[rgba(255,255,255,.05)]"
+            } w-[64px] h-[64px] col-start-1 col-end-3 p-3 fixed z-10 text-[rgba(255,255,255,.9)] rounded-sm p-2 transition duration-[300ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
+          />
 
           <motion.p
             variants={item}
             className={`${
-              scrollY > 40 ? "opacity-0" : ""
-            } sticky top-[2rem] pt-2 grid mt-24 md:m-0 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-9 transition duration-[300ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
+              scrollY > 40
+                ? "text-[rgba(0,0,0,0)]"
+                : "text-[rgba(255,255,255,.9)]"
+            }  sticky top-[2rem] pt-2 grid mt-24 md:m-0 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-9 transition duration-[300ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
           >
             I'm a designer interested in all things related to digital
             toolmaking, multimodal interaction, and systems thinking. I believe
@@ -89,7 +89,9 @@ export default function Home() {
           <motion.p
             variants={item}
             className={`${
-              scrollY > 40 ? "opacity-0" : ""
+              scrollY > 40
+                ? "text-[rgba(0,0,0,0)]"
+                : "text-[rgba(255,255,255,.9)]"
             } sticky top-[2rem] pt-2 grid col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-9 lg:col-end-13 transition duration-[300ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)] mb-16`}
           >
             In the past, I worked at Apple, Metalink, Brain Technologies, and
@@ -109,7 +111,7 @@ export default function Home() {
           ></ProjectCard>
           <ProjectCard
             title="AIGA&Hue"
-            description="Interactive data visualization"
+            description="Interactive data vis"
             animation={item}
             col={2}
             isImage={true}
@@ -142,7 +144,7 @@ export default function Home() {
           ></ProjectCard>
           <ProjectCard
             title="Reading Trends"
-            description="Datavisualization using NYT API"
+            description="Interactive datavis, NYT API"
             animation={item}
             col={2}
             isImage={false}
@@ -161,7 +163,7 @@ export default function Home() {
         </motion.main>
 
         <footer
-          className={`left-0 w-full mix-blend-difference fixed bottom-0 grid text-white grid-cols-12 gap-6 px-6 py-4`}
+          className={`left-0 w-full mix-blend-difference fixed bottom-0 grid text-[rgba(255,255,255,.9)] grid-cols-12 gap-6 px-6 py-4`}
         >
           <p className="col-start-1 col-end-5 opacity-20 hidden md:inline">
             Last updated April 23, 2022
