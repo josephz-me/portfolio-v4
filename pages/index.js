@@ -72,10 +72,10 @@ export default function Home() {
               : "text-[rgba(255,255,255,.9)]"
           } gap-6 lg:sticky top-[2rem] pt-2  mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
         >
-          I'm a designer interested in all things related to digital toolmaking,
-          multimodal interaction, and systems thinking. I believe good design
-          reflects artistic values focused around emotion and play. I'm a fourth
-          year undergrad at Carnegie Mellon studying
+          I&apos;m a designer interested in all things related to digital
+          toolmaking, multimodal interaction, and systems thinking. I believe
+          good design reflects artistic values focused around emotion and play.
+          I&apos;m a fourth year undergrad at Carnegie Mellon studying
           {` `}
           <TextLink link="https://design.cmu.edu/content/bachelor-design">
             Communication Design
@@ -94,10 +94,10 @@ export default function Home() {
           <TextLink link="https://elevationchurch.org/">
             Elevation Church
           </TextLink>
-          . I’m currently a front-end developer at the Computational Creativity
-          Lab. After graduation, I’ll be joining Skiff full-time to work on
-          privacy-centric collaboration tools. If you have an interesting idea,
-          let’s get in touch.
+          . I&apos;m currently a front-end developer at the Computational
+          Creativity Lab. After graduation, I&apos;ll be joining Skiff full-time
+          to work on privacy-centric collaboration tools. If you have an
+          interesting idea, let&apos;s get in touch.
         </motion.p>
 
         <ProjectCard

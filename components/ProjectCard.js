@@ -16,6 +16,7 @@ export default function ProjectCard(props) {
       <a
         href={props.link}
         className="overflow-hidden rounded-md"
+        rel="noreferrer"
         target="_blank"
       >
         {props.isImage ? (
