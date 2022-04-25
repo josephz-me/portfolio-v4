@@ -107,19 +107,19 @@ export default function Home() {
           an interesting idea, let&apos;s get in touch.
         </motion.p>
 
-        <ProjectCard
+        {/* <ProjectCard
           title="Azuki"
           description="Web3 Brand"
           link=""
           col={1}
           isImage={true}
           content={"/project-covers/azuki-1.jpg"}
-        ></ProjectCard>
+        ></ProjectCard> */}
         <ProjectCard
           title="Apple"
           description="Multimodal interaction"
           link="https://josephz.notion.site/Apple-91d54c71155d444c9a1abf2a0e8d5f43"
-          col={2}
+          col={1}
           isImage={true}
           content={"/project-covers/apple.jpg"}
         ></ProjectCard>
@@ -127,7 +127,7 @@ export default function Home() {
           title="AIGA&Hue"
           description="Interactive data visualization"
           link="https://josephz.notion.site/AIGA-Hue-38cd5f40c38c464ab1c5885468a1a3de"
-          col={1}
+          col={2}
           isImage={true}
           content={"/project-covers/aiga-2.jpg"}
         ></ProjectCard>
@@ -135,7 +135,7 @@ export default function Home() {
           title="Brain Technologies"
           description="Multimodal interaction, Product Design"
           link="https://josephz.notion.site/Natural-AI-9bf5bc35f91545e3bcce20bc9450db05"
-          col={2}
+          col={1}
           isImage={true}
           content={"/project-covers/natural-2.jpg"}
         ></ProjectCard>
@@ -143,7 +143,7 @@ export default function Home() {
           title="Pixel Push"
           description="Multiplayer painting experience"
           link="https://josephz.notion.site/Pixel-Push-48910c3a971747b0b6fc3f31572b9984"
-          col={1}
+          col={2}
           isImage={false}
           content={"/project-covers/pixel-push.mp4"}
           placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
@@ -153,7 +153,7 @@ export default function Home() {
           title="Thinkspace"
           description="speculative VUI exploration"
           link="https://josephz.notion.site/Thinkspace-24f3dc1c62904b0da412b0a4230cc92d"
-          col={2}
+          col={1}
           isImage={false}
           content={"/project-covers/thinkspace.mp4"}
           placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
