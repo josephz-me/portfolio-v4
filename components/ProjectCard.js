@@ -11,7 +11,7 @@ export default function ProjectCard(props) {
         props.col == 1
           ? "lg:col-start-1 lg:col-end-7 col-start-1 col-end-13"
           : "lg:col-start-7 lg:col-end-13 col-start-1 col-end-13"
-      } grid h-[60vw] lg:h-[29vw] hover:bg-[rgba(255,255,255,.1)] cursor-pointer p-2 bg-[rgba(255,255,255,.05)] rounded-md transition-colors duration-500`}
+      } grid h-[60vw] lg:h-[29vw] hover:bg-[rgba(255,255,255,.1)] cursor-pointer p-2 bg-[rgba(255,255,255,.05)] rounded-md transition-colors duration-500 z-10`}
     >
       <a
         href={props.link}
