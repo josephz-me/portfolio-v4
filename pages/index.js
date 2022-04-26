@@ -113,7 +113,7 @@ export default function Home() {
         ></ProjectCard>
         <ProjectCard
           title="Brain Technologies"
-          description="Multimodal interaction, Product Design"
+          description="humanizing commerce through ai"
           link="https://josephz.notion.site/Natural-AI-9bf5bc35f91545e3bcce20bc9450db05"
           col={2}
           isImage={true}
@@ -130,11 +130,11 @@ export default function Home() {
 
         <ProjectCard
           title="Metalink"
-          description="Product Design"
+          description="sythensizing chat,trade,and data"
           col={2}
           isImage={true}
           locked={true}
-          content={"/project-covers/metalink.jpg"}
+          content={"/project-covers/metalink-2.jpg"}
         ></ProjectCard>
 
         <ProjectCard
@@ -147,7 +147,7 @@ export default function Home() {
         ></ProjectCard>
         <ProjectCard
           title="Thinkspace"
-          description="speculative VUI exploration"
+          description="spatial conversation"
           link="https://josephz.notion.site/Thinkspace-24f3dc1c62904b0da412b0a4230cc92d"
           col={2}
           isImage={false}
