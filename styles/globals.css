@@ -16,6 +16,10 @@ p {
   /* color: rgba(255, 255, 255, 0.9); */
 }
 
+svg path {
+  stroke-width: 1;
+}
+
 html,
 body {
   padding: 0;

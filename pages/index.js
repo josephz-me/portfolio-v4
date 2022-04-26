@@ -28,10 +28,6 @@ export default function Home() {
   };
 
   useEffect(() => {
-    console.log(scrollY);
-  }, [scrollY]);
-
-  useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
@@ -107,14 +103,6 @@ export default function Home() {
           an interesting idea, let&apos;s get in touch.
         </motion.p>
 
-        {/* <ProjectCard
-          title="Azuki"
-          description="Web3 Brand"
-          link=""
-          col={1}
-          isImage={true}
-          content={"/project-covers/azuki-1.jpg"}
-        ></ProjectCard> */}
         <ProjectCard
           title="Apple"
           description="Multimodal interaction"
@@ -124,13 +112,14 @@ export default function Home() {
           content={"/project-covers/apple.jpg"}
         ></ProjectCard>
         <ProjectCard
-          title="AIGA&Hue"
-          description="Interactive data visualization"
-          link="https://josephz.notion.site/AIGA-Hue-38cd5f40c38c464ab1c5885468a1a3de"
+          title="Azuki"
+          description="Web3 Brand"
           col={2}
           isImage={true}
-          content={"/project-covers/aiga-2.jpg"}
+          content={"/project-covers/azuki-1.jpg"}
+          locked={true}
         ></ProjectCard>
+
         <ProjectCard
           title="Brain Technologies"
           description="Multimodal interaction, Product Design"
@@ -139,16 +128,15 @@ export default function Home() {
           isImage={true}
           content={"/project-covers/natural-2.jpg"}
         ></ProjectCard>
-        <ProjectCard
-          title="Pixel Push"
-          description="Multiplayer painting experience"
-          link="https://josephz.notion.site/Pixel-Push-48910c3a971747b0b6fc3f31572b9984"
-          col={2}
-          isImage={false}
-          content={"/project-covers/pixel-push.mp4"}
-          placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
-        ></ProjectCard>
 
+        <ProjectCard
+          title="AIGA&Hue"
+          description="Interactive data visualization"
+          link="https://josephz.notion.site/AIGA-Hue-38cd5f40c38c464ab1c5885468a1a3de"
+          col={2}
+          isImage={true}
+          content={"/project-covers/aiga-2.jpg"}
+        ></ProjectCard>
         <ProjectCard
           title="Thinkspace"
           description="speculative VUI exploration"
@@ -156,6 +144,16 @@ export default function Home() {
           col={1}
           isImage={false}
           content={"/project-covers/thinkspace.mp4"}
+          placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
+        ></ProjectCard>
+
+        <ProjectCard
+          title="Pixel Push"
+          description="Multiplayer painting experience"
+          link="https://josephz.notion.site/Pixel-Push-48910c3a971747b0b6fc3f31572b9984"
+          col={2}
+          isImage={false}
+          content={"/project-covers/pixel-push.mp4"}
           placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
         ></ProjectCard>
       </motion.main>

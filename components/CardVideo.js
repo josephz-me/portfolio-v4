@@ -4,7 +4,7 @@ export default function CardVideo(props) {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   useEffect(() => {
-    console.log(isVideoLoaded);
+    // console.log(isVideoLoaded);
   }, [isVideoLoaded]);
 
   return (
