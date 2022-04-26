@@ -18,7 +18,7 @@ export default function ProjectCard(props) {
           : ""
       }
       
-      group relative grid h-[60vw] lg:h-[29vw]  p-2 bg-[rgba(255,255,255,.05)] rounded-md transition-colors duration-500 z-10`}
+      group relative grid h-[60vw] lg:h-[29vw]  p-2 bg-[rgba(255,255,255,.03)] rounded-md transition-colors duration-500 z-10`}
     >
       <a
         href={props.link}
@@ -34,8 +34,8 @@ export default function ProjectCard(props) {
       </a>
       <div className=" grid mt-2 grid-cols-[1fr_auto] items-center">
         <div>
-          <p className="text-zinc-50">{props.title}</p>
-          <p className="text-[rgba(255,255,255,.5)]">{props.description}</p>
+          <p className={`text-zinc-50`}>{props.title}</p>
+          <p className="text-zinc-500">{props.description}</p>
           {props.locked && (
             <p className="absolute text-zinc-300 rounded-md right-4 top-4 z-10 px-2 py-1 bg-[rgba(0,0,0,.5)]">
               LOCKED

@@ -108,32 +108,40 @@ export default function Home() {
           description="Multimodal interaction"
           link="https://josephz.notion.site/Apple-91d54c71155d444c9a1abf2a0e8d5f43"
           col={1}
+          isImage={false}
+          content={"/project-covers/apple.mp4"}
+        ></ProjectCard>
+        <ProjectCard
+          title="Brain Technologies"
+          description="Multimodal interaction, Product Design"
+          link="https://josephz.notion.site/Natural-AI-9bf5bc35f91545e3bcce20bc9450db05"
+          col={2}
           isImage={true}
-          content={"/project-covers/apple.jpg"}
+          content={"/project-covers/natural.jpg"}
         ></ProjectCard>
         <ProjectCard
           title="Azuki"
           description="Web3 Brand"
-          col={2}
+          col={1}
           isImage={true}
           content={"/project-covers/azuki-1.jpg"}
           locked={true}
         ></ProjectCard>
 
         <ProjectCard
-          title="Brain Technologies"
-          description="Multimodal interaction, Product Design"
-          link="https://josephz.notion.site/Natural-AI-9bf5bc35f91545e3bcce20bc9450db05"
-          col={1}
+          title="Metalink"
+          description="Product Design"
+          col={2}
           isImage={true}
-          content={"/project-covers/natural-2.jpg"}
+          locked={true}
+          content={"/project-covers/metalink.jpg"}
         ></ProjectCard>
 
         <ProjectCard
           title="AIGA&Hue"
           description="Interactive data visualization"
           link="https://josephz.notion.site/AIGA-Hue-38cd5f40c38c464ab1c5885468a1a3de"
-          col={2}
+          col={1}
           isImage={true}
           content={"/project-covers/aiga-2.jpg"}
         ></ProjectCard>
@@ -141,7 +149,7 @@ export default function Home() {
           title="Thinkspace"
           description="speculative VUI exploration"
           link="https://josephz.notion.site/Thinkspace-24f3dc1c62904b0da412b0a4230cc92d"
-          col={1}
+          col={2}
           isImage={false}
           content={"/project-covers/thinkspace.mp4"}
           placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
@@ -151,7 +159,7 @@ export default function Home() {
           title="Pixel Push"
           description="Multiplayer painting experience"
           link="https://josephz.notion.site/Pixel-Push-48910c3a971747b0b6fc3f31572b9984"
-          col={2}
+          col={1}
           isImage={false}
           content={"/project-covers/pixel-push.mp4"}
           placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
