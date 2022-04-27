@@ -110,6 +110,7 @@ export default function Home() {
           col={1}
           isImage={false}
           content={"/project-covers/apple.mp4"}
+          placeholder={"/project-covers/apple-placeholder.jpg"}
         ></ProjectCard>
         <ProjectCard
           title="Brain Technologies"

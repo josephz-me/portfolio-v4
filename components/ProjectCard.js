@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 export default function ProjectCard(props) {
-  console.log(props.link);
   return (
     <motion.div
       variants={props.animation}
