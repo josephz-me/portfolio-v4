@@ -27,7 +27,7 @@ export default function Navbar(props) {
   };
 
   return (
-    <div className="ml-auto flex flex-row block md:sticky top-[2rem] md:mb-0 mb-6 z-20">
+    <div className="ml-auto flex flex-row block sticky top-[1.99rem] md:mb-0 mb-6 z-20">
       <Link href="/">
         <a>
           <img
@@ -37,20 +37,19 @@ export default function Navbar(props) {
                 ? "md:opacity-0 pointer-events-none"
                 : "bg-[rgba(255,255,255,.05)] hover:bg-[rgba(255,255,255,.1)]"
             } 
-            ${pageName == "/" ? "md:fixed" : ""}
-            w-[48px] h-[auto] p-3 text-[rgba(255,255,255,.9)] rounded-md p-2 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
+            ${pageName == "/" ? "md:absolute top-0" : ""}
+            w-[48px] h-[auto] p-3 text-[rgba(255,255,255,.9)] rounded-md p-2 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)] inline-block`}
           />
         </a>
       </Link>
-      {pageName != "/" && (
-        <Link href="/">
-          <a className={`ml-auto`}>
-            <p className="mix-blend-difference z-20 justify-self-end px-2 py-1 text-white bg-[rgba(150,150,150,.2)] transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)] hover:bg-[rgba(255,255,255,.1)] rounded-md inline-block fit-content">
-              Back home
-            </p>
-          </a>
-        </Link>
-      )}
+
+      <Link href="/">
+        <a className={`ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>
+          <p className="z-20 justify-self-end px-2 py-1 text-white bg-[rgba(150,150,150,.2)] transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)] hover:bg-[rgba(255,255,255,.1)] rounded-md inline-block fit-content">
+            Back home
+          </p>
+        </a>
+      </Link>
     </div>
   );
 }

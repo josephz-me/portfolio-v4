@@ -26,7 +26,7 @@ export default function HomeCard(props) {
               src={props.content}
             />
           ) : (
-            <CardVideo video={props.content} placeholder={props.placeholder} />
+            <CardVideo link={props.content} placeholder={props.placeholder} />
           )}
           {/* </a> */}
         </div>
