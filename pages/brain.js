@@ -111,12 +111,12 @@ export default function Home() {
           isImage={true}
         ></ProjectMedia>
         <ProjectBody col={1} caption={true}>
-          Voice queries can have multiple layer's of complexity which gives
-          users a wide range of ways to achieve what they want. For example,
-          users can say "Order Burger King" or include parameter(s) such as
-          "Order chicken nuggets from Burger King." Multi-parameter queries like
-          such should route users to different parts of the menu page. I worked
-          with NLP team to implement this in various domains.
+          Voice queries can have multiple layers of complexity which gives users
+          a wide range of ways to achieve what they want. For example, users can
+          say &apos;Order Burger King&apos; or include parameter(s) such as
+          &apos;Order chicken nuggets from Burger King.&apos; Multi-parameter
+          queries like such should route users to different parts of the menu
+          page. I worked with NLP team to implement this in various domains.
         </ProjectBody>
         <ProjectMedia
           src="/work/brain/reorder-suggestions.jpg"
