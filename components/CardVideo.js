@@ -9,9 +9,9 @@ export default function CardVideo(props) {
   };
 
   return (
-    <div className={`relative overflow-hidden w-full h-full`}>
+    <div className={`relative overflow-hidden w-full h-full rounded-md`}>
       <img
-        className="absolute w-full h-full object-cover overflow-hidden m-auto"
+        className="absolute object-cover w-full h-full overflow-hidden m-auto"
         src={props.placeholder}
         alt="thumbnail video"
         style={{ opacity: isVideoLoaded ? 0 : 1 }}
