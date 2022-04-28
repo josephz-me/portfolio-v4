@@ -1,11 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
-import ProjectCard from "../components/ProjectCard";
+import HomeCard from "../components/home/HomeCard";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TextLink from "../components/TextLink";
 import Link from "next/link";
 import GridContainer from "../components/GridContainer";
+import ProjectHero from "../components/projects/ProjectHero";
+import ProjectBody from "../components/projects/ProjectBody";
+import ProjectTitle from "../components/projects/ProjectTitle";
 
 const item = {
   hidden: { opacity: 0 },
@@ -47,19 +50,12 @@ export default function Home() {
       animate={{ opacity: 1 }}
     >
       <GridContainer>
-        <video
-          className="rounded-md my-2 md:my-8 h-[60vw] md:h-[40vw] object-cover w-full grid col-span-12"
-          autoPlay
-          playsInline
-          loop
-          muted
-          src={"/project-covers/apple.mp4"}
+        <ProjectHero
+          placeholder={"/project-covers/apple-placeholder.jpg"}
+          content="/project-covers/apple.mp4"
         />
-
-        <p className="grid col-start-1 text-white">Apple</p>
-        <p
-          className={`text-white gap-6 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13`}
-        >
+        <ProjectTitle>Apple</ProjectTitle>
+        <ProjectBody col={2}>
           During the summers of 2020 and 2021, I interned at Apple as an
           Interaction Designer working on two core Siri teams — the
           Understanding team with Garrett Weinberg and the Knowledge team with
@@ -68,7 +64,7 @@ export default function Home() {
           platforms. My time at Apple involved pitching ideas to high level
           leadership such as Robby Walker, weekly syncs with Machine Learning
           engineers, and throwing around ideas with senior designers.
-        </p>
+        </ProjectBody>
       </GridContainer>
     </motion.main>
   );

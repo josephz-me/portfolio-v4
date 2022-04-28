@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import ProjectCard from "../components/ProjectCard";
+import HomeCard from "../components/home/HomeCard";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TextLink from "../components/TextLink";
@@ -82,7 +82,7 @@ export default function Home() {
           an interesting idea, let&apos;s get in touch.
         </motion.p>
 
-        <ProjectCard
+        <HomeCard
           title="Apple"
           description="Multimodal interaction"
           col={1}
@@ -90,42 +90,42 @@ export default function Home() {
           isImage={false}
           content={"/project-covers/apple.mp4"}
           placeholder={"/project-covers/apple-placeholder.jpg"}
-        ></ProjectCard>
-        <ProjectCard
+        ></HomeCard>
+        <HomeCard
           title="Brain Technologies"
           description="humanizing commerce through ai"
-          link="https://josephz.notion.site/Natural-AI-9bf5bc35f91545e3bcce20bc9450db05"
+          link="/brain"
           col={2}
           isImage={true}
           content={"/project-covers/natural.jpg"}
-        ></ProjectCard>
-        <ProjectCard
+        ></HomeCard>
+        <HomeCard
           title="Azuki"
           description="Web3 Brand"
           col={1}
           isImage={true}
           content={"/project-covers/azuki-1.jpg"}
           locked={true}
-        ></ProjectCard>
+        ></HomeCard>
 
-        <ProjectCard
+        <HomeCard
           title="Metalink"
           description="sythensizing chat,trade,and data"
           col={2}
           isImage={true}
           locked={true}
           content={"/project-covers/metalink-2.jpg"}
-        ></ProjectCard>
+        ></HomeCard>
 
-        <ProjectCard
+        <HomeCard
           title="AIGA&Hue"
           description="Interactive data visualization"
           link="https://josephz.notion.site/AIGA-Hue-38cd5f40c38c464ab1c5885468a1a3de"
           col={1}
           isImage={true}
           content={"/project-covers/aiga-2.jpg"}
-        ></ProjectCard>
-        <ProjectCard
+        ></HomeCard>
+        <HomeCard
           title="Thinkspace"
           description="spatial conversation"
           link="https://josephz.notion.site/Thinkspace-24f3dc1c62904b0da412b0a4230cc92d"
@@ -133,9 +133,9 @@ export default function Home() {
           isImage={false}
           content={"/project-covers/thinkspace.mp4"}
           placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
-        ></ProjectCard>
+        ></HomeCard>
 
-        <ProjectCard
+        <HomeCard
           title="Pixel Push"
           description="Multiplayer painting experience"
           link="https://josephz.notion.site/Pixel-Push-48910c3a971747b0b6fc3f31572b9984"
@@ -143,7 +143,7 @@ export default function Home() {
           isImage={false}
           content={"/project-covers/pixel-push.mp4"}
           placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
-        ></ProjectCard>
+        ></HomeCard>
       </GridContainer>
     </motion.main>
   );

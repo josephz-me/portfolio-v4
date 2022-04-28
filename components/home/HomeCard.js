@@ -1,9 +1,9 @@
-import CardVideo from "./CardVideo";
+import CardVideo from "../CardVideo";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ProjectCard(props) {
+export default function HomeCard(props) {
   return (
     <Link variants={props.animation} href={`${props.link}`}>
       <div
