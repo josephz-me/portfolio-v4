@@ -16,6 +16,13 @@ p {
   /* color: rgba(255, 255, 255, 0.9); */
 }
 
+@media only screen and (max-width: 500px) {
+  a,
+  p {
+    font-size: 12px;
+  }
+}
+
 svg path {
   stroke-width: 1;
 }

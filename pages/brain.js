@@ -58,9 +58,9 @@ export default function Home() {
           initiatives for Natural AI, an iOS app focused on making the commerce
           experience more fluid through AI and voice. A lot of my time went into
           R&D around search and creative applications of NLP, but some of my
-          work has also shipped and is now in the the app store. My
-          future-facing work is under NDA, but below is a list of features that
-          have been released to the public.
+          work has also shipped and is now in the app store. My future-facing
+          work is under NDA, but below is a list of features that have been
+          released to the public.
         </ProjectBody>
         <ProjectMedia
           src="/work/brain/notifications.jpg"
