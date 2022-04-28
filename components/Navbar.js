@@ -27,7 +27,7 @@ export default function Navbar(props) {
   };
 
   return (
-    <div className="ml-auto flex flex-row block sticky top-[1.99rem] md:mb-0 mb-6 z-20">
+    <div className="ml-auto flex flex-row block md:sticky top-[1.99rem] md:mb-0 mb-6 z-20">
       <Link href="/">
         <a>
           <img
