@@ -85,9 +85,9 @@ export default function Home() {
         <ProjectCard
           title="Apple"
           description="Multimodal interaction"
-          link="/apple"
           col={1}
           isImage={false}
+          locked={true}
           content={"/project-covers/apple.mp4"}
           placeholder={"/project-covers/apple-placeholder.jpg"}
         ></ProjectCard>
