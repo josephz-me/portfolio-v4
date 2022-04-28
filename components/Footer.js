@@ -13,7 +13,7 @@ export default function Footer() {
     >
       <GridContainer>
         <p className="col-start-1 col-end-5 opacity-20 hidden md:inline">
-          Updated April 24, 2022
+          Updated April 27, 2022
         </p>
 
         <span className="col-start-1 md:col-start-5">

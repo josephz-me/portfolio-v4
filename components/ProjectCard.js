@@ -17,7 +17,7 @@ export default function ProjectCard(props) {
             : "pointer-events-none"
         }
       
-      group relative grid   p-2 bg-[rgba(255,255,255,.03)] rounded-md transition-colors duration-500 z-10`}
+      group relative grid p-2 bg-[rgba(255,255,255,.03)] rounded-md transition-colors duration-500 z-10`}
       >
         <div className=" h-[60vw] overflow-hidden lg:h-[29vw]">
           {props.isImage ? (
