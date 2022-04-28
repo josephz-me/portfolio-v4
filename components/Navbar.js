@@ -27,31 +27,29 @@ export default function Navbar(props) {
   };
 
   return (
-    <div className="flex flex-row z-10 block md:sticky top-[2rem]">
+    <div className="flex flex-row block md:sticky top-[2rem] md:mb-0 mb-6">
       <Link href="/">
         <a>
-          <motion.img
+          <img
             src={"/zhang-icon-white.svg"}
             className={`${
-              scrollY > 100
+              scrollY > 40
                 ? "md:opacity-0 pointer-events-none"
-                : "bg-[rgba(255,255,255,.05)]"
+                : "bg-[rgba(255,255,255,.05)] hover:bg-[rgba(255,255,255,.1)]"
             } 
-            ${pageName == "/" ? "fixed" : ""}
-            w-[48px] h-[auto] p-3  text-[rgba(255,255,255,.9)] rounded-md p-2 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
+            ${pageName == "/" ? "md:fixed" : ""}
+            w-[48px] h-[auto] p-3 text-[rgba(255,255,255,.9)] rounded-md p-2 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
           />
         </a>
       </Link>
       {pageName != "/" && (
-        <div
-          className={`ml-auto transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)] ${
-            scrollY > 100 ? "md:opacity-0 pointer-events-none" : ""
-          }`}
-        >
-          <p className=" justify-self-end px-2 py-1 text-white bg-[rgba(255,255,255,.1)] rounded-md inline-block fit-content">
-            Back home
-          </p>
-        </div>
+        <Link href="/">
+          <a className={`ml-auto `}>
+            <p className=" justify-self-end px-2 py-1 text-white bg-[rgba(255,255,255,.05)] transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)] hover:bg-[rgba(255,255,255,.1)] rounded-md inline-block fit-content">
+              Back home
+            </p>
+          </a>
+        </Link>
       )}
     </div>
   );

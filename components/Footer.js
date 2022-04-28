@@ -1,9 +1,16 @@
 import GridContainer from "./GridContainer";
 import TextLink from "./TextLink";
+import { useRouter } from "next/router";
 
 export default function Footer() {
+  const pageName = useRouter().asPath;
+
   return (
-    <footer className={`text-[rgba(255,255,255,.9)] pt-12 pb-4`}>
+    <footer
+      className={`text-[rgba(255,255,255,.9)] pb-4 ${
+        pageName == "/" ? " pt-12" : "pt-32"
+      }`}
+    >
       <GridContainer>
         <p className="col-start-1 col-end-5 opacity-20 hidden md:inline">
           Updated April 24, 2022

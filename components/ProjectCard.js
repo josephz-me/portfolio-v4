@@ -14,7 +14,7 @@ export default function ProjectCard(props) {
         } ${
           props.link != undefined
             ? "cursor-pointer hover:bg-[rgba(255,255,255,.1)]"
-            : ""
+            : "pointer-events-none"
         }
       
       group relative grid   p-2 bg-[rgba(255,255,255,.03)] rounded-md transition-colors duration-500 z-10`}
