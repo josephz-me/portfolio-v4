@@ -120,7 +120,7 @@ export default function Home() {
         <HomeCard
           title="AIGA&Hue"
           description="Interactive data visualization"
-          link="https://josephz.notion.site/AIGA-Hue-38cd5f40c38c464ab1c5885468a1a3de"
+          link="/aiga"
           col={1}
           isImage={true}
           content={"/project-covers/aiga-2.jpg"}
