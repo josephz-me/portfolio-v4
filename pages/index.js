@@ -132,7 +132,7 @@ export default function Home() {
           col={2}
           isImage={false}
           content={"/project-covers/thinkspace.mp4"}
-          placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
+          placeholder={"/project-covers/thinkspace-placeholder.png"}
         ></HomeCard>
 
         <HomeCard
