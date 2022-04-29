@@ -128,7 +128,7 @@ export default function Home() {
         <HomeCard
           title="Thinkspace"
           description="spatial conversation"
-          link="https://josephz.notion.site/Thinkspace-24f3dc1c62904b0da412b0a4230cc92d"
+          link="/thinkspace"
           col={2}
           isImage={false}
           content={"/project-covers/thinkspace.mp4"}

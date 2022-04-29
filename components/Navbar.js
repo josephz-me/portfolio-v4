@@ -30,16 +30,14 @@ export default function Navbar(props) {
     <div className="ml-auto flex flex-row block md:sticky top-[1.99rem] md:mb-0 mb-6 z-20">
       <Link href="/">
         <a
-          className={
-            scrollY > 40
-              ? "md:opacity-0 pointer-events-none"
-              : "bg-[rgba(255,255,255,.05)] hover:bg-[rgba(255,255,255,.1)]"
-          }
+          className={`transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]
+            ${scrollY > 40 ? "md:opacity-0 pointer-events-none" : ""}`}
         >
           <img
             src={"/zhang-icon-white.svg"}
-            className={`${pageName == "/" ? "md:absolute top-0" : ""}
-            bg-[rgba(255,255,255,.05)] hover:bg-[rgba(255,255,255,.1)] w-[48px] h-[auto] p-3 text-[rgba(255,255,255,.9)] rounded-md p-2 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)] inline-block`}
+            className={`${
+              pageName == "/" ? "md:fixed top-[2rem]" : ""
+            } bg-[rgba(255,255,255,.05)] hover:bg-[rgba(255,255,255,.1)] w-[48px] h-[auto] p-3 text-[rgba(255,255,255,.9)] rounded-md p-2  inline-block`}
           />
         </a>
       </Link>
