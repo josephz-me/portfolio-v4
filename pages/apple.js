@@ -22,7 +22,7 @@ const container = {
   },
 };
 
-export default function Home() {
+export default function Apple() {
   const [scrollY, setScrollY] = useState(0);
 
   Number.prototype.map = function (in_min, in_max, out_min, out_max) {
@@ -39,8 +39,6 @@ export default function Home() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -54,7 +52,7 @@ export default function Home() {
           placeholder={"/project-covers/apple-placeholder.jpg"}
           content="/project-covers/apple.mp4"
         />
-        <ProjectTitle>Apple</ProjectTitle>
+        <ProjectTitle role="interaction design intern">Apple</ProjectTitle>
         <ProjectBody col={2}>
           During the summers of 2020 and 2021, I interned at Apple as an
           Interaction Designer working on two core Siri teams — the

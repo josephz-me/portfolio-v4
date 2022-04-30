@@ -22,7 +22,7 @@ const container = {
   },
 };
 
-export default function Home() {
+export default function Aiga() {
   const [scrollY, setScrollY] = useState(0);
 
   Number.prototype.map = function (in_min, in_max, out_min, out_max) {
@@ -51,7 +51,7 @@ export default function Home() {
     >
       <GridContainer>
         <ProjectHero isImage={true} content="/project-covers/aiga-2.jpg" />
-        <ProjectTitle>AIGA & Hue</ProjectTitle>
+        <ProjectTitle role="Designer and developer">AIGA & Hue</ProjectTitle>
         <ProjectBody col={2}>
           AIGA & Hue is a desktop web experience that visualizes career data
           from the 2019 AIGA Design Census in a playful and informative manner.
@@ -59,7 +59,8 @@ export default function Home() {
           resulted in skewed perceptions of neighboring creative industries.
           This project strives to break those stereotypes by providing a
           holistic understanding of the creative industry and all the viable
-          career options that exist. .
+          career options that exist. This project was advised by Professor Kyuha
+          Shim and in collaboration with Langston Wells and Stefanie Suk.
         </ProjectBody>
 
         <LinkCard col={1} link="https://josephz-me.github.io/aiga-hue/">
@@ -69,8 +70,19 @@ export default function Home() {
         <LinkCard link="https://josephz.notion.site/AIGA-Hue-38cd5f40c38c464ab1c5885468a1a3de">
           View complete documentation
         </LinkCard>
-
-        <ExternalVideo url="https://player.vimeo.com/video/529104061?h=d6d37cfb1c&title=0&byline=0&portrait=0"></ExternalVideo>
+        <video
+          playsInline
+          controls
+          preload="metadata"
+          poster="/project-covers/aiga.jpg"
+          loop
+          className="md:col-start-5 col-span-full"
+          src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6f6331ce-f09f-4d7d-96a2-d6809f4df852/datavis-main.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220429T201414Z&X-Amz-Expires=86400&X-Amz-Signature=01cc7e1edb7a77c3fa4c9fd5fbd72f4e25ad212bfb500e6edc0a72d12fc6bc7f&X-Amz-SignedHeaders=host&x-id=GetObject"
+        />
+        <ProjectBody caption={true}>
+          Synthesized +9400 data points from AIGA's census and interactively
+          visualizing them through Matter.js, a Javascript physics engine.
+        </ProjectBody>
       </GridContainer>
     </motion.main>
   );

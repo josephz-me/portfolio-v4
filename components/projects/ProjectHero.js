@@ -5,7 +5,7 @@ import CardVideo from "../CardVideo";
 
 export default function ProjectHero(props) {
   return (
-    <div className="rounded-md my-2 md:my-8 h-[60vw] md:h-[40vw] object-cover w-full grid col-span-12">
+    <div className="rounded-md my-2 md:my-8 h-[60vw] md:h-[49vw] object-cover w-full grid col-span-12">
       {props.isImage ? (
         <img
           className="object-cover overflow-hidden h-full w-full rounded-md"

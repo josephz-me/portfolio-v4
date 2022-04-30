@@ -58,7 +58,7 @@ export default function Home() {
           placeholder="/project-covers/thinkspace-placeholder.jpeg"
           content="/project-covers/thinkspace.mp4"
         />
-        <ProjectTitle>Thinkspace</ProjectTitle>
+        <ProjectTitle role="design prototyper">Thinkspace</ProjectTitle>
         <ProjectBody col={2}>
           Rich, engaging conversation is a hallmark of meaningful human-to-human
           interaction. However, factors such as relational closeness, social

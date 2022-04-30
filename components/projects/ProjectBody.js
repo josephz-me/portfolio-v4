@@ -11,8 +11,8 @@ export default function BodyText(props) {
           ? "md:columns-2 md:col-start-5 md:col-end-13"
           : "md:col-start-5 md:col-end-13"
       } ${
-        props.caption ? "opacity-50" : ""
-      } text-white gap-6  col-start-1 col-end-13 mb-8`}
+        props.caption ? "text-zinc-400" : "text-zinc-100"
+      } gap-6  col-start-1 col-end-13 mb-8`}
     >
       {props.children}
     </p>

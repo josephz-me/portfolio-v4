@@ -5,8 +5,9 @@ import CardVideo from "../CardVideo";
 
 export default function ProjectTitle(props) {
   return (
-    <p className="grid col-start-1 col-end-5 md:sticky md:top-[2rem] text-white">
-      {props.children}
-    </p>
+    <div className="col-span-full md:col-end-4 md:sticky md:top-[2rem] text-white">
+      <p>{props.children}</p>
+      <p className="text-zinc-600">{props.role}</p>
+    </div>
   );
 }

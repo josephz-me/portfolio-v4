@@ -93,7 +93,7 @@ export default function Home() {
         ></HomeCard>
         <HomeCard
           title="Brain Technologies"
-          description="humanizing commerce through ai"
+          description="computer interfaces"
           link="/brain"
           col={2}
           isImage={true}
@@ -110,7 +110,7 @@ export default function Home() {
 
         <HomeCard
           title="Metalink"
-          description="sythensizing chat,trade,and data"
+          description="Product Design"
           col={2}
           isImage={true}
           locked={true}
@@ -127,18 +127,18 @@ export default function Home() {
         ></HomeCard>
         <HomeCard
           title="Thinkspace"
-          description="spatial conversation"
+          description="assistive voice agents"
           link="/thinkspace"
           col={2}
           isImage={false}
           content={"/project-covers/thinkspace.mp4"}
-          placeholder={"/project-covers/thinkspace-placeholder.png"}
+          placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
         ></HomeCard>
 
         <HomeCard
           title="Pixel Push"
           description="Multiplayer painting experience"
-          link="https://josephz.notion.site/Pixel-Push-48910c3a971747b0b6fc3f31572b9984"
+          link="/pixelpush"
           col={1}
           isImage={false}
           content={"/project-covers/pixel-push.mp4"}

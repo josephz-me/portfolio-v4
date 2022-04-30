@@ -22,7 +22,7 @@ const container = {
   },
 };
 
-export default function Home() {
+export default function Brain() {
   const [scrollY, setScrollY] = useState(0);
 
   Number.prototype.map = function (in_min, in_max, out_min, out_max) {
@@ -51,7 +51,9 @@ export default function Home() {
     >
       <GridContainer>
         <ProjectHero isImage={true} content="/project-covers/natural.jpg" />
-        <ProjectTitle>Brain Technologies</ProjectTitle>
+        <ProjectTitle role="product design intern">
+          Brain Technologies
+        </ProjectTitle>
         <ProjectBody col={2}>
           From 2020-2021, I worked with Brain Technologies on various design
           initiatives for Natural AI, an iOS app focused on making the commerce
