@@ -80,8 +80,8 @@ export default function Aiga() {
           src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6f6331ce-f09f-4d7d-96a2-d6809f4df852/datavis-main.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220429T201414Z&X-Amz-Expires=86400&X-Amz-Signature=01cc7e1edb7a77c3fa4c9fd5fbd72f4e25ad212bfb500e6edc0a72d12fc6bc7f&X-Amz-SignedHeaders=host&x-id=GetObject"
         />
         <ProjectBody caption={true}>
-          Synthesized +9400 data points from AIGA's census and interactively
-          visualizing them through Matter.js, a Javascript physics engine.
+          {`Synthesized +9400 data points from AIGA's census and interactively
+          visualizing them through Matter.js, a Javascript physics engine.`}
         </ProjectBody>
       </GridContainer>
     </motion.main>
