@@ -75,16 +75,7 @@ export default function PixelPush() {
         <LinkCard link="https://josephz.notion.site/Pixel-Push-48910c3a971747b0b6fc3f31572b9984">
           View complete documentation
         </LinkCard>
-        <video
-          playsInline
-          controls
-          preload="metadata"
-          poster="/work/pixelpush/pixelpush-placeholder.jpg"
-          loop
-          className="md:col-start-5 col-span-full object-cover overflow-hidden"
-          src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/42331844-b0e5-4109-b186-fc8334a913a9/pixe-push-joseph-zhang-UPDATED.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220429T195915Z&X-Amz-Expires=86400&X-Amz-Signature=febb6c39d746c086c3557cd04b25ef19f9ed135845fcc145c36fd55be2347f58&X-Amz-SignedHeaders=host&x-id=GetObject"
-        />
-
+        <ExternalVideo url="https://player.vimeo.com/video/488803937?h=99634d02a7&title=0&byline=0&portrait=0"></ExternalVideo>
         <ProjectMedia
           src="/work/pixelpush/gallery-art.jpg"
           isImage={true}

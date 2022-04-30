@@ -6,7 +6,7 @@ import Iframe from "react-iframe";
 
 export default function ExternalVideo(props) {
   return (
-    <div className="relative grid md:col-start-5 col-start-1 col-span-full h-[50px] w-full pb-[56.25%] mt-12">
+    <div className="relative grid md:col-start-5 col-start-1 col-span-full pb-[56.25%] mt-12 top-0 left-0">
       <Iframe
         url={props.url}
         className="iFrameDetails"
@@ -16,6 +16,7 @@ export default function ExternalVideo(props) {
         display="initial"
         frameBorder="0"
         allow="fullscreen"
+        styles={{ margin: 0 }}
       />
     </div>
   );

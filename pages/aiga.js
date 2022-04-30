@@ -70,15 +70,7 @@ export default function Aiga() {
         <LinkCard link="https://josephz.notion.site/AIGA-Hue-38cd5f40c38c464ab1c5885468a1a3de">
           View complete documentation
         </LinkCard>
-        <video
-          playsInline
-          controls
-          preload="metadata"
-          poster="/project-covers/aiga.jpg"
-          loop
-          className="md:col-start-5 col-span-full"
-          src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6f6331ce-f09f-4d7d-96a2-d6809f4df852/datavis-main.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220429%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220429T201414Z&X-Amz-Expires=86400&X-Amz-Signature=01cc7e1edb7a77c3fa4c9fd5fbd72f4e25ad212bfb500e6edc0a72d12fc6bc7f&X-Amz-SignedHeaders=host&x-id=GetObject"
-        />
+        <ExternalVideo url="https://player.vimeo.com/video/529104061?h=d6d37cfb1c&title=0&byline=0&portrait=0"></ExternalVideo>
         <ProjectBody caption={true}>
           {`Synthesized +9400 data points from AIGA's census and interactively
           visualizing them through Matter.js, a Javascript physics engine.`}
