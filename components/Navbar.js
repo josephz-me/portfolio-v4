@@ -35,6 +35,7 @@ export default function Navbar(props) {
         >
           <img
             src={"/zhang-icon-white.svg"}
+            alt="zhang logo"
             className={`${
               pageName == "/" ? "md:fixed top-[2rem]" : ""
             } bg-[rgba(255,255,255,.05)] hover:bg-[rgba(255,255,255,.1)] w-[48px] h-[auto] p-3 rounded-md p-2  inline-block`}

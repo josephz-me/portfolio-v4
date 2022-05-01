@@ -19,16 +19,17 @@ export default function HomeCard(props) {
       
       group relative grid p-2 bg-[rgba(255,255,255,.03)] rounded-md transition-colors duration-500 z-10`}
       >
-        <div className=" h-[60vw] overflow-hidden lg:h-[29vw]">
+        <div className="relative h-[60vw] overflow-hidden object-cover lg:h-[29vw] rounded-md">
           {props.isImage ? (
-            <img
-              className="object-cover h-full rounded-md"
+            <Image
+              alt="project cover"
+              layout="fill"
+              objectFit="cover"
               src={props.content}
             />
           ) : (
             <CardVideo link={props.content} placeholder={props.placeholder} />
           )}
-          {/* </a> */}
         </div>
 
         <div className="mt-2">

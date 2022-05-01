@@ -1,9 +1,10 @@
 import TextLink from "../TextLink";
 import CardVideo from "../CardVideo";
+import Image from "next/image";
 
 export default function ProjectMedia(props) {
   return (
-    <div className=" grid col-start-1 md:col-start-5 object-cover col-end-13">
+    <div className=" block grid rounded-md overflow-hidden col-start-1 md:col-start-5 col-end-13">
       {props.isImage ? (
         <img className="w-full rounded-md h-full" src={props.src} />
       ) : (
