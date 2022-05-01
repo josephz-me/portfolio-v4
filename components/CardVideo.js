@@ -26,7 +26,7 @@ export default function CardVideo(props) {
         loop
         muted
         src={props.link}
-        // onCanPlay={onLoadedData}
+        onCanPlay={onLoadedData}
         style={{ opacity: isVideoLoaded ? 1 : 0 }}
       />
     </div>
