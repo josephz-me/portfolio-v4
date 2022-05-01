@@ -4,17 +4,25 @@ import { useRouter } from "next/router";
 import CardVideo from "../CardVideo";
 
 export default function ProjectDetails(props) {
-  const roles = props.role.map((role) => (
-    <p className="text-zinc-500">{role}</p>
+  const roles = props.role.map((role, index) => (
+    <p className="text-zinc-500" key={index}>
+      {role}
+    </p>
   ));
 
-  const collaborators = props.collaborators.map((people) => (
-    <p className="text-zinc-500">{people}</p>
+  const collaborators = props.collaborators.map((people, index) => (
+    <p className="text-zinc-500" key={index}>
+      {people}
+    </p>
   ));
 
   let tools;
   if (props.tools) {
-    tools = props.tools.map((tool) => <p className="text-zinc-500">{tool}</p>);
+    tools = props.tools.map((tool, index) => (
+      <p key={index} className="text-zinc-500">
+        {tool}
+      </p>
+    ));
   }
 
   return (
