@@ -13,6 +13,7 @@ import ProjectTitle from "../components/projects/ProjectTitle";
 import ExternalVideo from "../components/projects/ExternalVideo";
 import LinkCard from "../components/projects/LinkCard";
 import Link from "next/link";
+import ProjectDetails from "../components/projects/ProjectDetails";
 
 const item = {
   hidden: { opacity: 0 },
@@ -58,7 +59,9 @@ export default function PixelPush() {
           isImage={true}
           content="/work/pixelpush/pixelpush-placeholder.jpg"
         />
-        <ProjectTitle role="Designer & Co-developer">Pixel Push</ProjectTitle>
+        <ProjectTitle role="multiplayer painting experience">
+          Pixel Push
+        </ProjectTitle>
         <ProjectBody col={2}>
           Tools shape the way we express ourselves and share our ideas. From
           Microsoft Paint to more complex tools such as Adobe Photoshop, the
@@ -66,12 +69,26 @@ export default function PixelPush() {
           create. Pixel Push is a collaborative painting experience that
           reimagines art in the digital space through experimentation with audio
           recognition and webcam image-capture. Instead of solid hex code or RGB
-          values, users paint with webcam video and the microphone audio. This
-          project was advised by Professor Kyuha Shim and developed in
-          collaboration with Sophia Kim, Margot Gersing, Elizabeth Han, Vicky
-          Zhou
+          values, users paint with webcam video and the microphone audio.
         </ProjectBody>
-
+        <ProjectDetails
+          role={["co-developer", "interaction designer"]}
+          replaceCollab="collaborators"
+          collaborators={[
+            "Kyuha Shim (advisor)",
+            "Sophia Kim",
+            "Margo Gersing",
+            "Elizabeth Han",
+            "Vicky Zhou",
+          ]}
+          duration="2.5 weeks"
+          tools={[
+            "HTML/CSS/JS",
+            "Socket.io",
+            "Google Teachable Machine",
+            "Figma",
+          ]}
+        />
         <LinkCard link="https://josephz.notion.site/Pixel-Push-48910c3a971747b0b6fc3f31572b9984">
           View complete documentation
         </LinkCard>

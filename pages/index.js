@@ -45,10 +45,8 @@ export default function Home() {
       <GridContainer>
         <motion.p
           className={`${
-            scrollY > 40
-              ? "md:opacity-0 text-[rgba(255,255,255,.9)] pointer-events-none"
-              : "text-[rgba(255,255,255,.9)]"
-          } gap-6 lg:sticky top-[2rem] pt-2  mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
+            scrollY > 40 ? "md:opacity-0 pointer-events-none" : ""
+          } gap-6 text-zinc-100 lg:sticky top-[2rem] pt-2  mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
         >
           I&apos;m a designer interested in all things related to digital
           toolmaking, multimodal interaction, and systems thinking. I believe
@@ -93,7 +91,7 @@ export default function Home() {
         ></HomeCard>
         <HomeCard
           title="Brain Technologies"
-          description="computer interfaces"
+          description="multimodal interaction"
           link="/brain"
           col={2}
           isImage={true}

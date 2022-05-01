@@ -9,6 +9,7 @@ import GridContainer from "../components/GridContainer";
 import ProjectHero from "../components/projects/ProjectHero";
 import ProjectBody from "../components/projects/ProjectBody";
 import ProjectTitle from "../components/projects/ProjectTitle";
+import ProjectDetails from "../components/projects/ProjectDetails";
 
 const item = {
   hidden: { opacity: 0 },
@@ -52,7 +53,7 @@ export default function Apple() {
           placeholder={"/project-covers/apple-placeholder.jpg"}
           content="/project-covers/apple.mp4"
         />
-        <ProjectTitle role="interaction design intern">Apple</ProjectTitle>
+        <ProjectTitle role="multimodal interaction">Apple</ProjectTitle>
         <ProjectBody col={2}>
           During the summers of 2020 and 2021, I interned at Apple as an
           Interaction Designer working on two core Siri teams — the
@@ -63,6 +64,12 @@ export default function Apple() {
           leadership such as Robby Walker, weekly syncs with Machine Learning
           engineers, and throwing around ideas with senior designers.
         </ProjectBody>
+        <ProjectDetails
+          role={["design intern"]}
+          replaceCollab="managers"
+          collaborators={["Maria Cordell", "Garrett Weinberg"]}
+          duration="12 weeks (x2)"
+        />
       </GridContainer>
     </motion.main>
   );

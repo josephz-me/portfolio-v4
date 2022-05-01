@@ -7,12 +7,10 @@ export default function Footer() {
 
   return (
     <footer
-      className={`text-[rgba(255,255,255,.9)] pb-4 ${
-        pageName == "/" ? " pt-12" : "pt-32"
-      }`}
+      className={`text-zinc-100 pb-4 ${pageName == "/" ? " pt-12" : "pt-32"}`}
     >
       <GridContainer>
-        <p className="col-start-1 col-end-5 opacity-20 hidden md:inline">
+        <p className="col-start-1 col-end-5 text-zinc-700 hidden md:inline">
           Joseph Zhang © 2022
         </p>
 

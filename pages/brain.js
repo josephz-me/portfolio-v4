@@ -9,6 +9,7 @@ import ProjectHero from "../components/projects/ProjectHero";
 import ProjectBody from "../components/projects/ProjectBody";
 import ProjectMedia from "../components/projects/ProjectMedia";
 import ProjectTitle from "../components/projects/ProjectTitle";
+import ProjectDetails from "../components/projects/ProjectDetails";
 
 const item = {
   hidden: { opacity: 0 },
@@ -51,7 +52,7 @@ export default function Brain() {
     >
       <GridContainer>
         <ProjectHero isImage={true} content="/project-covers/natural.jpg" />
-        <ProjectTitle role="product design intern">
+        <ProjectTitle role="multimodal interaction">
           Brain Technologies
         </ProjectTitle>
         <ProjectBody col={2}>
@@ -63,6 +64,13 @@ export default function Brain() {
           work is under NDA, but below is a list of features that have been
           released to the public.
         </ProjectBody>
+        <ProjectDetails
+          role={["design intern"]}
+          replaceCollab="manager"
+          collaborators={["jerry yue (ceo)"]}
+          duration="8 months"
+          tools={["figma", "origami studio"]}
+        />
         <ProjectMedia
           src="/work/brain/notifications.jpg"
           isImage={true}

@@ -9,6 +9,7 @@ import ProjectTitle from "../components/projects/ProjectTitle";
 import ExternalVideo from "../components/projects/ExternalVideo";
 import LinkCard from "../components/projects/LinkCard";
 import Link from "next/link";
+import ProjectDetails from "../components/projects/ProjectDetails";
 
 const item = {
   hidden: { opacity: 0 },
@@ -51,7 +52,9 @@ export default function Aiga() {
     >
       <GridContainer>
         <ProjectHero isImage={true} content="/project-covers/aiga-2.jpg" />
-        <ProjectTitle role="Designer and developer">AIGA & Hue</ProjectTitle>
+        <ProjectTitle role="Interactive Data Visualization">
+          AIGA & Hue
+        </ProjectTitle>
         <ProjectBody col={2}>
           AIGA & Hue is a desktop web experience that visualizes career data
           from the 2019 AIGA Design Census in a playful and informative manner.
@@ -59,14 +62,21 @@ export default function Aiga() {
           resulted in skewed perceptions of neighboring creative industries.
           This project strives to break those stereotypes by providing a
           holistic understanding of the creative industry and all the viable
-          career options that exist. This project was advised by Professor Kyuha
-          Shim and in collaboration with Langston Wells and Stefanie Suk.
+          career options that exist.
         </ProjectBody>
-
+        <ProjectDetails
+          role={["Frontend developer", "Visual designer"]}
+          collaborators={[
+            "Kyuha Shim (advisor)",
+            "Langston Wells",
+            "Stefanie Suk",
+          ]}
+          duration="8 weeks"
+          tools={["html/css/js", "figma", "Cinema4D"]}
+        />
         <LinkCard col={1} link="https://josephz-me.github.io/aiga-hue/">
           View live website
         </LinkCard>
-
         <LinkCard link="https://josephz.notion.site/AIGA-Hue-38cd5f40c38c464ab1c5885468a1a3de">
           View complete documentation
         </LinkCard>

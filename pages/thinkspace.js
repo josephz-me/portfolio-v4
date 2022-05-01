@@ -13,6 +13,7 @@ import ProjectTitle from "../components/projects/ProjectTitle";
 import ExternalVideo from "../components/projects/ExternalVideo";
 import LinkCard from "../components/projects/LinkCard";
 import Link from "next/link";
+import ProjectDetails from "../components/projects/ProjectDetails";
 
 const item = {
   hidden: { opacity: 0 },
@@ -58,7 +59,7 @@ export default function Home() {
           placeholder="/project-covers/thinkspace-placeholder.jpeg"
           content="/project-covers/thinkspace.mp4"
         />
-        <ProjectTitle role="design prototyper">Thinkspace</ProjectTitle>
+        <ProjectTitle role="assistive voice agents">Thinkspace</ProjectTitle>
         <ProjectBody col={2}>
           Rich, engaging conversation is a hallmark of meaningful human-to-human
           interaction. However, factors such as relational closeness, social
@@ -67,11 +68,17 @@ export default function Home() {
           speculative concept that aims to reinvision the role of conversational
           agents in discussion-based contexts.
         </ProjectBody>
-
+        <ProjectDetails
+          role={["design prototyper"]}
+          replaceCollab="advisors"
+          collaborators={["jonathan chapman", "Steve Stadelmeier"]}
+          duration="7 weeks"
+          tools={["javascript"]}
+        />
         <LinkCard link="https://josephz.notion.site/Thinkspace-24f3dc1c62904b0da412b0a4230cc92d">
           View complete documentation
         </LinkCard>
-        <ExternalVideo url="https://player.vimeo.com/video/529104061?h=d6d37cfb1c&title=0&byline=0&portrait=0"></ExternalVideo>
+        <ExternalVideo url="https://player.vimeo.com/video/704621543?h=5407db28dd&title=0&byline=0&portrait=0"></ExternalVideo>
       </GridContainer>
     </motion.main>
   );

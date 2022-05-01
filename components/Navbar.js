@@ -37,14 +37,14 @@ export default function Navbar(props) {
             src={"/zhang-icon-white.svg"}
             className={`${
               pageName == "/" ? "md:fixed top-[2rem]" : ""
-            } bg-[rgba(255,255,255,.05)] hover:bg-[rgba(255,255,255,.1)] w-[48px] h-[auto] p-3 text-[rgba(255,255,255,.9)] rounded-md p-2  inline-block`}
+            } bg-[rgba(255,255,255,.05)] hover:bg-[rgba(255,255,255,.1)] w-[48px] h-[auto] p-3 rounded-md p-2  inline-block`}
           />
         </a>
       </Link>
 
       <Link href="/">
         <a className={`ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>
-          <p className="z-20 justify-self-end px-2 py-1 text-white bg-[rgba(150,150,150,.2)] transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)] hover:bg-[rgba(150,150,150,.4)] rounded-md inline-block fit-content">
+          <p className="z-20 justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(150,150,150,.2)] transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)] hover:bg-[rgba(150,150,150,.4)] rounded-md inline-block fit-content">
             Back home
           </p>
         </a>
