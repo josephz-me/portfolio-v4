@@ -27,11 +27,11 @@ export default function ProjectDetails(props) {
 
   return (
     <>
-      <div className="col-start-1 col-end-7 md:col-start-5 md:col-end-7 ">
+      <div className="col-start-1 col-end-7 md:col-start-5 md:col-end-7 md:mb-8">
         <p className="text-zinc-100">Role</p>
         {roles}
       </div>
-      <div className="col-start-7 col-end-13 md:col-start-7 md:col-end-9">
+      <div className="col-start-7 col-end-13 md:col-start-7 md:col-end-9 md:mb-8">
         <p className="text-zinc-100">
           {props.replaceCollab ? props.replaceCollab : "Collaborators"}
         </p>

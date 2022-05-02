@@ -11,6 +11,16 @@ import ProjectMedia from "../components/projects/ProjectMedia";
 import ProjectTitle from "../components/projects/ProjectTitle";
 import ProjectDetails from "../components/projects/ProjectDetails";
 
+import Notifs from "../public/work/brain/notifications.jpg";
+import FoodCheckout from "../public/work/brain/food-checkout.jpg";
+import FluidSearch from "../public/work/brain/fluid-search.jpg";
+import Declined from "../public/work/brain/declined.jpg";
+import Meetup1 from "../public/work/brain/meetup-1.jpg";
+import Meetup2 from "../public/work/brain/meetup-2.jpg";
+import Multiparam1 from "../public/work/brain/multiparam-1.jpg";
+import Multiparam2 from "../public/work/brain/multiparam-2.jpg";
+import ReorderSuggestions from "../public/work/brain/reorder-suggestions.jpg";
+
 const item = {
   hidden: { opacity: 0 },
   show: { opacity: 1 },
@@ -64,6 +74,7 @@ export default function Brain() {
           work is under NDA, but below is a list of features that have been
           released to the public.
         </ProjectBody>
+
         <ProjectDetails
           role={["design intern"]}
           replaceCollab="manager"
@@ -71,54 +82,34 @@ export default function Brain() {
           duration="8 months"
           tools={["figma", "origami studio"]}
         />
-        <ProjectMedia
-          src="/work/brain/notifications.jpg"
-          isImage={true}
-        ></ProjectMedia>
+
+        <ProjectMedia src={Notifs} isImage={true}></ProjectMedia>
         <ProjectBody col={1} caption={true}>
           Redesigned notifications to be more communicative and systematic
           across domains.
         </ProjectBody>
-        <ProjectMedia
-          src="/work/brain/food-checkout.jpg"
-          isImage={true}
-        ></ProjectMedia>
+        <ProjectMedia src={FoodCheckout} isImage={true}></ProjectMedia>
         <ProjectBody col={1} caption={true}>
           Designed a better way for people to view their preferences and
           purchase details.
         </ProjectBody>
-        <ProjectMedia
-          src="/work/brain/meetup-1.jpg"
-          isImage={true}
-        ></ProjectMedia>
-        <ProjectMedia
-          src="/work/brain/meetup-2.jpg"
-          isImage={true}
-        ></ProjectMedia>
+        <ProjectMedia src={Meetup1} isImage={true}></ProjectMedia>
+        <ProjectMedia src={Meetup2} isImage={true}></ProjectMedia>
         <ProjectBody col={1} caption={true}>
           Led designs for an experimental feature, Meet up, where users can find
           restaurants and make reservations based on location and preference.
           The app leverages user location data to find top Yelp rated
           restaurants geographically close to both users.{" "}
         </ProjectBody>
-        <ProjectMedia
-          src="/work/brain/fluid-search.jpg"
-          isImage={true}
-        ></ProjectMedia>
+        <ProjectMedia src={FluidSearch} isImage={true}></ProjectMedia>
         <ProjectBody col={1} caption={true}>
           I designed the fluid search bar that appears when users scroll down
           the screen. Prior to this implementation, scrolling up would hide all
           query variables making the process of finding the search field
           difficult. This proposal solved that. (Collaborated with Gleb)
         </ProjectBody>
-        <ProjectMedia
-          src="/work/brain/multiparam-1.jpg"
-          isImage={true}
-        ></ProjectMedia>
-        <ProjectMedia
-          src="/work/brain/multiparam-2.jpg"
-          isImage={true}
-        ></ProjectMedia>
+        <ProjectMedia src={Multiparam1} isImage={true}></ProjectMedia>
+        <ProjectMedia src={Multiparam2} isImage={true}></ProjectMedia>
         <ProjectBody col={1} caption={true}>
           Voice queries can have multiple layers of complexity which gives users
           a wide range of ways to achieve what they want. For example, users can
@@ -127,10 +118,8 @@ export default function Brain() {
           queries like such should route users to different parts of the menu
           page. I worked with NLP team to implement this in various domains.
         </ProjectBody>
-        <ProjectMedia
-          src="/work/brain/reorder-suggestions.jpg"
-          isImage={true}
-        ></ProjectMedia>
+
+        <ProjectMedia src={ReorderSuggestions} isImage={true}></ProjectMedia>
         <ProjectBody col={1} caption={true}>
           Through data analytics, we found that users tend to make repeated
           orders from the same restaurants. I helped design a feature that

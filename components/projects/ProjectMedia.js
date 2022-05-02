@@ -6,7 +6,7 @@ export default function ProjectMedia(props) {
   return (
     <div className=" block grid rounded-md overflow-hidden col-start-1 md:col-start-5 col-end-13">
       {props.isImage ? (
-        <img className="w-full rounded-md h-full" src={props.src} />
+        <Image src={props.src} alt="image" placeholder="blur" />
       ) : (
         <CardVideo video={props.content} placeholder={props.placeholder} />
       )}

@@ -26,6 +26,7 @@ export default function HomeCard(props) {
               layout="fill"
               objectFit="cover"
               src={props.content}
+              priority
             />
           ) : (
             <CardVideo link={props.content} placeholder={props.placeholder} />

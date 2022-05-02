@@ -64,9 +64,11 @@ export default function Home() {
           <br></br>
           In the past, I worked at{" "}
           <TextLink link="https://www.apple.com/siri/">Apple</TextLink>,{" "}
-          <TextLink link="https://twitter.com/metalinklabs">Metalink</TextLink>,{" "}
-          <TextLink link="https://natural.ai/#/">Brain Technologies</TextLink>,
-          and{" "}
+          <TextLink link="https://twitter.com/metalinklabs">
+            Metalink Labs
+          </TextLink>
+          , <TextLink link="https://natural.ai/#/">Brain Technologies</TextLink>
+          , and{" "}
           <TextLink link="https://elevationchurch.org/">
             Elevation Church
           </TextLink>
@@ -107,11 +109,11 @@ export default function Home() {
         ></HomeCard>
 
         <HomeCard
-          title="Metalink"
+          title="Metalink Labs"
           description="Product Design"
           col={2}
           isImage={true}
-          locked={true}
+          link="/metalink"
           content={"/project-covers/metalink-2.jpg"}
         ></HomeCard>
 

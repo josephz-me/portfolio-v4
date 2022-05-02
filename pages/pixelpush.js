@@ -14,6 +14,7 @@ import ExternalVideo from "../components/projects/ExternalVideo";
 import LinkCard from "../components/projects/LinkCard";
 import Link from "next/link";
 import ProjectDetails from "../components/projects/ProjectDetails";
+import GalleryArt from "../public/work/pixelpush/gallery-art.jpg";
 
 const item = {
   hidden: { opacity: 0 },
@@ -44,8 +45,6 @@ export default function PixelPush() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -93,10 +92,7 @@ export default function PixelPush() {
           View complete documentation
         </LinkCard>
         <ExternalVideo url="https://player.vimeo.com/video/488803937?h=99634d02a7&title=0&byline=0&portrait=0"></ExternalVideo>
-        <ProjectMedia
-          src="/work/pixelpush/gallery-art.jpg"
-          isImage={true}
-        ></ProjectMedia>
+        <ProjectMedia src={GalleryArt} isImage={true}></ProjectMedia>
         <ProjectBody caption={true}>
           Some of the art made with our collaborative painting tool!
         </ProjectBody>
