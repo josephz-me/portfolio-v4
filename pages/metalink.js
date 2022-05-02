@@ -26,11 +26,11 @@ export default function Metalink() {
         <ProjectTitle role="product design">Metalink Labs</ProjectTitle>
         <ProjectBody col={2}>
           Scam, social engineering, and disorganization plagues the web3
-          landscape. Everyday, malicious individuals scam people of thousands of
-          dollars and hackers infiltrate Discords servers everyday. Metalink
-          Labs aims to solve these issues by launching a web3 social platform
-          that securely unifies chat, trade, and portfolio data. During my time
-          here, I built the design system from scratch, revamped the entire chat
+          landscape. Malicious individuals scam people of thousands of dollars
+          and hackers infiltrate Discords servers everyday. Metalink Labs aims
+          to solve these issues by launching a web3 social platform that
+          securely unifies chat, trade, and portfolio data. During my time here,
+          I built the design system from scratch, revamped the entire chat
           interface, and co-designed the initial specs for a peer-to-peer
           trading experience.
         </ProjectBody>
