@@ -28,13 +28,13 @@ export default function Metalink() {
         <ProjectHero isImage={true} content="/project-covers/metalink.jpg" />
         <ProjectTitle role="product design">Metalink Labs</ProjectTitle>
         <ProjectBody col={2}>
-          Scam, social engineering, and disorganization plague the web3
+          {`Scam, social engineering, and disorganization plague the web3
           landscape, making it difficult to securely connect with others.
           Metalink Labs aims to solve these issues by launching a web3 social
           platform that synthesizes chat, trade, and data. During my time here,
           I introduced significantly more robust design infrastructure by
           starting a robust design system, improving global navigation, and
-          fully revamping Metalink's chat interface.
+          fully revamping Metalink's chat interface.`}
         </ProjectBody>
 
         <ProjectDetails
