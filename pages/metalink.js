@@ -25,17 +25,16 @@ export default function Metalink() {
       animate={{ opacity: 1 }}
     >
       <GridContainer>
-        <ProjectHero isImage={true} content="/project-covers/metalink-2.jpg" />
+        <ProjectHero isImage={true} content="/project-covers/metalink.jpg" />
         <ProjectTitle role="product design">Metalink Labs</ProjectTitle>
         <ProjectBody col={2}>
-          Scam, social engineering, and disorganization plagues the web3
-          landscape. Malicious individuals scam people of thousands of dollars
-          and hackers infiltrate Discords servers everyday. Metalink Labs aims
-          to solve these issues by launching a web3 social platform that
-          securely unifies chat, trade, and portfolio data. During my time here,
-          I built the design system from scratch, revamped the entire chat
-          interface, and co-designed the initial specs for a peer-to-peer
-          trading experience.
+          Scam, social engineering, and disorganization plague the web3
+          landscape, making it difficult to securely connect with others.
+          Metalink Labs aims to solve these issues by launching a web3 social
+          platform that synthesizes chat, trade, and data. During my time here,
+          I introduced significantly more robust design infrastructure by
+          starting a robust design system, improving global navigation, and
+          fully revamping Metalink's chat interface.
         </ProjectBody>
 
         <ProjectDetails

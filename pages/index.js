@@ -114,7 +114,7 @@ export default function Home() {
           col={2}
           isImage={true}
           link="/metalink"
-          content={"/project-covers/metalink-2.jpg"}
+          content={"/project-covers/metalink.jpg"}
         ></HomeCard>
 
         <HomeCard
