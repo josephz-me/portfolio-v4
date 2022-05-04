@@ -51,7 +51,7 @@ export default function Aiga() {
       animate={{ opacity: 1 }}
     >
       <GridContainer>
-        <ProjectHero isImage={true} content="/project-covers/aiga-2.jpg" />
+        <ProjectHero content="/project-covers/aiga-2.jpg" />
         <ProjectTitle role="Interactive Data Visualization">
           AIGA & Hue
         </ProjectTitle>

@@ -50,6 +50,7 @@ export default function Apple() {
     >
       <GridContainer>
         <ProjectHero
+          isVideo={true}
           placeholder={"/project-covers/apple-placeholder.jpg"}
           content="/project-covers/apple.mp4"
         />

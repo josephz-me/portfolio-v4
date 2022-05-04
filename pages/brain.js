@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import HomeCard from "../components/home/HomeCard";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -61,7 +60,7 @@ export default function Brain() {
       animate={{ opacity: 1 }}
     >
       <GridContainer>
-        <ProjectHero isImage={true} content="/project-covers/natural.jpg" />
+        <ProjectHero content="/project-covers/natural.jpg" />
         <ProjectTitle role="multimodal interaction">
           Brain Technologies
         </ProjectTitle>
@@ -83,33 +82,33 @@ export default function Brain() {
           tools={["figma", "origami studio"]}
         />
 
-        <ProjectMedia src={Notifs} isImage={true}></ProjectMedia>
+        <ProjectMedia src={Notifs}></ProjectMedia>
         <ProjectBody col={1} caption={true}>
           Redesigned notifications to be more communicative and systematic
           across domains.
         </ProjectBody>
-        <ProjectMedia src={FoodCheckout} isImage={true}></ProjectMedia>
+        <ProjectMedia src={FoodCheckout}></ProjectMedia>
         <ProjectBody col={1} caption={true}>
           Designed a better way for people to view their preferences and
           purchase details.
         </ProjectBody>
-        <ProjectMedia src={Meetup1} isImage={true}></ProjectMedia>
-        <ProjectMedia src={Meetup2} isImage={true}></ProjectMedia>
+        <ProjectMedia src={Meetup1}></ProjectMedia>
+        <ProjectMedia src={Meetup2}></ProjectMedia>
         <ProjectBody col={1} caption={true}>
           Led designs for an experimental feature, Meet up, where users can find
           restaurants and make reservations based on location and preference.
           The app leverages user location data to find top Yelp rated
           restaurants geographically close to both users.{" "}
         </ProjectBody>
-        <ProjectMedia src={FluidSearch} isImage={true}></ProjectMedia>
+        <ProjectMedia src={FluidSearch}></ProjectMedia>
         <ProjectBody col={1} caption={true}>
           I designed the fluid search bar that appears when users scroll down
           the screen. Prior to this implementation, scrolling up would hide all
           query variables making the process of finding the search field
           difficult. This proposal solved that. (Collaborated with Gleb)
         </ProjectBody>
-        <ProjectMedia src={Multiparam1} isImage={true}></ProjectMedia>
-        <ProjectMedia src={Multiparam2} isImage={true}></ProjectMedia>
+        <ProjectMedia src={Multiparam1}></ProjectMedia>
+        <ProjectMedia src={Multiparam2}></ProjectMedia>
         <ProjectBody col={1} caption={true}>
           Voice queries can have multiple layers of complexity which gives users
           a wide range of ways to achieve what they want. For example, users can
@@ -119,7 +118,7 @@ export default function Brain() {
           page. I worked with NLP team to implement this in various domains.
         </ProjectBody>
 
-        <ProjectMedia src={ReorderSuggestions} isImage={true}></ProjectMedia>
+        <ProjectMedia src={ReorderSuggestions}></ProjectMedia>
         <ProjectBody col={1} caption={true}>
           Through data analytics, we found that users tend to make repeated
           orders from the same restaurants. I helped design a feature that

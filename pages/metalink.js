@@ -12,7 +12,10 @@ import ProjectTitle from "../components/projects/ProjectTitle";
 import ProjectDetails from "../components/projects/ProjectDetails";
 
 import Notifs from "../public/work/brain/notifications.jpg";
-import LinkCard from "../components/projects/LinkCard";
+import DS from "../public/work/metalink/design-system.jpg";
+import Launchpad from "../public/work/metalink/launchpad.jpg";
+import ProfileModal from "../public/work/metalink/profile-modal.jpg";
+import Trading1 from "../public/work/metalink/trading-1.jpg";
 
 export default function Metalink() {
   return (
@@ -46,6 +49,14 @@ export default function Metalink() {
           duration="4 months"
           tools={["figma"]}
         />
+        {/* <ProjectMedia src={DS}></ProjectMedia>
+        <ProjectBody>Test</ProjectBody>
+        <ProjectMedia src={Launchpad}></ProjectMedia>
+        <ProjectBody>Test</ProjectBody>
+        <ProjectMedia src={ProfileModal}></ProjectMedia>
+        <ProjectBody>Test</ProjectBody>
+        <ProjectMedia src={Trading1}></ProjectMedia>
+        <ProjectBody>Test</ProjectBody> */}
       </GridContainer>
     </motion.main>
   );

@@ -7,7 +7,9 @@ import Image from "next/image";
 export default function ProjectHero(props) {
   return (
     <div className="relative overflow-hidden rounded-md my-2 md:my-8 h-[60vw] md:h-[49vw] object-cover w-full grid col-span-12">
-      {props.isImage ? (
+      {props.isVideo ? (
+        <CardVideo link={props.content} placeholder={props.placeholder} />
+      ) : (
         <Image
           alt="project hero"
           layout="fill"
@@ -15,8 +17,6 @@ export default function ProjectHero(props) {
           src={props.content}
           priority
         />
-      ) : (
-        <CardVideo link={props.content} placeholder={props.placeholder} />
       )}
     </div>
   );

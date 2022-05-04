@@ -56,6 +56,7 @@ export default function Home() {
     >
       <GridContainer>
         <ProjectHero
+          isVideo={true}
           placeholder="/project-covers/thinkspace-placeholder.jpeg"
           content="/project-covers/thinkspace.mp4"
         />

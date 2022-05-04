@@ -16,6 +16,16 @@ p {
   /* color: rgba(255, 255, 255, 0.9); */
 }
 
+h1 {
+  font-family: nimbus-sans-extended, sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
+  font-style: normal;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
 @media only screen and (max-width: 500px) {
   a,
   p {
