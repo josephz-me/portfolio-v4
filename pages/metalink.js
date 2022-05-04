@@ -31,10 +31,9 @@ export default function Metalink() {
           {`Scam, social engineering, and disorganization plague the web3
           landscape, making it difficult to securely connect with others.
           Metalink Labs aims to solve these issues by launching a web3 social
-          platform that synthesizes chat, trade, and data. During my time here,
-          I introduced significantly more robust design infrastructure by
-          starting a robust design system, improving global navigation, and
-          fully revamping Metalink's chat interface.`}
+          platform that synthesizes chat, trade, and data. During my time there,
+          I introduced design infrastructure by building a 0 to 1 design system, improving global navigation, and
+          fully revamping Metalink's messaging interface.`}
         </ProjectBody>
 
         <ProjectDetails
