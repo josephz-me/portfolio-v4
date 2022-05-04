@@ -9,16 +9,16 @@ import ProjectBody from "../components/projects/ProjectBody";
 import ProjectMedia from "../components/projects/ProjectMedia";
 import ProjectTitle from "../components/projects/ProjectTitle";
 import ProjectDetails from "../components/projects/ProjectDetails";
+import MobileMockupVideo from "../components/projects/MobileMockupVideo";
 
 import Notifs from "../public/work/brain/notifications.jpg";
 import FoodCheckout from "../public/work/brain/food-checkout.jpg";
 import FluidSearch from "../public/work/brain/fluid-search.jpg";
 import Declined from "../public/work/brain/declined.jpg";
-import Meetup1 from "../public/work/brain/meetup-1.jpg";
-import Meetup2 from "../public/work/brain/meetup-2.jpg";
+import Meetup from "../public/work/brain/meetup-1.jpg";
+
 import Multiparam1 from "../public/work/brain/multiparam-1.jpg";
 import Multiparam2 from "../public/work/brain/multiparam-2.jpg";
-import ReorderSuggestions from "../public/work/brain/reorder-suggestions.jpg";
 
 const item = {
   hidden: { opacity: 0 },
@@ -74,10 +74,15 @@ export default function Brain() {
           released to the public.
         </ProjectBody>
 
+        <MobileMockupVideo src="work/brain/fluid-search.mp4"></MobileMockupVideo>
+        <ProjectBody col={1} caption={true}>
+          Worked with Gleb to design a search bar for all domains, which
+          improved UI visiblity and clarity.
+        </ProjectBody>
+
         <ProjectDetails
           role={["design intern"]}
-          replaceCollab="manager"
-          collaborators={["jerry yue (ceo)"]}
+          collaborators={["jerry yue (ceo)", "Gleb Kuznetsov"]}
           duration="8 months"
           tools={["figma", "origami studio"]}
         />
@@ -92,37 +97,23 @@ export default function Brain() {
           Designed a better way for people to view their preferences and
           purchase details.
         </ProjectBody>
-        <ProjectMedia src={Meetup1}></ProjectMedia>
-        <ProjectMedia src={Meetup2}></ProjectMedia>
+        <MobileMockupVideo src="/work/brain/food-preferences.mp4"></MobileMockupVideo>
+        <ProjectBody col={1} caption={true}>
+          Expandable cards that can be collapsed for a more compact view.
+        </ProjectBody>
+        <ProjectMedia src={Meetup}></ProjectMedia>
+
         <ProjectBody col={1} caption={true}>
           Led designs for an experimental feature, Meet up, where users can find
           restaurants and make reservations based on location and preference.
           The app leverages user location data to find top Yelp rated
-          restaurants geographically close to both users.{" "}
-        </ProjectBody>
-        <ProjectMedia src={FluidSearch}></ProjectMedia>
-        <ProjectBody col={1} caption={true}>
-          I designed the fluid search bar that appears when users scroll down
-          the screen. Prior to this implementation, scrolling up would hide all
-          query variables making the process of finding the search field
-          difficult. This proposal solved that. (Collaborated with Gleb)
-        </ProjectBody>
-        <ProjectMedia src={Multiparam1}></ProjectMedia>
-        <ProjectMedia src={Multiparam2}></ProjectMedia>
-        <ProjectBody col={1} caption={true}>
-          Voice queries can have multiple layers of complexity which gives users
-          a wide range of ways to achieve what they want. For example, users can
-          say &apos;Order Burger King&apos; or include parameter(s) such as
-          &apos;Order chicken nuggets from Burger King.&apos; Multi-parameter
-          queries like such should route users to different parts of the menu
-          page. I worked with NLP team to implement this in various domains.
+          restaurants geographically close to both users.
         </ProjectBody>
 
-        <ProjectMedia src={ReorderSuggestions}></ProjectMedia>
+        <MobileMockupVideo src="/work/brain/reorder-suggestions.mp4"></MobileMockupVideo>
         <ProjectBody col={1} caption={true}>
-          Through data analytics, we found that users tend to make repeated
-          orders from the same restaurants. I helped design a feature that
-          intelligently suggests restaurants from previous orders.
+          Prototyped intelligent restaurant suggestions based on user preference
+          and order history.
         </ProjectBody>
       </GridContainer>
     </motion.main>
