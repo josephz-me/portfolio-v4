@@ -99,23 +99,6 @@ export default function Home() {
           isImage={true}
           content={"/project-covers/natural.jpg"}
         ></HomeCard>
-        <HomeCard
-          title="Azuki"
-          description="Web3 Brand"
-          col={1}
-          isImage={true}
-          content={"/project-covers/azuki-1.jpg"}
-          locked={true}
-        ></HomeCard>
-
-        <HomeCard
-          title="Metalink Labs"
-          description="Product Design"
-          col={2}
-          isImage={true}
-          link="/metalink"
-          content={"/project-covers/metalink.jpg"}
-        ></HomeCard>
 
         <HomeCard
           title="AIGA&Hue"
@@ -126,15 +109,13 @@ export default function Home() {
           content={"/project-covers/aiga-2.jpg"}
         ></HomeCard>
         <HomeCard
-          title="Thinkspace"
-          description="assistive voice agents"
-          link="/thinkspace"
+          title="Metalink Labs"
+          description="Product Design"
           col={2}
-          isImage={false}
-          content={"/project-covers/thinkspace.mp4"}
-          placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
+          isImage={true}
+          link="/metalink"
+          content={"/project-covers/metalink.jpg"}
         ></HomeCard>
-
         <HomeCard
           title="Pixel Push"
           description="Multiplayer painting experience"
@@ -142,6 +123,15 @@ export default function Home() {
           col={1}
           isImage={false}
           content={"/project-covers/pixel-push.mp4"}
+          placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
+        ></HomeCard>
+        <HomeCard
+          title="Thinkspace"
+          description="assistive voice agents"
+          link="/thinkspace"
+          col={2}
+          isImage={false}
+          content={"/project-covers/thinkspace.mp4"}
           placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
         ></HomeCard>
       </GridContainer>
