@@ -65,13 +65,29 @@ export default function Brain() {
           Brain Technologies
         </ProjectTitle>
         <ProjectBody col={2}>
-          From 2020-2021, I worked with Brain Technologies on various design
-          initiatives for Natural AI, an iOS app focused on making the commerce
-          experience more fluid through AI and voice. A lot of my time went into
-          R&D around search and creative applications of NLP, but some of my
-          work has also shipped and is now in the app store. My future-facing
-          work is under NDA, but below is a list of features that have been
-          released to the public.
+          From 2020-2021, I designed experimental computing interfaces for
+          Natural AI, an iOS app focused on making commerce experience more
+          fluid through AI and voice. The majority of my time went into R&D
+          around search and creative applications of NLP, but some of my work
+          has also shipped and is now in the app store.
+        </ProjectBody>
+        <ProjectDetails
+          role={["design intern"]}
+          collaborators={["jerry yue (ceo)", "Gleb Kuznetsov"]}
+          duration="8 months"
+          tools={["figma", "origami studio"]}
+        />
+
+        <MobileMockupVideo src="work/brain/layered-queries.mp4"></MobileMockupVideo>
+        <ProjectBody col={1} caption={true}>
+          (Scrapped concept) Prototyped how people could refine search through
+          multiple queries.
+        </ProjectBody>
+
+        <MobileMockupVideo src="work/brain/variable-search.mp4"></MobileMockupVideo>
+        <ProjectBody col={1} caption={true}>
+          (Scrapped concept) Prototyped an alternative navigation model where
+          search variables remain surfaced.
         </ProjectBody>
 
         <MobileMockupVideo src="work/brain/fluid-search.mp4"></MobileMockupVideo>
@@ -79,13 +95,6 @@ export default function Brain() {
           Worked with Gleb to design a search bar for all domains, which
           improved UI visiblity and clarity.
         </ProjectBody>
-
-        <ProjectDetails
-          role={["design intern"]}
-          collaborators={["jerry yue (ceo)", "Gleb Kuznetsov"]}
-          duration="8 months"
-          tools={["figma", "origami studio"]}
-        />
 
         <ProjectMedia src={Notifs}></ProjectMedia>
         <ProjectBody col={1} caption={true}>

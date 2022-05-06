@@ -2,22 +2,6 @@ import { motion, AnimatePresence, useForceUpdate } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import NProgress from "nprogress";
-import Router from "next/router";
-
-Router.onRouteChangeStart = () => {
-  console.log("start");
-  NProgress.start();
-};
-
-Router.onRouteChangeComplete = () => {
-  console.log("done");
-  NProgress.done();
-};
-
-Router.onRouteChangeError = () => {
-  NProgress.done();
-};
 
 export default function Navbar(props) {
   const pageName = useRouter().asPath;
