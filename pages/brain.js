@@ -10,11 +10,11 @@ import ProjectMedia from "../components/projects/ProjectMedia";
 import ProjectTitle from "../components/projects/ProjectTitle";
 import ProjectDetails from "../components/projects/ProjectDetails";
 import MobileMockupVideo from "../components/projects/MobileMockupVideo";
+import LinkCard from "../components/projects/LinkCard";
+import Spacer from "../components/projects/Spacer";
 
 import Notifs from "../public/work/brain/notifications.jpg";
 import FoodCheckout from "../public/work/brain/food-checkout.jpg";
-import FluidSearch from "../public/work/brain/fluid-search.jpg";
-import Declined from "../public/work/brain/declined.jpg";
 import Meetup from "../public/work/brain/meetup-1.jpg";
 
 import Multiparam1 from "../public/work/brain/multiparam-1.jpg";
@@ -67,12 +67,12 @@ export default function Brain() {
         <ProjectBody col={2}>
           From 2020-2021, I prototyped new ways to engage with computer
           interfaces, mostly working with voice and AI. Unfortunately, most of
-          my (exciting) work is under NDA but some of my work has shipped and is
-          now in the{" "}
+          my (exciting) work is under NDA and can only be shared upon request.
+          Some of my work has shipped though and is now in the{" "}
           <TextLink link="https://apps.apple.com/us/app/id1521375720/?role=f8a07a03-a0a9-4a5e-b59e-b48cb3ab1478">
             app store
-          </TextLink>
-          . Below are a few examples.
+          </TextLink>{" "}
+          — Below are a few examples.
         </ProjectBody>
         <ProjectDetails
           role={["design intern"]}
@@ -80,6 +80,17 @@ export default function Brain() {
           duration="8 months"
           tools={["figma", "origami studio"]}
         />
+
+        <LinkCard col={1} link="https://natural.ai/#/">
+          Main Website
+        </LinkCard>
+        <LinkCard
+          col={2}
+          link="https://apps.apple.com/us/app/id1521375720/?role=f8a07a03-a0a9-4a5e-b59e-b48cb3ab1478"
+        >
+          Natural AI App
+        </LinkCard>
+        <Spacer></Spacer>
 
         <MobileMockupVideo src="work/brain/fluid-search.mp4"></MobileMockupVideo>
         <ProjectBody col={1} caption={true}>

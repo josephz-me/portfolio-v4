@@ -12,9 +12,9 @@ import ProjectMedia from "../components/projects/ProjectMedia";
 import ProjectTitle from "../components/projects/ProjectTitle";
 import ExternalVideo from "../components/projects/ExternalVideo";
 import LinkCard from "../components/projects/LinkCard";
-import Link from "next/link";
 import ProjectDetails from "../components/projects/ProjectDetails";
 import GalleryArt from "../public/work/pixelpush/gallery-art.jpg";
+import Spacer from "../components/projects/Spacer";
 
 const item = {
   hidden: { opacity: 0 },
@@ -91,6 +91,7 @@ export default function PixelPush() {
         <LinkCard link="https://josephz.notion.site/Pixel-Push-48910c3a971747b0b6fc3f31572b9984">
           View complete documentation
         </LinkCard>
+        <Spacer></Spacer>
         <ExternalVideo url="https://player.vimeo.com/video/488803937?h=99634d02a7&title=0&byline=0&portrait=0"></ExternalVideo>
         <ProjectMedia src={GalleryArt} isImage={true}></ProjectMedia>
         <ProjectBody caption={true}>

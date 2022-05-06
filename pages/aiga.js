@@ -7,6 +7,7 @@ import ProjectBody from "../components/projects/ProjectBody";
 import ProjectMedia from "../components/projects/ProjectMedia";
 import ProjectTitle from "../components/projects/ProjectTitle";
 import ExternalVideo from "../components/projects/ExternalVideo";
+import Spacer from "../components/projects/Spacer";
 import LinkCard from "../components/projects/LinkCard";
 import Link from "next/link";
 import ProjectDetails from "../components/projects/ProjectDetails";
@@ -80,6 +81,7 @@ export default function Aiga() {
         <LinkCard link="https://josephz.notion.site/AIGA-Hue-38cd5f40c38c464ab1c5885468a1a3de">
           View complete documentation
         </LinkCard>
+        <Spacer></Spacer>
         <ExternalVideo url="https://player.vimeo.com/video/529104061?h=d6d37cfb1c&title=0&byline=0&portrait=0"></ExternalVideo>
         <ProjectBody caption={true}>
           {`Synthesized +9400 data points from AIGA's census and interactively
