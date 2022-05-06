@@ -65,11 +65,14 @@ export default function Brain() {
           Brain Technologies
         </ProjectTitle>
         <ProjectBody col={2}>
-          From 2020-2021, I designed experimental computing interfaces for
-          Natural AI, an iOS app focused on making commerce experience more
-          fluid through AI and voice. The majority of my time went into R&D
-          around search and creative applications of NLP, but some of my work
-          has also shipped and is now in the app store.
+          From 2020-2021, I prototyped new ways to engage with computer
+          interfaces, mostly working with voice and AI. Unfortunately, most of
+          my (exciting) work is under NDA but some of my work has shipped and is
+          now in the{" "}
+          <TextLink link="https://apps.apple.com/us/app/id1521375720/?role=f8a07a03-a0a9-4a5e-b59e-b48cb3ab1478">
+            app store
+          </TextLink>
+          . Below are a few examples.
         </ProjectBody>
         <ProjectDetails
           role={["design intern"]}
@@ -77,18 +80,6 @@ export default function Brain() {
           duration="8 months"
           tools={["figma", "origami studio"]}
         />
-
-        <MobileMockupVideo src="work/brain/layered-queries.mp4"></MobileMockupVideo>
-        <ProjectBody col={1} caption={true}>
-          (Scrapped concept) Prototyped how people could refine search through
-          multiple queries.
-        </ProjectBody>
-
-        <MobileMockupVideo src="work/brain/variable-search.mp4"></MobileMockupVideo>
-        <ProjectBody col={1} caption={true}>
-          (Scrapped concept) Prototyped an alternative navigation model where
-          search variables remain surfaced.
-        </ProjectBody>
 
         <MobileMockupVideo src="work/brain/fluid-search.mp4"></MobileMockupVideo>
         <ProjectBody col={1} caption={true}>
