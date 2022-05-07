@@ -29,7 +29,7 @@ export default function Metalink() {
         <ProjectTitle role="product design">Metalink Labs</ProjectTitle>
         <ProjectBody col={2}>
           {`Scam, social engineering, and disorganization plague the web3
-          landscape, making it difficult to securely connect with others.
+          landscape, making it difficult to safely connect with others.
           Metalink Labs aims to solve these issues by launching a web3 social
           platform that synthesizes chat, trade, and data. During my time there,
           I introduced design infrastructure by building a 0 to 1 design system, improving global navigation, and

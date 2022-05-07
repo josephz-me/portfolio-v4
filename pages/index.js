@@ -48,10 +48,10 @@ export default function Home() {
             scrollY > 40 ? "md:opacity-0 pointer-events-none" : ""
           } gap-6 text-zinc-100 lg:sticky top-[2rem] pt-2  mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
         >
-          I&apos;m a designer interested in all things related to digital
-          toolmaking, multimodal interaction, and systems thinking. I believe
-          good design reflects artistic values focused around emotion and play.
-          I&apos;m a fourth year undergrad at Carnegie Mellon studying
+          I&apos;m a designer who loves digital toolmaking and multimodal
+          interaction. I believe good design reflects artistic values focused
+          around emotion and play. I&apos;m a fourth year undergrad at Carnegie
+          Mellon studying
           {` `}
           <TextLink link="https://design.cmu.edu/content/bachelor-design">
             Communication Design
@@ -122,8 +122,8 @@ export default function Home() {
           link="/pixelpush"
           col={1}
           isImage={false}
-          content={"/project-covers/pixel-push.mp4"}
-          placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
+          content={"/project-covers/pixelpush.mp4"}
+          placeholder={"/project-covers/pixelpush-placeholder.jpg"}
         ></HomeCard>
         <HomeCard
           title="Thinkspace"
