@@ -29,7 +29,7 @@ export default function HomeCard(props) {
               priority
             />
           ) : (
-            <CardVideo link={props.content} placeholder={props.placeholder} />
+            <CardVideo src={props.content} placeholder={props.placeholder} />
           )}
         </div>
 
