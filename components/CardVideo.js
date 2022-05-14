@@ -9,15 +9,26 @@ export default function CardVideo(props) {
     console.log(isVideoLoaded);
   };
 
+  useEffect(() => {
+    console.log(props.link);
+  });
+
   return (
     <div className="relative rounded-md overflow-hidden h-full">
-      <Image
-        alt="thumbnail video"
-        layout="fill"
-        objectFit="cover"
-        src={props.placeholder}
-        style={{ opacity: isVideoLoaded ? 0 : 1 }}
-      />
+      {props.placeholder ? (
+        <Image
+          alt="thumbnail video"
+          layout="fill"
+          objectFit="cover"
+          src={props.placeholder}
+          style={{ opacity: isVideoLoaded ? 0 : 1 }}
+        />
+      ) : (
+        <div
+          className="absolute top-0 w-full h-full bg-[rgba(255,255,255,.05)] animate-pulse"
+          style={{ display: isVideoLoaded ? "none" : "inline" }}
+        ></div>
+      )}
 
       <video
         className="object-cover w-full h-full"
@@ -25,7 +36,7 @@ export default function CardVideo(props) {
         playsInline
         loop
         muted
-        src={props.link}
+        src={props.src}
         onCanPlay={onLoadedData}
         style={{ opacity: isVideoLoaded ? 1 : 0 }}
       />

@@ -122,7 +122,7 @@ export default function Home() {
           link="/pixelpush"
           col={1}
           isImage={false}
-          content={"/project-covers/pixelpush.mp4"}
+          content={"/project-covers/pixel-push.mp4"}
           placeholder={"/project-covers/pixelpush-placeholder.jpg"}
         ></HomeCard>
         <HomeCard

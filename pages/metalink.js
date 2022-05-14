@@ -12,9 +12,13 @@ import ProjectTitle from "../components/projects/ProjectTitle";
 import ProjectDetails from "../components/projects/ProjectDetails";
 
 import Notifs from "../public/work/brain/notifications.jpg";
-import DS from "../public/work/metalink/design-system.jpg";
+import DS from "../public/work/metalink/ds.jpg";
+import DS2 from "../public/work/metalink/ds-2.jpg";
+import MembersPopup from "../public/work/metalink/members-popup.jpg";
 import Launchpad from "../public/work/metalink/launchpad.jpg";
 import ProfileModal from "../public/work/metalink/profile-modal.jpg";
+import MessageStates from "../public/work/metalink/message-states.jpg";
+import Message from "../public/work/metalink/message.jpg";
 import Trading1 from "../public/work/metalink/trading-1.jpg";
 
 export default function Metalink() {
@@ -35,7 +39,6 @@ export default function Metalink() {
           I introduced design infrastructure by building a 0 to 1 design system, improving global navigation, and
           fully revamping Metalink's messaging interface.`}
         </ProjectBody>
-
         <ProjectDetails
           role={["product designer (contract)"]}
           collaborators={[
@@ -47,11 +50,34 @@ export default function Metalink() {
           duration="4 months"
           tools={["figma"]}
         />
-        {/* <ProjectMedia src={DS}></ProjectMedia>
-        <ProjectBody>Test</ProjectBody>
-        <ProjectMedia src={Launchpad}></ProjectMedia>
-        <ProjectBody>Test</ProjectBody>
+        <ProjectMedia src={DS}></ProjectMedia>
+        <ProjectBody caption={true}>
+          Built the design system from the ground up with the goal of unifying
+          visual language and aiding in a leaner engineering workflow.
+        </ProjectBody>
+        <ProjectMedia
+          src={"/work/metalink/global-navbar.mp4"}
+          isVideo={true}
+        ></ProjectMedia>
+        <ProjectMedia src={DS2}></ProjectMedia>
+        <ProjectBody caption={true}>
+          Redesigned the global navigation panel with an emphasis on clarity and
+          scalability.
+        </ProjectBody>{" "}
+        <ProjectMedia src={MembersPopup}></ProjectMedia>
         <ProjectMedia src={ProfileModal}></ProjectMedia>
+        <ProjectBody caption={true}>
+          Designs contextual profile popups that allow users to easily learn
+          about other collectors.
+        </ProjectBody>
+        <ProjectMedia src={Message}></ProjectMedia>
+        <ProjectMedia src={MessageStates}></ProjectMedia>
+        <ProjectBody caption={true}>
+          Organized chat elements into reusable and width-responsive design
+          components.
+        </ProjectBody>
+        {/* 
+        <ProjectMedia src={Launchpad}></ProjectMedia>
         <ProjectBody>Test</ProjectBody>
         <ProjectMedia src={Trading1}></ProjectMedia>
         <ProjectBody>Test</ProjectBody> */}
