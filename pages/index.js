@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import HomeCard from "../components/home/HomeCard";
+import ProjectCard from "../components/home/ProjectCard";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TextLink from "../components/TextLink";
@@ -48,41 +48,33 @@ export default function Home() {
             scrollY > 40 ? "md:opacity-0 pointer-events-none" : ""
           } gap-6 text-zinc-100 lg:sticky top-[2rem] pt-2  mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
         >
-          I&apos;m a designer who loves digital toolmaking and multimodal
-          interaction. I believe good design reflects artistic values focused
-          around emotion and play. I&apos;m a fourth year undergrad at Carnegie
-          Mellon studying
-          {` `}
+          I&apos;m Joseph — a designer interested in digital toolmaking and
+          multimodal interaction. I believe good design reflects artistic values
+          focused around emotion and play. I hold a{` `}
           <TextLink link="https://design.cmu.edu/content/bachelor-design">
-            Communication Design
+            Bachelor of Design
           </TextLink>{" "}
-          and{" "}
+          and minor in{" "}
           <TextLink link="https://www.hcii.cmu.edu/">
-            Human-Computer Interaction
+            Human-Computer Interaction Institute
           </TextLink>
-          .<br></br>
-          <br></br>
-          In the past, I worked at{" "}
+          . In the past, I&apos;ve worked at{" "}
           <TextLink link="https://www.apple.com/siri/">Apple</TextLink>,{" "}
           <TextLink link="https://twitter.com/metalinklabs">
             Metalink Labs
           </TextLink>
           , <TextLink link="https://natural.ai/#/">Brain Technologies</TextLink>
-          , and{" "}
-          <TextLink link="https://elevationchurch.org/">
-            Elevation Church
-          </TextLink>
-          . I&apos;m currently a front-end developer at the{" "}
+          , and the{" "}
           <TextLink link="http://computational-creativity.org">
             Computational Creativity Lab
           </TextLink>
-          . After graduation, I&apos;ll be joining{" "}
+          . I&apos;m an incoming designer at{" "}
           <TextLink link="https://twitter.com/skiffprivacy">Skiff</TextLink>{" "}
-          full-time to work on privacy-centric collaboration tools. If you have
-          an interesting idea, let&apos;s get in touch.
+          where I&apos;ll be building privacy-first productivity tools and
+          workspaces. If you have an interesting idea, let&apos;s get in touch.
         </motion.p>
 
-        <HomeCard
+        <ProjectCard
           title="Apple"
           description="Multimodal interaction"
           col={1}
@@ -90,33 +82,33 @@ export default function Home() {
           isImage={false}
           content={"/project-covers/apple.mp4"}
           placeholder={"/project-covers/apple-placeholder.jpg"}
-        ></HomeCard>
-        <HomeCard
+        ></ProjectCard>
+        <ProjectCard
           title="Brain Technologies"
           description="multimodal interaction"
           link="/brain"
           col={2}
           isImage={true}
           content={"/project-covers/natural.jpg"}
-        ></HomeCard>
+        ></ProjectCard>
 
-        <HomeCard
+        <ProjectCard
           title="AIGA&Hue"
           description="Interactive data visualization"
           link="/aiga"
           col={1}
           isImage={true}
           content={"/project-covers/aiga-2.jpg"}
-        ></HomeCard>
-        <HomeCard
+        ></ProjectCard>
+        <ProjectCard
           title="Metalink Labs"
           description="Product Design"
           col={2}
           isImage={true}
           link="/metalink"
           content={"/project-covers/metalink.jpg"}
-        ></HomeCard>
-        <HomeCard
+        ></ProjectCard>
+        <ProjectCard
           title="Pixel Push"
           description="Multiplayer painting experience"
           link="/pixelpush"
@@ -124,8 +116,8 @@ export default function Home() {
           isImage={false}
           content={"/project-covers/pixel-push.mp4"}
           placeholder={"/project-covers/pixelpush-placeholder.jpg"}
-        ></HomeCard>
-        <HomeCard
+        ></ProjectCard>
+        <ProjectCard
           title="Thinkspace"
           description="assistive voice agents"
           link="/thinkspace"
@@ -133,7 +125,7 @@ export default function Home() {
           isImage={false}
           content={"/project-covers/thinkspace.mp4"}
           placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
-        ></HomeCard>
+        ></ProjectCard>
       </GridContainer>
     </motion.main>
   );

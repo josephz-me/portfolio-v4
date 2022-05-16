@@ -1,5 +1,3 @@
-import Head from "next/head";
-import HomeCard from "../components/home/HomeCard";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TextLink from "../components/TextLink";
