@@ -54,11 +54,11 @@ export default function Home() {
           <TextLink link="https://design.cmu.edu/content/bachelor-design">
             Bachelor of Design
           </TextLink>{" "}
-          and minor in{" "}
+          and{" "}
           <TextLink link="https://www.hcii.cmu.edu/">
             Human-Computer Interaction
           </TextLink>{" "}
-          from Carnegie Mellon University. In the past, he has worked at{" "}
+          minor from Carnegie Mellon University. In the past, he worked at{" "}
           <TextLink link="https://www.apple.com/siri/">Apple</TextLink>,{" "}
           <TextLink link="https://twitter.com/metalinklabs">
             Metalink Labs
@@ -70,7 +70,7 @@ export default function Home() {
           </TextLink>
           . Joseph is an incoming designer at{" "}
           <TextLink link="https://twitter.com/skiffprivacy">Skiff</TextLink>{" "}
-          where he'll be building privacy-first collaboration tools and
+          where he&apos;ll be building privacy-first collaboration tools and
           workspaces.
         </motion.p>
 
