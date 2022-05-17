@@ -32,9 +32,7 @@ export default function Navbar(props) {
           className={`transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]
             ${scrollY > 40 ? "md:opacity-0 pointer-events-none" : ""}`}
         >
-          {/* <Image
 
-          /> */}
           <img
             src={"/zhang-icon-white.svg"}
             alt="zhang logo"
