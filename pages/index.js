@@ -60,10 +60,10 @@ export default function Home() {
           </TextLink>{" "}
           minor from Carnegie Mellon University. In the past, he worked at{" "}
           <TextLink link="https://www.apple.com/siri/">Apple</TextLink>,{" "}
+          <TextLink link="https://natural.ai/#/">Brain Technologies</TextLink>,{" "}
           <TextLink link="https://twitter.com/metalinklabs">
             Metalink Labs
           </TextLink>
-          , <TextLink link="https://natural.ai/#/">Brain Technologies</TextLink>
           , and the{" "}
           <TextLink link="http://computational-creativity.org">
             Computational Creativity Lab

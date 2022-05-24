@@ -9,10 +9,6 @@ export default function CardVideo(props) {
     console.log(isVideoLoaded);
   };
 
-  useEffect(() => {
-    console.log(props.link);
-  });
-
   return (
     <div className="relative rounded-md overflow-hidden h-full">
       {props.placeholder ? (

@@ -1,19 +1,49 @@
 import GridContainer from "./GridContainer";
 import TextLink from "./TextLink";
 import { useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Footer() {
   const pageName = useRouter().asPath;
+  const [hover, setHover] = useState(false);
 
+  useEffect(() => {
+    console.log(hover);
+  }, [hover]);
   return (
     <footer
-      className={`text-zinc-100 pb-4 ${pageName == "/" ? " pt-12" : "pt-32"}`}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      className={`text-zinc-100 pb-4 ${pageName == "/" ? " mt-12" : "mt-32"}`}
     >
       <GridContainer>
-        <p className="col-start-1 col-end-5 text-zinc-700 hidden md:inline">
-          Joseph Zhang © 2022
-        </p>
+        {/* copyright and next.js mention */}
+        <div className="relative col-start-1 col-end-5  hidden md:inline">
+          {hover ? (
+            <AnimatePresence>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className={`absolute text-violet-300`}
+              >
+                Built with Next.js and Tailwind
+              </motion.p>
+            </AnimatePresence>
+          ) : (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className={`absolute text-zinc-700`}
+            >
+              Joseph Zhang © 2022
+            </motion.p>
+          )}
+        </div>
 
+        {/* links */}
         <span className="col-start-1 md:col-start-5">
           <TextLink link="/josephzhang-resume.pdf">Resume</TextLink>
         </span>
