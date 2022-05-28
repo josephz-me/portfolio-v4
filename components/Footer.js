@@ -23,19 +23,19 @@ export default function Footer() {
           {hover ? (
             <AnimatePresence>
               <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className={`absolute text-violet-300`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                className={`absolute text-zinc-500`}
               >
-                Built with Next.js and Tailwind
+                Built with Next.js React
               </motion.p>
             </AnimatePresence>
           ) : (
             <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
               className={`absolute text-zinc-700`}
             >
               Joseph Zhang © 2022
