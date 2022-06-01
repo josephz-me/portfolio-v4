@@ -56,11 +56,7 @@ export default function Home() {
       animate={{ opacity: 1 }}
     >
       <GridContainer>
-        <ProjectHero
-          isVideo={true}
-          placeholder="/project-covers/thinkspace-placeholder.jpeg"
-          content="/project-covers/thinkspace.mp4"
-        />
+        <ProjectHero isVideo={true} content="/project-covers/thinkspace.mp4" />
         <ProjectTitle role="assistive voice agents">Thinkspace</ProjectTitle>
         <ProjectBody col={2}>
           Rich, engaging conversation is a hallmark of meaningful human-to-human

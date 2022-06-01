@@ -48,11 +48,7 @@ export default function Apple() {
       animate={{ opacity: 1 }}
     >
       <GridContainer>
-        <ProjectHero
-          isVideo={true}
-          placeholder={"/project-covers/apple-placeholder.jpg"}
-          content="/project-covers/apple.mp4"
-        />
+        <ProjectHero isVideo={true} content="/project-covers/apple.mp4" />
         <ProjectTitle role="multimodal interaction">Apple</ProjectTitle>
         <ProjectBody col={2}>
           During the summers of 2020 and 2021, I interned at Apple as an

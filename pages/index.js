@@ -48,7 +48,7 @@ export default function Home() {
             scrollY > 40 ? "md:opacity-0 pointer-events-none" : ""
           } gap-6 text-zinc-100 lg:sticky top-[2rem] pt-2  mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
         >
-          Joseph is a designer interested in digital toolmaking and multimodal
+          Joseph is a designer interested in authoring tools and multimodal
           interaction. He believes good design reflects artistic values focused
           around emotion and play. He holds a{` `}
           <TextLink link="https://design.cmu.edu/content/bachelor-design">
@@ -58,8 +58,8 @@ export default function Home() {
           <TextLink link="https://www.hcii.cmu.edu/">
             Human-Computer Interaction
           </TextLink>{" "}
-          minor from Carnegie Mellon University. In the past, he worked at{" "}
-          <TextLink link="https://www.apple.com/siri/">Apple</TextLink>,{" "}
+          minor from Carnegie Mellon University. In the past, he&apos;s worked
+          at <TextLink link="https://www.apple.com/siri/">Apple</TextLink>,{" "}
           <TextLink link="https://natural.ai/#/">Brain Technologies</TextLink>,{" "}
           <TextLink link="https://twitter.com/metalinklabs">
             Metalink Labs
@@ -81,7 +81,7 @@ export default function Home() {
           link="/apple"
           isImage={false}
           content={"/project-covers/apple.mp4"}
-          placeholder={"/project-covers/apple-placeholder.jpg"}
+          // placeholder={"/project-covers/apple-placeholder.jpg"}
         ></ProjectCard>
         <ProjectCard
           title="Brain Technologies"
@@ -115,7 +115,7 @@ export default function Home() {
           col={1}
           isImage={false}
           content={"/project-covers/pixel-push.mp4"}
-          placeholder={"/project-covers/pixelpush-placeholder.jpg"}
+          // placeholder={"/project-covers/pixelpush-placeholder.jpg"}
         ></ProjectCard>
         <ProjectCard
           title="Thinkspace"
@@ -124,7 +124,7 @@ export default function Home() {
           col={2}
           isImage={false}
           content={"/project-covers/thinkspace.mp4"}
-          placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
+          // placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
         ></ProjectCard>
       </GridContainer>
     </motion.main>
