@@ -28,7 +28,7 @@ export default function CardVideo(props) {
   return (
     <div className="relative rounded-md overflow-hidden h-full">
       <div
-        className={`absolute top-0 w-full h-full transition duration-1000 ${
+        className={`absolute top-0 w-full h-full overflow-hidden z-10 rounded-md transition duration-1000 ${
           isVideoLoaded
             ? "opacity-0 bg-[rgba(255,255,255,0)]"
             : "opacity-100 animate-pulse bg-[rgba(255,255,255,.05)]"
@@ -47,7 +47,7 @@ export default function CardVideo(props) {
       </div>
 
       <video
-        className={`object-cover w-full h-full transition duration-700 ease-out ${
+        className={`object-cover w-full h-full transition duration-1000 overflow-hidden rounded-md ease-out ${
           isVideoLoaded ? "opacity-100 scale-[1]" : "opacity-0 scale-[1.06]"
         }`}
         autoPlay
