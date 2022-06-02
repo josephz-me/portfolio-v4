@@ -15,9 +15,6 @@ import Notifs from "../public/work/brain/notifications.jpg";
 import FoodCheckout from "../public/work/brain/food-checkout.jpg";
 import Meetup from "../public/work/brain/meetup-1.jpg";
 
-import Multiparam1 from "../public/work/brain/multiparam-1.jpg";
-import Multiparam2 from "../public/work/brain/multiparam-2.jpg";
-
 const item = {
   hidden: { opacity: 0 },
   show: { opacity: 1 },

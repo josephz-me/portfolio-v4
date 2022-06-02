@@ -1,9 +1,23 @@
 import CardVideo from "../CardVideo";
-import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import * as loadingCopy from "../loadingCopy";
+import Preloader from "../Preloader";
 
 export default function ProjectCard(props) {
+  const [isContentLoaded, setIsContentLoaded] = useState(false);
+  const [loadingPhrase, setLoadingPhrase] = useState("");
+
+  // preloader
+  const handleImageLoad = (e) => {
+    setIsContentLoaded(true);
+  };
+
+  useEffect(() => {
+    setLoadingPhrase(loadingCopy.combineCopy());
+  }, []);
+
   return (
     <Link variants={props.animation} href={`${props.link}`}>
       <div
@@ -21,15 +35,30 @@ export default function ProjectCard(props) {
       >
         <div className="relative h-[60vw] overflow-hidden object-cover lg:h-[29vw] rounded-md">
           {props.isImage ? (
-            <Image
-              alt="project cover"
-              layout="fill"
-              objectFit="cover"
-              src={props.content}
-              priority
-            />
+            <div className="relative h-full">
+              <article
+                className={`object-cover w-full h-full transition duration-500 overflow-hidden rounded-md ease-out ${
+                  isContentLoaded ? "opacity-1" : "opacity-0"
+                }`}
+              >
+                <Image
+                  alt="project cover"
+                  layout="fill"
+                  objectFit="cover"
+                  src={props.content}
+                  priority
+                  onLoadingComplete={() => {
+                    handleImageLoad();
+                  }}
+                />
+              </article>
+              <Preloader
+                loadingPhrase={loadingPhrase}
+                isContentLoaded={isContentLoaded}
+              ></Preloader>
+            </div>
           ) : (
-            <CardVideo src={props.content} placeholder={props.placeholder} />
+            <CardVideo src={props.content} loadingPhrase={loadingPhrase} />
           )}
         </div>
 

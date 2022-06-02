@@ -1,28 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-const loadingPhrases = [
-  "Generating graphics",
-  "Populating content",
-  "Materializing pixels",
-  "Painting thumbnails",
-  "Creating visuals",
-  "Developing graphics",
-  "Crafting images",
-];
 export default function CardVideo(props) {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [loadingPhrase, setLoadingPhrase] = useState();
-
-  useEffect(() => {
-    setLoadingPhrase(
-      loadingPhrases[Math.floor(Math.random() * loadingPhrases.length)]
-    );
-  }, []);
 
   const onLoadedData = () => {
     setIsVideoLoaded(true);
-    console.log(isVideoLoaded);
   };
 
   return (
@@ -35,7 +18,7 @@ export default function CardVideo(props) {
         }`}
       >
         <p className="text-zinc-500 flex h-full justify-center items-center">
-          {loadingPhrase}
+          {props.loadingPhrase}
           <span className="animate-[bounce_1s_ease-in-out_infinite]">.</span>
           <span className="animate-[bounce_1s_ease-in-out_.1s_infinite]">
             .
@@ -48,7 +31,7 @@ export default function CardVideo(props) {
 
       <video
         className={`object-cover w-full h-full transition duration-1000 overflow-hidden rounded-md ease-out ${
-          isVideoLoaded ? "opacity-100 scale-[1]" : "opacity-0 scale-[1.06]"
+          isVideoLoaded ? "opacity-100" : "opacity-0"
         }`}
         autoPlay
         playsInline

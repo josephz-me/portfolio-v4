@@ -8,9 +8,6 @@ export default function Footer() {
   const pageName = useRouter().asPath;
   const [hover, setHover] = useState(false);
 
-  useEffect(() => {
-    console.log(hover);
-  }, [hover]);
   return (
     <footer
       onMouseEnter={() => setHover(true)}
