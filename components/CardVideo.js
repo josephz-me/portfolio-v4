@@ -28,13 +28,13 @@ export default function CardVideo(props) {
   return (
     <div className="relative rounded-md overflow-hidden h-full">
       <div
-        className={`absolute top-0 w-full h-full overflow-hidden z-10 rounded-md transition duration-1000 ${
+        className={`absolute top-0 w-full h-full overflow-hidden z-10 rounded-md ${
           isVideoLoaded
             ? "opacity-0 bg-[rgba(255,255,255,0)]"
-            : "opacity-100 animate-pulse bg-[rgba(255,255,255,.05)]"
+            : "opacity-100 animate-pulse bg-[rgba(255,255,255,.03)]"
         }`}
       >
-        <p className="text-zinc-100 flex h-full justify-center items-center">
+        <p className="text-zinc-500 flex h-full justify-center items-center">
           {loadingPhrase}
           <span className="animate-[bounce_1s_ease-in-out_infinite]">.</span>
           <span className="animate-[bounce_1s_ease-in-out_.1s_infinite]">
