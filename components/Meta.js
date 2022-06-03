@@ -26,10 +26,7 @@ function Meta() {
         property="og:description"
         content="Joseph is a designer interested in authoring tools and multimodal interaction. "
       />
-      <meta
-        property="og:image"
-        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
-      />
+      <meta property="og:image" content="/metatag-preview.jpg" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
@@ -42,10 +39,7 @@ function Meta() {
         property="twitter:description"
         content="Joseph is a designer interested in authoring tools and multimodal interaction. "
       />
-      <meta
-        property="twitter:image"
-        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
-      />
+      <meta property="twitter:image" content="/metatag-preview.jpg" />
 
       {/* Favicon & fonts */}
       <link key="favicon" rel="icon" href="/favicon.jpg" importance="low" />
