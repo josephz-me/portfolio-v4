@@ -22,12 +22,6 @@ const container = {
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
 
-  Number.prototype.map = function (in_min, in_max, out_min, out_max) {
-    return (
-      ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
-    );
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -36,8 +30,6 @@ export default function Home() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -48,7 +40,7 @@ export default function Home() {
             scrollY > 40 ? "md:opacity-0 pointer-events-none" : ""
           } gap-6 text-zinc-100 lg:sticky top-[2rem] pt-2  mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
         >
-          Joseph is a designer interested in authoring tools and multimodal
+          Joseph is a designer interested in digital toolmaking and multimodal
           interaction. He believes good design reflects artistic values focused
           around emotion and play. He holds a{` `}
           <TextLink link="https://design.cmu.edu/content/bachelor-design">
@@ -59,7 +51,7 @@ export default function Home() {
             Human-Computer Interaction
           </TextLink>{" "}
           minor from Carnegie Mellon University. In the past, he&apos;s worked
-          at <TextLink link="https://www.apple.com/siri/">Apple</TextLink>,{" "}
+          with <TextLink link="https://www.apple.com/siri/">Apple</TextLink>,{" "}
           <TextLink link="https://natural.ai/#/">Brain Technologies</TextLink>,{" "}
           <TextLink link="https://twitter.com/metalinklabs">
             Metalink Labs

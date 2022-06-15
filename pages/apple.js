@@ -64,7 +64,7 @@ export default function Apple() {
           role={["design intern"]}
           replaceCollab="managers"
           collaborators={["Maria Cordell", "Garrett Weinberg"]}
-          duration="12 weeks (x2)"
+          duration="24 weeks total"
         />
       </GridContainer>
     </motion.main>

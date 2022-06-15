@@ -20,7 +20,7 @@ export const LOADING_NOUNS = [
   "elements",
   "pixels",
   "thumbnail",
-  "visual",
+  "visuals",
   "image",
 ];
 
