@@ -46,9 +46,7 @@ export default function Footer() {
           <TextLink link="/josephzhang-resume.pdf">Resume</TextLink>
         </span>
         <span className="col-start-5 md:col-start-7">
-          <TextLink link="https://www.linkedin.com/in/josephzme/">
-            LinkedIn
-          </TextLink>
+          <TextLink link="https://read.cv/jo_">Read.CV</TextLink>
         </span>
         <span className="col-start-10 md:col-start-9">
           <TextLink link="https://twitter.com/__joz">Twitter</TextLink>
