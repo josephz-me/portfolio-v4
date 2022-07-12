@@ -83,23 +83,23 @@ export default function Home() {
           isImage={true}
           content={"/project-covers/natural.jpg"}
         ></ProjectCard>
-
-        <ProjectCard
-          title="AIGA&Hue"
-          description="Interactive data visualization"
-          link="/aiga"
-          col={1}
-          isImage={true}
-          content={"/project-covers/aiga-2.jpg"}
-        ></ProjectCard>
         <ProjectCard
           title="Metalink Labs"
           description="Product Design"
-          col={2}
+          col={1}
           isImage={true}
           link="/metalink"
           content={"/project-covers/metalink.jpg"}
         ></ProjectCard>
+        <ProjectCard
+          title="AIGA&Hue"
+          description="Interactive data visualization"
+          link="/aiga"
+          col={2}
+          isImage={false}
+          content={"/project-covers/aiga.mp4"}
+        ></ProjectCard>
+
         <ProjectCard
           title="Pixel Push"
           description="Multiplayer painting experience"

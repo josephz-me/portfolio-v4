@@ -26,12 +26,13 @@ export default function ProjectCard(props) {
             ? "lg:col-start-1 lg:col-end-7 col-start-1 col-end-13"
             : "lg:col-start-7 lg:col-end-13 col-start-1 col-end-13"
         } ${
+          //determine if project is linked
           props.link != undefined
             ? "cursor-pointer hover:bg-[rgba(255,255,255,.1)]"
             : "pointer-events-none"
         }
       
-      group relative grid p-2 bg-[rgba(255,255,255,.03)] rounded-md transition-colors duration-500 z-10`}
+      group relative grid p-2 bg-[rgba(255,255,255,.03)] rounded-md transition-all duration-500 z-10`}
       >
         <div className="relative h-[60vw] overflow-hidden object-cover lg:h-[29vw] rounded-md">
           {props.isImage ? (

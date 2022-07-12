@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
 
         {/* links */}
-        <span className="col-start-1 md:col-start-5">
+        <span className="col-start-1 md:col-start-5 md:col-end-7">
           <TextLink link="/josephzhang-resume.pdf">Resume</TextLink>
         </span>
         <span className="col-start-5 md:col-start-7">
