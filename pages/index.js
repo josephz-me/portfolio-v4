@@ -96,8 +96,8 @@ export default function Home() {
           description="Interactive data visualization"
           link="/aiga"
           col={2}
-          isImage={false}
-          content={"/project-covers/aiga.mp4"}
+          isImage={true}
+          content={"/project-covers/aiga.jpg"}
         ></ProjectCard>
 
         <ProjectCard
