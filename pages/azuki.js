@@ -14,8 +14,6 @@ import Spacer from "../components/projects/Spacer";
 import BeanzLanding from "../public/work/azuki/beanz-landing.png";
 import BeanzCarousel from "../public/work/azuki/beanz-carousel.png";
 import BeanzSelfie from "../public/work/azuki/beanz-selfie.jpg";
-import FoodCheckout from "../public/work/brain/food-checkout.jpg";
-import Meetup from "../public/work/brain/meetup-1.jpg";
 
 const item = {
   hidden: { opacity: 0 },
@@ -84,6 +82,7 @@ export default function Brain() {
           Twitter
         </LinkCard>
         <Spacer></Spacer>
+        <ProjectMedia src="/work/azuki/cart.mov" isVideo={true}></ProjectMedia>
         <ProjectMedia
           src={"/work/azuki/beanz-pairing.mov"}
           isVideo={true}
