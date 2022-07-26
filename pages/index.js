@@ -51,14 +51,10 @@ export default function Home() {
             Human-Computer Interaction
           </TextLink>{" "}
           minor from Carnegie Mellon University. In the past, he&apos;s worked
-          with <TextLink link="https://www.apple.com/siri/">Apple</TextLink>,{" "}
-          <TextLink link="https://natural.ai/#/">Brain Technologies</TextLink>,{" "}
-          <TextLink link="https://twitter.com/metalinklabs">
-            Metalink Labs
-          </TextLink>
-          , and the{" "}
-          <TextLink link="http://computational-creativity.org">
-            Computational Creativity Lab
+          with teams like <TextLink link="https://www.apple.com/siri/">Apple</TextLink>,{" "}
+          <TextLink link="https://natural.ai/#/">Brain Technologies</TextLink>, and {" "}
+          <TextLink link="https://azuki.com">
+            Azuki
           </TextLink>
           . Joseph is an incoming designer at{" "}
           <TextLink link="https://twitter.com/skiffprivacy">Skiff</TextLink>{" "}
@@ -84,9 +80,17 @@ export default function Home() {
           content={"/project-covers/natural.jpg"}
         ></ProjectCard>
         <ProjectCard
-          title="Metalink Labs"
-          description="Product Design"
+          title="Azuki"
+          description="Product and Brand"
           col={1}
+          link="/azuki"
+          isImage={true}
+          content={"/project-covers/azuki.jpg"}
+        ></ProjectCard>
+        <ProjectCard
+          title="Metalink Labs"
+          description="Design systems & Messaging"
+          col={2}
           isImage={true}
           link="/metalink"
           content={"/project-covers/metalink.jpg"}
@@ -95,7 +99,7 @@ export default function Home() {
           title="AIGA&Hue"
           description="Interactive data visualization"
           link="/aiga"
-          col={2}
+          col={1}
           isImage={true}
           content={"/project-covers/aiga.jpg"}
         ></ProjectCard>
@@ -104,7 +108,7 @@ export default function Home() {
           title="Pixel Push"
           description="Multiplayer painting experience"
           link="/pixelpush"
-          col={1}
+          col={2}
           isImage={false}
           content={"/project-covers/pixel-push.mp4"}
           // placeholder={"/project-covers/pixelpush-placeholder.jpg"}
@@ -113,7 +117,7 @@ export default function Home() {
           title="Thinkspace"
           description="assistive voice agents"
           link="/thinkspace"
-          col={2}
+          col={1}
           isImage={false}
           content={"/project-covers/thinkspace.mp4"}
           // placeholder={"/project-covers/thinkspace-placeholder.jpeg"}

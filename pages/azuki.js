@@ -58,19 +58,22 @@ export default function Brain() {
     >
       <GridContainer>
         <ProjectHero content="/project-covers/azuki.jpg" />
-        <ProjectTitle role="product and branding">Azuki</ProjectTitle>
+        <ProjectTitle role="product & brand">Azuki</ProjectTitle>
         <ProjectBody col={2}>
-          Azuki is a web3 brand striving to blur the lines between blockchain
-          art, physical artifacts, and curated spaces. Since launch, they've
-          worked with artists at Coachella and partnered with companies like
-          HYPEBEAST, NASA, and Magic Eden. Since March 2022, I've been crafting
-          interactive experiences for azuki.com. I also occasionally push code,
+          Azuki is a web3 brand exploring the boundaries between digital
+          art and physical artifacts. Since launch, they've
+          partnered with <TextLink link="https://twitter.com/AzukiOfficial/status/1512886138670759941?s=20&t=fP4dEVgYoaYo7q-xJQmN4g">Coachella artists</TextLink>, {" "}
+          <TextLink link="https://hypebeast.com/">
+            Hypebeast
+          </TextLink>, <TextLink link="https://twitter.com/Ledger/status/1519179535325052933?s=20&t=23FSw7lnvc53d_Fjxc0ZOw">
+            NASA</TextLink>, and more. As a designer, I craft visual stories and
+          interactive experiences for <TextLink link="https://azuki.com">azuki.com</TextLink>. I also push code,
           which I absolutely love.
         </ProjectBody>
         <ProjectDetails
           role={["product designer, frontend developer"]}
           collaborators={["Hoshiboy", "Feb Tea", "2pm Flow"]}
-          duration={["March 2022-PRESENT"]}
+          duration={["2022-PRESENT"]}
           tools={["figma", "react(next.js)"]}
         />
 

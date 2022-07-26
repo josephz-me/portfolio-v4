@@ -27,7 +27,7 @@ export default function Metalink() {
     >
       <GridContainer>
         <ProjectHero isImage={true} content="/project-covers/metalink.jpg" />
-        <ProjectTitle role="product design">Metalink Labs</ProjectTitle>
+        <ProjectTitle role="Design systems & messaging">Metalink Labs</ProjectTitle>
         <ProjectBody col={2}>
           {`Scam, social engineering, and disorganization plague the web3
           landscape, making it difficult to safely connect with others.
