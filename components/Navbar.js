@@ -43,7 +43,7 @@ export default function Navbar(props) {
 
       <Link href="/">
         <a className={`ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>
-          <p className="z-20 justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(150,150,150,.2)] transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)] hover:bg-[rgba(150,150,150,.4)] rounded-md inline-block fit-content">
+          <p className="z-20 justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(150,150,150,.2)]  hover:bg-[rgba(150,150,150,.4)] rounded-md inline-block fit-content">
             Back home
           </p>
         </a>

@@ -58,20 +58,19 @@ export default function Brain() {
     >
       <GridContainer>
         <ProjectHero content="/project-covers/azuki.jpg" />
-        <ProjectTitle role="multimodal interaction">Azuki</ProjectTitle>
+        <ProjectTitle role="product and branding">Azuki</ProjectTitle>
         <ProjectBody col={2}>
-          From 2020-2021, I prototyped new ways to engage with computer
-          interfaces, mostly working with voice and AI. Unfortunately, most of
-          my (exciting) work is under NDA and can only be shared upon request.
-          Some of my work has shipped though and is now in the{" "}
-          <TextLink link="https://apps.apple.com/us/app/id1521375720/?role=f8a07a03-a0a9-4a5e-b59e-b48cb3ab1478">
-            app store
-          </TextLink>{" "}
-          — Below are a few examples.
+          Azuki is a web3 brand striving to blur the lines between blockchain
+          art, physical artifacts, and curated spaces. Since launch, they've
+          worked with artists at Coachella and partnered with companies like
+          HYPEBEAST, NASA, and Magic Eden. Since March 2022, I've been crafting
+          interactive experiences for azuki.com. I also occasionally push code,
+          which I absolutely love.
         </ProjectBody>
         <ProjectDetails
-          role={["product designer"]}
+          role={["product designer, frontend developer"]}
           collaborators={["Hoshiboy", "Feb Tea", "2pm Flow"]}
+          duration={["March 2022-PRESENT"]}
           tools={["figma", "react(next.js)"]}
         />
 
