@@ -41,8 +41,12 @@ export default function Home() {
             scrollY > 40 ? "md:opacity-0 pointer-events-none" : ""
           } gap-6 text-zinc-100 lg:sticky top-[2rem] pt-2  mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
         >
-          Joseph is a designer interested in digital toolmaking and multimodal
-          interaction. He believes good design reflects artistic values focused
+          Joseph is a designer interesting in digital toolmaking. After working at <TextLink link="https://www.apple.com/siri/">Apple</TextLink>,{" "} he discovered a passion for small, passionate teams and have since worked with high-functioning starts-ups like {" "}
+          <TextLink link="https://natural.ai/#/">Brain Technologies</TextLink>, {" "}
+          <TextLink link="https://azuki.com">
+            Azuki
+          </TextLink>, and now <TextLink link="https://twitter.com/skiffprivacy">Skiff</TextLink>
+          . He believes good design reflects artistic values focused
           around emotion and play. He holds a{` `}
           <TextLink link="https://design.cmu.edu/content/bachelor-design">
             Bachelor of Design
@@ -51,16 +55,7 @@ export default function Home() {
           <TextLink link="https://www.hcii.cmu.edu/">
             Human-Computer Interaction
           </TextLink>{" "}
-          minor from Carnegie Mellon University. In the past, he&apos;s worked
-          with teams like <TextLink link="https://www.apple.com/siri/">Apple</TextLink>,{" "}
-          <TextLink link="https://natural.ai/#/">Brain Technologies</TextLink>, and {" "}
-          <TextLink link="https://azuki.com">
-            Azuki
-          </TextLink>
-          . Joseph is an incoming designer at{" "}
-          <TextLink link="https://twitter.com/skiffprivacy">Skiff</TextLink>{" "}
-          where he&apos;ll be building privacy-first collaboration tools and
-          workspaces.
+          minor from Carnegie Mellon University. Joseph loves meeting new faces so come say hello ~ 
         </motion.p>
 
         <ProjectCard
