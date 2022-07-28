@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import TextLink from "../components/TextLink";
 import Link from "next/link";
 import GridContainer from "../components/GridContainer";
+import MiniProjectCard from "../components/home/MiniProjectCard";
 
 const item = {
   hidden: { opacity: 0 },
@@ -63,13 +64,12 @@ export default function Home() {
         </motion.p>
 
         <ProjectCard
-          title="Apple"
-          description="Multimodal interaction"
+          title="Skiff"
+          description="productivity tools"
           col={1}
-          link="/apple"
-          isImage={false}
-          content={"/project-covers/apple.mp4"}
-          // placeholder={"/project-covers/apple-placeholder.jpg"}
+          locked={true}
+          isImage={true}
+          content={"/project-covers/skiff.jpg"}
         ></ProjectCard>
         <ProjectCard
           title="Brain Technologies"
@@ -95,33 +95,42 @@ export default function Home() {
           link="/metalink"
           content={"/project-covers/metalink.jpg"}
         ></ProjectCard>
-        <ProjectCard
-          title="AIGA&Hue"
-          description="Interactive data visualization"
-          link="/aiga"
+
+
+        {/* mini projects */}
+        <MiniProjectCard
+          title="Apple"
+          description="Multimodal interaction"
           col={1}
+          link="/apple"
+          isImage={true}
+          content={"/project-covers/apple.jpg"}
+        ></MiniProjectCard>
+                <MiniProjectCard
+          title="AIGA&Hue"
+          description="data visualization"
+          link="/aiga"
+          col={2}
           isImage={true}
           content={"/project-covers/aiga.jpg"}
-        ></ProjectCard>
-
-        <ProjectCard
-          title="Pixel Push"
-          description="Multiplayer painting experience"
-          link="/pixelpush"
-          col={2}
-          isImage={false}
-          content={"/project-covers/pixel-push.mp4"}
-          // placeholder={"/project-covers/pixelpush-placeholder.jpg"}
-        ></ProjectCard>
-        <ProjectCard
+        ></MiniProjectCard>
+        <MiniProjectCard
           title="Thinkspace"
-          description="assistive voice agents"
+          description="speculative vui"
           link="/thinkspace"
-          col={1}
+          col={3}
           isImage={false}
           content={"/project-covers/thinkspace.mp4"}
-          // placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
-        ></ProjectCard>
+        ></MiniProjectCard>
+        <MiniProjectCard
+          title="Pixel Push"
+          description="Multiplayer canvas"
+          link="/pixelpush"
+          col={4}
+          isImage={false}
+          content={"/project-covers/pixel-push.mp4"}
+        ></MiniProjectCard>
+
       </GridContainer>
     </motion.main>
   );
