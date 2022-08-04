@@ -46,11 +46,7 @@ export default function Aiga() {
   }, []);
 
   return (
-    <motion.main
-      className="min-h-[70vh]"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-    >
+    <motion.main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero isVideo={false} content="/project-covers/aiga.jpg" />
         <ProjectTitle role="Interactive Data Visualization">

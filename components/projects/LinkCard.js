@@ -13,12 +13,12 @@ export default function LinkCard(props) {
         props.col == 1
           ? "md:col-start-5 md:col-end-9"
           : "md:col-start-9 md:col-end-13"
-      } group text-zinc-100 bg-[rgba(255,255,255,.1)] opacity-50 col-span-full hover:opacity-100 flex items-center flex-row p-4 rounded-md transition-opacity`}
+      } group text-zinc-100 bg-[rgba(255,255,255,.1)] opacity-50 col-span-full hover:opacity-80 flex items-center flex-row p-4 rounded-md `}
     >
       <p>{props.children}</p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-4 w-4 ml-auto group-hover:translate-x-[2px] transition-transform"
+        className="h-4 w-4 ml-auto group-hover:translate-x-[2px]"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"

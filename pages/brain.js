@@ -49,11 +49,7 @@ export default function Brain() {
   }, []);
 
   return (
-    <motion.main
-      className="min-h-[70vh]"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-    >
+    <motion.main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero content="/project-covers/natural.jpg" />
         <ProjectTitle role="multimodal interaction">

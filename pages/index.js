@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import TextLink from "../components/TextLink";
 import Link from "next/link";
 import GridContainer from "../components/GridContainer";
+import MiniProjectCard from "../components/home/MiniProjectCard";
 
 const item = {
   hidden: { opacity: 0 },
@@ -33,47 +34,40 @@ export default function Home() {
   }, []);
 
   return (
-    <motion.main initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <motion.main>
       <GridContainer>
         <motion.p
           className={`${
             scrollY > 40 ? "md:opacity-0 pointer-events-none" : ""
           } gap-6 text-zinc-100 lg:sticky top-[2rem] pt-2  mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
         >
-          Joseph is a designer interested in digital toolmaking and multimodal
-          interaction. He believes good design reflects artistic values focused
-          around emotion and play. He holds a{` `}
+          Joseph is an interaction designer interested in digital toolmaking and
+          multimodal experiences. After working at{" "}
+          <TextLink link="https://www.apple.com/siri/">Apple</TextLink>, he
+          discovered a love for small, high-caliber teams and have since worked
+          with starts-ups like{" "}
+          <TextLink link="https://natural.ai/#/">Brain Technologies</TextLink>,{" "}
+          <TextLink link="https://azuki.com">Azuki</TextLink>, and{" "}
+          <TextLink link="https://metalink.com/login">Metalink Labs</TextLink>.
+          Most recently, he graduated from Carnegie Mellon University where he
+          studied{" "}
           <TextLink link="https://design.cmu.edu/content/bachelor-design">
-            Bachelor of Design
+            Communication Design
           </TextLink>{" "}
           and{" "}
           <TextLink link="https://www.hcii.cmu.edu/">
             Human-Computer Interaction
-          </TextLink>{" "}
-          minor from Carnegie Mellon University. In the past, he&apos;s worked
-          with <TextLink link="https://www.apple.com/siri/">Apple</TextLink>,{" "}
-          <TextLink link="https://natural.ai/#/">Brain Technologies</TextLink>,{" "}
-          <TextLink link="https://twitter.com/metalinklabs">
-            Metalink Labs
           </TextLink>
-          , and the{" "}
-          <TextLink link="http://computational-creativity.org">
-            Computational Creativity Lab
-          </TextLink>
-          . Joseph is an incoming designer at{" "}
-          <TextLink link="https://twitter.com/skiffprivacy">Skiff</TextLink>{" "}
-          where he&apos;ll be building privacy-first collaboration tools and
-          workspaces.
+          .
         </motion.p>
 
         <ProjectCard
-          title="Apple"
-          description="Multimodal interaction"
+          title="Skiff"
+          description="collaboration tools"
           col={1}
-          link="/apple"
-          isImage={false}
-          content={"/project-covers/apple.mp4"}
-          // placeholder={"/project-covers/apple-placeholder.jpg"}
+          locked={true}
+          isImage={true}
+          content={"/project-covers/skiff.jpg"}
         ></ProjectCard>
         <ProjectCard
           title="Brain Technologies"
@@ -84,40 +78,55 @@ export default function Home() {
           content={"/project-covers/natural.jpg"}
         ></ProjectCard>
         <ProjectCard
-          title="Metalink Labs"
-          description="Product Design"
+          title="Azuki"
+          description="Product and Brand"
           col={1}
+          locked={true}
+          isImage={true}
+          content={"/project-covers/azuki.jpg"}
+        ></ProjectCard>
+        <ProjectCard
+          title="Metalink Labs"
+          description="Design systems & Messaging"
+          col={2}
           isImage={true}
           link="/metalink"
           content={"/project-covers/metalink.jpg"}
         ></ProjectCard>
-        <ProjectCard
+
+        {/* mini projects */}
+        <MiniProjectCard
+          title="Apple"
+          description="Multimodal interaction"
+          col={1}
+          link="/apple"
+          isImage={true}
+          content={"/project-covers/apple.jpg"}
+        ></MiniProjectCard>
+        <MiniProjectCard
           title="AIGA&Hue"
-          description="Interactive data visualization"
+          description="data visualization"
           link="/aiga"
           col={2}
           isImage={true}
           content={"/project-covers/aiga.jpg"}
-        ></ProjectCard>
-
-        <ProjectCard
-          title="Pixel Push"
-          description="Multiplayer painting experience"
-          link="/pixelpush"
-          col={1}
-          isImage={false}
-          content={"/project-covers/pixel-push.mp4"}
-          // placeholder={"/project-covers/pixelpush-placeholder.jpg"}
-        ></ProjectCard>
-        <ProjectCard
+        ></MiniProjectCard>
+        <MiniProjectCard
           title="Thinkspace"
-          description="assistive voice agents"
+          description="speculative vui"
           link="/thinkspace"
-          col={2}
+          col={3}
           isImage={false}
           content={"/project-covers/thinkspace.mp4"}
-          // placeholder={"/project-covers/thinkspace-placeholder.jpeg"}
-        ></ProjectCard>
+        ></MiniProjectCard>
+        <MiniProjectCard
+          title="Pixel Push"
+          description="Multiplayer canvas"
+          link="/pixelpush"
+          col={4}
+          isImage={false}
+          content={"/project-covers/pixel-push.mp4"}
+        ></MiniProjectCard>
       </GridContainer>
     </motion.main>
   );

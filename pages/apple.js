@@ -42,11 +42,7 @@ export default function Apple() {
   }, []);
 
   return (
-    <motion.main
-      className="min-h-[70vh]"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-    >
+    <motion.main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero isVideo={true} content="/project-covers/apple.mp4" />
         <ProjectTitle role="multimodal interaction">Apple</ProjectTitle>

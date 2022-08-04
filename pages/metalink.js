@@ -20,14 +20,12 @@ import Trading1 from "../public/work/metalink/trading-1.jpg";
 
 export default function Metalink() {
   return (
-    <motion.main
-      className="min-h-[70vh]"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-    >
+    <motion.main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero isImage={true} content="/project-covers/metalink.jpg" />
-        <ProjectTitle role="product design">Metalink Labs</ProjectTitle>
+        <ProjectTitle role="Design systems & messaging">
+          Metalink Labs
+        </ProjectTitle>
         <ProjectBody col={2}>
           {`Scam, social engineering, and disorganization plague the web3
           landscape, making it difficult to safely connect with others.

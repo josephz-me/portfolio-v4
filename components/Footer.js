@@ -34,7 +34,7 @@ export default function Footer() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
-              className={`absolute text-zinc-700`}
+              className={`absolute text-zinc-500`}
             >
               Joseph Zhang © 2022
             </motion.p>
@@ -42,16 +42,16 @@ export default function Footer() {
         </div>
 
         {/* links */}
-        <span className="col-start-1 md:col-start-5 md:col-end-7">
+        {/* <span className="col-start-1 md:col-start-5 md:col-end-7">
           <TextLink link="/josephzhang-resume.pdf">Resume</TextLink>
-        </span>
-        <span className="col-start-5 md:col-start-7">
+        </span> */}
+        <span className="col-start-1 md:col-start-7">
           <TextLink link="https://read.cv/jo_">Read.CV</TextLink>
         </span>
-        <span className="col-start-10 md:col-start-9">
+        <span className="col-start-5 md:col-start-9">
           <TextLink link="https://twitter.com/__joz">Twitter</TextLink>
         </span>
-        <span className="col-start-7 md:col-start-11 hidden md:inline">
+        <span className="col-start-9 md:col-start-11 md:inline">
           <TextLink link="mailto:jxsephz@gmail.com">jxsephz@gmail.com</TextLink>
         </span>
       </GridContainer>
