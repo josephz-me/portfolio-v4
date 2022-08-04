@@ -50,11 +50,7 @@ export default function Home() {
   }, []);
 
   return (
-    <motion.main
-      className="min-h-[70vh]"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-    >
+    <motion.main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero isVideo={true} content="/project-covers/thinkspace.mp4" />
         <ProjectTitle role="assistive voice agents">Thinkspace</ProjectTitle>
