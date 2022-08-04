@@ -55,7 +55,7 @@ export default function Brain() {
         <ProjectTitle role="product & brand">Azuki</ProjectTitle>
         <ProjectBody col={2}>
           Azuki is a web3 brand exploring the boundaries between digital art and
-          physical artifacts. Since launch, they've partnered with{" "}
+          physical artifacts. Since launch, they&apos;ve partnered with{" "}
           <TextLink link="https://twitter.com/AzukiOfficial/status/1512886138670759941?s=20&t=fP4dEVgYoaYo7q-xJQmN4g">
             Coachella artists
           </TextLink>
