@@ -51,8 +51,8 @@ export default function Footer() {
         <span className="col-start-5 md:col-start-9">
           <TextLink link="https://twitter.com/__joz">Twitter</TextLink>
         </span>
-        <span className="col-start-9 md:col-start-11 md:inline">
-          <TextLink link="mailto:jxsephz@gmail.com">jxsephz@gmail.com</TextLink>
+        <span className="col-start-9 md:col-start-11">
+          <TextLink link="mailto:jxsephz@gmail.com">Email</TextLink>
         </span>
       </GridContainer>
     </footer>
