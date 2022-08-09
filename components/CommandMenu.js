@@ -12,6 +12,9 @@ export default function CommandMenu() {
     setOpen(false);
   };
 
+  let allTabs = [];
+  let currPos = 0;
+
   // Toggle the menu when ⌘K is pressed
   useEffect(() => {
     // console.log("input field");
@@ -25,16 +28,9 @@ export default function CommandMenu() {
         setOpen((open) => !open);
       }
 
-      let current = document.querySelector('[aria-selected="true"]');
-      let above;
+      let current = allTabs[currPos];
       let down;
-      if (current && current.previousElementSibling) {
-        above = current.previousElementSibling;
-      }
-
-      if (current && current.nextElementSibling) {
-        down = current.nextElementSibling;
-      }
+      let above;
 
       if (e.key == "ArrowUp" && above) {
         above.ariaSelected = "true";
@@ -63,6 +59,9 @@ export default function CommandMenu() {
     open
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "visible");
+
+    allTabs = document.querySelectorAll("[cmdk-item]");
+    console.log(allTabs[0]);
 
     const inputField = document.querySelector("input");
     inputField ? inputField.focus() : "";
@@ -151,7 +150,7 @@ const Item = ({ closeModal, href, children, icon }) => {
             <img
               src={`/project-icons/${icon}.svg`}
               alt={`${icon} icon`}
-              className={`w-8 h-8 rounded-md inline-block`}
+              className={`w-10 h-10 rounded-xl inline-block`}
             />
           )}
           <p>{children}</p>
@@ -175,7 +174,7 @@ const ExternalItem = ({ closeModal, href, children, icon }) => {
           <img
             src={`/project-icons/${icon}.svg`}
             alt={`${icon} icon`}
-            className={`w-8 h-8 rounded-md inline-block`}
+            className={`w-10 h-10 rounded-xl inline-block`}
           />
         )}
         <p>{children}</p>

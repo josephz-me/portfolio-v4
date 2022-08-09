@@ -26,7 +26,7 @@ export default function Footer() {
                 transition={{ ease: "easeOut" }}
                 className={`absolute text-zinc-500`}
               >
-                Built with Next.js React
+                Joseph Zhang © 2022
               </motion.p>
             </AnimatePresence>
           ) : (
@@ -36,7 +36,7 @@ export default function Footer() {
               exit={{ opacity: 0, y: 10 }}
               className={`absolute text-zinc-500`}
             >
-              Joseph Zhang © 2022
+              ⌘K for a surprise
             </motion.p>
           )}
         </div>

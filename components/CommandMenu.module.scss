@@ -8,7 +8,7 @@ $text-900: rgb(20 20 20);
 
 .commandPalette {
   [cmdk-root] {
-    max-width: 90vh;
+    max-width: 90vw;
     max-height: 40vh;
     width: 640px;
     box-shadow: var(--cmdk-shadow);
@@ -128,7 +128,7 @@ $text-900: rgb(20 20 20);
   [cmdk-list] {
     height: min(330px, calc(var(--cmdk-list-height)));
     max-height: 400px;
-    overflow: auto;
+    overflow: scroll;
     overscroll-behavior: contain;
     transition: 1ms ease;
     transition-delay: 10ms;
