@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import Meta from "./Meta";
 import Navbar from "./Navbar";
 import Script from "next/script";
+import CommandMenu from "../components/CommandMenu";
 
 export default function Page(props) {
   return (
@@ -25,6 +26,7 @@ export default function Page(props) {
       <Meta />
       <Navbar />
       {props.children}
+      <CommandMenu />
       <Footer />
     </div>
   );
