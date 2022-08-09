@@ -110,6 +110,25 @@ export default function CommandMenu() {
                     Azuki
                   </Item>
                 </Command.Group>
+                <Command.Group heading="Experiments">
+                  <Item closeModal={closeModal} href="aiga" icon="aiga">
+                    AIGA&Hue
+                  </Item>
+                  <Item
+                    closeModal={closeModal}
+                    href="pixelpush"
+                    icon="pixelpush"
+                  >
+                    Pixel Push
+                  </Item>
+                  <Item
+                    closeModal={closeModal}
+                    href="thinkspace"
+                    icon="thinkspace"
+                  >
+                    Thinkspace
+                  </Item>
+                </Command.Group>
                 <Command.Group heading="Socials">
                   <ExternalItem
                     closeModal={closeModal}

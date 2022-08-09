@@ -23,8 +23,8 @@ export default function Footer() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
-                transition={{ ease: "easeOut" }}
-                className={`absolute text-zinc-500`}
+                transition={{ ease: "easeOut", duration: 0.2 }}
+                className={`absolute text-zinc-600`}
               >
                 Joseph Zhang © 2022
               </motion.p>
@@ -34,9 +34,10 @@ export default function Footer() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
-              className={`absolute text-zinc-500`}
+              transition={{ ease: "easeOut", duration: 0.2 }}
+              className={`absolute text-zinc-600`}
             >
-              ⌘K for a surprise
+              ⌘K for more...
             </motion.p>
           )}
         </div>
