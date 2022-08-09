@@ -9,7 +9,7 @@ $text-900: rgb(20 20 20);
 .commandPalette {
   [cmdk-root] {
     max-width: 90vw;
-    max-height: 40vh;
+    max-height: 50vh;
     width: 640px;
     box-shadow: var(--cmdk-shadow);
     font-family: "input-mono";
@@ -126,13 +126,13 @@ $text-900: rgb(20 20 20);
   }
 
   [cmdk-list] {
-    height: min(330px, calc(var(--cmdk-list-height)));
-    max-height: 400px;
+    height: min(0, calc(var(--cmdk-list-height)));
+    // max-height: 400px;
     overflow: scroll;
     overscroll-behavior: contain;
     transition: 1ms ease;
     transition-delay: 10ms;
-    // transition-property: height;
+    transition-property: height;
 
     border-radius: 8px;
     border: 1px solid $text-800;
