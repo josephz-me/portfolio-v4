@@ -14,6 +14,12 @@ export default function CommandMenu() {
 
   // Toggle the menu when ⌘K is pressed
   useEffect(() => {
+    // console.log("input field");
+    // console.log(document.getElementById(":ru:"));
+
+    // inputField.focus();
+    // inputField.select();
+
     const down = (e) => {
       if (e.key === "k" && e.metaKey) {
         setOpen((open) => !open);
@@ -29,8 +35,6 @@ export default function CommandMenu() {
       if (current && current.nextElementSibling) {
         down = current.nextElementSibling;
       }
-
-      console.log(current);
 
       if (e.key == "ArrowUp" && above) {
         above.ariaSelected = "true";
@@ -59,6 +63,9 @@ export default function CommandMenu() {
     open
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "visible");
+
+    const inputField = document.querySelector("input");
+    inputField ? inputField.focus() : "";
   }, [open]);
 
   return (
@@ -94,10 +101,6 @@ export default function CommandMenu() {
                   </Item>
                   <Item closeModal={closeModal} href="brain" icon="brain">
                     Brain Technologies
-                  </Item>
-                  <Item closeModal={closeModal} href="azuki" icon="azuki">
-                    {" "}
-                    Azuki
                   </Item>
                   <Item closeModal={closeModal} href="metalink" icon="metalink">
                     Metalink
