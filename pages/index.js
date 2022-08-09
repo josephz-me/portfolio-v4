@@ -1,12 +1,8 @@
-import Head from "next/head";
-import Image from "next/image";
 import ProjectCard from "../components/home/ProjectCard";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TextLink from "../components/TextLink";
-import Link from "next/link";
 import GridContainer from "../components/GridContainer";
-import MiniProjectCard from "../components/home/MiniProjectCard";
 
 const item = {
   hidden: { opacity: 0 },

@@ -2,18 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-a,
-p {
+* {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
   font-family: "input-mono";
-  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   text-transform: uppercase;
-  /* font-weight: 300; */
+  font-weight: 300;
   font-style: normal;
   letter-spacing: 0.08em;
   line-height: 150%;
   font-size: 13px;
-  /* color: rgba(255, 255, 255, 0.9); */
+}
+
+a,
+p,
+input {
+  font-family: "input-mono";
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  line-height: 150%;
+  font-size: 13px;
 }
 
 h1 {

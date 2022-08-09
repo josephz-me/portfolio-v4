@@ -46,7 +46,7 @@ export default function Aiga() {
   }, []);
 
   return (
-    <motion.main className="min-h-[70vh]">
+    <main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero isVideo={false} content="/project-covers/aiga.jpg" />
         <ProjectTitle role="Interactive Data Visualization">
@@ -84,6 +84,6 @@ export default function Aiga() {
           visualizing them through Matter.js, a Javascript physics engine.`}
         </ProjectBody>
       </GridContainer>
-    </motion.main>
+    </main>
   );
 }
