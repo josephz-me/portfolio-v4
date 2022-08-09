@@ -17,15 +17,14 @@ export default function CommandMenu() {
 
   // Toggle the menu when ⌘K is pressed
   useEffect(() => {
-    // console.log("input field");
-    // console.log(document.getElementById(":ru:"));
-
-    // inputField.focus();
-    // inputField.select();
-
     const down = (e) => {
+      console.log(e.key);
       if (e.key === "k" && e.metaKey) {
         setOpen((open) => !open);
+      }
+
+      if (e.key === "Escape") {
+        setOpen(false);
       }
 
       let current = allTabs[currPos];
