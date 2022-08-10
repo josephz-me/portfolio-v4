@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./CommandMenu.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 export default function CommandMenu() {
   const router = useRouter();
@@ -112,7 +113,7 @@ export default function CommandMenu() {
                 </Command.Group>
                 <Command.Group heading="Experiments">
                   <Item closeModal={closeModal} href="aiga" icon="aiga">
-                    AIGA&Hue
+                    {`AIGA & Hue`}
                   </Item>
                   <Item
                     closeModal={closeModal}
@@ -172,10 +173,12 @@ const Item = ({ closeModal, href, children, icon }) => {
         >
           <div className="flex gap-4 items-center">
             {icon !== undefined && (
-              <img
+              <Image
+                className="rounded-xl"
+                width={40}
+                height={40}
                 src={`/project-icons/${icon}.svg`}
                 alt={`${icon} icon`}
-                className={`w-10 h-10 rounded-xl inline-block`}
               />
             )}
             <p>{children}</p>
@@ -211,10 +214,12 @@ const ExternalItem = ({ closeModal, href, children, icon }) => {
         rel="noreferrer"
       >
         {icon !== undefined && (
-          <img
+          <Image
+            className="rounded-xl"
+            width={40}
+            height={40}
             src={`/project-icons/${icon}.svg`}
             alt={`${icon} icon`}
-            className={`w-10 h-10 rounded-xl inline-block`}
           />
         )}
         <p>{children}</p>
