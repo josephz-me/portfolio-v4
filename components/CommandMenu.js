@@ -168,7 +168,7 @@ const Item = ({ closeModal, href, children, icon }) => {
       <Link href={href ? href : ""}>
         <a
           onClick={closeModal}
-          className="flex justify-between items-center px-[20px] py-1 w-full"
+          className="flex justify-between items-center w-full"
         >
           <div className="flex gap-4 items-center">
             {icon !== undefined && (
@@ -205,7 +205,7 @@ const ExternalItem = ({ closeModal, href, children, icon }) => {
     <Command.Item>
       <a
         onClick={closeModal}
-        className="flex gap-4 items-center px-[20px] py-1 w-full"
+        className="flex gap-4 items-center w-full"
         href={href ? href : ""}
         target="_blank"
         rel="noreferrer"

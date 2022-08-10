@@ -51,7 +51,7 @@ $text-900: rgb(20 20 20);
 
   [cmdk-input] {
     background-color: $text-900;
-    border-radius: 8px;
+    border-radius: 20px;
     border: 1px solid $text-800;
     width: 100%;
     padding: 20px 20px;
@@ -75,23 +75,24 @@ $text-900: rgb(20 20 20);
     transition-property: none;
     position: relative;
     color: $text-400;
-    border-radius: 4px;
+    border-radius: 12px;
+    margin: 2px 8px;
+    padding: 4px 16px 4px 4px;
 
     img {
       border: 1px solid rgba(0, 0, 0, 0);
     }
 
     &[aria-selected="true"] {
-      // background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.05);
       color: $text-200;
+      // svg {
+      //   color: red;
+      // }
 
-      svg {
-        color: var(--gray12);
-      }
-
-      img {
-        border: 1px solid $text-200;
-      }
+      // img {
+      //   border: 1px solid $text-200;
+      // }
 
       // &:after {
       //   content: "";
@@ -134,7 +135,7 @@ $text-900: rgb(20 20 20);
     transition-delay: 10ms;
     transition-property: height;
 
-    border-radius: 8px;
+    border-radius: 20px;
     border: 1px solid $text-800;
     background: $text-900;
   }
@@ -151,7 +152,7 @@ $text-900: rgb(20 20 20);
   }
 
   [cmdk-group]:last-child {
-    padding-bottom: 20px;
+    padding-bottom: 8px;
   }
 
   [cmdk-empty] {
