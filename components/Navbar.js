@@ -4,12 +4,23 @@ import Link from "next/link";
 
 export default function Navbar(props) {
   const pageName = useRouter().asPath;
+  //check if mobile
+  const isTouchDevice = () => {
+    return window.matchMedia("(pointer: coarse)").matches;
+  };
+
+  const openModal = () => {
+    if (isTouchDevice() == false) {
+      props.setOpen(true);
+    }
+  };
 
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -27,7 +38,7 @@ export default function Navbar(props) {
   return (
     <div className="  ml-auto flex flex-row block md:sticky top-[1.99rem] md:mb-0 mb-6 z-20">
       <a
-        onClick={() => props.setOpen(true)}
+        onClick={openModal}
         className={`hover:cursor-pointer transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]
             ${scrollY > 40 ? "md:opacity-0 pointer-events-none" : ""}`}
       >
