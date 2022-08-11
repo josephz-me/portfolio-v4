@@ -25,21 +25,20 @@ export default function Navbar(props) {
   };
 
   return (
-    <div className="ml-auto flex flex-row block md:sticky top-[1.99rem] md:mb-0 mb-6 z-20">
-      <Link href="/">
-        <a
-          className={`transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]
+    <div className="  ml-auto flex flex-row block md:sticky top-[1.99rem] md:mb-0 mb-6 z-20">
+      <a
+        onClick={() => props.setOpen(true)}
+        className={`hover:cursor-pointer transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]
             ${scrollY > 40 ? "md:opacity-0 pointer-events-none" : ""}`}
-        >
-          <img
-            src={"/zhang-icon-white.svg"}
-            alt="zhang logo"
-            className={`${
-              pageName == "/" ? "md:fixed top-[2rem]" : ""
-            } bg-[rgba(255,255,255,.05)] hover:bg-[rgba(255,255,255,.1)] w-[48px] h-[auto] p-2 rounded-md  inline-block`}
-          />
-        </a>
-      </Link>
+      >
+        <img
+          src={"/zhang-icon-white.svg"}
+          alt="zhang logo"
+          className={`${
+            pageName == "/" ? "md:fixed top-[2rem]" : ""
+          } bg-[rgba(255,255,255,.05)] hover:bg-[rgba(255,255,255,.1)] w-[48px] h-[auto] p-2 rounded-md  inline-block`}
+        />
+      </a>
 
       <Link href="/">
         <a className={`ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>

@@ -1,11 +1,13 @@
-import React from "react";
 import Footer from "./Footer";
 import Meta from "./Meta";
 import Navbar from "./Navbar";
 import Script from "next/script";
 import CommandMenu from "../components/CommandMenu";
+import React, { useEffect, useState } from "react";
 
 export default function Page(props) {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="md:px-6 px-4 pt-8 w-full">
       <Script
@@ -24,9 +26,9 @@ export default function Page(props) {
                 `}
       </Script>
       <Meta />
-      <Navbar />
+      <Navbar setOpen={setOpen} />
       {props.children}
-      <CommandMenu />
+      <CommandMenu setOpen={setOpen} open={open} />
       <Footer />
     </div>
   );

@@ -6,9 +6,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
-export default function CommandMenu() {
+export default function CommandMenu({ open, setOpen }) {
   const router = useRouter();
-  const [open, setOpen] = React.useState(false);
   const closeModal = () => {
     setOpen(false);
   };
