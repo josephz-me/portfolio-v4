@@ -64,11 +64,11 @@ export default function Brain() {
           Contextual Media
         </ProjectTitle>
         <ProjectBody>
-          Current attachable media (image, video, audio) are segmented from the
+          {`Current attachable media (image, video, audio) are segmented from the
           words that describe them, limiting the clarity of an individual's
           intent. A concept previously explored with Jenni Lee and Rachel Lee,
           we looked into how social platforms can better communicate direct
-          relationships between language and media.
+          relationships between language and media.`}
         </ProjectBody>
         <ProjectMedia
           src="/work/experiments/contextual-media.mp4"
