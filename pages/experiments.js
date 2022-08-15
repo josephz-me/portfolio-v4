@@ -52,10 +52,23 @@ export default function Brain() {
       <GridContainer>
         <ProjectHero content="/project-covers/aiga.jpg" />
         <ProjectTitle role="design & code">Experiments</ProjectTitle>
+        <ProjectBody col={2}>
+          A collection of experimental projects and explorations focused around
+          interaction, code, and data. Projects range from collaborative
+          projects done at Carnegie Mellon to mini prototypes build out of
+          personal interest. If any of them peak your interest, definitely reach
+          out!
+        </ProjectBody>
+        <Divider />
+        <ProjectTitle role="messaging and social">
+          Contextual Media
+        </ProjectTitle>
         <ProjectBody>
-          Exploring how social platforms can better communicate direct
-          relationships between words and media. A concept originally explored
-          with Jenni Lee and Rachel Lee.
+          Current attachable media (image, video, audio) are segmented from the
+          words that describe them, limiting the clarity of an individual's
+          intent. A concept previously explored with Jenni Lee and Rachel Lee,
+          we looked into how social platforms can better communicate direct
+          relationships between language and media.
         </ProjectBody>
         <ProjectMedia
           src="/work/experiments/contextual-media.mp4"
@@ -63,6 +76,7 @@ export default function Brain() {
         ></ProjectMedia>
         <Divider />
         <Spacer />
+        <ProjectTitle role="multiplayer art canvas">Pixel Push</ProjectTitle>
         <ProjectBody>
           Tools shape the way we express ourselves and share our ideas. From
           Microsoft Paint to more complex tools such as Adobe Photoshop, the
@@ -101,6 +115,7 @@ export default function Brain() {
         </ProjectBody>
         <Divider />
         <Spacer />
+        <ProjectTitle role="interactivei data vis">AIGA & Hue</ProjectTitle>
         <ProjectBody>
           AIGA & Hue is a desktop web experience that visualizes career data
           from the 2019 AIGA Design Census in a playful and informative manner.
@@ -132,7 +147,9 @@ export default function Brain() {
           visualizing them through Matter.js, a Javascript physics engine.`}
         </ProjectBody>
         <Divider />
-        <ProjectBody col={2}>
+        <Spacer />
+        <ProjectTitle role="voice agents">Thinkspace</ProjectTitle>
+        <ProjectBody>
           Rich, engaging conversation is a hallmark of meaningful human-to-human
           interaction. However, factors such as relational closeness, social
           formalities, and insecurities often hinder unfamiliar individuals from
