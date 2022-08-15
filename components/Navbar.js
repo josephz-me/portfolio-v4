@@ -9,12 +9,6 @@ export default function Navbar(props) {
     return window.matchMedia("(pointer: coarse)").matches;
   };
 
-  const openModal = () => {
-    if (isTouchDevice() == false) {
-      props.setOpen(true);
-    }
-  };
-
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +32,6 @@ export default function Navbar(props) {
   return (
     <div className="  ml-auto flex flex-row block md:sticky top-[1.99rem] md:mb-0 mb-6 z-20">
       <a
-        onClick={openModal}
         className={`hover:cursor-pointer transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]
             ${scrollY > 40 ? "md:opacity-0 pointer-events-none" : ""}`}
       >
@@ -51,13 +44,13 @@ export default function Navbar(props) {
         />
       </a>
 
-      <Link href="/">
-        <a className={`ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>
-          <p className="z-20 justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(150,150,150,.2)]  hover:bg-[rgba(150,150,150,.4)] rounded-md inline-block fit-content">
+      <a className={`ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>
+        <Link href="/">
+          <p className=" cursor-pointer z-20 justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(150,150,150,.2)]  hover:bg-[rgba(150,150,150,.4)] rounded-md inline-block fit-content">
             Back home
           </p>
-        </a>
-      </Link>
+        </Link>
+      </a>
     </div>
   );
 }

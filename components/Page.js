@@ -6,8 +6,6 @@ import CommandMenu from "../components/CommandMenu";
 import React, { useEffect, useState } from "react";
 
 export default function Page(props) {
-  const [open, setOpen] = useState(false);
-
   return (
     <div className="md:px-6 px-4 pt-8 w-full">
       <Script
@@ -26,9 +24,8 @@ export default function Page(props) {
                 `}
       </Script>
       <Meta />
-      <Navbar setOpen={setOpen} />
+      <Navbar />
       {props.children}
-      <CommandMenu setOpen={setOpen} open={open} />
       <Footer />
     </div>
   );

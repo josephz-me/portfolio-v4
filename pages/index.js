@@ -98,6 +98,14 @@ export default function Home() {
           isImage={true}
           content={"/project-covers/azuki.jpg"}
         ></ProjectCard>
+        <ProjectCard
+          title="Experiments"
+          description="design & code"
+          col={2}
+          isImage={true}
+          link="/experiments"
+          content={"/project-covers/aiga.jpg"}
+        ></ProjectCard>
       </GridContainer>
     </motion.main>
   );

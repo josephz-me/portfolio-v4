@@ -20,24 +20,24 @@ export default function Footer() {
           {hover ? (
             <AnimatePresence>
               <motion.p
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: -5 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
+                exit={{ opacity: 0, y: 5 }}
                 transition={{ ease: "easeOut", duration: 0.2 }}
                 className={`absolute text-zinc-600`}
               >
-                Joseph Zhang © 2022
+                Built with Next.js and Vercel
               </motion.p>
             </AnimatePresence>
           ) : (
             <motion.p
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
+              exit={{ opacity: 0, y: -5 }}
               transition={{ ease: "easeOut", duration: 0.2 }}
               className={`absolute text-zinc-600`}
             >
-              ⌘K for more...
+              Joseph Zhang © 2022
             </motion.p>
           )}
         </div>
