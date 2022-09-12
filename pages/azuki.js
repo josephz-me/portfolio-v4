@@ -39,7 +39,7 @@ export default function Brain() {
         <ProjectTitle role="product & brand">Azuki</ProjectTitle>
         <ProjectBody col={2}>
           Azuki is a web3 brand pioneering the integration of blockchain art and
-          physical artifacts. Since launch, they&apos;ve worked with{" "}
+          physical artifacts. Since launch, they have worked with{" "}
           <TextLink link="https://twitter.com/AzukiOfficial/status/1512886138670759941?s=20&t=fP4dEVgYoaYo7q-xJQmN4g">
             Coachella artists
           </TextLink>
@@ -67,10 +67,10 @@ export default function Brain() {
         <Spacer></Spacer>
         <Divider />
         <ProjectBody col={1}>
-          I helped design the brand's storytelling section of the website. A
-          huge collaborative effort across all parts of the Azuki team, we
-          placed a huge emphasis on user exploration by thoughtfully sequencing
-          copy, animation, and art.
+          I helped design the brand&apos;s lore initiative. A huge collaborative
+          effort across all parts of the Azuki team, we placed a huge emphasis
+          on user exploration by thoughtfully sequencing copy, animation, and
+          art.
         </ProjectBody>
         <ProjectMedia
           src={"/work/azuki/lore-main.mp4"}
@@ -83,11 +83,11 @@ export default function Brain() {
         <Divider />
         <ProjectBody col={1}>
           I designed the merchandise and cart experience. As conventional as the
-          designs look, working on this project was unique because of Azuki's
-          integration with web3 tokens and wallet addresses. Almost all physical
-          items released through Azuki.com have digital token counterparts,
-          making blockchain verification an integral part of the purchase
-          process. Really cool interaction work to come soon...
+          designs look, working on this project was unique because of
+          Azuki&apos;s integration with web3 tokens and wallet addresses. Almost
+          all physical items released through Azuki.com have digital token
+          counterparts, making blockchain verification an integral part of the
+          purchase process. Really cool interaction work to come soon...
         </ProjectBody>
         <ProjectMedia src="/work/azuki/cart.mp4" isVideo={true}></ProjectMedia>
         <ProjectMedia src={MerchItem}></ProjectMedia>
