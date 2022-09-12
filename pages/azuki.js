@@ -7,13 +7,17 @@ import ProjectBody from "../components/projects/ProjectBody";
 import ProjectMedia from "../components/projects/ProjectMedia";
 import ProjectTitle from "../components/projects/ProjectTitle";
 import ProjectDetails from "../components/projects/ProjectDetails";
-import MobileMockupVideo from "../components/projects/MobileMockupVideo";
 import LinkCard from "../components/projects/LinkCard";
 import Spacer from "../components/projects/Spacer";
+import Divider from "../components/projects/Divider";
 
-import BeanzLanding from "../public/work/azuki/beanz-landing.png";
-import BeanzCarousel from "../public/work/azuki/beanz-carousel.png";
-import BeanzSelfie from "../public/work/azuki/beanz-selfie.jpg";
+// images
+import BeanzLanding from "../public/work/azuki/beanz-landing.jpg";
+import BeanzCarousel from "../public/work/azuki/beanz-carousel.jpg";
+import MerchItem from "../public/work/azuki/merch-item.jpg";
+import GalleryBeanz from "../public/work/azuki/gallery-beanz.jpg";
+
+import Link from "next/link";
 
 const item = {
   hidden: { opacity: 0 },
@@ -28,49 +32,28 @@ const container = {
 };
 
 export default function Brain() {
-  const [scrollY, setScrollY] = useState(0);
-
-  Number.prototype.map = function (in_min, in_max, out_min, out_max) {
-    return (
-      ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
-    );
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <motion.main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero content="/project-covers/azuki.jpg" />
         <ProjectTitle role="product & brand">Azuki</ProjectTitle>
         <ProjectBody col={2}>
-          Azuki is a web3 brand exploring the boundaries between digital art and
-          physical artifacts. Since launch, they&apos;ve partnered with{" "}
+          Azuki is a web3 brand pioneering the integration of blockchain art and
+          physical artifacts. Since launch, they&apos;ve worked with{" "}
           <TextLink link="https://twitter.com/AzukiOfficial/status/1512886138670759941?s=20&t=fP4dEVgYoaYo7q-xJQmN4g">
             Coachella artists
           </TextLink>
-          , <TextLink link="https://hypebeast.com/">Hypebeast</TextLink>,{" "}
+          , sent{" "}
           <TextLink link="https://twitter.com/Ledger/status/1519179535325052933?s=20&t=23FSw7lnvc53d_Fjxc0ZOw">
-            NASA
+            a digital token to the moon
           </TextLink>
-          , and more. As a designer, I craft visual stories and interactive
-          experiences for{" "}
-          <TextLink link="https://azuki.com">azuki.com</TextLink>. I also push
-          code, which I absolutely love.
+          , and much more. As a designer, I work on interactive storytelling and
+          features for product launches. I also push code, which I absolutely
+          love.
         </ProjectBody>
         <ProjectDetails
           role={["product designer, frontend developer"]}
-          collaborators={["Hoshiboy", "Feb Tea", "2pm Flow"]}
+          collaborators={["Hoshiboy", "Azuki team"]}
           duration={["2022-PRESENT"]}
           tools={["figma", "react(next.js)"]}
         />
@@ -82,23 +65,46 @@ export default function Brain() {
           Twitter
         </LinkCard>
         <Spacer></Spacer>
-        <ProjectMedia src="/work/azuki/cart.mov" isVideo={true}></ProjectMedia>
+        <Divider />
+        <ProjectBody col={1}>
+          I helped design the brand's storytelling section of the website. A
+          huge collaborative effort across all parts of the Azuki team, we
+          placed a huge emphasis on user exploration by thoughtfully sequencing
+          copy, animation, and art.
+        </ProjectBody>
         <ProjectMedia
-          src={"/work/azuki/beanz-pairing.mov"}
+          src={"/work/azuki/lore-main.mp4"}
           isVideo={true}
         ></ProjectMedia>
-        <ProjectBody col={1} caption={true}>
-          Worked with Gleb to design a search bar for all domains, which
-          improved UI visiblity and clarity.
+        <ProjectMedia
+          src={"/work/azuki/lore-ch-1.mp4"}
+          isVideo={true}
+        ></ProjectMedia>
+        <Divider />
+        <ProjectBody col={1}>
+          I designed the merchandise and cart experience. As conventional as the
+          designs look, working on this project was unique because of Azuki's
+          integration with web3 tokens and wallet addresses. Almost all physical
+          items released through Azuki.com have digital token counterparts,
+          making blockchain verification an integral part of the purchase
+          process. Really cool interaction work to come soon...
         </ProjectBody>
+        <ProjectMedia src="/work/azuki/cart.mp4" isVideo={true}></ProjectMedia>
+        <ProjectMedia src={MerchItem}></ProjectMedia>
 
+        <Divider />
+        <ProjectBody col={1}>
+          The Beanz NFT collection was my first project, which consisted of
+          designing the Beanz storytelling page as well as the Beanz pairing
+          experience.
+        </ProjectBody>
         <ProjectMedia src={BeanzLanding}></ProjectMedia>
+        <ProjectMedia
+          src={"/work/azuki/beanz-pairing.mp4"}
+          isVideo={true}
+        ></ProjectMedia>
         <ProjectMedia src={BeanzCarousel}></ProjectMedia>
-        <ProjectMedia src={BeanzSelfie}></ProjectMedia>
-
-        <ProjectBody col={1} caption={true}>
-          Expandable cards that can be collapsed for a more compact view.
-        </ProjectBody>
+        <ProjectMedia src={GalleryBeanz}></ProjectMedia>
       </GridContainer>
     </motion.main>
   );

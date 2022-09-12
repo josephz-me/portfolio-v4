@@ -67,12 +67,12 @@ export default function Home() {
           content={"/project-covers/apple.jpg"}
         ></ProjectCard>
         <ProjectCard
-          title="Skiff"
-          description="collaboration tools"
+          title="Azuki"
+          description="Product and Brand"
           col={2}
-          locked={true}
+          link="/azuki"
           isImage={true}
-          content={"/project-covers/skiff.jpg"}
+          content={"/project-covers/azuki.jpg"}
         ></ProjectCard>
         <ProjectCard
           title="Brain Technologies"
@@ -91,13 +91,14 @@ export default function Home() {
           content={"/project-covers/metalink.jpg"}
         ></ProjectCard>
         <ProjectCard
-          title="Azuki"
-          description="Product and Brand"
+          title="Skiff"
+          description="collaboration tools"
           col={1}
           locked={true}
           isImage={true}
-          content={"/project-covers/azuki.jpg"}
+          content={"/project-covers/skiff.jpg"}
         ></ProjectCard>
+
         <ProjectCard
           title="Experiments"
           description="design & code"

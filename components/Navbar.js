@@ -35,13 +35,15 @@ export default function Navbar(props) {
         className={`hover:cursor-pointer transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]
             ${scrollY > 40 ? "md:opacity-0 pointer-events-none" : ""}`}
       >
-        <img
-          src={"/zhang-icon-white.svg"}
-          alt="zhang logo"
-          className={`${
-            pageName == "/" ? "md:fixed top-[2rem]" : ""
-          } bg-[rgba(255,255,255,.05)] hover:bg-[rgba(255,255,255,.1)] w-[48px] h-[auto] p-2 rounded-md  inline-block`}
-        />
+        <Link href="/">
+          <img
+            src={"/zhang-icon-white.svg"}
+            alt="zhang logo"
+            className={`${
+              pageName == "/" ? "md:fixed top-[2rem]" : ""
+            } bg-[rgba(255,255,255,.05)] hover:bg-[rgba(255,255,255,.1)] w-[48px] h-[auto] p-2 rounded-md  inline-block`}
+          />
+        </Link>
       </a>
 
       <a className={`ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>
