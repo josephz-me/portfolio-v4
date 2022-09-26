@@ -15,6 +15,7 @@ import Divider from "../components/projects/Divider";
 import BeanzLanding from "../public/work/azuki/beanz-landing.jpg";
 import BeanzCarousel from "../public/work/azuki/beanz-carousel.jpg";
 import MerchItem from "../public/work/azuki/merch-item.jpg";
+import LoreMain from "../public/work/azuki/lore-main.jpg";
 import GalleryBeanz from "../public/work/azuki/gallery-beanz.jpg";
 
 import Link from "next/link";
@@ -72,10 +73,7 @@ export default function Brain() {
           on user exploration by thoughtfully sequencing copy, animation, and
           art.
         </ProjectBody>
-        <ProjectMedia
-          src={"/work/azuki/lore-main.mp4"}
-          isVideo={true}
-        ></ProjectMedia>
+        <ProjectMedia src={LoreMain}></ProjectMedia>
         <ProjectMedia
           src={"/work/azuki/lore-ch-1.mp4"}
           isVideo={true}
