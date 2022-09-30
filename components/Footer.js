@@ -50,7 +50,7 @@ export default function Footer() {
           <TextLink link="https://read.cv/jo_">Read.CV</TextLink>
         </span>
         <span className="col-start-5 md:col-start-9">
-          <TextLink link="https://twitter.com/__joz">Twitter</TextLink>
+          <TextLink link="https://twitter.com/trader___jo">Twitter</TextLink>
         </span>
         <span className="col-start-9 md:col-start-11">
           <TextLink link="mailto:jxsephz@gmail.com">Email</TextLink>
