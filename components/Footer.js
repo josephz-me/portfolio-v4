@@ -12,16 +12,7 @@ export default function Footer() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log(aboutText.slice(0, 2));
-      if (aboutText.charAt(aboutText.length - 1) == " ") {
-        setAboutText(
-          (aboutText) => aboutText.slice(-1) + aboutText.slice(0, -1)
-        );
-      } else {
-        setAboutText(
-          (aboutText) => aboutText.slice(-1) + aboutText.slice(0, -1)
-        );
-      }
+      setAboutText((aboutText) => aboutText.slice(-1) + aboutText.slice(0, -1));
     }, 300);
     return () => clearInterval(interval);
   }, []);
