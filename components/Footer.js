@@ -6,40 +6,42 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Footer() {
   const pageName = useRouter().asPath;
-  const [hover, setHover] = useState(false);
+  const [aboutText, setAboutText] = useState(
+    `▞▚▞▚▞▚▞_joseph_zhang_2022_▞▚▞▚▞▚▞_next.js_vercel_`
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      console.log(aboutText.slice(0, 2));
+      if (aboutText.charAt(aboutText.length - 1) == " ") {
+        setAboutText(
+          (aboutText) => aboutText.slice(-1) + aboutText.slice(0, -1)
+        );
+      } else {
+        setAboutText(
+          (aboutText) => aboutText.slice(-1) + aboutText.slice(0, -1)
+        );
+      }
+    }, 300);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    console.log(aboutText.charAt(0));
+  }, [aboutText]);
 
   return (
     <footer
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
       className={`text-zinc-100 pb-4 ${pageName == "/" ? " mt-12" : "mt-32"}`}
     >
       <GridContainer>
         {/* copyright and next.js mention */}
-        <div className="relative col-start-1 col-end-5  hidden md:inline">
-          {hover ? (
-            <AnimatePresence>
-              <motion.p
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 5 }}
-                transition={{ ease: "easeOut", duration: 0.2 }}
-                className={`absolute text-zinc-600`}
-              >
-                Built with Next.js and Vercel
-              </motion.p>
-            </AnimatePresence>
-          ) : (
-            <motion.p
-              initial={{ opacity: 0, y: 5 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -5 }}
-              transition={{ ease: "easeOut", duration: 0.2 }}
-              className={`absolute text-zinc-600`}
-            >
-              Joseph Zhang © 2022
-            </motion.p>
-          )}
+        <div className="relative col-start-1 col-end-7  hidden md:inline text-clip overflow-hidden">
+          <p
+            className={`text-clip text-zinc-700 hover:text-zinc-500 whitespace-nowrap`}
+          >
+            {aboutText}
+          </p>
         </div>
 
         {/* links */}
