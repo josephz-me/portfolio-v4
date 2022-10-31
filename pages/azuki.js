@@ -78,9 +78,9 @@ export default function Brain() {
           thoughtful interactions, from badge hover tilts to even how a user
           would edit their profile.
         </ProjectBody>
-        <TextLink link="https://www.azuki.com/collector/dingaling">
+        <LinkCard col={1} link="https://www.azuki.com/collector/dingaling">
           Example Profile
-        </TextLink>
+        </LinkCard>
         <ProjectMedia src={cp_main} />
         <ProjectMedia src={cp_gallery} />
         <ProjectMedia src={cp_badges_card} />
@@ -103,11 +103,11 @@ export default function Brain() {
           parts of the Azuki team, we placed a huge emphasis on user exploration
           by thoughtfully sequencing copy, animation, and art.
         </ProjectBody>
+        <LinkCard col={1} link="https://azuki.com/world">
+          Website
+        </LinkCard>
         <ProjectMedia src={LoreMain}></ProjectMedia>
-        <ProjectMedia
-          src={"/work/azuki/lore-ch-1.mp4"}
-          isVideo={true}
-        ></ProjectMedia>
+
         <Divider />
         <ProjectBody title="Shop" col={1}>
           I designed the merchandise and cart experience. As conventional as the
