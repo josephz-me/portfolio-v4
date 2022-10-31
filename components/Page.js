@@ -2,7 +2,6 @@ import Footer from "./Footer";
 import Meta from "./Meta";
 import Navbar from "./Navbar";
 import Script from "next/script";
-import CommandMenu from "../components/CommandMenu";
 import React, { useEffect, useState } from "react";
 
 export default function Page(props) {

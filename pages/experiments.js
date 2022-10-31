@@ -12,6 +12,9 @@ import LinkCard from "../components/projects/LinkCard";
 import Spacer from "../components/projects/Spacer";
 import ExternalVideo from "../components/projects/ExternalVideo";
 import GalleryArt from "../public/work/pixelpush/gallery-art.jpg";
+import LE_1 from "../public/work/experiments/LE-1.jpg";
+import LE_2 from "../public/work/experiments/LE-2.jpg";
+import LE_3 from "../public/work/experiments/LE-3.jpg";
 import Divider from "../components/projects/Divider";
 
 const item = {
@@ -51,19 +54,26 @@ export default function Brain() {
     <motion.main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero content="/project-covers/aiga.jpg" />
-        <ProjectTitle role="design & code">Experiments</ProjectTitle>
+        <ProjectTitle role="Anything & Everything">Experiments</ProjectTitle>
         <ProjectBody col={2}>
-          A collection of experimental projects and explorations focused around
-          interaction, code, and data. Projects range from collaborative
-          projects done at Carnegie Mellon to mini prototypes build out of
-          personal interest. If any of them peak your interest, definitely reach
-          out!
+          A collection of experimental projects that I found joy in pursuing.
+          Projects range from collaborative projects done at Carnegie Mellon to
+          mini prototypes build out of personal interest. If any of resonate
+          with you, I'd love to talk more about them.
         </ProjectBody>
         <Divider />
-        <ProjectTitle role="messaging and social">
-          Contextual Media
-        </ProjectTitle>
-        <ProjectBody>
+        <ProjectBody title="Lighting Engines">
+          This was a form exploration from my time at Carnegie Mellon's School
+          of Design. My prompt was to design a lamp, or lighting engine, that
+          eased a person's ability to sleep. Inspired by the organic forms of
+          shells and the hues of a himalayan salt lamp, I created this.
+        </ProjectBody>
+        <ProjectMedia src={LE_1}></ProjectMedia>
+        <ProjectMedia src={LE_2}></ProjectMedia>
+        <ProjectMedia src={LE_3}></ProjectMedia>
+        <Divider />
+
+        <ProjectBody title="Contextual Media">
           {`Current attachable media (image, video, audio) are segmented from the
           words that describe them, limiting the clarity of an individual's
           intent. A concept previously explored with Jenni Lee and Rachel Lee,
@@ -76,8 +86,7 @@ export default function Brain() {
         ></ProjectMedia>
         <Divider />
         <Spacer />
-        <ProjectTitle role="multiplayer art canvas">Pixel Push</ProjectTitle>
-        <ProjectBody>
+        <ProjectBody title="Pixel Push">
           Tools shape the way we express ourselves and share our ideas. From
           Microsoft Paint to more complex tools such as Adobe Photoshop, the
           affordances of creative applications heavily influence the way we
@@ -115,8 +124,7 @@ export default function Brain() {
         </ProjectBody>
         <Divider />
         <Spacer />
-        <ProjectTitle role="interactivei data vis">AIGA & Hue</ProjectTitle>
-        <ProjectBody>
+        <ProjectBody title="AIGA & Hue">
           AIGA & Hue is a desktop web experience that visualizes career data
           from the 2019 AIGA Design Census in a playful and informative manner.
           The recent over-saturation of interest in certain design fields has
@@ -148,8 +156,7 @@ export default function Brain() {
         </ProjectBody>
         <Divider />
         <Spacer />
-        <ProjectTitle role="voice agents">Thinkspace</ProjectTitle>
-        <ProjectBody>
+        <ProjectBody title="Thinkspace">
           Rich, engaging conversation is a hallmark of meaningful human-to-human
           interaction. However, factors such as relational closeness, social
           formalities, and insecurities often hinder unfamiliar individuals from
