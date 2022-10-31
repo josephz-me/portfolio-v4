@@ -56,17 +56,17 @@ export default function Brain() {
         <ProjectHero content="/project-covers/aiga.jpg" />
         <ProjectTitle role="Anything & Everything">Experiments</ProjectTitle>
         <ProjectBody col={2}>
-          A collection of experimental projects that I found joy in pursuing.
+          {`A collection of experimental projects that I found joy in pursuing.
           Projects range from collaborative projects done at Carnegie Mellon to
           mini prototypes build out of personal interest. If any of resonate
-          with you, I'd love to talk more about them.
+          with you, I'd love to talk more about them.`}
         </ProjectBody>
         <Divider />
         <ProjectBody title="Lighting Engines">
-          This was a form exploration from my time at Carnegie Mellon's School
+          {`This was a form exploration from my time at Carnegie Mellon's School
           of Design. My prompt was to design a lamp, or lighting engine, that
           eased a person's ability to sleep. Inspired by the organic forms of
-          shells and the hues of a himalayan salt lamp, I created this.
+          shells and the hues of a himalayan salt lamp, I created this.`}
         </ProjectBody>
         <ProjectMedia src={LE_1}></ProjectMedia>
         <ProjectMedia src={LE_2}></ProjectMedia>
