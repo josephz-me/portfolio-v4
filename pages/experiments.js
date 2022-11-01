@@ -53,7 +53,7 @@ export default function Brain() {
   return (
     <motion.main className="min-h-[70vh]">
       <GridContainer>
-        <ProjectHero content="/project-covers/aiga.jpg" />
+        <ProjectHero content="/work/experiments/LE-3.jpg" />
         <ProjectTitle role="Anything & Everything">Experiments</ProjectTitle>
         <ProjectBody col={2}>
           {`A collection of experimental projects that I found joy in pursuing.

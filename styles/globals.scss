@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .h1 {
+    @apply text-xl lg:text-2xl tracking-wide font-black leading-[1em] lg:leading-[1em] uppercase mb-3 font-sans;
+  }
+
+  .h2 {
+    @apply text-base lg:text-lg tracking-wide font-black leading-[1em] lg:leading-[1em] uppercase mb-3 font-sans;
+  }
+}
+
 * {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
@@ -19,26 +29,6 @@ input {
   letter-spacing: 0.08em;
   line-height: 150%;
   font-size: 13px;
-}
-
-h1 {
-  font-family: nimbus-sans-extended, sans-serif;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 100%;
-  font-style: normal;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-h2 {
-  font-family: nimbus-sans-extended, sans-serif;
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 100%;
-  font-style: normal;
-  text-transform: uppercase;
-  margin-bottom: 12px;
 }
 
 @media only screen and (max-width: 500px) {

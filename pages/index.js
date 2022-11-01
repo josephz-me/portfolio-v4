@@ -105,7 +105,7 @@ export default function Home() {
           col={2}
           isImage={true}
           link="/experiments"
-          content={"/project-covers/aiga.jpg"}
+          content={"/work/experiments/LE-3.jpg"}
         ></ProjectCard>
       </GridContainer>
     </motion.main>
