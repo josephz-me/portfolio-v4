@@ -31,6 +31,7 @@ export default function Navbar(props) {
       rounded-md bg-neutral-800 absolute w-[48px] h-[48px] top-0 left-0 
       md:hover:scale-[1.03] hover:cursor-pointer hover:cursor-help
       transition duration-[100ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
+      key={icon}
     >
       <Image
         onClick={incrementCount}
@@ -83,7 +84,7 @@ export default function Navbar(props) {
       </div>
 
       <a className={`ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>
-        <Link href="/">
+        <Link passHref href="/">
           <p className=" cursor-pointer z-20 justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(150,150,150,.2)]  hover:bg-[rgba(150,150,150,.4)] rounded-md inline-block fit-content">
             Back home
           </p>

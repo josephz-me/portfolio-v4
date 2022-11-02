@@ -25,7 +25,7 @@ export default function MiniProjectCard(props) {
   }, []);
 
   return (
-    <Link variants={props.animation} href={`${props.link}`}>
+    <Link passHref variants={props.animation} href={`${props.link}`}>
       <div
         className={`${column[props.col]} ${
           //determine if project is linked

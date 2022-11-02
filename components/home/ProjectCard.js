@@ -19,7 +19,7 @@ export default function ProjectCard(props) {
   }, []);
 
   return (
-    <Link variants={props.animation} href={`${props.link}`}>
+    <Link passHref variants={props.animation} href={`${props.link}`}>
       <div
         className={`${
           props.col == 1

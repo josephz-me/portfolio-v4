@@ -165,7 +165,7 @@ export default function CommandMenu({ open, setOpen }) {
 const Item = ({ closeModal, href, children, icon }) => {
   return (
     <Command.Item>
-      <Link href={href ? href : ""}>
+      <Link passHref href={href ? href : ""}>
         <a
           onClick={closeModal}
           className="flex justify-between items-center w-full"
