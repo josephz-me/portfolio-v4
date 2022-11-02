@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const icons = [
-  "profile-zhang.png",
+  "profile-zhang.svg",
   "profile-tanjiro.jpg",
   "profile-real.jpg",
   "profile-unemployable.jpg",
@@ -34,6 +34,7 @@ export default function Navbar(props) {
       key={icon}
     >
       <Image
+        priority
         onClick={incrementCount}
         src={`/navbar-icons/${icon}`}
         alt="navbar-icon"
