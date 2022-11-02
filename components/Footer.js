@@ -17,10 +17,6 @@ export default function Footer() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    console.log(aboutText.charAt(0));
-  }, [aboutText]);
-
   return (
     <footer
       className={`text-zinc-100 pb-4 ${pageName == "/" ? " mt-12" : "mt-32"}`}
