@@ -60,24 +60,18 @@ export default function Navbar(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  Number.prototype.map = function (in_min, in_max, out_min, out_max) {
-    return (
-      ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
-    );
-  };
-
   return (
-    <nav className=" flex w-full h-auto inline-block md:sticky items-stretch flex-1 justify-between top-[1.99rem] md:mb-0 mb-6 z-20 ">
+    <nav className={`${pageName == "/" ? "md:fixed" : "md:sticky"} flex w-full h-auto inline-block items-stretch flex-1 justify-between top-[1.99rem] md:mb-0 mb-6 z-20 `}>
       <div
         className={`relative w-[48px] h-[48px] md:hover:scale-[1.03] hover:cursor-help
         transition duration-[100ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]
             ${
-              scrollY > 40
-                ? "md:opacity-0 pointer-events-none transition duration-[100ms]"
-                : ""
-            } 
-            ${pageName == "/" ? "md:fixed" : ""}
-             `}
+                scrollY > 40
+                  ? "md:opacity-0 pointer-events-none transition duration-[100ms]"
+                  : ""
+              } 
+
+      `}
       >
         {iconItems}
       </div>
@@ -92,3 +86,5 @@ export default function Navbar(props) {
     </nav>
   );
 }
+
+
