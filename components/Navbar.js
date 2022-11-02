@@ -17,6 +17,10 @@ export default function Navbar(props) {
 
   //rotate images
   const [iconCount, setIconCount] = useState(0);
+
+  useEffect(()=>{
+    console.log(iconCount);
+  },[iconCount])
   const incrementCount = () => {
     // Update state with incremented value
     iconCount == icons.length - 1
@@ -24,30 +28,23 @@ export default function Navbar(props) {
       : setIconCount(iconCount + 1);
   };
 
+
+
   const iconItems = icons.map((icon) => (
-    <span
-      className={`
-      ${icon == icons[iconCount] ? "" : "opacity-0 pointer-events-none"} 
-      rounded-md bg-neutral-800 absolute w-[48px] h-[48px] top-0 left-0 
-      md:hover:scale-[1.03] hover:cursor-pointer hover:cursor-help
-      transition duration-[100ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
-      key={icon}
-    >
       <Image
         priority
         onClick={incrementCount}
+        count={iconCount}
         src={`/navbar-icons/${icon}`}
         alt="navbar-icon"
         objectFit="cover"
         layout="fill"
-        className="rounded-md"
+        key={icon}
+        className={`
+        ${icon == icons[iconCount] ? "" : "opacity-0"}
+        rounded-md bg-neutral-800 absolute top-0 left-0 transition`}
       />
-    </span>
   ));
-
-  useEffect(() => {
-    console.log(iconCount);
-  }, [iconCount]);
 
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
@@ -72,13 +69,14 @@ export default function Navbar(props) {
   return (
     <nav className=" flex w-full h-auto inline-block md:sticky items-stretch flex-1 justify-between top-[1.99rem] md:mb-0 mb-6 z-20 ">
       <div
-        className={`relative
+        className={`relative w-[48px] h-[48px] md:hover:scale-[1.03] hover:cursor-help
+        transition duration-[100ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]
             ${
               scrollY > 40
                 ? "md:opacity-0 pointer-events-none transition duration-[100ms]"
                 : ""
             } 
-            ${pageName == "/" ? "md:fixed top-[2rem]" : ""}
+            ${pageName == "/" ? "md:fixed" : ""}
              `}
       >
         {iconItems}
