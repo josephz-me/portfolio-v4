@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
+import { useReward } from 'react-rewards';
+import {isMobile} from 'react-device-detect';
+
+
 
 const icons = [
   "profile-zhang.svg",
@@ -12,7 +16,20 @@ const icons = [
   "profile-dog.jpg",
 ];
 
-export default function Navbar(props) {
+export default function Navbar() {
+
+  //confetti config
+  const {reward: celebrationOne, isAnimating: isConfettiAnimating} = useReward('celebration', 'confetti',
+  {angle: -20,
+    zIndex: 200,
+    colors:["#FFFFFF"]});
+  const {reward: celebrationTwo, isAnimating: isBalloonsAnimating} = useReward('celebration', 'emoji', 
+  {angle: -20,
+    zIndex: 200,
+    elementSize: 40,
+    emoji:["🎂","🌝","🍰", "🛁", ""]
+  });
+  
   const pageName = useRouter().asPath;
 
   //rotate images
@@ -33,7 +50,6 @@ export default function Navbar(props) {
   const iconItems = icons.map((icon) => (
       <Image
         priority
-        onClick={incrementCount}
         count={iconCount}
         src={`/navbar-icons/${icon}`}
         alt="navbar-icon"
@@ -61,16 +77,25 @@ export default function Navbar(props) {
   }, []);
 
   return (
-    <nav className={`${pageName == "/" ? "md:fixed" : "md:sticky"} flex w-full h-auto inline-block items-stretch flex-1 justify-between top-[1.99rem] md:mb-0 mb-6 z-20 `}>
+    <nav className={`${pageName == "/" ? "md:fixed" : "md:sticky"} z-20 flex w-full h-auto inline-block items-stretch flex-1 justify-between top-[1.99rem] md:mb-0 mb-6`}>
+      {/* icon container */}
       <div
-        className={`relative w-[48px] h-[48px] md:hover:scale-[1.03] hover:cursor-help
-        transition duration-[100ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]
+        id="celebration"
+        disabled={isConfettiAnimating || celebrationTwo}
+        onClick={()=> {
+          incrementCount();
+          if(!isMobile) {
+            console.log(isMobile);
+            celebrationOne(); celebrationTwo();
+          }
+        }}
+        className={`relative w-[48px] h-[48px] hover:opacity-[.9] hover:cursor-help
+         ease-[cubic-bezier(0.22, 1, 0.36, 1)]
             ${
                 scrollY > 40
                   ? "md:opacity-0 pointer-events-none transition duration-[100ms]"
                   : ""
               } 
-
       `}
       >
         {iconItems}
@@ -78,7 +103,7 @@ export default function Navbar(props) {
 
       <a className={`ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>
         <Link passHref href="/">
-          <p className=" cursor-pointer z-20 justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(150,150,150,.2)]  hover:bg-[rgba(150,150,150,.4)] rounded-md inline-block fit-content">
+          <p className=" cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(150,150,150,.2)]  hover:bg-[rgba(150,150,150,.4)] rounded-md inline-block fit-content">
             Back home
           </p>
         </Link>

@@ -32,7 +32,7 @@ export default function ProjectCard(props) {
             : "pointer-events-none"
         }
       
-      group relative grid p-2 bg-[rgba(255,255,255,.03)] rounded-md z-10 ease-in`}
+      group relative grid p-2 bg-[rgba(255,255,255,.03)] rounded-md ease-in`}
       >
         <div className="relative h-[60vw] overflow-hidden object-cover lg:h-[29vw] rounded-md">
           {props.isImage ? (
@@ -67,7 +67,7 @@ export default function ProjectCard(props) {
           <p className={`text-zinc-50`}>{props.title}</p>
           <p className="text-zinc-500">{props.description}</p>
           {props.locked && (
-            <p className="absolute text-zinc-300 rounded-md right-4 top-4 z-10 px-2 py-1 bg-[rgba(0,0,0,.5)]">
+            <p className="absolute text-zinc-300 rounded-md right-4 top-4 px-2 py-1 bg-[rgba(0,0,0,.5)]">
               LOCKED
             </p>
           )}

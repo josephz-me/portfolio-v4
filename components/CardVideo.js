@@ -11,7 +11,7 @@ export default function CardVideo(props) {
   return (
     <div className="relative rounded-md overflow-hidden h-full">
       <div
-        className={`absolute top-0 w-full h-full overflow-hidden z-10 rounded-md ${
+        className={`absolute top-0 w-full h-full overflow-hidden rounded-md ${
           isVideoLoaded
             ? "opacity-0 bg-[rgba(255,255,255,0)]"
             : "opacity-100 animate-pulse bg-[rgba(255,255,255,.03)]"
