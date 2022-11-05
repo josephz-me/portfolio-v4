@@ -56,17 +56,17 @@ export default function Brain() {
         <ProjectHero content="/work/experiments/LE-3.jpg" />
         <ProjectTitle role="Anything & Everything">Experiments</ProjectTitle>
         <ProjectBody col={2}>
-          {`A collection of experimental projects that I found joy in pursuing.
-          Projects range from collaborative projects done at Carnegie Mellon to
-          mini prototypes build out of personal interest. If any of resonate
-          with you, I'd love to talk more about them.`}
+          {`A collection of experimental projects I pursued for joy and curiosity.
+          Projects range from large collaborative projects done at Carnegie Mellon to
+          mini prototypes built over a weekend. If any of these ideas resonate
+          with you, would love to talk.`}
         </ProjectBody>
         <Divider />
-        <ProjectBody title="Lighting Engines">
+        <ProjectBody title="Lighting Engine">
           {`This was a form exploration from my time at Carnegie Mellon's School
           of Design. My prompt was to design a lamp, or lighting engine, that
-          eased a person's ability to sleep. Inspired by the organic forms of
-          shells and the hues of a himalayan salt lamp, I created this.`}
+          eased a person's ability to sleep. This form was inspired by the organic forms of
+          shells and the hues of a himalayan salt lamp.`}
         </ProjectBody>
         <ProjectMedia src={LE_1}></ProjectMedia>
         <ProjectMedia src={LE_2}></ProjectMedia>
@@ -74,9 +74,9 @@ export default function Brain() {
         <Divider />
 
         <ProjectBody title="Contextual Media">
-          {`Current attachable media (image, video, audio) are segmented from the
+          {`Current attachable media (image, video, audio) are detached from the
           words that describe them, limiting the clarity of an individual's
-          intent. A concept previously explored with Jenni Lee and Rachel Lee,
+          communicative intent. A concept previously explored with Jenni Lee and Rachel Lee,
           we looked into how social platforms can better communicate direct
           relationships between language and media.`}
         </ProjectBody>

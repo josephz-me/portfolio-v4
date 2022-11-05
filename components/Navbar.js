@@ -23,7 +23,7 @@ export default function Navbar() {
   {angle: -20,
     zIndex: 200,
     colors:["#FFFFFF"]});
-  const {reward: celebrationTwo, isAnimating: isBalloonsAnimating} = useReward('celebration', 'emoji', 
+  const {reward: celebrationTwo, isAnimating: isBallooInsAnimating} = useReward('celebration', 'emoji', 
   {angle: -20,
     zIndex: 200,
     elementSize: 40,
@@ -44,23 +44,6 @@ export default function Navbar() {
       ? setIconCount(0)
       : setIconCount(iconCount + 1);
   };
-
-
-
-  const iconItems = icons.map((icon) => (
-      <Image
-        priority
-        count={iconCount}
-        src={`/navbar-icons/${icon}`}
-        alt="navbar-icon"
-        objectFit="cover"
-        layout="fill"
-        key={icon}
-        className={`
-        ${icon == icons[iconCount] ? "" : "opacity-0"}
-        rounded-md bg-neutral-800 absolute top-0 left-0 transition`}
-      />
-  ));
 
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
@@ -98,7 +81,21 @@ export default function Navbar() {
               } 
       `}
       >
-        {iconItems}
+        {icons.map((icon) => (
+          <Image
+            priority
+            count={iconCount}
+            src={`/navbar-icons/${icon}`}
+            alt="navbar-icon"
+            objectFit="cover"
+            layout="fill"
+            key={icon}
+            className={`
+            ${icon == icons[iconCount] ? "" : "opacity-0"}
+            rounded-md bg-neutral-800 absolute top-0 left-0 transition`}
+          />
+        ))
+        }
       </div>
 
       <a className={`ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>
