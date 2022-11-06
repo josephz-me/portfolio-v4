@@ -58,13 +58,14 @@ export default function Home() {
           <TextLink link="https://skiff.com/">Skiff Privacy</TextLink> building
           privacy-first tools for teams.
         </motion.p>
+
         <ProjectCard
-          title="Apple"
-          description="Multimodal interaction"
+          title="Skiff"
+          description="collaboration tools"
           col={1}
-          link="/apple"
+          locked={true}
           isImage={true}
-          content={"/project-covers/apple.jpg"}
+          content={"/project-covers/skiff-2.jpg"}
         ></ProjectCard>
         <ProjectCard
           title="Azuki"
@@ -75,29 +76,30 @@ export default function Home() {
           content={"/project-covers/azuki.jpg"}
         ></ProjectCard>
         <ProjectCard
+          title="Apple"
+          description="Multimodal interaction"
+          col={1}
+          link="/apple"
+          isImage={true}
+          content={"/project-covers/apple.jpg"}
+        ></ProjectCard>
+        <ProjectCard
           title="Brain Technologies"
           description="multimodal interaction"
           link="/brain"
-          col={1}
+          col={2}
           isImage={true}
           content={"/project-covers/natural.jpg"}
         ></ProjectCard>
         <ProjectCard
           title="Metalink Labs"
           description="Design systems & Messaging"
-          col={2}
+          col={1}
           isImage={true}
           link="/metalink"
           content={"/project-covers/metalink.jpg"}
         ></ProjectCard>
-        <ProjectCard
-          title="Skiff"
-          description="collaboration tools"
-          col={1}
-          locked={true}
-          isImage={true}
-          content={"/project-covers/skiff.jpg"}
-        ></ProjectCard>
+
 
         <ProjectCard
           title="Experiments"
