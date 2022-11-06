@@ -67,7 +67,7 @@ export default function ProjectCard(props) {
           <p className={`text-zinc-50`}>{props.title}</p>
           <p className="text-zinc-500">{props.description}</p>
           {props.locked && (
-            <p className="absolute text-zinc-300 rounded-md right-4 top-4 px-2 py-1 bg-[rgba(0,0,0,.5)]">
+            <p className="absolute text-neutral-100 rounded-md right-4 top-4 px-2 py-1 bg-[rgba(0,0,0,.5)]">
               LOCKED
             </p>
           )}

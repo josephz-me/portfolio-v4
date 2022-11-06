@@ -60,22 +60,6 @@ export default function Home() {
         </motion.p>
 
         <ProjectCard
-          title="Skiff"
-          description="collaboration tools"
-          col={1}
-          locked={true}
-          isImage={true}
-          content={"/project-covers/skiff-2.jpg"}
-        ></ProjectCard>
-        <ProjectCard
-          title="Azuki"
-          description="Product and Brand"
-          col={2}
-          link="/azuki"
-          isImage={true}
-          content={"/project-covers/azuki.jpg"}
-        ></ProjectCard>
-        <ProjectCard
           title="Apple"
           description="Multimodal interaction"
           col={1}
@@ -83,6 +67,24 @@ export default function Home() {
           isImage={true}
           content={"/project-covers/apple.jpg"}
         ></ProjectCard>
+
+                <ProjectCard
+          title="Skiff"
+          description="collaboration tools"
+          col={2}
+          locked={true}
+          isImage={true}
+          content={"/project-covers/skiff-2.jpg"}
+        ></ProjectCard>
+                <ProjectCard
+          title="Azuki"
+          description="Product and Brand"
+          col={1}
+          link="/azuki"
+          isImage={true}
+          content={"/project-covers/azuki.jpg"}
+        ></ProjectCard>
+
         <ProjectCard
           title="Brain Technologies"
           description="multimodal interaction"
