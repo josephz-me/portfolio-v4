@@ -28,7 +28,7 @@ export default function ProjectCard(props) {
         } ${
           //determine if project is linked
           props.link != undefined
-            ? "cursor-pointer hover:bg-[rgba(255,255,255,.05)]"
+            ? "cursor-pointer hover:bg-neutral-800"
             : "pointer-events-none"
         }
       

@@ -100,7 +100,7 @@ export default function Navbar() {
 
       <a className={`ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>
         <Link passHref href="/">
-          <p className=" cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(150,150,150,.2)]  hover:bg-[rgba(150,150,150,.4)] rounded-md inline-block fit-content">
+          <p className=" cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-white/10 hover:bg-white/20 rounded-md inline-block fit-content">
             Back home
           </p>
         </Link>
