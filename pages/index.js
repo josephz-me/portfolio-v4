@@ -82,7 +82,7 @@ export default function Home() {
           col={1}
           link="/azuki"
           isImage={true}
-          content={"/project-covers/azuki.jpg"}
+          content={"/project-covers/azuki-2.jpg"}
         ></ProjectCard>
 
         <ProjectCard
