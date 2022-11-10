@@ -37,7 +37,7 @@ export default function Brain() {
   return (
     <motion.main className="min-h-[70vh]">
       <GridContainer>
-        <ProjectHero content="/project-covers/azuki.jpg" />
+        <ProjectHero content="/project-covers/azuki-2.jpg" />
         <ProjectTitle role="product & brand">Azuki</ProjectTitle>
         <ProjectBody col={2}>
           Azuki is a web3 brand pioneering the integration of blockchain
