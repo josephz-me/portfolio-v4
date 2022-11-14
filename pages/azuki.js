@@ -79,7 +79,7 @@ export default function Brain() {
         <ProjectMedia src={cp_main} />
         <ProjectMedia
           src={"/work/azuki/cp-badges.mp4"}
-          isVideo={true}
+          isVideo
         ></ProjectMedia>
         <Divider />
         <Spacer></Spacer>
@@ -121,7 +121,7 @@ export default function Brain() {
         <LinkCard col={1} link="https://www.azuki.com/beanz">Beanz Website</LinkCard>
         <ProjectMedia
           src={"/work/azuki/beanz-pairing.mp4"}
-          isVideo={true}
+          isVideo
         ></ProjectMedia>
         {/* <ProjectMedia src={BeanzLanding}></ProjectMedia> */}
         <ProjectMedia src={BeanzCarousel}></ProjectMedia>

@@ -19,15 +19,15 @@ export default function ProjectMedia(props) {
   }, []);
 
   return (
-    <div className=" block grid rounded-md overflow-hidden col-start-1 md:col-start-5 col-end-13">
+    <div className={`block grid rounded-md overflow-hidden col-start-1 col-end-13 ${props.large ? "md:col-start-1" : "md:col-start-5"}`}>
       {props.isVideo ? (
         <CardVideo src={props.src} loadingPhrase={loadingPhrase} />
       ) : (
         <div className="relative">
           <article
-            className={`object-cover w-full h-full transition duration-500 overflow-hidden rounded-md ease-out ${
+            className={` w-full transition duration-500 rounded-md ease-out ${
               isImageLoaded ? "opacity-1" : "opacity-0"
-            }`}
+            } ${props.framed ? "p-12 border-solid border-neutral-700 bg-neutral-900 border" : ""}`}
           >
             <Image
               src={props.src}
@@ -36,6 +36,7 @@ export default function ProjectMedia(props) {
               onLoadingComplete={() => {
                 handleImageLoad();
               }}
+              className={`${props.framed ? "!border !border-neutral-800 !border-solid rounded-md" : ""}`}
             />
           </article>
           <Preloader

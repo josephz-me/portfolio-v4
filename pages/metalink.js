@@ -52,10 +52,10 @@ export default function Metalink() {
         </ProjectBody>
         <ProjectMedia
           src={"/work/metalink/global-navbar.mp4"}
-          isVideo={true}
+          isVideo
         ></ProjectMedia>
         <ProjectMedia src={DS2}></ProjectMedia>
-        <ProjectBody caption={true}>
+        <ProjectBody caption>
           Redesigned the global navigation panel with an emphasis on clarity and
           scalability.
         </ProjectBody>{" "}
