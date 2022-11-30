@@ -25,7 +25,7 @@ export default function Footer() {
         {/* copyright and next.js mention */}
         <div className="relative col-start-1 col-end-7  hidden md:inline text-clip overflow-hidden">
           <p
-            className={`text-clip text-zinc-700 hover:text-zinc-500 whitespace-nowrap`}
+            className={`text-clip text-zinc-700 hover:text-yellow-700 whitespace-nowrap`}
           >
             {aboutText}
           </p>

@@ -35,27 +35,27 @@ export default function Home() {
         <motion.p
           className={`${
             scrollY > 40 ? "md:opacity-0 pointer-events-none" : ""
-          } gap-6 text-zinc-100 lg:sticky top-[2rem] pt-2  mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
+          } z-1000 gap-6 text-zinc-100 lg:sticky top-[2rem] pt-2  mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
         >
           Joseph is an interaction designer interested in digital toolmaking and
           multimodal input. After working at{" "}
-          <TextLink link="https://www.apple.com/siri/">Apple</TextLink>, he
+          <TextLink super={1} link="https://www.apple.com/siri/">Apple</TextLink>, he
           discovered a love for small, high-caliber teams and have since worked
           with starts-ups like{" "}
-          <TextLink link="https://natural.ai/#/">Brain Technologies</TextLink>,{" "}
-          <TextLink link="https://azuki.com">Azuki</TextLink>, and{" "}
-          <TextLink link="https://metalink.com/login">Metalink Labs</TextLink>.
+          <TextLink super={2} link="https://natural.ai/#/">Brain Technologies</TextLink>,{" "}
+          <TextLink super={3} link="https://azuki.com">Azuki</TextLink>, and{" "}
+          <TextLink super={4} link="https://metalink.com/login">Metalink Labs</TextLink>.
           Most recently, he graduated from Carnegie Mellon University where he
           studied{" "}
-          <TextLink link="https://design.cmu.edu/content/bachelor-design">
+          <TextLink super={5} link="https://design.cmu.edu/content/bachelor-design">
             Communication Design
           </TextLink>{" "}
           and{" "}
-          <TextLink link="https://www.hcii.cmu.edu/">
+          <TextLink super={6} link="https://www.hcii.cmu.edu/">
             Human-Computer Interaction
           </TextLink>
           . He is currently a designer at{" "}
-          <TextLink link="https://skiff.com/">Skiff Privacy</TextLink> building
+          <TextLink super={7} link="https://skiff.com/">Skiff</TextLink> building
           privacy-first tools for teams.
         </motion.p>
 

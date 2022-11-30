@@ -60,7 +60,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`${pageName == "/" ? "md:fixed" : "md:sticky"} z-20 flex w-full h-auto inline-block items-stretch flex-1 justify-between top-[1.99rem] md:mb-0 mb-6`}>
+    <nav className={`${pageName == "/" ? "md:fixed" : "md:sticky w-full"} z-20 flex h-auto inline-block items-stretch flex-1 justify-between top-[1.99rem] md:mb-0 mb-6`}>
       {/* icon container */}
       <div
         id="celebration"
