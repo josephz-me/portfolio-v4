@@ -3,7 +3,7 @@ import TextLink from "./TextLink";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-const GLOBAL_SPACING = 'md:px-6 px-4 py-10 md:py-16';
+const GLOBAL_SPACING = 'md:px-6 px-4 py-10 md:py-12';
 const BREAKPOINT = 'col-start-1 col-end-13'
 
 export default function Footer() {
@@ -47,7 +47,7 @@ export default function Footer() {
           <p className="text-zinc-600 strikethrough"><strike>Twitter</strike></p>
         </span>
         <div className={`${BREAKPOINT} md:col-start-9  flex flex-col space-y-1`}>
-          <p>{`Let's making something beautiful together.`}</p>
+          <p>{`Let's make something beautiful together.`}</p>
           <span>
           <TextLink super={4} link="mailto:jxsephz@gmail.com">jxsephz@gmail.com</TextLink>
           </span>
