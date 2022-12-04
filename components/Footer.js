@@ -6,11 +6,20 @@ import { motion, AnimatePresence } from "framer-motion";
 const GLOBAL_SPACING = 'md:px-6 px-4 py-10 md:py-12';
 const BREAKPOINT = 'col-start-1 col-end-13'
 
+
 export default function Footer() {
   const pageName = useRouter().asPath;
   const [aboutText, setAboutText] = useState(
     `▞▚▞▚▞▚▞_Copyright_2022_▞▚▞▚▞▚▞_Built with Next.JS_Vercel_▞▚▞▚▞▚▞_Based in Seattle_`
-  );
+    );
+
+  const [updatedTime, setUpdatedTime] = useState('loading...');
+
+  fetch('https://api.github.com/repos/josephz-me/portfolio-v4/commits?per_page=1')
+  .then(res => res.json())
+  .then(res => {
+    setUpdatedTime(res[0].commit.author.date)
+  })
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,10 +35,10 @@ export default function Footer() {
       <GridContainer footerSpacing={GLOBAL_SPACING}>
         
         <div className={`${BREAKPOINT} md:col-start-1 md:col-end-6 flex-col space-y-2`}>
-          <h1 className="sans  uppercase text-3xl">Joseph Zhang</h1>
+          {/* <h1 className="sans  uppercase text-3xl">Joseph Zhang</h1> */}
           <span className="flex-row flex align-middle space-x-4">
-            {/* <p className="self-center w-min px-2 py-0 pt-1 pb-[2px] mono lowercase text-zinc-600 border border-solid border-zinc-600 rounded-full">v4.1.2</p> */}
-            <p className="self-center mono uppercase text-zinc-600">Last updated 12.04.22</p>
+            <p className="self-center w-min px-2 py-0 pt-1 pb-[2px] mono lowercase text-zinc-500 border border-solid border-zinc-500 rounded-full">v4.1.2</p>
+            <p className="self-center mono uppercase text-zinc-500">{`Last updated ${updatedTime.substring(0, updatedTime.indexOf('T'))}`} </p>
             </span>
         </div>
 
