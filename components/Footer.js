@@ -3,7 +3,7 @@ import TextLink from "./TextLink";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-const GLOBAL_SPACING = 'md:px-6 px-4 py-10 md:py-12';
+const GLOBAL_SPACING = 'md:px-6 px-4 pb-10 pt-6 md:pb-10 md:pt-8';
 const BREAKPOINT = 'col-start-1 col-end-13'
 
 
@@ -13,12 +13,13 @@ export default function Footer() {
     `▞▚▞▚▞▚▞_Copyright_2022_▞▚▞▚▞▚▞_Built with Next.JS_Vercel_▞▚▞▚▞▚▞_Based in Seattle_`
     );
 
-  const [updatedTime, setUpdatedTime] = useState('loading...');
+  const [updatedTime, setUpdatedTime] = useState('...');
 
   fetch('https://api.github.com/repos/josephz-me/portfolio-v4/commits?per_page=1')
   .then(res => res.json())
   .then(res => {
     setUpdatedTime(res[0].commit.author.date)
+    console.log(res[0])
   })
 
   useEffect(() => {
@@ -37,13 +38,13 @@ export default function Footer() {
         <div className={`${BREAKPOINT} md:col-start-1 md:col-end-6 flex-col space-y-2`}>
           {/* <h1 className="sans  uppercase text-3xl">Joseph Zhang</h1> */}
           <span className="flex-row flex align-middle space-x-2">
-            <p className="self-center w-min px-2 py-0 pt-1 pb-[2px] mono lowercase text-yellow-300 border-yellow-300 border border-solid rounded-full">v4.1.2</p>
-            <p className="self-center mono uppercase text-zinc-600">{`Last updated ${updatedTime.substring(0, updatedTime.indexOf('T'))}`} </p>
+            <p className="self-center w-min px-2 pt-1 pb-[2px] mono lowercase text-yellow-300 border-yellow-300 border border-solid rounded-full">v4.1.2</p>
+            <p className="self-center px-2 pt-1 pb-[2px] mono uppercase text-zinc-600">{`Last updated ${updatedTime.substring(0, updatedTime.indexOf('T'))}`} </p>
             </span>
         </div>
 
     
-        <span className={`${BREAKPOINT} md:col-start-7 md:col-end-8 flex flex-col space-y-1`}>
+        <span className={`${BREAKPOINT} md:col-start-7 md:col-end-9 flex flex-col space-y-1`}>
           <p>
           <TextLink super={1} link="https://read.cv/jo_">Read.CV</TextLink>
           </p>
@@ -55,8 +56,8 @@ export default function Footer() {
           </p>
           <p className="text-zinc-600 strikethrough"><strike>Twitter</strike></p>
         </span>
-        <div className={`${BREAKPOINT} md:col-start-9  flex flex-col space-y-1`}>
-          <p>{`Let's make something beautiful together.`}</p>
+        <div className={`${BREAKPOINT} md:col-start-9 flex flex-col space-y-1`}>
+          <p>{`Let's build something together.`}</p>
           <span>
           <TextLink super={4} link="mailto:jxsephz@gmail.com">jxsephz@gmail.com</TextLink>
           </span>
