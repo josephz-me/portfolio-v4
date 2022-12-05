@@ -36,9 +36,9 @@ export default function Footer() {
         
         <div className={`${BREAKPOINT} md:col-start-1 md:col-end-6 flex-col space-y-2`}>
           {/* <h1 className="sans  uppercase text-3xl">Joseph Zhang</h1> */}
-          <span className="flex-row flex align-middle space-x-4">
-            <p className="self-center w-min px-2 py-0 pt-1 pb-[2px] mono lowercase text-zinc-500 border border-solid border-zinc-500 rounded-full">v4.1.2</p>
-            <p className="self-center mono uppercase text-zinc-500">{`Last updated ${updatedTime.substring(0, updatedTime.indexOf('T'))}`} </p>
+          <span className="flex-row flex align-middle space-x-2">
+            <p className="self-center w-min px-2 py-0 pt-1 pb-[2px] mono lowercase text-yellow-300 border-yellow-300 border border-solid rounded-full">v4.1.2</p>
+            <p className="self-center mono uppercase text-zinc-600">{`Last updated ${updatedTime.substring(0, updatedTime.indexOf('T'))}`} </p>
             </span>
         </div>
 
