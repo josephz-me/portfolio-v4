@@ -36,7 +36,6 @@ export default function Navbar() {
   const [iconCount, setIconCount] = useState(0);
 
   useEffect(()=>{
-    console.log(iconCount);
   },[iconCount])
   const incrementCount = () => {
     // Update state with incremented value
@@ -64,11 +63,10 @@ export default function Navbar() {
       {/* icon container */}
       <div
         id="celebration"
-        disabled={isConfettiAnimating || celebrationTwo}
+        disabled={isConfettiAnimating | celebrationTwo | 0}
         onClick={()=> {
           incrementCount();
           if(!isMobile) {
-            console.log(isMobile);
             celebrationOne(); celebrationTwo();
           }
         }}

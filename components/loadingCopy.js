@@ -28,6 +28,5 @@ export const combineCopy = () => {
   const verb = LOADING_VERBS[Math.floor(Math.random() * LOADING_VERBS.length)];
   const noun = LOADING_NOUNS[Math.floor(Math.random() * LOADING_NOUNS.length)];
   const finalWord = verb.concat(" ", noun);
-  console.log(finalWord);
   return finalWord;
 };

@@ -15,19 +15,21 @@ export default function Footer() {
 
   const [updatedTime, setUpdatedTime] = useState('...');
 
-  fetch('https://api.github.com/repos/josephz-me/portfolio-v4/commits?per_page=1')
-  .then(res => res.json())
-  .then(res => {
-    setUpdatedTime(res[0].commit.author.date)
-    console.log(res[0])
-  })
+  useEffect(()=>{
+    fetch('https://api.github.com/repos/josephz-me/portfolio-v4/commits?per_page=1')
+    .then(res => res.json())
+    .then(res => {
+      setUpdatedTime(res[0].commit.author.date)
+    })
+  },[])
 
+  //change footer
   useEffect(() => {
     const interval = setInterval(() => {
       setAboutText((aboutText) => aboutText.slice(-1) + aboutText.slice(0, -1));
     }, 300);
     return () => clearInterval(interval);
-  }, []);
+  }, [aboutText]);
 
   return (
     <footer
