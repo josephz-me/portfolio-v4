@@ -44,7 +44,7 @@ export default function Skiff() {
   return (
     <motion.main className="min-h-[70vh]">
       <GridContainer>
-        <ProjectHero isVideo={false} content="/project-covers/Skiff.jpg" />
+        <ProjectHero isVideo={false} content="/project-covers/skiff.jpg" />
         <ProjectTitle role="Collaboration tools">Skiff</ProjectTitle>
         <ProjectBody col={2}>
           {`I lead all things related to design at Skiff, a privacy company building collaboration tools for teams.
