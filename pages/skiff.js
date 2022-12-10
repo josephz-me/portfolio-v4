@@ -48,7 +48,7 @@ export default function Skiff() {
         <ProjectTitle role="Collaboration tools">Skiff</ProjectTitle>
         <ProjectBody col={2}>
           {`I lead all things related to design at Skiff, a privacy company building collaboration tools for teams.
-          As the only [pure] designer on the team, I design for all of Skiff's apps: Pages, Drive, Calendar, and Mail. A blessing in disguise, managing such a large scope has helped me develop a holistic understanding of each product and how they work together — all while still contributing at the most granular level.`}</ProjectBody>
+          As the only [pure] designer on the team, I design for all of Skiff's apps: Pages, Drive, Calendar, and Mail. A blessing in disguise, managing such a large scope has helped me develop a holistic understanding of the entire ecosystem and how each product works together — all while still being able to contribute at the most granular level.`}</ProjectBody>
         <ProjectDetails
           role={["Designer"]}
           collaborators={["Jason Ginsberg", "Sunny Li"]}
