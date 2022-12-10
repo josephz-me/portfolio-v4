@@ -42,17 +42,22 @@ export default function Brain() {
         <ProjectBody col={2}>
           Azuki is a web3 brand pioneering the integration of blockchain
           identity with digital art, fashion, and physical collectibles. Since
-          launch, they have worked with{" "}
+          launch, they have worked with established brands like{" "}
+          <TextLink link="https://www.ambushdesign.com/en-us/">
+            Ambush Streetwear
+          </TextLink>
+          ,{" "}
           <TextLink link="https://twitter.com/AzukiOfficial/status/1512886138670759941?s=20&t=fP4dEVgYoaYo7q-xJQmN4g">
-            Coachella artists
+            Epik High
           </TextLink>
           ,{" "}
           <TextLink link="https://twitter.com/Ledger/status/1519179535325052933?s=20&t=23FSw7lnvc53d_Fjxc0ZOw">
             NASA
+            , and {" "}
           </TextLink>
-          , and much more. Despite being a contract designer, I have played a
-          pivotal role in all digital product initiatives since March 2022.
-          Below are a few examples.
+          <TextLink link="https://www.redbullracing.com/int-en">
+            RedBull Racing
+          </TextLink>. As a designer, I work on all things product related, focused on both partnerships and core experiences.
         </ProjectBody>
         <ProjectDetails
           role={["product designer"]}

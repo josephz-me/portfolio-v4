@@ -72,9 +72,9 @@ export default function Home() {
           title="Skiff"
           description="collaboration tools"
           col={2}
-          locked={true}
           isImage={true}
-          content={"/project-covers/skiff-2.jpg"}
+          link="/skiff"
+          content={"/project-covers/skiff.jpg"}
         ></ProjectCard>
                 <ProjectCard
           title="Azuki"
