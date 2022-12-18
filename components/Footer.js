@@ -56,12 +56,14 @@ export default function Footer() {
           <p>
           <TextLink super={3} link="https://www.instagram.com/josephhhz/">Instagram</TextLink>
           </p>
-          <p className="text-zinc-600 strikethrough"><strike>Twitter</strike></p>
+          <p>
+          <TextLink super={4} link="https://twitter.com/trader___jo">Twitter</TextLink>
+          </p>
         </span>
         <div className={`${BREAKPOINT} md:col-start-9 flex flex-col space-y-1`}>
           <p>{`Let's build something together.`}</p>
           <span>
-          <TextLink super={4} link="mailto:jxsephz@gmail.com">jxsephz@gmail.com</TextLink>
+          <TextLink super={5} link="mailto:jxsephz@gmail.com">{`joseph@skiff.com`}</TextLink>
           </span>
         </div>
 
