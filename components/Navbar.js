@@ -60,7 +60,7 @@ export default function Navbar() {
 
   return (
     <nav className={`${pageName == "/" ? "md:fixed" : "md:sticky w-full"} z-20 flex h-auto inline-block items-stretch flex-1 justify-between top-[1.99rem] md:mb-0 mb-6`}>
-      {/* icon container */}
+      {/* logo */}
       <div
         id="celebration"
         disabled={isConfettiAnimating | celebrationTwo | 0}
@@ -98,7 +98,7 @@ export default function Navbar() {
 
       <a className={`ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>
         <Link passHref href="/">
-          <p className=" cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-white/10 hover:bg-white/20 rounded-md inline-block fit-content">
+          <p className=" cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(50,50,50,.5)] hover:bg-[rgba(100,100,100,.5)] rounded-md inline-block fit-content">
             Back home
           </p>
         </Link>
