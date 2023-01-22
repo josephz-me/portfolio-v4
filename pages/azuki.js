@@ -12,7 +12,6 @@ import Spacer from "../components/projects/Spacer";
 import Divider from "../components/projects/Divider";
 
 // images
-import BeanzLanding from "../public/work/azuki/beanz-landing.jpg";
 import BeanzCarousel from "../public/work/azuki/beanz-carousel.jpg";
 import LoreMain from "../public/work/azuki/lore-main.jpg";
 import cp_main from "../public/work/azuki/cp-main.jpg";
@@ -81,7 +80,7 @@ export default function Brain() {
         <LinkCard col={1} link="https://www.azuki.com/collector/dingaling">
           {`Shrimpwen's Profile`}
         </LinkCard>
-        <ProjectMedia src={cp_main} />
+        <ProjectMedia pt pr pl src={cp_main} />
         <ProjectMedia
           src={"/work/azuki/cp-badges.mp4"}
           isVideo
@@ -97,7 +96,7 @@ export default function Brain() {
         <LinkCard col={2} link="https://hypebeast.com/2022/11/azuki-ambush-collaboration-web3-fashion-info">
           Hypebeast
         </LinkCard>
-        <ProjectMedia src={ambush_landing} />
+        <ProjectMedia pAll src={ambush_landing} />
         <Divider />
         <ProjectBody title="Proof of Skate Auction" col={1}>
           Azuki recently made history by setting the record for the most
@@ -105,7 +104,7 @@ export default function Brain() {
           for a 24 hour auction focused around 9 gold-plated skateboards.{" "}
         </ProjectBody>
         <LinkCard col={1} link="https://hypemoon.com/2022/10/azuki-nft-gold-skateboard-auction-world-record">Hypemoon (Hypebeast)</LinkCard>
-        <ProjectMedia src={auction_main} />
+        <ProjectMedia pAll src={auction_main} />
         <Divider />
         <ProjectBody title="Azuki Lore" col={1}>
           A core part of the Azuki brand is storytelling. I helped design the
@@ -116,9 +115,9 @@ export default function Brain() {
         <LinkCard col={1} link="https://azuki.com/world">
           Lore Chapters
         </LinkCard>
-        <ProjectMedia src={LoreMain}></ProjectMedia>
+        <ProjectMedia pAll src={LoreMain}></ProjectMedia>
         <Divider />
-        <ProjectBody title="Beanz Collection" col={1}>
+        <ProjectBody title="Token Equipping" col={1}>
           The Beanz NFT collection was my first project, which consisted of
           designing the Beanz storytelling page as well as the Beanz pairing
           experience.
@@ -128,8 +127,6 @@ export default function Brain() {
           src={"/work/azuki/beanz-pairing.mp4"}
           isVideo
         ></ProjectMedia>
-        {/* <ProjectMedia src={BeanzLanding}></ProjectMedia> */}
-        <ProjectMedia src={BeanzCarousel}></ProjectMedia>
       </GridContainer>
     </motion.main>
   );

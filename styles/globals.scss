@@ -10,7 +10,10 @@
   .h2 {
     @apply text-base lg:text-lg tracking-wide font-black leading-[1em] lg:leading-[1em] uppercase mb-3 font-sans;
   }
-
+  
+  .azuki-red {
+    @apply bg-[#B14044]
+  }
 }
 
 * {
@@ -30,6 +33,12 @@ input {
   letter-spacing: 0.08em;
   line-height: 150%;
   font-size:13px;
+}
+
+.wrapper{
+  letter-spacing: 0;
+  word-spacing: 0;
+  font-size: 0;
 }
 
 @media only screen and (max-width: 500px) {

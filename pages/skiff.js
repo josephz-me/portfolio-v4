@@ -9,6 +9,14 @@ import ProjectHero from "../components/projects/ProjectHero";
 import ProjectBody from "../components/projects/ProjectBody";
 import ProjectTitle from "../components/projects/ProjectTitle";
 import ProjectDetails from "../components/projects/ProjectDetails";
+import ProjectMedia from "../components/projects/ProjectMedia";
+
+// images
+import AppSwitcher from "../public/work/skiff/app-switcher.jpg";
+import LocalSharing from "../public/work/skiff/local-sharing.jpg"
+import CustomDomains from "../public/work/skiff/custom-domains.jpg"
+import Mail from "../public/work/skiff/mail.jpg"
+import Calendar from "../public/work/skiff/calendar.jpg"
 
 const item = {
   hidden: { opacity: 0 },
@@ -23,23 +31,15 @@ const container = {
 };
 
 export default function Skiff() {
-  const [scrollY, setScrollY] = useState(0);
-
+  
   Number.prototype.map = function (in_min, in_max, out_min, out_max) {
     return (
       ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
-    );
-  };
+      );
+    };
+    
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  
 
   return (
     <motion.main className="min-h-[70vh]">
@@ -54,6 +54,11 @@ export default function Skiff() {
           collaborators={["Jason Ginsberg", "Sunny Li"]}
           duration="2022 - PRESENT"
         />
+        <ProjectMedia pAll src={Mail}></ProjectMedia>
+        <ProjectMedia pAll src={Calendar}></ProjectMedia>
+        <ProjectMedia pt pl src={AppSwitcher}></ProjectMedia>
+        <ProjectMedia pt pr src={LocalSharing}></ProjectMedia>
+        <ProjectMedia pAll src={CustomDomains}></ProjectMedia>
       </GridContainer>
     </motion.main>
   );

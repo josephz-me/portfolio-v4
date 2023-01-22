@@ -60,7 +60,7 @@ export default function Metalink() {
           scalability.
         </ProjectBody>{" "}
         <ProjectMedia src={MembersPopup}></ProjectMedia>
-        <ProjectMedia src={ProfileModal}></ProjectMedia>
+        <ProjectMedia pAll src={ProfileModal}></ProjectMedia>
         <ProjectBody caption={true}>
           Designs contextual profile popups that allow users to easily learn
           about other collectors.
