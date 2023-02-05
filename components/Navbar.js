@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
-import { useReward } from 'react-rewards';
-import {isMobile} from 'react-device-detect';
-
-
+import { useReward } from "react-rewards";
+import { isMobile } from "react-device-detect";
 
 const icons = [
   "profile-zhang.svg",
@@ -17,26 +15,27 @@ const icons = [
 ];
 
 export default function Navbar() {
-
   //confetti config
-  const {reward: celebrationOne, isAnimating: isConfettiAnimating} = useReward('celebration', 'confetti',
-  {angle: -20,
-    zIndex: 200,
-    colors:["#FFFFFF"]});
-  const {reward: celebrationTwo, isAnimating: isBallooInsAnimating} = useReward('celebration', 'emoji', 
-  {angle: -20,
-    zIndex: 200,
-    elementSize: 40,
-    emoji:["🎂","🌝","🍰", "🛁", ""]
-  });
-  
+  const { reward: celebrationOne, isAnimating: isConfettiAnimating } =
+    useReward("celebration", "confetti", {
+      angle: -20,
+      zIndex: 200,
+      colors: ["#FFFFFF"],
+    });
+  const { reward: celebrationTwo, isAnimating: isBallooInsAnimating } =
+    useReward("celebration", "emoji", {
+      angle: -20,
+      zIndex: 200,
+      elementSize: 40,
+      emoji: ["🎂", "🌝", "🍰", "🛁", ""],
+    });
+
   const pageName = useRouter().asPath;
 
   //rotate images
   const [iconCount, setIconCount] = useState(0);
 
-  useEffect(()=>{
-  },[iconCount])
+  useEffect(() => {}, [iconCount]);
   const incrementCount = () => {
     // Update state with incremented value
     iconCount == icons.length - 1
@@ -59,24 +58,29 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`${pageName == "/" ? "md:fixed" : "md:sticky w-full"} z-20 flex h-auto inline-block items-stretch flex-1 justify-between top-[1.99rem] md:mb-0 mb-6`}>
+    <nav
+      className={`${
+        pageName == "/" ? "md:fixed" : "md:sticky w-full"
+      } z-20 flex h-auto inline-block items-stretch flex-1 justify-between top-[1.99rem] md:mb-0 mb-6`}
+    >
       {/* logo */}
       <div
         id="celebration"
         disabled={isConfettiAnimating | celebrationTwo | 0}
-        onClick={()=> {
+        onClick={() => {
           incrementCount();
-          if(!isMobile) {
-            celebrationOne(); celebrationTwo();
+          if (!isMobile) {
+            celebrationOne();
+            celebrationTwo();
           }
         }}
         className={`relative w-[48px] h-[48px] hover:opacity-[.9] hover:cursor-help
          ease-[cubic-bezier(0.22, 1, 0.36, 1)]
             ${
-                scrollY > 40
-                  ? "md:opacity-0 pointer-events-none transition duration-[100ms]"
-                  : ""
-              } 
+              scrollY > 40
+                ? "md:opacity-0 pointer-events-none transition duration-[100ms]"
+                : ""
+            } 
       `}
       >
         {icons.map((icon) => (
@@ -92,13 +96,12 @@ export default function Navbar() {
             ${icon == icons[iconCount] ? "" : "opacity-0"}
             rounded-md bg-neutral-800 absolute top-0 left-0 transition`}
           />
-        ))
-        }
+        ))}
       </div>
 
       <a className={`ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>
         <Link passHref href="/">
-          <p className=" cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(50,50,50,.5)] hover:bg-[rgba(100,100,100,.5)] rounded-md inline-block fit-content">
+          <p className="cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(50,50,50,.5)] hover:bg-[rgba(100,100,100,.5)] rounded-md inline-block fit-content">
             Back home
           </p>
         </Link>
@@ -106,5 +109,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-

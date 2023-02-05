@@ -16,7 +16,7 @@ import BeanzCarousel from "../public/work/azuki/beanz-carousel.jpg";
 import LoreMain from "../public/work/azuki/lore-main.jpg";
 import cp_main from "../public/work/azuki/cp-main.jpg";
 import auction_main from "../public/work/azuki/auction-main.jpg";
-import ambush_landing from "../public/work/azuki/ambush-landing.jpg";
+import ambushLanding from "../public/work/azuki/ambush-landing.jpg";
 
 import Link from "next/link";
 
@@ -51,18 +51,19 @@ export default function Brain() {
           </TextLink>
           ,{" "}
           <TextLink link="https://twitter.com/Ledger/status/1519179535325052933?s=20&t=23FSw7lnvc53d_Fjxc0ZOw">
-            NASA
-            , and {" "}
+            NASA , and{" "}
           </TextLink>
           <TextLink link="https://www.redbullracing.com/int-en">
             RedBull Racing
-          </TextLink>. As a designer, I work on all things product related, focused on both partnerships and core experiences.
+          </TextLink>
+          . As a designer, I work on all things product related, focused on both
+          partnerships and core experiences.
         </ProjectBody>
         <ProjectDetails
           role={["product designer"]}
           collaborators={["Hoshiboy", "Azuki team"]}
           duration={["2022-PRESENT"]}
-          tools={["figma", "react(next.js)"]}
+          tools={["figma", "react next.js"]}
         />
 
         <LinkCard col={1} link="https://azuki.com">
@@ -74,37 +75,46 @@ export default function Brain() {
         <Divider />
         <Spacer></Spacer>
         <ProjectBody title="Collector's Profile" col={1}>
-        {`The collector's profile is platform for token holders to
+          {`The collector's profile is platform for token holders to
           display their collection — whether that's the Azuki they own, the emblems they earned, and more. We wanted to build a showroom experience that made members feel proud and special to be a part of the Azuki community.`}
         </ProjectBody>
         <LinkCard col={1} link="https://www.azuki.com/collector/dingaling">
           {`Shrimpwen's Profile`}
         </LinkCard>
         <ProjectMedia pt pr pl src={cp_main} />
-        <ProjectMedia
-          src={"/work/azuki/cp-badges.mp4"}
-          isVideo
-        ></ProjectMedia>
+        <ProjectMedia src={"/work/azuki/cp-badges.mp4"} isVideo></ProjectMedia>
         <Divider />
         <Spacer></Spacer>
         <ProjectBody title="Ambush x Azuki Collab" col={1}>
-        {`The Ambush collaboration marks one of the first high-profile streetwear partnerships between a web3 company and high fashion. Purchase access is gated through an on-chain raffle system where buyers need to enter a drawing system to gain presale access. We strived for the shopping experience strives to feel luxurious and high-fashion and still respectful of web3's digital origins.`}
+          {`The Ambush collaboration marks one of the first high-profile streetwear partnerships between a web3 company and high fashion. Purchase access is gated through an on-chain raffle system where buyers need to enter a drawing system to gain presale access. We strived for the shopping experience strives to feel luxurious and high-fashion and still respectful of web3's digital origins.`}
         </ProjectBody>
-        <LinkCard col={1} link="https://www.highsnobiety.com/p/ambush-azuki-nft-collab-collection/">
+        <LinkCard
+          col={1}
+          link="https://www.highsnobiety.com/p/ambush-azuki-nft-collab-collection/"
+        >
           Highest Nobiety
         </LinkCard>
-        <LinkCard col={2} link="https://hypebeast.com/2022/11/azuki-ambush-collaboration-web3-fashion-info">
+        <LinkCard
+          col={2}
+          link="https://hypebeast.com/2022/11/azuki-ambush-collaboration-web3-fashion-info"
+        >
           Hypebeast
         </LinkCard>
-        <ProjectMedia pAll src={ambush_landing} />
+        <ProjectMedia pAll dark src={ambushLanding} />
         <Divider />
         <ProjectBody title="Proof of Skate Auction" col={1}>
           Azuki recently made history by setting the record for the most
           expensive skateboards sold in history. I co-designed the experience
           for a 24 hour auction focused around 9 gold-plated skateboards.{" "}
         </ProjectBody>
-        <LinkCard col={1} link="https://hypemoon.com/2022/10/azuki-nft-gold-skateboard-auction-world-record">Hypemoon (Hypebeast)</LinkCard>
-        <ProjectMedia pAll src={auction_main} />
+        <LinkCard
+          col={1}
+          link="https://hypemoon.com/2022/10/azuki-nft-gold-skateboard-auction-world-record"
+        >
+          Hypemoon (Hypebeast)
+        </LinkCard>
+        {/* <ProjectMedia pAll src={auction_main} /> */}
+        <ProjectMedia isVideo src={"/work/azuki/auction-ranking.mp4"} />
         <Divider />
         <ProjectBody title="Azuki Lore" col={1}>
           A core part of the Azuki brand is storytelling. I helped design the
@@ -122,7 +132,9 @@ export default function Brain() {
           designing the Beanz storytelling page as well as the Beanz pairing
           experience.
         </ProjectBody>
-        <LinkCard col={1} link="https://www.azuki.com/beanz">Beanz Website</LinkCard>
+        <LinkCard col={1} link="https://www.azuki.com/beanz">
+          Beanz Website
+        </LinkCard>
         <ProjectMedia
           src={"/work/azuki/beanz-pairing.mp4"}
           isVideo
