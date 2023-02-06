@@ -21,10 +21,11 @@ import Mail from "../public/work/skiff/mail.jpg";
 import IconPicker from "../public/work/skiff/icon-picker.jpg";
 import FormatBar from "../public/work/skiff/format-bar.jpg";
 import Compose from "../public/work/skiff/compose-dark.jpg";
-import Icons from "../public/work/skiff/icons.jpg";
+import Icons from "../public/work/skiff/icons.png";
 import Calendar from "../public/work/skiff/calendar.jpg";
 import MarketingCards from "../public/work/skiff/marketing-cards.jpg";
 import MarketingLanding from "../public/work/skiff/marketing-landing.jpg";
+import AppLogos from "../public/work/skiff/app-logos.jpg";
 
 const item = {
   hidden: { opacity: 0 },
@@ -53,8 +54,7 @@ export default function Skiff() {
         <ProjectBody col={2}>
           {`I lead all things related to design at Skiff, a privacy company
           building collaboration tools for teams. As the sole traditional
-          designer on the team, I scale all of Skiff's products at the same
-          time: Pages, Drive, Calendar, and Mail. A blessing in disguise,
+          designer on the team, I scale Skiff Pages, Drive, Calendar, and Mail simultaneously. A blessing in disguise,
           managing such a large scope has helped me develop a holistic
           understanding of the entire ecosystem and how each product works
           together — all while still being able to contribute at the most
@@ -76,21 +76,16 @@ export default function Skiff() {
         >
           {`We're hiring a designer`}
         </LinkCard>
-        <ProjectBody title="General">
-          I organized this case study to display work relevant to each app.
-          However, some projects break this structure such as branding, design
-          systems, and global product features.
-        </ProjectBody>
-        <ProjectMedia dark pt pl src={AppSwitcher}></ProjectMedia>
-        <ProjectBody caption>
-          Once we launched our our second product, I had to redesign our app
-          switcher to incorporate two levesl of distinct information — current
-          app and current workspace.
-        </ProjectBody>
-        <ProjectMedia src={Icons}></ProjectMedia>
-        <ProjectBody caption>
-          With initial guidance from Pentagram, we redrew every icon by hand in
-          a style that harmonized angular and soft features.
+        <Spacer />
+        <ProjectBody title="Branding">
+          Aside from working on product features, I also iterate on Skiff's
+          visual brand. After our redesign with{" "}
+          <TextLink link="https://www.pentagram.com/work/skiff">
+            Pentagram
+          </TextLink>
+          , it was a massive group effort between myself and three others to
+          translate the new language into the product. Now as the core designer,
+          I lead all initiatives related to brand.
         </ProjectBody>
         <ProjectBody>
           I lead the redesign of our Skiff marketing site, a 2.5 month long
@@ -102,6 +97,22 @@ export default function Skiff() {
         </ProjectBody>
         <ProjectMedia src={MarketingLanding}></ProjectMedia>
         <ProjectMedia src={MarketingCards}></ProjectMedia>
+        <ProjectMedia src={AppLogos}>
+          Along with Jason, we designed new app icons for each of our four
+          products. The app icons needed to be unique side by side as well as
+          identifiable when separate.
+        </ProjectMedia>
+        <ProjectMedia src={Icons}>
+          With initial guidance from Pentagram, we redrew every icon by hand in
+          a style that combined angular and soft features. Skiff needed to
+          simultaneously feel friendly yet serious and this was our solution.
+        </ProjectMedia>
+        <Spacer />
+        <ProjectMedia dark pt pl src={AppSwitcher}>
+          Once we launched our our second product, I had to redesign our app
+          switcher to incorporate two levesl of distinct information — current
+          app and current workspace.
+        </ProjectMedia>
         <Spacer />
         <ProjectBody title="Pages">
           {`I started working on Pages when I was a still a contractor and
@@ -114,33 +125,29 @@ export default function Skiff() {
           drag-and-drop, and much more.`}
         </ProjectBody>
         <ProjectMedia pt pr src={LocalSharing}></ProjectMedia>
-        <ProjectMedia src={IconPicker}></ProjectMedia>
-        <ProjectBody caption>
-          {` Redesigned our icon picker to be more elegant and aligned with Skiff's
-          visual language. Using a dark surface to represent light themed color
-          customization was very tricky. We had to find a middle ground between
-          accurate representation of color, consistent modal language, and
-          visual contrast of selected colors.`}
-        </ProjectBody>
-        <ProjectMedia src={FormatBar}></ProjectMedia>
-        <ProjectBody caption>
+        <ProjectMedia src={IconPicker}>
+          {` Polished up our icon picker component. Using a dark surface
+          proved to be tricky specifically contrast and representational accuracy.`}
+        </ProjectMedia>
+        <ProjectMedia src={FormatBar}>
           {`As much as I wanted to design the styling format bar to be
           vastly different and unique from software tools like Notion and
           Dropbox, Fitt's Law won at the end of the day.`}
-        </ProjectBody>
+        </ProjectMedia>
         <ProjectBody title="Mail">
           By the time I started working on Skiff Mial, the product already had a
           decent foundation in place. I played a core role in redesigning
           various sections of the product to be more legible and beautiful.
         </ProjectBody>
-        <ProjectMedia pAll src={Mail}></ProjectMedia>
-        <ProjectBody caption>
+        <ProjectMedia pAll src={Mail}>
           {`Though I didn't design the mail app from 0 to 1, I redesigned the
           visual language to how it is today. Introduced subtler contrast,
           increasted legibility in scanning rows, and honestly just made the
           product a lot more elegant.`}
-        </ProjectBody>
-        <ProjectMedia dark pr pb src={Compose}></ProjectMedia>
+        </ProjectMedia>
+        <ProjectMedia dark pr pb src={Compose}>
+          Hovering compose modal visual touch-up
+        </ProjectMedia>
         <ProjectMedia pt pr pb src={CustomDomains}></ProjectMedia>
         <ProjectBody caption>
           Though not a sexy project, I lead designs for custom domain management

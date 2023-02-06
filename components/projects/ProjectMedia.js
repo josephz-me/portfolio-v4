@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import * as loadingCopy from "../loadingCopy";
 import Preloader from "../Preloader";
+import ProjectBody from "./ProjectBody";
 
 export default function ProjectMedia(props) {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -44,8 +45,9 @@ export default function ProjectMedia(props) {
   }, [path]);
 
   return (
-    <div
-      className={`block grid rounded-md overflow-hidden col-start-1 col-end-13 transition duration-300
+    <>
+      <div
+        className={`block grid rounded-md overflow-hidden col-start-1 col-end-13 transition duration-300
           ${isImageLoaded ? background : "bg-neutral-900"}
           ${props.large ? "md:col-start-1" : "md:col-start-5"}
           ${
@@ -57,45 +59,47 @@ export default function ProjectMedia(props) {
               ? `border-solid border-neutral-800 border`
               : ""
           }
-          ${props.pAll ? "p-12" : ""}
-          ${props.pl ? "pl-12" : ""}
-          ${props.pr ? "pr-12" : ""}
-          ${props.pb ? "pb-12" : ""}
-          ${props.pt ? "pt-12" : ""}
+          ${props.pAll ? "p-4 md:p-12" : ""}
+          ${props.pl ? "pl-4 md:pl-12" : ""}
+          ${props.pr ? "pr-4 md:pr-12" : ""}
+          ${props.pb ? "pb-4 md:pb-12" : ""}
+          ${props.pt ? "pt-4 md:pt-12" : ""}
       `}
-    >
-      {props.isVideo ? (
-        <CardVideo src={props.src} loadingPhrase={loadingPhrase} />
-      ) : (
-        <div className="relative">
-          <article
-            className={` w-full h-auto transition duration-500 rounded-md ease-out
+      >
+        {props.isVideo ? (
+          <CardVideo src={props.src} loadingPhrase={loadingPhrase} />
+        ) : (
+          <div className="relative">
+            <article
+              className={` w-full h-auto transition duration-500 rounded-md ease-out
                 ${isImageLoaded ? "opacity-1" : "opacity-0"}
                 text-[0px]`}
-          >
-            <Image
-              src={props.src}
-              alt="image"
-              placeholder="blur"
-              onLoadingComplete={() => {
-                handleImageLoad();
-              }}
-              className={` 
+            >
+              <Image
+                src={props.src}
+                alt="image"
+                placeholder="blur"
+                onLoadingComplete={() => {
+                  handleImageLoad();
+                }}
+                className={` 
 
-              ${props.pAll ? "rounded-md" : ""}
-              ${props.pt && props.pl ? "rounded-tl-xl" : ""}
-              ${props.pt && props.pr ? "rounded-tr-xl" : ""}
-              ${props.pb && props.pl ? "rounded-bl-xl" : ""}
-              ${props.pb && props.pr ? "rounded-br-xl" : ""}
+              ${props.pAll ? "rounded md:rounded-md" : ""}
+              ${props.pt && props.pl ? "rounded-tl md:rounded-tl-xl" : ""}
+              ${props.pt && props.pr ? "rounded-tr md:rounded-tr-xl" : ""}
+              ${props.pb && props.pl ? "rounded-bl md:rounded-bl-xl" : ""}
+              ${props.pb && props.pr ? "rounded-br-md md:rounded-br-xl" : ""}
               `}
-            />
-          </article>
-          <Preloader
-            loadingPhrase={loadingPhrase}
-            isContentLoaded={isImageLoaded}
-          ></Preloader>
-        </div>
-      )}
-    </div>
+              />
+            </article>
+            <Preloader
+              loadingPhrase={loadingPhrase}
+              isContentLoaded={isImageLoaded}
+            ></Preloader>
+          </div>
+        )}
+      </div>
+      {props.children && <ProjectBody caption>{props.children}</ProjectBody>}
+    </>
   );
 }
