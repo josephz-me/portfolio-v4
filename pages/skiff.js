@@ -23,7 +23,7 @@ import FormatBar from "../public/work/skiff/format-bar.jpg";
 import Compose from "../public/work/skiff/compose-dark.jpg";
 import Icons from "../public/work/skiff/icons.png";
 import Calendar from "../public/work/skiff/calendar.jpg";
-import MarketingCards from "../public/work/skiff/marketing-cards.jpg";
+import MarketingCards from "../public/work/skiff/marketing-cards.png";
 import MarketingLanding from "../public/work/skiff/marketing-landing.jpg";
 import AppLogos from "../public/work/skiff/app-logos.jpg";
 
@@ -87,21 +87,31 @@ export default function Skiff() {
           translate the new language into the product. Now as the core designer,
           I lead all initiatives related to brand.
         </ProjectBody>
-        <ProjectBody>
+        <ProjectMedia src={AppLogos}>
+          Along with Jason, we designed app icons for each of our four products.
+          The app icons needed to feel unique side by side as well as be
+          identifiable when siloed.
+        </ProjectMedia>
+        <ProjectMedia src={MarketingLanding}>
+          {" "}
           I lead the redesign of our Skiff marketing site, a 2.5 month long
           initiative from start to finish. We custom built almost very single
           graphic in code and engrained them with interactive hover states and
           dynamic details. The new design language strives to make privacy feel
           friendly and approachable. The site can be found{" "}
           <TextLink link="https://www.skiff.com">here</TextLink>.
-        </ProjectBody>
-        <ProjectMedia src={MarketingLanding}></ProjectMedia>
-        <ProjectMedia src={MarketingCards}></ProjectMedia>
-        <ProjectMedia src={AppLogos}>
-          Along with Jason, we designed new app icons for each of our four
-          products. The app icons needed to be unique side by side as well as
-          identifiable when separate.
         </ProjectMedia>
+        <ProjectMedia pAll src={MarketingCards}>
+          {" "}
+          I designed 20 graphics that are now scattered across the marketing
+          site — every single one built responsiveless in code (by Jason) with
+          70% being interactive. Find them on the{" "}
+          <TextLink link="https://www.skiff.com">
+            landing page
+          </TextLink> and{" "}
+          <TextLink link="https://skiff.com/pages">product pages</TextLink>
+        </ProjectMedia>
+
         <ProjectMedia src={Icons}>
           With initial guidance from Pentagram, we redrew every icon by hand in
           a style that combined angular and soft features. Skiff needed to
@@ -150,10 +160,10 @@ export default function Skiff() {
         </ProjectMedia>
         <ProjectMedia pt pr pb src={CustomDomains}></ProjectMedia>
         <ProjectBody caption>
-          Though not a sexy project, I lead designs for custom domain management
-          and custon domain purchasing. A highly requested feature from
-          individuals and teams alike, this project yielded massive benefits in
-          growth, retention and revenue.
+          Though not a sexy project, I shipped features around custom domain
+          management and custon domain purchasing. A highly requested feature
+          from individuals and teams alike, this project yielded massive
+          benefits in growth, retention and revenue.
         </ProjectBody>
       </GridContainer>
     </motion.main>

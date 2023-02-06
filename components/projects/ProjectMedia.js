@@ -48,7 +48,7 @@ export default function ProjectMedia(props) {
     <>
       <div
         className={`block grid rounded-md overflow-hidden col-start-1 col-end-13 transition duration-300
-          ${isImageLoaded ? background : "bg-neutral-900"}
+          ${background}
           ${props.large ? "md:col-start-1" : "md:col-start-5"}
           ${
             props.pl ||
@@ -67,7 +67,15 @@ export default function ProjectMedia(props) {
       `}
       >
         {props.isVideo ? (
-          <CardVideo src={props.src} loadingPhrase={loadingPhrase} />
+          <CardVideo
+            src={props.src}
+            loadingPhrase={loadingPhrase}
+            pAll={props.pAll}
+            pt={props.pt}
+            pr={props.pr}
+            pl={props.pl}
+            pb={props.pb}
+          />
         ) : (
           <div className="relative">
             <article

@@ -9,9 +9,16 @@ export default function CardVideo(props) {
   };
 
   return (
-    <div className="relative rounded-md overflow-hidden h-full">
+    <div
+      className={`relative overflow-hidden h-full
+      ${props.pAll ? "rounded md:rounded-md" : ""}
+      ${props.pt && props.pl ? "rounded-tl md:rounded-tl-xl" : ""}
+      ${props.pt && props.pr ? "rounded-tr md:rounded-tr-xl" : ""}
+      ${props.pb && props.pl ? "rounded-bl md:rounded-bl-xl" : ""}
+      ${props.pb && props.pr ? "rounded-br-md md:rounded-br-xl" : ""}`}
+    >
       <div
-        className={`absolute top-0 w-full h-full overflow-hidden rounded-md ${
+        className={`absolute top-0 w-full h-full overflow-hidden ${
           isVideoLoaded
             ? "opacity-0 bg-[rgba(255,255,255,0)]"
             : "opacity-100 animate-pulse bg-[rgba(255,255,255,.03)]"
@@ -30,7 +37,7 @@ export default function CardVideo(props) {
       </div>
 
       <video
-        className={`object-cover w-full h-full transition duration-1000 overflow-hidden rounded-md ease-out ${
+        className={`object-cover w-full h-full transition duration-1000 overflow-hidden ease-out ${
           isVideoLoaded ? "opacity-100" : "opacity-0"
         }`}
         autoPlay
