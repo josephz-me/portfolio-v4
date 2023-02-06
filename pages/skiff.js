@@ -78,7 +78,7 @@ export default function Skiff() {
         </LinkCard>
         <Spacer />
         <ProjectBody title="Branding">
-          Aside from working on product features, I also iterate on Skiff's
+          Aside from working on product features, I also iterate on Skiff&apos;s
           visual brand. After our redesign with{" "}
           <TextLink link="https://www.pentagram.com/work/skiff">
             Pentagram
