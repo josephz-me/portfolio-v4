@@ -11,6 +11,7 @@ import ProjectTitle from "../components/projects/ProjectTitle";
 import ProjectDetails from "../components/projects/ProjectDetails";
 import ProjectMedia from "../components/projects/ProjectMedia";
 import Spacer from "../components/projects/Spacer";
+import LinkCard from "../components/projects/LinkCard";
 
 // images
 import AppSwitcher from "../public/work/skiff/app-switcher.jpg";
@@ -22,6 +23,8 @@ import FormatBar from "../public/work/skiff/format-bar.jpg";
 import Compose from "../public/work/skiff/compose-dark.jpg";
 import Icons from "../public/work/skiff/icons.jpg";
 import Calendar from "../public/work/skiff/calendar.jpg";
+import MarketingCards from "../public/work/skiff/marketing-cards.jpg";
+import MarketingLanding from "../public/work/skiff/marketing-landing.jpg";
 
 const item = {
   hidden: { opacity: 0 },
@@ -64,6 +67,15 @@ export default function Skiff() {
           duration="2022 - PRESENT"
           tools={["figma", "React Next JS"]}
         />
+        <LinkCard col={1} link="https://skiff.com">
+          Skiff.com
+        </LinkCard>
+        <LinkCard
+          col={2}
+          link="https://read.cv/teams/skiff/product-designer-hBlXg3CX0LtwC94rLCd1"
+        >
+          {`We're hiring a designer`}
+        </LinkCard>
         <ProjectBody title="General">
           I organized this case study to display work relevant to each app.
           However, some projects break this structure such as branding, design
@@ -80,6 +92,16 @@ export default function Skiff() {
           With initial guidance from Pentagram, we redrew every icon by hand in
           a style that harmonized angular and soft features.
         </ProjectBody>
+        <ProjectBody>
+          I lead the redesign of our Skiff marketing site, a 2.5 month long
+          initiative from start to finish. We custom built almost very single
+          graphic in code and engrained them with interactive hover states and
+          dynamic details. The new design language strives to make privacy feel
+          friendly and approachable. The site can be found{" "}
+          <TextLink link="https://www.skiff.com">here</TextLink>.
+        </ProjectBody>
+        <ProjectMedia src={MarketingLanding}></ProjectMedia>
+        <ProjectMedia src={MarketingCards}></ProjectMedia>
         <Spacer />
         <ProjectBody title="Pages">
           {`I started working on Pages when I was a still a contractor and

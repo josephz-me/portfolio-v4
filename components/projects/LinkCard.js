@@ -13,7 +13,7 @@ export default function LinkCard(props) {
         props.col == 1
           ? "md:col-start-5 md:col-end-9"
           : "md:col-start-9 md:col-end-13"
-      } group text-zinc-100 bg-[rgba(255,255,255,.1)] opacity-50 col-span-full hover:opacity-80 flex items-center flex-row p-4 rounded-md `}
+      } group text-white/80 bg-white/[.03] col-span-full hover:bg-white/[.05] flex items-center flex-row p-4 rounded-md `}
     >
       <p>{props.children}</p>
       <svg
@@ -21,7 +21,7 @@ export default function LinkCard(props) {
         className="h-4 w-4 ml-auto"
         fill="none"
         viewBox="0 0 24 24"
-        stroke="currentColor"
+        stroke="#fde047"
         strokeWidth={2}
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
