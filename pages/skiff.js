@@ -26,6 +26,7 @@ import Calendar from "../public/work/skiff/calendar.jpg";
 import MarketingCards from "../public/work/skiff/marketing-cards.png";
 import MarketingLanding from "../public/work/skiff/marketing-landing.jpg";
 import AppLogos from "../public/work/skiff/app-logos.jpg";
+import SharingModals from "../public/work/skiff/sharing-modal.png";
 
 const item = {
   hidden: { opacity: 0 },
@@ -134,7 +135,15 @@ export default function Skiff() {
           0 to 1. This includes features such as the format bar, sharing,
           drag-and-drop, and much more.`}
         </ProjectBody>
-        <ProjectMedia pt pr src={LocalSharing}></ProjectMedia>
+        <ProjectMedia pt pr src={LocalSharing}>
+          Sharing was a hefty project focused on permissions management, whether
+          thats sharing users to a local document, private team, or an entire
+          workspace. Because of the existing sharing architecture, designing for
+          each level involved numerous constraints.
+        </ProjectMedia>
+        <ProjectMedia dark src={SharingModals}>
+          Examples of various states of local and private team sharing
+        </ProjectMedia>
         <ProjectMedia src={IconPicker}>
           {` Polished up our icon picker component. Using a dark surface
           proved to be tricky specifically contrast and representational accuracy.`}

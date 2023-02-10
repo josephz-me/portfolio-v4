@@ -82,6 +82,7 @@ export default function Brain() {
           {`Shrimpwen's Profile`}
         </LinkCard>
         <ProjectMedia pt pr pl src={cp_main} />
+        <ProjectMedia src={"/work/azuki/cp-emblems.mp4"} isVideo></ProjectMedia>
         <ProjectMedia src={"/work/azuki/cp-badges.mp4"} isVideo></ProjectMedia>
         <Divider />
         <Spacer></Spacer>

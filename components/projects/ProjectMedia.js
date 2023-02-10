@@ -13,7 +13,7 @@ export default function ProjectMedia(props) {
   const [path, setPath] = useState();
 
   const bgColors = {
-    skiff: ["bg-gray-200", "bg-white/[.15]"],
+    skiff: ["bg-gray-200", "bg-[#4F4C59]"],
     azuki: ["azuki-red", "bg-white/[.15]"],
     metalink: "bg-gray-700",
     experiments: "bg-white/[.15]",
@@ -101,6 +101,7 @@ export default function ProjectMedia(props) {
               />
             </article>
             <Preloader
+              dark={props.dark ? true : false}
               loadingPhrase={loadingPhrase}
               isContentLoaded={isImageLoaded}
             ></Preloader>
