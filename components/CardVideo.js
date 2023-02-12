@@ -10,7 +10,7 @@ export default function CardVideo(props) {
 
   return (
     <div
-      className={`relative overflow-hidden h-full
+      className={`relative rounded-md overflow-hidden h-full
       ${props.pAll ? "rounded md:rounded-md" : ""}
       ${props.pt && props.pl ? "rounded-tl md:rounded-tl-xl" : ""}
       ${props.pt && props.pr ? "rounded-tr md:rounded-tr-xl" : ""}
