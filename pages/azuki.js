@@ -81,9 +81,14 @@ export default function Brain() {
         <LinkCard col={1} link="https://www.azuki.com/collector/dingaling">
           {`Shrimpwen's Profile`}
         </LinkCard>
-        <ProjectMedia pt pr pl src={cp_main} />
-        <ProjectMedia src={"/work/azuki/cp-emblems.mp4"} isVideo></ProjectMedia>
-        <ProjectMedia src={"/work/azuki/cp-badges.mp4"} isVideo></ProjectMedia>
+        <ProjectMedia pt pr pl src={cp_main}></ProjectMedia>
+        <ProjectMedia
+          src={"/work/azuki/cp-emblems.mp4"}
+          isVideo
+        >{`On-chain emblems baked with dimensional hover states and card-like effects `}</ProjectMedia>
+        <ProjectMedia src={"/work/azuki/cp-badges.mp4"} isVideo>
+          {`Dynamic badge previews: a low-commitment way to browse an individual's community badges`}
+        </ProjectMedia>
         <Divider />
         <Spacer></Spacer>
         <ProjectBody title="Ambush x Azuki Collab" col={1}>
