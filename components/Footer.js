@@ -86,7 +86,7 @@ export default function Footer() {
             <TextLink
               super={5}
               link="mailto:jxsephz@gmail.com"
-            >{`joseph@skiff.com`}</TextLink>
+            >{`jxsephz@gmail.com`}</TextLink>
           </span>
         </div>
       </GridContainer>

@@ -37,15 +37,27 @@ export default function Home() {
         >
           Joseph is an interaction designer interested in digital toolmaking and
           multimodal input. After working at{" "}
-          <TextLink super={1} link="https://www.apple.com/siri/">Apple</TextLink>, he
-          discovered a love for small, high-caliber teams and have since worked
-          with starts-ups like{" "}
-          <TextLink super={2} link="https://natural.ai/#/">Brain Technologies</TextLink>,{" "}
-          <TextLink super={3} link="https://azuki.com">Azuki</TextLink>, and{" "}
-          <TextLink super={4} link="https://metalink.com/login">Metalink Labs</TextLink>.
-          Most recently, he graduated from Carnegie Mellon University where he
-          studied{" "}
-          <TextLink super={5} link="https://design.cmu.edu/content/bachelor-design">
+          <TextLink super={1} link="https://www.apple.com/siri/">
+            Apple
+          </TextLink>
+          , he discovered a love for small, high-caliber teams and have since
+          worked with starts-ups like{" "}
+          <TextLink super={2} link="https://natural.ai/#/">
+            Brain Technologies
+          </TextLink>
+          ,{" "}
+          <TextLink super={3} link="https://azuki.com">
+            Azuki
+          </TextLink>
+          , and{" "}
+          <TextLink super={4} link="https://metalink.com/login">
+            Metalink Labs
+          </TextLink>
+          . He graduated from Carnegie Mellon University where he studied{" "}
+          <TextLink
+            super={5}
+            link="https://design.cmu.edu/content/bachelor-design"
+          >
             Communication Design
           </TextLink>{" "}
           and{" "}
@@ -53,8 +65,10 @@ export default function Home() {
             Human-Computer Interaction
           </TextLink>
           . He is currently a designer at{" "}
-          <TextLink super={7} link="https://skiff.com/">Skiff</TextLink> building
-          privacy-first tools for teams.
+          <TextLink super={7} link="https://skiff.com/">
+            Skiff
+          </TextLink>{" "}
+          building privacy-first tools for teams.
         </motion.p>
 
         <ProjectCard
@@ -66,7 +80,7 @@ export default function Home() {
           content={"/project-covers/apple.jpg"}
         ></ProjectCard>
 
-                <ProjectCard
+        <ProjectCard
           title="Skiff"
           description="collaboration tools"
           col={2}
@@ -74,7 +88,7 @@ export default function Home() {
           link="/skiff"
           content={"/project-covers/skiff.jpg"}
         ></ProjectCard>
-                <ProjectCard
+        <ProjectCard
           title="Azuki"
           description="Product and Brand"
           col={1}
@@ -99,7 +113,6 @@ export default function Home() {
           link="/metalink"
           content={"/project-covers/metalink.jpg"}
         ></ProjectCard>
-
 
         <ProjectCard
           title="Experiments"

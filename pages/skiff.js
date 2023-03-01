@@ -27,6 +27,7 @@ import MarketingCards from "../public/work/skiff/marketing-cards.png";
 import MarketingLanding from "../public/work/skiff/marketing-landing.jpg";
 import AppLogos from "../public/work/skiff/app-logos.jpg";
 import SharingModals from "../public/work/skiff/sharing-modal.png";
+import DragDrop from "../public/work/skiff/drag-drop.jpg";
 
 const item = {
   hidden: { opacity: 0 },
@@ -54,13 +55,10 @@ export default function Skiff() {
         <ProjectTitle role="Collaboration tools">Skiff</ProjectTitle>
         <ProjectBody col={2}>
           {`I lead all things related to design at Skiff, a privacy company
-          building collaboration tools for teams. As the sole traditional
-          designer on the team, I scale Skiff Pages, Drive, Calendar, and Mail simultaneously. A blessing in disguise,
+          building collaboration tools for teams. I primarily work on three of Skiff's products — Pages, Drive, and Mail. A blessing in disguise,
           managing such a large scope has helped me develop a holistic
-          understanding of the entire ecosystem and how each product works
-          together — all while still being able to contribute at the most
-          granular level. In addition to design, I also regularly create and
-          review engineering PR's.`}
+          understanding, all while still being able to contribute at the most
+          granular level. In addition to design, I also regularly push code and review eng implementation.`}
         </ProjectBody>
         <ProjectDetails
           role={["Designer"]}
@@ -71,11 +69,8 @@ export default function Skiff() {
         <LinkCard col={1} link="https://skiff.com">
           Skiff.com
         </LinkCard>
-        <LinkCard
-          col={2}
-          link="https://read.cv/teams/skiff/product-designer-hBlXg3CX0LtwC94rLCd1"
-        >
-          {`We're hiring a designer`}
+        <LinkCard col={2} link="https://twitter.com/skiffprivacy">
+          {`Twitter`}
         </LinkCard>
         <Spacer />
         <ProjectBody title="Branding">
@@ -94,19 +89,18 @@ export default function Skiff() {
           identifiable when siloed.
         </ProjectMedia>
         <ProjectMedia src={MarketingLanding}>
-          {" "}
-          I lead the redesign of our Skiff marketing site, a 2.5 month long
+          {`Led the redesign of Skiff's marketing site, a 2.5 month long
           initiative from start to finish. We custom built almost very single
           graphic in code and engrained them with interactive hover states and
           dynamic details. The new design language strives to make privacy feel
-          friendly and approachable. The site can be found{" "}
+          friendly and approachable. The site can be found `}
           <TextLink link="https://www.skiff.com">here</TextLink>.
         </ProjectMedia>
         <ProjectMedia pAll src={MarketingCards}>
           {" "}
-          I designed 20 graphics that are now scattered across the marketing
-          site — every single one built responsiveless in code (by Jason) with
-          70% being interactive. Find them on the{" "}
+          20 graphics that are scattered across the marketing site — every one
+          built responsively in code (by Jason) with 70% being interactive. Find
+          them on the{" "}
           <TextLink link="https://www.skiff.com">
             landing page
           </TextLink> and{" "}
@@ -114,16 +108,10 @@ export default function Skiff() {
         </ProjectMedia>
 
         <ProjectMedia src={Icons}>
-          With initial guidance from Pentagram, we redrew every icon by hand in
-          a style that combined angular and soft features. Skiff needed to
-          simultaneously feel friendly yet serious and this was our solution.
+          Hand drawn icons combinging angular and soft features.
         </ProjectMedia>
         <Spacer />
-        <ProjectMedia dark pt pl src={AppSwitcher}>
-          Once we launched our our second product, I had to redesign our app
-          switcher to incorporate two levesl of distinct information — current
-          app and current workspace.
-        </ProjectMedia>
+        <ProjectMedia pt pl src={AppSwitcher}></ProjectMedia>
         <Spacer />
         <ProjectBody title="Pages">
           {`I started working on Pages when I was a still a contractor and
@@ -135,44 +123,23 @@ export default function Skiff() {
           0 to 1. This includes features such as the format bar, sharing,
           drag-and-drop, and much more.`}
         </ProjectBody>
-        <ProjectMedia pt pr src={LocalSharing}>
-          Sharing was a hefty project focused on permissions management, whether
-          thats sharing users to a local document, private team, or an entire
-          workspace. Because of the existing sharing architecture, designing for
-          each level involved numerous constraints.
-        </ProjectMedia>
-        <ProjectMedia dark src={SharingModals}>
-          Examples of various states of local and private team sharing
-        </ProjectMedia>
-        <ProjectMedia src={IconPicker}>
-          {` Polished up our icon picker component. Using a dark surface
-          proved to be tricky specifically contrast and representational accuracy.`}
-        </ProjectMedia>
-        <ProjectMedia src={FormatBar}>
-          {`As much as I wanted to design the styling format bar to be
-          vastly different and unique from software tools like Notion and
-          Dropbox, Fitt's Law won at the end of the day.`}
-        </ProjectMedia>
+        <ProjectMedia pt pr src={LocalSharing}></ProjectMedia>
+        <ProjectMedia src={SharingModals} />
+        <ProjectMedia src={IconPicker}></ProjectMedia>
+        <ProjectMedia src={DragDrop}></ProjectMedia>
+        <ProjectMedia src={FormatBar}></ProjectMedia>
         <ProjectBody title="Mail">
           By the time I started working on Skiff Mial, the product already had a
           decent foundation in place. I played a core role in redesigning
           various sections of the product to be more legible and beautiful.
         </ProjectBody>
-        <ProjectMedia pAll src={Mail}>
-          {`Though I didn't design the mail app from 0 to 1, I redesigned the
-          visual language to how it is today. Introduced subtler contrast,
-          increasted legibility in scanning rows, and honestly just made the
-          product a lot more elegant.`}
-        </ProjectMedia>
-        <ProjectMedia dark pr pb src={Compose}>
-          Hovering compose modal visual touch-up
-        </ProjectMedia>
+        <ProjectMedia pAll src={Mail} />
+        <ProjectMedia pr pb src={Compose} />
         <ProjectMedia pt pr pb src={CustomDomains}></ProjectMedia>
         <ProjectBody caption>
-          Though not a sexy project, I shipped features around custom domain
-          management and custon domain purchasing. A highly requested feature
-          from individuals and teams alike, this project yielded massive
-          benefits in growth, retention and revenue.
+          Shipped features around custom domain management and purchasing. A
+          highly requested feature from individuals and teams alike, this
+          feature yielded massive increases in growth, retention, and revenue.
         </ProjectBody>
       </GridContainer>
     </motion.main>
