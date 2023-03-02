@@ -20,7 +20,7 @@ import CustomDomains from "../public/work/skiff/custom-domains.jpg";
 import Mail from "../public/work/skiff/mail.jpg";
 import IconPicker from "../public/work/skiff/icon-picker.jpg";
 import FormatBar from "../public/work/skiff/format-bar.jpg";
-import Compose from "../public/work/skiff/compose-dark.jpg";
+import Compose from "../public/work/skiff/compose-modal.jpg";
 import Icons from "../public/work/skiff/icons.png";
 import Calendar from "../public/work/skiff/calendar.jpg";
 import MarketingCards from "../public/work/skiff/marketing-cards.png";
@@ -28,6 +28,7 @@ import MarketingLanding from "../public/work/skiff/marketing-landing.jpg";
 import AppLogos from "../public/work/skiff/app-logos.jpg";
 import SharingModals from "../public/work/skiff/sharing-modal.png";
 import DragDrop from "../public/work/skiff/drag-drop.jpg";
+import Tables from "../public/work/skiff/tables.jpg";
 
 const item = {
   hidden: { opacity: 0 },
@@ -54,11 +55,11 @@ export default function Skiff() {
         <ProjectHero isVideo={false} content="/project-covers/skiff.jpg" />
         <ProjectTitle role="Collaboration tools">Skiff</ProjectTitle>
         <ProjectBody col={2}>
-          {`I lead all things related to design at Skiff, a privacy company
-          building collaboration tools for teams. I primarily work on three of Skiff's products — Pages, Drive, and Mail. A blessing in disguise,
+          {`I lead design at Skiff, a privacy company
+          building encrypted productivity tools. Since joining, I've shaped every aspect of Skiff's ecosystem. Quite literally everything you see, I've touched.  A blessing in disguise,
           managing such a large scope has helped me develop a holistic
-          understanding, all while still being able to contribute at the most
-          granular level. In addition to design, I also regularly push code and review eng implementation.`}
+          understanding of the product ecosystem, all while still being able to contribute at the most
+          granular level.`}
         </ProjectBody>
         <ProjectDetails
           role={["Designer"]}
@@ -73,74 +74,46 @@ export default function Skiff() {
           {`Twitter`}
         </LinkCard>
         <Spacer />
-        <ProjectBody title="Branding">
-          Aside from working on product features, I also iterate on Skiff&apos;s
-          visual brand. After our redesign with{" "}
-          <TextLink link="https://www.pentagram.com/work/skiff">
-            Pentagram
-          </TextLink>
-          , it was a massive group effort between myself and three others to
-          translate the new language into the product. Now as the core designer,
-          I lead all initiatives related to brand.
+        <ProjectBody title="Visual Language">
+          My biggest pride has been shaping Skiff&apos;s visual design language.
+          I believe software is a form of art — Skiff is the manifestation of
+          that belief.
         </ProjectBody>
         <ProjectMedia src={AppLogos}>
-          Along with Jason, we designed app icons for each of our four products.
-          The app icons needed to feel unique side by side as well as be
-          identifiable when siloed.
+          Four skeuomorphic icons, one for each product [Co-designed with Jason]
         </ProjectMedia>
         <ProjectMedia src={MarketingLanding}>
-          {`Led the redesign of Skiff's marketing site, a 2.5 month long
-          initiative from start to finish. We custom built almost very single
-          graphic in code and engrained them with interactive hover states and
-          dynamic details. The new design language strives to make privacy feel
-          friendly and approachable. The site can be found `}
-          <TextLink link="https://www.skiff.com">here</TextLink>.
+          Led design for the Skiff marketing site relaunch, a 2.5 month project.
+          Visit <TextLink link="https://www.skiff.com">here</TextLink>
         </ProjectMedia>
         <ProjectMedia pAll src={MarketingCards}>
-          {" "}
-          20 graphics that are scattered across the marketing site — every one
-          built responsively in code (by Jason) with 70% being interactive. Find
-          them on the{" "}
-          <TextLink link="https://www.skiff.com">
-            landing page
-          </TextLink> and{" "}
-          <TextLink link="https://skiff.com/pages">product pages</TextLink>
+          20 interactive graphics scattered across the marketing site, each
+          individually coded in React
         </ProjectMedia>
 
         <ProjectMedia src={Icons}>
-          Hand drawn icons combinging angular and soft features.
+          +200 Hand drawn icons combining angular and soft features
         </ProjectMedia>
-        <Spacer />
-        <ProjectMedia pt pl src={AppSwitcher}></ProjectMedia>
-        <Spacer />
+        <ProjectMedia pt pl src={AppSwitcher}>
+          Global app switcher for navigation between products and workspaces.
+        </ProjectMedia>
         <ProjectBody title="Pages">
-          {`I started working on Pages when I was a still a contractor and
-          wrapping up my last year in college. This was when Pages (Skiff's
-          flagship product) was still in private beta — long before Mail,
-          Calendar, and Drive were released. Since then, the product has grown
-          tremendously and matured into a production-level application. Since
-          joining, I've designed almost everything you see in the live app from
-          0 to 1. This includes features such as the format bar, sharing,
-          drag-and-drop, and much more.`}
+          Text styles, tables, navigation sidebar, format bar, sharing features,
+          enterprise controls, public documents, etc.
         </ProjectBody>
         <ProjectMedia pt pr src={LocalSharing}></ProjectMedia>
         <ProjectMedia src={SharingModals} />
         <ProjectMedia src={IconPicker}></ProjectMedia>
         <ProjectMedia src={DragDrop}></ProjectMedia>
         <ProjectMedia src={FormatBar}></ProjectMedia>
+        <ProjectMedia src={Tables}></ProjectMedia>
         <ProjectBody title="Mail">
-          By the time I started working on Skiff Mial, the product already had a
-          decent foundation in place. I played a core role in redesigning
-          various sections of the product to be more legible and beautiful.
+          Search, sorting automation, compose editor, web3 wallet email, etc.
         </ProjectBody>
         <ProjectMedia pAll src={Mail} />
-        <ProjectMedia pr pb src={Compose} />
+        <ProjectMedia pr pb pt src={Compose} />
         <ProjectMedia pt pr pb src={CustomDomains}></ProjectMedia>
-        <ProjectBody caption>
-          Shipped features around custom domain management and purchasing. A
-          highly requested feature from individuals and teams alike, this
-          feature yielded massive increases in growth, retention, and revenue.
-        </ProjectBody>
+        <ProjectBody></ProjectBody>
       </GridContainer>
     </motion.main>
   );
