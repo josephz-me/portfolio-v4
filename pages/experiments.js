@@ -72,7 +72,16 @@ export default function Brain() {
         <ProjectMedia src={LE_2}></ProjectMedia>
         <ProjectMedia src={LE_3}></ProjectMedia>
         <Divider />
-
+        <ProjectBody title="Sensor interfaces"></ProjectBody>
+        <ProjectMedia
+          src="/work/experiments/sensor-matrix.mp4"
+          isVideo
+        ></ProjectMedia>
+        <ProjectMedia
+          src="/work/experiments/sensor-chess.mp4"
+          isVideo
+        ></ProjectMedia>
+        <Divider />
         <ProjectBody title="Contextual Media">
           {`Current attachable media (image, video, audio) are detached from the
           words that describe them, limiting the clarity of an individual's
@@ -82,7 +91,7 @@ export default function Brain() {
         </ProjectBody>
         <ProjectMedia
           src="/work/experiments/contextual-media.mp4"
-          isVideo={true}
+          isVideo
         ></ProjectMedia>
         <Divider />
         <Spacer />
@@ -118,7 +127,7 @@ export default function Brain() {
         </LinkCard>
 
         <ExternalVideo url="https://player.vimeo.com/video/488803937?h=99634d02a7&title=0&byline=0&portrait=0"></ExternalVideo>
-        <ProjectMedia src={GalleryArt} isImage={true}></ProjectMedia>
+        <ProjectMedia src={GalleryArt}></ProjectMedia>
         <ProjectBody caption={true}>
           Some of the art made with our collaborative painting tool!
         </ProjectBody>
