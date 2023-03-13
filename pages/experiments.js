@@ -77,11 +77,19 @@ export default function Brain() {
           was completed with an Arduino Uno and a few thoughtfully selected
           sensors.
         </ProjectBody>
-        <ProjectMedia src="/work/experiments/sensor-matrix.mp4" isVideo>
+        <ProjectMedia
+          hasControl
+          src="/work/experiments/sensor-matrix.mp4"
+          isVideo
+        >
           A reverse space invasion game using an accelerometer and 8x8 LED
           board.
         </ProjectMedia>
-        <ProjectMedia src="/work/experiments/sensor-chess.mp4" isVideo>
+        <ProjectMedia
+          hasControl
+          src="/work/experiments/sensor-chess.mp4"
+          isVideo
+        >
           Touchless chess clock leveraging 2 Time-of-Flight distance sensors.
           Players set and confirm time settings based on hand duration and
           proximity.

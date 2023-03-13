@@ -68,6 +68,7 @@ export default function ProjectMedia(props) {
       >
         {props.isVideo ? (
           <CardVideo
+            hasControl={props.hasControl}
             src={props.src}
             loadingPhrase={loadingPhrase}
             pAll={props.pAll}
