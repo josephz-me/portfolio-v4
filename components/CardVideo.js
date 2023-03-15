@@ -21,12 +21,16 @@ export default function CardVideo(props) {
 
   return (
     <div
-      className={`group relative rounded-md overflow-hidden h-full
+      className={` group relative rounded-md overflow-hidden h-full
+      ${props.hasControl ? "cursor-pointer" : ""}
       ${props.pAll ? "rounded md:rounded-md" : ""}
       ${props.pt && props.pl ? "rounded-tl md:rounded-tl-xl" : ""}
       ${props.pt && props.pr ? "rounded-tr md:rounded-tr-xl" : ""}
       ${props.pb && props.pl ? "rounded-bl md:rounded-bl-xl" : ""}
       ${props.pb && props.pr ? "rounded-br-md md:rounded-br-xl" : ""}`}
+      onClick={() => {
+        playPause();
+      }}
     >
       <div
         className={`hidden absolute top-0 w-full h-full overflow-hidden ${
@@ -52,7 +56,7 @@ export default function CardVideo(props) {
         className={`object-cover w-full h-full transition duration-1000 overflow-hidden ease-out ${
           isVideoLoaded ? "opacity-100" : "opacity-100"
         }`}
-        // autoPlay
+        preload={props.hasControl ? "metadata" : "auto"}
         playsInline
         loop
         autoPlay={props.hasControl ? false : true}
@@ -61,12 +65,9 @@ export default function CardVideo(props) {
         onCanPlay={onLoadedData}
       />
       <div
-        onClick={() => {
-          playPause();
-        }}
         className={`${props.hasControl ? "" : "hidden"}
         ${isPlaying ? "opacity-0" : "opacity-100"}
-         group-hover:opacity-100 left-0 right-0 top-0 bottom-0 m-auto w-fit h-fit absolute top-0 px-4 py-2 bg-black/80 shadow-lg hover:scale-[1.05] duration-200 rounded-full cursor-pointer`}
+         group-hover:opacity-100 left-0 right-0 top-0 bottom-0 m-auto w-fit h-fit absolute top-0 px-4 py-2 bg-black/80 shadow-lg group-hover:scale-[1.05] duration-200 rounded-full`}
       >
         {/* play button */}
         <svg
