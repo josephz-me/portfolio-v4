@@ -2,10 +2,11 @@ import React, { useState, useRef, useEffect } from "react";
 
 export default function CardVideo(props) {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const vidRef = useRef(null);
   const playPause = () => {
-    console.log(vidRef.current.paused);
+    //play pause icon
     if (vidRef.current.paused) {
       setIsPlaying(true);
       vidRef.current.play();
@@ -18,6 +19,14 @@ export default function CardVideo(props) {
   const onLoadedData = () => {
     setIsVideoLoaded(true);
   };
+
+  useEffect(() => {
+    setIsTouch("ontouchstart" in window || navigator.msMaxTouchPoints > 0);
+  }, []);
+
+  useEffect(() => {
+    console.log(isTouch);
+  }, [isTouch]);
 
   return (
     <div
@@ -56,7 +65,8 @@ export default function CardVideo(props) {
         className={`object-cover w-full h-full transition duration-1000 overflow-hidden ease-out ${
           isVideoLoaded ? "opacity-100" : "opacity-100"
         }`}
-        preload={props.hasControl ? "metadata" : "auto"}
+        preload={props.hasControl ? "none" : "none"}
+        poster={props.poster}
         playsInline
         loop
         autoPlay={props.hasControl ? false : true}
@@ -67,7 +77,8 @@ export default function CardVideo(props) {
       <div
         className={`${props.hasControl ? "" : "hidden"}
         ${isPlaying ? "opacity-0" : "opacity-100"}
-         group-hover:opacity-100 left-0 right-0 top-0 bottom-0 m-auto w-fit h-fit absolute top-0 px-4 py-2 bg-black/80 shadow-lg group-hover:scale-[1.05] duration-200 rounded-full`}
+        ${isTouch ? "" : "group-hover:opacity-100"}
+         left-0 right-0 top-0 bottom-0 m-auto w-fit h-fit absolute px-4 py-2 bg-black/80 shadow-lg group-hover:scale-[1.05] duration-200 rounded-full`}
       >
         {/* play button */}
         <svg
