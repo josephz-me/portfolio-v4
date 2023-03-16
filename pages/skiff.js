@@ -29,6 +29,8 @@ import AppLogos from "../public/work/skiff/app-logos.jpg";
 import SharingModals from "../public/work/skiff/sharing-modal.png";
 import DragDrop from "../public/work/skiff/drag-drop.jpg";
 import Tables from "../public/work/skiff/tables.jpg";
+import Comments from "../public/work/skiff/comments.jpg";
+import Onboarding from "../public/work/skiff/onboarding.jpg";
 
 const item = {
   hidden: { opacity: 0 },
@@ -97,16 +99,24 @@ export default function Skiff() {
         <ProjectMedia pt pl src={AppSwitcher}>
           Global app switcher for navigation between products and workspaces.
         </ProjectMedia>
+        <ProjectMedia pAll src={Onboarding}>
+          Released Onboarding 4.0 [Yes, we redid and launched onboarding 4
+          times]
+        </ProjectMedia>
+
+        {/* PAGES */}
         <ProjectBody title="Pages">
           Text styles, tables, navigation sidebar, format bar, sharing features,
           enterprise controls, public documents, etc.
         </ProjectBody>
+        <ProjectMedia pt pr pb src={Comments}></ProjectMedia>
         <ProjectMedia pt pr src={LocalSharing}></ProjectMedia>
         <ProjectMedia src={SharingModals} />
         <ProjectMedia src={IconPicker}></ProjectMedia>
         <ProjectMedia src={DragDrop}></ProjectMedia>
         <ProjectMedia src={FormatBar}></ProjectMedia>
         <ProjectMedia src={Tables}></ProjectMedia>
+
         <ProjectBody title="Mail">
           Search, sorting automation, compose editor, web3 wallet email, etc.
         </ProjectBody>
