@@ -87,7 +87,6 @@ export default function ProjectMedia(props) {
               <Image
                 src={props.src}
                 alt="image"
-                placeholder="blur"
                 onLoadingComplete={() => {
                   handleImageLoad();
                 }}

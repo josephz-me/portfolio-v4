@@ -33,7 +33,7 @@ export default function CardVideo(props) {
       }}
     >
       <div
-        className={`hidden absolute top-0 w-full h-full overflow-hidden ${
+        className={`absolute top-0 w-full h-full overflow-hidden ${
           isVideoLoaded
             ? "opacity-0 bg-[rgba(255,255,255,0)]"
             : "opacity-100 animate-pulse bg-[rgba(255,255,255,.03)]"
@@ -54,7 +54,7 @@ export default function CardVideo(props) {
       <video
         ref={vidRef}
         className={`object-cover w-full h-full transition duration-1000 overflow-hidden ease-out ${
-          isVideoLoaded ? "opacity-100" : "opacity-100"
+          isVideoLoaded ? "opacity-100" : "opacity-0"
         }`}
         preload={props.hasControl ? "metadata" : "auto"}
         playsInline
@@ -65,7 +65,7 @@ export default function CardVideo(props) {
         onCanPlay={onLoadedData}
       />
       <div
-        className={`${props.hasControl ? "" : "hidden"}
+        className={`${props.hasControl && isVideoLoaded ? "" : "hidden"}
         ${isPlaying ? "opacity-0" : "opacity-100"}
          group-hover:opacity-100 left-0 right-0 top-0 bottom-0 m-auto w-fit h-fit absolute top-0 px-4 py-2 bg-black/80 shadow-lg group-hover:scale-[1.05] duration-200 rounded-full`}
       >
