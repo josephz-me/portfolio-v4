@@ -81,7 +81,7 @@ export default function Brain() {
         <LinkCard col={1} link="https://www.azuki.com/collector/dingaling">
           {`Shrimpwen's Profile`}
         </LinkCard>
-        <ProjectMedia pt pr pl src={cp_main}></ProjectMedia>
+        <ProjectMedia pt pr pl dark src={cp_main}></ProjectMedia>
         <ProjectMedia
           src={"/work/azuki/cp-emblems.mp4"}
           isVideo
