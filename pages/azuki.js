@@ -87,8 +87,12 @@ export default function Brain() {
           isVideo
         >{`On-chain emblems baked with dimensional hover states and card-like effects `}</ProjectMedia>
         <ProjectMedia src={"/work/azuki/cp-badges.mp4"} isVideo>
-          {`Dynamic badge previews: a low-commitment way to browse an individual's community badges`}
+          {`Dynamic badge previews, a low-commitment way to browse an individual's community badges`}
         </ProjectMedia>
+        <ProjectMedia
+          src={"/work/azuki/cp-highlights.mp4"}
+          isVideo
+        ></ProjectMedia>
         <Divider />
         <Spacer></Spacer>
         <ProjectBody title="Ambush x Azuki Collab" col={1}>
