@@ -14,9 +14,15 @@ import Divider from "../components/projects/Divider";
 // images
 import BeanzCarousel from "../public/work/azuki/beanz-carousel.jpg";
 import LoreMain from "../public/work/azuki/lore-main.jpg";
+import LoreChapterOne from "../public/work/azuki/lore-chapter-one.jpg";
 import cp_main from "../public/work/azuki/cp-main.jpg";
 import auction_main from "../public/work/azuki/auction-main.jpg";
+import multiwallet from "../public/work/azuki/multiwallet.jpg";
 import ambushLanding from "../public/work/azuki/ambush-landing.jpg";
+import auctionOrder from "../public/work/azuki/auction-order.jpg";
+import equipBeanz from "../public/work/azuki/equip-beanz.jpg";
+import equipExamples from "../public/work/azuki/equip-examples.png";
+import equipMain from "../public/work/azuki/equip-main.jpg";
 
 import Link from "next/link";
 
@@ -41,23 +47,23 @@ export default function Brain() {
         <ProjectBody col={2}>
           Azuki is a web3 brand pioneering the integration of blockchain
           identity with digital art, fashion, and physical collectibles. Since
-          launch, they have worked with established brands like{" "}
+          launch, they have worked with brands like{" "}
           <TextLink link="https://www.ambushdesign.com/en-us/">
             Ambush Streetwear
           </TextLink>
-          ,{" "}
+          ,
           <TextLink link="https://twitter.com/AzukiOfficial/status/1512886138670759941?s=20&t=fP4dEVgYoaYo7q-xJQmN4g">
             Epik High
           </TextLink>
-          ,{" "}
+          ,
           <TextLink link="https://twitter.com/Ledger/status/1519179535325052933?s=20&t=23FSw7lnvc53d_Fjxc0ZOw">
-            NASA , and{" "}
+            NASA
           </TextLink>
+          , and
           <TextLink link="https://www.redbullracing.com/int-en">
             RedBull Racing
           </TextLink>
-          . As a designer, I work on all things product related, focused on both
-          partnerships and core experiences.
+          . As a product designer, I scale core digital product experiences.
         </ProjectBody>
         <ProjectDetails
           role={["product designer"]}
@@ -82,17 +88,20 @@ export default function Brain() {
           {`Shrimpwen's Profile`}
         </LinkCard>
         <ProjectMedia pt pr pl dark src={cp_main}></ProjectMedia>
-        <ProjectMedia
-          src={"/work/azuki/cp-emblems.mp4"}
-          isVideo
-        >{`On-chain emblems baked with dimensional hover states and card-like effects `}</ProjectMedia>
-        <ProjectMedia src={"/work/azuki/cp-badges.mp4"} isVideo>
-          {`Dynamic badge previews, a low-commitment way to browse an individual's community badges`}
-        </ProjectMedia>
+        <ProjectMedia src={"/work/azuki/cp-emblems.mp4"} isVideo></ProjectMedia>
+        <ProjectMedia src={"/work/azuki/cp-badges.mp4"} isVideo></ProjectMedia>
         <ProjectMedia
           src={"/work/azuki/cp-highlights.mp4"}
           isVideo
         ></ProjectMedia>
+        {/* <ProjectMedia dark src={multiwallet}></ProjectMedia> */}
+        <ProjectBody title="Token Equipping" col={1}>
+          Coming from the alley, Beans serve as the sidekick all Azukis want and
+          need. We introduced an equpping system that allows users to unite both
+          into one.
+        </ProjectBody>
+        <ProjectMedia src={equipBeanz}></ProjectMedia>
+        <ProjectMedia pAll src={equipExamples}></ProjectMedia>
         <Divider />
         <Spacer></Spacer>
         <ProjectBody title="Ambush x Azuki Collab" col={1}>
@@ -110,7 +119,7 @@ export default function Brain() {
         >
           Hypebeast
         </LinkCard>
-        <ProjectMedia pAll dark src={ambushLanding} />
+        <ProjectMedia dark src={ambushLanding} />
         <Divider />
         <ProjectBody title="Proof of Skate Auction" col={1}>
           Azuki recently made history by setting the record for the most
@@ -123,8 +132,8 @@ export default function Brain() {
         >
           Hypemoon (Hypebeast)
         </LinkCard>
-        {/* <ProjectMedia pAll src={auction_main} /> */}
-        <ProjectMedia isVideo src={"/work/azuki/auction-ranking.mp4"} />
+        <ProjectMedia pAll src={auction_main} />
+        <ProjectMedia src={auctionOrder} />
         <Divider />
         <ProjectBody title="Azuki Lore" col={1}>
           A core part of the Azuki brand is storytelling. I helped design the
@@ -135,20 +144,8 @@ export default function Brain() {
         <LinkCard col={1} link="https://azuki.com/world">
           Lore Chapters
         </LinkCard>
-        <ProjectMedia pAll src={LoreMain}></ProjectMedia>
-        <Divider />
-        <ProjectBody title="Token Equipping" col={1}>
-          The Beanz NFT collection was my first project, which consisted of
-          designing the Beanz storytelling page as well as the Beanz pairing
-          experience.
-        </ProjectBody>
-        <LinkCard col={1} link="https://www.azuki.com/beanz">
-          Beanz Website
-        </LinkCard>
-        <ProjectMedia
-          src={"/work/azuki/beanz-pairing.mp4"}
-          isVideo
-        ></ProjectMedia>
+        <ProjectMedia dark src={LoreMain}></ProjectMedia>
+        <ProjectMedia dark src={LoreChapterOne}></ProjectMedia>
       </GridContainer>
     </motion.main>
   );

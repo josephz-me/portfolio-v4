@@ -14,7 +14,7 @@ export default function ProjectMedia(props) {
 
   const bgColors = {
     skiff: ["bg-gray-200", "bg-[#4F4C59]"],
-    azuki: ["azuki-red", "bg-slate-800"],
+    azuki: ["bg-[#EBEBE6]", "bg-gray-800"],
     metalink: "bg-gray-700",
     experiments: "bg-white/[.15]",
   };
