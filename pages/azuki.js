@@ -16,7 +16,11 @@ import BeanzCarousel from "../public/work/azuki/beanz-carousel.jpg";
 import LoreMain from "../public/work/azuki/lore-main.jpg";
 import LoreChapterOne from "../public/work/azuki/lore-chapter-one.jpg";
 import cp_main from "../public/work/azuki/cp-main.jpg";
-import auction_main from "../public/work/azuki/auction-main.jpg";
+import auctionMain from "../public/work/azuki/auction-main.jpg";
+import auctionList from "../public/work/azuki/auction-list.jpg";
+import auctionCountdown from "../public/work/azuki/auction-countdown.jpg";
+import auctionK11 from "../public/work/azuki/auction-k11.jpeg";
+import auctionK112 from "../public/work/azuki/auction-k11-2.jpeg";
 import multiwallet from "../public/work/azuki/multiwallet.jpg";
 import ambushLanding from "../public/work/azuki/ambush-landing.jpg";
 import auctionOrder from "../public/work/azuki/auction-order.jpg";
@@ -96,9 +100,9 @@ export default function Brain() {
         ></ProjectMedia>
         {/* <ProjectMedia dark src={multiwallet}></ProjectMedia> */}
         <ProjectBody title="Token Equipping" col={1}>
-          Coming from the alley, Beans serve as the sidekick all Azukis want and
-          need. We introduced an equpping system that allows users to unite both
-          into one.
+          In the Azuki ecosystem, Beans are the companions all Azukis need. We
+          introduced an equpping system that allows users to unite both into
+          one.
         </ProjectBody>
         <ProjectMedia src={equipBeanz}></ProjectMedia>
         <ProjectMedia pAll src={equipExamples}></ProjectMedia>
@@ -132,8 +136,18 @@ export default function Brain() {
         >
           Hypemoon (Hypebeast)
         </LinkCard>
-        <ProjectMedia pAll src={auction_main} />
-        <ProjectMedia src={auctionOrder} />
+        <LinkCard
+          col={2}
+          link="https://hypemoon.com/2022/10/azuki-nft-gold-skateboard-auction-world-record"
+        >
+          Hypemoon (Hypebeast)
+        </LinkCard>
+        <ProjectMedia src={auctionCountdown} />
+        <ProjectMedia src={auctionMain} />
+        <ProjectMedia src={auctionK112}>
+          Proof of Skate exhibition at K11 Musea in Hong Kong
+        </ProjectMedia>
+        <ProjectMedia src={auctionK11} />
         <Divider />
         <ProjectBody title="Azuki Lore" col={1}>
           A core part of the Azuki brand is storytelling. I helped design the
