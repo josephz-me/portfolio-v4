@@ -31,6 +31,8 @@ import DragDrop from "../public/work/skiff/drag-drop.jpg";
 import Tables from "../public/work/skiff/tables.jpg";
 import Comments from "../public/work/skiff/comments.jpg";
 import Onboarding from "../public/work/skiff/onboarding.jpg";
+import MobileMail1 from "../public/work/skiff/mobile-mail-1.png";
+import MobileMail2 from "../public/work/skiff/mobile-mail-2.png";
 
 const item = {
   hidden: { opacity: 0 },
@@ -104,6 +106,16 @@ export default function Skiff() {
           times]
         </ProjectMedia>
 
+        {/* MAIl */}
+        <ProjectBody title="Mail">
+          Search, sorting automation, compose editor, web3 wallet email, etc.
+        </ProjectBody>
+        <ProjectMedia pAll src={Mail} />
+        <ProjectMedia pr pb pt src={Compose} />
+        <ProjectMedia pAll src={MobileMail1} />
+        <ProjectMedia pAll src={MobileMail2} />
+        <ProjectMedia pt pr pb src={CustomDomains}></ProjectMedia>
+
         {/* PAGES */}
         <ProjectBody title="Pages">
           Text styles, tables, navigation sidebar, format bar, sharing features,
@@ -116,14 +128,6 @@ export default function Skiff() {
         <ProjectMedia src={DragDrop}></ProjectMedia>
         <ProjectMedia src={FormatBar}></ProjectMedia>
         <ProjectMedia src={Tables}></ProjectMedia>
-
-        <ProjectBody title="Mail">
-          Search, sorting automation, compose editor, web3 wallet email, etc.
-        </ProjectBody>
-        <ProjectMedia pAll src={Mail} />
-        <ProjectMedia pr pb pt src={Compose} />
-        <ProjectMedia pt pr pb src={CustomDomains}></ProjectMedia>
-        <ProjectBody></ProjectBody>
       </GridContainer>
     </motion.main>
   );
