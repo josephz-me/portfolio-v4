@@ -61,7 +61,7 @@ export default function Navbar() {
     <nav
       className={`${
         pageName == "/" ? "md:fixed" : "md:sticky w-full"
-      } z-20 flex h-auto inline-block items-stretch flex-1 justify-between top-[1.99rem] md:mb-0 mb-6`}
+      } px-4 z-20 flex h-auto inline-block items-stretch flex-1 justify-between top-[1.99rem] md:mb-0 mb-6`}
     >
       {/* logo */}
       <div

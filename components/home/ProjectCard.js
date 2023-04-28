@@ -21,24 +21,22 @@ export default function ProjectCard(props) {
   return (
     <Link passHref variants={props.animation} href={`${props.link}`}>
       <div
-        className={`${
+        className={`rounded-[40px] overflow-hidden border border-solid border-white/10 hover:opacity-90 ${
           props.col == 1
             ? "lg:col-start-1 lg:col-end-7 col-start-1 col-end-13"
             : "lg:col-start-7 lg:col-end-13 col-start-1 col-end-13"
         } ${
           //determine if project is linked
-          props.link != undefined
-            ? "cursor-pointer hover:bg-neutral-800"
-            : "pointer-events-none"
+          props.link != undefined ? "cursor-pointer" : "pointer-events-none"
         }
       
-      group relative grid p-2 bg-[rgba(255,255,255,.03)] rounded-md ease-in`}
+      group relative grid ease-in`}
       >
-        <div className="relative h-[60vw] overflow-hidden object-cover lg:h-[29vw] rounded-md">
+        <div className="relative h-[60vw] overflow-hidden object-cover lg:h-[29vw] ">
           {props.isImage ? (
             <div className="relative h-full">
               <article
-                className={`object-cover w-full h-full transition duration-500 overflow-hidden rounded-md ease-out ${
+                className={`object-cover w-full h-full transition duration-500 overflow-hidden ${
                   isContentLoaded ? "opacity-1" : "opacity-0"
                 }`}
               >
@@ -60,16 +58,6 @@ export default function ProjectCard(props) {
             </div>
           ) : (
             <CardVideo src={props.content} loadingPhrase={loadingPhrase} />
-          )}
-        </div>
-
-        <div className="mt-2">
-          <p className={`text-zinc-50`}>{props.title}</p>
-          <p className="text-zinc-500">{props.description}</p>
-          {props.locked && (
-            <p className="absolute text-neutral-100 rounded-md right-4 top-4 px-2 py-1 bg-[rgba(0,0,0,.5)]">
-              LOCKED
-            </p>
           )}
         </div>
       </div>
