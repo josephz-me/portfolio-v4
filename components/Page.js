@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 export default function Page(props) {
   return (
     <>
-      <div className="z-[9] relative md:px-1 px-2 py-8 w-full bg-[#111111] border-b border-solid border-neutral-800 shadow-xl">
+      <div className="z-[9] text-padding relative py-8 w-full bg-[#111111] border-b border-solid border-neutral-800 shadow-xl">
         <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}

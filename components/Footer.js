@@ -3,7 +3,7 @@ import TextLink from "./TextLink";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-const GLOBAL_SPACING = "md:px-6 px-4 pb-10 pt-6 md:pb-10 md:pt-8";
+const GLOBAL_SPACING = "text-padding pb-10 pt-6 md:pb-10 md:pt-8";
 const BREAKPOINT = "col-start-1 col-end-13";
 
 export default function Footer() {

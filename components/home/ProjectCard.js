@@ -21,16 +21,11 @@ export default function ProjectCard(props) {
   return (
     <Link passHref variants={props.animation} href={`${props.link}`}>
       <div
-        className={`rounded-[40px] overflow-hidden border border-solid border-[rgba(255,255,255,.02)] hover:opacity-90 ${
-          props.col == 1
-            ? "lg:col-start-1 lg:col-end-7 col-start-1 col-end-13"
-            : "lg:col-start-7 lg:col-end-13 col-start-1 col-end-13"
-        } ${
+        className={`${
           //determine if project is linked
           props.link != undefined ? "cursor-pointer" : "pointer-events-none"
         }
-      
-      group relative grid ease-in`}
+      group game-border relative grid ease-in rounded-[40px] overflow-hidden hover:opacity-90 `}
       >
         <div className="relative h-[60vw] overflow-hidden object-cover lg:h-[29vw] ">
           {props.isImage ? (

@@ -33,7 +33,7 @@ export default function Home() {
     <motion.main>
       <GridContainer>
         <motion.p
-          className={`z-1000 gap-6 text-zinc-100 pt-2 px-4 mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
+          className={`z-1000 gap-6 text-zinc-100 pt-2 mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
         >
           Joseph is an interaction designer interested in digital toolmaking and
           multimodal input. After working at{" "}
@@ -71,55 +71,51 @@ export default function Home() {
           building privacy-first tools for teams.
         </motion.p>
 
-        <ProjectCard
-          title="Skiff"
-          description="collaboration tools"
-          col={1}
-          isImage={true}
-          link="/skiff"
-          content={"/project-covers/skiff.jpg"}
-        ></ProjectCard>
-        <ProjectCard
-          title="Azuki"
-          description="Product and Brand"
-          col={2}
-          link="/azuki"
-          isImage={true}
-          content={"/project-covers/azuki-2.jpg"}
-        ></ProjectCard>
-        <ProjectCard
-          title="Apple"
-          description="Multimodal interaction"
-          col={1}
-          link="/apple"
-          isImage={true}
-          content={"/project-covers/apple.jpg"}
-        ></ProjectCard>
-        <ProjectCard
-          title="Brain Technologies"
-          description="multimodal interaction"
-          link="/brain"
-          col={2}
-          isImage={true}
-          content={"/project-covers/natural.jpg"}
-        ></ProjectCard>
-        <ProjectCard
-          title="Metalink Labs"
-          description="Design systems & Messaging"
-          col={1}
-          isImage={true}
-          link="/metalink"
-          content={"/project-covers/metalink.jpg"}
-        ></ProjectCard>
+        <div className="z-10 grid grid-cols-1 md:grid-cols-2 gap-2 relative z-10 col-start-1 col-end-13">
+          <ProjectCard
+            title="Skiff"
+            description="collaboration tools"
+            isImage={true}
+            link="/skiff"
+            content={"/project-covers/skiff.jpg"}
+          ></ProjectCard>
+          <ProjectCard
+            title="Azuki"
+            description="Product and Brand"
+            link="/azuki"
+            isImage={true}
+            content={"/project-covers/azuki-2.jpg"}
+          ></ProjectCard>
+          <ProjectCard
+            title="Apple"
+            description="Multimodal interaction"
+            link="/apple"
+            isImage={true}
+            content={"/project-covers/apple.jpg"}
+          ></ProjectCard>
+          <ProjectCard
+            title="Brain Technologies"
+            description="multimodal interaction"
+            link="/brain"
+            isImage={true}
+            content={"/project-covers/natural.jpg"}
+          ></ProjectCard>
+          <ProjectCard
+            title="Metalink Labs"
+            description="Design systems & Messaging"
+            isImage={true}
+            link="/metalink"
+            content={"/project-covers/metalink.jpg"}
+          ></ProjectCard>
 
-        <ProjectCard
-          title="Experiments"
-          description="design & code"
-          col={2}
-          isImage={true}
-          link="/experiments"
-          content={"/work/experiments/LE-3.jpg"}
-        ></ProjectCard>
+          <ProjectCard
+            title="Experiments"
+            description="design & code"
+            isImage={true}
+            link="/experiments"
+            content={"/work/experiments/LE-3.jpg"}
+          ></ProjectCard>
+        </div>
       </GridContainer>
     </motion.main>
   );

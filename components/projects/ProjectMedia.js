@@ -47,7 +47,7 @@ export default function ProjectMedia(props) {
   return (
     <>
       <div
-        className={`block grid rounded-md overflow-hidden col-start-1 col-end-13 transition duration-300
+        className={`block grid rounded-xl overflow-hidden col-start-1 col-end-13 transition duration-300
           ${background}
           ${props.large ? "md:col-start-1" : "md:col-start-5"}
           ${
