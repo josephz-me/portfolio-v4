@@ -35,12 +35,18 @@
   z-index: 1;
   outline: 4px solid rgba(0, 0, 0, 0);
   outline-offset: 2px;
+  transition: 100ms all;
 }
 
 .game-border:hover {
   z-index: 20 !important;
   outline: 4px solid rgb(0, 179, 255);
   animation: color-change 2s ease-in-out infinite;
+}
+
+.game-border:active {
+  outline-offset: 1px;
+  outline: 2px solid rgb(0, 179, 255);
 }
 
 @keyframes color-change {

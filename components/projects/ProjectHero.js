@@ -17,7 +17,7 @@ export default function ProjectHero(props) {
   }, []);
 
   return (
-    <div className="relative overflow-hidden rounded-[40px] my-2 md:my-8 h-[60vw] md:h-[49vw] object-cover w-full grid col-span-12">
+    <div className="relative overflow-hidden rounded-[32px] md:rounded-[48px] my-2 md:my-8 h-[60vw] md:h-[49vw] object-cover w-full grid col-span-12">
       {props.isVideo ? (
         <CardVideo src={props.content} loadingPhrase={loadingPhrase} />
       ) : (
