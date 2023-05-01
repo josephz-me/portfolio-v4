@@ -35,25 +35,28 @@
   z-index: 1;
   outline: 4px solid rgba(0, 0, 0, 0);
   outline-offset: 2px;
-  transition: outline-offset 100ms ease-out, outline-color 100ms ease-out !important;
 }
 
 .game-border:hover {
-  outline-offset: 2px;
   z-index: 20 !important;
   outline: 4px solid rgb(0, 179, 255);
-  animation: color-change 1s ease-in-out infinite;
+  animation: color-change 2s ease-in-out infinite;
 }
 
 @keyframes color-change {
   0% {
-    outline-color: rgb(0, 179, 255);
+    outline-color: rgb(0, 179, 255, 0.8);
   }
-  50% {
-    outline-color: white;
+  33% {
+    outline-color: rgb(255, 225, 0, 0.8);
   }
+
+  66% {
+    outline-color: rgb(250, 43, 43, 0.8);
+  }
+
   100% {
-    outline-color: rgb(0, 179, 255);
+    outline-color: rgb(0, 179, 255, 0.8);
   }
 }
 
