@@ -56,7 +56,7 @@ export default function Brain() {
             Ambush Streetwear
           </TextLink>
           ,
-          <TextLink link="https://twitter.com/AzukiOfficial/status/1512886138670759941?s=20&t=fP4dEVgYoaYo7q-xJQmN4g">
+          <TextLink link="https://twitter.com/Azuki/status/1512886138670759941?s=20&t=fP4dEVgYoaYo7q-xJQmN4g">
             Epik High
           </TextLink>
           ,
@@ -79,7 +79,7 @@ export default function Brain() {
         <LinkCard col={1} link="https://azuki.com">
           azuki.com
         </LinkCard>
-        <LinkCard col={2} link="https://twitter.com/AzukiOfficial">
+        <LinkCard col={2} link="https://twitter.com/azuki">
           Twitter
         </LinkCard>
         <Divider />

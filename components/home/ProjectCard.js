@@ -25,7 +25,7 @@ export default function ProjectCard(props) {
           //determine if project is linked
           props.link != undefined ? "cursor-pointer" : "pointer-events-none"
         }
-      group game-border relative grid ease-in rounded-[32px] md:rounded-[48px] overflow-hidden `}
+      group game-border relative grid ease-in rounded-[40px] md:rounded-[48px] overflow-hidden `}
       >
         <div className="relative h-[60vw] overflow-hidden object-cover lg:h-[29vw] ">
           {props.isImage ? (

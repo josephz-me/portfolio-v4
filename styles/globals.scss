@@ -46,7 +46,8 @@
 
 .game-border:active {
   outline-offset: 1px;
-  outline: 2px solid rgb(0, 179, 255);
+  outline: 2px solid;
+  outline-color: rgb(76, 197, 76) !important;
 }
 
 @keyframes color-change {
