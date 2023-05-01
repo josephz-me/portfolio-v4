@@ -7,14 +7,14 @@ import React, { useEffect, useState } from "react";
 export default function Page(props) {
   return (
     <>
-    <div className="z-[9] relative md:px-6 px-4 py-8 w-full bg-[#111111] border-b border-solid border-neutral-800 shadow-xl">
-      <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      />
+      <div className="z-[9] text-padding relative py-8 w-full bg-[#111111] border-b border-solid border-neutral-800 shadow-xl">
+        <Script
+          strategy="lazyOnload"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        />
 
-      <Script id="google-analytics" strategy="lazyOnload">
-        {`
+        <Script id="google-analytics" strategy="lazyOnload">
+          {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -22,12 +22,12 @@ export default function Page(props) {
               page_path: window.location.pathname,
             });
                 `}
-      </Script>
-      <Meta />
-      <Navbar />
-      {props.children}
-    </div>
-    <Footer />
+        </Script>
+        <Meta />
+        <Navbar />
+        {props.children}
+      </div>
+      <Footer />
     </>
   );
 }

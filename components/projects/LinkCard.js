@@ -13,7 +13,7 @@ export default function LinkCard(props) {
         props.col == 1
           ? "md:col-start-5 md:col-end-9"
           : "md:col-start-9 md:col-end-13"
-      } group text-white/80 bg-white/[.05] col-span-full hover:bg-white/10 hover:text-yellow-300 flex items-center flex-row p-4 rounded-md `}
+      } group text-white/80 bg-white/[.05] col-span-full hover:bg-white/10 hover:text-white flex items-center flex-row p-4 rounded-md game-border`}
     >
       <p>{props.children}</p>
       <svg

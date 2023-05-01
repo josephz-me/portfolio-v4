@@ -74,7 +74,7 @@ export default function Navbar() {
             celebrationTwo();
           }
         }}
-        className={`relative w-[48px] h-[48px] hover:opacity-[.9] hover:cursor-help
+        className={`game-border rounded-md overflow-hidden relative w-[48px]  h-[48px] hover:opacity-[.9] hover:cursor-help
          ease-[cubic-bezier(0.22, 1, 0.36, 1)]
             ${
               scrollY > 40
@@ -94,14 +94,14 @@ export default function Navbar() {
             key={icon}
             className={`
             ${icon == icons[iconCount] ? "" : "opacity-0"}
-            rounded-md bg-neutral-800 absolute top-0 left-0 transition`}
+             bg-neutral-800 absolute top-0 left-0 transition`}
           />
         ))}
       </div>
 
-      <a className={`ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>
+      <a className={` ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>
         <Link passHref href="/">
-          <p className="cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(50,50,50,.5)] hover:bg-[rgba(100,100,100,.5)] rounded-md inline-block fit-content">
+          <p className="game-border cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(50,50,50,.5)] hover:bg-[rgba(100,100,100,.5)] rounded-md inline-block fit-content">
             Back home
           </p>
         </Link>
