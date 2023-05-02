@@ -31,7 +31,7 @@ export default function ProjectCard(props) {
           {props.isImage ? (
             <div className="relative h-full">
               <article
-                className={`object-cover w-full h-full transition duration-500 overflow-hidden rounded-[40px] md:rounded-[48px] ${
+                className={`w-full h-full transition duration-500 overflow-hidden rounded-[40px] md:rounded-[48px] ${
                   isContentLoaded ? "opacity-1" : "opacity-0"
                 }`}
               >
@@ -44,6 +44,7 @@ export default function ProjectCard(props) {
                   onLoadingComplete={() => {
                     handleImageLoad();
                   }}
+                  className="rounded-[40px] md:rounded-[48px] overflow-hidden"
                 />
               </article>
               <Preloader
