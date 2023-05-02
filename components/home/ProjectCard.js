@@ -27,11 +27,11 @@ export default function ProjectCard(props) {
         }
       group game-border relative grid ease-in rounded-[40px] md:rounded-[48px] overflow-hidden `}
       >
-        <div className="relative h-[60vw] overflow-hidden object-cover lg:h-[29vw] ">
+        <div className="relative h-[60vw] overflow-hidden object-cover lg:h-[29vw] rounded-[40px] md:rounded-[48px] ">
           {props.isImage ? (
             <div className="relative h-full">
               <article
-                className={`object-cover w-full h-full transition duration-500 overflow-hidden ${
+                className={`object-cover w-full h-full transition duration-500 overflow-hidden rounded-[40px] md:rounded-[48px] ${
                   isContentLoaded ? "opacity-1" : "opacity-0"
                 }`}
               >
