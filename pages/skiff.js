@@ -32,6 +32,7 @@ import DragDrop from "../public/work/skiff/drag-drop.jpg";
 import Tables from "../public/work/skiff/tables.jpg";
 import Comments from "../public/work/skiff/comments.jpg";
 import Onboarding from "../public/work/skiff/onboarding.jpg";
+import OnboardingChecklist from "../public/work/skiff/onboarding-checklist.jpg";
 import MobileMail1 from "../public/work/skiff/mobile-mail-1.png";
 import MobileMail2 from "../public/work/skiff/mobile-mail-2.png";
 
@@ -111,9 +112,7 @@ export default function Skiff() {
         <ProjectMedia pt pl src={AppSwitcher}>
           Global app switcher for navigation between products and workspaces.
         </ProjectMedia>
-        <ProjectMedia pAll src={Onboarding}>
-          Onboarding 4.0
-        </ProjectMedia>
+        <ProjectMedia pAll src={Onboarding} />
 
         {/* MAIl */}
         <ProjectBody title="Mail">
@@ -124,6 +123,7 @@ export default function Skiff() {
         <ProjectMedia pAll src={MobileMail1} />
         <ProjectMedia pAll src={MobileMail2} />
         <ProjectMedia pt pr pb src={CustomDomains}></ProjectMedia>
+        <ProjectMedia pb pr src={OnboardingChecklist} />
 
         {/* PAGES */}
         <ProjectBody title="Pages">
