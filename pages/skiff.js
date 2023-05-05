@@ -24,6 +24,7 @@ import Compose from "../public/work/skiff/compose-modal.jpg";
 import Icons from "../public/work/skiff/icons.png";
 import Calendar from "../public/work/skiff/calendar.jpg";
 import MarketingCards from "../public/work/skiff/marketing-cards.png";
+import MarketingCards2 from "../public/work/skiff/marketing-cards-2.jpg";
 import MarketingLanding from "../public/work/skiff/marketing-landing.jpg";
 import AppLogos from "../public/work/skiff/app-logos.jpg";
 import SharingModals from "../public/work/skiff/sharing-modal.png";
@@ -59,15 +60,19 @@ export default function Skiff() {
         <ProjectHero isVideo={false} content="/project-covers/skiff.jpg" />
         <ProjectTitle role="Collaboration tools">Skiff</ProjectTitle>
         <ProjectBody col={2}>
-          {`I lead design at Skiff, a privacy company
-          building encrypted productivity tools. Since joining, I've shaped every aspect of Skiff's ecosystem. Quite literally everything you see, I've touched.  A blessing in disguise,
+          {`I lead design at Skiff, a privacy company building encrypted productivity tools. As the first full-time design hire, I helped scale Skiff from a beta product to over +600,000 users. During my time with the team, I focused mostly on Skiff Pages, Drive, and Mail. A blessing in disguise,
           managing such a large scope has helped me develop a holistic
           understanding of the product ecosystem, all while still being able to contribute at the most
           granular level.`}
         </ProjectBody>
         <ProjectDetails
           role={["Designer"]}
-          collaborators={["Jason Ginsberg", "Sunny Li", "Oscar Dumlao (PAST)"]}
+          collaborators={[
+            "Jason Ginsberg",
+            "Sunny Li",
+            "Natalie Almosa",
+            "Oscar Dumlao (PAST)",
+          ]}
           duration="2022 - PRESENT"
           tools={["figma", "React Next JS"]}
         />
@@ -79,9 +84,13 @@ export default function Skiff() {
         </LinkCard>
         <Spacer />
         <ProjectBody title="Visual Language">
-          My biggest pride has been shaping Skiff&apos;s visual design language.
-          I believe software is a form of art — Skiff is the manifestation of
-          that belief.
+          I helped transform Skiff&apos;s visual design language. This involved
+          working with{" "}
+          <TextLink link="https://www.pentagram.com/work/skiff">
+            Pentagram
+          </TextLink>{" "}
+          on an initial rebrand to evolving it into a usable design system,
+          complete iconography set, and visual graphic style.
         </ProjectBody>
         <ProjectMedia src={AppLogos}>
           Four skeuomorphic icons, one for each product [Co-designed with Jason]
@@ -90,6 +99,7 @@ export default function Skiff() {
           Led design for the Skiff marketing site relaunch, a 2.5 month project.
           Visit <TextLink link="https://www.skiff.com">here</TextLink>
         </ProjectMedia>
+        <ProjectMedia src={MarketingCards2} />
         <ProjectMedia pAll src={MarketingCards}>
           20 interactive graphics scattered across the marketing site, each
           individually coded in React
@@ -102,8 +112,7 @@ export default function Skiff() {
           Global app switcher for navigation between products and workspaces.
         </ProjectMedia>
         <ProjectMedia pAll src={Onboarding}>
-          Released Onboarding 4.0 [Yes, we redid and launched onboarding 4
-          times]
+          Onboarding 4.0
         </ProjectMedia>
 
         {/* MAIl */}
