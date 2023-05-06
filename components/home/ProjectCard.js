@@ -28,7 +28,7 @@ export default function ProjectCard(props) {
       group relative grid ease-in w-full inline-block`}
       >
         {props.isImage ? (
-          <div className="inline-block game-border">
+          <div className="inline-block group-hover:opacity-90 rounded-md">
             <article
               className={`w-full h-auto transition duration-500 ${
                 isContentLoaded ? "opacity-1" : "opacity-0"
@@ -41,7 +41,6 @@ export default function ProjectCard(props) {
                 onLoadingComplete={() => {
                   handleImageLoad();
                 }}
-                className="game-border"
               />
             </article>
             <Preloader

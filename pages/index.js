@@ -7,9 +7,9 @@ import Skiff from "../public/project-covers/skiff.jpg";
 import Apple from "../public/project-covers/apple.jpg";
 import Brain from "../public/project-covers/natural.jpg";
 import Azuki from "../public/project-covers/azuki-2.jpg";
-import AIGA from "../public/project-covers/AIGA-square.jpg";
+import AIGA from "../public/project-covers/aiga-square.jpg";
 import Metalink from "../public/project-covers/metalink.jpg";
-import Experiments from "../public/work/experiments/LE-3.jpg";
+import Experiments from "../public/work/experiments/LE-1.jpg";
 
 const item = {
   hidden: { opacity: 0 },
@@ -78,31 +78,31 @@ export default function Home() {
           building privacy-first tools for teams.
         </motion.p>
 
-        <div className="relative z-10 col-start-1 col-end-13 grid grid-cols-3 gap-4 md:gap-8 md:gap-6">
-          <div className="flex gap-6 flex-col">
+        <div className="relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 gap-4 md:gap-8 md:gap-6">
+          <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
             <ProjectCard
               title="Azuki"
               description="Product and Brand"
               link="/azuki"
-              isImage={true}
+              isImage
               content={Azuki}
             ></ProjectCard>
             <ProjectCard
               title="Brain Technologies"
               description="multimodal interaction"
               link="/brain"
-              isImage={true}
+              isImage
               content={Brain}
             ></ProjectCard>
-          </div>
-          <div className="flex gap-6 flex-col">
             <ProjectCard
-              title="Skiff"
-              description="collaboration tools"
-              isImage={true}
-              link="/skiff"
-              content={Skiff}
+              title="Experiments"
+              description="design & code"
+              isImage
+              link="/experiments"
+              content={Experiments}
             ></ProjectCard>
+          </div>
+          <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
             <ProjectCard
               title="AIGA&Hue"
               description="Datavisualization"
@@ -112,28 +112,47 @@ export default function Home() {
             ></ProjectCard>
 
             <ProjectCard
-              title="Metalink Labs"
-              description="Design systems & Messaging"
-              isImage={true}
-              link="/metalink"
-              content={Metalink}
+              title="Skiff"
+              description="collaboration tools"
+              isImage
+              link="/skiff"
+              content={Skiff}
+            ></ProjectCard>
+            <ProjectCard
+              title="Thinkspace"
+              description="Speculative design"
+              link="/skiff"
+              content={"/project-covers/thinkspace.mp4"}
             ></ProjectCard>
           </div>
 
-          <div className="flex gap-6 flex-col">
+          <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
             <ProjectCard
               title="Apple"
               description="Multimodal interaction"
               link="/apple"
-              isImage={true}
+              isImage
               content={Apple}
             ></ProjectCard>
+
             <ProjectCard
-              title="Experiments"
-              description="design & code"
-              isImage={true}
-              link="/experiments"
-              content={Experiments}
+              title="Metalink Labs"
+              description="Design systems & Messaging"
+              isImage
+              link="/metalink"
+              content={Metalink}
+            ></ProjectCard>
+            <ProjectCard
+              title="Pixel Push"
+              description="Collaborative Systems"
+              link="/metalink"
+              content={"/project-covers/pixel-push.mp4"}
+            ></ProjectCard>
+            <ProjectCard
+              title="Contextual Media"
+              description="Prototyping"
+              link="/metalink"
+              content={"/work/experiments/contextual-media.mp4"}
             ></ProjectCard>
           </div>
         </div>
