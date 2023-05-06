@@ -6,18 +6,13 @@ import Iframe from "react-iframe";
 
 export default function ExternalVideo(props) {
   return (
-    <div className="relative grid md:col-start-5 col-start-1 col-span-full pb-[56.25%] top-0 left-0">
-      <Iframe
-        url={props.url}
-        className="iFrameDetails"
-        position="absolute"
-        width="100%"
-        height="100%"
-        display="initial"
-        frameBorder="0"
-        allow="fullscreen"
-        styles={{ margin: 0 }}
-      />
+    <div
+      className={`relative w-full overflow-hidden pt-[60.8%] grid md:col-start-5 col-start-1 col-end-13`}
+    >
+      <iframe
+        className="absolute top-0 left-0 right-0 bottom-0 w-full h-full border-none"
+        src={props.url}
+      ></iframe>
     </div>
   );
 }
