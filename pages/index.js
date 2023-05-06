@@ -79,36 +79,14 @@ export default function Home() {
         </motion.p>
 
         <div className="relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 gap-4 md:gap-8 md:gap-6">
+          {/* COLUMN 1 */}
           <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
             <ProjectCard
               title="Azuki"
-              description="Product and Brand"
+              description="Digital Storytelling"
               link="/azuki"
               isImage
               content={Azuki}
-            ></ProjectCard>
-            <ProjectCard
-              title="Brain Technologies"
-              description="multimodal interaction"
-              link="/brain"
-              isImage
-              content={Brain}
-            ></ProjectCard>
-            <ProjectCard
-              title="Experiments"
-              description="design & code"
-              isImage
-              link="/experiments"
-              content={Experiments}
-            ></ProjectCard>
-          </div>
-          <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
-            <ProjectCard
-              title="AIGA&Hue"
-              description="Datavisualization"
-              isImage
-              content={AIGA}
-              locked
             ></ProjectCard>
 
             <ProjectCard
@@ -118,6 +96,36 @@ export default function Home() {
               link="/skiff"
               content={Skiff}
             ></ProjectCard>
+            <ProjectCard
+              title="LIGHT ENGINE"
+              description="Industrial Design"
+              isImage
+              link="/experiments"
+              content={Experiments}
+            ></ProjectCard>
+            <ProjectCard
+              title="TOUCHLESS INTERFACES"
+              description="Physical Computing"
+              link="/experiments"
+              content={"/project-covers/sensor-chess-cover.mp4"}
+            ></ProjectCard>
+          </div>
+          {/* COLUMN 2 */}
+          <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
+            <ProjectCard
+              title="AIGA&Hue"
+              description="Data Visualization"
+              isImage
+              link="/skiff"
+              content={AIGA}
+            ></ProjectCard>
+            <ProjectCard
+              title="Brain Technologies"
+              description="multimodal interaction"
+              link="/brain"
+              content={"/project-covers/natural.mp4"}
+            ></ProjectCard>
+
             <ProjectCard
               title="Thinkspace"
               description="Speculative design"
@@ -144,7 +152,7 @@ export default function Home() {
             ></ProjectCard>
             <ProjectCard
               title="Pixel Push"
-              description="Collaborative Systems"
+              description="Collaborative Art"
               link="/metalink"
               content={"/project-covers/pixel-push.mp4"}
             ></ProjectCard>

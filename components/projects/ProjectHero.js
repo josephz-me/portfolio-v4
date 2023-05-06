@@ -17,19 +17,19 @@ export default function ProjectHero(props) {
   }, []);
 
   return (
-    <div className="relative overflow-hidden rounded-[32px] md:rounded-[48px] my-2 md:my-8 h-[60vw] md:h-[49vw] object-cover w-full grid col-span-12 border border test">
+    <div className="relative overflow-hidden my-2 md:my-8 h-[60vw] md:h-[49vw] object-cover w-full grid col-span-12 border border test">
       {props.isVideo ? (
         <CardVideo src={props.content} loadingPhrase={loadingPhrase} />
       ) : (
         <div className="relative h-full">
           <article
-            className={`overflow-hidden rounded-[32px] md:rounded-[48px] object-cover w-full h-full transition duration-500 overflow-hidden rounded-md ease-out ${
+            className={`overflow-hidden object-cover w-full h-full transition duration-500 overflow-hidden rounded-md ease-out ${
               isContentLoaded ? "opacity-1" : "opacity-0"
             }`}
           >
             <Image
               alt="project hero"
-              className="overflow-hidden rounded-[32px] md:rounded-[48px]"
+              className="overflow-hidden"
               layout="fill"
               objectFit="cover"
               src={props.content}

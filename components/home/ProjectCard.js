@@ -28,7 +28,7 @@ export default function ProjectCard(props) {
       group relative grid ease-in w-full inline-block`}
       >
         {props.isImage ? (
-          <div className="inline-block group-hover:opacity-90 rounded-md">
+          <div className="inline-block group-hover:opacity-90 game-border">
             <article
               className={`w-full h-auto transition duration-500 ${
                 isContentLoaded ? "opacity-1" : "opacity-0"
@@ -36,6 +36,7 @@ export default function ProjectCard(props) {
             >
               <Image
                 alt="project cover"
+                layout="responsive"
                 src={props.content}
                 priority
                 onLoadingComplete={() => {
