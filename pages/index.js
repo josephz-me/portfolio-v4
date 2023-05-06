@@ -3,6 +3,13 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TextLink from "../components/TextLink";
 import GridContainer from "../components/GridContainer";
+import Skiff from "../public/project-covers/skiff.jpg";
+import Apple from "../public/project-covers/apple-v2.jpg";
+import Brain from "../public/project-covers/natural.jpg";
+import Azuki from "../public/project-covers/azuki-2.jpg";
+import AIGA from "../public/project-covers/aiga-square.jpg";
+import Metalink from "../public/project-covers/metalink.jpg";
+import Experiments from "../public/work/experiments/LE-1.jpg";
 
 const item = {
   hidden: { opacity: 0 },
@@ -71,50 +78,84 @@ export default function Home() {
           building privacy-first tools for teams.
         </motion.p>
 
-        <div className="z-10 grid grid-cols-1 md:grid-cols-2 gap-2 relative z-10 col-start-1 col-end-13">
-          <ProjectCard
-            title="Skiff"
-            description="collaboration tools"
-            isImage={true}
-            link="/skiff"
-            content={"/project-covers/skiff.jpg"}
-          ></ProjectCard>
-          <ProjectCard
-            title="Azuki"
-            description="Product and Brand"
-            link="/azuki"
-            isImage={true}
-            content={"/project-covers/azuki-2.jpg"}
-          ></ProjectCard>
-          <ProjectCard
-            title="Apple"
-            description="Multimodal interaction"
-            link="/apple"
-            isImage={true}
-            content={"/project-covers/apple.jpg"}
-          ></ProjectCard>
-          <ProjectCard
-            title="Brain Technologies"
-            description="multimodal interaction"
-            link="/brain"
-            isImage={true}
-            content={"/project-covers/natural.jpg"}
-          ></ProjectCard>
-          <ProjectCard
-            title="Metalink Labs"
-            description="Design systems & Messaging"
-            isImage={true}
-            link="/metalink"
-            content={"/project-covers/metalink.jpg"}
-          ></ProjectCard>
+        <div className="relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 gap-4 md:gap-8 md:gap-6">
+          {/* COLUMN 1 */}
+          <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
+            <ProjectCard
+              title="Azuki"
+              description="Digital Storytelling"
+              link="/azuki"
+              isImage
+              content={Azuki}
+            ></ProjectCard>
 
-          <ProjectCard
-            title="Experiments"
-            description="design & code"
-            isImage={true}
-            link="/experiments"
-            content={"/work/experiments/LE-3.jpg"}
-          ></ProjectCard>
+            <ProjectCard
+              title="Skiff"
+              description="collaboration tools"
+              isImage
+              link="/skiff"
+              content={Skiff}
+            ></ProjectCard>
+            <ProjectCard
+              title="LIGHT ENGINE"
+              description="Industrial Design"
+              isImage
+              link="/lightengines"
+              content={Experiments}
+            ></ProjectCard>
+            {/* <ProjectCard
+              title="TOUCHLESS INTERFACES"
+              description="Physical Computing"
+              link="/experiments"
+              content={"/project-covers/sensor-chess.mp4"}
+            ></ProjectCard> */}
+          </div>
+          {/* COLUMN 2 */}
+          <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
+            <ProjectCard
+              title="AIGA&Hue"
+              description="Data Visualization"
+              isImage
+              link="/aiga"
+              content={AIGA}
+            ></ProjectCard>
+            <ProjectCard
+              title="Brain Technologies"
+              description="multimodal interaction"
+              link="/brain"
+              isImage
+              content={Brain}
+            ></ProjectCard>
+            <ProjectCard
+              title="Thinkspace"
+              description="Assistive AI Agents"
+              link="/thinkspace"
+              content={"/project-covers/thinkspace.mp4"}
+            ></ProjectCard>
+          </div>
+
+          <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
+            <ProjectCard
+              title="Apple"
+              description="Multimodal interaction"
+              link="/apple"
+              isImage
+              content={Apple}
+            ></ProjectCard>
+            <ProjectCard
+              title="Metalink Labs"
+              description="Design systems & Messaging"
+              isImage
+              link="/metalink"
+              content={Metalink}
+            ></ProjectCard>
+            <ProjectCard
+              title="Pixel Push"
+              description="Multiplayer Art"
+              link="/pixelpush"
+              content={"/project-covers/pixel-push.mp4"}
+            ></ProjectCard>
+          </div>
         </div>
       </GridContainer>
     </motion.main>

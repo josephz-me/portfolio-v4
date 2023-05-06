@@ -44,7 +44,7 @@ export default function Apple() {
   return (
     <motion.main className="min-h-[70vh]">
       <GridContainer>
-        <ProjectHero isVideo={false} content="/project-covers/apple.jpg" />
+        <ProjectHero isVideo={false} content="/project-covers/apple-v2.jpg" />
         <ProjectTitle role="multimodal interaction">Apple</ProjectTitle>
         <ProjectBody col={2}>
           During the summers of 2020 and 2021, I interned at Apple as an

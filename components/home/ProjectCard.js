@@ -20,43 +20,50 @@ export default function ProjectCard(props) {
 
   return (
     <Link passHref variants={props.animation} href={`${props.link}`}>
-      <div
+      <a
+        target={props.isExternal ? "_blank" : ""}
         className={`${
           //determine if project is linked
           props.link != undefined ? "cursor-pointer" : "pointer-events-none"
         }
-      group game-border relative grid ease-in rounded-[40px] md:rounded-[48px] overflow-hidden `}
+      group relative grid ease-in w-full inline-block`}
       >
-        <div className="relative h-[60vw] overflow-hidden object-cover lg:h-[29vw] rounded-[40px] md:rounded-[48px] ">
-          {props.isImage ? (
-            <div className="relative h-full">
-              <article
-                className={`w-full h-full transition duration-500 overflow-hidden rounded-[40px] md:rounded-[48px] ${
-                  isContentLoaded ? "opacity-1" : "opacity-0"
-                }`}
-              >
-                <Image
-                  alt="project cover"
-                  layout="fill"
-                  objectFit="cover"
-                  src={props.content}
-                  priority
-                  onLoadingComplete={() => {
-                    handleImageLoad();
-                  }}
-                  className="rounded-[40px] md:rounded-[48px] overflow-hidden"
-                />
-              </article>
-              <Preloader
-                loadingPhrase={loadingPhrase}
-                isContentLoaded={isContentLoaded}
-              ></Preloader>
-            </div>
-          ) : (
-            <CardVideo src={props.content} loadingPhrase={loadingPhrase} />
+        {props.isImage ? (
+          <div className="inline-block group-hover:opacity-90 game-border">
+            <article
+              className={`w-full h-auto transition duration-500 ${
+                isContentLoaded ? "opacity-1" : "opacity-0"
+              }`}
+            >
+              <Image
+                alt="project cover"
+                layout="responsive"
+                src={props.content}
+                priority
+                onLoadingComplete={() => {
+                  handleImageLoad();
+                }}
+              />
+            </article>
+            <Preloader
+              loadingPhrase={loadingPhrase}
+              isContentLoaded={isContentLoaded}
+            ></Preloader>
+          </div>
+        ) : (
+          <CardVideo src={props.content} loadingPhrase={loadingPhrase} />
+        )}
+
+        <div className="mt-2">
+          <p className={`text-zinc-50`}>{props.title}</p>
+          <p className="text-zinc-500">{props.description}</p>
+          {props.locked && (
+            <p className="absolute text-neutral-100 rounded-md right-4 top-4 px-2 z-10 py-1 bg-gray-800 shadow-xl">
+              LOCKED
+            </p>
           )}
         </div>
-      </div>
+      </a>
     </Link>
   );
 }

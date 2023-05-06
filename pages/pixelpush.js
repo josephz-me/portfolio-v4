@@ -54,9 +54,7 @@ export default function PixelPush() {
           isImage={true}
           content="/work/pixelpush/pixelpush-placeholder.jpg"
         />
-        <ProjectTitle role="multiplayer painting experience">
-          Pixel Push
-        </ProjectTitle>
+        <ProjectTitle role="multiplayer art">Pixel Push</ProjectTitle>
         <ProjectBody col={2}>
           Tools shape the way we express ourselves and share our ideas. From
           Microsoft Paint to more complex tools such as Adobe Photoshop, the
