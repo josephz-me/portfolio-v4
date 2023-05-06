@@ -20,7 +20,7 @@ export default function LinkCard(props) {
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
-        className="h-3 w-3 ml-auto stroke-[3px] stroke-white/30 group-hover:stroke-yellow-300"
+        className="h-3 w-3 ml-auto stroke-[3px] stroke-white/30 group-hover:stroke-white"
       >
         <path
           strokeLinecap="round"

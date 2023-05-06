@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import TextLink from "../components/TextLink";
 import GridContainer from "../components/GridContainer";
 import Skiff from "../public/project-covers/skiff.jpg";
-import Apple from "../public/project-covers/apple.jpg";
+import Apple from "../public/project-covers/apple-v2.jpg";
 import Brain from "../public/project-covers/natural.jpg";
 import Azuki from "../public/project-covers/azuki-2.jpg";
 import AIGA from "../public/project-covers/aiga-square.jpg";
@@ -100,15 +100,15 @@ export default function Home() {
               title="LIGHT ENGINE"
               description="Industrial Design"
               isImage
-              link="/experiments"
+              link="/lightengines"
               content={Experiments}
             ></ProjectCard>
-            <ProjectCard
+            {/* <ProjectCard
               title="TOUCHLESS INTERFACES"
               description="Physical Computing"
               link="/experiments"
-              content={"/project-covers/sensor-chess-cover.mp4"}
-            ></ProjectCard>
+              content={"/project-covers/sensor-chess.mp4"}
+            ></ProjectCard> */}
           </div>
           {/* COLUMN 2 */}
           <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
@@ -116,20 +116,20 @@ export default function Home() {
               title="AIGA&Hue"
               description="Data Visualization"
               isImage
-              link="/skiff"
+              link="/aiga"
               content={AIGA}
             ></ProjectCard>
             <ProjectCard
               title="Brain Technologies"
               description="multimodal interaction"
               link="/brain"
-              content={"/project-covers/natural.mp4"}
+              isImage
+              content={Brain}
             ></ProjectCard>
-
             <ProjectCard
               title="Thinkspace"
-              description="Speculative design"
-              link="/skiff"
+              description="Assistive AI Agents"
+              link="/thinkspace"
               content={"/project-covers/thinkspace.mp4"}
             ></ProjectCard>
           </div>
@@ -142,7 +142,6 @@ export default function Home() {
               isImage
               content={Apple}
             ></ProjectCard>
-
             <ProjectCard
               title="Metalink Labs"
               description="Design systems & Messaging"
@@ -152,15 +151,9 @@ export default function Home() {
             ></ProjectCard>
             <ProjectCard
               title="Pixel Push"
-              description="Collaborative Art"
-              link="/metalink"
+              description="Multiplayer Art"
+              link="/pixelpush"
               content={"/project-covers/pixel-push.mp4"}
-            ></ProjectCard>
-            <ProjectCard
-              title="Contextual Media"
-              description="Prototyping"
-              link="/metalink"
-              content={"/work/experiments/contextual-media.mp4"}
             ></ProjectCard>
           </div>
         </div>

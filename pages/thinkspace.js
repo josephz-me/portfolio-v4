@@ -53,7 +53,7 @@ export default function Home() {
     <motion.main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero isVideo={true} content="/project-covers/thinkspace.mp4" />
-        <ProjectTitle role="assistive voice agents">Thinkspace</ProjectTitle>
+        <ProjectTitle role="Assistive AI Agents">Thinkspace</ProjectTitle>
         <ProjectBody col={2}>
           Rich, engaging conversation is a hallmark of meaningful human-to-human
           interaction. However, factors such as relational closeness, social

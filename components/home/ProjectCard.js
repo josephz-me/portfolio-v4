@@ -20,7 +20,8 @@ export default function ProjectCard(props) {
 
   return (
     <Link passHref variants={props.animation} href={`${props.link}`}>
-      <div
+      <a
+        target={props.isExternal ? "_blank" : ""}
         className={`${
           //determine if project is linked
           props.link != undefined ? "cursor-pointer" : "pointer-events-none"
@@ -62,7 +63,7 @@ export default function ProjectCard(props) {
             </p>
           )}
         </div>
-      </div>
+      </a>
     </Link>
   );
 }
