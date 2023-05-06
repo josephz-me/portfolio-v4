@@ -3,6 +3,13 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TextLink from "../components/TextLink";
 import GridContainer from "../components/GridContainer";
+import Skiff from "../public/project-covers/skiff.jpg";
+import Apple from "../public/project-covers/apple.jpg";
+import Brain from "../public/project-covers/natural.jpg";
+import Azuki from "../public/project-covers/azuki-2.jpg";
+import AIGA from "../public/project-covers/AIGA-square.jpg";
+import Metalink from "../public/project-covers/metalink.jpg";
+import Experiments from "../public/work/experiments/LE-3.jpg";
 
 const item = {
   hidden: { opacity: 0 },
@@ -71,50 +78,64 @@ export default function Home() {
           building privacy-first tools for teams.
         </motion.p>
 
-        <div className="z-10 grid grid-cols-1 md:grid-cols-2 gap-2 relative z-10 col-start-1 col-end-13">
-          <ProjectCard
-            title="Skiff"
-            description="collaboration tools"
-            isImage={true}
-            link="/skiff"
-            content={"/project-covers/skiff.jpg"}
-          ></ProjectCard>
-          <ProjectCard
-            title="Azuki"
-            description="Product and Brand"
-            link="/azuki"
-            isImage={true}
-            content={"/project-covers/azuki-2.jpg"}
-          ></ProjectCard>
-          <ProjectCard
-            title="Apple"
-            description="Multimodal interaction"
-            link="/apple"
-            isImage={true}
-            content={"/project-covers/apple.jpg"}
-          ></ProjectCard>
-          <ProjectCard
-            title="Brain Technologies"
-            description="multimodal interaction"
-            link="/brain"
-            isImage={true}
-            content={"/project-covers/natural.jpg"}
-          ></ProjectCard>
-          <ProjectCard
-            title="Metalink Labs"
-            description="Design systems & Messaging"
-            isImage={true}
-            link="/metalink"
-            content={"/project-covers/metalink.jpg"}
-          ></ProjectCard>
+        <div className="relative z-10 col-start-1 col-end-13 grid grid-cols-3 gap-4 md:gap-8 md:gap-6">
+          <div className="flex gap-6 flex-col">
+            <ProjectCard
+              title="Azuki"
+              description="Product and Brand"
+              link="/azuki"
+              isImage={true}
+              content={Azuki}
+            ></ProjectCard>
+            <ProjectCard
+              title="Brain Technologies"
+              description="multimodal interaction"
+              link="/brain"
+              isImage={true}
+              content={Brain}
+            ></ProjectCard>
+          </div>
+          <div className="flex gap-6 flex-col">
+            <ProjectCard
+              title="Skiff"
+              description="collaboration tools"
+              isImage={true}
+              link="/skiff"
+              content={Skiff}
+            ></ProjectCard>
+            <ProjectCard
+              title="AIGA&Hue"
+              description="Datavisualization"
+              isImage
+              content={AIGA}
+              locked
+            ></ProjectCard>
 
-          <ProjectCard
-            title="Experiments"
-            description="design & code"
-            isImage={true}
-            link="/experiments"
-            content={"/work/experiments/LE-3.jpg"}
-          ></ProjectCard>
+            <ProjectCard
+              title="Metalink Labs"
+              description="Design systems & Messaging"
+              isImage={true}
+              link="/metalink"
+              content={Metalink}
+            ></ProjectCard>
+          </div>
+
+          <div className="flex gap-6 flex-col">
+            <ProjectCard
+              title="Apple"
+              description="Multimodal interaction"
+              link="/apple"
+              isImage={true}
+              content={Apple}
+            ></ProjectCard>
+            <ProjectCard
+              title="Experiments"
+              description="design & code"
+              isImage={true}
+              link="/experiments"
+              content={Experiments}
+            ></ProjectCard>
+          </div>
         </div>
       </GridContainer>
     </motion.main>
