@@ -60,7 +60,7 @@ export default function Footer() {
           className={`${BREAKPOINT} md:col-start-7 md:col-end-9 flex flex-col space-y-1`}
         >
           <p>
-            <TextLink super={1} link="https://read.cv/jo_">
+            <TextLink super={1} link="https://read.cv/josephh">
               Read.CV
             </TextLink>
           </p>
