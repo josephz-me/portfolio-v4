@@ -15,18 +15,16 @@ import Divider from "../components/projects/Divider";
 import BeanzCarousel from "../public/work/azuki/beanz-carousel.jpg";
 import LoreMain from "../public/work/azuki/lore-main.jpg";
 import LoreChapterOne from "../public/work/azuki/lore-chapter-one.jpg";
+import loreHilumia from "../public/work/azuki/lore-hilumia.jpg";
 import cp_main from "../public/work/azuki/cp-main.jpg";
 import auctionMain from "../public/work/azuki/auction-main.jpg";
-import auctionList from "../public/work/azuki/auction-list.jpg";
 import auctionCountdown from "../public/work/azuki/auction-countdown.jpg";
 import auctionK11 from "../public/work/azuki/auction-k11.jpeg";
 import auctionK112 from "../public/work/azuki/auction-k11-2.jpeg";
-import multiwallet from "../public/work/azuki/multiwallet.jpg";
 import ambushLanding from "../public/work/azuki/ambush-landing.jpg";
-import auctionOrder from "../public/work/azuki/auction-order.jpg";
 import equipBeanz from "../public/work/azuki/equip-beanz.jpg";
 import equipExamples from "../public/work/azuki/equip-examples.png";
-import equipMain from "../public/work/azuki/equip-main.jpg";
+import rabbitTicket from "../public/work/azuki/rabbit-ticket.jpg";
 
 import Link from "next/link";
 
@@ -98,7 +96,15 @@ export default function Brain() {
           src={"/work/azuki/cp-highlights.mp4"}
           isVideo
         ></ProjectMedia>
-        {/* <ProjectMedia dark src={multiwallet}></ProjectMedia> */}
+        <ProjectMedia dark src={rabbitTicket}>
+          Code-generated custom graphics of each attendee&apos;s admission
+          ticket for the 2023 White Rabbit Vegas event. Here's a{" "}
+          <TextLink link="https://twitter.com/jojochuu/status/1650938107892764672?s=20">
+            techinical explanation
+          </TextLink>{" "}
+          of how we did it.
+        </ProjectMedia>
+
         <ProjectBody title="Token Equipping" col={1}>
           In the Azuki ecosystem, Beans are the companions all Azukis need. We
           introduced an equpping system that allows users to unite both into
@@ -160,6 +166,9 @@ export default function Brain() {
         </LinkCard>
         <ProjectMedia dark src={LoreMain}></ProjectMedia>
         <ProjectMedia dark src={LoreChapterOne}></ProjectMedia>
+        <ProjectMedia dark src={loreHilumia}>
+          Note: supporting role
+        </ProjectMedia>
       </GridContainer>
     </motion.main>
   );
