@@ -98,7 +98,7 @@ export default function Brain() {
         ></ProjectMedia>
         <ProjectMedia dark src={rabbitTicket}>
           Code-generated custom graphics of each attendee&apos;s admission
-          ticket for the 2023 White Rabbit Vegas event. Here's a{" "}
+          ticket for the 2023 White Rabbit Vegas event. Here&apos;s a{" "}
           <TextLink link="https://twitter.com/jojochuu/status/1650938107892764672?s=20">
             techinical explanation
           </TextLink>{" "}
