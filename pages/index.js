@@ -51,10 +51,9 @@ export default function Home() {
           worked with starts-ups like{" "}
           <TextLink super={2} link="https://natural.ai/#/">
             Brain Technologies
-          </TextLink>
-          ,{" "}
-          <TextLink super={3} link="https://azuki.com">
-            Azuki
+          </TextLink>, 
+          <TextLink super={2} link="https://skiff.com/">
+            Skiff
           </TextLink>
           , and{" "}
           <TextLink super={4} link="https://metalink.com/login">
@@ -72,10 +71,10 @@ export default function Home() {
             Human-Computer Interaction
           </TextLink>
           . He is currently a designer at{" "}
-          <TextLink super={7} link="https://skiff.com/">
-            Skiff
+          <TextLink super={7} link="https://chirulabs.com/">
+            Chiru Labs
           </TextLink>{" "}
-          building privacy-first tools for teams.
+          building interactive experiences for <TextLink super={8} link="https://azuki.com">Azuki</TextLink>.
         </motion.p>
 
         <div className="relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 gap-4 md:gap-8 md:gap-6">
