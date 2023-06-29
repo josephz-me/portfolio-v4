@@ -24,11 +24,11 @@ import ambushLanding from "../public/work/azuki/ambush-landing.jpg";
 import equipBeanz from "../public/work/azuki/equip-beanz.jpg";
 import equipExamples from "../public/work/azuki/equip-examples.png";
 import rabbitTicket from "../public/work/azuki/rabbit-ticket.jpg";
-import s2_mint from "../public/work/azuki/s2-mint.jpg"; 
-import s2_mint_closeup from "../public/work/azuki/s2-mint-closeup.jpg"; 
-import s2_reveal from "../public/work/azuki/s2-reveal.jpg"; 
-import s2_reveal_likeall from "../public/work/azuki/s2-reveal-likeall.jpg"; 
-import s2_reveal_tweet from "../public/work/azuki/s2-reveal-tweet.jpg"; 
+import s2_mint from "../public/work/azuki/s2-mint.jpg";
+import s2_mint_closeup from "../public/work/azuki/s2-mint-closeup.jpg";
+import s2_reveal from "../public/work/azuki/s2-reveal.jpg";
+import s2_reveal_likeall from "../public/work/azuki/s2-reveal-likeall.jpg";
+import s2_reveal_tweet from "../public/work/azuki/s2-reveal-tweet.jpg";
 
 const item = {
   hidden: { opacity: 0 },
@@ -84,13 +84,34 @@ export default function Brain() {
         </LinkCard>
         <Divider />
         <Spacer></Spacer>
-        <ProjectBody title="Elementals Sale + Unboxing" col={1}></ProjectBody>
-          <ProjectMedia pAll src={s2_reveal}></ProjectMedia>
-          <ProjectMedia pl pt src={s2_reveal_tweet}></ProjectMedia>
-          <ProjectMedia pl pb src={s2_reveal_likeall}></ProjectMedia>
-          <ProjectMedia pAll src={"/work/azuki/s2-reveal-animation.mp4"} isVideo></ProjectMedia>
-          <ProjectMedia pAll src={s2_mint}></ProjectMedia>
-          <ProjectMedia pr pb src={s2_mint_closeup}></ProjectMedia>
+        <ProjectBody title="Elementals Sale + Unboxing" col={1}>
+          We designed the Elementals reveal experience to be full of
+          anticipation and delight, similar to the unboxing of up a Yugioh or
+          baseball mystery pack. The experience is packed with tons of features,
+          including a live Twitter feed, compose Tweet functionality, drag and
+          drop, and even Chat-GPT integration.{" "}
+        </ProjectBody>
+        <ProjectMedia pAll src={s2_reveal}></ProjectMedia>
+        <ProjectMedia pl pt src={s2_reveal_tweet}>
+          Everytime someone clicks the white rabbit, a new quote is generated
+          via Chat GPT in the language and style of one Chiru team member.
+        </ProjectMedia>
+        <ProjectMedia pl pb src={s2_reveal_likeall}>
+          {`We want new holders to feel loved and appreciated. Two alternating Like/Follow All buttons give individuals the agency to spread that love.`}
+        </ProjectMedia>
+        <ProjectMedia pAll src={"/work/azuki/s2-reveal-animation.mp4"} isVideo>
+          thoughtfully chosen VFX animations come on screen during the actual
+          reveal, representing either the Earth, Fire, Lightning, or Water
+          domain.
+        </ProjectMedia>
+        <ProjectMedia pAll src={s2_mint}>
+          Three phase sale fully equipped with dynamic graphics and delightful
+          UI
+        </ProjectMedia>
+        <ProjectMedia pr pb src={s2_mint_closeup}>
+          Bobu the Bean Farmer manages all purchased inventory and ongoing
+          transactions
+        </ProjectMedia>
         <Spacer></Spacer>
         <ProjectBody title="Collector's Profile" col={1}>
           {`The collector's profile is platform for token holders to
@@ -176,8 +197,7 @@ export default function Brain() {
         </LinkCard>
         <ProjectMedia pAll src={LoreMain}></ProjectMedia>
         <ProjectMedia pAll src={LoreChapterOne}></ProjectMedia>
-        <ProjectMedia pAll src={loreHilumia}>
-        </ProjectMedia>
+        <ProjectMedia pAll src={loreHilumia}></ProjectMedia>
       </GridContainer>
     </motion.main>
   );
