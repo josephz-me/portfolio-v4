@@ -27,8 +27,8 @@ import rabbitTicket from "../public/work/azuki/rabbit-ticket.jpg";
 import s2_mint from "../public/work/azuki/s2-mint.jpg"; 
 import s2_mint_closeup from "../public/work/azuki/s2-mint-closeup.jpg"; 
 import s2_reveal from "../public/work/azuki/s2-reveal.jpg"; 
-import s2_reveal_closeup from "../public/work/azuki/s2-reveal-closeup.jpg"; 
-import s2_reveal_closeup_2 from "../public/work/azuki/s2-reveal-closeup-2.jpg"; 
+import s2_reveal_likeall from "../public/work/azuki/s2-reveal-likeall.jpg"; 
+import s2_reveal_tweet from "../public/work/azuki/s2-reveal-tweet.jpg"; 
 
 const item = {
   hidden: { opacity: 0 },
@@ -84,11 +84,11 @@ export default function Brain() {
         </LinkCard>
         <Divider />
         <Spacer></Spacer>
-        <ProjectBody title="Elementals Sale Experience" col={1}></ProjectBody>
-          <ProjectMedia pAll src={"/work/azuki/s2-reveal-animation.mp4"} isVideo></ProjectMedia>
+        <ProjectBody title="Elementals Sale + Unboxing" col={1}></ProjectBody>
           <ProjectMedia pAll src={s2_reveal}></ProjectMedia>
-          <ProjectMedia pAll src={s2_reveal_closeup_2}></ProjectMedia>
-          <ProjectMedia pl pt src={s2_reveal_closeup}></ProjectMedia>
+          <ProjectMedia pl pt src={s2_reveal_tweet}></ProjectMedia>
+          <ProjectMedia pl pb src={s2_reveal_likeall}></ProjectMedia>
+          <ProjectMedia pAll src={"/work/azuki/s2-reveal-animation.mp4"} isVideo></ProjectMedia>
           <ProjectMedia pAll src={s2_mint}></ProjectMedia>
           <ProjectMedia pr pb src={s2_mint_closeup}></ProjectMedia>
         <Spacer></Spacer>
