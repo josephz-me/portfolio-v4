@@ -12,7 +12,6 @@ import Spacer from "../components/projects/Spacer";
 import Divider from "../components/projects/Divider";
 
 // images
-import BeanzCarousel from "../public/work/azuki/beanz-carousel.jpg";
 import LoreMain from "../public/work/azuki/lore-main.jpg";
 import LoreChapterOne from "../public/work/azuki/lore-chapter-one.jpg";
 import loreHilumia from "../public/work/azuki/lore-hilumia.jpg";
@@ -25,8 +24,11 @@ import ambushLanding from "../public/work/azuki/ambush-landing.jpg";
 import equipBeanz from "../public/work/azuki/equip-beanz.jpg";
 import equipExamples from "../public/work/azuki/equip-examples.png";
 import rabbitTicket from "../public/work/azuki/rabbit-ticket.jpg";
-
-import Link from "next/link";
+import s2_mint from "../public/work/azuki/s2-mint.jpg"; 
+import s2_mint_closeup from "../public/work/azuki/s2-mint-closeup.jpg"; 
+import s2_reveal from "../public/work/azuki/s2-reveal.jpg"; 
+import s2_reveal_closeup from "../public/work/azuki/s2-reveal-closeup.jpg"; 
+import s2_reveal_closeup_2 from "../public/work/azuki/s2-reveal-closeup-2.jpg"; 
 
 const item = {
   hidden: { opacity: 0 },
@@ -82,6 +84,14 @@ export default function Brain() {
         </LinkCard>
         <Divider />
         <Spacer></Spacer>
+        <ProjectBody title="Elementals Sale Experience" col={1}></ProjectBody>
+          <ProjectMedia pAll src={"/work/azuki/s2-reveal-animation.mp4"} isVideo></ProjectMedia>
+          <ProjectMedia pAll src={s2_reveal}></ProjectMedia>
+          <ProjectMedia pAll src={s2_reveal_closeup_2}></ProjectMedia>
+          <ProjectMedia pl pt src={s2_reveal_closeup}></ProjectMedia>
+          <ProjectMedia pAll src={s2_mint}></ProjectMedia>
+          <ProjectMedia pr pb src={s2_mint_closeup}></ProjectMedia>
+        <Spacer></Spacer>
         <ProjectBody title="Collector's Profile" col={1}>
           {`The collector's profile is platform for token holders to
           display their collection — whether that's the Azuki they own, the emblems they earned, and more. We wanted to build a showroom experience that made members feel proud and special to be a part of the Azuki community.`}
@@ -89,7 +99,7 @@ export default function Brain() {
         <LinkCard col={1} link="https://www.azuki.com/collector/dingaling">
           {`Shrimpwen's Profile`}
         </LinkCard>
-        <ProjectMedia pt pr pl dark src={cp_main}></ProjectMedia>
+        <ProjectMedia pt pr pl src={cp_main}></ProjectMedia>
         <ProjectMedia src={"/work/azuki/cp-emblems.mp4"} isVideo></ProjectMedia>
         <ProjectMedia src={"/work/azuki/cp-badges.mp4"} isVideo></ProjectMedia>
         <ProjectMedia
@@ -111,7 +121,7 @@ export default function Brain() {
           one.
         </ProjectBody>
         <ProjectMedia src={equipBeanz}></ProjectMedia>
-        <ProjectMedia pAll src={equipExamples}></ProjectMedia>
+        <ProjectMedia pAll noShadow src={equipExamples}></ProjectMedia>
         <Divider />
         <Spacer></Spacer>
         <ProjectBody title="Ambush x Azuki Collab" col={1}>
@@ -129,7 +139,7 @@ export default function Brain() {
         >
           Hypebeast
         </LinkCard>
-        <ProjectMedia dark src={ambushLanding} />
+        <ProjectMedia pAll src={ambushLanding} />
         <Divider />
         <ProjectBody title="Proof of Skate Auction" col={1}>
           Azuki recently made history by setting the record for the most
@@ -148,8 +158,8 @@ export default function Brain() {
         >
           Hypemoon (Hypebeast)
         </LinkCard>
-        <ProjectMedia src={auctionCountdown} />
-        <ProjectMedia src={auctionMain} />
+        <ProjectMedia pAll src={auctionCountdown} />
+        <ProjectMedia pAll src={auctionMain} />
         <ProjectMedia src={auctionK112}>
           Proof of Skate exhibition at K11 Musea in Hong Kong
         </ProjectMedia>
@@ -164,10 +174,9 @@ export default function Brain() {
         <LinkCard col={1} link="https://azuki.com/world">
           Lore Chapters
         </LinkCard>
-        <ProjectMedia dark src={LoreMain}></ProjectMedia>
-        <ProjectMedia dark src={LoreChapterOne}></ProjectMedia>
-        <ProjectMedia dark src={loreHilumia}>
-          Note: supporting role
+        <ProjectMedia pAll src={LoreMain}></ProjectMedia>
+        <ProjectMedia pAll src={LoreChapterOne}></ProjectMedia>
+        <ProjectMedia pAll src={loreHilumia}>
         </ProjectMedia>
       </GridContainer>
     </motion.main>
