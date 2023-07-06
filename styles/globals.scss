@@ -18,10 +18,6 @@
   .text-padding {
     @apply px-4 md:px-6;
   }
-
-  .gameBorder {
-    @apply border border-solid border-red-300 animate-game;
-  }
 }
 
 * {

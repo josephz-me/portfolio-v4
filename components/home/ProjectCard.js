@@ -51,7 +51,12 @@ export default function ProjectCard(props) {
             ></Preloader>
           </div>
         ) : (
-          <CardVideo src={props.content} loadingPhrase={loadingPhrase} />
+          <CardVideo
+            className="game-border"
+            homePage
+            src={props.content}
+            loadingPhrase={loadingPhrase}
+          />
         )}
 
         <div className="mt-2">

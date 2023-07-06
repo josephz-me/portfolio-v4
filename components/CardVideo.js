@@ -11,6 +11,7 @@ export default function CardVideo(props) {
   return (
     <div
       className={`group relative h-auto overflow-hidden
+      ${props.homePage && "game-border"}
       ${props.hasControl ? "cursor-pointer" : ""}
       ${props.pAll ? "rounded md:rounded-md" : ""}
       ${props.pt && props.pl ? "rounded-tl md:rounded-tl-xl" : ""}
