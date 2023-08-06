@@ -22,6 +22,7 @@ function Meta() {
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://metatags.io/" />
       <meta property="og:title" content="Joseph Zhang – Interaction designer" />
+
       <meta
         property="og:description"
         content="Joseph is a designer interested in authoring tools and multimodal interaction. "

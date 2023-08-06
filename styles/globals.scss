@@ -21,19 +21,14 @@
 }
 
 @font-face {
-  font-family: "Alt Grotesk";
-  src: url("/fonts/AlteHaasGroteskBold.ttf") format("truetype");
-}
-
-@font-face {
   font-family: "Replica";
-  src: url("/fonts/ReplicaPro-Bold.otf") format("truetype");
+  src: url("/fonts/Replica Bold.otf") format("truetype");
   font-weight: 700;
 }
 
 @font-face {
   font-family: "Replica";
-  src: url("/fonts/ReplicaPro.ttf") format("truetype");
+  src: url("/fonts/Replica Regular.otf") format("truetype");
   font-weight: 400;
 }
 
@@ -80,6 +75,14 @@
   }
 }
 
+.dot-grid {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 0
+  );
+  background-size: 20px 20px;
+  background-position: -19px -19px;
+}
 .container {
   position: relative;
   width: 100%;

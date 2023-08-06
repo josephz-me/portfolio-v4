@@ -9,7 +9,7 @@ const BREAKPOINT = "col-start-1 col-end-13";
 export default function Footer() {
   const pageName = useRouter().asPath;
   const [aboutText, setAboutText] = useState(
-    `▞▚▞▚▞▚▞_Copyright_2022_▞▚▞▚▞▚▞_Built with Next.JS_Vercel_▞▚▞▚▞▚▞_Based in Seattle_`
+    `▞▚▞▚▞▚▞_Copyright_2023_▞▚▞▚▞▚▞_Next.JS_Vercel_▞▚▞▚▞▚▞_INPUT MONO_▞▚▞▚▞▚▞_REPLICA TYPE_`
   );
 
   const [updatedTime, setUpdatedTime] = useState("...");
@@ -34,7 +34,7 @@ export default function Footer() {
 
   return (
     <footer
-      className={`bg-[#1C1C1C] z-[1] w-full sticky bottom-0 text-zinc-100 ${
+      className={`bg-[#1C1C1C] dot-grid z-[1] w-full sticky bottom-0 text-zinc-100 ${
         pageName == "/" ? "" : ""
       }`}
     >
