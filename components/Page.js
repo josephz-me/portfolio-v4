@@ -1,30 +1,27 @@
 import Footer from "./Footer";
 import Meta from "./Meta";
 import Navbar from "./Navbar";
-import Script from "next/script";
 import React, { useEffect, useState } from "react";
 
 export default function Page(props) {
+  const [bgColor, setBgColor] = useState(false);
+
+  const changeBG = () => {
+    setBgColor(true);
+    setTimeout(() => {
+      setBgColor(false);
+    }, 500);
+  };
+
   return (
     <>
-      <div className="z-[9] text-padding relative py-8 w-full bg-[#111111] border-b border-solid border-neutral-800 shadow-xl">
-        <Script
-          strategy="lazyOnload"
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-        />
-
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-              page_path: window.location.pathname,
-            });
-                `}
-        </Script>
+      <div
+        className={`${
+          bgColor ? "bg-[#181818]" : "bg-[#111111]"
+        } z-[9] transition-colors duration-500 text-padding relative py-8 w-full bg-[#111111] border-b border-solid border-neutral-800 shadow-xl`}
+      >
         <Meta />
-        <Navbar />
+        <Navbar changeBG={changeBG} />
         {props.children}
       </div>
       <Footer />

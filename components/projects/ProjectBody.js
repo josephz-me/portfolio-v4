@@ -14,7 +14,9 @@ export default function BodyText(props) {
         props.caption ? "text-zinc-500" : "text-zinc-100"
       } gap-6  col-start-1 col-end-13 mb-2`}
     >
-      {props.title !== undefined && <h2 className="h2 mt-4">{props.title}</h2>}
+      {props.title !== undefined && (
+        <h2 className="h2 mt-4">✶ {props.title}</h2>
+      )}
       <p>{props.children}</p>
     </div>
   );

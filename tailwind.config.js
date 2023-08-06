@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [
+        "Replica",
         "nimbus-sans-extended",
         "ui-sans-serif",
         "system-ui",

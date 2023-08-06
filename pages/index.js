@@ -51,7 +51,8 @@ export default function Home() {
           worked with starts-ups like{" "}
           <TextLink super={2} link="https://natural.ai/#/">
             Brain Technologies
-          </TextLink>, 
+          </TextLink>
+          ,
           <TextLink super={2} link="https://skiff.com/">
             Skiff
           </TextLink>
@@ -74,7 +75,11 @@ export default function Home() {
           <TextLink super={7} link="https://chirulabs.com/">
             Chiru Labs
           </TextLink>{" "}
-          building interactive experiences for <TextLink super={8} link="https://azuki.com">Azuki</TextLink>.
+          building interactive experiences for{" "}
+          <TextLink super={8} link="https://azuki.com">
+            Azuki
+          </TextLink>
+          .
         </motion.p>
 
         <div className="relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 gap-4 md:gap-8 md:gap-6">

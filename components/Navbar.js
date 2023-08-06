@@ -14,20 +14,20 @@ const icons = [
   "profile-dog.jpg",
 ];
 
-export default function Navbar() {
+export default function Navbar(props) {
   //confetti config
   const { reward: celebrationOne, isAnimating: isConfettiAnimating } =
     useReward("celebration", "confetti", {
       angle: -20,
       zIndex: 200,
-      colors: ["#FFFFFF"],
+      colors: ["#000000"],
     });
   const { reward: celebrationTwo, isAnimating: isBallooInsAnimating } =
     useReward("celebration", "emoji", {
       angle: -20,
       zIndex: 200,
       elementSize: 40,
-      emoji: ["🎂", "🌝", "🍰", "🛁", ""],
+      emoji: ["✦", "✷"],
     });
 
   const pageName = useRouter().asPath;
@@ -69,12 +69,13 @@ export default function Navbar() {
         disabled={isConfettiAnimating | celebrationTwo | 0}
         onClick={() => {
           incrementCount();
+          props.changeBG();
           if (!isMobile) {
             celebrationOne();
             celebrationTwo();
           }
         }}
-        className={`game-border rounded-md overflow-hidden relative w-[48px]  h-[48px] hover:opacity-[.9] hover:cursor-help
+        className={` text-black shadow-sm game-border rounded-md overflow-hidden relative w-[48px]  h-[48px] hover:opacity-[.9] hover:cursor-help
          ease-[cubic-bezier(0.22, 1, 0.36, 1)]
             ${
               scrollY > 40
