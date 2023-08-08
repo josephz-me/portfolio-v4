@@ -2,7 +2,6 @@ import Footer from "./Footer";
 import Meta from "./Meta";
 import Navbar from "./Navbar";
 import React, { useEffect, useState } from "react";
-import { BookList } from "./Booklist";
 
 export default function Page(props) {
   const [bgColor, setBgColor] = useState(false);
@@ -23,7 +22,6 @@ export default function Page(props) {
       >
         <Meta />
         <Navbar changeBG={changeBG} />
-        <BookList />
         {props.children}
       </div>
       <Footer />
