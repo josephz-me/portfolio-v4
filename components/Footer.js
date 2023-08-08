@@ -3,6 +3,7 @@ import TextLink from "./TextLink";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { BookList } from "./Booklist";
 const GLOBAL_SPACING = "text-padding pb-10 pt-6 md:pb-10 md:pt-8";
 const BREAKPOINT = "col-start-1 col-end-13";
 
@@ -78,6 +79,9 @@ export default function Footer() {
             <TextLink super={4} link="https://twitter.com/0xTraderJo">
               Twitter
             </TextLink>
+          </p>
+          <p>
+            <TextLink super={4}>Twitter</TextLink>
           </p>
         </span>
         <div className={`${BREAKPOINT} md:col-start-9 flex flex-col space-y-1`}>
