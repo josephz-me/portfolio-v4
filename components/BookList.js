@@ -8,18 +8,23 @@ export const DialogTrigger = Dialog.Trigger;
 export function BookList() {
   return (
     <Dialog.Portal>
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence>
         <Dialog.Overlay>
           <motion.div
+            key="background"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{
+              duration: 0.1,
+            }}
             className="bg-black/50 fixed top-0 left-0 right-0 bottom-0 z-10"
           />
         </Dialog.Overlay>
 
         <Dialog.Content>
           <motion.div
+            key="modal"
             className="overflow-hidden overflow-auto p-4 bg-zinc-800 fixed m-2 rounded-md border border-solid border-white/10 h-[calc(100vh-16px)] w-[calc(100vw-16px)] max-w-[400px] top-0 left-0 bottom-0 z-10"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
