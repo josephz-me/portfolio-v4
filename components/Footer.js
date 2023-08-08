@@ -1,7 +1,7 @@
 import GridContainer from "./GridContainer";
+import React, { useState, useEffect } from "react";
 import TextLink from "./TextLink";
 import { useRouter } from "next/router";
-import React, { useState, useEffect } from "react";
 import { BookList, DialogTrigger, DialogRoot } from "./BookList";
 const GLOBAL_SPACING = "text-padding pb-10 pt-6 md:pb-10 md:pt-8";
 const BREAKPOINT = "col-start-1 col-end-13";
@@ -42,7 +42,6 @@ export default function Footer() {
         <div
           className={`${BREAKPOINT} md:col-start-1 md:col-end-6 flex-col space-y-2`}
         >
-          {/* <h1 className="sans  uppercase text-3xl">Joseph Zhang</h1> */}
           <span className="flex-row flex align-middle space-x-2">
             <p className="self-center w-min px-2 pt-1 pb-[2px] mono lowercase text-yellow-300 border-yellow-300 border border-solid rounded-full">
               v4.2.2
