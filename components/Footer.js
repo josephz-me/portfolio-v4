@@ -7,6 +7,7 @@ const GLOBAL_SPACING = "text-padding pb-10 pt-6 md:pb-10 md:pt-8";
 const BREAKPOINT = "col-start-1 col-end-13";
 
 export default function Footer() {
+  const [open, setOpen] = React.useState(false);
   const pageName = useRouter().asPath;
   const [aboutText, setAboutText] = useState(
     `▞▚▞▚▞▚▞_Copyright_2023_▞▚▞▚▞▚▞_Next.JS_Vercel_▞▚▞▚▞▚▞_INPUT MONO_▞▚▞▚▞▚▞_REPLICA TYPE_`
@@ -80,11 +81,11 @@ export default function Footer() {
           </p>
           <p className="opacity-40">...</p>
           <p>
-            <DialogRoot>
+            <DialogRoot open={open} setOpen={setOpen}>
               <DialogTrigger>
                 <TextLink super={5}>Readings</TextLink>
               </DialogTrigger>
-              <BookList />
+              <BookList open={open} />
             </DialogRoot>
           </p>
         </span>
