@@ -123,6 +123,7 @@ export function BookCard(props) {
   return (
     <a
       href={props.url}
+      rel="noreferrer"
       target="_blank"
       className="text-white p-4 bg-white/[.05] hover:bg-white/10 game-border border border-solid border-white/[.05] flex flex-col md:flex-row gap-4 "
     >
