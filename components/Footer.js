@@ -83,7 +83,7 @@ export default function Footer() {
           <p>
             <DialogRoot open={open} setOpen={setOpen}>
               <DialogTrigger>
-                <TextLink super={5}>Readings</TextLink>
+                <TextLink super={5}>Reading</TextLink>
               </DialogTrigger>
               <BookList open={open} />
             </DialogRoot>

@@ -15,7 +15,7 @@ export default function BodyText(props) {
       } gap-6  col-start-1 col-end-13 mb-2`}
     >
       {props.title !== undefined && (
-        <h2 className="h2 mt-4">✶ {props.title}</h2>
+        <h2 className="h2 mt-4 mb-2">✶ {props.title}</h2>
       )}
       <p>{props.children}</p>
     </div>

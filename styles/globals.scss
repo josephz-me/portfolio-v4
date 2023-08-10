@@ -8,7 +8,11 @@
   }
 
   .h2 {
-    @apply text-lg lg:text-xl tracking-wide font-sans font-normal uppercase mb-2;
+    @apply text-lg lg:text-xl tracking-wide font-sans font-normal uppercase;
+  }
+
+  .h3 {
+    @apply text-base lg:text-base tracking-normal font-sans normal-case;
   }
 
   .azuki-red {
