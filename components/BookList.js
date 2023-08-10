@@ -46,10 +46,16 @@ export function DialogRoot(props) {
 export const DialogTrigger = Dialog.Trigger;
 
 export function BookList(props) {
+  const isMobile =
+    typeof navigator !== "undefined" && /Mobi/i.test(navigator.userAgent);
+
+  let motionDirection = isMobile
+    ? "translate3d(0px,20px,0)"
+    : "translate3d(-20px,0px,0)";
   const transitions = useTransition(props.open, {
-    from: { opacity: 0, transform: "translate3d(-20px,0,0)" },
-    enter: { opacity: 1, transform: "translate3d(0px,0,0)" },
-    leave: { opacity: 0, transform: "translate3d(-20px,0,0)" },
+    from: { opacity: 0, transform: motionDirection },
+    enter: { opacity: 1, transform: `translate3d(0px,0px,0)` },
+    leave: { opacity: 0, transform: motionDirection },
     config: {
       mass: 1,
       tension: 400,
@@ -68,7 +74,7 @@ export function BookList(props) {
             </Dialog.Overlay>
             <Dialog.Content forceMount asChild>
               <animated.div
-                className="flex flex-col overflow-auto bg-zinc-800 fixed m-2 rounded-md border border-solid border-white/10 h-[calc(100vh-16px)] w-[calc(100vw-16px)] max-w-[500px] top-0 left-0 bottom-0 z-10"
+                className="flex flex-col overflow-auto bg-zinc-800 fixed m-2 rounded-md border border-solid border-white/10 h-[calc(100vh-16px)] w-[calc(100vw-16px)] max-w-[500px] top-0 left-0 bottom-0 z-10 scrollbar-hide"
                 style={styles}
               >
                 <div className="p-4 bg-zinc-800 sticky top-0 z-10 border-b border-dotted border-white/10">

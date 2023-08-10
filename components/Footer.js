@@ -60,30 +60,24 @@ export default function Footer() {
           className={`${BREAKPOINT} md:col-start-7 md:col-end-9 flex flex-col space-y-1`}
         >
           <p>
-            <TextLink super={1} link="https://read.cv/josephh">
-              Read.CV
-            </TextLink>
-          </p>
-          <p>
-            <TextLink super={2} link="https://www.linkedin.com/in/josephzme/">
+            <TextLink super={1} link="https://www.linkedin.com/in/josephzme/">
               Linkedin
             </TextLink>
           </p>
           <p>
-            <TextLink super={3} link="https://www.instagram.com/josephhhz/">
+            <TextLink super={2} link="https://www.instagram.com/josephhhz/">
               Instagram
             </TextLink>
           </p>
           <p>
-            <TextLink super={4} link="https://twitter.com/0xTraderJo">
+            <TextLink super={3} link="https://twitter.com/0xTraderJo">
               Twitter
             </TextLink>
           </p>
-          <p className="opacity-40">...</p>
           <p>
             <DialogRoot open={open} setOpen={setOpen}>
               <DialogTrigger>
-                <TextLink super={5}>Reading</TextLink>
+                <TextLink super={4}>Reading</TextLink>
               </DialogTrigger>
               <BookList open={open} />
             </DialogRoot>
