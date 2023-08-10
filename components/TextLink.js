@@ -2,7 +2,7 @@ export default function TextLink(props) {
   return (
     <>
       <a
-        className="border-dotted bg-white/0 hover:bg-white/10 px-[2px] hover:text-yellow-300 pt-[2px] border-b-[1px] border-solid border-[rgba(255,255,255,.5)] hover:border-yellow-300"
+        className="cursor-pointer border-dotted bg-white/0 hover:bg-white/10 px-[2px] hover:text-yellow-300 pt-[2px] border-b-[1px] border-solid border-[rgba(255,255,255,.5)] hover:border-yellow-300"
         target="_blank"
         rel="noreferrer"
         href={props.link}

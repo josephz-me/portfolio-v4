@@ -1,12 +1,13 @@
 import GridContainer from "./GridContainer";
+import React, { useState, useEffect } from "react";
 import TextLink from "./TextLink";
 import { useRouter } from "next/router";
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { BookList, DialogTrigger, DialogRoot } from "./BookList";
 const GLOBAL_SPACING = "text-padding pb-10 pt-6 md:pb-10 md:pt-8";
 const BREAKPOINT = "col-start-1 col-end-13";
 
 export default function Footer() {
+  const [open, setOpen] = React.useState(false);
   const pageName = useRouter().asPath;
   const [aboutText, setAboutText] = useState(
     `▞▚▞▚▞▚▞_Copyright_2023_▞▚▞▚▞▚▞_Next.JS_Vercel_▞▚▞▚▞▚▞_INPUT MONO_▞▚▞▚▞▚▞_REPLICA TYPE_`
@@ -42,7 +43,6 @@ export default function Footer() {
         <div
           className={`${BREAKPOINT} md:col-start-1 md:col-end-6 flex-col space-y-2`}
         >
-          {/* <h1 className="sans  uppercase text-3xl">Joseph Zhang</h1> */}
           <span className="flex-row flex align-middle space-x-2">
             <p className="self-center w-min px-2 pt-1 pb-[2px] mono lowercase text-yellow-300 border-yellow-300 border border-solid rounded-full">
               v4.2.2
@@ -60,24 +60,27 @@ export default function Footer() {
           className={`${BREAKPOINT} md:col-start-7 md:col-end-9 flex flex-col space-y-1`}
         >
           <p>
-            <TextLink super={1} link="https://read.cv/josephh">
-              Read.CV
-            </TextLink>
-          </p>
-          <p>
-            <TextLink super={2} link="https://www.linkedin.com/in/josephzme/">
+            <TextLink super={1} link="https://www.linkedin.com/in/josephzme/">
               Linkedin
             </TextLink>
           </p>
           <p>
-            <TextLink super={3} link="https://www.instagram.com/josephhhz/">
+            <TextLink super={2} link="https://www.instagram.com/josephhhz/">
               Instagram
             </TextLink>
           </p>
           <p>
-            <TextLink super={4} link="https://twitter.com/0xTraderJo">
+            <TextLink super={3} link="https://twitter.com/0xTraderJo">
               Twitter
             </TextLink>
+          </p>
+          <p>
+            <DialogRoot open={open} setOpen={setOpen}>
+              <DialogTrigger>
+                <TextLink super={4}>Reading</TextLink>
+              </DialogTrigger>
+              <BookList open={open} />
+            </DialogRoot>
           </p>
         </span>
         <div className={`${BREAKPOINT} md:col-start-9 flex flex-col space-y-1`}>

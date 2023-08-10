@@ -1,6 +1,5 @@
 import ProjectCard from "../components/home/ProjectCard";
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import TextLink from "../components/TextLink";
 import GridContainer from "../components/GridContainer";
 import Skiff from "../public/project-covers/skiff.jpg";
@@ -10,18 +9,6 @@ import Azuki from "../public/project-covers/azuki-2.jpg";
 import AIGA from "../public/project-covers/aiga-square.jpg";
 import Metalink from "../public/project-covers/metalink.jpg";
 import Experiments from "../public/work/experiments/LE-1.jpg";
-
-const item = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 },
-};
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-  },
-};
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -37,9 +24,9 @@ export default function Home() {
   }, []);
 
   return (
-    <motion.main>
+    <main>
       <GridContainer>
-        <motion.p
+        <p
           className={`z-1000 gap-6 text-zinc-100 pt-2 mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
         >
           Joseph is an interaction designer interested in digital toolmaking and
@@ -80,7 +67,7 @@ export default function Home() {
             Azuki
           </TextLink>
           .
-        </motion.p>
+        </p>
 
         <div className="relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 gap-4 md:gap-8 md:gap-6">
           {/* COLUMN 1 */}
@@ -162,6 +149,6 @@ export default function Home() {
           </div>
         </div>
       </GridContainer>
-    </motion.main>
+    </main>
   );
 }
