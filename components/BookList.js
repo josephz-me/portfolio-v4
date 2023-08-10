@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useTransition, animated, config } from "@react-spring/web";
+import Image from "next/image";
 
 const bookEntries = [
   {
@@ -127,10 +128,13 @@ export function BookCard(props) {
       target="_blank"
       className="text-white p-4 bg-white/[.05] hover:bg-white/10 game-border border border-solid border-white/[.05] flex flex-col md:flex-row gap-4 "
     >
-      <img
+      <Image
+        width={4}
+        height={32}
+        alt={"Book thumbnail"}
+        className="md:mt-1 bg-white rounded-sm border border-solid border-white/10"
         src={props.image}
-        className="md:mt-1 w-8 h-10 bg-white rounded-sm border border-solid border-white/10"
-      ></img>
+      />
       <div className="w-full flex flex-col">
         <h3 className="h3">{props.title}</h3>
         <p className="text-sm opacity-60 font-sans normal-case tracking-normal">

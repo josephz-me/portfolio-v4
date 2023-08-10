@@ -79,20 +79,22 @@ export default function ProjectMedia(props) {
             pb={props.pb}
           />
         ) : (
-        <div className="relative">
-          <article
-            className={`${!props.noShadow && 'shadow-2xl'} w-full h-auto transition duration-500 rounded-md ease-out
+          <div className="relative">
+            <article
+              className={`${
+                !props.noShadow && "shadow-2xl"
+              } w-full h-auto transition duration-500 rounded-md ease-out
               ${isImageLoaded ? "opacity-1" : "opacity-0"}
               text-[0px]`}
-          >
-            <Image
-              src={props.src}
-              layout="responsive"
-              alt="image"
-              onLoadingComplete={() => {
-                handleImageLoad();
-              }}
-              className={` 
+            >
+              <Image
+                src={props.src}
+                layout="responsive"
+                alt="image"
+                onLoadingComplete={() => {
+                  handleImageLoad();
+                }}
+                className={` 
 
             ${props.pAll ? "rounded md:rounded-md" : ""}
             ${props.pt && props.pl ? "rounded-tl md:rounded-tl-xl" : ""}
@@ -100,14 +102,14 @@ export default function ProjectMedia(props) {
             ${props.pb && props.pl ? "rounded-bl md:rounded-bl-xl" : ""}
             ${props.pb && props.pr ? "rounded-br-md md:rounded-br-xl" : ""}
             `}
-            />
-          </article>
-          <Preloader
-            dark={props.dark ? true : false}
-            loadingPhrase={loadingPhrase}
-            isContentLoaded={isImageLoaded}
-          ></Preloader>
-        </div>
+              />
+            </article>
+            <Preloader
+              dark={props.dark ? true : false}
+              loadingPhrase={loadingPhrase}
+              isContentLoaded={isImageLoaded}
+            ></Preloader>
+          </div>
         )}
       </div>
       {props.children && <ProjectBody caption>{props.children}</ProjectBody>}
