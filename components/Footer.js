@@ -79,13 +79,11 @@ export default function Footer() {
           <p>
             <DialogRoot open={open} setOpen={setOpen}>
               <DialogTrigger>
-                <div className="!absolute bottom-6 justify-items items-center right-6 rounded-full shadow-2xl p-3 hover:bg-zinc-700 hover:scale-[1.05] bg-zinc-800 border border-solid border-white/10 game-border">
-                  <img
-                    src={`/star.svg`}
-                    alt="book star icon"
-                    className="w-6 h-6 fill-white"
-                  />
-                </div>
+                <img
+                  src={`/star.svg`}
+                  alt="book star icon"
+                  className="w-12 h-12 fill-white !absolute bottom-6 justify-items items-center right-6 rounded-full shadow-2xl p-3 hover:bg-zinc-700 hover:scale-[1.05] bg-zinc-800 border border-solid border-white/10 game-border"
+                />
               </DialogTrigger>
               <BookList open={open} />
             </DialogRoot>
