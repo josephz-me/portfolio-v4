@@ -71,7 +71,7 @@ export function BookList(props) {
                 className="flex flex-col overflow-auto bg-zinc-800 fixed m-2 rounded-md border border-solid border-white/10 h-[calc(100vh-16px)] w-[calc(100vw-16px)] max-w-[500px] top-0 left-0 bottom-0 z-10"
                 style={styles}
               >
-                <div className="py-4 mx-4 bg-zinc-800 sticky top-0 z-10 border-b border-dotted border-white/10">
+                <div className="p-4 bg-zinc-800 sticky top-0 z-10 border-b border-dotted border-white/10">
                   <div className="flex">
                     <div className="flex w-full">
                       <Dialog.Title className="h2 text-white">
@@ -100,7 +100,7 @@ export function BookList(props) {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-3 p-4">
+                <div className="flex flex-col gap-3 p-4 z-0">
                   {bookEntries.map((book, index) => (
                     <BookCard
                       key={index}
@@ -128,13 +128,16 @@ export function BookCard(props) {
       target="_blank"
       className="text-white p-4 bg-white/[.05] hover:bg-white/10 game-border border border-solid border-white/[.05] flex flex-col md:flex-row gap-4 "
     >
-      <Image
-        width={4}
-        height={32}
-        alt={"Book thumbnail"}
-        className="md:mt-1 bg-white rounded-sm border border-solid border-white/10"
-        src={props.image}
-      />
+      <div className="md:mt-1 w-[45px] h-[69px] border border-solid border-white shadow-xl rounded-sm">
+        <Image
+          width={43}
+          height={67}
+          layout="fixed"
+          alt={"Book thumbnail"}
+          src={props.image}
+          objectFit="cover"
+        />
+      </div>
       <div className="w-full flex flex-col">
         <h3 className="h3">{props.title}</h3>
         <p className="text-sm opacity-60 font-sans normal-case tracking-normal">
