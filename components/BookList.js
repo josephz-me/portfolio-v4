@@ -5,6 +5,21 @@ import Image from "next/image";
 
 const bookEntries = [
   {
+    title: "Notes on the Synthesis of Form",
+    image:
+      "https://m.media-amazon.com/images/P/0674627512.01._SCLZZZZZZZ_SX500_.jpg",
+    description:
+      "Notes on the process of design: the process of inventing things which display new physical order, organization, form, in response to function.",
+    url: "https://isbndb.com/book/9780674627505",
+  },
+  {
+    title: "The Echo Wife",
+    image: "https://images.isbndb.com/covers/46/66/9781250174666.jpg",
+    description:
+      "A famed geneticist whose husband uses her methods to clone her — and has an affair with the clone. When he's murdered, the two women must figure out to do next.",
+    url: "https://isbndb.com/book/9781250174666",
+  },
+  {
     title: "Metaphors We Live By",
     image: "https://images.isbndb.com/covers/80/13/9780226468013.jpg",
     description:
@@ -51,14 +66,14 @@ export function BookList(props) {
 
   let motionDirection = isMobile
     ? "translate3d(0px,20px,0)"
-    : "translate3d(-20px,0px,0)";
+    : "translate3d(-30px,0%,0)";
   const transitions = useTransition(props.open, {
     from: { opacity: 0, transform: motionDirection },
     enter: { opacity: 1, transform: `translate3d(0px,0px,0)` },
     leave: { opacity: 0, transform: motionDirection },
     config: {
       mass: 1,
-      tension: 400,
+      tension: 300,
     },
   });
   return (
@@ -81,8 +96,8 @@ export function BookList(props) {
                   <div className="flex">
                     <div className="flex w-full">
                       <Dialog.Title className="h2 text-white">
-                        Reading List{" "}
-                        <span className="ml-1 text-yellow-300 rounded-md">
+                        Books
+                        <span className="ml-2 text-yellow-300 rounded-md">
                           {bookEntries.length}
                         </span>
                       </Dialog.Title>
@@ -145,7 +160,7 @@ export function BookCard(props) {
         />
       </div>
       <div className="w-full flex flex-col">
-        <h3 className="h3 mb-1">{props.title}</h3>
+        <h3 className="h3">{props.title}</h3>
         <p className="text-sm opacity-60 font-sans normal-case tracking-normal">
           {props.description}
         </p>
