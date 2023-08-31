@@ -101,7 +101,7 @@ export default function Skiff() {
           Visit <TextLink link="https://www.skiff.com">here</TextLink>
         </ProjectMedia>
         <ProjectMedia src={MarketingCards2} />
-        <ProjectMedia pAll src={MarketingCards}>
+        <ProjectMedia noShadow pAll src={MarketingCards}>
           20 interactive graphics scattered across the marketing site, each
           individually coded in React
         </ProjectMedia>
@@ -120,8 +120,8 @@ export default function Skiff() {
         </ProjectBody>
         <ProjectMedia pAll src={Mail} />
         <ProjectMedia pr pb pt src={Compose} />
-        <ProjectMedia pAll src={MobileMail1} />
-        <ProjectMedia pAll src={MobileMail2} />
+        <ProjectMedia noShadow pAll src={MobileMail1} />
+        <ProjectMedia noShadow pAll src={MobileMail2} />
         <ProjectMedia pt pr pb src={CustomDomains}></ProjectMedia>
         <ProjectMedia pb pr src={OnboardingChecklist} />
 
