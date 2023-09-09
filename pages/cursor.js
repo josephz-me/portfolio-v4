@@ -16,7 +16,11 @@ export default function Cursor() {
         <ProjectHero isImage={true} content="/project-covers/cursor-long.jpg" />
         <ProjectTitle role="AI INTERFACES">Cursor AI</ProjectTitle>
         <ProjectBody col={2}>
-          {`Cursor is a collaborative AI code editor backed by Open AI. During my contract, I designed product solutions that help users understand what the AI can do and contextually see. Given language intefaces have no bounds in terms of what's allowed, many people struggly with leveraging the AI's capabilities properly, often resulting in subpar results. If you are interested in learning more, please reach out.`}
+          {`Cursor is a collaborative AI code editor backed by Open AI.
+          Natural language interfaces are often too flexible which makes it tricky for users to leverage the AI effectively, leading to suboptimal outcomes.
+           During my contract,
+          I designed tools to help users grasp what AI can do and make sense of it in its relevant context. 
+          If you are interested in learning more, please reach out.`}
         </ProjectBody>
         <ProjectDetails
           role={["Product designer"]}
