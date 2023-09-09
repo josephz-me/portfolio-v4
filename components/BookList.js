@@ -5,13 +5,6 @@ import Image from "next/image";
 
 const bookEntries = [
   {
-    title: "True Biz",
-    image: "https://m.media-amazon.com/images/I/819-98GsbHL.jpg",
-    description:
-      "a story of sign language and lip-reading, disability and civil rights, isolation and injustice, first love and loss, and, above all, great persistence, daring, and joy.",
-    url: "https://www.amazon.com/True-Biz-Novel-Sara-Novic/dp/0593241509",
-  },
-  {
     title: "Notes on the Synthesis of Form",
     image:
       "https://m.media-amazon.com/images/P/0674627512.01._SCLZZZZZZZ_SX500_.jpg",

@@ -6,6 +6,7 @@ import Skiff from "../public/project-covers/skiff.jpg";
 import Apple from "../public/project-covers/apple-v2.jpg";
 import Brain from "../public/project-covers/natural.jpg";
 import Azuki from "../public/project-covers/azuki-2.jpg";
+import Cursor from "../public/project-covers/cursor.jpg";
 import AIGA from "../public/project-covers/aiga-square.jpg";
 import Metalink from "../public/project-covers/metalink.jpg";
 import Experiments from "../public/work/experiments/LE-1.jpg";
@@ -87,12 +88,19 @@ export default function Home() {
               link="/skiff"
               content={Skiff}
             ></ProjectCard>
+
             <ProjectCard
-              title="LIGHT ENGINE"
-              description="Industrial Design"
+              title="Cursor AI"
+              description="AI Interfaces"
               isImage
-              link="/lightengines"
-              content={Experiments}
+              link="/cursor"
+              content={Cursor}
+            ></ProjectCard>
+            <ProjectCard
+              title="Thinkspace"
+              description="Assistive AI Agents"
+              link="/thinkspace"
+              content={"/project-covers/thinkspace.mp4"}
             ></ProjectCard>
             {/* <ProjectCard
               title="TOUCHLESS INTERFACES"
@@ -110,6 +118,7 @@ export default function Home() {
               link="/aiga"
               content={AIGA}
             ></ProjectCard>
+
             <ProjectCard
               title="Brain Technologies"
               description="multimodal interaction"
@@ -118,10 +127,11 @@ export default function Home() {
               content={Brain}
             ></ProjectCard>
             <ProjectCard
-              title="Thinkspace"
-              description="Assistive AI Agents"
-              link="/thinkspace"
-              content={"/project-covers/thinkspace.mp4"}
+              title="LIGHT ENGINE"
+              description="Industrial Design"
+              isImage
+              link="/lightengines"
+              content={Experiments}
             ></ProjectCard>
           </div>
 

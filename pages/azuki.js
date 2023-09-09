@@ -18,7 +18,7 @@ import loreHilumia from "../public/work/azuki/lore-hilumia.jpg";
 import cp_main from "../public/work/azuki/cp-main.jpg";
 import auctionMain from "../public/work/azuki/auction-main.jpg";
 import auctionCountdown from "../public/work/azuki/auction-countdown.jpg";
-import auctionK11 from "../public/work/azuki/auction-k11.jpeg";
+import auctionK11 from "../public/work/azuki/auction-k11.jpg";
 import auctionK112 from "../public/work/azuki/auction-k11-2.jpeg";
 import ambushLanding from "../public/work/azuki/ambush-landing.jpg";
 import equipBeanz from "../public/work/azuki/equip-beanz.jpg";
@@ -118,7 +118,7 @@ export default function Brain() {
           display their collection — whether that's the Azuki they own, the emblems they earned, and more. We wanted to build a showroom experience that made members feel proud and special to be a part of the Azuki community.`}
         </ProjectBody>
         <LinkCard col={1} link="https://www.azuki.com/collector/dingaling">
-          {`Shrimpwen's Profile`}
+          {`Collector Profile`}
         </LinkCard>
         <ProjectMedia pt pr pl src={cp_main}></ProjectMedia>
         <ProjectMedia src={"/work/azuki/cp-emblems.mp4"} isVideo></ProjectMedia>
@@ -152,7 +152,7 @@ export default function Brain() {
           col={1}
           link="https://www.highsnobiety.com/p/ambush-azuki-nft-collab-collection/"
         >
-          Highest Nobiety
+          Highsnobiety
         </LinkCard>
         <LinkCard
           col={2}
@@ -171,13 +171,13 @@ export default function Brain() {
           col={1}
           link="https://hypemoon.com/2022/10/azuki-nft-gold-skateboard-auction-world-record"
         >
-          Hypemoon (Hypebeast)
+          Hypebeast
         </LinkCard>
         <LinkCard
           col={2}
-          link="https://hypemoon.com/2022/10/azuki-nft-gold-skateboard-auction-world-record"
+          link="https://www.yahoo.com/video/azuki-raises-2-5m-nft-191212817.html"
         >
-          Hypemoon (Hypebeast)
+          Yahoo Finance
         </LinkCard>
         <ProjectMedia pAll src={auctionCountdown} />
         <ProjectMedia pAll src={auctionMain} />
