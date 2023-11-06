@@ -4,7 +4,7 @@
 
 @layer components {
   .h1 {
-    @apply text-2xl lg:text-3xl lg:leading-[2rem] font-sans font-bold uppercase mb-1 md:mb-2;
+    @apply text-3xl lg:text-4xl font-sans tracking-wider font-bold uppercase;
   }
 
   .h2 {
@@ -33,6 +33,12 @@
 @font-face {
   font-family: "Replica";
   src: url("/fonts/Replica Regular.otf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "OffBit";
+  src: url("/fonts/OffBitTrial-Bold.otf") format("truetype");
   font-weight: 400;
 }
 

@@ -12,7 +12,7 @@ export default function Footer() {
   const [open, setOpen] = React.useState(false);
   const pageName = useRouter().asPath;
   const [aboutText, setAboutText] = useState(
-    `▞▚▞▚▞▚▞_Copyright_2023_▞▚▞▚▞▚▞_Next.JS_Vercel_▞▚▞▚▞▚▞_INPUT MONO_▞▚▞▚▞▚▞_REPLICA TYPE_`
+    `▞▚▞▚▞▚▞_Copyright_2023_▞▚▞▚▞▚▞_Next.JS_Vercel_▞▚▞▚▞▚▞_INPUT MONO_▞▚▞▚▞▚▞_OFFBIT TYPE_`
   );
 
   const [updatedTime, setUpdatedTime] = useState("...");

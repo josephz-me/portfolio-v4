@@ -50,12 +50,12 @@ export default function Aiga() {
       <GridContainer>
         <ProjectHero isVideo={false} content="/project-covers/aiga.jpg" />
         <ProjectTitle role="Interactive Data Visualization">
-          AIGA & Hue
+          AIGA Hue
         </ProjectTitle>
         <ProjectBody col={2}>
-          AIGA & Hue is a desktop web experience that visualizes career data
-          from the 2019 AIGA Design Census in a playful and informative manner.
-          The recent over-saturation of interest in certain design fields has
+          AIGA Hue is a desktop web experience that visualizes career data from
+          the 2019 AIGA Design Census in a playful and informative manner. The
+          recent over-saturation of interest in certain design fields has
           resulted in skewed perceptions of neighboring creative industries.
           This project strives to break those stereotypes by providing a
           holistic understanding of the creative industry and all the viable

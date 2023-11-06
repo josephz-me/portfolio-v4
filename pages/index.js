@@ -112,7 +112,7 @@ export default function Home() {
           {/* COLUMN 2 */}
           <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
             <ProjectCard
-              title="AIGA&Hue"
+              title="AIGA Hue"
               description="Data Visualization"
               isImage
               link="/aiga"

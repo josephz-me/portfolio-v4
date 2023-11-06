@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [
-        "Replica",
+        "OffBit",
         "ui-sans-serif",
         "system-ui",
         "-apple-system",
