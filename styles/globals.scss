@@ -4,7 +4,7 @@
 
 @layer components {
   .h1 {
-    @apply text-3xl lg:text-4xl font-sans tracking-wider font-bold lg:leading-[2.2rem] mb-1 uppercase;
+    @apply text-3xl lg:text-4xl font-sans tracking-wide md:tracking-wider font-bold lg:leading-[2.2rem] uppercase;
   }
 
   .h2 {
