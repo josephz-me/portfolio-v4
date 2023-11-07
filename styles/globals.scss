@@ -4,11 +4,11 @@
 
 @layer components {
   .h1 {
-    @apply text-3xl lg:text-4xl font-sans tracking-wide md:tracking-wider font-bold lg:leading-[2.2rem] uppercase;
+    @apply text-3xl lg:text-4xl font-sans font-semibold lg:leading-[2.2rem] uppercase;
   }
 
   .h2 {
-    @apply text-lg lg:text-xl tracking-wide font-sans font-normal uppercase;
+    @apply text-lg lg:text-xl font-sans font-semibold uppercase;
   }
 
   .h3 {
