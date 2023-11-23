@@ -30,23 +30,25 @@ export default function Home() {
         <p
           className={`z-1000 gap-6 text-zinc-100 pt-2 mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
         >
-          Joseph is an interaction designer interested in digital toolmaking and
-          multimodal input. After working at{" "}
+          Joseph is an interaction designer. He has worked on unconventional
+          things such as mobile games, interactive storybooks, and even a
+          multiplayer painting platform. However his deepest passion remains in
+          digital toolmaking, multimodal interaction, and the future of
+          interaction design. After prototyping NLP interfaces at{" "}
           <TextLink super={1} link="https://www.apple.com/siri/">
             Apple
           </TextLink>
-          , he discovered a love for small, high-caliber teams and have since
-          worked with starts-ups like{" "}
+          , he took that passion to high-caliber starts-ups like{" "}
           <TextLink super={2} link="https://natural.ai/#/">
             Brain Technologies
           </TextLink>
-          ,
-          <TextLink super={2} link="https://skiff.com/">
+          ,{" "}
+          <TextLink super={3} link="https://skiff.com/">
             Skiff
           </TextLink>
           , and{" "}
-          <TextLink super={4} link="https://metalink.com/login">
-            Metalink Labs
+          <TextLink super={4} link="https://cursor.so/">
+            Cursor AI
           </TextLink>
           . He graduated from Carnegie Mellon University where he studied{" "}
           <TextLink
@@ -63,11 +65,7 @@ export default function Home() {
           <TextLink super={7} link="https://chirulabs.com/">
             Chiru Labs
           </TextLink>{" "}
-          building interactive experiences for{" "}
-          <TextLink super={8} link="https://azuki.com">
-            Azuki
-          </TextLink>
-          .
+          pushing the boundaries of interactive storytelling.
         </p>
 
         <div className="relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 gap-4 md:gap-8 md:gap-6">

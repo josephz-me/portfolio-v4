@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [
+        "offbit",
         "ui-sans-serif",
         "system-ui",
         "-apple-system",
