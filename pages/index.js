@@ -30,8 +30,9 @@ export default function Home() {
         <p
           className={`z-1000 gap-6 text-zinc-100 pt-2 mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13 transition duration-[200ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)]`}
         >
-          Joseph designs interfaces. He believes his best work comes from 1)
-          Never settling and 2) pursuing what he loves. Currently at{" "}
+          Joseph designs interfaces. He believes his best work comes from (1)
+          Never settling and (2) relentlessly pursuing what he loves. Currently
+          at{" "}
           <TextLink super={1} link="https://chirulabs.com/">
             Chiru Labs
           </TextLink>
