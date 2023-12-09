@@ -13,6 +13,8 @@ import Divider from "../components/projects/Divider";
 
 // images
 import LoreMain from "../public/work/azuki/lore-main.jpg";
+import LoreOrigin from "../public/work/azuki/lore-origin.jpg";
+import LoreBeanz from "../public/work/azuki/lore-beanz.jpg";
 import LoreChapterOne from "../public/work/azuki/lore-chapter-one.jpg";
 import loreHilumia from "../public/work/azuki/lore-hilumia.jpg";
 import cp_main from "../public/work/azuki/cp-main.jpg";
@@ -162,6 +164,21 @@ export default function Brain() {
         </LinkCard>
         <ProjectMedia pAll src={ambushLanding} />
         <Divider />
+        <ProjectBody title="Azuki Lore" col={1}>
+          The Azuki brand grounds itself in thoughtful storytelling. The World
+          page consists of several interactive chapters, each highlighting a
+          piece of the universe. We designed each chapter to be different in
+          format and interactivity.
+        </ProjectBody>
+        <LinkCard col={1} link="https://azuki.com/world">
+          Lore Chapters
+        </LinkCard>
+        <ProjectMedia pAll src={LoreMain}></ProjectMedia>
+        <ProjectMedia pAll src={LoreOrigin}></ProjectMedia>
+        <ProjectMedia pAll src={LoreBeanz}></ProjectMedia>
+        <ProjectMedia pAll src={LoreChapterOne}></ProjectMedia>
+        <ProjectMedia pAll src={loreHilumia}></ProjectMedia>
+        <Divider />
         <ProjectBody title="Proof of Skate Auction" col={1}>
           Azuki recently made history by setting the record for the most
           expensive skateboards sold in history. I co-designed the experience
@@ -185,19 +202,6 @@ export default function Brain() {
           Proof of Skate exhibition at K11 Musea in Hong Kong
         </ProjectMedia>
         <ProjectMedia src={auctionK11} />
-        <Divider />
-        <ProjectBody title="Azuki Lore" col={1}>
-          A core part of the Azuki brand is storytelling. I helped design the
-          brand&apos;s lore initiative. A huge collaborative effort across all
-          parts of the Azuki team, we placed a huge emphasis on user exploration
-          by thoughtfully sequencing copy, animation, and art.
-        </ProjectBody>
-        <LinkCard col={1} link="https://azuki.com/world">
-          Lore Chapters
-        </LinkCard>
-        <ProjectMedia pAll src={LoreMain}></ProjectMedia>
-        <ProjectMedia pAll src={LoreChapterOne}></ProjectMedia>
-        <ProjectMedia pAll src={loreHilumia}></ProjectMedia>
       </GridContainer>
     </motion.main>
   );
