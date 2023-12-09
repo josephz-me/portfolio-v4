@@ -5,6 +5,20 @@ import Image from "next/image";
 
 const bookEntries = [
   {
+    title: "Tomorrow and Tomorrow and Tomorrow",
+    image: "https://m.media-amazon.com/images/I/91HwoNG6iqL._SL1500_.jpg",
+    description:
+      "Sam and Sadie—two college friends, often in love, but never lovers—become creative partners in a dazzling and intricately imagined world of video game design, where success brings them fame, joy, tragedy, duplicity, and, ultimately, a kind of immortality.",
+    url: "https://www.amazon.com/Tomorrow-novel-Gabrielle-Zevin-ebook/dp/B09JBCGQB8/ref=sr_1_1?crid=1RZILIV61XAUB&keywords=tomorrow+and+tomorrow&qid=1702098739&s=digital-text&sprefix=tomorrow+and+tomorro%2Cdigital-text%2C197&sr=1-1",
+  },
+  {
+    title: "The Almanack of Naval Ravikant",
+    image: "https://m.media-amazon.com/images/I/61VbL0FspqL._SL1500_.jpg",
+    description:
+      "A collection of Naval’s wisdom and experience from the last ten years, shared as a curation of his most insightful interviews and poignant reflections.",
+    url: "https://www.amazon.com/Almanack-Naval-Ravikant-Wealth-Happiness-ebook/dp/B08FF8MTM6",
+  },
+  {
     title: "Notes on the Synthesis of Form",
     image:
       "https://m.media-amazon.com/images/P/0674627512.01._SCLZZZZZZZ_SX500_.jpg",
@@ -89,7 +103,7 @@ export function BookList(props) {
             </Dialog.Overlay>
             <Dialog.Content forceMount asChild>
               <animated.div
-                className="flex flex-col overflow-auto bg-neutral-800 fixed m-2 rounded-md border border-solid border-white/10 h-[calc(100vh-16px)] w-[calc(100vw-16px)] max-w-[500px] top-0 left-0 bottom-0 z-10 scrollbar-hide"
+                className="flex flex-col overflow-auto bg-neutral-800 fixed m-2 rounded-md border border-solid border-white/10 h-[calc(100vh-16px)] w-[calc(100vw-16px)] max-w-[550px] top-0 left-0 bottom-0 z-10 scrollbar-hide"
                 style={styles}
               >
                 <div className="p-4 bg-neutral-800 sticky top-0 z-10 border-b border-dotted border-white/10">
@@ -160,8 +174,8 @@ export function BookCard(props) {
         />
       </div>
       <div className="w-full flex flex-col">
-        <h3 className="h3">{props.title}</h3>
-        <p className="text-sm opacity-60 font-sans normal-case tracking-normal">
+        <h3 className="h3 tracking-[.04rem] uppercase">{props.title}</h3>
+        <p className="text-sm opacity-60 font-sans normal-case tracking-[.04rem] leading-[130%]">
           {props.description}
         </p>
       </div>
