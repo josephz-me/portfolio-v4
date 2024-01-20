@@ -18,7 +18,7 @@ export default function BodyText(props) {
       {props.title !== undefined && (
         <h2 className="h2 mt-4 mb-2">✶ {props.title}</h2>
       )}
-      <p className="">{props.children}</p>
+      <p className="opacity-80">{props.children}</p>
     </div>
   );
 }

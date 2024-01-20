@@ -73,9 +73,9 @@ export default function Brain() {
           . As a product designer, I scale core digital product experiences.
         </ProjectBody>
         <ProjectDetails
-          role={['product designer']}
+          role={['Product Designer']}
           collaborators={['Hoshiboy', 'Azuki team']}
-          duration={['2022-PRESENT']}
+          duration={['2022 - Present']}
           tools={['figma', 'react next.js']}
         />
 

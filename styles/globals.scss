@@ -16,7 +16,7 @@
   }
 
   .body {
-    @apply text-base lg:text-[15px] tracking-[.02em] leading-[140%] font-sans normal-case;
+    @apply text-base lg:text-[16px] tracking-[.02em] leading-[145%] font-sans normal-case;
   }
 
   .caption {
@@ -38,7 +38,7 @@
 
 @font-face {
   font-family: 'OffBit';
-  src: url('/fonts/OffBitTrial-DotBold.otf') format('truetype');
+  src: url('/fonts/OffBitTrial-101Bold.otf') format('truetype');
   font-weight: 400;
 }
 
