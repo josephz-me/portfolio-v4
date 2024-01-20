@@ -1,22 +1,22 @@
-import TextLink from "../TextLink";
-import CardVideo from "../CardVideo";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import * as loadingCopy from "../loadingCopy";
-import Preloader from "../Preloader";
-import ProjectBody from "./ProjectBody";
+import TextLink from '../TextLink';
+import CardVideo from '../CardVideo';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import * as loadingCopy from '../loadingCopy';
+import Preloader from '../Preloader';
+import ProjectBody from './ProjectBody';
 
 export default function ProjectMedia(props) {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const [loadingPhrase, setLoadingPhrase] = useState("");
+  const [loadingPhrase, setLoadingPhrase] = useState('');
   const [background, setBackground] = useState();
   const [path, setPath] = useState();
 
   const bgColors = {
-    skiff: ["bg-gray-200", "bg-[#4F4C59]"],
-    azuki: ["bg-[#EBEBE6]", "bg-gray-800"],
-    metalink: "bg-gray-700",
-    experiments: "bg-white/[.15]",
+    skiff: ['bg-gray-200', 'bg-[#4F4C59]'],
+    azuki: ['bg-[#EBEBE6]', 'bg-gray-800'],
+    metalink: 'bg-gray-700',
+    experiments: 'bg-white/[.15]',
   };
 
   //determine background
@@ -36,7 +36,7 @@ export default function ProjectMedia(props) {
   };
 
   useEffect(() => {
-    setPath(window.location.pathname.replace("/", ""));
+    setPath(window.location.pathname.replace('/', ''));
     setLoadingPhrase(loadingCopy.combineCopy());
   }, []);
 
@@ -54,9 +54,10 @@ export default function ProjectMedia(props) {
   return (
     <>
       <div
+        id={props.id}
         className={`block grid overflow-hidden col-start-1 col-end-13 transition duration-300
           ${background}
-          ${props.large ? "md:col-start-1" : "md:col-start-5"}
+          ${props.large ? 'md:col-start-1' : 'md:col-start-5'}
           ${
             props.pl ||
             props.pr ||
@@ -64,13 +65,13 @@ export default function ProjectMedia(props) {
             props.pb ||
             (props.pAll && isImageLoaded)
               ? `border-solid border-neutral-800 border`
-              : ""
+              : ''
           }
-          ${props.pAll ? "p-4 md:p-10" : ""}
-          ${props.pl ? "pl-4 md:pl-10" : ""}
-          ${props.pr ? "pr-4 md:pr-10" : ""}
-          ${props.pb ? "pb-4 md:pb-10" : ""}
-          ${props.pt ? "pt-4 md:pt-10" : ""}
+          ${props.pAll ? 'p-4 md:p-10' : ''}
+          ${props.pl ? 'pl-4 md:pl-10' : ''}
+          ${props.pr ? 'pr-4 md:pr-10' : ''}
+          ${props.pb ? 'pb-4 md:pb-10' : ''}
+          ${props.pt ? 'pt-4 md:pt-10' : ''}
       `}
       >
         {props.isVideo ? (
@@ -89,9 +90,9 @@ export default function ProjectMedia(props) {
           <div className="relative">
             <article
               className={`${
-                !props.noShadow && "shadow-2xl"
+                !props.noShadow && 'shadow-2xl'
               } w-full h-auto transition duration-500 rounded-md ease-out
-              ${isImageLoaded ? "opacity-1" : "opacity-0"}
+              ${isImageLoaded ? 'opacity-1' : 'opacity-0'}
               text-[0px]`}
             >
               <Image
@@ -103,11 +104,11 @@ export default function ProjectMedia(props) {
                 }}
                 className={` 
 
-            ${props.pAll ? "rounded md:rounded-md" : ""}
-            ${props.pt && props.pl ? "rounded-tl md:rounded-tl-xl" : ""}
-            ${props.pt && props.pr ? "rounded-tr md:rounded-tr-xl" : ""}
-            ${props.pb && props.pl ? "rounded-bl md:rounded-bl-xl" : ""}
-            ${props.pb && props.pr ? "rounded-br-md md:rounded-br-xl" : ""}
+            ${props.pAll ? 'rounded md:rounded-md' : ''}
+            ${props.pt && props.pl ? 'rounded-tl md:rounded-tl-xl' : ''}
+            ${props.pt && props.pr ? 'rounded-tr md:rounded-tr-xl' : ''}
+            ${props.pb && props.pl ? 'rounded-bl md:rounded-bl-xl' : ''}
+            ${props.pb && props.pr ? 'rounded-br-md md:rounded-br-xl' : ''}
             `}
               />
             </article>

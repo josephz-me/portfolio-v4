@@ -6,6 +6,7 @@ import CardVideo from "../CardVideo";
 export default function BodyText(props) {
   return (
     <div
+      id={props.id}
       className={`${
         props.col == 2
           ? "md:columns-2 md:col-start-5 md:col-end-13"

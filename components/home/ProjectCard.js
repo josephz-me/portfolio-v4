@@ -1,13 +1,13 @@
-import CardVideo from "../CardVideo";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import * as loadingCopy from "../loadingCopy";
-import Preloader from "../Preloader";
+import CardVideo from '../CardVideo';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import * as loadingCopy from '../loadingCopy';
+import Preloader from '../Preloader';
 
 export default function ProjectCard(props) {
   const [isContentLoaded, setIsContentLoaded] = useState(false);
-  const [loadingPhrase, setLoadingPhrase] = useState("");
+  const [loadingPhrase, setLoadingPhrase] = useState('');
 
   // preloader
   const handleImageLoad = (e) => {
@@ -21,10 +21,10 @@ export default function ProjectCard(props) {
   return (
     <Link passHref variants={props.animation} href={`${props.link}`}>
       <a
-        target={props.isExternal ? "_blank" : ""}
+        target={props.isExternal ? '_blank' : ''}
         className={`${
           //determine if project is linked
-          props.link != undefined ? "cursor-pointer" : "pointer-events-none"
+          props.link != undefined ? 'cursor-pointer' : 'pointer-events-none'
         }
       group relative grid w-full opacity-100 inline-block`}
       >
@@ -32,7 +32,7 @@ export default function ProjectCard(props) {
           <div className="inline-block group-hover:opacity-90 game-border">
             <article
               className={`w-full h-auto transition duration-500 ${
-                isContentLoaded ? "opacity-1" : "opacity-0"
+                isContentLoaded ? 'opacity-1' : 'opacity-0'
               }`}
             >
               <Image

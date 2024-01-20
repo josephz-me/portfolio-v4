@@ -1,36 +1,37 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import TextLink from "../components/TextLink";
-import GridContainer from "../components/GridContainer";
-import ProjectHero from "../components/projects/ProjectHero";
-import ProjectBody from "../components/projects/ProjectBody";
-import ProjectMedia from "../components/projects/ProjectMedia";
-import ProjectTitle from "../components/projects/ProjectTitle";
-import ProjectDetails from "../components/projects/ProjectDetails";
-import LinkCard from "../components/projects/LinkCard";
-import Spacer from "../components/projects/Spacer";
-import Divider from "../components/projects/Divider";
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import TextLink from '../components/TextLink';
+import GridContainer from '../components/GridContainer';
+import ProjectHero from '../components/projects/ProjectHero';
+import ProjectBody from '../components/projects/ProjectBody';
+import ProjectMedia from '../components/projects/ProjectMedia';
+import ProjectTitle from '../components/projects/ProjectTitle';
+import ProjectDetails from '../components/projects/ProjectDetails';
+import LinkCard from '../components/projects/LinkCard';
+import Spacer from '../components/projects/Spacer';
+import Divider from '../components/projects/Divider';
 
 // images
-import LoreMain from "../public/work/azuki/lore-main.jpg";
-import LoreOrigin from "../public/work/azuki/lore-origin.jpg";
-import LoreBeanz from "../public/work/azuki/lore-beanz.jpg";
-import LoreChapterOne from "../public/work/azuki/lore-chapter-one.jpg";
-import loreHilumia from "../public/work/azuki/lore-hilumia.jpg";
-import cp_main from "../public/work/azuki/cp-main.jpg";
-import auctionMain from "../public/work/azuki/auction-main.jpg";
-import auctionCountdown from "../public/work/azuki/auction-countdown.jpg";
-import auctionK11 from "../public/work/azuki/auction-k11.jpg";
-import auctionK112 from "../public/work/azuki/auction-k11-2.jpeg";
-import ambushLanding from "../public/work/azuki/ambush-landing.jpg";
-import equipBeanz from "../public/work/azuki/equip-beanz.jpg";
-import equipExamples from "../public/work/azuki/equip-examples.png";
-import rabbitTicket from "../public/work/azuki/rabbit-ticket.jpg";
-import s2_mint from "../public/work/azuki/s2-mint.jpg";
-import s2_mint_closeup from "../public/work/azuki/s2-mint-closeup.jpg";
-import s2_reveal from "../public/work/azuki/s2-reveal.jpg";
-import s2_reveal_likeall from "../public/work/azuki/s2-reveal-likeall.jpg";
-import s2_reveal_tweet from "../public/work/azuki/s2-reveal-tweet.jpg";
+import LoreMain from '../public/work/azuki/lore-main.jpg';
+import LoreOrigin from '../public/work/azuki/lore-origin.jpg';
+import LoreBeanz from '../public/work/azuki/lore-beanz.jpg';
+import LoreChapterOne from '../public/work/azuki/lore-chapter-one.jpg';
+import loreHilumia from '../public/work/azuki/lore-hilumia.jpg';
+import LoreSisters from '../public/work/azuki/lore-sisters.jpg';
+import cp_main from '../public/work/azuki/cp-main.jpg';
+import auctionMain from '../public/work/azuki/auction-main.jpg';
+import auctionCountdown from '../public/work/azuki/auction-countdown.jpg';
+import auctionK11 from '../public/work/azuki/auction-k11.jpg';
+import auctionK112 from '../public/work/azuki/auction-k11-2.jpeg';
+import ambushLanding from '../public/work/azuki/ambush-landing.jpg';
+import equipBeanz from '../public/work/azuki/equip-beanz.jpg';
+import equipExamples from '../public/work/azuki/equip-examples.png';
+import rabbitTicket from '../public/work/azuki/rabbit-ticket.jpg';
+import s2_mint from '../public/work/azuki/s2-mint.jpg';
+import s2_mint_closeup from '../public/work/azuki/s2-mint-closeup.jpg';
+import s2_reveal from '../public/work/azuki/s2-reveal.jpg';
+import s2_reveal_likeall from '../public/work/azuki/s2-reveal-likeall.jpg';
+import s2_reveal_tweet from '../public/work/azuki/s2-reveal-tweet.jpg';
 
 const item = {
   hidden: { opacity: 0 },
@@ -53,7 +54,7 @@ export default function Brain() {
         <ProjectBody col={2}>
           Azuki is a web3 brand pioneering the integration of blockchain
           identity with digital art, fashion, and physical collectibles. Since
-          launch, they have worked with brands like{" "}
+          launch, they have worked with brands like{' '}
           <TextLink link="https://www.ambushdesign.com/en-us/">
             Ambush Streetwear
           </TextLink>
@@ -72,10 +73,10 @@ export default function Brain() {
           . As a product designer, I scale core digital product experiences.
         </ProjectBody>
         <ProjectDetails
-          role={["product designer"]}
-          collaborators={["Hoshiboy", "Azuki team"]}
-          duration={["2022-PRESENT"]}
-          tools={["figma", "react next.js"]}
+          role={['product designer']}
+          collaborators={['Hoshiboy', 'Azuki team']}
+          duration={['2022-PRESENT']}
+          tools={['figma', 'react next.js']}
         />
 
         <LinkCard col={1} link="https://azuki.com">
@@ -86,12 +87,44 @@ export default function Brain() {
         </LinkCard>
         <Divider />
         <Spacer></Spacer>
-        <ProjectBody title="Elementals Sale + Unboxing" col={1}>
+
+        <ProjectBody id="collector" title="Collector's Profile" col={1}>
+          {`The collector's profile is platform for token holders to
+          display their collection — whether that's the Azuki they own, the emblems they earned, and more. We wanted to build a showroom experience that made members feel proud and special to be a part of the Azuki community.`}
+        </ProjectBody>
+        <LinkCard col={1} link="https://www.azuki.com/collector/dingaling">
+          {`Collector Profile`}
+        </LinkCard>
+        <ProjectMedia pt pr pl src={cp_main}></ProjectMedia>
+        <ProjectMedia src={'/work/azuki/cp-emblems.mp4'} isVideo></ProjectMedia>
+        <ProjectMedia src={'/work/azuki/cp-badges.mp4'} isVideo></ProjectMedia>
+        <ProjectMedia
+          src={'/work/azuki/cp-highlights.mp4'}
+          isVideo
+        ></ProjectMedia>
+        <ProjectMedia dark src={rabbitTicket}>
+          Code-generated custom graphics of each attendee&apos;s admission
+          ticket for the 2023 White Rabbit Vegas event. Here&apos;s a{' '}
+          <TextLink link="https://twitter.com/jojochuu/status/1650938107892764672?s=20">
+            techinical explanation
+          </TextLink>{' '}
+          of how we did it.
+        </ProjectMedia>
+
+        <ProjectBody title="Token Equipping" col={1}>
+          In the Azuki ecosystem, Beans are the companions all Azukis need. We
+          introduced an equpping system that allows users to unite both into
+          one.
+        </ProjectBody>
+        <ProjectMedia src={equipBeanz}></ProjectMedia>
+        <ProjectMedia pAll noShadow src={equipExamples}></ProjectMedia>
+        <Divider />
+        <ProjectBody id="elementals" title="Elementals Sale + Unboxing" col={1}>
           We designed the Elementals reveal experience to be full of
           anticipation and delight, similar to the unboxing of up a Yugioh or
           baseball mystery pack. The experience is packed with tons of features,
           including a live Twitter feed, compose Tweet functionality, drag and
-          drop, and even Chat-GPT integration.{" "}
+          drop, and even Chat-GPT integration.{' '}
         </ProjectBody>
         <ProjectMedia pAll src={s2_reveal}></ProjectMedia>
         <ProjectMedia pl pt src={s2_reveal_tweet}>
@@ -101,7 +134,7 @@ export default function Brain() {
         <ProjectMedia pl pb src={s2_reveal_likeall}>
           {`We want new holders to feel loved and appreciated. Two alternating Like/Follow All buttons give individuals the agency to spread that love.`}
         </ProjectMedia>
-        <ProjectMedia pAll src={"/work/azuki/s2-reveal-animation.mp4"} isVideo>
+        <ProjectMedia pAll src={'/work/azuki/s2-reveal-animation.mp4'} isVideo>
           thoughtfully chosen VFX animations come on screen during the actual
           reveal, representing either the Earth, Fire, Lightning, or Water
           domain.
@@ -114,39 +147,9 @@ export default function Brain() {
           Bobu the Bean Farmer manages all purchased inventory and ongoing
           transactions
         </ProjectMedia>
-        <Spacer></Spacer>
-        <ProjectBody title="Collector's Profile" col={1}>
-          {`The collector's profile is platform for token holders to
-          display their collection — whether that's the Azuki they own, the emblems they earned, and more. We wanted to build a showroom experience that made members feel proud and special to be a part of the Azuki community.`}
-        </ProjectBody>
-        <LinkCard col={1} link="https://www.azuki.com/collector/dingaling">
-          {`Collector Profile`}
-        </LinkCard>
-        <ProjectMedia pt pr pl src={cp_main}></ProjectMedia>
-        <ProjectMedia src={"/work/azuki/cp-emblems.mp4"} isVideo></ProjectMedia>
-        <ProjectMedia src={"/work/azuki/cp-badges.mp4"} isVideo></ProjectMedia>
-        <ProjectMedia
-          src={"/work/azuki/cp-highlights.mp4"}
-          isVideo
-        ></ProjectMedia>
-        <ProjectMedia dark src={rabbitTicket}>
-          Code-generated custom graphics of each attendee&apos;s admission
-          ticket for the 2023 White Rabbit Vegas event. Here&apos;s a{" "}
-          <TextLink link="https://twitter.com/jojochuu/status/1650938107892764672?s=20">
-            techinical explanation
-          </TextLink>{" "}
-          of how we did it.
-        </ProjectMedia>
-
-        <ProjectBody title="Token Equipping" col={1}>
-          In the Azuki ecosystem, Beans are the companions all Azukis need. We
-          introduced an equpping system that allows users to unite both into
-          one.
-        </ProjectBody>
-        <ProjectMedia src={equipBeanz}></ProjectMedia>
-        <ProjectMedia pAll noShadow src={equipExamples}></ProjectMedia>
         <Divider />
         <Spacer></Spacer>
+
         <ProjectBody title="Ambush x Azuki Collab" col={1}>
           {`The Ambush collaboration marks one of the first high-profile streetwear partnerships between a web3 company and high fashion. Purchase access is gated through an on-chain raffle system where buyers need to enter a drawing system to gain presale access. We strived for the shopping experience strives to feel luxurious and high-fashion and still respectful of web3's digital origins.`}
         </ProjectBody>
@@ -176,13 +179,14 @@ export default function Brain() {
         <ProjectMedia pAll src={LoreMain}></ProjectMedia>
         <ProjectMedia pAll src={LoreOrigin}></ProjectMedia>
         <ProjectMedia pAll src={LoreBeanz}></ProjectMedia>
+        <ProjectMedia id="sisters" pAll src={LoreSisters}></ProjectMedia>
         <ProjectMedia pAll src={LoreChapterOne}></ProjectMedia>
         <ProjectMedia pAll src={loreHilumia}></ProjectMedia>
         <Divider />
         <ProjectBody title="Proof of Skate Auction" col={1}>
           Azuki recently made history by setting the record for the most
           expensive skateboards sold in history. I co-designed the experience
-          for a 24 hour auction focused around 9 gold-plated skateboards.{" "}
+          for a 24 hour auction focused around 9 gold-plated skateboards.{' '}
         </ProjectBody>
         <LinkCard
           col={1}

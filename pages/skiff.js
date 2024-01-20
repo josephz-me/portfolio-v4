@@ -1,40 +1,40 @@
-import Head from "next/head";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import TextLink from "../components/TextLink";
-import Link from "next/link";
-import GridContainer from "../components/GridContainer";
-import ProjectHero from "../components/projects/ProjectHero";
-import ProjectBody from "../components/projects/ProjectBody";
-import ProjectTitle from "../components/projects/ProjectTitle";
-import ProjectDetails from "../components/projects/ProjectDetails";
-import ProjectMedia from "../components/projects/ProjectMedia";
-import Spacer from "../components/projects/Spacer";
-import LinkCard from "../components/projects/LinkCard";
+import Head from 'next/head';
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import TextLink from '../components/TextLink';
+import Link from 'next/link';
+import GridContainer from '../components/GridContainer';
+import ProjectHero from '../components/projects/ProjectHero';
+import ProjectBody from '../components/projects/ProjectBody';
+import ProjectTitle from '../components/projects/ProjectTitle';
+import ProjectDetails from '../components/projects/ProjectDetails';
+import ProjectMedia from '../components/projects/ProjectMedia';
+import Spacer from '../components/projects/Spacer';
+import LinkCard from '../components/projects/LinkCard';
 
 // images
-import AppSwitcher from "../public/work/skiff/app-switcher.jpg";
-import LocalSharing from "../public/work/skiff/local-sharing.jpg";
-import CustomDomains from "../public/work/skiff/custom-domains.jpg";
-import Mail from "../public/work/skiff/mail.jpg";
-import IconPicker from "../public/work/skiff/icon-picker.jpg";
-import FormatBar from "../public/work/skiff/format-bar.jpg";
-import Compose from "../public/work/skiff/compose-modal.jpg";
-import Icons from "../public/work/skiff/icons.png";
-import Calendar from "../public/work/skiff/calendar.jpg";
-import MarketingCards from "../public/work/skiff/marketing-cards.png";
-import MarketingCards2 from "../public/work/skiff/marketing-cards-2.jpg";
-import MarketingLanding from "../public/work/skiff/marketing-landing.jpg";
-import AppLogos from "../public/work/skiff/app-logos.jpg";
-import SharingModals from "../public/work/skiff/sharing-modal.png";
-import DragDrop from "../public/work/skiff/drag-drop.jpg";
-import Tables from "../public/work/skiff/tables.jpg";
-import Comments from "../public/work/skiff/comments.jpg";
-import Onboarding from "../public/work/skiff/onboarding.jpg";
-import OnboardingChecklist from "../public/work/skiff/onboarding-checklist.jpg";
-import MobileMail1 from "../public/work/skiff/mobile-mail-1.png";
-import MobileMail2 from "../public/work/skiff/mobile-mail-2.png";
+import AppSwitcher from '../public/work/skiff/app-switcher.jpg';
+import LocalSharing from '../public/work/skiff/local-sharing.jpg';
+import CustomDomains from '../public/work/skiff/custom-domains.jpg';
+import Mail from '../public/work/skiff/mail.jpg';
+import IconPicker from '../public/work/skiff/icon-picker.jpg';
+import FormatBar from '../public/work/skiff/format-bar.jpg';
+import Compose from '../public/work/skiff/compose-modal.jpg';
+import Icons from '../public/work/skiff/icons.png';
+import Calendar from '../public/work/skiff/calendar.jpg';
+import MarketingCards from '../public/work/skiff/marketing-cards.png';
+import MarketingCards2 from '../public/work/skiff/marketing-cards-2.jpg';
+import MarketingLanding from '../public/work/skiff/marketing-landing.jpg';
+import AppLogos from '../public/work/skiff/app-logos.jpg';
+import SharingModals from '../public/work/skiff/sharing-modal.png';
+import DragDrop from '../public/work/skiff/drag-drop.jpg';
+import Tables from '../public/work/skiff/tables.jpg';
+import Comments from '../public/work/skiff/comments.jpg';
+import Onboarding from '../public/work/skiff/onboarding.jpg';
+import OnboardingChecklist from '../public/work/skiff/onboarding-checklist.jpg';
+import MobileMail1 from '../public/work/skiff/mobile-mail-1.png';
+import MobileMail2 from '../public/work/skiff/mobile-mail-2.png';
 
 const item = {
   hidden: { opacity: 0 },
@@ -67,15 +67,15 @@ export default function Skiff() {
           granular level.`}
         </ProjectBody>
         <ProjectDetails
-          role={["Designer"]}
+          role={['Designer']}
           collaborators={[
-            "Jason Ginsberg",
-            "Sunny Li",
-            "Natalie Almosa",
-            "Oscar Dumlao (PAST)",
+            'Jason Ginsberg',
+            'Sunny Li',
+            'Natalie Almosa',
+            'Oscar Dumlao (PAST)',
           ]}
           duration="2022 - PRESENT"
-          tools={["figma", "React Next JS"]}
+          tools={['figma', 'React Next JS']}
         />
         <LinkCard col={1} link="https://skiff.com">
           Skiff.com
@@ -86,10 +86,10 @@ export default function Skiff() {
         <Spacer />
         <ProjectBody title="Visual Language">
           I helped transform Skiff&apos;s visual design language. This involved
-          working with{" "}
+          working with{' '}
           <TextLink link="https://www.pentagram.com/work/skiff">
             Pentagram
-          </TextLink>{" "}
+          </TextLink>{' '}
           on an initial rebrand to evolving it into a usable design system,
           complete iconography set, and visual graphic style.
         </ProjectBody>
@@ -106,7 +106,7 @@ export default function Skiff() {
           individually coded in React
         </ProjectMedia>
 
-        <ProjectMedia src={Icons}>
+        <ProjectMedia id="icons" src={Icons}>
           +200 Hand drawn icons combining angular and soft features
         </ProjectMedia>
         <ProjectMedia pt pl src={AppSwitcher}>
@@ -115,7 +115,7 @@ export default function Skiff() {
         <ProjectMedia pAll src={Onboarding} />
 
         {/* MAIl */}
-        <ProjectBody title="Mail">
+        <ProjectBody id="mail" title="Mail">
           Search, sorting automation, compose editor, web3 wallet email, etc.
         </ProjectBody>
         <ProjectMedia pAll src={Mail} />
@@ -126,7 +126,7 @@ export default function Skiff() {
         <ProjectMedia pb pr src={OnboardingChecklist} />
 
         {/* PAGES */}
-        <ProjectBody title="Pages">
+        <ProjectBody id="editor" title="Pages">
           Text styles, tables, navigation sidebar, format bar, sharing features,
           enterprise controls, public documents, etc.
         </ProjectBody>

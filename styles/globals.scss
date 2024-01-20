@@ -25,20 +25,20 @@
 }
 
 @font-face {
-  font-family: "Replica";
-  src: url("/fonts/Replica Bold.otf") format("truetype");
+  font-family: 'Replica';
+  src: url('/fonts/Replica Bold.otf') format('truetype');
   font-weight: 700;
 }
 
 @font-face {
-  font-family: "Replica";
-  src: url("/fonts/Replica Regular.otf") format("truetype");
+  font-family: 'Replica';
+  src: url('/fonts/Replica Regular.otf') format('truetype');
   font-weight: 400;
 }
 
 @font-face {
-  font-family: "OffBit";
-  src: url("/fonts/OffBitTrial-DotBold.otf") format("truetype");
+  font-family: 'OffBit';
+  src: url('/fonts/OffBitTrial-DotBold.otf') format('truetype');
   font-weight: 400;
 }
 
@@ -117,7 +117,7 @@ img {
 a,
 p,
 input {
-  font-family: "input-mono";
+  font-family: 'input-mono';
   -webkit-font-smoothing: antialiased;
   text-transform: uppercase;
   font-weight: 300;
@@ -206,7 +206,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
