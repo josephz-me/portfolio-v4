@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 function Meta() {
   return (
@@ -46,6 +46,12 @@ function Meta() {
       <link key="favicon" rel="icon" href="/favicon.jpg" importance="low" />
       <link key="apple-touch-icon" rel="apple-touch-icon" href="/favicon.jpg" />
       <link rel="stylesheet" href="https://use.typekit.net/liy8bpw.css"></link>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"
+        rel="stylesheet"
+      />
     </Head>
   );
 }

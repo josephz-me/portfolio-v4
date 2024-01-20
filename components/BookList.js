@@ -1,65 +1,65 @@
-import React, { useState, useEffect } from "react";
-import * as Dialog from "@radix-ui/react-dialog";
-import { useTransition, animated, config } from "@react-spring/web";
-import Image from "next/image";
+import React, { useState, useEffect } from 'react';
+import * as Dialog from '@radix-ui/react-dialog';
+import { useTransition, animated, config } from '@react-spring/web';
+import Image from 'next/image';
 
 const bookEntries = [
   {
-    title: "Tomorrow and Tomorrow and Tomorrow",
-    image: "https://m.media-amazon.com/images/I/91HwoNG6iqL._SL1500_.jpg",
+    title: 'Tomorrow and Tomorrow and Tomorrow',
+    image: 'https://m.media-amazon.com/images/I/91HwoNG6iqL._SL1500_.jpg',
     description:
-      "Sam and Sadie—two college friends, often in love, but never lovers—become creative partners in a dazzling and intricately imagined world of video game design, where success brings them fame, joy, tragedy, duplicity, and, ultimately, a kind of immortality.",
-    url: "https://www.amazon.com/Tomorrow-novel-Gabrielle-Zevin-ebook/dp/B09JBCGQB8/ref=sr_1_1?crid=1RZILIV61XAUB&keywords=tomorrow+and+tomorrow&qid=1702098739&s=digital-text&sprefix=tomorrow+and+tomorro%2Cdigital-text%2C197&sr=1-1",
+      'Sam and Sadie—two college friends, often in love, but never lovers—become creative partners in a dazzling and intricately imagined world of video game design, where success brings them fame, joy, tragedy, duplicity, and, ultimately, a kind of immortality.',
+    url: 'https://www.amazon.com/Tomorrow-novel-Gabrielle-Zevin-ebook/dp/B09JBCGQB8/ref=sr_1_1?crid=1RZILIV61XAUB&keywords=tomorrow+and+tomorrow&qid=1702098739&s=digital-text&sprefix=tomorrow+and+tomorro%2Cdigital-text%2C197&sr=1-1',
   },
   {
-    title: "The Almanack of Naval Ravikant",
-    image: "https://m.media-amazon.com/images/I/61VbL0FspqL._SL1500_.jpg",
+    title: 'The Almanack of Naval Ravikant',
+    image: 'https://m.media-amazon.com/images/I/61VbL0FspqL._SL1500_.jpg',
     description:
-      "A collection of Naval’s wisdom and experience from the last ten years, shared as a curation of his most insightful interviews and poignant reflections.",
-    url: "https://www.amazon.com/Almanack-Naval-Ravikant-Wealth-Happiness-ebook/dp/B08FF8MTM6",
+      'A collection of Naval’s wisdom and experience from the last ten years, shared as a curation of his most insightful interviews and poignant reflections.',
+    url: 'https://www.amazon.com/Almanack-Naval-Ravikant-Wealth-Happiness-ebook/dp/B08FF8MTM6',
   },
   {
-    title: "Notes on the Synthesis of Form",
+    title: 'Notes on the Synthesis of Form',
     image:
-      "https://m.media-amazon.com/images/P/0674627512.01._SCLZZZZZZZ_SX500_.jpg",
+      'https://m.media-amazon.com/images/P/0674627512.01._SCLZZZZZZZ_SX500_.jpg',
     description:
-      "Notes on the process of design: the process of inventing things which display new physical order, organization, form, in response to function.",
-    url: "https://isbndb.com/book/9780674627505",
+      'Notes on the process of design: the process of inventing things which display new physical order, organization, form, in response to function.',
+    url: 'https://isbndb.com/book/9780674627505',
   },
   {
-    title: "The Echo Wife",
-    image: "https://images.isbndb.com/covers/46/66/9781250174666.jpg",
+    title: 'The Echo Wife',
+    image: 'https://images.isbndb.com/covers/46/66/9781250174666.jpg',
     description:
       "A famed geneticist whose husband uses her methods to clone her — and has an affair with the clone. When he's murdered, the two women must figure out to do next.",
-    url: "https://isbndb.com/book/9781250174666",
+    url: 'https://isbndb.com/book/9781250174666',
   },
   {
-    title: "Metaphors We Live By",
-    image: "https://images.isbndb.com/covers/80/13/9780226468013.jpg",
+    title: 'Metaphors We Live By',
+    image: 'https://images.isbndb.com/covers/80/13/9780226468013.jpg',
     description:
-      "Exploring how everyday language and thought are shaped by metaphors, revealing their profound influence on our perception and understanding of the world.",
-    url: "https://isbndb.com/book/9780226468013",
+      'Exploring how everyday language and thought are shaped by metaphors, revealing their profound influence on our perception and understanding of the world.',
+    url: 'https://isbndb.com/book/9780226468013',
   },
   {
-    title: "Ruthless Elimination of Hurry",
-    image: "https://images.isbndb.com/covers/30/97/9780525653097.jpg",
+    title: 'Ruthless Elimination of Hurry',
+    image: 'https://images.isbndb.com/covers/30/97/9780525653097.jpg',
     description:
-      "Discusses the detrimental effects of modern-day busyness on our well-being and provides insights on how to embrace a more intentional and meaningful life.",
-    url: "https://isbndb.com/book/9780525653097",
+      'Discusses the detrimental effects of modern-day busyness on our well-being and provides insights on how to embrace a more intentional and meaningful life.',
+    url: 'https://isbndb.com/book/9780525653097',
   },
   {
-    title: "Sapiens: A Brief History of Humankind",
-    image: "https://images.isbndb.com/covers/85/01/9780771038501.jpg",
+    title: 'Sapiens: A Brief History of Humankind',
+    image: 'https://images.isbndb.com/covers/85/01/9780771038501.jpg',
     description:
-      "Presents a comprehensive overview of the evolution of Homo sapiens, from ancient times to the present, exploring how cultural, social, and technological developments have shaped human history.",
-    url: "https://isbndb.com/book/9780771038501",
+      'Presents a comprehensive overview of the evolution of Homo sapiens, from ancient times to the present, exploring how cultural, social, and technological developments have shaped human history.',
+    url: 'https://isbndb.com/book/9780771038501',
   },
   {
-    title: "Steve Jobs",
-    image: "https://images.isbndb.com/covers/85/46/9781451648546.jpg",
+    title: 'Steve Jobs',
+    image: 'https://images.isbndb.com/covers/85/46/9781451648546.jpg',
     description:
-      "A comprehensive biography of the visionary co-founder of Apple, delving into his life, creativity, and impact on technology and business.",
-    url: "https://isbndb.com/book/9781451648546",
+      'A comprehensive biography of the visionary co-founder of Apple, delving into his life, creativity, and impact on technology and business.',
+    url: 'https://isbndb.com/book/9781451648546',
   },
   // Add more book entries here
 ];
@@ -76,11 +76,11 @@ export const DialogTrigger = Dialog.Trigger;
 
 export function BookList(props) {
   const isMobile =
-    typeof navigator !== "undefined" && /Mobi/i.test(navigator.userAgent);
+    typeof navigator !== 'undefined' && /Mobi/i.test(navigator.userAgent);
 
   let motionDirection = isMobile
-    ? "translate3d(0px,20px,0)"
-    : "translate3d(-30px,0%,0)";
+    ? 'translate3d(0px,20px,0)'
+    : 'translate3d(-30px,0%,0)';
   const transitions = useTransition(props.open, {
     from: { opacity: 0, transform: motionDirection },
     enter: { opacity: 1, transform: `translate3d(0px,0px,0)` },
@@ -168,16 +168,14 @@ export function BookCard(props) {
           width={43}
           height={67}
           layout="fixed"
-          alt={"Book thumbnail"}
+          alt={'Book thumbnail'}
           src={props.image}
           objectFit="cover"
         />
       </div>
       <div className="w-full flex flex-col">
         <h3 className="h3 tracking-[.04rem] uppercase">{props.title}</h3>
-        <p className="text-sm opacity-60 font-sans normal-case tracking-[.04rem] leading-[130%]">
-          {props.description}
-        </p>
+        <p className="body text-sm opacity-60">{props.description}</p>
       </div>
     </a>
   );

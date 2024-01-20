@@ -1,33 +1,33 @@
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import Image from "next/image";
-import { useReward } from "react-rewards";
-import { isMobile } from "react-device-detect";
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useReward } from 'react-rewards';
+import { isMobile } from 'react-device-detect';
 
 const icons = [
-  "profile-zhang.svg",
-  "profile-tanjiro.jpg",
-  "profile-real.jpg",
-  "profile-unemployable.jpg",
-  "profile-bucket.jpg",
-  "profile-dog.jpg",
+  'profile-zhang.svg',
+  'profile-tanjiro.jpg',
+  'profile-real.jpg',
+  'profile-unemployable.jpg',
+  'profile-bucket.jpg',
+  'profile-dog.jpg',
 ];
 
 export default function Navbar(props) {
   //confetti config
   const { reward: celebrationOne, isAnimating: isConfettiAnimating } =
-    useReward("celebration", "confetti", {
+    useReward('celebration', 'confetti', {
       angle: -20,
       zIndex: 200,
-      colors: ["#000000"],
+      colors: ['#000000'],
     });
   const { reward: celebrationTwo, isAnimating: isBallooInsAnimating } =
-    useReward("celebration", "emoji", {
+    useReward('celebration', 'emoji', {
       angle: -20,
       zIndex: 200,
       elementSize: 40,
-      emoji: ["✦", "✷"],
+      emoji: ['✦', '✷'],
     });
 
   const pageName = useRouter().asPath;
@@ -49,9 +49,9 @@ export default function Navbar(props) {
       setScrollY(window.scrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -60,7 +60,7 @@ export default function Navbar(props) {
   return (
     <nav
       className={`${
-        pageName == "/" ? "md:fixed" : "md:sticky w-full"
+        pageName == '/' ? 'md:fixed' : 'md:sticky w-full'
       } z-20 flex h-auto inline-block items-stretch flex-1 justify-between top-[1.99rem] md:mb-0 mb-6`}
     >
       {/* logo */}
@@ -79,8 +79,8 @@ export default function Navbar(props) {
          ease-[cubic-bezier(0.22, 1, 0.36, 1)]
             ${
               scrollY > 40
-                ? "md:opacity-0 pointer-events-none transition duration-[100ms]"
-                : ""
+                ? 'md:opacity-0 pointer-events-none transition duration-[100ms]'
+                : ''
             } 
       `}
       >
@@ -94,15 +94,15 @@ export default function Navbar(props) {
             layout="fill"
             key={icon}
             className={`
-            ${icon == icons[iconCount] ? "" : "opacity-0"}
+            ${icon == icons[iconCount] ? '' : 'opacity-0'}
              bg-neutral-800 absolute top-0 left-0 transition`}
           />
         ))}
       </div>
 
-      <a className={` ml-auto sticky ${pageName == "/" ? "hidden" : ""}`}>
+      <a className={` ml-auto sticky ${pageName == '/' ? 'hidden' : ''}`}>
         <Link passHref href="/">
-          <p className="game-border cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(50,50,50,.5)] hover:bg-neutral-700 rounded-md inline-block fit-content">
+          <p className="caption game-border cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(50,50,50,.5)] hover:bg-neutral-700 rounded-md inline-block fit-content">
             Back home
           </p>
         </Link>
