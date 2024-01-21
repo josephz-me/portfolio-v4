@@ -35,13 +35,15 @@ export default function Home() {
         <p
           className={`body text-white opacity-80 z-1000 md:gap-8 gap-6 mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13`}
         >
-          Joseph designs interfaces. He believes his best work comes from (1)
-          Never settling and (2) relentlessly pursuing what he loves. Currently
-          at{' '}
+          Joseph designs interfaces with intent and expression. He thrives in
+          complex, ambiguous problem spaces that are typically focused on
+          interactive media, productivity tooling, and multimodal interaction.
+          He believes good interface design is a result of creative intuition
+          and precise execution based on business needs. Currently at{' '}
           <TextLink super={1} link="https://chirulabs.com/">
             Chiru Labs
           </TextLink>
-          , he&apos;s worked with teams like{' '}
+          , he worked with teams like{' '}
           <TextLink super={2} link="https://www.apple.com/siri/">
             Apple
           </TextLink>
@@ -56,8 +58,8 @@ export default function Home() {
           , and{' '}
           <TextLink super={5} link="https://cursor.so/">
             Cursor AI
-          </TextLink>
-          . He graduated from Carnegie Mellon University where he studied{' '}
+          </TextLink>{' '}
+          in the past. He studied{' '}
           <TextLink
             super={6}
             link="https://design.cmu.edu/content/bachelor-design"
@@ -67,8 +69,9 @@ export default function Home() {
           and{' '}
           <TextLink super={7} link="https://www.hcii.cmu.edu/">
             Human-Computer Interaction
-          </TextLink>
-          .
+          </TextLink>{' '}
+          at Carnegie Mellon University, an experience he holds fondly and will
+          cherish for the rest of his life.
         </p>
 
         <div className="relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 gap-6 md:gap-8">

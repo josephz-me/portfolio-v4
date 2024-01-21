@@ -12,7 +12,7 @@ export default function Footer() {
   const [open, setOpen] = React.useState(false);
   const pageName = useRouter().asPath;
   const [aboutText, setAboutText] = useState(
-    `▞▚▞▚▞▚▞_Copyright_2023_▞▚▞▚▞▚▞_Next.JS_Vercel_▞▚▞▚▞▚▞_INPUT MONO_▞▚▞▚▞▚▞_OFFBIT TYPE_`
+    `▞▚▞▚▞▚▞_Copyright_2024_▞▚▞▚▞▚▞_Next.JS_Vercel_▞▚▞▚▞▚▞_INPUT MONO_▞▚▞▚▞▚▞_OFFBIT TYPE_`
   );
 
   const [updatedTime, setUpdatedTime] = useState('...');
@@ -47,7 +47,7 @@ export default function Footer() {
         >
           <span className="flex-row flex align-middle space-x-2">
             <p className="self-center w-min px-2 pt-1 pb-[2px] mono lowercase text-yellow-300 border-yellow-300 border border-solid rounded-full">
-              v4.2.2
+              v4.3.0
             </p>
             <p className="self-center px-2 pt-1 pb-[2px] mono uppercase text-zinc-600">
               {`Last updated ${updatedTime.substring(
