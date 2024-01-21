@@ -74,9 +74,9 @@ export default function Brain() {
         </ProjectBody>
         <ProjectDetails
           role={['Product Designer']}
-          collaborators={['Hoshiboy', 'Azuki team']}
+          collaborators={['Hoshi', 'Alice Cai']}
           duration={['2022 - Present']}
-          tools={['figma', 'react next.js']}
+          tools={['Figma', 'React']}
         />
 
         <LinkCard col={1} link="https://azuki.com">

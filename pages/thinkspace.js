@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import {
   motion,
   AnimatePresence,
   SwitchLayoutGroupContext,
-} from "framer-motion";
-import TextLink from "../components/TextLink";
-import GridContainer from "../components/GridContainer";
-import ProjectHero from "../components/projects/ProjectHero";
-import ProjectBody from "../components/projects/ProjectBody";
-import ProjectMedia from "../components/projects/ProjectMedia";
-import ProjectTitle from "../components/projects/ProjectTitle";
-import ExternalVideo from "../components/projects/ExternalVideo";
-import LinkCard from "../components/projects/LinkCard";
-import Link from "next/link";
-import ProjectDetails from "../components/projects/ProjectDetails";
-import Spacer from "../components/projects/Spacer";
+} from 'framer-motion';
+import TextLink from '../components/TextLink';
+import GridContainer from '../components/GridContainer';
+import ProjectHero from '../components/projects/ProjectHero';
+import ProjectBody from '../components/projects/ProjectBody';
+import ProjectMedia from '../components/projects/ProjectMedia';
+import ProjectTitle from '../components/projects/ProjectTitle';
+import ExternalVideo from '../components/projects/ExternalVideo';
+import LinkCard from '../components/projects/LinkCard';
+import Link from 'next/link';
+import ProjectDetails from '../components/projects/ProjectDetails';
+import Spacer from '../components/projects/Spacer';
 
 const item = {
   hidden: { opacity: 0 },
@@ -41,9 +41,9 @@ export default function Home() {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -63,13 +63,16 @@ export default function Home() {
           agents in discussion-based contexts.
         </ProjectBody>
         <ProjectDetails
-          role={["design prototyper"]}
+          role={['Designer']}
           replaceCollab="advisors"
-          collaborators={["jonathan chapman", "Steve Stadelmeier"]}
+          collaborators={['Jonathan Chapman', 'Steve Stadelmeier']}
           duration="7 weeks"
-          tools={["javascript"]}
+          tools={['Javascript']}
         />
-        <LinkCard link="https://josephz.notion.site/Thinkspace-24f3dc1c62904b0da412b0a4230cc92d">
+        <LinkCard
+          col={1}
+          link="https://josephz.notion.site/Thinkspace-24f3dc1c62904b0da412b0a4230cc92d"
+        >
           View complete documentation
         </LinkCard>
         <ExternalVideo url="https://player.vimeo.com/video/704621543?h=5407db28dd&title=0&byline=0&portrait=0"></ExternalVideo>

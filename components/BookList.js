@@ -174,7 +174,7 @@ export function BookCard(props) {
         />
       </div>
       <div className="w-full flex flex-col">
-        <h3 className="h3 tracking-[.04rem] uppercase">{props.title}</h3>
+        <h1 className="h4 tracking-[.04rem] uppercase">{props.title}</h1>
         <p className="body text-sm opacity-60">{props.description}</p>
       </div>
     </a>

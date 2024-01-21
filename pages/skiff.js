@@ -67,15 +67,15 @@ export default function Skiff() {
           granular level.`}
         </ProjectBody>
         <ProjectDetails
-          role={['Designer']}
+          role={['Product & Brand Designer']}
           collaborators={[
             'Jason Ginsberg',
             'Sunny Li',
             'Natalie Almosa',
-            'Oscar Dumlao (PAST)',
+            'Oscar Dumlao',
           ]}
-          duration="2022 - PRESENT"
-          tools={['figma', 'React Next JS']}
+          duration="2022 - 2023"
+          tools={['Figma', 'React']}
         />
         <LinkCard col={1} link="https://skiff.com">
           Skiff.com

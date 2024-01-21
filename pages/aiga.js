@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import TextLink from "../components/TextLink";
-import GridContainer from "../components/GridContainer";
-import ProjectHero from "../components/projects/ProjectHero";
-import ProjectBody from "../components/projects/ProjectBody";
-import ProjectMedia from "../components/projects/ProjectMedia";
-import ProjectTitle from "../components/projects/ProjectTitle";
-import ExternalVideo from "../components/projects/ExternalVideo";
-import Spacer from "../components/projects/Spacer";
-import LinkCard from "../components/projects/LinkCard";
-import Link from "next/link";
-import ProjectDetails from "../components/projects/ProjectDetails";
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import TextLink from '../components/TextLink';
+import GridContainer from '../components/GridContainer';
+import ProjectHero from '../components/projects/ProjectHero';
+import ProjectBody from '../components/projects/ProjectBody';
+import ProjectMedia from '../components/projects/ProjectMedia';
+import ProjectTitle from '../components/projects/ProjectTitle';
+import ExternalVideo from '../components/projects/ExternalVideo';
+import Spacer from '../components/projects/Spacer';
+import LinkCard from '../components/projects/LinkCard';
+import Link from 'next/link';
+import ProjectDetails from '../components/projects/ProjectDetails';
 
 const item = {
   hidden: { opacity: 0 },
@@ -37,9 +37,9 @@ export default function Aiga() {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -62,14 +62,14 @@ export default function Aiga() {
           career options that exist.
         </ProjectBody>
         <ProjectDetails
-          role={["Frontend developer", "Visual designer"]}
+          role={['Frontend Developer', 'Visual Designer']}
           collaborators={[
-            "Kyuha Shim (advisor)",
-            "Langston Wells",
-            "Stefanie Suk",
+            'Kyuha Shim (advisor)',
+            'Langston Wells',
+            'Stefanie Suk',
           ]}
           duration="8 weeks"
-          tools={["html/css/js", "figma", "Cinema4D"]}
+          tools={['HTML/CSS/JS', 'Figma', 'Cinema4D']}
         />
         <LinkCard col={1} link="https://josephz-me.github.io/aiga-hue/">
           View live website

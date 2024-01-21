@@ -1,14 +1,14 @@
-import Head from "next/head";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import TextLink from "../components/TextLink";
-import Link from "next/link";
-import GridContainer from "../components/GridContainer";
-import ProjectHero from "../components/projects/ProjectHero";
-import ProjectBody from "../components/projects/ProjectBody";
-import ProjectTitle from "../components/projects/ProjectTitle";
-import ProjectDetails from "../components/projects/ProjectDetails";
+import Head from 'next/head';
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import TextLink from '../components/TextLink';
+import Link from 'next/link';
+import GridContainer from '../components/GridContainer';
+import ProjectHero from '../components/projects/ProjectHero';
+import ProjectBody from '../components/projects/ProjectBody';
+import ProjectTitle from '../components/projects/ProjectTitle';
+import ProjectDetails from '../components/projects/ProjectDetails';
 
 const item = {
   hidden: { opacity: 0 },
@@ -35,16 +35,16 @@ export default function Apple() {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
     <motion.main className="min-h-[70vh]">
       <GridContainer>
-        <ProjectHero isVideo={false} content="/project-covers/apple-v2.jpg" />
+        <ProjectHero isVideo={true} content="/project-covers/apple.mp4" />
         <ProjectTitle role="multimodal interaction">Apple</ProjectTitle>
         <ProjectBody col={2}>
           During the summers of 2020 and 2021, I interned at Apple as an
@@ -57,9 +57,9 @@ export default function Apple() {
           engineers, and throwing around ideas with senior designers.
         </ProjectBody>
         <ProjectDetails
-          role={["design intern"]}
+          role={['Interaction Design Intern']}
           replaceCollab="managers"
-          collaborators={["Maria Cordell", "Garrett Weinberg"]}
+          collaborators={['Maria Cordell', 'Garrett Weinberg']}
           duration="24 weeks total"
         />
       </GridContainer>

@@ -33,7 +33,7 @@ export default function Home() {
     <main>
       <GridContainer>
         <p
-          className={`body text-white opacity-80 z-1000 md:gap-10 gap-8 pt-2 mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13`}
+          className={`body text-white opacity-80 z-1000 md:gap-10 gap-8 mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13`}
         >
           Joseph designs interfaces. He believes his best work comes from (1)
           Never settling and (2) relentlessly pursuing what he loves. Currently
@@ -104,23 +104,18 @@ export default function Home() {
               content={FormatBar}
             />
             <ProjectCard
-              title="Azuki Elementals"
-              description="Interactive Media"
-              link="/azuki#elementals"
-              content={'/work/azuki/s2-reveal-animation.mp4'}
-            />
-            <ProjectCard
               title="Thinkspace"
               description="Assistive AI Agents"
               link="/thinkspace"
               content={'/project-covers/thinkspace.mp4'}
             ></ProjectCard>
-            {/* <ProjectCard
-              title="TOUCHLESS INTERFACES"
-              description="Physical Computing"
-              link="/experiments"
-              content={"/project-covers/sensor-chess.mp4"}
-            ></ProjectCard> */}
+            <ProjectCard
+              title="Skiff Icons"
+              description="Branding & Systems"
+              link="/skiff/#icons"
+              isImage
+              content={SkiffIcons}
+            />
           </div>
           {/* COLUMN 2 */}
           <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
@@ -160,8 +155,7 @@ export default function Home() {
               title="Apple"
               description="Conversational AI"
               link="/apple"
-              isImage
-              content={Apple}
+              content={'/project-covers/apple.mp4'}
             />
             <ProjectCard
               title="Skiff Mail"
@@ -171,18 +165,17 @@ export default function Home() {
               content={Compose}
             />
             <ProjectCard
+              title="Pixel Push"
+              description="Multiplayer Art"
+              link="/pixelpush"
+              content={'/project-covers/pixel-push.mp4'}
+            ></ProjectCard>
+            <ProjectCard
               title="Brain Technologies"
               description="Conversational AI"
               link="/brain"
               isImage
               content={Brain}
-            />
-            <ProjectCard
-              title="Skiff Icons"
-              description="Branding & Systems"
-              link="/skiff/#icons"
-              isImage
-              content={SkiffIcons}
             />
 
             <ProjectCard
@@ -191,12 +184,6 @@ export default function Home() {
               isImage
               link="/metalink"
               content={Metalink}
-            ></ProjectCard>
-            <ProjectCard
-              title="Pixel Push"
-              description="Multiplayer Art"
-              link="/pixelpush"
-              content={'/project-covers/pixel-push.mp4'}
             ></ProjectCard>
           </div>
         </div>
