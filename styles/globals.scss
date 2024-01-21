@@ -5,7 +5,8 @@
 @layer components {
   .h1,
   .h2,
-  .h3 {
+  .h3,
+  .h4 {
     @apply leading-[100%] tracking-[0.04em];
   }
 
@@ -22,15 +23,15 @@
   }
 
   .h4 {
-    @apply text-base lg:text-base tracking-normal font-display normal-case;
+    @apply text-[14px] lg:text-[16px] font-display normal-case;
   }
 
   .body {
-    @apply text-base lg:text-[16px] tracking-[.02em] leading-[145%] font-sans normal-case;
+    @apply text-[14px] text-[14px] lg:text-[16px] tracking-[.02em] leading-[145%] font-sans normal-case;
   }
 
   .caption {
-    @apply font-mono text-xs tracking-[.08em] leading-[160%] uppercase;
+    @apply font-mono text-[12px] md:text-[14px] tracking-[.08em] leading-[160%] uppercase;
   }
 
   .azuki-red {
@@ -42,7 +43,7 @@
   }
 
   .grid-layout {
-    @apply relative z-10 col-start-1 col-end-13 grid md:grid-cols-12 gap-8 md:gap-10;
+    @apply relative z-10 col-start-1 col-end-13 grid md:grid-cols-12 gap-6 md:gap-8;
   }
 }
 

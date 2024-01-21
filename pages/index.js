@@ -33,7 +33,7 @@ export default function Home() {
     <main>
       <GridContainer>
         <p
-          className={`body text-white opacity-80 z-1000 md:gap-10 gap-8 mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13`}
+          className={`body text-white opacity-80 z-1000 md:gap-8 gap-6 mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13`}
         >
           Joseph designs interfaces. He believes his best work comes from (1)
           Never settling and (2) relentlessly pursuing what he loves. Currently
@@ -71,7 +71,7 @@ export default function Home() {
           .
         </p>
 
-        <div className="relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 gap-10">
+        <div className="relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 gap-6 md:gap-8">
           {/* COLUMN 1 */}
           <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
             <ProjectCard
