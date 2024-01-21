@@ -5,6 +5,7 @@ import GridContainer from '../components/GridContainer';
 import Skiff from '../public/project-covers/skiff.jpg';
 import Compose from '../public/work/skiff/compose-modal.jpg';
 import Apple from '../public/project-covers/apple-v2.jpg';
+import Divider from '../components/projects/Divider';
 import Brain from '../public/project-covers/natural.jpg';
 import Azuki from '../public/project-covers/azuki-2.jpg';
 import CollectorStatus from '../public/project-covers/collector-status.jpg';
@@ -33,7 +34,7 @@ export default function Home() {
     <main>
       <GridContainer>
         <p
-          className={`body text-white opacity-80 z-1000 md:gap-8 gap-6 mb-8 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13`}
+          className={`body text-white opacity-80 z-1000 md:gap-8 gap-6 mb-6 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13`}
         >
           Joseph designs interfaces with intent and expression. He thrives in
           complex, ambiguous problem spaces that are typically focused on
@@ -73,8 +74,7 @@ export default function Home() {
           at Carnegie Mellon University, an experience he holds fondly and will
           cherish for the rest of his life.
         </p>
-
-        <div className="relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className=" relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 gap-6 md:gap-8">
           {/* COLUMN 1 */}
           <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
             <ProjectCard
