@@ -3,16 +3,34 @@
 @tailwind utilities;
 
 @layer components {
+  .h1,
+  .h2,
+  .h3 {
+    @apply leading-[100%] tracking-[0.04em];
+  }
+
   .h1 {
-    @apply text-3xl lg:text-4xl font-sans font-semibold lg:leading-[2.2rem] tracking-wider uppercase;
+    @apply text-[28px] lg:text-[32px] font-display font-semibold uppercase;
   }
 
   .h2 {
-    @apply text-xl lg:text-2xl font-sans font-medium tracking-wider uppercase;
+    @apply text-[20px] lg:text-[24px] font-display font-medium  uppercase;
   }
 
   .h3 {
-    @apply text-base lg:text-base tracking-normal font-sans normal-case;
+    @apply text-[16px] lg:text-[20px] font-display font-medium uppercase;
+  }
+
+  .h4 {
+    @apply text-base lg:text-base tracking-normal font-display normal-case;
+  }
+
+  .body {
+    @apply text-base lg:text-[16px] tracking-[.02em] leading-[145%] font-sans normal-case;
+  }
+
+  .caption {
+    @apply font-mono text-xs tracking-[.08em] leading-[160%] uppercase;
   }
 
   .azuki-red {
@@ -20,25 +38,17 @@
   }
 
   .text-padding {
-    @apply px-4 md:px-6;
+    @apply px-8 md:px-10;
+  }
+
+  .grid-layout {
+    @apply relative z-10 col-start-1 col-end-13 grid md:grid-cols-12 gap-8 md:gap-10;
   }
 }
 
 @font-face {
-  font-family: 'Replica';
-  src: url('/fonts/Replica Bold.otf') format('truetype');
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: 'Replica';
-  src: url('/fonts/Replica Regular.otf') format('truetype');
-  font-weight: 400;
-}
-
-@font-face {
   font-family: 'OffBit';
-  src: url('/fonts/OffBitTrial-DotBold.otf') format('truetype');
+  src: url('/fonts/OffBitTrial-101Bold.otf') format('truetype');
   font-weight: 400;
 }
 
@@ -117,14 +127,14 @@ img {
 a,
 p,
 input {
-  font-family: 'input-mono';
   -webkit-font-smoothing: antialiased;
-  text-transform: uppercase;
-  font-weight: 300;
-  font-style: normal;
-  letter-spacing: 0.08em;
-  line-height: 150%;
-  font-size: 13px;
+  // font-family: 'input-mono';
+  // text-transform: uppercase;
+  // font-weight: 300;
+  // font-style: normal;
+  // letter-spacing: 0.08em;
+  // line-height: 150%;
+  // font-size: 13px;
 }
 
 .thumbnail-radius {
@@ -135,13 +145,6 @@ input {
   letter-spacing: 0;
   word-spacing: 0;
   font-size: 0;
-}
-
-@media only screen and (max-width: 500px) {
-  a,
-  p {
-    font-size: 12px;
-  }
 }
 
 html,
@@ -232,4 +235,136 @@ table {
   background: white;
   padding: 30px;
   border-radius: 4px;
+}
+
+// RESET
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }

@@ -73,10 +73,10 @@ export default function Brain() {
           . As a product designer, I scale core digital product experiences.
         </ProjectBody>
         <ProjectDetails
-          role={['product designer']}
-          collaborators={['Hoshiboy', 'Azuki team']}
-          duration={['2022-PRESENT']}
-          tools={['figma', 'react next.js']}
+          role={['Product Designer']}
+          collaborators={['Hoshi', 'Alice Cai']}
+          duration={['2022 - Present']}
+          tools={['Figma', 'React']}
         />
 
         <LinkCard col={1} link="https://azuki.com">

@@ -1,10 +1,10 @@
 export default function Preloader(props) {
   return (
     <div
-      className={`absolute top-0 w-full h-full overflow-hidden z-10 rounded-md z-10 ${
+      className={`caption absolute top-0 w-full h-full overflow-hidden z-10 rounded-md z-10 ${
         props.isContentLoaded
-          ? "opacity-0 bg-[rgba(255,255,255,0)]"
-          : "opacity-100 animate-pulse bg-[rgba(255,255,255,.03)]"
+          ? 'opacity-0 bg-[rgba(255,255,255,0)]'
+          : 'opacity-100 animate-pulse bg-[rgba(255,255,255,.03)]'
       }`}
     >
       <p

@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import TextLink from "../components/TextLink";
-import GridContainer from "../components/GridContainer";
-import ProjectHero from "../components/projects/ProjectHero";
-import ProjectBody from "../components/projects/ProjectBody";
-import ProjectMedia from "../components/projects/ProjectMedia";
-import ProjectTitle from "../components/projects/ProjectTitle";
-import ProjectDetails from "../components/projects/ProjectDetails";
-import LinkCard from "../components/projects/LinkCard";
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import TextLink from '../components/TextLink';
+import GridContainer from '../components/GridContainer';
+import ProjectHero from '../components/projects/ProjectHero';
+import ProjectBody from '../components/projects/ProjectBody';
+import ProjectMedia from '../components/projects/ProjectMedia';
+import ProjectTitle from '../components/projects/ProjectTitle';
+import ProjectDetails from '../components/projects/ProjectDetails';
+import LinkCard from '../components/projects/LinkCard';
 
 export default function Cursor() {
   return (
@@ -23,10 +23,10 @@ export default function Cursor() {
           If you are interested in learning more, please reach out.`}
         </ProjectBody>
         <ProjectDetails
-          role={["Product designer"]}
-          collaborators={["Michael Truell", "Cursor Team"]}
+          role={['Product designer']}
+          collaborators={['Michael Truell']}
           duration="6 Weeks"
-          tools={["Figma"]}
+          tools={['Figma']}
         />
         <LinkCard col={1} link="https://www.cursor.so/">
           Cursor Website

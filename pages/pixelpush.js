@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import {
   motion,
   AnimatePresence,
   SwitchLayoutGroupContext,
-} from "framer-motion";
-import TextLink from "../components/TextLink";
-import GridContainer from "../components/GridContainer";
-import ProjectHero from "../components/projects/ProjectHero";
-import ProjectBody from "../components/projects/ProjectBody";
-import ProjectMedia from "../components/projects/ProjectMedia";
-import ProjectTitle from "../components/projects/ProjectTitle";
-import ExternalVideo from "../components/projects/ExternalVideo";
-import LinkCard from "../components/projects/LinkCard";
-import ProjectDetails from "../components/projects/ProjectDetails";
-import GalleryArt from "../public/work/pixelpush/gallery-art.jpg";
-import Spacer from "../components/projects/Spacer";
+} from 'framer-motion';
+import TextLink from '../components/TextLink';
+import GridContainer from '../components/GridContainer';
+import ProjectHero from '../components/projects/ProjectHero';
+import ProjectBody from '../components/projects/ProjectBody';
+import ProjectMedia from '../components/projects/ProjectMedia';
+import ProjectTitle from '../components/projects/ProjectTitle';
+import ExternalVideo from '../components/projects/ExternalVideo';
+import LinkCard from '../components/projects/LinkCard';
+import ProjectDetails from '../components/projects/ProjectDetails';
+import GalleryArt from '../public/work/pixelpush/gallery-art.jpg';
+import Spacer from '../components/projects/Spacer';
 
 const item = {
   hidden: { opacity: 0 },
@@ -41,9 +41,9 @@ export default function PixelPush() {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -65,24 +65,27 @@ export default function PixelPush() {
           values, users paint with webcam video and the microphone audio.
         </ProjectBody>
         <ProjectDetails
-          role={["co-developer", "interaction designer"]}
+          role={['Frontend Developer', 'Interaction Designer']}
           replaceCollab="collaborators"
           collaborators={[
-            "Kyuha Shim (advisor)",
-            "Sophia Kim",
-            "Margo Gersing",
-            "Elizabeth Han",
-            "Vicky Zhou",
+            'Kyuha Shim (Advisor)',
+            'Sophia Kim',
+            'Margo Gersing',
+            'Elizabeth Han',
+            'Vicky Zhou',
           ]}
           duration="2.5 weeks"
           tools={[
-            "HTML/CSS/JS",
-            "Socket.io",
-            "Google Teachable Machine",
-            "Figma",
+            'HTML/CSS/JS',
+            'Socket.io',
+            'Google Teachable Machine',
+            'Figma',
           ]}
         />
-        <LinkCard link="https://josephz.notion.site/Pixel-Push-48910c3a971747b0b6fc3f31572b9984">
+        <LinkCard
+          col={1}
+          link="https://josephz.notion.site/Pixel-Push-48910c3a971747b0b6fc3f31572b9984"
+        >
           View complete documentation
         </LinkCard>
         <Spacer></Spacer>

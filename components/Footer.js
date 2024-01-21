@@ -1,12 +1,12 @@
-import GridContainer from "./GridContainer";
-import React, { useState, useEffect } from "react";
-import TextLink from "./TextLink";
-import { useRouter } from "next/router";
-import { BookList, DialogTrigger, DialogRoot } from "./BookList";
-const GLOBAL_SPACING = "text-padding pb-10 pt-6 md:pb-10 md:pt-8";
-const BREAKPOINT = "col-start-1 col-end-13";
-import Image from "next/image";
-import Star from "../public/star.svg";
+import GridContainer from './GridContainer';
+import React, { useState, useEffect } from 'react';
+import TextLink from './TextLink';
+import { useRouter } from 'next/router';
+import { BookList, DialogTrigger, DialogRoot } from './BookList';
+const GLOBAL_SPACING = 'text-padding pb-10 pt-6 md:pb-10 md:pt-8';
+const BREAKPOINT = 'col-start-1 col-end-13';
+import Image from 'next/image';
+import Star from '../public/star.svg';
 
 export default function Footer() {
   const [open, setOpen] = React.useState(false);
@@ -15,11 +15,11 @@ export default function Footer() {
     `▞▚▞▚▞▚▞_Copyright_2023_▞▚▞▚▞▚▞_Next.JS_Vercel_▞▚▞▚▞▚▞_INPUT MONO_▞▚▞▚▞▚▞_OFFBIT TYPE_`
   );
 
-  const [updatedTime, setUpdatedTime] = useState("...");
+  const [updatedTime, setUpdatedTime] = useState('...');
 
   useEffect(() => {
     fetch(
-      "https://api.github.com/repos/josephz-me/portfolio-v4/commits?per_page=1"
+      'https://api.github.com/repos/josephz-me/portfolio-v4/commits?per_page=1'
     )
       .then((res) => res.json())
       .then((res) => {
@@ -37,8 +37,8 @@ export default function Footer() {
 
   return (
     <footer
-      className={`bg-[#1C1C1C] dot-grid z-[1] w-full sticky bottom-0 text-zinc-100 ${
-        pageName == "/" ? "" : ""
+      className={`caption bg-[#1C1C1C] dot-grid z-[1] w-full sticky bottom-0 text-zinc-100 ${
+        pageName == '/' ? '' : ''
       }`}
     >
       <GridContainer footerSpacing={GLOBAL_SPACING}>
@@ -52,8 +52,8 @@ export default function Footer() {
             <p className="self-center px-2 pt-1 pb-[2px] mono uppercase text-zinc-600">
               {`Last updated ${updatedTime.substring(
                 0,
-                updatedTime.indexOf("T")
-              )}`}{" "}
+                updatedTime.indexOf('T')
+              )}`}{' '}
             </p>
           </span>
         </div>

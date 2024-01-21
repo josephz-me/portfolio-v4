@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import TextLink from "../components/TextLink";
-import GridContainer from "../components/GridContainer";
-import ProjectHero from "../components/projects/ProjectHero";
-import ProjectBody from "../components/projects/ProjectBody";
-import ProjectMedia from "../components/projects/ProjectMedia";
-import ProjectTitle from "../components/projects/ProjectTitle";
-import ProjectDetails from "../components/projects/ProjectDetails";
-import MobileMockupVideo from "../components/projects/MobileMockupVideo";
-import LinkCard from "../components/projects/LinkCard";
-import Spacer from "../components/projects/Spacer";
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import TextLink from '../components/TextLink';
+import GridContainer from '../components/GridContainer';
+import ProjectHero from '../components/projects/ProjectHero';
+import ProjectBody from '../components/projects/ProjectBody';
+import ProjectMedia from '../components/projects/ProjectMedia';
+import ProjectTitle from '../components/projects/ProjectTitle';
+import ProjectDetails from '../components/projects/ProjectDetails';
+import MobileMockupVideo from '../components/projects/MobileMockupVideo';
+import LinkCard from '../components/projects/LinkCard';
+import Spacer from '../components/projects/Spacer';
 
-import Notifs from "../public/work/brain/notifications.jpg";
-import FoodCheckout from "../public/work/brain/food-checkout.jpg";
-import Meetup from "../public/work/brain/meetup-1.jpg";
+import Notifs from '../public/work/brain/notifications.jpg';
+import FoodCheckout from '../public/work/brain/food-checkout.jpg';
+import Meetup from '../public/work/brain/meetup-1.jpg';
 
 const item = {
   hidden: { opacity: 0 },
@@ -40,9 +40,9 @@ export default function Brain() {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -59,17 +59,17 @@ export default function Brain() {
           From 2020-2021, I prototyped new ways to engage with computer
           interfaces, mostly working with voice and AI. Unfortunately, most of
           my (exciting) work is under NDA and can only be shared upon request.
-          Some of my work has shipped though and is now in the{" "}
+          Some of my work has shipped though and is now in the{' '}
           <TextLink link="https://apps.apple.com/us/app/id1521375720/?role=f8a07a03-a0a9-4a5e-b59e-b48cb3ab1478">
             app store
-          </TextLink>{" "}
+          </TextLink>{' '}
           — Below are a few examples.
         </ProjectBody>
         <ProjectDetails
-          role={["design intern"]}
-          collaborators={["jerry yue (ceo)", "Gleb Kuznetsov"]}
+          role={['Design Intern']}
+          collaborators={['Jerry Yue (CEO)', 'Gleb Kuznetsov']}
           duration="8 months"
-          tools={["figma", "origami studio"]}
+          tools={['Figma', 'Origami Studio']}
         />
 
         <LinkCard col={1} link="https://natural.ai/#/">

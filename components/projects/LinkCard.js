@@ -1,7 +1,7 @@
-import { motion, AnimatePresence, useForceUpdate } from "framer-motion";
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import { motion, AnimatePresence, useForceUpdate } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function LinkCard(props) {
   return (
@@ -11,9 +11,9 @@ export default function LinkCard(props) {
       rel="noreferrer"
       className={` ${
         props.col == 1
-          ? "md:col-start-5 md:col-end-9"
-          : "md:col-start-9 md:col-end-13"
-      } group text-white/80 bg-white/[.05] col-span-full hover:bg-white/10 hover:text-white flex items-center flex-row p-4 rounded-md game-border`}
+          ? 'md:col-start-5 md:col-end-9'
+          : 'md:col-start-9 md:col-end-13'
+      } caption group text-white/80 bg-white/[.05] col-span-full hover:bg-white/10 hover:text-white flex items-center flex-row p-4 rounded-md game-border`}
     >
       <p>{props.children}</p>
       <svg
