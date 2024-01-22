@@ -39,17 +39,16 @@ export default function Home() {
           className={`body text-white opacity-80 z-1000 grid-gap mb-6 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13`}
         >
           Joseph designs expressive interfaces. He thrives in complex, ambiguous
-          problem spaces focused around interactive media, workflow tooling, and
-          multimodal interaction. He believes good design is a result of refined
-          intuition and precise execution based on business needs. Currently at{' '}
+          problem spaces focused around interactive media, digital tooling, and
+          multimodal interaction. Currently at{' '}
           <TextLink super={1} link="https://chirulabs.com/">
             Chiru Labs
           </TextLink>
-          , he has worked with big teams like{' '}
+          , he&#39;s worked with big teams like{' '}
           <TextLink super={2} link="https://www.apple.com/siri/">
             Apple
           </TextLink>{' '}
-          and small teams like{' '}
+          and small teams such as{' '}
           <TextLink super={3} link="https://natural.ai/#/">
             Brain Technologies
           </TextLink>
@@ -61,7 +60,9 @@ export default function Home() {
           <TextLink super={5} link="https://cursor.so/">
             Cursor AI
           </TextLink>
-          . He studied{' '}
+          . As a creative, he&#39;s deeply passionate about designing with code,
+          working with small highly passionate teams, and most importantly —
+          thrifting lamps (ask him about it). Years ago, he studied{' '}
           <TextLink
             super={6}
             link="https://design.cmu.edu/content/bachelor-design"
