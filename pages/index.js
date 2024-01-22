@@ -36,19 +36,18 @@ export default function Home() {
         <p
           className={`body text-white opacity-80 z-1000 md:gap-8 gap-6 mb-6 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13`}
         >
-          Joseph designs interfaces with intent and expression. He thrives in
-          complex, ambiguous problem spaces that are typically focused on
-          interactive media, productivity tooling, and multimodal interaction.
-          He believes good interface design is a result of creative intuition
-          and precise execution based on business needs. Currently at{' '}
+          Joseph designs expressive interfaces. He thrives in complex, ambiguous
+          problem spaces focused around interactive media, workflow tooling, and
+          multimodal interaction. He believes good design is a result of refined
+          intuition and precise execution based on business needs. Currently at{' '}
           <TextLink super={1} link="https://chirulabs.com/">
             Chiru Labs
           </TextLink>
-          , he worked with teams like{' '}
+          , he has worked with big teams like{' '}
           <TextLink super={2} link="https://www.apple.com/siri/">
             Apple
-          </TextLink>
-          ,{' '}
+          </TextLink>{' '}
+          and small teams like{' '}
           <TextLink super={3} link="https://natural.ai/#/">
             Brain Technologies
           </TextLink>
@@ -60,7 +59,7 @@ export default function Home() {
           <TextLink super={5} link="https://cursor.so/">
             Cursor AI
           </TextLink>{' '}
-          in the past. He studied{' '}
+          . He studied{' '}
           <TextLink
             super={6}
             link="https://design.cmu.edu/content/bachelor-design"
