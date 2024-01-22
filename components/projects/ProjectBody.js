@@ -11,7 +11,7 @@ export default function BodyText(props) {
         props.col == 2
           ? 'md:columns-2 md:col-start-5 md:col-end-13'
           : 'md:col-start-5 md:col-end-13'
-      } gap-6 col-start-1 col-end-13 mb-2 text-white`}
+      } grid-gap col-start-1 col-end-13 mb-2 text-white`}
     >
       {props.title !== undefined && (
         <h2 className="h2 mt-4 mb-2">✶ {props.title}</h2>

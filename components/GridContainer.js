@@ -7,7 +7,7 @@ export default function GridContainer(props) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.1 }}
-      className={`z-10 grid grid-cols-12 gap-x-8 md:gap-x-10 gap-4 relative z-10 ${props.footerSpacing}`}
+      className={`z-10 grid grid-cols-12 grid-gap relative z-10 ${props.footerSpacing}`}
     >
       {props.children}
     </motion.section>

@@ -17,6 +17,8 @@ import SkiffIcons from '../public/project-covers/skiffIcons.jpg';
 import Experiments from '../public/work/experiments/LE-1.jpg';
 import FormatBar from '../public/work/skiff/format-bar.jpg';
 
+const gapValue = 'gap-6';
+
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
 
@@ -34,7 +36,7 @@ export default function Home() {
     <main>
       <GridContainer>
         <p
-          className={`body text-white opacity-80 z-1000 md:gap-8 gap-6 mb-6 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13`}
+          className={`body text-white opacity-80 z-1000 grid-gap mb-6 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13`}
         >
           Joseph designs expressive interfaces. He thrives in complex, ambiguous
           problem spaces focused around interactive media, workflow tooling, and
@@ -58,7 +60,7 @@ export default function Home() {
           , and{' '}
           <TextLink super={5} link="https://cursor.so/">
             Cursor AI
-          </TextLink>{' '}
+          </TextLink>
           . He studied{' '}
           <TextLink
             super={6}
@@ -73,9 +75,9 @@ export default function Home() {
           at Carnegie Mellon University, an experience he holds fondly and will
           cherish for the rest of his life.
         </p>
-        <div className=" relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className=" relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 grid-gap">
           {/* COLUMN 1 */}
-          <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
+          <div className={`flex flex-col ${gapValue}`}>
             <ProjectCard
               title="Azuki"
               description="Experimental Media"
@@ -120,7 +122,7 @@ export default function Home() {
             />
           </div>
           {/* COLUMN 2 */}
-          <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
+          <div className={`flex flex-col ${gapValue}`}>
             <ProjectCard
               title="Azuki Collector Profile"
               description="Product"
@@ -152,7 +154,7 @@ export default function Home() {
           </div>
 
           {/* COLUMN 3 */}
-          <div className="flex gap-4 md:gap-8 md:gap-6 flex-col">
+          <div className={`flex flex-col ${gapValue}`}>
             <ProjectCard
               title="Apple"
               description="Conversational AI"

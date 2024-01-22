@@ -43,7 +43,11 @@
   }
 
   .grid-layout {
-    @apply relative z-10 col-start-1 col-end-13 grid md:grid-cols-12 gap-6 md:gap-8;
+    @apply relative z-10 col-start-1 col-end-13 grid md:grid-cols-12;
+  }
+
+  .grid-gap {
+    @apply gap-x-6 gap-y-3;
   }
 }
 
