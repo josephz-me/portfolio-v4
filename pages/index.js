@@ -38,31 +38,11 @@ export default function Home() {
         <p
           className={`body text-white opacity-80 z-1000 grid-gap mb-6 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13`}
         >
-          Joseph designs expressive interfaces. He thrives in complex, ambiguous
-          problem spaces focused around interactive media, digital tooling, and
-          multimodal interaction. Currently at{' '}
-          <TextLink super={1} link="https://chirulabs.com/">
-            Chiru Labs
-          </TextLink>
-          , he&#39;s worked with big teams like{' '}
-          <TextLink super={2} link="https://www.apple.com/siri/">
-            Apple
-          </TextLink>{' '}
-          and small teams such as{' '}
-          <TextLink super={3} link="https://natural.ai/#/">
-            Brain Technologies
-          </TextLink>
-          ,{' '}
-          <TextLink super={4} link="https://skiff.com/">
-            Skiff
-          </TextLink>
-          , and{' '}
-          <TextLink super={5} link="https://cursor.so/">
-            Cursor AI
-          </TextLink>
-          . As a creative, he&#39;s deeply passionate about designing with code,
-          working with small highly passionate teams, and most importantly —
-          thrifting lamps (ask him about it). Years ago, he studied{' '}
+          Joseph designs interfaces. He thrives in complex, ambiguous problem
+          spaces focused around interactive media, digital tooling, and
+          multimodal interaction. What his traditional Chinese parents thought
+          was just a nice extracurricular, his passion for Design led him to
+          study{' '}
           <TextLink
             super={6}
             link="https://design.cmu.edu/content/bachelor-design"
@@ -74,7 +54,33 @@ export default function Home() {
             Human-Computer Interaction
           </TextLink>{' '}
           at Carnegie Mellon University, an experience he holds fondly and will
-          cherish for the rest of his life.
+          cherish for the rest of his life. He is currently at{' '}
+          <TextLink super={1} link="https://chirulabs.com/">
+            Chiru Labs
+          </TextLink>{' '}
+          building extremely fun & new but hard-to-explain projects for the{' '}
+          <TextLink super={3} link="/azuki">
+            Azuki
+          </TextLink>{' '}
+          brand (go ahead, ask him). In the past, he worked with more
+          traditional teams like{' '}
+          <TextLink super={2} link="https://www.apple.com/siri/">
+            Apple
+          </TextLink>
+          ,{' '}
+          <TextLink super={3} link="https://cursor.so/">
+            Cursor AI
+          </TextLink>
+          ,{' '}
+          <TextLink super={4} link="https://natural.ai/#/">
+            Brain Technologies
+          </TextLink>
+          , and{' '}
+          <TextLink super={5} link="https://skiff.com/">
+            Skiff Privacy
+          </TextLink>
+          . Everyday, he wakes up genuinely excited to build new things. If you
+          have an interesting idea, please get in touch.
         </p>
         <div className=" relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 grid-gap">
           {/* COLUMN 1 */}
