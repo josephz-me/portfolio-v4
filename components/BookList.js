@@ -103,7 +103,7 @@ export function BookList(props) {
             </Dialog.Overlay>
             <Dialog.Content forceMount asChild>
               <animated.div
-                className="flex flex-col overflow-auto bg-neutral-800 fixed m-2 rounded-md border border-solid border-white/10 h-[calc(100vh-16px)] w-[calc(100vw-16px)] max-w-[550px] top-0 left-0 bottom-0 z-10 scrollbar-hide"
+                className="select-none flex flex-col overflow-auto bg-neutral-800 fixed m-2 rounded-md border border-solid border-white/10 h-[calc(100vh-16px)] w-[calc(100vw-16px)] max-w-[550px] top-0 left-0 bottom-0 z-10 scrollbar-hide"
                 style={styles}
               >
                 <div className="p-4 bg-neutral-800 sticky top-0 z-10 border-b border-dotted border-white/10">

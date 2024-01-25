@@ -55,7 +55,7 @@ export default function ProjectMedia(props) {
     <>
       <div
         id={props.id}
-        className={`block grid overflow-hidden col-start-1 col-end-13 transition duration-300
+        className={`select-none block grid overflow-hidden col-start-1 col-end-13 transition duration-300
           ${background}
           ${props.large ? 'md:col-start-1' : 'md:col-start-5'}
           ${

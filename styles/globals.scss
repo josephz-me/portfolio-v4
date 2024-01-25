@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+  *::selection {
+    @apply bg-slate-200 text-black;
+  }
+
   .h1,
   .h2,
   .h3,
@@ -55,12 +59,6 @@
   font-family: 'OffBit';
   src: url('/fonts/OffBitTrial-101Bold.otf') format('truetype');
   font-weight: 400;
-}
-
-* {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
 }
 
 @media (hover: hover) {

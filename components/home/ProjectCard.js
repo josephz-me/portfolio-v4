@@ -26,7 +26,7 @@ export default function ProjectCard(props) {
           //determine if project is linked
           props.link != undefined ? 'cursor-pointer' : 'pointer-events-none'
         }
-      group relative grid w-full opacity-100 inline-block`}
+      group relative grid w-full opacity-100 inline-block select-none`}
       >
         {props.isImage ? (
           <div className="inline-block group-hover:opacity-90 game-border">

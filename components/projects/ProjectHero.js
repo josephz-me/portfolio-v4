@@ -1,13 +1,13 @@
-import GridContainer from "../GridContainer";
-import React, { useState, useEffect } from "react";
-import CardVideo from "../CardVideo";
-import Image from "next/image";
-import * as loadingCopy from "../loadingCopy";
-import Preloader from "../Preloader";
+import GridContainer from '../GridContainer';
+import React, { useState, useEffect } from 'react';
+import CardVideo from '../CardVideo';
+import Image from 'next/image';
+import * as loadingCopy from '../loadingCopy';
+import Preloader from '../Preloader';
 
 export default function ProjectHero(props) {
   const [isContentLoaded, setIsContentLoaded] = useState(false);
-  const [loadingPhrase, setLoadingPhrase] = useState("");
+  const [loadingPhrase, setLoadingPhrase] = useState('');
   const handleImageLoad = (e) => {
     setIsContentLoaded(true);
   };
@@ -17,14 +17,14 @@ export default function ProjectHero(props) {
   }, []);
 
   return (
-    <div className="relative overflow-hidden my-2 md:my-8 h-[60vw] md:h-[49vw] object-cover w-full grid col-span-12 border border test">
+    <div className="select-none relative overflow-hidden my-2 md:my-8 h-[60vw] md:h-[49vw] object-cover w-full grid col-span-12 border border test">
       {props.isVideo ? (
         <CardVideo src={props.content} loadingPhrase={loadingPhrase} />
       ) : (
         <div className="relative h-full">
           <article
             className={`overflow-hidden object-cover w-full h-full transition duration-500 overflow-hidden rounded-md ease-out ${
-              isContentLoaded ? "opacity-1" : "opacity-0"
+              isContentLoaded ? 'opacity-1' : 'opacity-0'
             }`}
           >
             <Image

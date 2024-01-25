@@ -40,9 +40,8 @@ export default function Home() {
         >
           Joseph designs interfaces. He thrives in complex, ambiguous problem
           spaces focused around interactive media, digital tooling, and
-          multimodal interaction. What his traditional Chinese parents thought
-          was just a nice extracurricular, his passion for Design led him to
-          study{' '}
+          multimodal interaction. Chasing what his Chinese parents perceived as
+          a mere hobby, he eventually studied{' '}
           <TextLink
             super={6}
             link="https://design.cmu.edu/content/bachelor-design"
@@ -53,17 +52,12 @@ export default function Home() {
           <TextLink super={7} link="https://www.hcii.cmu.edu/">
             Human-Computer Interaction
           </TextLink>{' '}
-          at Carnegie Mellon University, an experience he holds fondly and will
-          cherish for the rest of his life. He is currently at{' '}
+          at Carnegie Mellon University. He is currently at{' '}
           <TextLink super={1} link="https://chirulabs.com/">
             Chiru Labs
           </TextLink>{' '}
-          building extremely fun & new but hard-to-explain projects for the{' '}
-          <TextLink super={3} link="/azuki">
-            Azuki
-          </TextLink>{' '}
-          brand (go ahead, ask him). In the past, he worked with more
-          traditional teams like{' '}
+          having the absolute time of his life (ask him about it). Previously,
+          he worked with more traditional teams like{' '}
           <TextLink super={2} link="https://www.apple.com/siri/">
             Apple
           </TextLink>

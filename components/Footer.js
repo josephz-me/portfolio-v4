@@ -45,7 +45,7 @@ export default function Footer() {
         <div
           className={`${BREAKPOINT} md:col-start-1 md:col-end-6 flex-col space-y-2`}
         >
-          <span className="flex-row flex align-middle space-x-2">
+          <span className="select-none flex-row flex align-middle space-x-2">
             <p className="self-center w-min px-2 pt-1 pb-[2px] mono lowercase text-yellow-300 border-yellow-300 border border-solid rounded-full">
               v4.3.0
             </p>
@@ -82,7 +82,7 @@ export default function Footer() {
                 <img
                   src={`/star.svg`}
                   alt="book star icon"
-                  className="w-12 h-12 fill-white !absolute bottom-6 justify-items items-center right-6 rounded-full shadow-2xl p-3 hover:bg-zinc-700 hover:scale-[1.05] bg-zinc-800 border border-solid border-white/10 game-border"
+                  className="select-none w-12 h-12 fill-white !absolute bottom-6 justify-items items-center right-6 rounded-full shadow-2xl p-3 hover:bg-zinc-700 hover:scale-[1.05] bg-zinc-800 border border-solid border-white/10 game-border"
                 />
               </DialogTrigger>
               <BookList open={open} />
