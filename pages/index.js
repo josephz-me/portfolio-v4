@@ -40,8 +40,9 @@ export default function Home() {
         >
           Joseph designs interfaces. He thrives in complex, ambiguous problem
           spaces focused around interactive media, digital tooling, and
-          multimodal interaction. Chasing what his Chinese parents perceived as
-          a mere hobby, he eventually studied{' '}
+          multimodal interaction. Growing up, he didn't always know he wanted to
+          pursue Design. However, what started as a mere extracurricular
+          eventually turned into a deep passion that inspired him to study{' '}
           <TextLink
             super={6}
             link="https://design.cmu.edu/content/bachelor-design"
@@ -56,8 +57,8 @@ export default function Home() {
           <TextLink super={1} link="https://chirulabs.com/">
             Chiru Labs
           </TextLink>{' '}
-          having the absolute time of his life (ask him about it). Previously,
-          he worked with more traditional teams like{' '}
+          pioneering new ways to experience media and culture. Previously, he
+          worked with teams like{' '}
           <TextLink super={2} link="https://www.apple.com/siri/">
             Apple
           </TextLink>
