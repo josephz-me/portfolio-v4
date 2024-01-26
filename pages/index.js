@@ -40,24 +40,12 @@ export default function Home() {
         >
           Joseph designs interfaces. He thrives in complex, ambiguous problem
           spaces focused around interactive media, digital tooling, and
-          multimodal interaction. Growing up, he didn't always know he wanted to
-          pursue Design. However, what started as a mere extracurricular
-          eventually turned into a deep passion that inspired him to study{' '}
-          <TextLink
-            super={6}
-            link="https://design.cmu.edu/content/bachelor-design"
-          >
-            Communication Design
-          </TextLink>{' '}
-          and{' '}
-          <TextLink super={7} link="https://www.hcii.cmu.edu/">
-            Human-Computer Interaction
-          </TextLink>{' '}
-          at Carnegie Mellon University. He is currently at{' '}
+          multimodal interaction. He loves working in small passionate teams and
+          is currently at{' '}
           <TextLink super={1} link="https://chirulabs.com/">
             Chiru Labs
           </TextLink>{' '}
-          pioneering new ways to experience media and culture. Previously, he
+          pioneering new ways to engage with media and culture. Previously, he
           worked with teams like{' '}
           <TextLink super={2} link="https://www.apple.com/siri/">
             Apple
@@ -74,8 +62,21 @@ export default function Home() {
           <TextLink super={5} link="https://skiff.com/">
             Skiff Privacy
           </TextLink>
-          . Everyday, he wakes up genuinely excited to build new things. If you
-          have an interesting idea, please get in touch.
+          . He studied{' '}
+          <TextLink
+            super={6}
+            link="https://design.cmu.edu/content/bachelor-design"
+          >
+            Communication Design
+          </TextLink>{' '}
+          and{' '}
+          <TextLink super={7} link="https://www.hcii.cmu.edu/">
+            Human-Computer Interaction
+          </TextLink>{' '}
+          at Carnegie Mellon University, an experience he holds fondly and will
+          cherish for the rest of his life. Everyday, he wakes up genuinely
+          excited to build new things. If you have an interesting idea, please
+          get in touch.
         </p>
         <div className=" relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 grid-gap">
           {/* COLUMN 1 */}
