@@ -1,8 +1,8 @@
 import Footer from './Footer';
 import Meta from './Meta';
-import { Analytics } from '@vercel/analytics/react';
 import Navbar from './Navbar';
 import React, { useEffect, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Page(props) {
   const [bgColor, setBgColor] = useState(false);
