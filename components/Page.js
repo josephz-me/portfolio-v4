@@ -1,5 +1,6 @@
 import Footer from './Footer';
 import Meta from './Meta';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './Navbar';
 import React, { useEffect, useState } from 'react';
 
@@ -23,6 +24,7 @@ export default function Page(props) {
         <Meta />
         <Navbar changeBG={changeBG} />
         {props.children}
+        <Analytics />
       </div>
       <Footer />
     </>
