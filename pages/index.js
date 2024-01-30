@@ -21,16 +21,12 @@ import { Client } from '@notionhq/client';
 const gapValue = 'gap-6';
 
 export async function getStaticProps() {
-  try {
-    const notion = new Client({ auth: process.env.NOTION_API_KEY });
-    const response = await notion.databases.query({
-      database_id: process.env.NOTION_DATABASE_ID,
-    });
+  const notion = new Client({ auth: process.env.NOTION_API_KEY });
+  const response = await notion.databases.query({
+    database_id: process.env.NOTION_DATABASE_ID,
+  });
 
-    return { props: { notionData: response.results } };
-  } catch (error) {
-    // Handle errors as before
-  }
+  return { props: { notionData: response.results } };
 }
 
 export default function Home(props) {
