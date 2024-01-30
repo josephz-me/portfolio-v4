@@ -76,7 +76,7 @@ export default function Footer() {
               Twitter
             </TextLink>
           </p>
-          <p>
+          {/* <p>
             <DialogRoot open={open} setOpen={setOpen}>
               <DialogTrigger>
                 <img
@@ -87,7 +87,7 @@ export default function Footer() {
               </DialogTrigger>
               <BookList open={open} />
             </DialogRoot>
-          </p>
+          </p> */}
         </span>
         <div className={`${BREAKPOINT} md:col-start-9 flex flex-col space-y-1`}>
           <p>{`Let's build something together.`}</p>

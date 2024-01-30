@@ -3,6 +3,7 @@ import Meta from './Meta';
 import Navbar from './Navbar';
 import React, { useEffect, useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import { Client } from '@notionhq/client';
 
 export default function Page(props) {
   const [bgColor, setBgColor] = useState(false);

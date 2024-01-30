@@ -91,17 +91,6 @@ export function BookList(props) {
     },
   });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch('/api/fetchBooks');
-      const data = await res.json();
-      console.log(data[0].properties.url.url);
-      setBooks(data);
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <Dialog.Portal forceMount>
       {transitions((styles, item) =>

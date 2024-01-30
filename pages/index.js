@@ -16,10 +16,25 @@ import Metalink from '../public/project-covers/metalink.jpg';
 import SkiffIcons from '../public/project-covers/skiffIcons.jpg';
 import Experiments from '../public/work/experiments/LE-1.jpg';
 import FormatBar from '../public/work/skiff/format-bar.jpg';
+import { Client } from '@notionhq/client';
 
 const gapValue = 'gap-6';
 
-export default function Home() {
+export async function getStaticProps() {
+  try {
+    const notion = new Client({ auth: process.env.NOTION_API_KEY });
+    const response = await notion.databases.query({
+      database_id: process.env.NOTION_DATABASE_ID,
+    });
+
+    return { props: { notionData: response.results } };
+  } catch (error) {
+    // Handle errors as before
+  }
+}
+
+export default function Home(props) {
+  console.log(props.notionData);
   return (
     <main>
       <GridContainer>
