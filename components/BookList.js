@@ -95,7 +95,6 @@ export function BookList(props) {
     const fetchData = async () => {
       const res = await fetch('/api/fetchBooks');
       const data = await res.json();
-      console.log(data[0].properties.url.url);
       setBooks(data);
     };
 
