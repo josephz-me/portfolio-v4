@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { useTransition, animated, config } from '@react-spring/web';
 import Image from 'next/image';
-import { Client } from '@notionhq/client';
 
 const bookEntries = [
   {
