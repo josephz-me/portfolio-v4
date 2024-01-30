@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.14",
     "@radix-ui/react-dialog": "^1.0.4",
     "@react-spring/web": "^9.7.3",
     "@vercel/analytics": "^1.1.2",
