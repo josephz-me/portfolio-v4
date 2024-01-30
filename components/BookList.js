@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { useTransition, animated, config } from '@react-spring/web';
 import Image from 'next/image';
+import { Client } from '@notionhq/client';
 
 const bookEntries = [
   {
@@ -20,8 +21,7 @@ const bookEntries = [
   },
   {
     title: 'Notes on the Synthesis of Form',
-    image:
-      'https://m.media-amazon.com/images/P/0674627512.01._SCLZZZZZZZ_SX500_.jpg',
+    image: ' ',
     description:
       'Notes on the process of design: the process of inventing things which display new physical order, organization, form, in response to function.',
     url: 'https://isbndb.com/book/9780674627505',
@@ -75,6 +75,7 @@ export function DialogRoot(props) {
 export const DialogTrigger = Dialog.Trigger;
 
 export function BookList(props) {
+  const [books, setBooks] = useState([]);
   const isMobile =
     typeof navigator !== 'undefined' && /Mobi/i.test(navigator.userAgent);
 
@@ -90,6 +91,18 @@ export function BookList(props) {
       tension: 300,
     },
   });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch('/api/fetchBooks');
+      const data = await res.json();
+      console.log(data[0].properties.url.url);
+      setBooks(data);
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <Dialog.Portal forceMount>
       {transitions((styles, item) =>
@@ -136,15 +149,25 @@ export function BookList(props) {
                 </div>
 
                 <div className="flex flex-col gap-3 p-4 z-0">
-                  {bookEntries.map((book, index) => (
-                    <BookCard
-                      key={index}
-                      image={book.image}
-                      title={book.title}
-                      description={book.description}
-                      url={book.url}
-                    />
-                  ))}
+                  {books.map((book, index) => {
+                    //prettier-ignore
+                    const author = book.properties.author.rich_text[0].plain_text;
+                    //prettier-ignore
+                    const description = book.properties.description.rich_text[0].plain_text;
+                    const image = book.properties.image.url;
+                    const url = book.properties.url.url;
+                    const title = book.properties.title.title[0].plain_text;
+                    return (
+                      <BookCard
+                        key={index}
+                        image={image}
+                        author={author}
+                        title={title}
+                        description={description}
+                        url={url}
+                      />
+                    );
+                  })}
                 </div>
               </animated.div>
             </Dialog.Content>

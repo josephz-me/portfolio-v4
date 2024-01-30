@@ -20,18 +20,6 @@ import FormatBar from '../public/work/skiff/format-bar.jpg';
 const gapValue = 'gap-6';
 
 export default function Home() {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
     <main>
       <GridContainer>
