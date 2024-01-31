@@ -7,7 +7,6 @@ import * as loadingCopy from '../components/loadingCopy';
 import { Client } from '@notionhq/client';
 import Preloader from '../components/Preloader';
 import ProjectTitle from '../components/projects/ProjectTitle';
-import ProjectBody from '../components/projects/ProjectBody';
 
 const gapValue = 'gap-6';
 
