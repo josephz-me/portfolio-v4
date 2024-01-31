@@ -20,40 +20,61 @@ export async function getStaticProps() {
   return { props: { notionData: response.results } };
 }
 
-export default function Books(props) {
+export default function ReadingList(props) {
+  const [yearCounter, setYearCounter] = useState({});
   const books = props.notionData;
-  const [isContentLoaded, setIsContentLoaded] = useState(false);
-  const [loadingPhrase, setLoadingPhrase] = useState('');
-
-  // preloader
-  const handleImageLoad = (e) => {
-    setIsContentLoaded(true);
-  };
 
   useEffect(() => {
-    setLoadingPhrase(loadingCopy.combineCopy());
+    console.log(yearCounter);
+  }, [yearCounter]);
+
+  useEffect(() => {
+    // Function to count occurrences of years
+    const countYears = () => {
+      const counts = {};
+      books.forEach((book) => {
+        const year = book.properties.year.select.name;
+        counts[year] = (counts[year] || 0) + 1;
+      });
+      return counts;
+    };
+
+    // Update state with the counts
+    setYearCounter(countYears());
   }, []);
 
   return (
     <main className="pt-8">
       <GridContainer>
         <div className="col-start-1 col-end-13 md:col-end-5">
-          <ProjectTitle role="">Reading</ProjectTitle>
+          <ProjectTitle role="">Reading List</ProjectTitle>
           <p
             className={`body text-white opacity-80 z-1000 grid-gap mb-6 md:mt-0 `}
           >
-            I don't read enough, so I built this reading list as a way to keep
-            me accountable — we'll see if it works. All content is linked to a
-            Notion table which I linked up via their API.
+            One of my biggest goals is to read more. With no one to keep me
+            accountable, I built this list in hopes that you all will. This list
+            is not complete. The content on this page is managed in Notion and
+            fetched via the{' '}
+            <TextLink url="https://developers.notion.com/">Notion API</TextLink>
+            .
           </p>
+
+          {Object.entries(yearCounter).map(([year, count]) => (
+            <div
+              key={year}
+              className="py-2 border-t border-solid flex flex-auto border-white/10 text-white opacity-60 caption gap-4 "
+            >
+              <p>
+                {year} - {count} books{' '}
+              </p>
+            </div>
+          ))}
         </div>
         {/* BOOKS */}
         <div className="col-start-1 md:col-start-5 col-end-13 grid-cols-12 grid grid-gap !gap-y-8">
           {books.map((book, index) => {
-            //prettier-ignore
             const author = book.properties.author.rich_text[0].plain_text;
-            //prettier-ignore
-            const description = book.properties.description.rich_text[0].plain_text;
+            // const description = book.properties.description.rich_text[0].plain_text;
             const image = book.properties.image.url;
             const url = book.properties.url.url;
             const title = book.properties.title.title[0].plain_text;
@@ -63,7 +84,6 @@ export default function Books(props) {
                 image={image}
                 author={author}
                 title={title}
-                description={description}
                 url={url}
               />
             );

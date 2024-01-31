@@ -73,7 +73,7 @@ export default function Footer() {
             </TextLink>
           </p>
           <p>
-            <TextLink super={4} link="/books">
+            <TextLink super={4} link="/reading-list">
               Reading
             </TextLink>
           </p>
