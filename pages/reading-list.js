@@ -14,7 +14,7 @@ const gapValue = 'gap-6';
 export async function getStaticProps() {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
   const response = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID,
+    database_id: `b978658ebc6d47d3a60689e2fcb0485e`,
   });
 
   return { props: { notionData: response.results } };
@@ -23,10 +23,6 @@ export async function getStaticProps() {
 export default function ReadingList(props) {
   const [yearCounter, setYearCounter] = useState({});
   const books = props.notionData;
-
-  useEffect(() => {
-    console.log(yearCounter);
-  }, [yearCounter]);
 
   useEffect(() => {
     // Function to count occurrences of years
@@ -47,7 +43,10 @@ export default function ReadingList(props) {
     <main className="pt-8">
       <GridContainer>
         <div className="col-start-1 col-end-13 md:col-end-5">
-          <ProjectTitle role="">Reading List</ProjectTitle>
+          <ProjectTitle role="">
+            Reading List
+            <span className="ml-2 text-yellow-300">{books.length}</span>
+          </ProjectTitle>
           <p
             className={`body text-white opacity-80 z-1000 grid-gap mb-6 md:mt-0 `}
           >
