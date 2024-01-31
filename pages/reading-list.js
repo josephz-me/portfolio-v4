@@ -50,9 +50,9 @@ export default function ReadingList(props) {
             className={`body text-white opacity-80 z-1000 grid-gap mb-6 md:mt-0 `}
           >
             One of my biggest goals is to read more. With no one to keep me
-            accountable, I built this list in hopes that you all will. This list
-            is not complete. The content on this page is managed in Notion and
-            fetched via the{' '}
+            accountable, I built this list in hopes that you all will. Note:
+            this list is not complete. The content on this page is managed in
+            Notion and fetched via the{' '}
             <TextLink url="https://developers.notion.com/">Notion API</TextLink>
             .
           </p>
