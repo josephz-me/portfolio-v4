@@ -97,7 +97,7 @@ export default function ProjectMedia(props) {
             >
               <Image
                 src={props.src}
-                layout="responsive"
+                layout={props.fill ? 'fill' : 'responsive'}
                 alt="image"
                 onLoadingComplete={() => {
                   handleImageLoad();

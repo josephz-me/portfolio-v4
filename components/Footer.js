@@ -2,14 +2,10 @@ import GridContainer from './GridContainer';
 import React, { useState, useEffect } from 'react';
 import TextLink from './TextLink';
 import { useRouter } from 'next/router';
-import { BookList, DialogTrigger, DialogRoot } from './BookList';
 const GLOBAL_SPACING = 'text-padding pb-10 pt-6 md:pb-10 md:pt-8';
 const BREAKPOINT = 'col-start-1 col-end-13';
-import Image from 'next/image';
-import Star from '../public/star.svg';
 
 export default function Footer() {
-  const [open, setOpen] = React.useState(false);
   const pageName = useRouter().asPath;
   const [aboutText, setAboutText] = useState(
     `▞▚▞▚▞▚▞_Copyright_2024_▞▚▞▚▞▚▞_Next.JS_Vercel_▞▚▞▚▞▚▞_INPUT MONO_▞▚▞▚▞▚▞_OFFBIT TYPE_`
@@ -76,18 +72,11 @@ export default function Footer() {
               Twitter
             </TextLink>
           </p>
-          {/* <p>
-            <DialogRoot open={open} setOpen={setOpen}>
-              <DialogTrigger>
-                <img
-                  src={`/star.svg`}
-                  alt="book star icon"
-                  className="select-none w-12 h-12 fill-white !absolute bottom-6 justify-items items-center right-6 rounded-full shadow-2xl p-3 hover:bg-zinc-700 hover:scale-[1.05] bg-zinc-800 border border-solid border-white/10 game-border"
-                />
-              </DialogTrigger>
-              <BookList open={open} />
-            </DialogRoot>
-          </p> */}
+          <p>
+            <TextLink super={4} link="/books">
+              Reading
+            </TextLink>
+          </p>
         </span>
         <div className={`${BREAKPOINT} md:col-start-9 flex flex-col space-y-1`}>
           <p>{`Let's build something together.`}</p>
