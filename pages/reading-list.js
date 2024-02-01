@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import TextLink from '../components/TextLink';
 import GridContainer from '../components/GridContainer';
 import Image from 'next/image';
+import Media from '../components/Media';
 import ProjectMedia from '../components/projects/ProjectMedia';
 import * as loadingCopy from '../components/loadingCopy';
 import { Client } from '@notionhq/client';
@@ -16,7 +17,7 @@ export async function getStaticProps() {
     database_id: process.env.NOTION_DATABASE_ID,
   });
 
-  return { props: { notionData: response.results } };
+  return { props: { notionData: response.results }, revalidate: 1 };
 }
 
 export default function ReadingList(props) {
@@ -93,17 +94,6 @@ export default function ReadingList(props) {
 }
 
 const BookCard = (props) => {
-  const [isContentLoaded, setIsContentLoaded] = useState(false);
-  const [loadingPhrase, setLoadingPhrase] = useState('');
-
-  // preloader
-  const handleImageLoad = (e) => {
-    setIsContentLoaded(true);
-  };
-
-  useEffect(() => {
-    setLoadingPhrase(loadingCopy.combineCopy());
-  }, []);
   return (
     <a
       href={props.url}
@@ -111,28 +101,12 @@ const BookCard = (props) => {
       target="_blank"
       className="text-white flex flex-col gap-3 col-span-6 md:col-span-4 lg:col-span-3"
     >
-      <div className="game-border relative md:mt-1 w-full h-[68vw] md:h-[28vw] lg:h-[22vw] border border-solid border-white/10 shadow-xl overflow-hidden shadow-xl">
-        <article
-          className={`w-full h-auto transition duration-500 ${
-            isContentLoaded ? 'opacity-1' : 'opacity-0'
-          }`}
-        >
-          <Image
-            alt="project cover"
-            layout="fill"
-            className="object-cover"
-            src={props.image}
-            priority
-            onLoadingComplete={() => {
-              handleImageLoad();
-            }}
-          />
-        </article>
-        <Preloader
-          loadingPhrase={loadingPhrase}
-          isContentLoaded={isContentLoaded}
-        ></Preloader>
-      </div>
+      <Media
+        hidePreloaderText
+        priority
+        className="object-cover h-[68vw] md:h-[28vw] lg:h-[22vw] border border-solid border-white/10 shadow-xl "
+        src={props.image}
+      />
 
       <div className="">
         <h1
