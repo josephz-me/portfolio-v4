@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useReward } from 'react-rewards';
-import { isMobile } from 'react-device-detect';
 
 const icons = [
   'profile-zhang.svg',
@@ -15,20 +13,8 @@ const icons = [
 ];
 
 export default function Navbar(props) {
-  //confetti config
-  const { reward: celebrationOne, isAnimating: isConfettiAnimating } =
-    useReward('celebration', 'confetti', {
-      angle: -20,
-      zIndex: 200,
-      colors: ['#000000'],
-    });
-  const { reward: celebrationTwo, isAnimating: isBallooInsAnimating } =
-    useReward('celebration', 'emoji', {
-      angle: -20,
-      zIndex: 200,
-      elementSize: 40,
-      emoji: ['✦', '✷'],
-    });
+  const router = useRouter();
+  const [activeBack, setActiveBack] = useState(false);
 
   const pageName = useRouter().asPath;
 
@@ -53,9 +39,31 @@ export default function Navbar(props) {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    const handleKeyUp = (event) => {
+      if (event.key === 'Escape') {
+        setActiveBack(false);
+        router.push('/');
+      }
+    };
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setActiveBack(true);
+        event.preventDefault(); // Prevents default browser behavior
+      }
+    };
+
+    window.addEventListener('keyup', handleKeyUp);
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keyup', handleKeyUp);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [router]);
 
   return (
     <nav
@@ -65,15 +73,9 @@ export default function Navbar(props) {
     >
       {/* logo */}
       <div
-        id="celebration"
-        disabled={isConfettiAnimating | celebrationTwo | 0}
         onClick={() => {
           incrementCount();
           props.changeBG();
-          if (!isMobile) {
-            celebrationOne();
-            celebrationTwo();
-          }
         }}
         className={` text-black shadow-sm game-border rounded-md overflow-hidden relative w-[48px]  h-[48px] hover:opacity-[.9] hover:cursor-help
          ease-[cubic-bezier(0.22, 1, 0.36, 1)]
@@ -102,8 +104,12 @@ export default function Navbar(props) {
 
       <a className={` ml-auto sticky ${pageName == '/' ? 'hidden' : ''}`}>
         <Link passHref href="/">
-          <p className="caption game-border cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(50,50,50,.5)] hover:bg-neutral-700 rounded-md inline-block fit-content">
-            Back home
+          <p
+            className={`${
+              activeBack && 'persistent-game-border bg-neutral-700'
+            } caption game-border cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(50,50,50,.5)] hover:bg-neutral-700 rounded-md inline-block fit-content`}
+          >
+            Back Home
           </p>
         </Link>
       </a>
