@@ -58,7 +58,7 @@ export default function ProjectMedia(props) {
         />
       </article>
       <Preloader
-        showText={!props.hidePreloaderText ? true : false}
+        hideText={props.hidePreloaderText ? true : false}
         loadingPhrase={loadingPhrase}
         isContentLoaded={isContentLoaded}
       />

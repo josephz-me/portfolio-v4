@@ -17,7 +17,7 @@ export default function Preloader(props) {
           : 'opacity-100 animate-pulse bg-[rgba(255,255,255,.03)]'
       }`}
     >
-      {props.showText && (
+      {props.hideText ? null : (
         <p
           className={`${
             props.dark ? `text-white` : `text-zinc-500`
