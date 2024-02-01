@@ -1,7 +1,6 @@
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import * as loadingCopy from './loadingCopy';
-import CardVideo from './CardVideo';
 import Preloader from './Preloader';
 
 const bgColors = {
@@ -16,6 +15,7 @@ export default function ProjectMedia(props) {
   const [loadingPhrase, setLoadingPhrase] = useState('');
   const [background, setBackground] = useState();
   const [path, setPath] = useState();
+  const vidRef = useRef(null);
 
   //preloader
   const handleContentLoad = (e) => {
@@ -46,7 +46,16 @@ export default function ProjectMedia(props) {
         }`}
       >
         {props.isVideo ? (
-          <CardVideo src={props.src} loadingPhrase={loadingPhrase} />
+          <video
+            ref={vidRef}
+            className={`object-cover w-full h-full transition duration-1000 overflow-hidden ease-out`}
+            playsInline
+            loop
+            autoPlay
+            muted
+            src={props.src}
+            onCanPlay={handleContentLoad}
+          />
         ) : (
           <Image
             alt="project hero"
