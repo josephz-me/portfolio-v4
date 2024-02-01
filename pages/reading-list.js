@@ -104,7 +104,7 @@ const BookCard = (props) => {
       <Media
         hidePreloaderText
         priority
-        className="object-cover h-[68vw] md:h-[28vw] lg:h-[22vw] border border-solid border-white/10 shadow-xl "
+        className="md:mt-1 game-border object-cover h-[68vw] md:h-[28vw] lg:h-[22vw] border border-solid border-white/10 shadow-xl "
         src={props.image}
       />
 

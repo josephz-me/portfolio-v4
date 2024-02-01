@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import * as loadingCopy from './loadingCopy';
+import CardVideo from './CardVideo';
 import Preloader from './Preloader';
 
 const bgColors = {
@@ -38,27 +39,29 @@ export default function ProjectMedia(props) {
   }, [path]);
 
   return (
-    <div
-      className={`${props.className} game-border relative md:mt-1 w-full overflow-hidden`}
-    >
+    <div className={`${props.className} relative w-full overflow-hidden`}>
       <article
-        className={`w-full h-auto transition duration-500 ${
+        className={`overflow-hidden object-cover w-full h-full transition duration-500 overflow-hidden rounded-md ease-out ${
           isContentLoaded ? 'opacity-1' : 'opacity-0'
         }`}
       >
-        <Image
-          alt="project cover"
-          layout="fill"
-          className="object-cover"
-          src={props.src}
-          priority
-          onLoadingComplete={() => {
-            handleContentLoad();
-          }}
-        />
+        {props.isVideo ? (
+          <CardVideo src={props.src} loadingPhrase={loadingPhrase} />
+        ) : (
+          <Image
+            alt="project hero"
+            className="overflow-hidden"
+            layout="fill"
+            objectFit="cover"
+            src={props.src}
+            priority
+            onLoadingComplete={() => {
+              handleContentLoad();
+            }}
+          />
+        )}
       </article>
       <Preloader
-        hideText={props.hidePreloaderText ? true : false}
         loadingPhrase={loadingPhrase}
         isContentLoaded={isContentLoaded}
       />
