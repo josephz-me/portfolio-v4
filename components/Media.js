@@ -41,7 +41,7 @@ export default function ProjectMedia(props) {
   return (
     <div className={`${props.className} relative w-full overflow-hidden`}>
       <article
-        className={`overflow-hidden object-cover w-full h-full transition duration-500 overflow-hidden rounded-md ease-out ${
+        className={`overflow-hidden object-cover w-full h-full transition duration-500 overflow-hidden ease-out ${
           isContentLoaded ? 'opacity-1' : 'opacity-0'
         }`}
       >
@@ -64,9 +64,7 @@ export default function ProjectMedia(props) {
             objectFit="cover"
             src={props.src}
             priority
-            onLoadingComplete={() => {
-              handleContentLoad();
-            }}
+            onLoadingComplete={handleContentLoad}
           />
         )}
       </article>
