@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Media from '../Media';
+import { motion } from 'framer-motion';
 
 export default function ProjectCard({ isVideo = false, ...props }) {
   return (
@@ -21,7 +22,10 @@ export default function ProjectCard({ isVideo = false, ...props }) {
           />
 
           {props.notionLabel && (
-            <div
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 0.1 }}
               rel="noreferrer"
               href="https://www.notion.so/blog/meet-skiff-the-newest-member-of-the-notion-family"
               target="_blank"
@@ -36,7 +40,7 @@ export default function ProjectCard({ isVideo = false, ...props }) {
                 alt="Notion Logo"
                 className="w-[14px] h-[14px]"
               />
-            </div>
+            </motion.div>
           )}
         </div>
 

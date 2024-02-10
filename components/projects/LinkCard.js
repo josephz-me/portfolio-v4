@@ -1,8 +1,3 @@
-import { motion, AnimatePresence, useForceUpdate } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-
 export default function LinkCard(props) {
   return (
     <a
