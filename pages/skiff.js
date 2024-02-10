@@ -61,10 +61,16 @@ export default function Skiff() {
         <ProjectHero isVideo={false} content="/project-covers/skiff.jpg" />
         <ProjectTitle role="Collaboration tools">Skiff</ProjectTitle>
         <ProjectBody col={2}>
-          {`I lead design at Skiff, a privacy company building encrypted productivity tools. As the first full-time design hire, I helped scale Skiff from a beta product to over +600,000 users. During my time with the team, I focused mostly on Skiff Pages, Drive, and Mail. A blessing in disguise,
-          managing such a large scope has helped me develop a holistic
-          understanding of the product ecosystem, all while still being able to contribute at the most
-          granular level.`}
+          I led design at Skiff, a productivity company building E2EE
+          collaboration tools. As the first full-time design hire, I helped
+          scale Skiff from a beta product to over +1,000,000 users. During my
+          time with the team, I focused mostly on Skiff Pages, Drive, and Mail.
+          A blessing in disguise, managing such a large scope has helped me
+          develop a holistic understanding of the product ecosystem, all while
+          still being able to contribute at the most granular level.{' '}
+          <TextLink link="https://www.notion.so/blog/meet-skiff-the-newest-member-of-the-notion-family">
+            As of February 2024, Skiff has been acquired by Notion.
+          </TextLink>
         </ProjectBody>
         <ProjectDetails
           role={['Product & Brand Designer']}
@@ -77,8 +83,11 @@ export default function Skiff() {
           duration="2022 - 2023"
           tools={['Figma', 'React']}
         />
-        <LinkCard col={1} link="https://skiff.com">
-          Skiff.com
+        <LinkCard
+          col={1}
+          link="https://www.notion.so/blog/meet-skiff-the-newest-member-of-the-notion-family"
+        >
+          Notion acquires Skiff
         </LinkCard>
         <LinkCard col={2} link="https://twitter.com/skiffprivacy">
           {`Twitter`}

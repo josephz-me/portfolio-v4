@@ -16,18 +16,8 @@ import Metalink from '../public/project-covers/metalink.jpg';
 import SkiffIcons from '../public/project-covers/skiffIcons.jpg';
 import Experiments from '../public/work/experiments/LE-1.jpg';
 import FormatBar from '../public/work/skiff/format-bar.jpg';
-import { Client } from '@notionhq/client';
 
 const gapValue = 'gap-6';
-
-// export async function getStaticProps() {
-//   const notion = new Client({ auth: process.env.NOTION_API_KEY });
-//   const response = await notion.databases.query({
-//     database_id: process.env.NOTION_DATABASE_ID,
-//   });
-
-//   return { props: { notionData: response.results } };
-// }
 
 export default function Home() {
   return (
@@ -44,31 +34,38 @@ export default function Home() {
             Chiru Labs
           </TextLink>{' '}
           pioneering new ways to engage with media and culture. Previously, he
-          worked with teams like{' '}
-          <TextLink super={2} link="https://www.apple.com/siri/">
+          led design at{' '}
+          <TextLink sameTab super={2} link="/skiff">
+            Skiff
+          </TextLink>
+          , a productivity company recently{' '}
+          <TextLink
+            super={3}
+            link="https://www.notion.so/blog/meet-skiff-the-newest-member-of-the-notion-family"
+          >
+            acquired by Notion
+          </TextLink>
+          . He has also worked with teams like{' '}
+          <TextLink super={4} link="https://www.apple.com/siri/">
             Apple
           </TextLink>
           ,{' '}
-          <TextLink super={3} link="https://cursor.so/">
+          <TextLink super={5} link="https://cursor.so/">
             Cursor AI
           </TextLink>
-          ,{' '}
-          <TextLink super={4} link="https://natural.ai/#/">
-            Brain Technologies
-          </TextLink>
           , and{' '}
-          <TextLink super={5} link="https://skiff.com/">
-            Skiff Privacy
+          <TextLink super={6} link="https://natural.ai/#/">
+            Brain Technologies
           </TextLink>
           . He studied{' '}
           <TextLink
-            super={6}
+            super={7}
             link="https://design.cmu.edu/content/bachelor-design"
           >
             Communication Design
           </TextLink>{' '}
           and{' '}
-          <TextLink super={7} link="https://www.hcii.cmu.edu/">
+          <TextLink super={8} link="https://www.hcii.cmu.edu/">
             Human-Computer Interaction
           </TextLink>{' '}
           at Carnegie Mellon University, an experience he holds fondly and will
@@ -90,6 +87,7 @@ export default function Home() {
               description="productivity"
               link="/skiff"
               content={Skiff}
+              notionLabel
             />
             <ProjectCard
               title="Cursor AI"

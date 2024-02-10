@@ -75,7 +75,6 @@ export default function Navbar(props) {
       <div
         onClick={() => {
           incrementCount();
-          props.changeBG();
         }}
         className={` text-black shadow-sm game-border rounded-md overflow-hidden relative w-[48px]  h-[48px] hover:opacity-[.9] hover:cursor-help
          ease-[cubic-bezier(0.22, 1, 0.36, 1)]
@@ -106,7 +105,7 @@ export default function Navbar(props) {
         <Link passHref href="/">
           <p
             className={`${
-              activeBack && 'persistent-game-border bg-neutral-700'
+              activeBack && 'persistent-game-border !bg-neutral-700'
             } caption game-border cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(50,50,50,.5)] hover:bg-neutral-700 rounded-md inline-block fit-content`}
           >
             Back Home
