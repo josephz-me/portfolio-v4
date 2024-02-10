@@ -60,7 +60,7 @@ export default function ProjectMedia(props) {
           <Image
             alt="project hero"
             className="overflow-hidden"
-            layout="fill"
+            layout={props.responsive ? 'responsive' : 'fill'}
             objectFit="cover"
             src={props.src}
             priority

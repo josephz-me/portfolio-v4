@@ -83,20 +83,17 @@ export default function Home() {
               title="Azuki"
               description="Experimental Media"
               link="/azuki"
-              isImage
               content={Azuki}
             />
             <ProjectCard
               title="Skiff"
               description="productivity"
-              isImage
               link="/skiff"
               content={Skiff}
             />
             <ProjectCard
               title="Cursor AI"
               description="AI Tooling"
-              isImage
               link="/cursor"
               content={Cursor}
             />
@@ -105,20 +102,19 @@ export default function Home() {
               title="Skiff Pages"
               description="Editor Tool"
               link="/skiff/#editor"
-              isImage
               content={FormatBar}
             />
             <ProjectCard
               title="Thinkspace"
               description="Assistive AI Agents"
               link="/thinkspace"
+              isVideo
               content={'/project-covers/thinkspace.mp4'}
-            ></ProjectCard>
+            />
             <ProjectCard
               title="Skiff Icons"
               description="Branding & Systems"
               link="/skiff/#icons"
-              isImage
               content={SkiffIcons}
             />
           </div>
@@ -127,28 +123,24 @@ export default function Home() {
             <ProjectCard
               title="Azuki Collector Profile"
               description="Product"
-              isImage
               link="/azuki/#collector"
               content={CollectorStatus}
             ></ProjectCard>
             <ProjectCard
               title="AIGA Hue"
               description="Data Visualization"
-              isImage
               link="/aiga"
               content={AIGA}
             />
             <ProjectCard
               title="LIGHT ENGINE"
               description="Industrial Design"
-              isImage
               link="/lightengines"
               content={Experiments}
             ></ProjectCard>
             <ProjectCard
               title="Azuki Sisters"
               description="Product"
-              isImage
               link="/azuki/#sisters"
               content={Sisters}
             />
@@ -160,12 +152,12 @@ export default function Home() {
               title="Apple"
               description="Conversational AI"
               link="/apple"
+              isVideo
               content={'/project-covers/apple.mp4'}
             />
             <ProjectCard
               title="Skiff Mail"
               description="Productivity Tooling"
-              isImage
               link="/skiff/#mail"
               content={Compose}
             />
@@ -173,20 +165,19 @@ export default function Home() {
               title="Pixel Push"
               description="Multiplayer Art"
               link="/pixelpush"
+              isVideo
               content={'/project-covers/pixel-push.mp4'}
-            ></ProjectCard>
+            />
             <ProjectCard
               title="Brain Technologies"
               description="Conversational AI"
               link="/brain"
-              isImage
               content={Brain}
             />
 
             <ProjectCard
               title="Metalink Labs"
               description="Design systems"
-              isImage
               link="/metalink"
               content={Metalink}
             ></ProjectCard>

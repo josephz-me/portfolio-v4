@@ -1,23 +1,7 @@
-import CardVideo from '../CardVideo';
-import Image from 'next/image';
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import * as loadingCopy from '../loadingCopy';
-import Preloader from '../Preloader';
+import Media from '../Media';
 
-export default function ProjectCard(props) {
-  const [isContentLoaded, setIsContentLoaded] = useState(false);
-  const [loadingPhrase, setLoadingPhrase] = useState('');
-
-  // preloader
-  const handleImageLoad = (e) => {
-    setIsContentLoaded(true);
-  };
-
-  useEffect(() => {
-    setLoadingPhrase(loadingCopy.combineCopy());
-  }, []);
-
+export default function ProjectCard({ isVideo = false, ...props }) {
   return (
     <Link passHref variants={props.animation} href={`${props.link}`}>
       <a
@@ -28,36 +12,12 @@ export default function ProjectCard(props) {
         }
       group relative grid w-full opacity-100 inline-block select-none`}
       >
-        {props.isImage ? (
-          <div className="inline-block group-hover:opacity-90 game-border">
-            <article
-              className={`w-full h-auto transition duration-500 ${
-                isContentLoaded ? 'opacity-1' : 'opacity-0'
-              }`}
-            >
-              <Image
-                alt="project cover"
-                layout="responsive"
-                src={props.content}
-                priority
-                onLoadingComplete={() => {
-                  handleImageLoad();
-                }}
-              />
-            </article>
-            <Preloader
-              loadingPhrase={loadingPhrase}
-              isContentLoaded={isContentLoaded}
-            ></Preloader>
-          </div>
-        ) : (
-          <CardVideo
-            className="game-border"
-            homePage
-            src={props.content}
-            loadingPhrase={loadingPhrase}
-          />
-        )}
+        <Media
+          className="game-border"
+          isVideo={isVideo}
+          src={props.content}
+          responsive
+        />
 
         <div className="mt-3">
           <h1 className={`caption text-zinc-50`}>{props.title}</h1>
