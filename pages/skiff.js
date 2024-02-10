@@ -67,10 +67,12 @@ export default function Skiff() {
           time with the team, I focused mostly on Skiff Pages, Drive, and Mail.
           A blessing in disguise, managing such a large scope has helped me
           develop a holistic understanding of the product ecosystem, all while
-          still being able to contribute at the most granular level.{' '}
+          still being able to contribute at the most granular level. As of
+          February 2024,{' '}
           <TextLink link="https://www.notion.so/blog/meet-skiff-the-newest-member-of-the-notion-family">
-            As of February 2024, Skiff has been acquired by Notion.
+            Skiff has been acquired by Notion
           </TextLink>
+          .
         </ProjectBody>
         <ProjectDetails
           role={['Product & Brand Designer']}
