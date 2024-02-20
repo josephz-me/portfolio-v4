@@ -5,10 +5,11 @@ function Meta() {
   return (
     <>
       <Script
+        id="ga"
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      ></Script>
-      <Script>
+      />
+      <Script id="ga-script">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
