@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script';
 
 function Meta() {
   return (
@@ -50,6 +51,23 @@ function Meta() {
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap"
         rel="stylesheet"
       ></link>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-7T632FJ4W4"
+      ></script>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-E7NY2W59JZ"
+      />
+
+      <Script id="google-analytics">
+        {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', ${'${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}'});
+          `}
+      </Script>
     </Head>
   );
 }
