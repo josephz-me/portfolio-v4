@@ -6,6 +6,18 @@ function Meta() {
     <>
       <Script
         async
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      ></Script>
+      <Script>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
+        `}
+      </Script>
+      {/* <Script
+        async
         src="https://www.googletagmanager.com/gtag/js?id=G-E7NY2W59JZ"
       />
 
@@ -16,7 +28,7 @@ function Meta() {
               gtag('js', new Date());
               gtag('config', ${'${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}'});
           `}
-      </Script>
+      </Script> */}
       <Head>
         <meta key="charset" charSet="utf-8" />
         <meta
