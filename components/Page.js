@@ -1,7 +1,6 @@
 import Footer from './Footer';
 import Meta from './Meta';
 import Navbar from './Navbar';
-import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 export default function Page(props) {
@@ -13,7 +12,7 @@ export default function Page(props) {
         <Meta />
         <Navbar />
         {props.children}
-        <Analytics />
+
         <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS} />
       </div>
       <Footer />

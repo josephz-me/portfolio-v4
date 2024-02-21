@@ -1,9 +1,6 @@
-import Head from 'next/head';
-import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import TextLink from '../components/TextLink';
-import Link from 'next/link';
 import GridContainer from '../components/GridContainer';
 import ProjectHero from '../components/projects/ProjectHero';
 import ProjectBody from '../components/projects/ProjectBody';
@@ -22,7 +19,6 @@ import IconPicker from '../public/work/skiff/icon-picker.jpg';
 import FormatBar from '../public/work/skiff/format-bar.jpg';
 import Compose from '../public/work/skiff/compose-modal.jpg';
 import Icons from '../public/work/skiff/icons.png';
-import Calendar from '../public/work/skiff/calendar.jpg';
 import MarketingCards from '../public/work/skiff/marketing-cards.png';
 import MarketingCards2 from '../public/work/skiff/marketing-cards-2.jpg';
 import MarketingLanding from '../public/work/skiff/marketing-landing.jpg';
@@ -36,25 +32,7 @@ import OnboardingChecklist from '../public/work/skiff/onboarding-checklist.jpg';
 import MobileMail1 from '../public/work/skiff/mobile-mail-1.png';
 import MobileMail2 from '../public/work/skiff/mobile-mail-2.png';
 
-const item = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 },
-};
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-  },
-};
-
 export default function Skiff() {
-  Number.prototype.map = function (in_min, in_max, out_min, out_max) {
-    return (
-      ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
-    );
-  };
-
   return (
     <motion.main className="min-h-[70vh]">
       <GridContainer>
