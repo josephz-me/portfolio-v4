@@ -77,7 +77,7 @@ export default function Home() {
               </TextLink>
               , and Metalink.
             </WorkExperience>
-            <WorkExperience title="Skiff Privacy" date="10.2022 - 06.2023">
+            <WorkExperience title="Skiff Privacy" date="08.2022 - 06.2023">
               First full-time design hire. 0→1 design for Email, Editor, Drive,
               Calendar. Scaled Skiff Mail to 1M+ users. Recently{' '}
               <TextLink link="https://www.notion.so/blog/meet-skiff-the-newest-member-of-the-notion-family">
