@@ -47,11 +47,15 @@
   }
 
   .grid-layout {
-    @apply relative z-10 col-start-1 col-end-13 grid md:grid-cols-12;
+    @apply relative z-10 col-start-1 col-end-13 grid md:grid-cols-12 grid-gap;
   }
 
   .grid-gap {
     @apply gap-x-6 gap-y-3;
+  }
+
+  .main-bg {
+    @apply bg-[#111111];
   }
 }
 
@@ -132,9 +136,7 @@ img {
   vertical-align: bottom;
 }
 
-a,
-p,
-input {
+* {
   -webkit-font-smoothing: antialiased;
   // font-family: 'input-mono';
   // text-transform: uppercase;

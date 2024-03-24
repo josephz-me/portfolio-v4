@@ -66,54 +66,14 @@ export default function Navbar(props) {
   }, [router]);
 
   return (
-    <nav
-      className={`${
-        pageName == '/' ? 'md:fixed' : 'md:sticky w-full'
-      } select-none z-20 flex h-auto inline-block items-stretch flex-1 justify-between top-[1.99rem] md:mb-0 mb-6`}
-    >
+    <nav className="text-white body grid-layout sticky top-0 z-[100] main-bg py-4 border-solid border-b border-white/10">
       {/* logo */}
-      <div
-        onClick={() => {
-          incrementCount();
-        }}
-        className={` text-black shadow-sm game-border rounded-md overflow-hidden relative w-[48px]  h-[48px] hover:opacity-[.9] hover:cursor-help
-         ease-[cubic-bezier(0.22, 1, 0.36, 1)]
-            ${
-              scrollY > 40
-                ? 'md:opacity-0 pointer-events-none transition duration-[100ms]'
-                : ''
-            } 
-      `}
-      >
-        {icons.map((icon) => (
-          <Image
-            priority
-            count={iconCount}
-            src={`/navbar-icons/${icon}`}
-            alt="navbar-icon"
-            objectFit="cover"
-            layout="fill"
-            key={icon}
-            className={`
-            ${icon == icons[iconCount] ? '' : 'opacity-0'}
-             bg-neutral-800 absolute top-0 left-0 transition`}
-          />
-        ))}
-      </div>
-
-      <Link
-        passHref
-        href="/"
-        className={` ml-auto sticky ${pageName == '/' ? 'hidden' : ''}`}
-      >
-        <p
-          className={`${
-            activeBack && 'persistent-game-border !bg-neutral-700'
-          } caption game-border cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(50,50,50,.5)] hover:bg-neutral-700 rounded-md inline-block fit-content`}
-        >
-          Back Home
-        </p>
+      <Link className="col-span-2" passHref href="/">
+        <h1 className="">Joseph Zhang</h1>
       </Link>
+
+      <p className="col-start-7 col-span-2">Software Designer</p>
+      <p className="col-start-9 col-span-2">Los Angeles, California</p>
     </nav>
   );
 }
