@@ -18,17 +18,6 @@ export default function Navbar(props) {
 
   const pageName = useRouter().asPath;
 
-  //rotate images
-  const [iconCount, setIconCount] = useState(0);
-
-  useEffect(() => {}, [iconCount]);
-  const incrementCount = () => {
-    // Update state with incremented value
-    iconCount == icons.length - 1
-      ? setIconCount(0)
-      : setIconCount(iconCount + 1);
-  };
-
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
     const handleScroll = () => {
@@ -66,54 +55,42 @@ export default function Navbar(props) {
   }, [router]);
 
   return (
-    <nav
-      className={`${
-        pageName == '/' ? 'md:fixed' : 'md:sticky w-full'
-      } select-none z-20 flex h-auto inline-block items-stretch flex-1 justify-between top-[1.99rem] md:mb-0 mb-6`}
-    >
+    <nav className="text-white body grid-layout sticky top-0 z-[100] main-bg py-4 border-solid border-b border-white/10">
       {/* logo */}
-      <div
-        onClick={() => {
-          incrementCount();
-        }}
-        className={` text-black shadow-sm game-border rounded-md overflow-hidden relative w-[48px]  h-[48px] hover:opacity-[.9] hover:cursor-help
-         ease-[cubic-bezier(0.22, 1, 0.36, 1)]
-            ${
-              scrollY > 40
-                ? 'md:opacity-0 pointer-events-none transition duration-[100ms]'
-                : ''
-            } 
-      `}
-      >
-        {icons.map((icon) => (
-          <Image
-            priority
-            count={iconCount}
-            src={`/navbar-icons/${icon}`}
-            alt="navbar-icon"
-            objectFit="cover"
-            layout="fill"
-            key={icon}
-            className={`
-            ${icon == icons[iconCount] ? '' : 'opacity-0'}
-             bg-neutral-800 absolute top-0 left-0 transition`}
-          />
-        ))}
-      </div>
-
       <Link
+        className="col-start-1 col-span-4 hover:text-yellow-300"
         passHref
         href="/"
-        className={` ml-auto sticky ${pageName == '/' ? 'hidden' : ''}`}
       >
-        <p
-          className={`${
-            activeBack && 'persistent-game-border !bg-neutral-700'
-          } caption game-border cursor-pointer justify-self-end px-2 py-1 text-zinc-100 bg-[rgba(50,50,50,.5)] hover:bg-neutral-700 rounded-md inline-block fit-content`}
-        >
-          Back Home
-        </p>
+        <h1 className="">Joseph Zhang</h1>
       </Link>
+
+      <p className="md:col-start-7 lg:col-start-7 col-span-6 md:col-span-3 lg:col-span-2">
+        Software Designer
+      </p>
+      <p className="hidden lg:inline md:col-start-9 col-span-3">
+        Los Angeles, California
+      </p>
+      {pageName !== '/' && (
+        <div className="col-start-12 flex justify-end ">
+          <Link className="" passHref href="/">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className={`w-6 h-6 hover:text-yellow-300 ${
+                activeBack && 'text-yellow-300'
+              }`}
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }

@@ -23,56 +23,75 @@ export default function Home() {
   return (
     <main>
       <GridContainer>
-        <p
-          className={`body text-white opacity-80 z-1000 grid-gap mb-6 md:mt-0 md:columns-2 col-start-1 col-end-13 md:col-start-5 md:col-end-13 lg:col-start-5 lg:col-end-13`}
-        >
-          Joseph designs interfaces. He thrives in complex, ambiguous problem
-          spaces focused around interactive media, digital tooling, and
-          multimodal interaction. He loves working in small passionate teams and
-          is currently at{' '}
-          <TextLink super={1} link="https://chirulabs.com/">
-            Chiru Labs
-          </TextLink>{' '}
-          pioneering new ways to engage with media and culture. Previously, he
-          led design at{' '}
-          <TextLink sameTab super={2} link="/skiff">
-            Skiff
-          </TextLink>
-          , a productivity company recently{' '}
-          <TextLink
-            super={3}
-            link="https://www.notion.so/blog/meet-skiff-the-newest-member-of-the-notion-family"
+        {/* ABOUT SECTION */}
+        <section className="grid-layout my-6">
+          <p
+            className={`body text-white z-1000 col-start-1 col-end-13 md:col-start-1 md:col-span-5 md:mt-8 mb-4 md:mb-0 opacity-80`}
           >
-            acquired by Notion
-          </TextLink>
-          . He has also worked with teams like{' '}
-          <TextLink super={4} link="https://www.apple.com/siri/">
-            Apple
-          </TextLink>
-          ,{' '}
-          <TextLink super={5} link="https://cursor.so/">
-            Cursor AI
-          </TextLink>
-          , and{' '}
-          <TextLink super={6} link="https://natural.ai/#/">
-            Brain Technologies
-          </TextLink>
-          . He studied{' '}
-          <TextLink
-            super={7}
-            link="https://design.cmu.edu/content/bachelor-design"
-          >
-            Communication Design
-          </TextLink>{' '}
-          and{' '}
-          <TextLink super={8} link="https://www.hcii.cmu.edu/">
-            Human-Computer Interaction
-          </TextLink>{' '}
-          at Carnegie Mellon University, an experience he holds fondly and will
-          cherish for the rest of his life. Everyday, he wakes up genuinely
-          excited to build new things. If you have an interesting idea, please
-          get in touch.
-        </p>
+            Jo (He/Him) designs interfaces. He thrives in complex, ambiguous
+            problem spaces focused around interactive media, digital tooling,
+            and multimodal interaction. He studied{' '}
+            <TextLink link="https://design.cmu.edu/content/bachelor-design">
+              Communication Design
+            </TextLink>{' '}
+            and{' '}
+            <TextLink link="https://www.hcii.cmu.edu/">
+              Human-Computer Interaction
+            </TextLink>{' '}
+            at Carnegie Mellon University, an experience he holds fondly and
+            will cherish for the rest of his life. Everyday, he wakes up
+            genuinely excited to build new things. If you have an interesting
+            idea, please{' '}
+            <TextLink link="mailto:jxsephz@gmail.com">get in touch</TextLink>.
+          </p>
+
+          <div className="grid grid-gap grid-cols-6 col-start-1 md:col-start-7 lg:col-start-7 col-end-13">
+            <p className="caption col-start-1 opacity-40 text-white">Team</p>
+            <p className="caption col-start-3 opacity-40 text-white">
+              Description
+            </p>
+            <WorkExperience
+              title="Chiru Labs"
+              date="03.2022 - Present"
+              description=""
+            >
+              Interactive media, storytelling, and gamified experiences. Working
+              with a team of engineers, artists, and creatives.
+            </WorkExperience>
+            <WorkExperience title="Independent Practice">
+              Design consulting for early stage statups. Clients include{' '}
+              <TextLink super={1} link="https://cursor.sh/">
+                Anysphere (Cursor AI)
+              </TextLink>
+              ,{' '}
+              <TextLink super={2} link="https://natural.ai/#/">
+                Brain Technologies
+              </TextLink>
+              ,{' '}
+              <TextLink super={3} link="https://code4rena.com/">
+                Code4rena
+              </TextLink>
+              ,{' '}
+              <TextLink super={4} link="https://plane.so/">
+                Plane
+              </TextLink>
+              , and Metalink.
+            </WorkExperience>
+            <WorkExperience title="Skiff Privacy" date="10.2022 - 06.2023">
+              First full-time design hire. 0→1 design for Email, Editor, Drive,
+              Calendar. Scaled Skiff Mail to 1M+ users. Recently{' '}
+              <TextLink link="https://www.notion.so/blog/meet-skiff-the-newest-member-of-the-notion-family">
+                acquired by Notion HQ
+              </TextLink>
+              .
+            </WorkExperience>
+            <WorkExperience title="Apple" date="2022 & 2023">
+              Two summers at Apple working on conversational AI interfaces for
+              Siri in the AI/ML Organization. Explored multimodal patterns and
+              new behaviors empowered by natural language input.
+            </WorkExperience>
+          </div>
+        </section>
         <div className=" relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 grid-gap">
           {/* COLUMN 1 */}
           <div className={`flex flex-col ${gapValue}`}>
@@ -183,5 +202,20 @@ export default function Home() {
         </div>
       </GridContainer>
     </main>
+  );
+}
+
+function WorkExperience(props) {
+  return (
+    <>
+      <h1 className="opacity-80 col-start-1 col-span-2 text-white body">
+        {props.title}
+        <br />
+        {props.date}
+      </h1>
+      <p className="opacity-80 text-white body col-start-3 col-span-4">
+        {props.children}
+      </p>
+    </>
   );
 }
