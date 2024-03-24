@@ -47,7 +47,7 @@
   }
 
   .grid-layout {
-    @apply relative z-10 col-start-1 col-end-13 grid md:grid-cols-12 grid-gap;
+    @apply relative z-10 col-start-1 col-end-13 grid grid-cols-12 grid-gap;
   }
 
   .grid-gap {
@@ -75,13 +75,13 @@
   .game-border {
     position: relative;
     z-index: 1;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0), 0 0 0 6px rgb(0, 179, 255, 0);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0), 0 0 0 5px rgb(0, 179, 255, 0);
   }
 
   .game-border:hover {
     z-index: 20 !important;
     animation: color-change 2s ease-in-out infinite;
-    box-shadow: 0 0 0 2px black, 0 0 0 6px blue;
+    box-shadow: 0 0 0 2px black, 0 0 0 5px blue;
   }
 
   .game-border:active {
@@ -92,18 +92,18 @@
 
 @keyframes color-change {
   0% {
-    box-shadow: 0 0 0 2px black, 0 0 0 6px rgb(0, 179, 255, 0.8);
+    box-shadow: 0 0 0 2px black, 0 0 0 5px rgb(0, 179, 255, 0.8);
   }
   33% {
-    box-shadow: 0 0 0 2px black, 0 0 0 6px rgb(255, 225, 0, 0.8);
+    box-shadow: 0 0 0 2px black, 0 0 0 5px rgb(255, 225, 0, 0.8);
   }
 
   66% {
-    box-shadow: 0 0 0 2px black, 0 0 0 6px rgb(250, 43, 43, 0.8);
+    box-shadow: 0 0 0 2px black, 0 0 0 5px rgb(250, 43, 43, 0.8);
   }
 
   100% {
-    box-shadow: 0 0 0 2px black, 0 0 0 6px rgb(0, 179, 255, 0.8);
+    box-shadow: 0 0 0 2px black, 0 0 0 5px rgb(0, 179, 255, 0.8);
   }
 }
 
