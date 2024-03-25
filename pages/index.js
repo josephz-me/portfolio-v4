@@ -59,7 +59,8 @@ export default function Home() {
               with a team of engineers, artists, and creatives.
             </WorkExperience>
             <WorkExperience title="Independent Practice">
-              Design consulting for early stage statups. Clients include{' '}
+              Design consulting for emerging technology companies. Clients
+              include{' '}
               <TextLink super={1} link="https://cursor.sh/">
                 Anysphere (Cursor AI)
               </TextLink>
