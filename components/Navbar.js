@@ -66,7 +66,7 @@ export default function Navbar(props) {
       </Link>
 
       <p className="md:col-start-7 lg:col-start-7 col-span-6 md:col-span-3 lg:col-span-2">
-        Software Designer
+        Interaction Designer
       </p>
       <p className="hidden lg:inline md:col-start-9 col-span-3">
         Los Angeles, California
