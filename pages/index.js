@@ -31,7 +31,7 @@ export default function Home() {
             Jo (He/Him) designs interfaces. He thrives in complex, ambiguous
             problem spaces focused around interactive media, digital tooling,
             and multimodal interaction. He studied{' '}
-            <TextLink link="https://design.cmu.edu/content/bachelor-design">
+            <TextLink link="https://design.cmu.edu/">
               Communication Design
             </TextLink>{' '}
             and{' '}
