@@ -31,7 +31,7 @@
   }
 
   .body {
-    @apply text-[14px] text-[14px] lg:text-[16px] tracking-[.02em] leading-[145%] font-sans normal-case;
+    @apply text-[14px] text-[14px] lg:text-[15px] leading-[126%] font-medium font-sans normal-case;
   }
 
   .caption {
@@ -51,7 +51,7 @@
   }
 
   .grid-gap {
-    @apply gap-x-6 gap-y-3;
+    @apply gap-x-3 gap-y-3;
   }
 
   .main-bg {
@@ -138,13 +138,6 @@ img {
 
 * {
   -webkit-font-smoothing: antialiased;
-  // font-family: 'input-mono';
-  // text-transform: uppercase;
-  // font-weight: 300;
-  // font-style: normal;
-  // letter-spacing: 0.08em;
-  // line-height: 150%;
-  // font-size: 13px;
 }
 
 .thumbnail-radius {

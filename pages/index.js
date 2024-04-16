@@ -25,27 +25,30 @@ export default function Home() {
       <GridContainer>
         {/* ABOUT SECTION */}
         <section className="grid-layout my-6">
-          <p
-            className={`body text-white z-1000 col-start-1 col-end-13 md:col-start-1 md:col-span-5 md:mt-8 mb-4 md:mb-0 opacity-80`}
-          >
-            Jo (He/Him) designs interfaces. He thrives in complex, ambiguous
-            problem spaces focused around interactive media, digital tooling,
-            and multimodal interaction. He studied{' '}
-            <TextLink link="https://design.cmu.edu/">
-              Communication Design
-            </TextLink>{' '}
-            and{' '}
-            <TextLink link="https://www.hcii.cmu.edu/">
-              Human-Computer Interaction
-            </TextLink>{' '}
-            at Carnegie Mellon University, an experience he holds fondly and
-            will cherish for the rest of his life. Everyday, he wakes up
-            genuinely excited to build new things. If you have an interesting
-            idea, please{' '}
-            <TextLink link="mailto:jxsephz@gmail.com">get in touch</TextLink>.
-          </p>
-
-          <div className="grid grid-gap grid-cols-6 col-start-1 md:col-start-7 lg:col-start-7 col-end-13">
+          <div className="col-start-1 col-end-13 md:col-end-5 gap-3 flex flex-col">
+            <p className="caption opacity-40 text-white">ABOUT</p>
+            <p
+              className={`body text-white z-1000 col-start-1 col-end-13 md:col-start-1 md:col-span-5 mb-4 md:mb-0 opacity-80`}
+            >
+              Jo (He/Him) designs interfaces. He thrives in complex, ambiguous
+              problem spaces focused around interactive media, digital tooling,
+              and multimodal interaction. He studied{' '}
+              <TextLink link="https://design.cmu.edu/">
+                Communication Design
+              </TextLink>{' '}
+              and{' '}
+              <TextLink link="https://www.hcii.cmu.edu/">
+                Human-Computer Interaction
+              </TextLink>{' '}
+              at Carnegie Mellon University, an experience he holds fondly and
+              will cherish for the rest of his life. Everyday, he wakes up
+              genuinely excited to build new things. If you have an interesting
+              idea, please{' '}
+              <TextLink link="mailto:jxsephz@gmail.com">get in touch</TextLink>.
+            </p>
+          </div>
+          {/* WORK EXPERIENCE */}
+          <div className="col-start-1 md:col-start-7 col-end-13 grid grid-cols-6 gap-3">
             <p className="caption col-start-1 opacity-40 text-white">Team</p>
             <p className="caption col-start-3 opacity-40 text-white">
               Description
@@ -209,7 +212,7 @@ export default function Home() {
 function WorkExperience(props) {
   return (
     <>
-      <h1 className="opacity-80 col-start-1 col-span-2 text-white body">
+      <h1 className="opacity-80 col-start-1 col-end-3 col-span-2 text-white body">
         {props.title}
         <br />
         {props.date}

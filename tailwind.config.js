@@ -7,6 +7,7 @@ module.exports = {
     fontFamily: {
       display: ['offbit', 'ui-sans-serif'],
       sans: [
+        'neue-haas-unica',
         'IBM Plex Sans',
         'ui-sans-serif',
         'system-ui',
@@ -17,7 +18,6 @@ module.exports = {
         'Helvetica Neue',
         'Arial',
         'Noto Sans',
-        // sans - serif,
         'Apple Color Emoji',
         'Segoe UI Emoji',
         'Segoe UI Symbol',
