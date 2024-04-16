@@ -1,16 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Image from 'next/image';
-
-const icons = [
-  'profile-zhang.svg',
-  'profile-tanjiro.jpg',
-  'profile-real.jpg',
-  'profile-unemployable.jpg',
-  'profile-bucket.jpg',
-  'profile-dog.jpg',
-];
 
 export default function Navbar(props) {
   const router = useRouter();

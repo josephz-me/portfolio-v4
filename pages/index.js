@@ -7,7 +7,7 @@ import Compose from '../public/work/skiff/compose-modal.jpg';
 import Apple from '../public/project-covers/apple-v2.jpg';
 import Divider from '../components/projects/Divider';
 import Brain from '../public/project-covers/natural.jpg';
-import Azuki from '../public/project-covers/azuki-2.jpg';
+import Azuki from '../public/project-covers/azuki.jpg';
 import CollectorStatus from '../public/project-covers/collector-status.jpg';
 import Cursor from '../public/project-covers/cursor.jpg';
 import AIGA from '../public/project-covers/aiga-square.jpg';
@@ -16,6 +16,7 @@ import Metalink from '../public/project-covers/metalink.jpg';
 import SkiffIcons from '../public/project-covers/skiffIcons.jpg';
 import Experiments from '../public/work/experiments/LE-1.jpg';
 import FormatBar from '../public/work/skiff/format-bar.jpg';
+import Plane from '../public/project-covers/plane.jpg';
 
 const gapValue = 'gap-6';
 
@@ -25,27 +26,30 @@ export default function Home() {
       <GridContainer>
         {/* ABOUT SECTION */}
         <section className="grid-layout my-6">
-          <p
-            className={`body text-white z-1000 col-start-1 col-end-13 md:col-start-1 md:col-span-5 md:mt-8 mb-4 md:mb-0 opacity-80`}
-          >
-            Jo (He/Him) designs interfaces. He thrives in complex, ambiguous
-            problem spaces focused around interactive media, digital tooling,
-            and multimodal interaction. He studied{' '}
-            <TextLink link="https://design.cmu.edu/">
-              Communication Design
-            </TextLink>{' '}
-            and{' '}
-            <TextLink link="https://www.hcii.cmu.edu/">
-              Human-Computer Interaction
-            </TextLink>{' '}
-            at Carnegie Mellon University, an experience he holds fondly and
-            will cherish for the rest of his life. Everyday, he wakes up
-            genuinely excited to build new things. If you have an interesting
-            idea, please{' '}
-            <TextLink link="mailto:jxsephz@gmail.com">get in touch</TextLink>.
-          </p>
-
-          <div className="grid grid-gap grid-cols-6 col-start-1 md:col-start-7 lg:col-start-7 col-end-13">
+          <div className="col-start-1  col-end-13 md:col-end-5 gap-3 flex flex-col">
+            <p className="caption opacity-40 text-white">ABOUT</p>
+            <p
+              className={`body text-white z-1000 col-start-1 col-end-13 md:col-start-1 md:col-span-5 mb-4 md:mb-0`}
+            >
+              Jo (He/Him) designs interfaces. He thrives in complex, ambiguous
+              problem spaces focused around interactive media, digital tooling,
+              and multimodal interaction. He studied{' '}
+              <TextLink link="https://design.cmu.edu/">
+                Communication Design
+              </TextLink>{' '}
+              and{' '}
+              <TextLink link="https://www.hcii.cmu.edu/">
+                Human-Computer Interaction
+              </TextLink>{' '}
+              at Carnegie Mellon University, an experience he holds fondly and
+              will cherish for the rest of his life. Everyday, he wakes up
+              genuinely excited to build new things. If you have an interesting
+              idea, please{' '}
+              <TextLink link="mailto:jxsephz@gmail.com">get in touch</TextLink>.
+            </p>
+          </div>
+          {/* WORK EXPERIENCE */}
+          <div className="col-start-1 md:col-start-7 col-end-13 grid grid-cols-6 gap-3">
             <p className="caption col-start-1 opacity-40 text-white">Team</p>
             <p className="caption col-start-3 opacity-40 text-white">
               Description
@@ -117,12 +121,6 @@ export default function Home() {
             />
 
             <ProjectCard
-              title="Skiff Pages"
-              description="Editor Tool"
-              link="/skiff/#editor"
-              content={FormatBar}
-            />
-            <ProjectCard
               title="Thinkspace"
               description="Assistive AI Agents"
               link="/thinkspace"
@@ -135,6 +133,12 @@ export default function Home() {
               link="/skiff/#icons"
               content={SkiffIcons}
             />
+            <ProjectCard
+              title="LIGHT ENGINE"
+              description="Industrial Design"
+              link="/lightengines"
+              content={Experiments}
+            />
           </div>
           {/* COLUMN 2 */}
           <div className={`flex flex-col ${gapValue}`}>
@@ -145,22 +149,22 @@ export default function Home() {
               content={CollectorStatus}
             ></ProjectCard>
             <ProjectCard
+              title="Plane"
+              description="Productivity"
+              locked
+              content={Plane}
+            />
+            <ProjectCard
+              title="Skiff Pages"
+              description="Editor Tool"
+              link="/skiff/#editor"
+              content={FormatBar}
+            />
+            <ProjectCard
               title="AIGA Hue"
               description="Data Visualization"
               link="/aiga"
               content={AIGA}
-            />
-            <ProjectCard
-              title="LIGHT ENGINE"
-              description="Industrial Design"
-              link="/lightengines"
-              content={Experiments}
-            ></ProjectCard>
-            <ProjectCard
-              title="Azuki Sisters"
-              description="Product"
-              link="/azuki/#sisters"
-              content={Sisters}
             />
           </div>
 
@@ -174,6 +178,13 @@ export default function Home() {
               content={'/project-covers/apple.mp4'}
             />
             <ProjectCard
+              title="Brain Technologies"
+              description="Conversational AI"
+              link="/brain"
+              content={Brain}
+            />
+
+            <ProjectCard
               title="Skiff Mail"
               description="Productivity Tooling"
               link="/skiff/#mail"
@@ -185,12 +196,6 @@ export default function Home() {
               link="/pixelpush"
               isVideo
               content={'/project-covers/pixel-push.mp4'}
-            />
-            <ProjectCard
-              title="Brain Technologies"
-              description="Conversational AI"
-              link="/brain"
-              content={Brain}
             />
 
             <ProjectCard
@@ -209,12 +214,12 @@ export default function Home() {
 function WorkExperience(props) {
   return (
     <>
-      <h1 className="opacity-80 col-start-1 col-span-2 text-white body">
+      <h1 className=" col-start-1 col-end-3 col-span-2 text-white body">
         {props.title}
         <br />
         {props.date}
       </h1>
-      <p className="opacity-80 text-white body col-start-3 col-span-4">
+      <p className=" text-white body col-start-3 col-span-4">
         {props.children}
       </p>
     </>
