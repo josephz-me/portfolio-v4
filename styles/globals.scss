@@ -31,7 +31,7 @@
   }
 
   .body {
-    @apply text-[14px] text-[14px] lg:text-[15px] leading-[126%] font-medium font-sans normal-case;
+    @apply text-[14px] lg:text-[15px] leading-[126%] font-medium font-sans normal-case;
   }
 
   .caption {
@@ -65,47 +65,47 @@
   font-weight: 400;
 }
 
-@media (hover: hover) {
-  .persistent-game-border {
-    z-index: 20 !important;
-    animation: color-change 2s ease-in-out infinite;
-    box-shadow: 0 0 0 2px black, 0 0 0 6px blue;
-  }
+// @media (hover: hover) {
+//   .persistent-game-border {
+//     z-index: 20 !important;
+//     animation: color-change 2s ease-in-out infinite;
+//     box-shadow: 0 0 0 2px black, 0 0 0 6px blue;
+//   }
 
-  .game-border {
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0), 0 0 0 5px rgb(0, 179, 255, 0);
-  }
+//   .game-border {
+//     position: relative;
+//     z-index: 1;
+//     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0), 0 0 0 5px rgb(0, 179, 255, 0);
+//   }
 
-  .game-border:hover {
-    z-index: 20 !important;
-    animation: color-change 2s ease-in-out infinite;
-    box-shadow: 0 0 0 2px black, 0 0 0 5px blue;
-  }
+//   .game-border:hover {
+//     z-index: 20 !important;
+//     animation: color-change 2s ease-in-out infinite;
+//     box-shadow: 0 0 0 2px black, 0 0 0 5px blue;
+//   }
 
-  .game-border:active {
-    box-shadow: 0 0 0 2px black, 0 0 0 4px rgb(76, 197, 76) !important;
-    animation: none;
-  }
-}
+//   .game-border:active {
+//     box-shadow: 0 0 0 2px black, 0 0 0 4px rgb(76, 197, 76) !important;
+//     animation: none;
+//   }
+// }
 
-@keyframes color-change {
-  0% {
-    box-shadow: 0 0 0 2px black, 0 0 0 5px rgb(0, 179, 255, 0.8);
-  }
-  33% {
-    box-shadow: 0 0 0 2px black, 0 0 0 5px rgb(255, 225, 0, 0.8);
-  }
+// @keyframes color-change {
+//   0% {
+//     box-shadow: 0 0 0 2px black, 0 0 0 5px rgb(0, 179, 255, 0.8);
+//   }
+//   33% {
+//     box-shadow: 0 0 0 2px black, 0 0 0 5px rgb(255, 225, 0, 0.8);
+//   }
 
-  66% {
-    box-shadow: 0 0 0 2px black, 0 0 0 5px rgb(250, 43, 43, 0.8);
-  }
+//   66% {
+//     box-shadow: 0 0 0 2px black, 0 0 0 5px rgb(250, 43, 43, 0.8);
+//   }
 
-  100% {
-    box-shadow: 0 0 0 2px black, 0 0 0 5px rgb(0, 179, 255, 0.8);
-  }
-}
+//   100% {
+//     box-shadow: 0 0 0 2px black, 0 0 0 5px rgb(0, 179, 255, 0.8);
+//   }
+// }
 
 .dot-grid {
   background-image: radial-gradient(

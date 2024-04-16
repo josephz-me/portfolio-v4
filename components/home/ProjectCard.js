@@ -15,7 +15,7 @@ export default function ProjectCard({ isVideo = false, ...props }) {
       variants={props.animation}
       href={`${props.link}`}
     >
-      <div className="relative game-border">
+      <div className="relative game-border group-hover:opacity-80">
         <Media isVideo={isVideo} src={props.content} responsive />
 
         {props.notionLabel && (
@@ -28,7 +28,7 @@ export default function ProjectCard({ isVideo = false, ...props }) {
             target="_blank"
             className=" transition duration-200 border border-black/20 border-solid w-fit flex items-center gap-2 absolute bottom-4 z-20 right-[-50%] left-[50%] translate-x-[-50%] px-3 py-1 bg-white text-black rounded-full"
           >
-            <p className="body tracking-normal text-xs uppercase font-bold">
+            <p className="body uppercase tracking-normal text-xs">
               Acquired by Notion
             </p>
 
@@ -45,7 +45,7 @@ export default function ProjectCard({ isVideo = false, ...props }) {
         <h1 className={`caption text-zinc-50`}>{props.title}</h1>
         <p className="caption text-zinc-500">{props.description}</p>
         {props.locked && (
-          <p className="absolute text-neutral-100 rounded-md right-4 top-4 px-2 z-10 py-1 bg-gray-800 shadow-xl">
+          <p className="caption absolute text-neutral-100 rounded-md right-4 top-4 px-2 z-10 py-1 bg-gray-800 shadow-xl">
             LOCKED
           </p>
         )}
