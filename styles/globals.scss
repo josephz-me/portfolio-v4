@@ -35,7 +35,7 @@
   }
 
   .caption {
-    @apply font-mono text-[12px] tracking-[.08em] leading-[160%] uppercase;
+    @apply font-mono text-[11.5px] tracking-[.08em] leading-[160%] uppercase;
   }
 
   .azuki-red {
@@ -106,6 +106,21 @@
 //     box-shadow: 0 0 0 2px black, 0 0 0 5px rgb(0, 179, 255, 0.8);
 //   }
 // }
+
+.dotted-underline {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 50%
+  );
+  background-position: 0 1.44em;
+  background-repeat: repeat-x;
+  background-size: 2px 1px;
+}
+
+.dotted-underline:hover {
+  background-image: linear-gradient(to right, #e9dd34 50%, transparent 50%);
+}
 
 .dot-grid {
   background-image: radial-gradient(
