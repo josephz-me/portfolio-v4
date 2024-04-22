@@ -42,9 +42,9 @@ export default function Home() {
                 Human-Computer Interaction
               </TextLink>{' '}
               at Carnegie Mellon University, an experience he holds fondly and
-              will cherish for the rest of his life. Everyday, he wakes up
-              genuinely excited to build new things. If you have an interesting
-              idea, please{' '}
+              will cherish for the rest of his life. Though it sounds
+              impossible, he wakes up every Monday truly excited to get to work.
+              If you have an interesting idea, please{' '}
               <TextLink link="mailto:jxsephz@gmail.com">get in touch</TextLink>.
             </p>
           </div>
@@ -59,28 +59,25 @@ export default function Home() {
               date="03.2022 - Present"
               description=""
             >
-              Interactive media, storytelling, and gamified experiences. Working
-              with a team of engineers, artists, and creatives.
+              Interactive media, storytelling, and gamified experiences. Lots of
+              uniquely challenging problems that have transformed me as a
+              designer.
             </WorkExperience>
             <WorkExperience title="Independent Practice">
-              Design consulting for emerging technology companies. Clients
-              include{' '}
+              Design consulting for emerging AI and productivity companies.
+              Notable clients include{' '}
               <TextLink super={1} link="https://cursor.sh/">
                 Anysphere (Cursor AI)
               </TextLink>
               ,{' '}
               <TextLink super={2} link="https://natural.ai/#/">
-                Brain Technologies
+                Brain Technologies (Natural AI)
               </TextLink>
-              ,{' '}
-              <TextLink super={3} link="https://code4rena.com/">
-                Code4rena
-              </TextLink>
-              ,{' '}
-              <TextLink super={4} link="https://plane.so/">
+              , and
+              <TextLink super={3} link="https://plane.so/">
                 Plane
               </TextLink>
-              , and Metalink.
+              .
             </WorkExperience>
             <WorkExperience title="Skiff Privacy" date="08.2022 - 06.2023">
               First full-time design hire. 0→1 design for Email, Editor, Drive,

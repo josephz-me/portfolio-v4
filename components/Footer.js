@@ -33,13 +33,13 @@ export default function Footer() {
 
   return (
     <footer
-      className={`caption bg-[#1C1C1C] dot-grid z-[1] w-full sticky bottom-0 text-zinc-100 ${
+      className={`body bg-[#1C1C1C] dot-grid z-[1] w-full sticky bottom-0 text-zinc-100 ${
         pageName == '/' ? '' : ''
       }`}
     >
-      <GridContainer footerSpacing={GLOBAL_SPACING}>
+      <GridContainer className="gap-y-8" footerSpacing={GLOBAL_SPACING}>
         <div
-          className={`${BREAKPOINT} md:col-start-1 md:col-end-6 flex-col space-y-2`}
+          className={`${BREAKPOINT} caption md:col-start-1 md:col-end-6 flex-col space-y-2`}
         >
           <span className="flex-row flex align-middle space-x-2">
             <p className="self-center w-min px-2 pt-1 pb-[2px] mono lowercase text-yellow-300 border-yellow-300 border border-solid rounded-full">
@@ -90,7 +90,7 @@ export default function Footer() {
       </GridContainer>
       {/* animated text bar */}
       <div
-        className={`relative col-start-1 col-end-13 pb-2 text-clip overflow-hidden`}
+        className={`caption relative col-start-1 col-end-13 pb-2 text-clip overflow-hidden`}
       >
         <p
           className={`text-clip text-zinc-600 hover:text-yellow-600 whitespace-nowrap`}
