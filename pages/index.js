@@ -42,9 +42,8 @@ export default function Home() {
                 Human-Computer Interaction
               </TextLink>{' '}
               at Carnegie Mellon University, an experience he holds fondly and
-              will cherish for the rest of his life. Every weekend, he looks
-              forward to Mondays at the office, a testament to how much he loves
-              Design. If you have an interesting idea, please{' '}
+              will cherish for the rest of his life. If you have an interesting
+              idea, please{' '}
               <TextLink link="mailto:jxsephz@gmail.com">get in touch</TextLink>.
             </p>
           </div>
