@@ -52,25 +52,30 @@ export default function Brain() {
         <ProjectHero content="/project-covers/azuki-2.jpg" />
         <ProjectTitle role="product & brand">Azuki</ProjectTitle>
         <ProjectBody col={2}>
-          Azuki is a web3 brand pioneering the integration of blockchain
-          identity with digital art, fashion, and physical collectibles. Since
-          launch, they have worked with brands like{' '}
+          Azuki is a technology company pioneering on-chain integration with
+          with media, physical collectibles, and gaming. Since launch, they have
+          worked with brands like{' '}
+          <TextLink link="https://www.azuki.com/about?id=2EbxXtctOGyHOEGYjTiiMC">
+            Line Friends
+          </TextLink>
+          ,{' '}
+          <TextLink link="https://www.azuki.com/about?id=550eZh4yqFOnfAJN81LuGq">
+            Patrick Mahomes
+          </TextLink>
+          ,{' '}
           <TextLink link="https://www.ambushdesign.com/en-us/">
             Ambush Streetwear
           </TextLink>
-          ,
-          <TextLink link="https://twitter.com/Azuki/status/1512886138670759941?s=20&t=fP4dEVgYoaYo7q-xJQmN4g">
+          ,{' '}
+          <TextLink link="https://www.azuki.com/about?id=194vALOMcWszG3SVNmCPIi">
             Epik High
           </TextLink>
-          ,
-          <TextLink link="https://twitter.com/Ledger/status/1519179535325052933?s=20&t=23FSw7lnvc53d_Fjxc0ZOw">
-            NASA
-          </TextLink>
-          , and
-          <TextLink link="https://www.redbullracing.com/int-en">
+          , and{' '}
+          <TextLink link="https://www.azuki.com/about?id=4Hm7gPDuAKzbfheWiob3A4">
             RedBull Racing
           </TextLink>
-          . As a product designer, I scale core digital product experiences.
+          . As a product designer, I lead design for all our digital interactive
+          experiences.
         </ProjectBody>
         <ProjectDetails
           role={['Product Designer']}

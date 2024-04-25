@@ -25,11 +25,11 @@ export default function Home() {
     <main>
       <GridContainer>
         {/* ABOUT SECTION */}
-        <section className="grid-layout my-6">
-          <div className="col-start-1  col-end-13 md:col-end-5 gap-3 flex flex-col">
-            <p className="caption opacity-40 text-white">ABOUT</p>
+        <section className="my-6 grid-layout">
+          <div className="flex flex-col col-start-1 col-end-13 gap-3 md:col-end-5">
+            <p className="text-white opacity-40 caption">ABOUT</p>
             <p
-              className={`body text-white z-1000 col-start-1 col-end-13 md:col-start-1 md:col-span-5 mb-4 md:mb-0`}
+              className={`col-start-1 col-end-13 mb-4 text-white body z-1000 md:col-start-1 md:col-span-5 md:mb-0`}
             >
               Jo (He/Him) designs interfaces. He thrives in complex, ambiguous
               problem spaces focused around interactive media, digital tooling,
@@ -42,16 +42,16 @@ export default function Home() {
                 Human-Computer Interaction
               </TextLink>{' '}
               at Carnegie Mellon University, an experience he holds fondly and
-              will cherish for the rest of his life. Though it sounds
-              impossible, he wakes up every Monday truly excited to get to work.
-              If you have an interesting idea, please{' '}
+              will cherish for the rest of his life. Every weekend, he looks
+              forward to Mondays at the office, a testament to how much he loves
+              Design. If you have an interesting idea, please{' '}
               <TextLink link="mailto:jxsephz@gmail.com">get in touch</TextLink>.
             </p>
           </div>
           {/* WORK EXPERIENCE */}
-          <div className="col-start-1 md:col-start-7 col-end-13 grid grid-cols-6 gap-3">
-            <p className="caption col-start-1 opacity-40 text-white">Team</p>
-            <p className="caption col-start-3 opacity-40 text-white">
+          <div className="grid grid-cols-6 col-start-1 col-end-13 gap-3 md:col-start-7">
+            <p className="col-start-1 text-white opacity-40 caption">Team</p>
+            <p className="col-start-3 text-white opacity-40 caption">
               Description
             </p>
             <WorkExperience
@@ -94,7 +94,7 @@ export default function Home() {
             </WorkExperience>
           </div>
         </section>
-        <div className=" relative z-10 col-start-1 col-end-13 grid md:grid-cols-3 grid-gap">
+        <div className="grid relative z-10 col-start-1 col-end-13 md:grid-cols-3 grid-gap">
           {/* COLUMN 1 */}
           <div className={`flex flex-col ${gapValue}`}>
             <ProjectCard
@@ -211,14 +211,12 @@ export default function Home() {
 function WorkExperience(props) {
   return (
     <>
-      <h1 className=" col-start-1 col-end-3 col-span-2 text-white body">
+      <h1 className="col-span-2 col-start-1 col-end-3 text-white body">
         {props.title}
         <br />
         {props.date}
       </h1>
-      <p className=" text-white body col-start-3 col-span-4">
-        {props.children}
-      </p>
+      <p className="col-span-4 col-start-3 text-white body">{props.children}</p>
     </>
   );
 }
