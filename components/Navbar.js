@@ -48,21 +48,21 @@ export default function Navbar(props) {
     <nav className="text-white body grid-layout sticky top-0 z-[100] main-bg py-4 border-solid border-b border-white/10">
       {/* logo */}
       <Link
-        className="col-start-1 col-span-4 hover:text-yellow-300"
+        className="col-span-4 col-start-1 hover:text-yellow-300"
         passHref
         href="/"
       >
         <h1 className="">Joseph Zhang</h1>
       </Link>
 
-      <p className="md:col-start-7 lg:col-start-7 col-span-6 md:col-span-3 lg:col-span-2">
+      <p className="col-span-6 md:col-start-7 lg:col-start-7 md:col-span-3 lg:col-span-2">
         Interaction Designer
       </p>
-      <p className="hidden lg:inline md:col-start-9 col-span-3">
+      <p className="hidden col-span-3 lg:inline md:col-start-9">
         Los Angeles, California
       </p>
       {pageName !== '/' && (
-        <div className="col-start-12 flex justify-end ">
+        <div className="absolute right-0 flex justify-end col-start-12 top-[50%] translate-y-[-50%] ">
           <Link className="" passHref href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
