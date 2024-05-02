@@ -146,8 +146,8 @@ export default function Home() {
             ></ProjectCard>
             <ProjectCard
               title="Plane"
+              link="/plane"
               description="Productivity"
-              locked
               content={Plane}
             />
             <ProjectCard
