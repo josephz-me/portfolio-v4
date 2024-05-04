@@ -11,7 +11,7 @@ export default function ProjectDetails(props) {
   ));
 
   const collaborators = props.collaborators.map((people, index) => (
-    <p className="text-white/80 body" key={index}>
+    <p className="text-white body" key={index}>
       {people}
     </p>
   ));
@@ -19,7 +19,7 @@ export default function ProjectDetails(props) {
   let tools;
   if (props.tools) {
     tools = props.tools.map((tool, index) => (
-      <p key={index} className="text-white/80 body">
+      <p key={index} className="text-white body">
         {tool}
       </p>
     ));
@@ -37,12 +37,12 @@ export default function ProjectDetails(props) {
         </p>
         {collaborators}
       </div>
-      <div className="col-start-1 col-end-7 md:col-start-9 md:col-end-11 mb-8">
+      <div className="col-start-1 col-end-7 mb-8 md:col-start-9 md:col-end-11">
         <p className="text-white/40 caption">Duration</p>
-        <p className="text-white/80 body">{props.duration}</p>
+        <p className="text-white body">{props.duration}</p>
       </div>
       {props.tools && (
-        <div className="col-start-7 col-end-13 md:col-start-11 md:col-end-13 mb-8 ">
+        <div className="col-start-7 col-end-13 mb-8 md:col-start-11 md:col-end-13 ">
           <p className="text-white/40 caption">Tools</p>
           {tools}
         </div>

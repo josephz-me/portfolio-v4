@@ -29,11 +29,11 @@ export default function Plane() {
         <ProjectHero content="/project-covers/plane.jpg" />
         <ProjectTitle role="Productivity">Plane</ProjectTitle>
         <ProjectBody col={2}>
-          Plane is an open-source productivity company combining task
-          management, wiki, and scheduling features into one comprehensive
-          platform. I consult with the team on various initiatives, primarily
-          focusing on task organization, visual interface identity, and editor
-          features.
+          Plane is a productivity company combining task management, wikis, and
+          editor features into one comprehensive software platform. I consult
+          and advise the team around various design initiatives, such as
+          experimenting with fresh interface primitives and developing
+          interaction specs for their editor feature.
         </ProjectBody>
         <ProjectDetails
           role={['Product Designer']}

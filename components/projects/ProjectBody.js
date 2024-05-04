@@ -14,13 +14,9 @@ export default function BodyText(props) {
       } grid-gap col-start-1 col-end-13 mb-2 text-white`}
     >
       {props.title !== undefined && (
-        <h2 className="h2 mt-4 mb-2">✶ {props.title}</h2>
+        <h2 className="mt-4 mb-2 h2">✶ {props.title}</h2>
       )}
-      <p
-        className={`${
-          props.caption ? 'opacity-60 caption' : 'opacity-90 body'
-        }`}
-      >
+      <p className={`${props.caption ? 'opacity-60 caption' : 'body'}`}>
         {props.children}
       </p>
     </div>
