@@ -1,7 +1,6 @@
 import Footer from './Footer';
 import Meta from './Meta';
 import Navbar from './Navbar';
-import { GoogleAnalytics } from '@next/third-parties/google';
 
 export default function Page(props) {
   return (
@@ -13,8 +12,6 @@ export default function Page(props) {
           <Meta />
           <Navbar />
           {props.children}
-
-          <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS} />
         </div>
       </div>
       <Footer />
