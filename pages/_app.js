@@ -1,14 +1,14 @@
 import '../styles/globals.scss';
 import Page from '../components/Page';
-// import { GoogleAnalytics } from '@next/third-parties/google';
-import { GoogleAnalytics } from '../components/googleAnalytics';
+import { GoogleAnalytics } from '@next/third-parties/google';
+// import { GoogleAnalytics } from '../components/googleAnalytics';
 
 function MyApp({ Component, pageProps }) {
   return (
     <Page>
-      <GoogleAnalytics />
+      {/* <GoogleAnalytics /> */}
       <Component {...pageProps} />
-      {/* <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS} /> */}
+      <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS} />
     </Page>
   );
 }
