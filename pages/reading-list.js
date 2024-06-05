@@ -47,9 +47,7 @@ export default function ReadingList(props) {
             Reading List
             <span className="ml-2 text-yellow-300">{books.length}</span>
           </ProjectTitle>
-          <p
-            className={`body text-white opacity-80 z-1000 grid-gap mb-6 md:mt-0 `}
-          >
+          <p className={`mb-6 text-white body z-1000 grid-gap md:mt-0`}>
             One of my biggest goals is to read more. With no one to keep me
             accountable, I built this list in hopes that you all will. Note:
             this list is not complete. The content on this page is managed in
@@ -61,7 +59,7 @@ export default function ReadingList(props) {
           {Object.entries(yearCounter).map(([year, count]) => (
             <div
               key={year}
-              className="py-2 border-t border-solid flex flex-auto border-white/10 text-white opacity-60 caption gap-4 "
+              className="flex flex-auto gap-4 py-2 text-white border-t border-solid opacity-60 border-white/10 caption"
             >
               <p>
                 {year} - {count} books{' '}
@@ -99,18 +97,18 @@ const BookCard = (props) => {
       href={props.url}
       rel="noreferrer"
       target="_blank"
-      className="text-white flex flex-col gap-3 col-span-6 md:col-span-4 lg:col-span-3"
+      className="flex flex-col col-span-6 gap-3 text-white group md:col-span-4 lg:col-span-3"
     >
       <Media
         hidePreloaderText
         priority
-        className="md:mt-1 game-border object-cover h-[68vw] md:h-[28vw] lg:h-[22vw] border border-solid border-white/10 shadow-xl "
+        className="group-hover:opacity-80 md:mt-1 game-border object-cover h-[68vw] md:h-[28vw] lg:h-[22vw] border border-solid border-white/10 shadow-xl "
         src={props.image}
       />
 
       <div className="">
         <h1
-          className={`caption text-zinc-50`}
+          className={`text-white body`}
           style={{
             display: '-webkit-box',
             WebkitBoxOrient: 'vertical',
@@ -120,9 +118,9 @@ const BookCard = (props) => {
         >
           {props.title}
         </h1>
-        <p className="caption text-zinc-500">{props.author}</p>
+        <p className="body text-zinc-500">{props.author}</p>
         {props.locked && (
-          <p className="absolute text-neutral-100 rounded-md right-4 top-4 px-2 z-10 py-1 bg-gray-800 shadow-xl">
+          <p className="absolute top-4 right-4 z-10 px-2 py-1 bg-gray-800 rounded-md shadow-xl text-neutral-100">
             LOCKED
           </p>
         )}

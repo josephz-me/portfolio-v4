@@ -5,7 +5,7 @@ import CardVideo from '../CardVideo';
 
 export default function ProjectDetails(props) {
   const roles = props.role.map((role, index) => (
-    <p className="text-white/80 body" key={index}>
+    <p className="text-white body" key={index}>
       {role}
     </p>
   ));
@@ -42,7 +42,7 @@ export default function ProjectDetails(props) {
         <p className="text-white body">{props.duration}</p>
       </div>
       {props.tools && (
-        <div className="col-start-7 col-end-13 mb-8 md:col-start-11 md:col-end-13 ">
+        <div className="col-start-7 col-end-13 mb-8 md:col-start-11 md:col-end-13">
           <p className="text-white/40 caption">Tools</p>
           {tools}
         </div>
