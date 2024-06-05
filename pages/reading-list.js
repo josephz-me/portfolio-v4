@@ -43,29 +43,10 @@ export default function ReadingList(props) {
     <main className="pt-8">
       <GridContainer>
         <div className="col-start-1 col-end-13 md:col-end-5">
-          <ProjectTitle role="">
+          <TitleCard yearCounter={yearCounter} role="">
             Reading List
             <span className="ml-2 text-yellow-300">{books.length}</span>
-          </ProjectTitle>
-          <p className={`mb-6 text-white body z-1000 grid-gap md:mt-0`}>
-            One of my biggest goals is to read more. With no one to keep me
-            accountable, I built this list in hopes that you all will. Note:
-            this list is not complete. The content on this page is managed in
-            Notion and fetched via the{' '}
-            <TextLink url="https://developers.notion.com/">Notion API</TextLink>
-            .
-          </p>
-
-          {Object.entries(yearCounter).map(([year, count]) => (
-            <div
-              key={year}
-              className="flex flex-auto gap-4 py-2 text-white border-t border-solid opacity-60 border-white/10 caption"
-            >
-              <p>
-                {year} - {count} books{' '}
-              </p>
-            </div>
-          ))}
+          </TitleCard>
         </div>
         {/* BOOKS */}
         <div className="col-start-1 md:col-start-5 col-end-13 grid-cols-12 grid grid-gap !gap-y-8">
@@ -90,6 +71,33 @@ export default function ReadingList(props) {
     </main>
   );
 }
+
+const TitleCard = (props) => {
+  return (
+    <div className="col-span-full md:col-end-4 md:sticky md:top-[5.3em] text-zinc-100">
+      <h1 className="mb-1 h1">{props.children}</h1>
+      <p className="caption text-zinc-500">{props.role}</p>
+      <p className={`mb-6 text-white body z-1000 grid-gap md:mt-0`}>
+        One of my biggest goals is to read more books. This list is always
+        evolving as I find new stuff to read. I use Notion to keep track of
+        everything, and the list here updates automatically through the{' '}
+        <TextLink url="https://developers.notion.com/">Notion API</TextLink>. If
+        you ever have suggestions, send me a message!
+      </p>
+
+      {Object.entries(props.yearCounter).map(([year, count]) => (
+        <div
+          key={year}
+          className="flex flex-auto gap-4 py-2 text-white border-t border-solid opacity-60 border-white/10 caption"
+        >
+          <p>
+            {year} - {count} books{' '}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 const BookCard = (props) => {
   return (
