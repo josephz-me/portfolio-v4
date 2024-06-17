@@ -54,7 +54,7 @@ export default function Home() {
               Description
             </p>
             <WorkExperience
-              title="Chiru Labs"
+              title="Azuki"
               date="03.2022 - Present"
               description=""
             >
