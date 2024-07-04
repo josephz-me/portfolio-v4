@@ -4,14 +4,11 @@ import TextLink from '../components/TextLink';
 import GridContainer from '../components/GridContainer';
 import Skiff from '../public/project-covers/skiff.jpg';
 import Compose from '../public/work/skiff/compose-modal.jpg';
-import Apple from '../public/project-covers/apple-v2.jpg';
-import Divider from '../components/projects/Divider';
 import Brain from '../public/project-covers/natural.jpg';
 import Azuki from '../public/project-covers/azuki.jpg';
 import CollectorStatus from '../public/project-covers/collector-status.jpg';
 import Cursor from '../public/project-covers/cursor.jpg';
 import AIGA from '../public/project-covers/aiga-square.jpg';
-import Sisters from '../public/project-covers/sisters.jpg';
 import Metalink from '../public/project-covers/metalink.jpg';
 import SkiffIcons from '../public/project-covers/skiffIcons.jpg';
 import Experiments from '../public/work/experiments/LE-1.jpg';
@@ -179,7 +176,6 @@ export default function Home() {
               link="/brain"
               content={Brain}
             />
-
             <ProjectCard
               title="Skiff Mail"
               description="Productivity Tooling"

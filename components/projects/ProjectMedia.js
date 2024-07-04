@@ -13,6 +13,7 @@ export default function ProjectMedia(props) {
   const [path, setPath] = useState();
 
   const bgColors = {
+    plane: [`bg-gray-200`],
     skiff: ['bg-gray-200', 'bg-[#4F4C59]'],
     azuki: ['bg-[#EBEBE6]', 'bg-gray-800'],
     metalink: 'bg-gray-700',
@@ -103,12 +104,13 @@ export default function ProjectMedia(props) {
                   handleImageLoad();
                 }}
                 className={` 
-
-            ${props.pAll ? 'rounded md:rounded-md' : ''}
-            ${props.pt && props.pl ? 'rounded-tl md:rounded-tl-xl' : ''}
-            ${props.pt && props.pr ? 'rounded-tr md:rounded-tr-xl' : ''}
-            ${props.pb && props.pl ? 'rounded-bl md:rounded-bl-xl' : ''}
-            ${props.pb && props.pr ? 'rounded-br-md md:rounded-br-xl' : ''}
+                  ${props.pAll ? 'rounded md:rounded-md' : ''}
+                  ${props.pt && props.pl ? 'rounded-tl md:rounded-tl-lg' : ''}
+                  ${props.pt && props.pr ? 'rounded-tr md:rounded-tr-lg' : ''}
+                  ${props.pb && props.pl ? 'rounded-bl md:rounded-bl-lg' : ''}
+                  ${
+                    props.pb && props.pr ? 'rounded-br-md md:rounded-br-lg' : ''
+                  }
             `}
               />
             </article>
