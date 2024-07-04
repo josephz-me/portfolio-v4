@@ -37,7 +37,7 @@ export default function Skiff() {
     <motion.main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero isVideo={false} content="/project-covers/skiff.jpg" />
-        <ProjectTitle role="Collaboration tools">Skiff</ProjectTitle>
+        <ProjectTitle role="Productivity">Skiff</ProjectTitle>
         <ProjectBody col={2}>
           I led design at Skiff, a productivity company building E2EE
           collaboration tools. As the first full-time design hire, I helped
