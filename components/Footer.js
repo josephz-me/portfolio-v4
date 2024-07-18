@@ -33,15 +33,13 @@ export default function Footer() {
 
   return (
     <footer
-      className={`body bg-[#1C1C1C] dot-grid z-[1] w-full sticky bottom-0 text-zinc-100 ${
-        pageName == '/' ? '' : ''
-      }`}
+      className={`flex flex-col items-center body bg-[#1C1C1C] dot-grid z-[1] w-full sticky bottom-0 text-zinc-100`}
     >
       <GridContainer className="gap-y-8" footerSpacing={GLOBAL_SPACING}>
         <div
-          className={`${BREAKPOINT} caption md:col-start-1 md:col-end-6 flex-col space-y-2`}
+          className={`flex-col space-y-2 ${BREAKPOINT} caption md:col-start-1 md:col-end-6`}
         >
-          <span className="flex-row flex align-middle space-x-2">
+          <span className="flex flex-row space-x-2 align-middle">
             <p className="self-center w-min px-2 pt-1 pb-[2px] mono lowercase text-yellow-300 border-yellow-300 border border-solid rounded-full">
               v4.3.0
             </p>
@@ -55,7 +53,7 @@ export default function Footer() {
         </div>
 
         <span
-          className={`${BREAKPOINT} md:col-start-7 md:col-end-9 flex flex-col space-y-1`}
+          className={`flex flex-col space-y-1 ${BREAKPOINT} md:col-start-7 md:col-end-9`}
         >
           <p>
             <TextLink super={1} link="https://www.linkedin.com/in/josephzme/">
@@ -78,7 +76,7 @@ export default function Footer() {
             </TextLink>
           </p>
         </span>
-        <div className={`${BREAKPOINT} md:col-start-9 flex flex-col space-y-1`}>
+        <div className={`flex flex-col space-y-1 ${BREAKPOINT} md:col-start-9`}>
           <p>{`Let's build something together.`}</p>
           <span>
             <TextLink
@@ -90,10 +88,10 @@ export default function Footer() {
       </GridContainer>
       {/* animated text bar */}
       <div
-        className={`caption relative col-start-1 col-end-13 pb-2 text-clip overflow-hidden`}
+        className={`overflow-hidden relative col-start-1 col-end-13 pb-2 w-full caption text-clip`}
       >
         <p
-          className={`text-clip text-zinc-600 hover:text-yellow-600 whitespace-nowrap`}
+          className={`whitespace-nowrap text-clip text-zinc-600 hover:text-yellow-600`}
         >
           {aboutText.repeat(10)}
         </p>

@@ -1,4 +1,5 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { twMerge } from 'tailwind-merge';
 
 export default function GridContainer(props) {
   return (
@@ -7,7 +8,12 @@ export default function GridContainer(props) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.1 }}
-      className={`z-10 grid grid-cols-12 grid-gap relative z-10 ${props.footerSpacing} ${props.className}`}
+      className={twMerge(
+        'w-full z-10 grid grid-cols-12 grid-gap relative z-10 max-w-8xl',
+
+        props.footerSpacing,
+        props.className
+      )}
     >
       {props.children}
     </motion.section>

@@ -42,6 +42,9 @@ module.exports = {
           '50%': { transform: 'translateY(-15%)' },
         },
       },
+      maxWidth: {
+        '8xl': '1800px',
+      },
     },
   },
   plugins: [],
