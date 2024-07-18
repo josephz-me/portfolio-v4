@@ -18,7 +18,8 @@
     "react-device-detect": "^2.2.2",
     "react-dom": "^18.2.0",
     "react-iframe": "^1.8.0",
-    "sass": "^1.54.3"
+    "sass": "^1.54.3",
+    "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",
