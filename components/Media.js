@@ -16,6 +16,19 @@ export default function ProjectMedia(props) {
   const [background, setBackground] = useState();
   const [path, setPath] = useState();
   const vidRef = useRef(null);
+  const [videoDimensions, setVideoDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
+
+  const handleVideoMetadataLoaded = () => {
+    if (vidRef.current) {
+      setVideoDimensions({
+        width: vidRef.current.videoWidth,
+        height: vidRef.current.videoHeight,
+      });
+    }
+  };
 
   //preloader
   const handleContentLoad = (e) => {
@@ -48,13 +61,14 @@ export default function ProjectMedia(props) {
         {props.isVideo ? (
           <video
             ref={vidRef}
-            className={`object-cover w-full h-full transition duration-1000 overflow-hidden ease-out`}
+            className={`object-cover overflow-hidden w-full h-full transition duration-1000 ease-out`}
             playsInline
             loop
             autoPlay
             muted
             src={props.src}
             onCanPlay={handleContentLoad}
+            onLoadedMetadata={handleVideoMetadataLoaded}
           />
         ) : (
           <Image
