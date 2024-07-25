@@ -83,8 +83,8 @@ export default function Brain() {
         </LinkCard>
         <Spacer></Spacer>
         <ProjectMedia isVideo src={`work/brain/followup-queries.mp4`}>
-          Explored nested search queries and ways to edit them via voice and
-          touch. individually.
+          Explored nested search queries and ways to edit them through both
+          voice and screen.
         </ProjectMedia>
         <ProjectMedia isVideo src={`work/brain/followup-queries-zoomed.mp4`}>
           Nexted search query architecture
