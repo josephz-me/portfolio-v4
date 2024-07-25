@@ -82,11 +82,16 @@ export default function Brain() {
           Natural AI App
         </LinkCard>
         <Spacer></Spacer>
-
+        <ProjectMedia isVideo src={`work/brain/followup-queries.mp4`}>
+          Explored nested search queries and ways to edit them via voice and
+          touch. individually.
+        </ProjectMedia>
+        <ProjectMedia isVideo src={`work/brain/followup-queries-zoomed.mp4`}>
+          Nexted search query architecture
+        </ProjectMedia>
         <MobileMockupVideo src="work/brain/fluid-search.mp4"></MobileMockupVideo>
         <ProjectBody col={1} caption={true}>
-          Worked with Gleb to design a search bar for all domains, which
-          improved UI visiblity and clarity.
+          Improve navigation and usability with a persistent search bar.
         </ProjectBody>
 
         <ProjectMedia src={Notifs}></ProjectMedia>

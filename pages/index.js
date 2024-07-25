@@ -95,7 +95,7 @@ export default function Home() {
           <div className={`flex flex-col ${gapValue}`}>
             <ProjectCard
               title="Azuki"
-              description="Experimental Media"
+              description="Media Interfaces"
               link="/azuki"
               content={Azuki}
             />
@@ -136,17 +136,24 @@ export default function Home() {
           {/* COLUMN 2 */}
           <div className={`flex flex-col ${gapValue}`}>
             <ProjectCard
-              title="Azuki Collector Profile"
-              description="Product"
+              title="Followup Search Queries"
+              description="Brain Technologies"
+              link="/brain"
+              isVideo
+              content={'/project-covers/brain-nested-query.mp4'}
+            />
+            <ProjectCard
+              title="Collector Profile"
+              description="Azuki"
               link="/azuki/#collector"
               content={CollectorStatus}
-            ></ProjectCard>
-            <ProjectCard
+            />
+            {/* <ProjectCard
               title="Plane"
               link="/plane"
               description="Productivity"
               content={Plane}
-            />
+            /> */}
             <ProjectCard
               title="Skiff Pages"
               description="Editor Tool"
@@ -170,6 +177,7 @@ export default function Home() {
               isVideo
               content={'/project-covers/apple.mp4'}
             />
+
             <ProjectCard
               title="Brain Technologies"
               description="Conversational AI"
