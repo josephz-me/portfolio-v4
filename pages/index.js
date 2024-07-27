@@ -136,7 +136,7 @@ export default function Home() {
           {/* COLUMN 2 */}
           <div className={`flex flex-col ${gapValue}`}>
             <ProjectCard
-              title="Followup Search Queries"
+              title="Multimodal Search"
               description="Brain Technologies"
               link="/brain"
               isVideo
