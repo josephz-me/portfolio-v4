@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import * as loadingCopy from '../loadingCopy';
 import Preloader from '../Preloader';
 import ProjectBody from './ProjectBody';
+import { twMerge } from 'tailwind-merge';
 
 export default function ProjectMedia(props) {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -56,7 +57,7 @@ export default function ProjectMedia(props) {
     <>
       <div
         id={props.id}
-        className={`select-none block grid overflow-hidden col-start-1 col-end-13 transition duration-300
+        className={`block grid overflow-hidden col-start-1 col-end-13 transition duration-300
           ${background}
           ${props.large ? 'md:col-start-1' : 'md:col-start-5'}
           ${
@@ -89,12 +90,17 @@ export default function ProjectMedia(props) {
           />
         ) : (
           <div className="relative">
+            <Preloader
+              dark={props.dark ? true : false}
+              loadingPhrase={loadingPhrase}
+              isContentLoaded={isImageLoaded}
+            />
             <article
-              className={`${
-                !props.noShadow && 'shadow-2xl'
-              } w-full h-auto transition duration-500 rounded-md ease-out
-              ${isImageLoaded ? 'opacity-1' : 'opacity-0'}
-              text-[0px]`}
+              className={twMerge(
+                'z-10 w-full h-auto transition duration-500 rounded-md ease-out text-[0px]',
+                !props.noShadow && 'shadow-2xl',
+                isImageLoaded ? 'opacity-1' : 'opacity-0'
+              )}
             >
               <Image
                 src={props.src}
@@ -114,11 +120,6 @@ export default function ProjectMedia(props) {
             `}
               />
             </article>
-            <Preloader
-              dark={props.dark ? true : false}
-              loadingPhrase={loadingPhrase}
-              isContentLoaded={isImageLoaded}
-            ></Preloader>
           </div>
         )}
       </div>
