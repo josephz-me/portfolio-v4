@@ -4,6 +4,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 // import { GoogleAnalytics } from '../components/googleAnalytics';
 
 function MyApp({ Component, pageProps }) {
+  console.log('GA ID:', process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS);
   return (
     <Page>
       {/* <GoogleAnalytics /> */}
