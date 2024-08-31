@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
     <Page>
       {/* <GoogleAnalytics /> */}
       <Component {...pageProps} />
-      <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS} />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
     </Page>
   );
 }
