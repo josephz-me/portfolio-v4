@@ -12,35 +12,6 @@ export default function ProjectMedia(props) {
   const [loadingPhrase, setLoadingPhrase] = useState('');
   const [background, setBackground] = useState();
   const [path, setPath] = useState();
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState([]);
-
-  useEffect(() => {
-    if (props.slideshow && Array.isArray(props.src)) {
-      // Preload all images
-      props.src.forEach((src, index) => {
-        const img = new window.Image();
-        img.src = src;
-        img.onload = () => {
-          setImagesLoaded((prev) => [...prev, index]);
-        };
-      });
-    }
-  }, [props.src, props.slideshow]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === props.src.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, [props.src]);
-
-  if (!props.src || (Array.isArray(props.src) && props.src.length === 0)) {
-    return null;
-  }
 
   const bgColors = {
     plane: [`bg-gray-200`],
@@ -50,6 +21,18 @@ export default function ProjectMedia(props) {
     experiments: 'bg-white/[.15]',
   };
 
+  //determine background
+  const determineBackground = () => {
+    if (Array.isArray(bgColors[path])) {
+      props.dark
+        ? setBackground(bgColors[path][1])
+        : setBackground(bgColors[path][0]);
+    } else {
+      setBackground(bgColors[path]);
+    }
+  };
+
+  //preloader
   const handleImageLoad = (e) => {
     setIsImageLoaded(true);
   };
@@ -60,6 +43,7 @@ export default function ProjectMedia(props) {
   }, []);
 
   useEffect(() => {
+    // determineBackground();
     if (Array.isArray(bgColors[path])) {
       props.dark
         ? setBackground(bgColors[path][1])
@@ -67,7 +51,7 @@ export default function ProjectMedia(props) {
     } else {
       setBackground(bgColors[path]);
     }
-  }, [path, props.dark]);
+  }, [path]);
 
   return (
     <>
@@ -106,13 +90,11 @@ export default function ProjectMedia(props) {
           />
         ) : (
           <div className="relative">
-            {props.slideshow && (
-              <Preloader
-                dark={props.dark ? true : false}
-                loadingPhrase={loadingPhrase}
-                isContentLoaded={imagesLoaded.length === props.src.length}
-              />
-            )}
+            <Preloader
+              dark={props.dark ? true : false}
+              loadingPhrase={loadingPhrase}
+              isContentLoaded={isImageLoaded}
+            />
             <article
               className={twMerge(
                 'z-10 w-full h-auto transition duration-500 rounded-md ease-out text-[0px]',
@@ -121,13 +103,11 @@ export default function ProjectMedia(props) {
               )}
             >
               <Image
-                src={props.slideshow ? props.src[currentImageIndex] : props.src}
+                src={props.src}
                 layout={props.fill ? 'fill' : 'responsive'}
                 alt="image"
                 onLoadingComplete={() => {
-                  if (!props.slideshow) {
-                    handleImageLoad();
-                  }
+                  handleImageLoad();
                 }}
                 className={` 
                   ${props.pAll ? 'rounded md:rounded-md' : ''}
@@ -137,7 +117,7 @@ export default function ProjectMedia(props) {
                   ${
                     props.pb && props.pr ? 'rounded-br-md md:rounded-br-lg' : ''
                   }
-                `}
+            `}
               />
             </article>
           </div>
