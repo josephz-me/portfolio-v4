@@ -32,6 +32,26 @@ import s2_mint_closeup from '../public/work/azuki/s2-mint-closeup.jpg';
 import s2_reveal from '../public/work/azuki/s2-reveal.jpg';
 import s2_reveal_likeall from '../public/work/azuki/s2-reveal-likeall.jpg';
 import s2_reveal_tweet from '../public/work/azuki/s2-reveal-tweet.jpg';
+import badges from '../public/work/azuki/badges.jpg';
+
+//slideshow
+import slide01 from '../public/work/azuki/cp-slideshow/01.jpg';
+import slide02 from '../public/work/azuki/cp-slideshow/02.jpg';
+import slide03 from '../public/work/azuki/cp-slideshow/03.jpg';
+import slide04 from '../public/work/azuki/cp-slideshow/04.jpg';
+import slide05 from '../public/work/azuki/cp-slideshow/05.jpg';
+import slide06 from '../public/work/azuki/cp-slideshow/06.jpg';
+import slide07 from '../public/work/azuki/cp-slideshow/07.jpg';
+
+const slideshowImages = [
+  slide01,
+  slide02,
+  slide03,
+  slide04,
+  slide05,
+  slide06,
+  slide07,
+];
 
 const item = {
   hidden: { opacity: 0 },
@@ -94,27 +114,32 @@ export default function Brain() {
         <Spacer></Spacer>
 
         <ProjectBody id="collector" title="Collector's Profile" col={1}>
-          {`The collector's profile is platform for token holders to
-          display their collection — whether that's the Azuki they own, the emblems they earned, and more. We wanted to build a showroom experience that made members feel proud and special to be a part of the Azuki community.`}
+          {`The Collector's Profile is a platform for the Azuki community to showcase 
+          their collection of NFTs, badges, emblems, and memoribilias. Collector Status 
+          is the mathematical layer we've built on top of the collecting experience that 
+          allows us, the team, to rank each individual based on what they own. This helps us scalably
+          reward individuals based on their fandom and commitment to the brand.`}
         </ProjectBody>
         <LinkCard col={1} link="https://www.azuki.com/collector/dingaling">
           {`Collector Profile`}
         </LinkCard>
         <ProjectMedia pt pr pl src={cp_main}></ProjectMedia>
-        <ProjectMedia src={'/work/azuki/cp-emblems.mp4'} isVideo></ProjectMedia>
+        <ProjectMedia slideshow src={slideshowImages}></ProjectMedia>
+        {/* <ProjectMedia src={'/work/azuki/cp-emblems.mp4'} isVideo></ProjectMedia> */}
+        <ProjectMedia pl pt pb src={badges}></ProjectMedia>
         <ProjectMedia src={'/work/azuki/cp-badges.mp4'} isVideo></ProjectMedia>
         <ProjectMedia
           src={'/work/azuki/cp-highlights.mp4'}
           isVideo
         ></ProjectMedia>
-        <ProjectMedia dark src={rabbitTicket}>
+        {/* <ProjectMedia dark src={rabbitTicket}>
           Code-generated custom graphics of each attendee&apos;s admission
           ticket for the 2023 White Rabbit Vegas event. Here&apos;s a{' '}
           <TextLink link="https://twitter.com/jojochuu/status/1650938107892764672?s=20">
             techinical explanation
           </TextLink>{' '}
           of how we did it.
-        </ProjectMedia>
+        </ProjectMedia> */}
 
         <ProjectBody title="Token Equipping" col={1}>
           In the Azuki ecosystem, Beans are the companions all Azukis need. We
