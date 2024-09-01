@@ -57,9 +57,12 @@ function Meta() {
         src="https://www.googletagmanager.com/gtag/js?id=G-7T632FJ4W4"
       ></script>
       <script>
-        window.dataLayer = window.dataLayer || []; function gtag()
-        {dataLayer.push(arguments)}
-        gtag('js', new Date()); gtag('config', 'MEASUREMENT_ID');
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-7T632FJ4W4');
+        `}
       </script>
     </Head>
   );
