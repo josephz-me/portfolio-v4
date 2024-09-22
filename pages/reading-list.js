@@ -107,12 +107,12 @@ const BookCard = (props) => {
       target="_blank"
       className="flex flex-col col-span-6 gap-3 text-white group md:col-span-4 lg:col-span-3"
     >
-      <Media
-        hidePreloaderText
-        priority
-        className="group-hover:opacity-80 md:mt-1 game-border object-cover h-[68vw] md:h-[28vw] lg:h-[22vw] border border-solid border-white/10 shadow-xl "
-        src={props.image}
-      />
+      <div className="hover:bg-white/[.15] group flex items-center justify-center bg-white/10 h-[68vw] md:h-[28vw] lg:h-[22vw] border-white/10 p-6 md:p-8">
+        <img
+          className="overflow-hidden w-full h-auto rounded-sm shadow-md brightness-105 transition ease-out md:group-hover:brightness-110 md:group-active:scale-[.98] md:group-active:translate-y-1 md:group-hover:-translate-y-1"
+          src={props.image}
+        />
+      </div>
 
       <div className="">
         <h1
