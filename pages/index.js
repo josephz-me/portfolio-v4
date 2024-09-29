@@ -11,8 +11,10 @@ import Cursor from '../public/project-covers/cursor.jpg';
 import AIGA from '../public/project-covers/aiga-square.jpg';
 import Metalink from '../public/project-covers/metalink.jpg';
 import SkiffIcons from '../public/project-covers/skiffIcons.jpg';
+import AnimeCom from '../public/project-covers/animecom.jpg';
 import Experiments from '../public/work/experiments/LE-1.jpg';
 import FormatBar from '../public/work/skiff/format-bar.jpg';
+
 import Plane from '../public/project-covers/plane.jpg';
 
 const gapValue = 'gap-6';
@@ -55,9 +57,8 @@ export default function Home() {
               date="03.2022 - Present"
               description=""
             >
-              Interactive media, storytelling, and gamified experiences. Lots of
-              uniquely challenging problems that have transformed me as a
-              designer.
+              Building Anime.com and interactive experiences for the Azuki IP.
+              Actively building out the design team.
             </WorkExperience>
             <WorkExperience title="Independent Practice">
               Design consulting for emerging AI and productivity companies.
@@ -92,7 +93,14 @@ export default function Home() {
         </section>
         <div className="grid relative z-10 col-start-1 col-end-13 md:grid-cols-3 grid-gap">
           {/* COLUMN 1 */}
+
           <div className={`flex flex-col ${gapValue}`}>
+            <ProjectCard
+              title="Anime.com"
+              description="Product"
+              locked
+              content={AnimeCom}
+            />
             <ProjectCard
               title="Azuki"
               description="Media Interfaces"
@@ -125,12 +133,6 @@ export default function Home() {
               description="Branding & Systems"
               link="/skiff/#icons"
               content={SkiffIcons}
-            />
-            <ProjectCard
-              title="LIGHT ENGINE"
-              description="Industrial Design"
-              link="/lightengines"
-              content={Experiments}
             />
           </div>
           {/* COLUMN 2 */}
@@ -165,6 +167,12 @@ export default function Home() {
               description="Data Visualization"
               link="/aiga"
               content={AIGA}
+            />
+            <ProjectCard
+              title="LIGHT ENGINE"
+              description="Industrial Design"
+              link="/lightengines"
+              content={Experiments}
             />
           </div>
 
