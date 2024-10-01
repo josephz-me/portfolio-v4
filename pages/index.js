@@ -84,7 +84,7 @@ export default function Home() {
               </TextLink>
               .
             </WorkExperience>
-            <WorkExperience title="Apple" date="2022 & 2023">
+            <WorkExperience title="Apple" date="2020 & 2021">
               Two summers at Apple working on conversational AI interfaces for
               Siri in the AI/ML Organization. Explored multimodal patterns and
               new behaviors empowered by natural language input.
