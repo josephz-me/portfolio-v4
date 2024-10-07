@@ -144,18 +144,18 @@ export default function Home() {
               isVideo
               content={'/project-covers/brain-nested-query.mp4'}
             />
-            <ProjectCard
+            {/* <ProjectCard
               title="Collector Profile"
               description="Azuki"
               link="/azuki/#collector"
               content={CollectorStatus}
-            />
-            {/* <ProjectCard
+            /> */}
+            <ProjectCard
               title="Plane"
               link="/plane"
               description="Productivity"
               content={Plane}
-            /> */}
+            />
             <ProjectCard
               title="Skiff Pages"
               description="Editor Tool"

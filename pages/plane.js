@@ -10,11 +10,11 @@ import ProjectHero from '../components/projects/ProjectHero';
 import ProjectBody from '../components/projects/ProjectBody';
 import ProjectTitle from '../components/projects/ProjectTitle';
 import ProjectDetails from '../components/projects/ProjectDetails';
-import listAssignee from '../public/work/plane/list-assignee.jpg';
-import table from '../public/work/plane/table.jpg';
-import kanban from '../public/work/plane/kanban.jpg';
-import timeline from '../public/work/plane/timeline.jpg';
-import calendar from '../public/work/plane/calendar.jpg';
+import listAssignee from '../public/work/plane/list-assignee-cropped.jpg';
+import table from '../public/work/plane/table-cropped.jpg';
+import kanban from '../public/work/plane/kanban-cropped.jpg';
+import timeline from '../public/work/plane/timeline-cropped.jpg';
+import calendar from '../public/work/plane/calendar-cropped.jpg';
 import displaySort from '../public/work/plane/display-sort.jpg';
 import displayFilter from '../public/work/plane/display-filter.jpg';
 import filters from '../public/work/plane/filters.jpg';
@@ -37,14 +37,15 @@ export default function Plane() {
           collaborators={['Plane team', 'Bryce Li']}
           duration="3 months"
         />
-        <ProjectMedia noShadow pt pl pr src={listAssignee}></ProjectMedia>
+
+        <ProjectMedia noShadow pt pr src={listAssignee}></ProjectMedia>
         <ProjectMedia noShadow pt pl src={filters}></ProjectMedia>
-        <ProjectMedia noShadow pt pl pr src={table}></ProjectMedia>
-        <ProjectMedia noShadow pt pl pr src={kanban}></ProjectMedia>
+        <ProjectMedia noShadow pt pr src={table}></ProjectMedia>
+        <ProjectMedia noShadow pt pr src={kanban}></ProjectMedia>
         <ProjectMedia noShadow pt pr src={displayFilter}></ProjectMedia>
-        <ProjectMedia noShadow pt pl pr src={timeline}></ProjectMedia>
+        <ProjectMedia noShadow pt pr src={timeline}></ProjectMedia>
         <ProjectMedia noShadow pt pr src={displaySort}></ProjectMedia>
-        <ProjectMedia noShadow pt pl pr src={calendar}></ProjectMedia>
+        <ProjectMedia noShadow pt pr src={calendar}></ProjectMedia>
       </GridContainer>
     </motion.main>
   );
