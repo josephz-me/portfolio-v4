@@ -68,7 +68,7 @@ export default function Aiga() {
             'Langston Wells',
             'Stefanie Suk',
           ]}
-          duration="8 weeks"
+          duration="2 months"
           tools={['HTML/CSS/JS', 'Figma', 'Cinema4D']}
         />
         <LinkCard col={1} link="https://josephz-me.github.io/aiga-hue/">

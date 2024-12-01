@@ -25,7 +25,7 @@ export default function Cursor() {
         <ProjectDetails
           role={['Product designer']}
           collaborators={['Michael Truell']}
-          duration="6 Weeks"
+          duration="2 months"
           tools={['Figma']}
         />
         <LinkCard col={1} link="https://www.cursor.so/">

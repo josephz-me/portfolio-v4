@@ -54,7 +54,7 @@ export default function Home() {
             </p>
             <WorkExperience
               title="Azuki"
-              date="03.2022 - Present"
+              date="2022 - Present"
               description=""
             >
               Building Anime.com and interactive experiences for the Azuki IP.
@@ -76,7 +76,7 @@ export default function Home() {
               </TextLink>
               .
             </WorkExperience>
-            <WorkExperience title="Skiff Privacy" date="08.2022 - 06.2023">
+            <WorkExperience title="Skiff" date="2022 - 2023">
               First full-time design hire. 0→1 design for Email, Editor, Drive,
               Calendar. Scaled Skiff Mail to 1M+ users. Recently{' '}
               <TextLink link="https://www.notion.so/blog/meet-skiff-the-newest-member-of-the-notion-family">
@@ -84,7 +84,7 @@ export default function Home() {
               </TextLink>
               .
             </WorkExperience>
-            <WorkExperience title="Apple" date="2020 & 2021">
+            <WorkExperience title="Apple" date="2020 -2021">
               Two summers at Apple working on conversational AI interfaces for
               Siri in the AI/ML Organization. Explored multimodal patterns and
               new behaviors empowered by natural language input.
