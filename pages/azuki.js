@@ -51,7 +51,7 @@ export default function Brain() {
     <motion.main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero content="/project-covers/azuki-2.jpg" />
-        <ProjectTitle role="product & brand">Azuki</ProjectTitle>
+        <ProjectTitle role="Consumer Product">Azuki</ProjectTitle>
         <ProjectBody col={2}>
           Azuki is a technology company pioneering on-chain integration with
           with media, physical collectibles, and gaming. Since launch, they have

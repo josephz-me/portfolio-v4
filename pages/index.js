@@ -103,7 +103,7 @@ export default function Home() {
             />
             <ProjectCard
               title="Azuki"
-              description="Media Interfaces"
+              description="Consumer Product"
               link="/azuki"
               content={Azuki}
             />
