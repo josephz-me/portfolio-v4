@@ -66,7 +66,7 @@ export default function Footer() {
             </TextLink>
           </p>
           <p>
-            <TextLink super={3} link="https://twitter.com/0xTraderJo">
+            <TextLink super={3} link="https://twitter.com/josephhhhz">
               Twitter
             </TextLink>
           </p>

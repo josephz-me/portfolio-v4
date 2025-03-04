@@ -53,12 +53,18 @@ export default function Home() {
               Description
             </p>
             <WorkExperience
-              title="Azuki"
-              date="2022 - Present"
+              title="██████"
+              date="2025 - Present"
               description=""
             >
-              Building Anime.com and interactive experiences for the Azuki IP.
-              Actively building out the design team.
+              Helping people build beautiful tools for their life’s work.
+            </WorkExperience>
+            <WorkExperience
+              title="Azuki"
+              date="2022 - 2025"
+              description=""
+            >
+              First full-time design hire. Scaled design team to 5 people. Built Anime.com, Animee, and interactive experiences for the Azuki IP. 
             </WorkExperience>
             <WorkExperience title="Independent Practice">
               Design consulting for emerging AI and productivity companies.
@@ -67,13 +73,14 @@ export default function Home() {
                 Anysphere (Cursor AI)
               </TextLink>
               ,{' '}
-              <TextLink super={2} link="https://natural.ai/#/">
-                Brain Technologies (Natural AI)
+              <TextLink super={2} link="https://www.rox.com">
+                Rox
               </TextLink>
               , and
-              <TextLink super={3} link="https://plane.so/">
-                Plane
+              <TextLink super={3} link="https://natural.ai/#/">
+                Brain Technologies (Natural AI)
               </TextLink>
+
               .
             </WorkExperience>
             <WorkExperience title="Skiff" date="2022 - 2023">
