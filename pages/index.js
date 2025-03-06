@@ -52,13 +52,13 @@ export default function Home() {
             <p className="col-start-3 text-white opacity-40 caption">
               Description
             </p>
-            <WorkExperience
+            {/* <WorkExperience
               title="██████"
               date="2025 - Present"
               description=""
             >
               Helping people build beautiful tools for their life’s work.
-            </WorkExperience>
+            </WorkExperience> */}
             <WorkExperience
               title="Azuki"
               date="2022 - 2025"
