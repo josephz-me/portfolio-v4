@@ -61,7 +61,7 @@ export default function Home() {
             </WorkExperience> */}
             <WorkExperience
               title="Azuki"
-              date="2022 - 2025"
+              date="2023 - 2025"
               description=""
             >
               First full-time design hire. Scaled design team to 5 people. Built Anime.com, Animee, and interactive experiences for the Azuki IP. 
