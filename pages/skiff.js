@@ -39,14 +39,12 @@ export default function Skiff() {
         <ProjectHero isVideo={false} content="/project-covers/skiff.jpg" />
         <ProjectTitle role="Productivity">Skiff</ProjectTitle>
         <ProjectBody col={2}>
-          I led design at Skiff, a productivity company building E2EE
-          collaboration tools. As the first full-time design hire, I helped
-          scale Skiff from a beta product to over +1,000,000 users. During my
-          time with the team, I focused mostly on Skiff Pages, Drive, and Mail.
-          A blessing in disguise, managing such a large scope has helped me
-          develop a holistic understanding of the product ecosystem, all while
-          still being able to contribute at the most granular level. As of
-          February 2024,{' '}
+          I led design at Skiff, a productivity company building E2EE collaboration tools. As the
+          first full-time design hire, I helped scale Skiff from a beta product to over +1,000,000
+          users. During my time with the team, I focused mostly on Skiff Pages, Drive, and Mail. A
+          blessing in disguise, managing such a large scope has helped me develop a holistic
+          understanding of the product ecosystem, all while still being able to contribute at the
+          most granular level. As of February 2024,{' '}
           <TextLink link="https://www.notion.so/blog/meet-skiff-the-newest-member-of-the-notion-family">
             Skiff has been acquired by Notion
           </TextLink>
@@ -54,12 +52,7 @@ export default function Skiff() {
         </ProjectBody>
         <ProjectDetails
           role={['Product & Brand Designer']}
-          collaborators={[
-            'Jason Ginsberg',
-            'Sunny Li',
-            'Natalie Almosa',
-            'Oscar Dumlao',
-          ]}
+          collaborators={['Jason Ginsberg', 'Sunny Li', 'Natalie Almosa', 'Oscar Dumlao']}
           duration="2022 - 2023"
           tools={['Figma', 'React']}
         />
@@ -74,25 +67,22 @@ export default function Skiff() {
         </LinkCard>
         <Spacer />
         <ProjectBody title="Visual Language">
-          I helped transform Skiff&apos;s visual design language. This involved
-          working with{' '}
-          <TextLink link="https://www.pentagram.com/work/skiff">
-            Pentagram
-          </TextLink>{' '}
-          on an initial rebrand to evolving it into a usable design system,
-          complete iconography set, and visual graphic style.
+          I helped transform Skiff&apos;s visual design language. This involved working with{' '}
+          <TextLink link="https://www.pentagram.com/work/skiff">Pentagram</TextLink> on an initial
+          rebrand to evolving it into a usable design system, complete iconography set, and visual
+          graphic style.
         </ProjectBody>
         <ProjectMedia src={AppLogos}>
           Four skeuomorphic icons, one for each product [Co-designed with Jason]
         </ProjectMedia>
         <ProjectMedia src={MarketingLanding}>
-          Led design for the Skiff marketing site relaunch, a 2.5 month project.
-          Visit <TextLink link="https://www.skiff.com">here</TextLink>
+          Led design for the Skiff marketing site relaunch, a 2.5 month project. Visit{' '}
+          <TextLink link="https://www.skiff.com">here</TextLink>
         </ProjectMedia>
         <ProjectMedia src={MarketingCards2} />
         <ProjectMedia noShadow pAll src={MarketingCards}>
-          20 interactive graphics scattered across the marketing site, each
-          individually coded in React
+          20 interactive graphics scattered across the marketing site, each individually coded in
+          React
         </ProjectMedia>
 
         <ProjectMedia id="icons" src={Icons}>
@@ -116,8 +106,8 @@ export default function Skiff() {
 
         {/* PAGES */}
         <ProjectBody id="editor" title="Pages">
-          Text styles, tables, navigation sidebar, format bar, sharing features,
-          enterprise controls, public documents, etc.
+          Text styles, tables, navigation sidebar, format bar, sharing features, enterprise
+          controls, public documents, etc.
         </ProjectBody>
         <ProjectMedia pt pr pb src={Comments}></ProjectMedia>
         <ProjectMedia pt pr src={LocalSharing}></ProjectMedia>

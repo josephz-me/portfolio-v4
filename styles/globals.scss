@@ -108,11 +108,7 @@
 // }
 
 .dotted-underline {
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.4) 50%,
-    transparent 50%
-  );
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4) 50%, transparent 50%);
   background-position: 0 1.44em;
   background-repeat: repeat-x;
   background-size: 2px 1px;
@@ -123,10 +119,7 @@
 }
 
 .dot-grid {
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.03) 1px,
-    transparent 0
-  );
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
   background-size: 20px 20px;
   background-position: -19px -19px;
 }

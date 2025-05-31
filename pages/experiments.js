@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import TextLink from "../components/TextLink";
-import GridContainer from "../components/GridContainer";
-import ProjectHero from "../components/projects/ProjectHero";
-import ProjectBody from "../components/projects/ProjectBody";
-import ProjectMedia from "../components/projects/ProjectMedia";
-import ProjectTitle from "../components/projects/ProjectTitle";
-import ProjectDetails from "../components/projects/ProjectDetails";
-import MobileMockupVideo from "../components/projects/MobileMockupVideo";
-import LinkCard from "../components/projects/LinkCard";
-import Spacer from "../components/projects/Spacer";
-import ExternalVideo from "../components/projects/ExternalVideo";
-import GalleryArt from "../public/work/pixelpush/gallery-art.jpg";
-import LE_1 from "../public/work/experiments/LE-1.jpg";
-import LE_2 from "../public/work/experiments/LE-2.jpg";
-import LE_3 from "../public/work/experiments/LE-3.jpg";
-import Divider from "../components/projects/Divider";
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import TextLink from '../components/TextLink';
+import GridContainer from '../components/GridContainer';
+import ProjectHero from '../components/projects/ProjectHero';
+import ProjectBody from '../components/projects/ProjectBody';
+import ProjectMedia from '../components/projects/ProjectMedia';
+import ProjectTitle from '../components/projects/ProjectTitle';
+import ProjectDetails from '../components/projects/ProjectDetails';
+import MobileMockupVideo from '../components/projects/MobileMockupVideo';
+import LinkCard from '../components/projects/LinkCard';
+import Spacer from '../components/projects/Spacer';
+import ExternalVideo from '../components/projects/ExternalVideo';
+import GalleryArt from '../public/work/pixelpush/gallery-art.jpg';
+import LE_1 from '../public/work/experiments/LE-1.jpg';
+import LE_2 from '../public/work/experiments/LE-2.jpg';
+import LE_3 from '../public/work/experiments/LE-3.jpg';
+import Divider from '../components/projects/Divider';
 
 const item = {
   hidden: { opacity: 0 },
@@ -33,18 +33,16 @@ export default function Brain() {
   const [scrollY, setScrollY] = useState(0);
 
   Number.prototype.map = function (in_min, in_max, out_min, out_max) {
-    return (
-      ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
-    );
+    return ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
   };
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -63,9 +61,8 @@ export default function Brain() {
         </ProjectBody>
         <Divider />
         <ProjectBody title="Sensor Interfaces">
-          Small experiments exploring alternative input modalities. Each project
-          was completed with an Arduino Uno and a few thoughtfully selected
-          sensors.
+          Small experiments exploring alternative input modalities. Each project was completed with
+          an Arduino Uno and a few thoughtfully selected sensors.
         </ProjectBody>
         <ProjectMedia
           hasControl
@@ -73,8 +70,7 @@ export default function Brain() {
           isVideo
           poster="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c858b573-7005-45a9-8caa-2b94e76352bf/sensor-matrix-poster.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230316%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230316T042420Z&X-Amz-Expires=86400&X-Amz-Signature=27dee83df459c50994103ca86655963fb3c5dd44cb0fe57fd98e687cf493de2c&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22sensor-matrix-poster.jpg%22&x-id=GetObject"
         >
-          A reverse space invasion game using an accelerometer and 8x8 LED
-          board.
+          A reverse space invasion game using an accelerometer and 8x8 LED board.
         </ProjectMedia>
         <ProjectMedia
           hasControl
@@ -82,9 +78,8 @@ export default function Brain() {
           src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c248e905-4e7f-41bd-b18a-fdcb2ec6da15/sensor-chess.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230316%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230316T040537Z&X-Amz-Expires=86400&X-Amz-Signature=db31c5f5d5c48f65b55931705acf519fa02f04c303dd59ac62a904cb1ca06dbc&X-Amz-SignedHeaders=host&x-id=GetObject"
           isVideo
         >
-          Touchless chess clock leveraging 2 Time-of-Flight distance sensors.
-          Players set and confirm time settings based on hand duration and
-          proximity.
+          Touchless chess clock leveraging 2 Time-of-Flight distance sensors. Players set and
+          confirm time settings based on hand duration and proximity.
         </ProjectMedia>
         <Divider />
         <ProjectBody title="Contextual Media">
@@ -94,10 +89,7 @@ export default function Brain() {
           we looked into how social platforms can better communicate direct
           relationships between language and media.`}
         </ProjectBody>
-        <ProjectMedia
-          src="/work/experiments/contextual-media.mp4"
-          isVideo
-        ></ProjectMedia>
+        <ProjectMedia src="/work/experiments/contextual-media.mp4" isVideo></ProjectMedia>
         <Divider />
         <ProjectBody title="Lighting Engine">
           {`This was a form exploration from my time at Carnegie Mellon's School
@@ -111,31 +103,25 @@ export default function Brain() {
         <Divider />
         <Spacer />
         <ProjectBody title="Pixel Push">
-          Tools shape the way we express ourselves and share our ideas. From
-          Microsoft Paint to more complex tools such as Adobe Photoshop, the
-          affordances of creative applications heavily influence the way we
-          create. Pixel Push is a collaborative painting experience that
-          reimagines art in the digital space through experimentation with audio
-          recognition and webcam image-capture. Instead of solid hex code or RGB
-          values, users paint with webcam video and the microphone audio.
+          Tools shape the way we express ourselves and share our ideas. From Microsoft Paint to more
+          complex tools such as Adobe Photoshop, the affordances of creative applications heavily
+          influence the way we create. Pixel Push is a collaborative painting experience that
+          reimagines art in the digital space through experimentation with audio recognition and
+          webcam image-capture. Instead of solid hex code or RGB values, users paint with webcam
+          video and the microphone audio.
         </ProjectBody>
         <ProjectDetails
-          role={["co-developer", "interaction designer"]}
+          role={['co-developer', 'interaction designer']}
           replaceCollab="collaborators"
           collaborators={[
-            "Kyuha Shim (advisor)",
-            "Sophia Kim",
-            "Margo Gersing",
-            "Elizabeth Han",
-            "Vicky Zhou",
+            'Kyuha Shim (advisor)',
+            'Sophia Kim',
+            'Margo Gersing',
+            'Elizabeth Han',
+            'Vicky Zhou',
           ]}
           duration="2.5 weeks"
-          tools={[
-            "HTML/CSS/JS",
-            "Socket.io",
-            "Google Teachable Machine",
-            "Figma",
-          ]}
+          tools={['HTML/CSS/JS', 'Socket.io', 'Google Teachable Machine', 'Figma']}
         />
         <LinkCard link="https://josephz.notion.site/Pixel-Push-48910c3a971747b0b6fc3f31572b9984">
           View complete documentation
@@ -149,23 +135,17 @@ export default function Brain() {
         <Divider />
         <Spacer />
         <ProjectBody title="AIGA & Hue">
-          AIGA & Hue is a desktop web experience that visualizes career data
-          from the 2019 AIGA Design Census in a playful and informative manner.
-          The recent over-saturation of interest in certain design fields has
-          resulted in skewed perceptions of neighboring creative industries.
-          This project strives to break those stereotypes by providing a
-          holistic understanding of the creative industry and all the viable
-          career options that exist.
+          AIGA & Hue is a desktop web experience that visualizes career data from the 2019 AIGA
+          Design Census in a playful and informative manner. The recent over-saturation of interest
+          in certain design fields has resulted in skewed perceptions of neighboring creative
+          industries. This project strives to break those stereotypes by providing a holistic
+          understanding of the creative industry and all the viable career options that exist.
         </ProjectBody>
         <ProjectDetails
-          role={["Frontend developer", "Visual designer"]}
-          collaborators={[
-            "Kyuha Shim (advisor)",
-            "Langston Wells",
-            "Stefanie Suk",
-          ]}
+          role={['Frontend developer', 'Visual designer']}
+          collaborators={['Kyuha Shim (advisor)', 'Langston Wells', 'Stefanie Suk']}
           duration="8 weeks"
-          tools={["html/css/js", "figma", "Cinema4D"]}
+          tools={['html/css/js', 'figma', 'Cinema4D']}
         />
         <LinkCard col={1} link="https://josephz-me.github.io/aiga-hue/">
           View live website
@@ -181,19 +161,18 @@ export default function Brain() {
         <Divider />
         <Spacer />
         <ProjectBody title="Thinkspace">
-          Rich, engaging conversation is a hallmark of meaningful human-to-human
-          interaction. However, factors such as relational closeness, social
-          formalities, and insecurities often hinder unfamiliar individuals from
-          going beyond the surface-level conversation. Thinkspace is a
-          speculative concept that aims to reinvision the role of conversational
+          Rich, engaging conversation is a hallmark of meaningful human-to-human interaction.
+          However, factors such as relational closeness, social formalities, and insecurities often
+          hinder unfamiliar individuals from going beyond the surface-level conversation.
+          Thinkspace is a speculative concept that aims to reinvision the role of conversational
           agents in discussion-based contexts.
         </ProjectBody>
         <ProjectDetails
-          role={["design prototyper"]}
+          role={['design prototyper']}
           replaceCollab="advisors"
-          collaborators={["jonathan chapman", "Steve Stadelmeier"]}
+          collaborators={['jonathan chapman', 'Steve Stadelmeier']}
           duration="7 weeks"
-          tools={["javascript"]}
+          tools={['javascript']}
         />
         <LinkCard link="https://josephz.notion.site/Thinkspace-24f3dc1c62904b0da412b0a4230cc92d">
           View complete documentation

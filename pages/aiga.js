@@ -28,9 +28,7 @@ export default function Aiga() {
   const [scrollY, setScrollY] = useState(0);
 
   Number.prototype.map = function (in_min, in_max, out_min, out_max) {
-    return (
-      ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
-    );
+    return ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
   };
 
   useEffect(() => {
@@ -49,25 +47,17 @@ export default function Aiga() {
     <main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero isVideo={false} content="/project-covers/aiga.jpg" />
-        <ProjectTitle role="Interactive Data Visualization">
-          AIGA Hue
-        </ProjectTitle>
+        <ProjectTitle role="Interactive Data Visualization">AIGA Hue</ProjectTitle>
         <ProjectBody col={2}>
-          AIGA Hue is a desktop web experience that visualizes career data from
-          the 2019 AIGA Design Census in a playful and informative manner. The
-          recent over-saturation of interest in certain design fields has
-          resulted in skewed perceptions of neighboring creative industries.
-          This project strives to break those stereotypes by providing a
-          holistic understanding of the creative industry and all the viable
-          career options that exist.
+          AIGA Hue is a desktop web experience that visualizes career data from the 2019 AIGA Design
+          Census in a playful and informative manner. The recent over-saturation of interest in
+          certain design fields has resulted in skewed perceptions of neighboring creative
+          industries. This project strives to break those stereotypes by providing a holistic
+          understanding of the creative industry and all the viable career options that exist.
         </ProjectBody>
         <ProjectDetails
           role={['Frontend Developer', 'Visual Designer']}
-          collaborators={[
-            'Kyuha Shim (advisor)',
-            'Langston Wells',
-            'Stefanie Suk',
-          ]}
+          collaborators={['Kyuha Shim (advisor)', 'Langston Wells', 'Stefanie Suk']}
           duration="2 months"
           tools={['HTML/CSS/JS', 'Figma', 'Cinema4D']}
         />

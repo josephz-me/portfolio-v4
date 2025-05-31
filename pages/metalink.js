@@ -23,9 +23,7 @@ export default function Metalink() {
     <motion.main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero isImage={true} content="/project-covers/metalink.jpg" />
-        <ProjectTitle role="Design systems & messaging">
-          Metalink Labs
-        </ProjectTitle>
+        <ProjectTitle role="Design systems & messaging">Metalink Labs</ProjectTitle>
         <ProjectBody col={2}>
           {`Scam, social engineering, and disorganization plague the web3
           landscape, making it difficult to safely connect with others.
@@ -36,40 +34,29 @@ export default function Metalink() {
         </ProjectBody>
         <ProjectDetails
           role={['Product Designer']}
-          collaborators={[
-            'Jake Udell (CEO)',
-            'Adam Ceresko',
-            'Larry Yu',
-            'Charlie Hilton',
-          ]}
+          collaborators={['Jake Udell (CEO)', 'Adam Ceresko', 'Larry Yu', 'Charlie Hilton']}
           duration="4 months"
           tools={['Figma']}
         />
         <ProjectMedia src={DS}></ProjectMedia>
         <ProjectBody caption={true}>
-          Built the design system from the ground up with the goal of unifying
-          visual language and aiding in a leaner engineering workflow.
+          Built the design system from the ground up with the goal of unifying visual language and
+          aiding in a leaner engineering workflow.
         </ProjectBody>
-        <ProjectMedia
-          src={'/work/metalink/global-navbar.mp4'}
-          isVideo
-        ></ProjectMedia>
+        <ProjectMedia src={'/work/metalink/global-navbar.mp4'} isVideo></ProjectMedia>
         <ProjectMedia src={DS2}></ProjectMedia>
         <ProjectBody caption>
-          Redesigned the global navigation panel with an emphasis on clarity and
-          scalability.
+          Redesigned the global navigation panel with an emphasis on clarity and scalability.
         </ProjectBody>{' '}
         <ProjectMedia src={MembersPopup}></ProjectMedia>
         <ProjectMedia pAll src={ProfileModal}></ProjectMedia>
         <ProjectBody caption={true}>
-          Designs contextual profile popups that allow users to easily learn
-          about other collectors.
+          Designs contextual profile popups that allow users to easily learn about other collectors.
         </ProjectBody>
         <ProjectMedia src={Message}></ProjectMedia>
         <ProjectMedia src={MessageStates}></ProjectMedia>
         <ProjectBody caption={true}>
-          Organized chat elements into reusable and width-responsive design
-          components.
+          Organized chat elements into reusable and width-responsive design components.
         </ProjectBody>
         {/* 
         <ProjectMedia src={Launchpad}></ProjectMedia>

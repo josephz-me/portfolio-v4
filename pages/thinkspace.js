@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  motion,
-  AnimatePresence,
-  SwitchLayoutGroupContext,
-} from 'framer-motion';
+import { motion, AnimatePresence, SwitchLayoutGroupContext } from 'framer-motion';
 import TextLink from '../components/TextLink';
 import GridContainer from '../components/GridContainer';
 import ProjectHero from '../components/projects/ProjectHero';
@@ -32,9 +28,7 @@ export default function Home() {
   const [scrollY, setScrollY] = useState(0);
 
   Number.prototype.map = function (in_min, in_max, out_min, out_max) {
-    return (
-      ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
-    );
+    return ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
   };
 
   useEffect(() => {
@@ -55,11 +49,10 @@ export default function Home() {
         <ProjectHero isVideo={true} content="/project-covers/thinkspace.mp4" />
         <ProjectTitle role="Assistive AI Agents">Thinkspace</ProjectTitle>
         <ProjectBody col={2}>
-          Rich, engaging conversation is a hallmark of meaningful human-to-human
-          interaction. However, factors such as relational closeness, social
-          formalities, and insecurities often hinder unfamiliar individuals from
-          going beyond the surface-level conversation. Thinkspace is a
-          speculative concept that aims to reinvision the role of conversational
+          Rich, engaging conversation is a hallmark of meaningful human-to-human interaction.
+          However, factors such as relational closeness, social formalities, and insecurities often
+          hinder unfamiliar individuals from going beyond the surface-level conversation.
+          Thinkspace is a speculative concept that aims to reinvision the role of conversational
           agents in discussion-based contexts.
         </ProjectBody>
         <ProjectDetails

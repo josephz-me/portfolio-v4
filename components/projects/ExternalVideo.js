@@ -1,8 +1,8 @@
-import { motion, AnimatePresence, useForceUpdate } from "framer-motion";
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import Iframe from "react-iframe";
+import { motion, AnimatePresence, useForceUpdate } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import Iframe from 'react-iframe';
 
 export default function ExternalVideo(props) {
   return (

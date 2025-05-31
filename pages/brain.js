@@ -31,9 +31,7 @@ export default function Brain() {
   const [scrollY, setScrollY] = useState(0);
 
   Number.prototype.map = function (in_min, in_max, out_min, out_max) {
-    return (
-      ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
-    );
+    return ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
   };
 
   useEffect(() => {
@@ -52,16 +50,13 @@ export default function Brain() {
     <motion.main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero content="/project-covers/natural.jpg" />
-        <ProjectTitle role="multimodal interaction">
-          Brain Technologies
-        </ProjectTitle>
+        <ProjectTitle role="multimodal interaction">Brain Technologies</ProjectTitle>
         <ProjectBody col={2}>
-          For 2 years, I prototyped new ways to engage with computer interfaces,
-          mostly working with voice and AI. Brain was one of the first companies
-          to explore the idea of multimodal, generative interfaces. My time
-          working with the team has shaped many of the principles I design with
-          now. Most of my work stayed in R&D but pieces of it have shipped and
-          are now in the{' '}
+          For 2 years, I prototyped new ways to engage with computer interfaces, mostly working with
+          voice and AI. Brain was one of the first companies to explore the idea of multimodal,
+          generative interfaces. My time working with the team has shaped many of the principles I
+          design with now. Most of my work stayed in R&D but pieces of it have shipped and are now
+          in the{' '}
           <TextLink link="https://apps.apple.com/us/app/id1521375720/?role=f8a07a03-a0a9-4a5e-b59e-b48cb3ab1478">
             app store
           </TextLink>{' '}
@@ -105,13 +100,11 @@ export default function Brain() {
 
         <ProjectMedia src={Notifs}></ProjectMedia>
         <ProjectBody col={1} caption={true}>
-          Redesigned notifications to be more communicative and systematic
-          across domains.
+          Redesigned notifications to be more communicative and systematic across domains.
         </ProjectBody>
         <ProjectMedia src={FoodCheckout}></ProjectMedia>
         <ProjectBody col={1} caption={true}>
-          Designed a better way for people to view their preferences and
-          purchase details.
+          Designed a better way for people to view their preferences and purchase details.
         </ProjectBody>
         <MobileMockupVideo src="/work/brain/food-preferences.mp4"></MobileMockupVideo>
         <ProjectBody col={1} caption={true}>
@@ -120,16 +113,14 @@ export default function Brain() {
         <ProjectMedia src={Meetup}></ProjectMedia>
 
         <ProjectBody col={1} caption={true}>
-          Led designs for an experimental feature, Meet up, where users can find
-          restaurants and make reservations based on location and preference.
-          The app leverages user location data to find top Yelp rated
-          restaurants geographically close to both users.
+          Led designs for an experimental feature, Meet up, where users can find restaurants and
+          make reservations based on location and preference. The app leverages user location data
+          to find top Yelp rated restaurants geographically close to both users.
         </ProjectBody>
 
         <MobileMockupVideo src="/work/brain/reorder-suggestions.mp4"></MobileMockupVideo>
         <ProjectBody col={1} caption={true}>
-          Prototyped intelligent restaurant suggestions based on user preference
-          and order history.
+          Prototyped intelligent restaurant suggestions based on user preference and order history.
         </ProjectBody>
       </GridContainer>
     </motion.main>

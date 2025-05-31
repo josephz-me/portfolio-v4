@@ -29,12 +29,8 @@ export default function CardVideo(props) {
         <p className="text-zinc-500 flex h-full justify-center items-center">
           {props.loadingPhrase}
           <span className="animate-[bounce_1s_ease-in-out_infinite]">.</span>
-          <span className="animate-[bounce_1s_ease-in-out_.1s_infinite]">
-            .
-          </span>
-          <span className="animate-[bounce_1s_ease-in-out_.2s_infinite]">
-            .
-          </span>
+          <span className="animate-[bounce_1s_ease-in-out_.1s_infinite]">.</span>
+          <span className="animate-[bounce_1s_ease-in-out_.2s_infinite]">.</span>
         </p>
       </div>
 

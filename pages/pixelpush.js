@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  motion,
-  AnimatePresence,
-  SwitchLayoutGroupContext,
-} from 'framer-motion';
+import { motion, AnimatePresence, SwitchLayoutGroupContext } from 'framer-motion';
 import TextLink from '../components/TextLink';
 import GridContainer from '../components/GridContainer';
 import ProjectHero from '../components/projects/ProjectHero';
@@ -32,9 +28,7 @@ export default function PixelPush() {
   const [scrollY, setScrollY] = useState(0);
 
   Number.prototype.map = function (in_min, in_max, out_min, out_max) {
-    return (
-      ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
-    );
+    return ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
   };
 
   useEffect(() => {
@@ -50,19 +44,15 @@ export default function PixelPush() {
   return (
     <motion.main className="min-h-[70vh]">
       <GridContainer>
-        <ProjectHero
-          isImage={true}
-          content="/work/pixelpush/pixelpush-placeholder.jpg"
-        />
+        <ProjectHero isImage={true} content="/work/pixelpush/pixelpush-placeholder.jpg" />
         <ProjectTitle role="multiplayer art">Pixel Push</ProjectTitle>
         <ProjectBody col={2}>
-          Tools shape the way we express ourselves and share our ideas. From
-          Microsoft Paint to more complex tools such as Adobe Photoshop, the
-          affordances of creative applications heavily influence the way we
-          create. Pixel Push is a collaborative painting experience that
-          reimagines art in the digital space through experimentation with audio
-          recognition and webcam image-capture. Instead of solid hex code or RGB
-          values, users paint with webcam video and the microphone audio.
+          Tools shape the way we express ourselves and share our ideas. From Microsoft Paint to more
+          complex tools such as Adobe Photoshop, the affordances of creative applications heavily
+          influence the way we create. Pixel Push is a collaborative painting experience that
+          reimagines art in the digital space through experimentation with audio recognition and
+          webcam image-capture. Instead of solid hex code or RGB values, users paint with webcam
+          video and the microphone audio.
         </ProjectBody>
         <ProjectDetails
           role={['Frontend Developer', 'Interaction Designer']}
@@ -75,12 +65,7 @@ export default function PixelPush() {
             'Vicky Zhou',
           ]}
           duration="2.5 weeks"
-          tools={[
-            'HTML/CSS/JS',
-            'Socket.io',
-            'Google Teachable Machine',
-            'Figma',
-          ]}
+          tools={['HTML/CSS/JS', 'Socket.io', 'Google Teachable Machine', 'Figma']}
         />
         <LinkCard
           col={1}

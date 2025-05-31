@@ -2,7 +2,7 @@ import Script from 'next/script';
 
 export const GA_TRACKING_ID = process.env.GOOGLE_ANALYTICS;
 
-export const pageview = (url) => {
+export const pageview = url => {
   console.log('Logging pageview for:', url); // Add this line
   window.gtag('config', GA_TRACKING_ID, {
     page_path: url,

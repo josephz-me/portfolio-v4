@@ -31,7 +31,7 @@ export default function ProjectMedia(props) {
   };
 
   //preloader
-  const handleContentLoad = (e) => {
+  const handleContentLoad = e => {
     setIsContentLoaded(true);
   };
 
@@ -43,9 +43,7 @@ export default function ProjectMedia(props) {
   useEffect(() => {
     // determineBackground();
     if (Array.isArray(bgColors[path])) {
-      props.dark
-        ? setBackground(bgColors[path][1])
-        : setBackground(bgColors[path][0]);
+      props.dark ? setBackground(bgColors[path][1]) : setBackground(bgColors[path][0]);
     } else {
       setBackground(bgColors[path]);
     }
@@ -82,10 +80,7 @@ export default function ProjectMedia(props) {
           />
         )}
       </article>
-      <Preloader
-        loadingPhrase={loadingPhrase}
-        isContentLoaded={isContentLoaded}
-      />
+      <Preloader loadingPhrase={loadingPhrase} isContentLoaded={isContentLoaded} />
     </div>
   );
 }
