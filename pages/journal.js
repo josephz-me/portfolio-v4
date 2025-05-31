@@ -34,32 +34,61 @@ export async function getStaticProps() {
 }
 
 export default function Journal(props) {
-  const ENTRIES = props.notionData;
-  const orderedEntries = [...ENTRIES].sort((a, b) => {
+  const entries = props.notionData;
+
+  const orderedEntries = [...entries].sort((a, b) => {
     const dateA = new Date(a.properties.Date.date.start);
     const dateB = new Date(b.properties.Date.date.start);
-    return dateB - dateA; // This will sort in descending order (newest first)
+    return dateB - dateA;
   });
+
+  const scrollToEntry = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <main className="pt-8">
       <GridContainer>
-        {/* BOOKS */}
-        <div className="col-start-4 col-end-10">
+        {/* Table of Contents */}
+        <div className="col-start-1 col-end-4 sticky top-[5em] h-fit">
+          <h2 className="text-white mb-4">Contents</h2>
+          <nav className="space-y-2">
+            {orderedEntries.map((entry) => {
+              const title = entry.properties.Name.title[0].plain_text;
+              const id = title.toLowerCase().replace(/\s+/g, '-');
+              return (
+                <button
+                  key={id}
+                  onClick={() => scrollToEntry(id)}
+                  className="text-zinc-400 hover:text-white text-left block w-full"
+                >
+                  {title}
+                </button>
+              );
+            })}
+          </nav>
+        </div>
+
+        {/* Main Content */}
+        <div className="col-start-5 col-end-9">
           {orderedEntries.map((entry, index) => {
             const EntryTitle = entry.properties.Name.title[0].plain_text;
             const EntryDate = entry.properties.Date.date.start;
+            const entryId = EntryTitle.toLowerCase().replace(/\s+/g, '-');
             const AllBlocks = entry.content;
             const TextBlocks = AllBlocks.filter(block => {
-            return block.type === 'paragraph' && block.paragraph.rich_text.length > 0;
+              return block.type === 'paragraph' && block.paragraph.rich_text.length > 0;
             });
             const MediaBlocks = AllBlocks.filter(block => {
-            return block.type === 'image' || block.type === 'video';
+              return block.type === 'image' || block.type === 'video';
             });
 
             return (
-              <div className="text-white py-8" key={index}>
-                <ProjectTitle notSticky role={EntryDate}>
+              <div id={entryId} key={index} className="mb-16">
+                <ProjectTitle sticky={false} role={EntryDate}>
                   {EntryTitle}
                 </ProjectTitle>
                 {TextBlocks.map(block => {
