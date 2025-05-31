@@ -103,8 +103,8 @@ export default function Home() {
 
           <div className={`flex flex-col ${gapValue}`}>
             <ProjectCard
-              title="Anime.com"
-              description="Product"
+              title="Animee"
+              description="Mobile App"
               locked
               content={AnimeCom}
             />

@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TextLink from '../components/TextLink';
 import GridContainer from '../components/GridContainer';
-import Image from 'next/image';
-import Media from '../components/Media';
-import ProjectMedia from '../components/projects/ProjectMedia';
-import * as loadingCopy from '../components/loadingCopy';
 import { Client } from '@notionhq/client';
-import Preloader from '../components/Preloader';
-import ProjectTitle from '../components/projects/ProjectTitle';
 
 const gapValue = 'gap-6';
 
