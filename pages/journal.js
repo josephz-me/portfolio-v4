@@ -53,9 +53,8 @@ export default function Journal(props) {
     <main className="pt-8">
       <GridContainer>
         {/* Table of Contents */}
-        <div className="col-start-1 col-end-4 sticky top-[5em] h-fit">
-          <h2 className="text-white mb-4">Contents</h2>
-          <nav className="space-y-2">
+        <div className="col-start-1 col-end-4 sticky top-[83px] h-fit">
+          <nav className="">
             {orderedEntries.map((entry) => {
               const title = entry.properties.Name.title[0].plain_text;
               const id = title.toLowerCase().replace(/\s+/g, '-');
@@ -63,7 +62,7 @@ export default function Journal(props) {
                 <button
                   key={id}
                   onClick={() => scrollToEntry(id)}
-                  className="text-zinc-400 hover:text-white text-left block w-full"
+                  className="body text-white opacity-40 hover:opacity-100 text-left block w-full"
                 >
                   {title}
                 </button>
@@ -88,7 +87,7 @@ export default function Journal(props) {
 
             return (
               <div id={entryId} key={index} className="mb-16">
-                <ProjectTitle sticky={false} role={EntryDate}>
+                <ProjectTitle notSticky role={EntryDate}>
                   {EntryTitle}
                 </ProjectTitle>
                 {TextBlocks.map(block => {
@@ -99,7 +98,7 @@ export default function Journal(props) {
                         <p
                           key={block.id}
                           className={cn(
-                            'body pt-4',
+                            'body pt-4 text-white',
                             block.paragraph.rich_text[0].annotations.bold && 'font-bold',
                             block.paragraph.rich_text[0].annotations.italic && 'italic'
                           )}
