@@ -5,6 +5,13 @@ import ProjectTitle from '../components/projects/ProjectTitle';
 import { cn } from '../lib/utils';
 
 export async function getStaticProps() {
+  if (!process.env.NOTION_API_KEY) {
+    throw new Error('NOTION_API_KEY is not defined in environment variables');
+  }
+  if (!process.env.NOTION_TASKS_ID) {
+    throw new Error('NOTION_TASKS_ID is not defined in environment variables');
+  }
+
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
   // First get your database results as you're doing now
