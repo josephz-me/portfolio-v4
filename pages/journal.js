@@ -34,7 +34,7 @@ export async function getStaticProps() {
 }
 
 export default function Journal(props) {
-  const entries = props.notionData;
+  const entries = props.notionData.filter(entry => entry.properties["journal"].checkbox === true);
 
   const orderedEntries = [...entries].sort((a, b) => {
     const dateA = new Date(a.properties.Date.date.start);
@@ -53,7 +53,7 @@ export default function Journal(props) {
     <main className="pt-8">
       <GridContainer>
         {/* Table of Contents */}
-        <div className="col-start-1 col-end-4 sticky top-[83px] h-fit">
+        <div className="col-start-1 col-end-4 sticky top-[80px] h-fit">
           <nav className="">
             {orderedEntries.map((entry) => {
               const title = entry.properties.Name.title[0].plain_text;
