@@ -22,32 +22,45 @@ export async function getStaticProps() {
     throw new Error('NOTION_TASKS_ID is not defined in environment variables');
   }
 
-  const notion = new Client({ auth: process.env.NOTION_API_KEY });
+  try {
+    const notion = new Client({ auth: process.env.NOTION_API_KEY });
+    console.error('Notion client created successfully');
 
-  // First get your database results as you're doing now
-  const databaseResponse = await notion.databases.query({
-    database_id: process.env.NOTION_TASKS_ID,
-  });
+    // First get your database results as you're doing now
+    console.error('Attempting to query database:', process.env.NOTION_TASKS_ID);
+    const databaseResponse = await notion.databases.query({
+      database_id: process.env.NOTION_TASKS_ID,
+    });
+    console.error('Database query successful, found', databaseResponse.results.length, 'results');
 
-  // Then for each page in your database, get its content
-  const pagesWithContent = await Promise.all(
-    databaseResponse.results.map(async page => {
-      const blocks = await notion.blocks.children.list({
-        block_id: page.id,
-      });
-      return {
-        ...page,
-        content: blocks.results,
-      };
-    })
-  );
+    // Then for each page in your database, get its content
+    const pagesWithContent = await Promise.all(
+      databaseResponse.results.map(async page => {
+        const blocks = await notion.blocks.children.list({
+          block_id: page.id,
+        });
+        return {
+          ...page,
+          content: blocks.results,
+        };
+      })
+    );
 
-  return {
-    props: {
-      notionData: pagesWithContent,
-    },
-    revalidate: 1,
-  };
+    return {
+      props: {
+        notionData: pagesWithContent,
+      },
+      revalidate: 1,
+    };
+  } catch (error) {
+    console.error('Notion API Error:', {
+      message: error.message,
+      code: error.code,
+      status: error.status,
+      body: error.body,
+    });
+    throw error;
+  }
 }
 
 export default function Journal(props) {
