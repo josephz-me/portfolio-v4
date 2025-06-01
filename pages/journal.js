@@ -9,7 +9,7 @@ export async function getStaticProps() {
 
   // First get your database results as you're doing now
   const databaseResponse = await notion.databases.query({
-    database_id: process.env.NOTION_JOURNAL_ID,
+    database_id: process.env.NOTION_TASKS_ID,
   });
 
   // Then for each page in your database, get its content
