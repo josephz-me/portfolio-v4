@@ -34,7 +34,7 @@ export async function getStaticProps() {
 }
 
 export default function Journal(props) {
-  const entries = props.notionData.filter(entry => entry.properties["journal"].checkbox === true);
+  const entries = props.notionData.filter(entry => entry.properties['Journal'].checkbox === true);
 
   const orderedEntries = [...entries].sort((a, b) => {
     const dateA = new Date(a.properties.Date.date.start);
@@ -42,7 +42,7 @@ export default function Journal(props) {
     return dateB - dateA;
   });
 
-  const scrollToEntry = (id) => {
+  const scrollToEntry = id => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -50,12 +50,12 @@ export default function Journal(props) {
   };
 
   return (
-    <main className="pt-8">
+    <main className="">
       <GridContainer>
         {/* Table of Contents */}
         <div className="col-start-1 col-end-4 sticky top-[80px] h-fit">
           <nav className="">
-            {orderedEntries.map((entry) => {
+            {orderedEntries.map(entry => {
               const title = entry.properties.Name.title[0].plain_text;
               const id = title.toLowerCase().replace(/\s+/g, '-');
               return (
@@ -72,11 +72,35 @@ export default function Journal(props) {
         </div>
 
         {/* Main Content */}
-        <div className="col-start-5 col-end-9">
+        <div className="col-start-5 col-end-13">
           {orderedEntries.map((entry, index) => {
             const EntryTitle = entry.properties.Name.title[0].plain_text;
-            const EntryDate = entry.properties.Date.date.start;
+            const EntryDate = entry.properties.Date.date;
             const entryId = EntryTitle.toLowerCase().replace(/\s+/g, '-');
+
+            // Format the date and time
+            const startDate = new Date(EntryDate.start);
+            const endDate = new Date(EntryDate.end);
+            const formattedDate = startDate.toLocaleDateString('en-US', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric',
+            });
+            const startTime = startDate
+              .toLocaleTimeString('en-US', {
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true,
+              })
+              .replace(' ', ' ');
+            const endTime = endDate
+              .toLocaleTimeString('en-US', {
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true,
+              })
+              .replace(' ', ' ');
+
             const AllBlocks = entry.content;
             const TextBlocks = AllBlocks.filter(block => {
               return block.type === 'paragraph' && block.paragraph.rich_text.length > 0;
@@ -86,40 +110,64 @@ export default function Journal(props) {
             });
 
             return (
-              <div id={entryId} key={index} className="mb-16">
-                <ProjectTitle notSticky role={EntryDate}>
-                  {EntryTitle}
-                </ProjectTitle>
-                {TextBlocks.map(block => {
-                  if (block.type === 'paragraph') {
-                    // Only render if there is text content
-                    if (block.paragraph.rich_text.length > 0) {
+              <div className="py-12">
+                <div id={entryId} key={index} className="text-white grid grid-cols-2 gap-4">
+                  <div className="">
+                    <h1 className="body mb-1">{EntryTitle}</h1>
+
+                    <p className="caption opacity-40">
+                      {formattedDate} • {startTime} - {endTime}
+                    </p>
+
+                    {TextBlocks.map(block => {
+                      if (block.type === 'paragraph') {
+                        // Only render if there is text content
+                        if (block.paragraph.rich_text.length > 0) {
+                          return (
+                            <p
+                              key={block.id}
+                              className={cn(
+                                'body pt-2 pb-4 text-white',
+                                block.paragraph.rich_text[0].annotations.bold && 'font-bold',
+                                block.paragraph.rich_text[0].annotations.italic && 'italic'
+                              )}
+                            >
+                              {block.paragraph.rich_text[0].plain_text}
+                            </p>
+                          );
+                        }
+                        return <p key={block.id}></p>; // Empty paragraph
+                      }
+                      return null; // Handle any other block types
+                    })}
+                  </div>
+                </div>
+                {/* image */}
+                <div className="grid grid-cols-2 gap-4">
+                  {MediaBlocks.map(block => {
+                    if (block.type === 'image') {
                       return (
-                        <p
+                        <img
+                          className="mt-4"
                           key={block.id}
-                          className={cn(
-                            'body pt-4 text-white',
-                            block.paragraph.rich_text[0].annotations.bold && 'font-bold',
-                            block.paragraph.rich_text[0].annotations.italic && 'italic'
-                          )}
-                        >
-                          {block.paragraph.rich_text[0].plain_text}
-                        </p>
+                          src={block.image.file.url}
+                          alt={block.image.caption[0]?.plain_text || ''}
+                        />
                       );
                     }
-                    return <p key={block.id}></p>; // Empty paragraph
-                  }
-                  return null; // Handle any other block types
-                })}
-                {MediaBlocks.map(block => {
-                  if (block.type === 'image') {
-                    return <img className='mt-4' key={block.id} src={block.image.file.url} alt={block.image.caption[0]?.plain_text || ''} />;
-                  }
-                  if (block.type === 'video') {
-                    return <video className='mt-4' key={block.id} src={block.video.file.url} controls />;
-                  }
-                  return null;
-                })}
+                    if (block.type === 'video') {
+                      return (
+                        <video
+                          className="mt-4"
+                          key={block.id}
+                          src={block.video.file.url}
+                          controls
+                        />
+                      );
+                    }
+                    return null;
+                  })}
+                </div>
               </div>
             );
           })}
