@@ -5,10 +5,20 @@ import ProjectTitle from '../components/projects/ProjectTitle';
 import { cn } from '../lib/utils';
 
 export async function getStaticProps() {
+  // Log environment variables for debugging
+  console.error('\n=== JOURNAL PAGE DEBUG ===');
+  console.error('Environment:', process.env.NODE_ENV);
+  console.error('NOTION_API_KEY exists:', !!process.env.NOTION_API_KEY);
+  console.error('NOTION_TASKS_ID exists:', !!process.env.NOTION_TASKS_ID);
+  console.error('NOTION_TASKS_ID value:', process.env.NOTION_TASKS_ID);
+  console.error('========================\n');
+
   if (!process.env.NOTION_API_KEY) {
+    console.error('ERROR: NOTION_API_KEY is missing');
     throw new Error('NOTION_API_KEY is not defined in environment variables');
   }
   if (!process.env.NOTION_TASKS_ID) {
+    console.error('ERROR: NOTION_TASKS_ID is missing');
     throw new Error('NOTION_TASKS_ID is not defined in environment variables');
   }
 
