@@ -15,12 +15,8 @@ export default function BodyText(props) {
           : 'md:col-start-5 md:col-end-13 lg:col-end-12'
       )}
     >
-      {props.title !== undefined && (
-        <h2 className="mt-4 mb-2 h2">✶ {props.title}</h2>
-      )}
-      <p className={`${props.caption ? 'opacity-60 caption' : 'body'}`}>
-        {props.children}
-      </p>
+      {props.title !== undefined && <h2 className="mt-4 mb-2 h2">✶ {props.title}</h2>}
+      <p className={`${props.caption ? 'opacity-60 caption' : 'body'}`}>{props.children}</p>
     </div>
   );
 }

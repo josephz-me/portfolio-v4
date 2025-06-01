@@ -26,15 +26,9 @@ export default function Preloader(props) {
           )}
         >
           {loadingPhrase}
-          <span className="inline animate-bounce_1s_ease-in-out_infinite">
-            .
-          </span>
-          <span className="inline animate-bounce_1s_ease-in-out_.1s_infinite">
-            .
-          </span>
-          <span className="inline animate-bounce_1s_ease-in-out_.2s_infinite">
-            .
-          </span>
+          <span className="inline animate-bounce_1s_ease-in-out_infinite">.</span>
+          <span className="inline animate-bounce_1s_ease-in-out_.1s_infinite">.</span>
+          <span className="inline animate-bounce_1s_ease-in-out_.2s_infinite">.</span>
         </p>
       )}
     </div>

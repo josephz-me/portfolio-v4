@@ -33,10 +33,7 @@ function Meta() {
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://metatags.io/" />
-      <meta
-        property="twitter:title"
-        content="Joseph Zhang – Interaction designer"
-      />
+      <meta property="twitter:title" content="Joseph Zhang – Interaction designer" />
       <meta
         property="twitter:description"
         content="Joseph is a designer interested in authoring tools and multimodal interaction. "
@@ -52,10 +49,7 @@ function Meta() {
         rel="stylesheet"
       ></link>
       <link rel="stylesheet" href="https://use.typekit.net/liy8bpw.css"></link>
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-7T632FJ4W4"
-      ></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7T632FJ4W4"></script>
     </Head>
   );
 }

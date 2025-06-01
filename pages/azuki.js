@@ -53,9 +53,8 @@ export default function Brain() {
         <ProjectHero content="/project-covers/azuki-2.jpg" />
         <ProjectTitle role="Consumer Product">Azuki</ProjectTitle>
         <ProjectBody col={2}>
-          Azuki is a technology company pioneering on-chain integration with
-          with media, physical collectibles, and gaming. Since launch, they have
-          worked with brands like{' '}
+          Azuki is a technology company pioneering on-chain integration with with media, physical
+          collectibles, and gaming. Since launch, they have worked with brands like{' '}
           <TextLink link="https://www.azuki.com/about?id=2EbxXtctOGyHOEGYjTiiMC">
             Line Friends
           </TextLink>
@@ -63,11 +62,7 @@ export default function Brain() {
           <TextLink link="https://www.azuki.com/about?id=550eZh4yqFOnfAJN81LuGq">
             Patrick Mahomes
           </TextLink>
-          ,{' '}
-          <TextLink link="https://www.ambushdesign.com/en-us/">
-            Ambush Streetwear
-          </TextLink>
-          ,{' '}
+          , <TextLink link="https://www.ambushdesign.com/en-us/">Ambush Streetwear</TextLink>,{' '}
           <TextLink link="https://www.azuki.com/about?id=194vALOMcWszG3SVNmCPIi">
             Epik High
           </TextLink>
@@ -75,8 +70,7 @@ export default function Brain() {
           <TextLink link="https://www.azuki.com/about?id=4Hm7gPDuAKzbfheWiob3A4">
             RedBull Racing
           </TextLink>
-          . As a product designer, I lead design for all our digital interactive
-          experiences.
+          . As a product designer, I lead design for all our digital interactive experiences.
         </ProjectBody>
         <ProjectDetails
           role={['Product Designer']}
@@ -102,53 +96,41 @@ export default function Brain() {
           {`View a profile`}
         </LinkCard>
         <ProjectMedia pt pr pl src={cp_main}></ProjectMedia>
-        <ProjectMedia
-          pAll
-          isVideo
-          src={`/work/azuki/cp-slideshow.mp4`}
-        ></ProjectMedia>
+        <ProjectMedia pAll isVideo src={`/work/azuki/cp-slideshow.mp4`}></ProjectMedia>
         <ProjectMedia pl pt pb src={emblems} />
         <ProjectMedia src={'/work/azuki/cp-badges.mp4'} isVideo></ProjectMedia>
-        <ProjectMedia
-          src={'/work/azuki/cp-highlights.mp4'}
-          isVideo
-        ></ProjectMedia>
+        <ProjectMedia src={'/work/azuki/cp-highlights.mp4'} isVideo></ProjectMedia>
 
         <ProjectBody title="Token Equipping" col={1}>
-          In the Azuki ecosystem, Beans are the companions all Azukis need. We
-          introduced an equpping system that allows users to unite both into
-          one.
+          In the Azuki ecosystem, Beans are the companions all Azukis need. We introduced an
+          equpping system that allows users to unite both into one.
         </ProjectBody>
         <ProjectMedia src={equipBeanz}></ProjectMedia>
         <ProjectMedia pAll noShadow src={equipExamples}></ProjectMedia>
         <Divider />
         <ProjectBody id="elementals" title="Elementals Sale + Unboxing" col={1}>
-          We designed the Elementals reveal experience to be full of
-          anticipation and delight, similar to the unboxing of up a Yugioh or
-          baseball mystery pack. The experience is packed with tons of features,
-          including a live Twitter feed, compose Tweet functionality, drag and
-          drop, and even Chat-GPT integration.{' '}
+          We designed the Elementals reveal experience to be full of anticipation and delight,
+          similar to the unboxing of up a Yugioh or baseball mystery pack. The experience is packed
+          with tons of features, including a live Twitter feed, compose Tweet functionality, drag
+          and drop, and even Chat-GPT integration.{' '}
         </ProjectBody>
         <ProjectMedia pAll src={s2_reveal}></ProjectMedia>
         <ProjectMedia pl pt src={s2_reveal_tweet}>
-          Everytime someone clicks the white rabbit, a new quote is generated
-          via Chat GPT in the language and style of one Chiru team member.
+          Everytime someone clicks the white rabbit, a new quote is generated via Chat GPT in the
+          language and style of one Chiru team member.
         </ProjectMedia>
         <ProjectMedia pl pb src={s2_reveal_likeall}>
           {`We want new holders to feel loved and appreciated. Two alternating Like/Follow All buttons give individuals the agency to spread that love.`}
         </ProjectMedia>
         <ProjectMedia pAll src={'/work/azuki/s2-reveal-animation.mp4'} isVideo>
-          thoughtfully chosen VFX animations come on screen during the actual
-          reveal, representing either the Earth, Fire, Lightning, or Water
-          domain.
+          thoughtfully chosen VFX animations come on screen during the actual reveal, representing
+          either the Earth, Fire, Lightning, or Water domain.
         </ProjectMedia>
         <ProjectMedia pAll src={s2_mint}>
-          Three phase sale fully equipped with dynamic graphics and delightful
-          UI
+          Three phase sale fully equipped with dynamic graphics and delightful UI
         </ProjectMedia>
         <ProjectMedia pr pb src={s2_mint_closeup}>
-          Bobu the Bean Farmer manages all purchased inventory and ongoing
-          transactions
+          Bobu the Bean Farmer manages all purchased inventory and ongoing transactions
         </ProjectMedia>
         <Divider />
         <Spacer></Spacer>
@@ -156,10 +138,7 @@ export default function Brain() {
         <ProjectBody title="Ambush x Azuki Collab" col={1}>
           {`The Ambush collaboration marks one of the first high-profile streetwear partnerships between a web3 company and high fashion. Purchase access is gated through an on-chain raffle system where buyers need to enter a drawing system to gain presale access. We strived for the shopping experience strives to feel luxurious and high-fashion and still respectful of web3's digital origins.`}
         </ProjectBody>
-        <LinkCard
-          col={1}
-          link="https://www.highsnobiety.com/p/ambush-azuki-nft-collab-collection/"
-        >
+        <LinkCard col={1} link="https://www.highsnobiety.com/p/ambush-azuki-nft-collab-collection/">
           Highsnobiety
         </LinkCard>
         <LinkCard
@@ -171,10 +150,9 @@ export default function Brain() {
         <ProjectMedia pAll src={ambushLanding} />
         <Divider />
         <ProjectBody title="Azuki Lore" col={1}>
-          The Azuki brand grounds itself in thoughtful storytelling. The World
-          page consists of several interactive chapters, each highlighting a
-          piece of the universe. We designed each chapter to be different in
-          format and interactivity.
+          The Azuki brand grounds itself in thoughtful storytelling. The World page consists of
+          several interactive chapters, each highlighting a piece of the universe. We designed each
+          chapter to be different in format and interactivity.
         </ProjectBody>
         <LinkCard col={1} link="https://azuki.com/world">
           Lore Chapters
@@ -187,9 +165,9 @@ export default function Brain() {
         <ProjectMedia pAll src={loreHilumia}></ProjectMedia>
         <Divider />
         <ProjectBody title="Proof of Skate Auction" col={1}>
-          Azuki recently made history by setting the record for the most
-          expensive skateboards sold in history. I co-designed the experience
-          for a 24 hour auction focused around 9 gold-plated skateboards.{' '}
+          Azuki recently made history by setting the record for the most expensive skateboards sold
+          in history. I co-designed the experience for a 24 hour auction focused around 9
+          gold-plated skateboards.{' '}
         </ProjectBody>
         <LinkCard
           col={1}
@@ -197,10 +175,7 @@ export default function Brain() {
         >
           Hypebeast
         </LinkCard>
-        <LinkCard
-          col={2}
-          link="https://www.yahoo.com/video/azuki-raises-2-5m-nft-191212817.html"
-        >
+        <LinkCard col={2} link="https://www.yahoo.com/video/azuki-raises-2-5m-nft-191212817.html">
           Yahoo Finance
         </LinkCard>
         <ProjectMedia pAll src={auctionCountdown} />

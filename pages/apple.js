@@ -26,9 +26,7 @@ export default function Apple() {
   const [scrollY, setScrollY] = useState(0);
 
   Number.prototype.map = function (in_min, in_max, out_min, out_max) {
-    return (
-      ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
-    );
+    return ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
   };
 
   useEffect(() => {
@@ -47,14 +45,12 @@ export default function Apple() {
         <ProjectHero isVideo={true} content="/project-covers/apple.mp4" />
         <ProjectTitle role="multimodal interaction">Apple</ProjectTitle>
         <ProjectBody col={2}>
-          During the summers of 2020 and 2021, I interned at Apple as an
-          Interaction Designer working on two core Siri teams — the
-          Understanding team with Garrett Weinberg and the Knowledge team with
-          Maria Cordell. During my time there, I designed platform-level voice
-          UI patterns and disambiguation behaviors for various hardware
-          platforms. My time at Apple involved pitching ideas to high level
-          leadership such as Robby Walker, weekly syncs with Machine Learning
-          engineers, and throwing around ideas with senior designers.
+          During the summers of 2020 and 2021, I interned at Apple as an Interaction Designer
+          working on two core Siri teams — the Understanding team with Garrett Weinberg and the
+          Knowledge team with Maria Cordell. During my time there, I designed platform-level voice
+          UI patterns and disambiguation behaviors for various hardware platforms. My time at Apple
+          involved pitching ideas to high level leadership such as Robby Walker, weekly syncs with
+          Machine Learning engineers, and throwing around ideas with senior designers.
         </ProjectBody>
         <ProjectDetails
           role={['Interaction Design Intern']}

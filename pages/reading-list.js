@@ -22,7 +22,7 @@ export default function ReadingList(props) {
     // Function to count occurrences of years
     const countYears = () => {
       const counts = {};
-      books.forEach((book) => {
+      books.forEach(book => {
         const year = book.properties.year.select.name;
         counts[year] = (counts[year] || 0) + 1;
       });
@@ -50,15 +50,7 @@ export default function ReadingList(props) {
             const image = book.properties.image.url;
             const url = book.properties.url.url;
             const title = book.properties.title.title[0].plain_text;
-            return (
-              <BookCard
-                key={index}
-                image={image}
-                author={author}
-                title={title}
-                url={url}
-              />
-            );
+            return <BookCard key={index} image={image} author={author} title={title} url={url} />;
           })}
         </div>
       </GridContainer>
@@ -66,17 +58,17 @@ export default function ReadingList(props) {
   );
 }
 
-const TitleCard = (props) => {
+const TitleCard = props => {
   return (
     <div className="col-span-full md:col-end-4 md:sticky md:top-[5.3em] text-zinc-100">
       <h1 className="mb-1 h1">{props.children}</h1>
       <p className="caption text-zinc-500">{props.role}</p>
       <p className={`mb-6 text-white body z-1000 grid-gap md:mt-0`}>
-        One of my biggest goals is to read more books. This list is always
-        evolving as I find new stuff to read. I use Notion to keep track of
-        everything, and the list here updates automatically through the{' '}
-        <TextLink url="https://developers.notion.com/">Notion API</TextLink>. If
-        you ever have suggestions, send me a message!
+        One of my biggest goals is to read more books. This list is always evolving as I find new
+        stuff to read. I use Notion to keep track of everything, and the list here updates
+        automatically through the{' '}
+        <TextLink url="https://developers.notion.com/">Notion API</TextLink>. If you ever have
+        suggestions, send me a message!
       </p>
 
       {Object.entries(props.yearCounter).map(([year, count]) => (
@@ -93,7 +85,7 @@ const TitleCard = (props) => {
   );
 };
 
-const BookCard = (props) => {
+const BookCard = props => {
   return (
     <a
       href={props.url}

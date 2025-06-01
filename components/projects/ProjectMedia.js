@@ -24,16 +24,14 @@ export default function ProjectMedia(props) {
   //determine background
   const determineBackground = () => {
     if (Array.isArray(bgColors[path])) {
-      props.dark
-        ? setBackground(bgColors[path][1])
-        : setBackground(bgColors[path][0]);
+      props.dark ? setBackground(bgColors[path][1]) : setBackground(bgColors[path][0]);
     } else {
       setBackground(bgColors[path]);
     }
   };
 
   //preloader
-  const handleImageLoad = (e) => {
+  const handleImageLoad = e => {
     setIsImageLoaded(true);
   };
 
@@ -45,9 +43,7 @@ export default function ProjectMedia(props) {
   useEffect(() => {
     // determineBackground();
     if (Array.isArray(bgColors[path])) {
-      props.dark
-        ? setBackground(bgColors[path][1])
-        : setBackground(bgColors[path][0]);
+      props.dark ? setBackground(bgColors[path][1]) : setBackground(bgColors[path][0]);
     } else {
       setBackground(bgColors[path]);
     }
@@ -61,11 +57,7 @@ export default function ProjectMedia(props) {
           ${background}
           ${props.large ? 'md:col-start-1' : 'md:col-start-5'}
           ${
-            props.pl ||
-            props.pr ||
-            props.pt ||
-            props.pb ||
-            (props.pAll && isImageLoaded)
+            props.pl || props.pr || props.pt || props.pb || (props.pAll && isImageLoaded)
               ? `border-solid border-neutral-800 border`
               : ''
           }
@@ -114,9 +106,7 @@ export default function ProjectMedia(props) {
                   ${props.pt && props.pl ? 'rounded-tl md:rounded-tl-lg' : ''}
                   ${props.pt && props.pr ? 'rounded-tr md:rounded-tr-lg' : ''}
                   ${props.pb && props.pl ? 'rounded-bl md:rounded-bl-lg' : ''}
-                  ${
-                    props.pb && props.pr ? 'rounded-br-md md:rounded-br-lg' : ''
-                  }
+                  ${props.pb && props.pr ? 'rounded-br-md md:rounded-br-lg' : ''}
             `}
               />
             </article>

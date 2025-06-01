@@ -21,14 +21,14 @@ export default function Navbar(props) {
   }, []);
 
   useEffect(() => {
-    const handleKeyUp = (event) => {
+    const handleKeyUp = event => {
       if (event.key === 'Escape') {
         setActiveBack(false);
         router.push('/');
       }
     };
 
-    const handleKeyDown = (event) => {
+    const handleKeyDown = event => {
       if (event.key === 'Escape') {
         setActiveBack(true);
         event.preventDefault(); // Prevents default browser behavior
@@ -47,20 +47,14 @@ export default function Navbar(props) {
   return (
     <nav className="text-white body grid-layout sticky top-0 z-[100] main-bg py-4 border-solid border-b border-white/10">
       {/* logo */}
-      <Link
-        className="col-span-4 col-start-1 hover:text-yellow-300"
-        passHref
-        href="/"
-      >
+      <Link className="col-span-4 col-start-1 hover:text-yellow-300" passHref href="/">
         <h1 className="">Joseph Zhang</h1>
       </Link>
 
       <p className="col-span-6 md:col-start-7 lg:col-start-7 md:col-span-3 lg:col-span-2">
         Interaction Designer
       </p>
-      <p className="hidden col-span-3 lg:inline md:col-start-9">
-        Los Angeles, California
-      </p>
+      <p className="hidden col-span-3 lg:inline md:col-start-9">Los Angeles, California</p>
       {pageName !== '/' && (
         <div className="absolute right-0 flex justify-end col-start-12 top-[50%] translate-y-[-50%] ">
           <Link className="" passHref href="/">
@@ -68,9 +62,7 @@ export default function Navbar(props) {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className={`w-6 h-6 hover:text-yellow-300 ${
-                activeBack && 'text-yellow-300'
-              }`}
+              className={`w-6 h-6 hover:text-yellow-300 ${activeBack && 'text-yellow-300'}`}
             >
               <path
                 fillRule="evenodd"

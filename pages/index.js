@@ -30,45 +30,28 @@ export default function Home() {
             <p
               className={`col-start-1 col-end-13 mb-4 text-white body z-1000 md:col-start-1 md:col-span-5 md:mb-0`}
             >
-              Jo (He/Him) designs interfaces. He thrives in complex, ambiguous
-              problem spaces focused around interactive media, digital tooling,
-              and multimodal interaction. He studied{' '}
-              <TextLink link="https://design.cmu.edu/">
-                Communication Design
-              </TextLink>{' '}
-              and{' '}
-              <TextLink link="https://www.hcii.cmu.edu/">
-                Human-Computer Interaction
-              </TextLink>{' '}
-              at Carnegie Mellon University, an experience he holds fondly and
-              will cherish for the rest of his life. If you have an interesting
-              idea, please{' '}
+              Jo (He/Him) designs interfaces. He thrives in complex, ambiguous problem spaces
+              focused around interactive media, digital tooling, and multimodal interaction. He
+              studied <TextLink link="https://design.cmu.edu/">Communication Design</TextLink> and{' '}
+              <TextLink link="https://www.hcii.cmu.edu/">Human-Computer Interaction</TextLink> at
+              Carnegie Mellon University, an experience he holds fondly and will cherish for the
+              rest of his life. If you have an interesting idea, please{' '}
               <TextLink link="mailto:jxsephz@gmail.com">get in touch</TextLink>.
             </p>
           </div>
           {/* WORK EXPERIENCE */}
           <div className="grid grid-cols-6 col-start-1 col-end-13 gap-3 md:col-start-7">
             <p className="col-start-1 text-white opacity-40 caption">Team</p>
-            <p className="col-start-3 text-white opacity-40 caption">
-              Description
-            </p>
-            <WorkExperience
-              title="Notion"
-              date="2025 - Present"
-              description=""
-            >
+            <p className="col-start-3 text-white opacity-40 caption">Description</p>
+            <WorkExperience title="Notion" date="2025 - Present" description="">
               Building beautiful tools for your life’s work.
             </WorkExperience>
-            <WorkExperience
-              title="Azuki"
-              date="2023 - 2025"
-              description=""
-            >
-              First full-time design hire. Scaled design team to 5 people. Built Anime.com, Animee, and interactive experiences for the Azuki IP. 
+            <WorkExperience title="Azuki" date="2023 - 2025" description="">
+              First full-time design hire. Scaled design team to 5 people. Built Anime.com, Animee,
+              and interactive experiences for the Azuki IP.
             </WorkExperience>
             <WorkExperience title="Independent Practice">
-              Design consulting for emerging AI and productivity companies.
-              Notable clients include{' '}
+              Design consulting for emerging AI and productivity companies. Notable clients include{' '}
               <TextLink super={1} link="https://cursor.sh/">
                 Anysphere (Cursor AI)
               </TextLink>
@@ -80,21 +63,20 @@ export default function Home() {
               <TextLink super={3} link="https://natural.ai/#/">
                 Brain Technologies (Natural AI)
               </TextLink>
-
               .
             </WorkExperience>
             <WorkExperience title="Skiff" date="2022 - 2023">
-              First full-time design hire. 0→1 design for Email, Editor, Drive,
-              Calendar. Scaled Skiff Mail to 1M+ users. Recently{' '}
+              First full-time design hire. 0→1 design for Email, Editor, Drive, Calendar. Scaled
+              Skiff Mail to 1M+ users. Recently{' '}
               <TextLink link="https://www.notion.so/blog/meet-skiff-the-newest-member-of-the-notion-family">
                 acquired by Notion HQ
               </TextLink>
               .
             </WorkExperience>
             <WorkExperience title="Apple" date="2020 -2021">
-              Two summers at Apple working on conversational AI interfaces for
-              Siri in the AI/ML Organization. Explored multimodal patterns and
-              new behaviors empowered by natural language input.
+              Two summers at Apple working on conversational AI interfaces for Siri in the AI/ML
+              Organization. Explored multimodal patterns and new behaviors empowered by natural
+              language input.
             </WorkExperience>
           </div>
         </section>
@@ -102,12 +84,7 @@ export default function Home() {
           {/* COLUMN 1 */}
 
           <div className={`flex flex-col ${gapValue}`}>
-            <ProjectCard
-              title="Animee"
-              description="Mobile App"
-              locked
-              content={AnimeCom}
-            />
+            <ProjectCard title="Animee" description="Mobile App" locked content={AnimeCom} />
             <ProjectCard
               title="Azuki"
               description="Consumer Product"
@@ -157,12 +134,7 @@ export default function Home() {
               link="/azuki/#collector"
               content={CollectorStatus}
             /> */}
-            <ProjectCard
-              title="Plane"
-              link="/plane"
-              description="Productivity"
-              content={Plane}
-            />
+            <ProjectCard title="Plane" link="/plane" description="Productivity" content={Plane} />
             <ProjectCard
               title="Skiff Pages"
               description="Editor Tool"

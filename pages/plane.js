@@ -26,11 +26,10 @@ export default function Plane() {
         <ProjectHero content="/project-covers/plane.jpg" />
         <ProjectTitle role="Productivity">Plane</ProjectTitle>
         <ProjectBody col={2}>
-          Plane is a software company combining task management, wikis, and
-          editor features into one comprehensive productivity platform. I
-          consulted and advised the team around core product surfaces. This
-          included redesigning navigation and all task views from scratch
-          — kanban, list, calendar, table, and timeilne view.
+          Plane is a software company combining task management, wikis, and editor features into one
+          comprehensive productivity platform. I consulted and advised the team around core product
+          surfaces. This included redesigning navigation and all task views from scratch — kanban,
+          list, calendar, table, and timeilne view.
         </ProjectBody>
         <ProjectDetails
           role={['Product Designer']}
