@@ -110,8 +110,8 @@ export default function Journal(props) {
             });
 
             return (
-              <div className="py-12">
-                <div id={entryId} key={index} className="text-white grid grid-cols-2 gap-4">
+              <div className="py-12" key={entryId}>
+                <div id={entryId} className="text-white grid grid-cols-2 gap-4">
                   <div className="">
                     <h1 className="body mb-1">{EntryTitle}</h1>
 
