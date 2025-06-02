@@ -54,7 +54,7 @@ export default function Navbar(props) {
       <p className="col-span-6 md:col-start-7 lg:col-start-7 md:col-span-3 lg:col-span-2">
         Interaction Designer
       </p>
-      <p className="hidden col-span-3 lg:inline md:col-start-9">Los Angeles, California</p>
+      <p className="hidden col-span-3 lg:inline md:col-start-9">New York, NY</p>
       {pageName !== '/' && (
         <div className="absolute right-0 flex justify-end col-start-12 top-[50%] translate-y-[-50%] ">
           <Link className="" passHref href="/">

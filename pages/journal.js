@@ -9,8 +9,26 @@ export async function getStaticProps() {
   console.error('\n=== JOURNAL PAGE DEBUG ===');
   console.error('Environment:', process.env.NODE_ENV);
   console.error('NOTION_API_KEY exists:', !!process.env.NOTION_API_KEY);
+  console.error(
+    'NOTION_API_KEY format:',
+    process.env.NOTION_API_KEY?.startsWith('secret_') ? 'Valid format' : 'Invalid format'
+  );
+  console.error('NOTION_API_KEY length:', process.env.NOTION_API_KEY?.length);
   console.error('NOTION_TASKS_ID exists:', !!process.env.NOTION_TASKS_ID);
   console.error('NOTION_TASKS_ID value:', process.env.NOTION_TASKS_ID);
+
+  // More detailed UUID validation
+  const tasksId = process.env.NOTION_TASKS_ID;
+  const uuidValidation = {
+    hasCorrectLength: tasksId?.length === 36,
+    hasCorrectFormat: /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
+      tasksId
+    ),
+    hasValidVersion: tasksId
+      ? /^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(tasksId)
+      : false,
+  };
+  console.error('NOTION_TASKS_ID validation:', uuidValidation);
   console.error('========================\n');
 
   if (!process.env.NOTION_API_KEY) {
@@ -25,6 +43,18 @@ export async function getStaticProps() {
   try {
     const notion = new Client({ auth: process.env.NOTION_API_KEY });
     console.error('Notion client created successfully');
+
+    // Test the API key by getting the integration info
+    try {
+      const integrationInfo = await notion.users.me();
+      console.error('Integration info:', {
+        name: integrationInfo.name,
+        type: integrationInfo.type,
+        workspace: integrationInfo.workspace_name,
+      });
+    } catch (error) {
+      console.error('Failed to get integration info:', error.message);
+    }
 
     // First get your database results as you're doing now
     console.error('Attempting to query database:', process.env.NOTION_TASKS_ID);
@@ -58,6 +88,7 @@ export async function getStaticProps() {
       code: error.code,
       status: error.status,
       body: error.body,
+      stack: error.stack,
     });
     throw error;
   }
@@ -66,6 +97,7 @@ export async function getStaticProps() {
 export default function Journal(props) {
   const entries = props.notionData.filter(entry => entry.properties['Journal'].checkbox === true);
 
+  console.log(entries);
   const orderedEntries = [...entries].sort((a, b) => {
     const dateA = new Date(a.properties.Date.date.start);
     const dateB = new Date(b.properties.Date.date.start);
@@ -83,7 +115,7 @@ export default function Journal(props) {
     <main className="">
       <GridContainer>
         {/* Table of Contents */}
-        <div className="col-start-1 col-end-4 sticky top-[80px] h-fit">
+        <div className="col-start-1 col-end-4 hidden md:block sticky top-[80px] h-fit">
           <nav className="">
             {orderedEntries.map(entry => {
               const title = entry.properties.Name.title[0].plain_text;
@@ -102,7 +134,7 @@ export default function Journal(props) {
         </div>
 
         {/* Main Content */}
-        <div className="col-start-5 col-end-13">
+        <div className="col-start-1 col-end-13 md:col-start-5">
           {orderedEntries.map((entry, index) => {
             const EntryTitle = entry.properties.Name.title[0].plain_text;
             const EntryDate = entry.properties.Date.date;
@@ -141,7 +173,7 @@ export default function Journal(props) {
 
             return (
               <div className="py-12" key={entryId}>
-                <div id={entryId} className="text-white grid grid-cols-2 gap-4">
+                <div id={entryId} className="text-white grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="">
                     <h1 className="body mb-1">{EntryTitle}</h1>
 
@@ -173,7 +205,9 @@ export default function Journal(props) {
                   </div>
                 </div>
                 {/* image */}
-                <div className="grid grid-cols-2 gap-4">
+                <div
+                  className={`grid ${MediaBlocks.length % 2 === 0 ? 'grid-cols-2' : 'grid-cols-3'} gap-4`}
+                >
                   {MediaBlocks.map(block => {
                     if (block.type === 'image') {
                       return (
