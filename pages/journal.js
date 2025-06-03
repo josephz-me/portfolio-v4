@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import GridContainer from '../components/GridContainer';
 import { Client } from '@notionhq/client';
 import ProjectTitle from '../components/projects/ProjectTitle';
+import Image from 'next/image';
+import Preloader from '../components/Preloader';
 import { cn } from '../lib/utils';
 import { DateTime } from 'luxon';
 
@@ -180,13 +182,23 @@ export default function Journal(props) {
                 >
                   {MediaBlocks.map(block => {
                     if (block.type === 'image') {
+                      const [isImageLoaded, setIsImageLoaded] = useState(false);
+
                       return (
-                        <img
-                          className="mt-4"
-                          key={block.id}
-                          src={block.image.file.url}
-                          alt={block.image.caption[0]?.plain_text || ''}
-                        />
+                        <div className="relative w-full aspect-[3/4] mt-2">
+                          <Preloader isContentLoaded={isImageLoaded} />
+                          <Image
+                            key={block.id}
+                            src={block.image.file.url}
+                            fill
+                            alt={block.image.caption[0]?.plain_text || ''}
+                            className={cn(
+                              'object-cover transition duration-500',
+                              isImageLoaded ? 'opacity-100' : 'opacity-0'
+                            )}
+                            onLoadingComplete={() => setIsImageLoaded(true)}
+                          />
+                        </div>
                       );
                     }
                     if (block.type === 'video') {
