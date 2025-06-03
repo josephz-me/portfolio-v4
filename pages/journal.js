@@ -5,63 +5,19 @@ import ProjectTitle from '../components/projects/ProjectTitle';
 import { cn } from '../lib/utils';
 
 export async function getStaticProps() {
-  // Log environment variables for debugging
-  console.error('\n=== JOURNAL PAGE DEBUG ===');
-  console.error('Environment:', process.env.NODE_ENV);
-  console.error('NOTION_API_KEY exists:', !!process.env.NOTION_API_KEY);
-  console.error(
-    'NOTION_API_KEY format:',
-    process.env.NOTION_API_KEY?.startsWith('secret_') ? 'Valid format' : 'Invalid format'
-  );
-  console.error('NOTION_API_KEY length:', process.env.NOTION_API_KEY?.length);
-  console.error('NOTION_TASKS_ID exists:', !!process.env.NOTION_TASKS_ID);
-  console.error('NOTION_TASKS_ID value:', process.env.NOTION_TASKS_ID);
-
-  // More detailed UUID validation
-  const tasksId = process.env.NOTION_TASKS_ID;
-  const uuidValidation = {
-    hasCorrectLength: tasksId?.length === 36,
-    hasCorrectFormat: /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
-      tasksId
-    ),
-    hasValidVersion: tasksId
-      ? /^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(tasksId)
-      : false,
-  };
-  console.error('NOTION_TASKS_ID validation:', uuidValidation);
-  console.error('========================\n');
-
   if (!process.env.NOTION_API_KEY) {
-    console.error('ERROR: NOTION_API_KEY is missing');
     throw new Error('NOTION_API_KEY is not defined in environment variables');
   }
   if (!process.env.NOTION_TASKS_ID) {
-    console.error('ERROR: NOTION_TASKS_ID is missing');
     throw new Error('NOTION_TASKS_ID is not defined in environment variables');
   }
 
   try {
     const notion = new Client({ auth: process.env.NOTION_API_KEY });
-    console.error('Notion client created successfully');
 
-    // Test the API key by getting the integration info
-    try {
-      const integrationInfo = await notion.users.me();
-      console.error('Integration info:', {
-        name: integrationInfo.name,
-        type: integrationInfo.type,
-        workspace: integrationInfo.workspace_name,
-      });
-    } catch (error) {
-      console.error('Failed to get integration info:', error.message);
-    }
-
-    // First get your database results as you're doing now
-    console.error('Attempting to query database:', process.env.NOTION_TASKS_ID);
     const databaseResponse = await notion.databases.query({
       database_id: process.env.NOTION_TASKS_ID,
     });
-    console.error('Database query successful, found', databaseResponse.results.length, 'results');
 
     // Then for each page in your database, get its content
     const pagesWithContent = await Promise.all(
@@ -83,13 +39,6 @@ export async function getStaticProps() {
       revalidate: 1,
     };
   } catch (error) {
-    console.error('Notion API Error:', {
-      message: error.message,
-      code: error.code,
-      status: error.status,
-      body: error.body,
-      stack: error.stack,
-    });
     throw error;
   }
 }
@@ -97,7 +46,6 @@ export async function getStaticProps() {
 export default function Journal(props) {
   const entries = props.notionData.filter(entry => entry.properties['Journal'].checkbox === true);
 
-  console.log(entries);
   const orderedEntries = [...entries].sort((a, b) => {
     const dateA = new Date(a.properties.Date.date.start);
     const dateB = new Date(b.properties.Date.date.start);
@@ -140,28 +88,38 @@ export default function Journal(props) {
             const EntryDate = entry.properties.Date.date;
             const entryId = EntryTitle.toLowerCase().replace(/\s+/g, '-');
 
-            // Format the date and time
+            const hasTimeComponent = /T\d{2}:\d{2}:\d{2}\.\d{3}[+-]\d{2}:\d{2}$/.test(
+              EntryDate.start
+            );
             const startDate = new Date(EntryDate.start);
             const endDate = new Date(EntryDate.end);
+
             const formattedDate = startDate.toLocaleDateString('en-US', {
               month: 'long',
               day: 'numeric',
               year: 'numeric',
             });
-            const startTime = startDate
-              .toLocaleTimeString('en-US', {
-                hour: 'numeric',
-                minute: '2-digit',
-                hour12: true,
-              })
-              .replace(' ', ' ');
-            const endTime = endDate
-              .toLocaleTimeString('en-US', {
-                hour: 'numeric',
-                minute: '2-digit',
-                hour12: true,
-              })
-              .replace(' ', ' ');
+
+            // Only format and show time if it exists in the original date
+            const timeDisplay = hasTimeComponent ? (
+              <>
+                {startDate
+                  .toLocaleTimeString('en-US', {
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true,
+                  })
+                  .replace(' ', ' ')}
+                {' – '}
+                {endDate
+                  .toLocaleTimeString('en-US', {
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true,
+                  })
+                  .replace(' ', ' ')}
+              </>
+            ) : null;
 
             const AllBlocks = entry.content;
             const TextBlocks = AllBlocks.filter(block => {
@@ -178,7 +136,8 @@ export default function Journal(props) {
                     <h1 className="body mb-1">{EntryTitle}</h1>
 
                     <p className="caption opacity-40">
-                      {formattedDate} • {startTime} - {endTime}
+                      {formattedDate}
+                      {timeDisplay && <> • {timeDisplay}</>}
                     </p>
 
                     {TextBlocks.map(block => {
