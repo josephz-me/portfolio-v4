@@ -23,7 +23,7 @@ export default function Preloader(props) {
           className={twMerge(
             'select-none caption flex h-full justify-center items-center',
             props.dark ? 'text-white' : 'text-zinc-500',
-            props.smallTextMobile && 'text-[8px]'
+            props.smallTextMobile && 'md:text-[11.5px] text-[8px]'
           )}
         >
           {loadingPhrase}
