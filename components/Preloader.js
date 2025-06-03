@@ -22,14 +22,15 @@ export default function Preloader(props) {
         <p
           className={twMerge(
             'select-none caption flex h-full justify-center items-center',
-            props.dark ? 'text-white' : 'text-zinc-500',
-            props.smallTextMobile && 'md:text-[11.5px] text-[8px]'
+            props.dark ? 'text-white' : 'text-zinc-500'
           )}
         >
-          {loadingPhrase}
-          <span className="inline animate-bounce_1s_ease-in-out_infinite">.</span>
-          <span className="inline animate-bounce_1s_ease-in-out_.1s_infinite">.</span>
-          <span className="inline animate-bounce_1s_ease-in-out_.2s_infinite">.</span>
+          <span className={`${props.hideTextMobile ? 'hidden md:inline' : ''}`}>
+            {loadingPhrase}
+          </span>
+          <span className="inline animate-bounce">.</span>
+          <span className="inline animate-bounce [animation-delay:0.1s]">.</span>
+          <span className="inline animate-bounce [animation-delay:0.2s]">.</span>
         </p>
       )}
     </div>
