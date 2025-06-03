@@ -7,6 +7,26 @@ import Preloader from '../components/Preloader';
 import { cn } from '../lib/utils';
 import { DateTime } from 'luxon';
 
+function JournalImage({ src, alt }) {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  return (
+    <div className="relative w-full aspect-[3/4] mt-2">
+      <Preloader isContentLoaded={isImageLoaded} />
+      <Image
+        src={src}
+        fill
+        alt={alt}
+        className={cn(
+          'object-cover transition duration-500',
+          isImageLoaded ? 'opacity-100' : 'opacity-0'
+        )}
+        onLoadingComplete={() => setIsImageLoaded(true)}
+      />
+    </div>
+  );
+}
+
 export async function getStaticProps() {
   if (!process.env.NOTION_API_KEY) {
     throw new Error('NOTION_API_KEY is not defined in environment variables');
@@ -182,23 +202,12 @@ export default function Journal(props) {
                 >
                   {MediaBlocks.map(block => {
                     if (block.type === 'image') {
-                      const [isImageLoaded, setIsImageLoaded] = useState(false);
-
                       return (
-                        <div className="relative w-full aspect-[3/4] mt-2">
-                          <Preloader isContentLoaded={isImageLoaded} />
-                          <Image
-                            key={block.id}
-                            src={block.image.file.url}
-                            fill
-                            alt={block.image.caption[0]?.plain_text || ''}
-                            className={cn(
-                              'object-cover transition duration-500',
-                              isImageLoaded ? 'opacity-100' : 'opacity-0'
-                            )}
-                            onLoadingComplete={() => setIsImageLoaded(true)}
-                          />
-                        </div>
+                        <JournalImage
+                          key={block.id}
+                          src={block.image.file.url}
+                          alt={block.image.caption[0]?.plain_text || ''}
+                        />
                       );
                     }
                     if (block.type === 'video') {
