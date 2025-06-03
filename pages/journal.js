@@ -12,7 +12,7 @@ function JournalImage({ src, alt }) {
 
   return (
     <div className="relative w-full aspect-[3/4] mt-2">
-      <Preloader isContentLoaded={isImageLoaded} />
+      <Preloader isContentLoaded={isImageLoaded} smallTextMobile={true} />
       <Image
         src={src}
         fill
