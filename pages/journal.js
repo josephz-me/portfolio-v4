@@ -3,6 +3,7 @@ import GridContainer from '../components/GridContainer';
 import { Client } from '@notionhq/client';
 import ProjectTitle from '../components/projects/ProjectTitle';
 import { cn } from '../lib/utils';
+import { DateTime } from 'luxon';
 
 export async function getStaticProps() {
   if (!process.env.NOTION_API_KEY) {
@@ -92,36 +93,40 @@ export default function Journal(props) {
               EntryDate.start
             );
 
-            // Parse the date string to extract timezone
+            // Parse the date string to extract timezone offset
             const timezoneMatch = EntryDate.start.match(/([+-]\d{2}:\d{2})$/);
-            const timezone = timezoneMatch ? timezoneMatch[1] : null;
+            const timezoneOffset = timezoneMatch ? timezoneMatch[1] : null;
 
-            // Format date with original timezone
-            const formattedDate = new Date(EntryDate.start).toLocaleDateString('en-US', {
+            // Convert to Luxon DateTime with timezone, preserving the original timezone
+            const startDateTime = DateTime.fromISO(EntryDate.start, { zone: 'UTC' }).setZone(
+              timezoneOffset || 'UTC'
+            );
+            const endDateTime = DateTime.fromISO(EntryDate.end, { zone: 'UTC' }).setZone(
+              timezoneOffset || 'UTC'
+            );
+
+            const formattedDate = startDateTime.toLocaleString({
               month: 'long',
               day: 'numeric',
               year: 'numeric',
-              timeZone: timezone || undefined,
             });
 
             // Only format and show time if it exists in the original date
             const timeDisplay = hasTimeComponent ? (
               <>
-                {new Date(EntryDate.start)
-                  .toLocaleTimeString('en-US', {
+                {startDateTime
+                  .toLocaleString({
                     hour: 'numeric',
                     minute: '2-digit',
                     hour12: true,
-                    timeZone: timezone || undefined,
                   })
                   .replace(' ', ' ')}
                 {' – '}
-                {new Date(EntryDate.end)
-                  .toLocaleTimeString('en-US', {
+                {endDateTime
+                  .toLocaleString({
                     hour: 'numeric',
                     minute: '2-digit',
                     hour12: true,
-                    timeZone: timezone || undefined,
                   })
                   .replace(' ', ' ')}
               </>
