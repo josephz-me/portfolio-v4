@@ -91,31 +91,37 @@ export default function Journal(props) {
             const hasTimeComponent = /T\d{2}:\d{2}:\d{2}\.\d{3}[+-]\d{2}:\d{2}$/.test(
               EntryDate.start
             );
-            const startDate = new Date(EntryDate.start);
-            const endDate = new Date(EntryDate.end);
 
-            const formattedDate = startDate.toLocaleDateString('en-US', {
+            // Parse the date string to extract timezone
+            const timezoneMatch = EntryDate.start.match(/([+-]\d{2}:\d{2})$/);
+            const timezone = timezoneMatch ? timezoneMatch[1] : null;
+
+            // Format date with original timezone
+            const formattedDate = new Date(EntryDate.start).toLocaleDateString('en-US', {
               month: 'long',
               day: 'numeric',
               year: 'numeric',
+              timeZone: timezone || undefined,
             });
 
             // Only format and show time if it exists in the original date
             const timeDisplay = hasTimeComponent ? (
               <>
-                {startDate
+                {new Date(EntryDate.start)
                   .toLocaleTimeString('en-US', {
                     hour: 'numeric',
                     minute: '2-digit',
                     hour12: true,
+                    timeZone: timezone || undefined,
                   })
                   .replace(' ', ' ')}
                 {' – '}
-                {endDate
+                {new Date(EntryDate.end)
                   .toLocaleTimeString('en-US', {
                     hour: 'numeric',
                     minute: '2-digit',
                     hour12: true,
+                    timeZone: timezone || undefined,
                   })
                   .replace(' ', ' ')}
               </>
