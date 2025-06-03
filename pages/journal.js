@@ -105,7 +105,7 @@ export default function Journal(props) {
         </div>
 
         {/* Main Content */}
-        <div className="col-start-1 col-end-13 md:col-start-5">
+        <div className="col-start-1 col-end-13 md:col-start-5 pt-6">
           {orderedEntries.map((entry, index) => {
             const EntryTitle = entry.properties.Name.title[0].plain_text;
             const EntryDate = entry.properties.Date.date;
@@ -163,7 +163,7 @@ export default function Journal(props) {
             });
 
             return (
-              <div className="py-12" key={entryId}>
+              <div className="pb-12 md:pb-16" key={entryId}>
                 <div id={entryId} className="text-white grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="">
                     <h1 className="body mb-1">{EntryTitle}</h1>
