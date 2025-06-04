@@ -165,7 +165,7 @@ export default function Journal(props) {
             return (
               <div className="pb-12 md:pb-16" key={entryId}>
                 <div id={entryId} className="text-white grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="">
+                  <div className="pb-2">
                     <h1 className="body mb-1">{EntryTitle}</h1>
 
                     <p className="caption opacity-40">
@@ -181,7 +181,7 @@ export default function Journal(props) {
                             <p
                               key={block.id}
                               className={cn(
-                                'body pt-2 pb-4 text-white',
+                                'body pt-2 text-white',
                                 block.paragraph.rich_text[0].annotations.bold && 'font-bold',
                                 block.paragraph.rich_text[0].annotations.italic && 'italic'
                               )}
