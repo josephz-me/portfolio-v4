@@ -15,7 +15,7 @@ export default function Preloader(props) {
       className={`select-none absolute top-0 w-full h-full overflow-hidden rounded-md ${
         props.isContentLoaded
           ? 'opacity-0 bg-[rgba(255,255,255,0)] hidden'
-          : 'opacity-100 animate-pulse bg-[rgba(255,255,255,.03)]'
+          : `opacity-100 animate-pulse ${props.hideBackground ? '' : 'bg-[rgba(255,255,255,.03)]'}`
       }`}
     >
       {props.hideText ? null : (

@@ -42,22 +42,15 @@ export async function getStaticProps() {
       database_id: process.env.NOTION_TASKS_ID,
     });
 
-    // Then for each page in your database, get its content
-    const pagesWithContent = await Promise.all(
-      databaseResponse.results.map(async page => {
-        const blocks = await notion.blocks.children.list({
-          block_id: page.id,
-        });
-        return {
-          ...page,
-          content: blocks.results,
-        };
-      })
-    );
+    // Only include essential metadata in the initial props
+    const entries = databaseResponse.results.map(page => ({
+      id: page.id,
+      properties: page.properties,
+    }));
 
     return {
       props: {
-        notionData: pagesWithContent,
+        notionData: entries,
       },
       revalidate: 1,
     };
@@ -67,7 +60,51 @@ export async function getStaticProps() {
 }
 
 export default function Journal(props) {
-  const entries = props.notionData.filter(entry => entry.properties['Journal'].checkbox === true);
+  const [entries, setEntries] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const fetchContent = async () => {
+      // Only fetch entries marked as Journal
+      const journalEntries = props.notionData.filter(
+        entry => entry.properties['Journal'].checkbox === true
+      );
+      const ids = journalEntries.map(entry => entry.id);
+
+      try {
+        const res = await fetch('/api/journal-blocks', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ids }),
+        });
+
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+
+        const { results } = await res.json();
+
+        // Merge content into entries
+        const entriesWithContent = journalEntries.map(entry => ({
+          ...entry,
+          content: results.find(r => r.id === entry.id)?.content || [],
+        }));
+
+        setEntries(entriesWithContent);
+      } catch (error) {
+        console.error('Error fetching journal content:', error);
+      } finally {
+        setLoading(false);
+        // Add a small delay before starting the fade out
+        setTimeout(() => {
+          setIsVisible(false);
+        }, 100);
+      }
+    };
+
+    fetchContent();
+  }, [props.notionData]);
 
   const orderedEntries = [...entries].sort((a, b) => {
     const dateA = new Date(a.properties.Date.date.start);
@@ -83,7 +120,17 @@ export default function Journal(props) {
   };
 
   return (
-    <main className="">
+    <main className="relative">
+      {/* Full page preloader overlay */}
+      <div
+        className={cn(
+          'fixed inset-0 main-bg z-50 transition-opacity duration-300 flex items-center justify-center',
+          isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        )}
+      >
+        <Preloader isContentLoaded={false} hideBackground={true} />
+      </div>
+
       <GridContainer>
         {/* Table of Contents */}
         <div className="col-start-1 col-end-4 hidden md:block sticky top-[80px] h-fit">
@@ -142,15 +189,15 @@ export default function Journal(props) {
                     minute: '2-digit',
                     hour12: true,
                   })
-                  .replace(' ', ' ')}
-                {' – '}
+                  .replace(' ', ' ')}
+                {' – '}
                 {endDateTime
                   .toLocaleString({
                     hour: 'numeric',
                     minute: '2-digit',
                     hour12: true,
                   })
-                  .replace(' ', ' ')}
+                  .replace(' ', ' ')}
               </>
             ) : null;
 
