@@ -189,7 +189,7 @@ export default function Journal(props) {
                     minute: '2-digit',
                     hour12: true,
                   })
-                  .replace(' ', ' ')}
+                  .replace(' ', '\u2009')}
                 {' – '}
                 {endDateTime
                   .toLocaleString({
@@ -197,7 +197,7 @@ export default function Journal(props) {
                     minute: '2-digit',
                     hour12: true,
                   })
-                  .replace(' ', ' ')}
+                  .replace(' ', '\u2009')}
               </>
             ) : null;
 
