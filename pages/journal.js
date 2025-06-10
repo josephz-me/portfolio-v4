@@ -163,9 +163,9 @@ export default function Journal(props) {
                         <button
                           key={id}
                           onClick={() => scrollToEntry(id)}
-                          className="w-full group gap-2 h-4 flex items-center justify-center w-full"
+                          className="w-full group gap-2 h-auto flex items-center justify-center w-full"
                         >
-                          <div className="group-hover:bg-white w-10 group-hover:w-12 transition-all duration-100 h-[2px] bg-white/20 rounded-full rounded-full" />
+                          <div className="group-hover:bg-white w-10 group-hover:w-12 group-active:w-10 transition-all duration-100 h-[2px] bg-white/20 rounded-full rounded-full" />
 
                           <p className="w-full body text-white text-left opacity-0 group-hover:opacity-100 transition-all duration-100 text-white truncate">
                             {title}
