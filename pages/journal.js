@@ -17,11 +17,12 @@ function JournalImage({ src, alt }) {
         src={src}
         fill
         alt={alt}
+        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
         className={cn(
           'object-cover transition duration-500',
           isImageLoaded ? 'opacity-100' : 'opacity-0'
         )}
-        onLoadingComplete={() => setIsImageLoaded(true)}
+        onLoad={() => setIsImageLoaded(true)}
       />
     </div>
   );
@@ -110,10 +111,26 @@ export default function Journal(props) {
     return dateB - dateA;
   });
 
+  // Group entries by year
+  const entriesByYear = orderedEntries.reduce((acc, entry) => {
+    const year = new Date(entry.properties.Date.date.start).getFullYear();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(entry);
+    return acc;
+  }, {});
+
   const scrollToEntry = id => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - 77;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
     }
   };
 
@@ -131,25 +148,34 @@ export default function Journal(props) {
 
       <GridContainer>
         {/* Table of Contents */}
-        <div className="col-start-1 col-end-5 hidden md:block sticky top-[80px] h-fit">
+        <div className="col-start-1 col-end-5 hidden md:block sticky top-[79px] h-fit">
           <nav className="flex flex-col">
-            {orderedEntries.map(entry => {
-              const title = entry.properties.Name.title[0].plain_text;
-              const id = title.toLowerCase().replace(/\s+/g, '-');
-              return (
-                <button
-                  key={id}
-                  onClick={() => scrollToEntry(id)}
-                  className="group gap-2 h-4 w-fit flex items-center justify-center w-full"
-                >
-                  <div className="group-hover:bg-white w-10 group-hover:w-12 transition-all duration-100 h-[2px] bg-white/20 rounded-full rounded-full" />
+            {Object.entries(entriesByYear)
+              .sort((a, b) => parseInt(b[0]) - parseInt(a[0])) // Sort years descending
+              .map(([year, yearEntries]) => (
+                <div key={year} className="mb-4">
+                  <h3 className="caption text-white opacity-60 mb-2">{year}</h3>
+                  <div className="flex flex-col">
+                    {yearEntries.map(entry => {
+                      const title = entry.properties.Name.title[0].plain_text;
+                      const id = title.toLowerCase().replace(/\s+/g, '-');
+                      return (
+                        <button
+                          key={id}
+                          onClick={() => scrollToEntry(id)}
+                          className="w-full group gap-2 h-4 flex items-center justify-center w-full"
+                        >
+                          <div className="group-hover:bg-white w-10 group-hover:w-12 transition-all duration-100 h-[2px] bg-white/20 rounded-full rounded-full" />
 
-                  <p className="body text-white text-left opacity-0 group-hover:opacity-100 transition-all duration-100 text-white">
-                    {title}
-                  </p>
-                </button>
-              );
-            })}
+                          <p className="w-full body text-white text-left opacity-0 group-hover:opacity-100 transition-all duration-100 text-white truncate">
+                            {title}
+                          </p>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
           </nav>
         </div>
 
@@ -177,7 +203,7 @@ export default function Journal(props) {
             );
 
             const formattedDate = startDateTime.toLocaleString({
-              month: 'long',
+              month: 'short',
               day: 'numeric',
               year: 'numeric',
             });
