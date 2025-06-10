@@ -96,10 +96,8 @@ export default function Journal(props) {
         console.error('Error fetching journal content:', error);
       } finally {
         setLoading(false);
-        // Add a small delay before starting the fade out
-        setTimeout(() => {
-          setIsVisible(false);
-        }, 100);
+        // Remove delay for faster development experience
+        setIsVisible(false);
       }
     };
 
@@ -124,7 +122,7 @@ export default function Journal(props) {
       {/* Full page preloader overlay */}
       <div
         className={cn(
-          'fixed inset-0 main-bg z-50 transition-opacity duration-300 flex items-center justify-center',
+          'fixed inset-0 main-bg z-50 transition-opacity duration-150 flex items-center justify-center',
           isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
         )}
       >
@@ -133,8 +131,8 @@ export default function Journal(props) {
 
       <GridContainer>
         {/* Table of Contents */}
-        <div className="col-start-1 col-end-4 hidden md:block sticky top-[80px] h-fit">
-          <nav className="">
+        <div className="col-start-1 col-end-5 hidden md:block sticky top-[80px] h-fit">
+          <nav className="flex flex-col">
             {orderedEntries.map(entry => {
               const title = entry.properties.Name.title[0].plain_text;
               const id = title.toLowerCase().replace(/\s+/g, '-');
@@ -142,9 +140,13 @@ export default function Journal(props) {
                 <button
                   key={id}
                   onClick={() => scrollToEntry(id)}
-                  className="body text-white opacity-40 hover:opacity-100 text-left block w-full"
+                  className="group gap-2 h-4 w-fit flex items-center justify-center w-full"
                 >
-                  {title}
+                  <div className="group-hover:bg-yellow-300 w-10 group-hover:w-12 transition-all duration-300 h-[2px] bg-white/20 rounded-full rounded-full" />
+
+                  <p className="body text-white text-left opacity-0 group-hover:opacity-100 text-yellow-300">
+                    {title}
+                  </p>
                 </button>
               );
             })}
