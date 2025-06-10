@@ -65,6 +65,7 @@ export default function Journal(props) {
   const [loading, setLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
   const [activeYearId, setActiveYearId] = useState(null);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -115,7 +116,7 @@ export default function Journal(props) {
           if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
             // Only consider elements in the upper half of the viewport
             const rect = entry.boundingClientRect;
-            if (rect.top < window.innerHeight / 2) {
+            if (rect.top < window.innerHeight / 2 && !isScrolling) {
               currentActiveId = entry.target.id;
               setActiveYearId(currentActiveId);
             }
@@ -135,7 +136,7 @@ export default function Journal(props) {
     });
 
     return () => observer.disconnect();
-  }, [entries]); // Re-run when entries change
+  }, [entries, isScrolling]); // Add isScrolling to dependencies
 
   const orderedEntries = [...entries].sort((a, b) => {
     const dateA = new Date(a.properties.Date.date.start);
@@ -159,10 +160,11 @@ export default function Journal(props) {
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - 77;
       const currentScroll = window.pageYOffset;
-      console.log(currentScroll, offsetPosition);
+
       setActiveYearId(id);
+      setIsScrolling(true);
+
       if (Math.abs(currentScroll - offsetPosition) < 5) {
-        console.log('Already at target scroll position');
         // Find the year of the current entry
         const year = Object.keys(entriesByYear).find(year =>
           entriesByYear[year].some(entry => {
@@ -176,8 +178,15 @@ export default function Journal(props) {
         const scrollOptions = {
           top: offsetPosition,
           behavior: 'smooth',
-          duration: 300, // Faster duration
         };
+
+        // Add one-time scrollend listener
+        const handleScrollEnd = () => {
+          setIsScrolling(false);
+          window.removeEventListener('scrollend', handleScrollEnd);
+        };
+        window.addEventListener('scrollend', handleScrollEnd);
+
         window.scrollTo(scrollOptions);
       }
     }
@@ -225,10 +234,10 @@ export default function Journal(props) {
                           {/* horizontal bar */}
                           <div
                             className={cn(
-                              'transition-all duration-100 h-[2px]  rounded-full group-active:w-8',
+                              'transition-all duration-100 group-hover:w-12 h-[2px]  rounded-full group-active:w-8',
                               activeEntry
                                 ? 'bg-yellow-300 w-9'
-                                : 'w-10 group-hover:w-12 bg-white/20 hover:bg-white group-hover:bg-white '
+                                : 'w-10 bg-white/20 hover:bg-white group-hover:bg-white '
                             )}
                           />
 
