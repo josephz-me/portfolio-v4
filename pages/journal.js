@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { act, useEffect, useState } from 'react';
 import GridContainer from '../components/GridContainer';
 import { Client } from '@notionhq/client';
 import ProjectTitle from '../components/projects/ProjectTitle';
@@ -234,15 +234,27 @@ export default function Journal(props) {
                           {/* horizontal bar */}
                           <div
                             className={cn(
-                              'transition-all duration-100 group-hover:w-12 h-[2px]  rounded-full group-active:w-8',
+                              'transition-all duration-100 group-hover:w-12 h-[2px] rounded-full group-active:bg-yellow-300',
                               activeEntry
-                                ? 'bg-yellow-300 w-9'
-                                : 'w-10 bg-white/20 hover:bg-white group-hover:bg-white '
+                                ? 'bg-yellow-300 w-9 group-active:bg-[#FF4343] group-active:w-11'
+                                : 'w-10 bg-white/20 hover:bg-white group-hover:bg-white group-active:w-8'
                             )}
                           />
 
-                          <p className="w-full body text-white text-left opacity-0 group-hover:opacity-100 transition-all duration-100 text-white truncate">
-                            <span className="text-yellow-300 mr-1">{monthDay} </span>
+                          <p
+                            className={cn(
+                              'w-full body text-white text-left opacity-0 group-hover:opacity-100 transition-all duration-100 truncate',
+                              activeEntry && 'group-active:text-[#FF4343]'
+                            )}
+                          >
+                            <span
+                              className={cn(
+                                'text-yellow-300 mr-1',
+                                activeEntry && 'group-active:text-[#FF4343]'
+                              )}
+                            >
+                              {monthDay}{' '}
+                            </span>
                             {title}
                           </p>
                         </button>
