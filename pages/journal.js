@@ -64,6 +64,7 @@ export default function Journal(props) {
   const [entries, setEntries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
+  const [activeYearId, setActiveYearId] = useState(null);
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -105,6 +106,37 @@ export default function Journal(props) {
     fetchContent();
   }, [props.notionData]);
 
+  useEffect(() => {
+    let currentActiveId = null;
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+            // Only consider elements in the upper half of the viewport
+            const rect = entry.boundingClientRect;
+            if (rect.top < window.innerHeight / 2) {
+              currentActiveId = entry.target.id;
+              setActiveYearId(currentActiveId);
+            }
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '-80px 0px -50% 0px', // Offset for header and only consider upper half
+        threshold: 0.5,
+      }
+    );
+
+    // Observe all entry elements
+    document.querySelectorAll('[id]').forEach(el => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [entries]); // Re-run when entries change
+
   const orderedEntries = [...entries].sort((a, b) => {
     const dateA = new Date(a.properties.Date.date.start);
     const dateB = new Date(b.properties.Date.date.start);
@@ -126,11 +158,28 @@ export default function Journal(props) {
     if (element) {
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - 77;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
+      const currentScroll = window.pageYOffset;
+      console.log(currentScroll, offsetPosition);
+      setActiveYearId(id);
+      if (Math.abs(currentScroll - offsetPosition) < 5) {
+        console.log('Already at target scroll position');
+        // Find the year of the current entry
+        const year = Object.keys(entriesByYear).find(year =>
+          entriesByYear[year].some(entry => {
+            const title = entry.properties.Name.title[0].plain_text;
+            const entryId = title.toLowerCase().replace(/\s+/g, '-');
+            return entryId === id;
+          })
+        );
+      } else {
+        // Use a faster scroll speed
+        const scrollOptions = {
+          top: offsetPosition,
+          behavior: 'smooth',
+          duration: 300, // Faster duration
+        };
+        window.scrollTo(scrollOptions);
+      }
     }
   };
 
@@ -153,21 +202,38 @@ export default function Journal(props) {
             {Object.entries(entriesByYear)
               .sort((a, b) => parseInt(b[0]) - parseInt(a[0])) // Sort years descending
               .map(([year, yearEntries]) => (
-                <div key={year} className="mb-4">
+                <div key={year} className={`mb-4`}>
                   <h3 className="caption text-white opacity-60 mb-2">{year}</h3>
-                  <div className="flex flex-col">
+                  <div className={cn('flex flex-col')}>
                     {yearEntries.map(entry => {
                       const title = entry.properties.Name.title[0].plain_text;
                       const id = title.toLowerCase().replace(/\s+/g, '-');
+
+                      // Format date as MM.DD
+                      const entryDateTime = DateTime.fromISO(entry.properties.Date.date.start);
+                      const monthDay = entryDateTime.toFormat('MM.dd');
+
+                      let activeEntry = activeYearId === id;
                       return (
                         <button
                           key={id}
                           onClick={() => scrollToEntry(id)}
-                          className="w-full group gap-2 h-auto flex items-center justify-center w-full"
+                          className={cn(
+                            'w-full group gap-2 h-auto flex items-center justify-center'
+                          )}
                         >
-                          <div className="group-hover:bg-white w-10 group-hover:w-12 group-active:w-10 transition-all duration-100 h-[2px] bg-white/20 rounded-full rounded-full" />
+                          {/* horizontal bar */}
+                          <div
+                            className={cn(
+                              'transition-all duration-100 h-[2px]  rounded-full group-active:w-8',
+                              activeEntry
+                                ? 'bg-yellow-300 w-9'
+                                : 'w-10 group-hover:w-12 bg-white/20 hover:bg-white group-hover:bg-white '
+                            )}
+                          />
 
                           <p className="w-full body text-white text-left opacity-0 group-hover:opacity-100 transition-all duration-100 text-white truncate">
+                            <span className="text-yellow-300 mr-1">{monthDay} </span>
                             {title}
                           </p>
                         </button>
