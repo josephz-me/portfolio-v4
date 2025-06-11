@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
+  reactStrictMode: true,
   images: {
     formats: ['image/avif', 'image/webp'],
     domains: [
@@ -8,6 +8,16 @@ const nextConfig = {
       'm.media-amazon.com',
       'prod-files-secure.s3.us-west-2.amazonaws.com',
     ],
+  },
+  webpack: (config, { dev, isServer }) => {
+    // Optimize hot reloading
+    if (dev && !isServer) {
+      config.watchOptions = {
+        poll: 1000,
+        aggregateTimeout: 300,
+      };
+    }
+    return config;
   },
 };
 

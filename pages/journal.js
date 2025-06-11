@@ -239,7 +239,7 @@ export default function Journal(props) {
                           {/* horizontal bar */}
                           <div
                             className={cn(
-                              'transition-all duration-100 group-hover:w-12 h-[2px] rounded-full group-active:bg-yellow-300',
+                              ' transition-all duration-100 group-hover:w-12 h-[2px] rounded-full group-active:bg-yellow-300',
                               activeEntry
                                 ? 'bg-yellow-300 w-9 group-active:bg-[#FF4343] group-active:w-11'
                                 : 'w-10 bg-white/20 hover:bg-white group-hover:bg-white group-active:w-8'
@@ -248,8 +248,8 @@ export default function Journal(props) {
 
                           <p
                             className={cn(
-                              'w-full body text-white text-left opacity-0 group-hover:opacity-100 transition-all duration-100 truncate',
-                              activeEntry && 'group-active:text-[#FF4343]'
+                              'body w-full text-white text-left opacity-0 group-hover:opacity-100 transition-all duration-100 truncate',
+                              activeEntry && 'group-active:text-[#FF4343] group-active:hidden'
                             )}
                           >
                             <span
@@ -258,9 +258,17 @@ export default function Journal(props) {
                                 activeEntry && 'group-active:text-[#FF4343]'
                               )}
                             >
-                              {monthDay}{' '}
+                              {monthDay}
                             </span>
                             {title}
+                          </p>
+                          <p
+                            className={cn(
+                              'body text-white hidden w-full text-left',
+                              activeEntry && 'group-active:block'
+                            )}
+                          >
+                            Already in view
                           </p>
                         </button>
                       );
