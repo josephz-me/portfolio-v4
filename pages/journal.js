@@ -239,36 +239,43 @@ export default function Journal(props) {
                           {/* horizontal bar */}
                           <div
                             className={cn(
-                              ' transition-all duration-100 group-hover:w-12 h-[2px] rounded-full group-active:bg-yellow-300',
+                              ' duration-100 transition-all group-hover:w-12 h-[2px] rounded-full group-active:bg-yellow-300',
                               activeEntry
-                                ? 'bg-yellow-300 w-9 group-active:bg-[#FF4343] group-active:w-11'
+                                ? 'bg-yellow-300 w-9 group-active:bg-yellow-300 group-active:w-[46px]'
                                 : 'w-10 bg-white/20 hover:bg-white group-hover:bg-white group-active:w-8'
                             )}
                           />
 
                           <p
                             className={cn(
-                              'body w-full text-white text-left opacity-0 group-hover:opacity-100 transition-all duration-100 truncate',
-                              activeEntry && 'group-active:text-[#FF4343] group-active:hidden'
+                              'inline body w-full text-white text-left opacity-0 group-hover:opacity-100 truncate',
+                              activeEntry && 'group-active:text-yellow-300'
                             )}
                           >
                             <span
                               className={cn(
                                 'text-yellow-300 mr-1',
-                                activeEntry && 'group-active:text-[#FF4343]'
+                                activeEntry && 'group-active:text-yellow-300'
                               )}
                             >
                               {monthDay}
                             </span>
-                            {title}
-                          </p>
-                          <p
-                            className={cn(
-                              'body text-white hidden w-full text-left',
-                              activeEntry && 'group-active:block'
-                            )}
-                          >
-                            Already in view
+                            <span
+                              className={cn(
+                                'body text-white'
+                                // activeEntry && 'group-active:hidden'
+                              )}
+                            >
+                              {title}
+                            </span>
+                            {/* <span
+                              className={cn(
+                                'body text-white hidden',
+                                activeEntry && 'group-active:inline-block'
+                              )}
+                            >
+                              Entry already pinned
+                            </span> */}
                           </p>
                         </button>
                       );
