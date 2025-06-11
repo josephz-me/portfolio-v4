@@ -232,7 +232,7 @@ export default function Journal(props) {
                         <button
                           key={id}
                           onClick={() => scrollToEntry(id)}
-                          onMouseDown={() => setActiveYearId(null)}
+                          onMouseDown={() => !activeEntry && setActiveYearId(null)}
                           className={cn(
                             'w-full group gap-2 h-auto flex items-center justify-center'
                           )}
@@ -242,7 +242,7 @@ export default function Journal(props) {
                             className={cn(
                               ' duration-100 transition-all group-hover:w-12 h-[2px] rounded-full group-active:bg-yellow-300',
                               activeEntry
-                                ? 'bg-yellow-300 w-9 group-active:bg-yellow-300 group-active:w-[46px]'
+                                ? 'bg-yellow-300 w-9 group-active:w-[46px]'
                                 : 'w-10 bg-white/20 hover:bg-white group-hover:bg-white group-active:w-8'
                             )}
                           />
