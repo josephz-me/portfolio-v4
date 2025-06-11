@@ -119,6 +119,7 @@ export default function Journal(props) {
             if (rect.top < window.innerHeight / 2 && !isScrolling) {
               currentActiveId = entry.target.id;
               setActiveYearId(currentActiveId);
+              console.log('currentActiveId', currentActiveId);
             }
           }
         });
@@ -180,12 +181,16 @@ export default function Journal(props) {
           behavior: 'smooth',
         };
 
-        // Add one-time scrollend listener
-        const handleScrollEnd = () => {
-          setIsScrolling(false);
-          window.removeEventListener('scrollend', handleScrollEnd);
+        // Add scroll listener with timeout
+        let scrollTimeout;
+        const handleScroll = () => {
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            setIsScrolling(false);
+            window.removeEventListener('scroll', handleScroll);
+          }, 100); // Wait for 150ms of no scrolling before considering it ended
         };
-        window.addEventListener('scrollend', handleScrollEnd);
+        window.addEventListener('scroll', handleScroll);
 
         window.scrollTo(scrollOptions);
       }
