@@ -1,4 +1,4 @@
-import React, { act, useEffect, useState } from 'react';
+import React, { act, useEffect, useState, useRef } from 'react';
 import GridContainer from '../components/GridContainer';
 import { Client } from '@notionhq/client';
 import ProjectTitle from '../components/projects/ProjectTitle';
@@ -66,6 +66,10 @@ export default function Journal(props) {
   const [isVisible, setIsVisible] = useState(true);
   const [activeYearId, setActiveYearId] = useState(null);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [hoveredEntry, setHoveredEntry] = useState(null);
+  const [lastHoveredPosition, setLastHoveredPosition] = useState(0);
+  const [hoveredContent, setHoveredContent] = useState(null);
+  const dotRef = useRef(null);
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -211,7 +215,23 @@ export default function Journal(props) {
 
       <GridContainer>
         {/* Table of Contents */}
+
         <div className="col-start-1 col-end-5 hidden md:block sticky top-[79px] h-fit">
+          {/* translating text */}
+          <div
+            className="left-[30px] rounded-full transition-all duration-50 ease-in-out absolute"
+            style={{
+              transform: `translateY(${hoveredEntry ?? lastHoveredPosition}px)`,
+              opacity: hoveredEntry !== null ? 1 : 0,
+            }}
+          >
+            {hoveredContent && (
+              <div className="absolute left-6 top-1/2 text-white body -translate-y-1/2 whitespace-nowrap">
+                <span className="text-yellow-300 mr-1">{hoveredContent.monthDay}</span>
+                {hoveredContent.title}
+              </div>
+            )}
+          </div>
           <nav className="flex flex-col">
             {Object.entries(entriesByYear)
               .sort((a, b) => parseInt(b[0]) - parseInt(a[0])) // Sort years descending
@@ -232,6 +252,18 @@ export default function Journal(props) {
                         <button
                           key={id}
                           onClick={() => scrollToEntry(id)}
+                          onMouseEnter={e => {
+                            const rect = e.currentTarget.getBoundingClientRect();
+                            const navRect = e.currentTarget.closest('nav').getBoundingClientRect();
+                            const position = rect.top - navRect.top + rect.height / 2;
+                            setHoveredEntry(position);
+                            setLastHoveredPosition(position);
+                            setHoveredContent({ monthDay, title });
+                          }}
+                          onMouseLeave={() => {
+                            setHoveredEntry(null);
+                            setHoveredContent(null);
+                          }}
                           className={cn(
                             'w-full group gap-2 h-auto flex items-center justify-center'
                           )}
@@ -248,7 +280,7 @@ export default function Journal(props) {
 
                           <p
                             className={cn(
-                              'body w-full text-white text-left opacity-0 group-hover:opacity-100 transition-all duration-100 truncate',
+                              'opacity-0 body w-full text-white text-left opacity-0 transition-all duration-100 truncate',
                               activeEntry && 'group-active:text-[#FF4343] group-active:hidden'
                             )}
                           >
@@ -264,7 +296,7 @@ export default function Journal(props) {
                           </p>
                           <p
                             className={cn(
-                              'body text-white hidden w-full text-left',
+                              'opacity-0 body text-white hidden w-full text-left',
                               activeEntry && 'group-active:block'
                             )}
                           >
