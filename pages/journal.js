@@ -11,7 +11,7 @@ function JournalImage({ src, alt }) {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   return (
-    <div className="relative w-full aspect-[3/4] mt-2">
+    <div className="relative w-full aspect-[3/4]">
       <Preloader isContentLoaded={isImageLoaded} hideTextMobile={true} />
       <Image
         src={src}
@@ -381,7 +381,7 @@ export default function Journal(props) {
                 </div>
                 {/* image */}
                 <div
-                  className={`grid ${MediaBlocks.length % 2 === 0 ? 'grid-cols-2' : 'grid-cols-3'} gap-4`}
+                  className={`grid mt-2 ${MediaBlocks.length % 2 === 0 ? 'grid-cols-2' : 'grid-cols-3'} gap-4`}
                 >
                   {MediaBlocks.map(block => {
                     if (block.type === 'image') {
