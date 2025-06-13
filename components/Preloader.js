@@ -25,9 +25,7 @@ export default function Preloader(props) {
             props.dark ? 'text-white' : 'text-zinc-500'
           )}
         >
-          <span className={`${props.hideTextMobile ? 'hidden md:inline' : ''}`}>
-            {loadingPhrase}
-          </span>
+          <span className={`${props.hideTextMobile && 'hidden'}`}>{loadingPhrase}</span>
           <span className="inline animate-bounce">.</span>
           <span className="inline animate-bounce [animation-delay:0.1s]">.</span>
           <span className="inline animate-bounce [animation-delay:0.2s]">.</span>

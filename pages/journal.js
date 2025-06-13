@@ -93,6 +93,7 @@ export default function Journal(props) {
           ...entry,
           content: results.find(r => r.id === entry.id)?.content || [],
         }));
+        console.log('entriesWithContent', entriesWithContent);
 
         setEntries(entriesWithContent);
       } catch (error) {
@@ -310,11 +311,16 @@ export default function Journal(props) {
               timezoneOffset || 'UTC'
             );
 
-            const formattedDate = startDateTime.toLocaleString({
+            let formattedDate = startDateTime.toLocaleString({
               month: 'short',
               day: 'numeric',
               year: 'numeric',
             });
+
+            // If end date exists and is different from start date, show range
+            if (EntryDate.end && !startDateTime.hasSame(endDateTime, 'day')) {
+              formattedDate = `${startDateTime.toLocaleString({ month: 'short', day: 'numeric' })} – ${endDateTime.toLocaleString({ month: 'short', day: 'numeric', year: 'numeric' })}`;
+            }
 
             // Only format and show time if it exists in the original date
             const timeDisplay = hasTimeComponent ? (
@@ -381,7 +387,7 @@ export default function Journal(props) {
                 </div>
                 {/* image */}
                 <div
-                  className={`grid mt-2 ${MediaBlocks.length % 2 === 0 ? 'grid-cols-2' : 'grid-cols-3'} gap-4`}
+                  className={`grid mt-2 ${MediaBlocks.length === 8 ? 'grid-cols-4' : MediaBlocks.length % 2 === 0 ? 'grid-cols-2' : 'grid-cols-3'} gap-4`}
                 >
                   {MediaBlocks.map(block => {
                     if (block.type === 'image') {
