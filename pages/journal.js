@@ -447,7 +447,6 @@ export default function Journal(props) {
                         <button
                           key={id}
                           onClick={() => scrollToEntry(id)}
-                          onMouseDown={() => !isActiveEntry && setActiveYearId(null)}
                           className={cn(
                             'relative w-full group gap-2 h-auto flex items-center justify-center'
                           )}
