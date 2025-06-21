@@ -7,7 +7,7 @@ import Preloader from '../components/Preloader';
 import { cn } from '../lib/utils';
 import { DateTime } from 'luxon';
 
-function CupertinoMap({ className }) {
+function LocationMap({ className, isActive }) {
   const mapRef = useRef(null);
   const mapInstanceRef = useRef(null);
   const [mapLoaded, setMapLoaded] = useState(false);
@@ -79,7 +79,7 @@ function CupertinoMap({ className }) {
   }, []);
 
   return (
-    <div className={cn('w-full overflow-hidden rounded-md', className)}>
+    <div className={cn('w-full overflow-hidden transition-opacity duration-300', className)}>
       <div ref={mapRef} className="bg-gray-100 aspect-square w-full h-auto" />
       <style jsx>{`
         :global(.mapboxgl-ctrl-logo) {
@@ -354,7 +354,7 @@ export default function Journal(props) {
 
       <GridContainer>
         {/* Table of Contents */}
-        <div className="col-start-1 col-end-4 hidden md:block sticky top-[79px] h-fit">
+        <div className="justify-between col-start-1 col-end-4 sticky flex-col hidden md:flex top-[79px] h-[calc(100vh-90px)]">
           <nav className="flex flex-col">
             {Object.entries(entriesByYear)
               .sort((a, b) => parseInt(b[0]) - parseInt(a[0])) // Sort years descending
@@ -428,6 +428,16 @@ export default function Journal(props) {
                 </div>
               ))}
           </nav>
+
+          <div className="w-[90%] h-auto aspect-square relative  overflow-hidden">
+            <LocationMap className="aspect-square w-full h-full" />
+            <div
+              className=" absolute left-0 right-0 bottom-0 top-0"
+              style={{
+                background: 'radial-gradient(circle, rgba(17,17,17,0) 0%, rgba(17,17,17,1) 70%)',
+              }}
+            />
+          </div>
         </div>
 
         {/* Main Content */}
@@ -494,86 +504,68 @@ export default function Journal(props) {
             });
 
             return (
-              <div className="pb-12 md:pb-16 grid grid-cols-9 grid-gap" key={entryId}>
-                <div className="col-start-1 col-end-2 aspect-square relative overflow-hidden">
-                  <CupertinoMap className="rounded-full" />
-                  <div
-                    className="absolute aspect-square w-full h-auto top-0 left-0"
-                    style={{
-                      background:
-                        'radial-gradient(circle, rgba(17,17,17,0) 0%, rgba(17,17,17,1) 75%)',
-                    }}
-                  />
-                </div>
-
-                <div className="col-start-2 col-end-10">
-                  <div id={entryId} className="text-white grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="pb-2">
-                      {/* title */}
-                      <h1 className="body mb-1">{EntryTitle}</h1>
-                      {/* date */}
-                      <p className="caption opacity-40">
-                        {formattedDate}
-                        {timeDisplay && <> • {timeDisplay}</>}
-                      </p>
-                      {/* text */}
-                      {TextBlocks.map(block => {
-                        if (block.type === 'paragraph') {
-                          // Only render if there is text content
-                          if (block.paragraph.rich_text.length > 0) {
-                            return (
-                              <p
-                                key={block.id}
-                                className={cn(
-                                  'body pt-2 text-white',
-                                  block.paragraph.rich_text[0].annotations.bold && 'font-bold',
-                                  block.paragraph.rich_text[0].annotations.italic && 'italic'
-                                )}
-                              >
-                                {block.paragraph.rich_text[0].plain_text}
-                              </p>
-                            );
-                          }
-                          return <p key={block.id}></p>; // Empty paragraph
+              <div className="pb-12 md:pb-16" key={entryId}>
+                <div id={entryId} className="text-white grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="pb-2">
+                    {/* title */}
+                    <h1 className="body mb-1">{EntryTitle}</h1>
+                    {/* date */}
+                    <p className="caption opacity-40">
+                      {formattedDate}
+                      {timeDisplay && <> • {timeDisplay}</>}
+                    </p>
+                    {/* text */}
+                    {TextBlocks.map(block => {
+                      if (block.type === 'paragraph') {
+                        // Only render if there is text content
+                        if (block.paragraph.rich_text.length > 0) {
+                          return (
+                            <p
+                              key={block.id}
+                              className={cn(
+                                'body pt-2 text-white',
+                                block.paragraph.rich_text[0].annotations.bold && 'font-bold',
+                                block.paragraph.rich_text[0].annotations.italic && 'italic'
+                              )}
+                            >
+                              {block.paragraph.rich_text[0].plain_text}
+                            </p>
+                          );
                         }
-                        return null; // Handle any other block types
-                      })}
-                      {/* <div className="w-full">
-                      <CupertinoMap />
-                    </div> */}
-                    </div>
+                        return <p key={block.id}></p>; // Empty paragraph
+                      }
+                      return null; // Handle any other block types
+                    })}
                   </div>
-
-                  {/* image */}
-                  {MediaBlocks.length > 0 && (
-                    <div
-                      className={cn('grid mt-2 gap-4', getMediaGridClassName(MediaBlocks.length))}
-                    >
-                      {MediaBlocks.map(block => {
-                        if (block.type === 'image') {
-                          return (
-                            <JournalImage
-                              key={block.id}
-                              src={block.image.file.url}
-                              alt={block.image.caption[0]?.plain_text || ''}
-                            />
-                          );
-                        }
-                        if (block.type === 'video') {
-                          return (
-                            <video
-                              className="mt-4"
-                              key={block.id}
-                              src={block.video.file.url}
-                              controls
-                            />
-                          );
-                        }
-                        return null;
-                      })}
-                    </div>
-                  )}
                 </div>
+
+                {/* image */}
+                {MediaBlocks.length > 0 && (
+                  <div className={cn('grid mt-2 gap-4', getMediaGridClassName(MediaBlocks.length))}>
+                    {MediaBlocks.map(block => {
+                      if (block.type === 'image') {
+                        return (
+                          <JournalImage
+                            key={block.id}
+                            src={block.image.file.url}
+                            alt={block.image.caption[0]?.plain_text || ''}
+                          />
+                        );
+                      }
+                      if (block.type === 'video') {
+                        return (
+                          <video
+                            className="mt-4"
+                            key={block.id}
+                            src={block.video.file.url}
+                            controls
+                          />
+                        );
+                      }
+                      return null;
+                    })}
+                  </div>
+                )}
               </div>
             );
           })}
