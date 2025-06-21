@@ -79,7 +79,7 @@ function LocationMap({ className, isActive, coordinates, googleMapsUrl }) {
         container: mapRef.current,
         style: 'mapbox://styles/mapbox/dark-v11', // Dark theme
         center: mapCoordinates,
-        zoom: 10,
+        zoom: 8,
         interactive: false, // Disable all interactions
         trackResize: true, // Enable resizing when browser resizes
         collectResourceTiming: false,
@@ -209,7 +209,7 @@ export default function Journal(props) {
   const [isScrolling, setIsScrolling] = useState(false);
 
   // Set to false during development to always fetch fresh data
-  const useLocalCache = false;
+  const useLocalCache = true;
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -280,8 +280,6 @@ export default function Journal(props) {
           ...entry,
           content: results.find(r => r.id === entry.id)?.content || [],
         }));
-        console.log('entriesWithContent', entriesWithContent);
-        console.log('Full notion entries with content:', entriesWithContent);
 
         setEntries(entriesWithContent);
       } catch (error) {
@@ -503,17 +501,24 @@ export default function Journal(props) {
               ))}
           </nav>
 
-          <div className="w-[90%] h-auto aspect-square relative  overflow-hidden">
-            <LocationMap
-              googleMapsUrl={activeEntry?.properties?.Location?.url || null}
-              className="aspect-square w-full h-full"
-            />
-            <div
-              className=" absolute left-0 right-0 bottom-0 top-0"
-              style={{
-                background: 'radial-gradient(circle, rgba(17,17,17,0) 0%, rgba(17,17,17,1) 70%)',
-              }}
-            />
+          <div className="group w-[90%] h-auto aspect-square relative overflow-hidden mb-4">
+            <a
+              href={activeEntry?.properties?.Location?.url || null}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full h-full cursor-pointer"
+            >
+              <LocationMap
+                googleMapsUrl={activeEntry?.properties?.Location?.url || null}
+                className="duration-1000 transition-all ease-out group-hover:opacity-80 group-hover:scale-[1.02] aspect-square w-full h-full"
+              />
+              <div
+                className=" absolute left-0 right-0 bottom-0 top-0"
+                style={{
+                  background: 'radial-gradient(circle, rgba(17,17,17,0) 0%, rgba(17,17,17,1) 70%)',
+                }}
+              />
+            </a>
           </div>
         </div>
 
