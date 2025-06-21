@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { cn } from '../lib/utils';
 
 export default function Navbar(props) {
   const router = useRouter();
@@ -51,7 +52,12 @@ export default function Navbar(props) {
         <h1 className="">Joseph Zhang</h1>
       </Link>
 
-      <p className="col-span-6 md:col-start-7 lg:col-start-7 md:col-span-3 lg:col-span-2">
+      <p
+        className={cn(
+          'col-span-6 md:col-start-7 lg:col-start-7 transition-opacity duration-500 md:col-span-3 lg:col-span-2 transition-opacity',
+          router.pathname === '/journal' && 'opacity-0'
+        )}
+      >
         Interaction Designer
       </p>
       <p className="hidden col-span-3 lg:inline md:col-start-9">New York, NY</p>
