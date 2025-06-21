@@ -1,4 +1,4 @@
-import React, { act, useEffect, useState } from 'react';
+import React, { act, useEffect, useState, useRef } from 'react';
 import GridContainer from '../components/GridContainer';
 import { Client } from '@notionhq/client';
 import ProjectTitle from '../components/projects/ProjectTitle';
@@ -6,6 +6,89 @@ import Image from 'next/image';
 import Preloader from '../components/Preloader';
 import { cn } from '../lib/utils';
 import { DateTime } from 'luxon';
+
+function CupertinoMap({ className }) {
+  const mapRef = useRef(null);
+  const mapInstanceRef = useRef(null);
+  const [mapLoaded, setMapLoaded] = useState(false);
+
+  useEffect(() => {
+    // Load Mapbox GL JS
+    const loadMapbox = async () => {
+      if (typeof window === 'undefined') return;
+
+      // Check if Mapbox is already loaded
+      if (window.mapboxgl) {
+        initializeMap();
+        return;
+      }
+
+      // Load CSS
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css';
+      document.head.appendChild(link);
+
+      // Load JS
+      const script = document.createElement('script');
+      script.src = 'https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js';
+      script.onload = () => {
+        setMapLoaded(true);
+        initializeMap();
+      };
+      document.head.appendChild(script);
+    };
+
+    const initializeMap = () => {
+      if (!mapRef.current || mapInstanceRef.current) return;
+
+      window.mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_API_KEY;
+
+      const map = new window.mapboxgl.Map({
+        container: mapRef.current,
+        style: 'mapbox://styles/mapbox/dark-v11', // Dark theme
+        center: [-122.0322, 37.323], // Cupertino coordinates
+        zoom: 10,
+        interactive: false, // Disable all interactions
+        trackResize: true, // Enable resizing when browser resizes
+        collectResourceTiming: false,
+        attributionControl: false, // Hide Mapbox logo and attribution
+      });
+
+      // Add error handling
+      map.on('error', e => {
+        console.error('Mapbox error:', e);
+      });
+
+      map.on('load', () => {
+        console.log('Map loaded successfully');
+      });
+
+      mapInstanceRef.current = map;
+    };
+
+    loadMapbox();
+
+    // Cleanup
+    return () => {
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.remove();
+        mapInstanceRef.current = null;
+      }
+    };
+  }, []);
+
+  return (
+    <div className={cn('w-full overflow-hidden rounded-md', className)}>
+      <div ref={mapRef} className="bg-gray-100 aspect-square w-full h-auto" />
+      <style jsx>{`
+        :global(.mapboxgl-ctrl-logo) {
+          display: none !important;
+        }
+      `}</style>
+    </div>
+  );
+}
 
 function JournalImage({ src, alt }) {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -81,7 +164,7 @@ export default function Journal(props) {
   const [isScrolling, setIsScrolling] = useState(false);
 
   // Set to false during development to always fetch fresh data
-  const useLocalCache = false;
+  const useLocalCache = true;
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -271,7 +354,7 @@ export default function Journal(props) {
 
       <GridContainer>
         {/* Table of Contents */}
-        <div className="col-start-1 col-end-5 hidden md:block sticky top-[79px] h-fit">
+        <div className="col-start-1 col-end-4 hidden md:block sticky top-[79px] h-fit">
           <nav className="flex flex-col">
             {Object.entries(entriesByYear)
               .sort((a, b) => parseInt(b[0]) - parseInt(a[0])) // Sort years descending
@@ -294,7 +377,7 @@ export default function Journal(props) {
                           onClick={() => scrollToEntry(id)}
                           onMouseDown={() => !activeEntry && setActiveYearId(null)}
                           className={cn(
-                            'w-full group gap-2 h-auto flex items-center justify-center'
+                            'relative w-full group gap-2 h-auto flex items-center justify-center'
                           )}
                         >
                           {/* horizontal bar */}
@@ -348,7 +431,7 @@ export default function Journal(props) {
         </div>
 
         {/* Main Content */}
-        <div className="col-start-1 col-end-13 md:col-start-5 pt-6">
+        <div className="col-start-1 col-end-13 md:col-start-4 pt-6">
           {orderedEntries.map((entry, index) => {
             const EntryTitle = entry.properties.Name.title[0].plain_text;
             const EntryDate = entry.properties.Date.date;
@@ -411,66 +494,86 @@ export default function Journal(props) {
             });
 
             return (
-              <div className="pb-12 md:pb-16" key={entryId}>
-                <div id={entryId} className="text-white grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="pb-2">
-                    <h1 className="body mb-1">{EntryTitle}</h1>
+              <div className="pb-12 md:pb-16 grid grid-cols-9 grid-gap" key={entryId}>
+                <div className="col-start-1 col-end-2 aspect-square relative overflow-hidden">
+                  <CupertinoMap className="rounded-full" />
+                  <div
+                    className="absolute aspect-square w-full h-auto top-0 left-0"
+                    style={{
+                      background:
+                        'radial-gradient(circle, rgba(17,17,17,0) 0%, rgba(17,17,17,1) 75%)',
+                    }}
+                  />
+                </div>
 
-                    <p className="caption opacity-40">
-                      {formattedDate}
-                      {timeDisplay && <> • {timeDisplay}</>}
-                    </p>
+                <div className="col-start-2 col-end-10">
+                  <div id={entryId} className="text-white grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="pb-2">
+                      {/* title */}
+                      <h1 className="body mb-1">{EntryTitle}</h1>
+                      {/* date */}
+                      <p className="caption opacity-40">
+                        {formattedDate}
+                        {timeDisplay && <> • {timeDisplay}</>}
+                      </p>
+                      {/* text */}
+                      {TextBlocks.map(block => {
+                        if (block.type === 'paragraph') {
+                          // Only render if there is text content
+                          if (block.paragraph.rich_text.length > 0) {
+                            return (
+                              <p
+                                key={block.id}
+                                className={cn(
+                                  'body pt-2 text-white',
+                                  block.paragraph.rich_text[0].annotations.bold && 'font-bold',
+                                  block.paragraph.rich_text[0].annotations.italic && 'italic'
+                                )}
+                              >
+                                {block.paragraph.rich_text[0].plain_text}
+                              </p>
+                            );
+                          }
+                          return <p key={block.id}></p>; // Empty paragraph
+                        }
+                        return null; // Handle any other block types
+                      })}
+                      {/* <div className="w-full">
+                      <CupertinoMap />
+                    </div> */}
+                    </div>
+                  </div>
 
-                    {TextBlocks.map(block => {
-                      if (block.type === 'paragraph') {
-                        // Only render if there is text content
-                        if (block.paragraph.rich_text.length > 0) {
+                  {/* image */}
+                  {MediaBlocks.length > 0 && (
+                    <div
+                      className={cn('grid mt-2 gap-4', getMediaGridClassName(MediaBlocks.length))}
+                    >
+                      {MediaBlocks.map(block => {
+                        if (block.type === 'image') {
                           return (
-                            <p
+                            <JournalImage
                               key={block.id}
-                              className={cn(
-                                'body pt-2 text-white',
-                                block.paragraph.rich_text[0].annotations.bold && 'font-bold',
-                                block.paragraph.rich_text[0].annotations.italic && 'italic'
-                              )}
-                            >
-                              {block.paragraph.rich_text[0].plain_text}
-                            </p>
+                              src={block.image.file.url}
+                              alt={block.image.caption[0]?.plain_text || ''}
+                            />
                           );
                         }
-                        return <p key={block.id}></p>; // Empty paragraph
-                      }
-                      return null; // Handle any other block types
-                    })}
-                  </div>
+                        if (block.type === 'video') {
+                          return (
+                            <video
+                              className="mt-4"
+                              key={block.id}
+                              src={block.video.file.url}
+                              controls
+                            />
+                          );
+                        }
+                        return null;
+                      })}
+                    </div>
+                  )}
                 </div>
-                {/* image */}
-                {MediaBlocks.length > 0 && (
-                  <div className={cn('grid mt-2 gap-4', getMediaGridClassName(MediaBlocks.length))}>
-                    {MediaBlocks.map(block => {
-                      if (block.type === 'image') {
-                        return (
-                          <JournalImage
-                            key={block.id}
-                            src={block.image.file.url}
-                            alt={block.image.caption[0]?.plain_text || ''}
-                          />
-                        );
-                      }
-                      if (block.type === 'video') {
-                        return (
-                          <video
-                            className="mt-4"
-                            key={block.id}
-                            src={block.video.file.url}
-                            controls
-                          />
-                        );
-                      }
-                      return null;
-                    })}
-                  </div>
-                )}
               </div>
             );
           })}
