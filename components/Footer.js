@@ -47,23 +47,28 @@ export default function Footer() {
 
         <span className={`flex flex-col space-y-1 ${BREAKPOINT} md:col-start-7 md:col-end-9`}>
           <p>
-            <TextLink super={1} link="https://www.linkedin.com/in/josephzme/">
+            <TextLink sameTab super={1} link="/reading-list">
+              Reading
+            </TextLink>
+          </p>
+          <p>
+            <TextLink sameTab super={2} link="/journal">
+              Visual journal
+            </TextLink>
+          </p>
+          <p>
+            <TextLink super={3} link="https://www.linkedin.com/in/josephzme/">
               Linkedin
             </TextLink>
           </p>
           <p>
-            <TextLink super={2} link="https://www.instagram.com/josephhhz/">
+            <TextLink super={4} link="https://www.instagram.com/josephhhz/">
               Instagram
             </TextLink>
           </p>
           <p>
-            <TextLink super={3} link="https://twitter.com/josephhhhz">
+            <TextLink super={5} link="https://twitter.com/josephhhhz">
               Twitter
-            </TextLink>
-          </p>
-          <p>
-            <TextLink sameTab super={4} link="/reading-list">
-              Reading
             </TextLink>
           </p>
         </span>
