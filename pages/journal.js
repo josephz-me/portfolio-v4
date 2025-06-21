@@ -7,10 +7,39 @@ import Preloader from '../components/Preloader';
 import { cn } from '../lib/utils';
 import { DateTime } from 'luxon';
 
-function LocationMap({ className, isActive }) {
+function LocationMap({ className, isActive, coordinates, googleMapsUrl }) {
   const mapRef = useRef(null);
   const mapInstanceRef = useRef(null);
   const [mapLoaded, setMapLoaded] = useState(false);
+
+  // Parse Google Maps URL to extract coordinates
+  const parseGoogleMapsUrl = url => {
+    if (!url) return null;
+
+    // Match various Google Maps URL formats
+    const patterns = [
+      /q=(-?\d+\.?\d*),(-?\d+\.?\d*)/, // ?q=lat,lng
+      /@(-?\d+\.?\d*),(-?\d+\.?\d*)/, // @lat,lng
+      /ll=(-?\d+\.?\d*),(-?\d+\.?\d*)/, // ll=lat,lng
+    ];
+
+    for (const pattern of patterns) {
+      const match = url.match(pattern);
+      if (match) {
+        const lat = parseFloat(match[1]);
+        const lng = parseFloat(match[2]);
+        return [lng, lat]; // Return as [longitude, latitude] for Mapbox
+      }
+    }
+    return null;
+  };
+
+  // Determine final coordinates to use
+  const getCoordinates = () => {
+    if (coordinates) return coordinates;
+    if (googleMapsUrl) return parseGoogleMapsUrl(googleMapsUrl);
+    return [-122.0322, 37.323]; // Default to Cupertino
+  };
 
   useEffect(() => {
     // Load Mapbox GL JS
@@ -44,10 +73,12 @@ function LocationMap({ className, isActive }) {
 
       window.mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_API_KEY;
 
+      const mapCoordinates = getCoordinates();
+
       const map = new window.mapboxgl.Map({
         container: mapRef.current,
         style: 'mapbox://styles/mapbox/dark-v11', // Dark theme
-        center: [-122.0322, 37.323], // Cupertino coordinates
+        center: mapCoordinates,
         zoom: 10,
         interactive: false, // Disable all interactions
         trackResize: true, // Enable resizing when browser resizes
@@ -77,6 +108,15 @@ function LocationMap({ className, isActive }) {
       }
     };
   }, []);
+
+  // Update map center when googleMapsUrl changes
+  useEffect(() => {
+    if (mapInstanceRef.current) {
+      const newCoordinates = getCoordinates();
+      mapInstanceRef.current.setCenter(newCoordinates);
+      console.log('Map center updated to:', newCoordinates);
+    }
+  }, [googleMapsUrl, coordinates]);
 
   return (
     <div className={cn('w-full overflow-hidden transition-opacity duration-300', className)}>
@@ -126,11 +166,15 @@ export async function getStaticProps() {
       database_id: process.env.NOTION_TASKS_ID,
     });
 
+    console.log('Notion database response:', databaseResponse.results);
+
     // Only include essential metadata in the initial props
     const entries = databaseResponse.results.map(page => ({
       id: page.id,
       properties: page.properties,
     }));
+
+    console.log('Processed entries:', entries);
 
     return {
       props: {
@@ -161,10 +205,11 @@ export default function Journal(props) {
   const [loading, setLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
   const [activeYearId, setActiveYearId] = useState(null);
+  const [activeEntry, setActiveEntry] = useState(null);
   const [isScrolling, setIsScrolling] = useState(false);
 
   // Set to false during development to always fetch fresh data
-  const useLocalCache = true;
+  const useLocalCache = false;
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -236,6 +281,7 @@ export default function Journal(props) {
           content: results.find(r => r.id === entry.id)?.content || [],
         }));
         console.log('entriesWithContent', entriesWithContent);
+        console.log('Full notion entries with content:', entriesWithContent);
 
         setEntries(entriesWithContent);
       } catch (error) {
@@ -297,6 +343,34 @@ export default function Journal(props) {
     acc[year].push(entry);
     return acc;
   }, {});
+
+  // Update active entry when activeYearId changes
+  useEffect(() => {
+    if (!activeYearId || !entriesByYear) {
+      setActiveEntry(null);
+      return;
+    }
+
+    // Find the active entry across all years
+    for (const yearEntries of Object.values(entriesByYear)) {
+      const foundEntry = yearEntries.find(entry => {
+        const title = entry.properties.Name.title[0].plain_text;
+        const entryId = title.toLowerCase().replace(/\s+/g, '-');
+        return entryId === activeYearId;
+      });
+
+      if (foundEntry) {
+        setActiveEntry(foundEntry);
+        return;
+      }
+    }
+    setActiveEntry(null);
+  }, [activeYearId, entriesByYear]);
+
+  // Get location URL from active entry
+  const getActiveEntryLocationUrl = () => {
+    return activeEntry?.properties?.Location?.url || null;
+  };
 
   const scrollToEntry = id => {
     const element = document.getElementById(id);
@@ -370,12 +444,12 @@ export default function Journal(props) {
                       const entryDateTime = DateTime.fromISO(entry.properties.Date.date.start);
                       const monthDay = entryDateTime.toFormat('MM.dd');
 
-                      let activeEntry = activeYearId === id;
+                      let isActiveEntry = activeYearId === id;
                       return (
                         <button
                           key={id}
                           onClick={() => scrollToEntry(id)}
-                          onMouseDown={() => !activeEntry && setActiveYearId(null)}
+                          onMouseDown={() => !isActiveEntry && setActiveYearId(null)}
                           className={cn(
                             'relative w-full group gap-2 h-auto flex items-center justify-center'
                           )}
@@ -384,7 +458,7 @@ export default function Journal(props) {
                           <div
                             className={cn(
                               ' duration-100 transition-all group-hover:w-12 h-[2px] rounded-full group-active:bg-yellow-300',
-                              activeEntry
+                              isActiveEntry
                                 ? 'bg-yellow-300 w-9 group-active:w-[46px]'
                                 : 'w-10 bg-white/20 hover:bg-white group-hover:bg-white group-active:w-8'
                             )}
@@ -393,13 +467,13 @@ export default function Journal(props) {
                           <p
                             className={cn(
                               'inline body w-full text-white text-left opacity-0 group-hover:opacity-100 truncate',
-                              activeEntry && 'group-active:text-yellow-300'
+                              isActiveEntry && 'group-active:text-yellow-300'
                             )}
                           >
                             <span
                               className={cn(
                                 'text-yellow-300 mr-1',
-                                activeEntry && 'group-active:text-yellow-300'
+                                isActiveEntry && 'group-active:text-yellow-300'
                               )}
                             >
                               {monthDay}
@@ -407,7 +481,7 @@ export default function Journal(props) {
                             <span
                               className={cn(
                                 'body text-white'
-                                // activeEntry && 'group-active:hidden'
+                                // isActiveEntry && 'group-active:hidden'
                               )}
                             >
                               {title}
@@ -415,7 +489,7 @@ export default function Journal(props) {
                             {/* <span
                               className={cn(
                                 'body text-white hidden',
-                                activeEntry && 'group-active:inline-block'
+                                isActiveEntry && 'group-active:inline-block'
                               )}
                             >
                               Entry already pinned
@@ -430,7 +504,10 @@ export default function Journal(props) {
           </nav>
 
           <div className="w-[90%] h-auto aspect-square relative  overflow-hidden">
-            <LocationMap className="aspect-square w-full h-full" />
+            <LocationMap
+              googleMapsUrl={activeEntry?.properties?.Location?.url || null}
+              className="aspect-square w-full h-full"
+            />
             <div
               className=" absolute left-0 right-0 bottom-0 top-0"
               style={{
