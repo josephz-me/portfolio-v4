@@ -60,6 +60,19 @@ export async function getStaticProps() {
   }
 }
 
+function getMediaGridClassName(count) {
+  if (count === 8) {
+    return 'grid-cols-4';
+  }
+  if (count === 6) {
+    return 'grid-cols-3';
+  }
+  if (count % 2 === 0) {
+    return 'grid-cols-2';
+  }
+  return 'grid-cols-3';
+}
+
 export default function Journal(props) {
   const [entries, setEntries] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -69,10 +82,8 @@ export default function Journal(props) {
 
   useEffect(() => {
     const fetchContent = async () => {
-      // Only fetch entries marked as Journal
-      const journalEntries = props.notionData.filter(
-        entry => entry.properties['Journal'].checkbox === true
-      );
+      // Fetch all entries
+      const journalEntries = props.notionData;
       const ids = journalEntries.map(entry => entry.id);
 
       try {
@@ -386,32 +397,32 @@ export default function Journal(props) {
                   </div>
                 </div>
                 {/* image */}
-                <div
-                  className={`grid mt-2 ${MediaBlocks.length === 8 ? 'grid-cols-4' : MediaBlocks.length % 2 === 0 ? 'grid-cols-2' : 'grid-cols-3'} gap-4`}
-                >
-                  {MediaBlocks.map(block => {
-                    if (block.type === 'image') {
-                      return (
-                        <JournalImage
-                          key={block.id}
-                          src={block.image.file.url}
-                          alt={block.image.caption[0]?.plain_text || ''}
-                        />
-                      );
-                    }
-                    if (block.type === 'video') {
-                      return (
-                        <video
-                          className="mt-4"
-                          key={block.id}
-                          src={block.video.file.url}
-                          controls
-                        />
-                      );
-                    }
-                    return null;
-                  })}
-                </div>
+                {MediaBlocks.length > 0 && (
+                  <div className={cn('grid mt-2 gap-4', getMediaGridClassName(MediaBlocks.length))}>
+                    {MediaBlocks.map(block => {
+                      if (block.type === 'image') {
+                        return (
+                          <JournalImage
+                            key={block.id}
+                            src={block.image.file.url}
+                            alt={block.image.caption[0]?.plain_text || ''}
+                          />
+                        );
+                      }
+                      if (block.type === 'video') {
+                        return (
+                          <video
+                            className="mt-4"
+                            key={block.id}
+                            src={block.video.file.url}
+                            controls
+                          />
+                        );
+                      }
+                      return null;
+                    })}
+                  </div>
+                )}
               </div>
             );
           })}
