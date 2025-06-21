@@ -1,4 +1,4 @@
-import React, { act, useEffect, useState } from 'react';
+import React, { act, useEffect, useState, useRef } from 'react';
 import GridContainer from '../components/GridContainer';
 import { Client } from '@notionhq/client';
 import ProjectTitle from '../components/projects/ProjectTitle';
@@ -6,6 +6,129 @@ import Image from 'next/image';
 import Preloader from '../components/Preloader';
 import { cn } from '../lib/utils';
 import { DateTime } from 'luxon';
+
+function LocationMap({ className, isActive, coordinates, googleMapsUrl }) {
+  const mapRef = useRef(null);
+  const mapInstanceRef = useRef(null);
+  const [mapLoaded, setMapLoaded] = useState(false);
+
+  // Parse Google Maps URL to extract coordinates
+  const parseGoogleMapsUrl = url => {
+    if (!url) return null;
+
+    // Match various Google Maps URL formats
+    const patterns = [
+      /q=(-?\d+\.?\d*),(-?\d+\.?\d*)/, // ?q=lat,lng
+      /@(-?\d+\.?\d*),(-?\d+\.?\d*)/, // @lat,lng
+      /ll=(-?\d+\.?\d*),(-?\d+\.?\d*)/, // ll=lat,lng
+    ];
+
+    for (const pattern of patterns) {
+      const match = url.match(pattern);
+      if (match) {
+        const lat = parseFloat(match[1]);
+        const lng = parseFloat(match[2]);
+        return [lng, lat]; // Return as [longitude, latitude] for Mapbox
+      }
+    }
+    return null;
+  };
+
+  // Determine final coordinates to use
+  const getCoordinates = () => {
+    if (coordinates) return coordinates;
+    if (googleMapsUrl) return parseGoogleMapsUrl(googleMapsUrl);
+    return [-122.0322, 37.323]; // Default to Cupertino
+  };
+
+  useEffect(() => {
+    // Load Mapbox GL JS
+    const loadMapbox = async () => {
+      if (typeof window === 'undefined') return;
+
+      // Check if Mapbox is already loaded
+      if (window.mapboxgl) {
+        initializeMap();
+        return;
+      }
+
+      // Load CSS
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css';
+      document.head.appendChild(link);
+
+      // Load JS
+      const script = document.createElement('script');
+      script.src = 'https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js';
+      script.onload = () => {
+        setMapLoaded(true);
+        initializeMap();
+      };
+      document.head.appendChild(script);
+    };
+
+    const initializeMap = () => {
+      if (!mapRef.current || mapInstanceRef.current) return;
+
+      window.mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_API_KEY;
+
+      const mapCoordinates = getCoordinates();
+
+      const map = new window.mapboxgl.Map({
+        container: mapRef.current,
+        style: 'mapbox://styles/mapbox/dark-v11', // Dark theme
+        center: mapCoordinates,
+        zoom: 8,
+        interactive: false, // Disable all interactions
+        trackResize: true, // Enable resizing when browser resizes
+        collectResourceTiming: false,
+        attributionControl: false, // Hide Mapbox logo and attribution
+      });
+
+      // Add error handling
+      map.on('error', e => {
+        console.error('Mapbox error:', e);
+      });
+
+      map.on('load', () => {
+        console.log('Map loaded successfully');
+      });
+
+      mapInstanceRef.current = map;
+    };
+
+    loadMapbox();
+
+    // Cleanup
+    return () => {
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.remove();
+        mapInstanceRef.current = null;
+      }
+    };
+  }, []);
+
+  // Update map center when googleMapsUrl changes
+  useEffect(() => {
+    if (mapInstanceRef.current) {
+      const newCoordinates = getCoordinates();
+      mapInstanceRef.current.setCenter(newCoordinates);
+      console.log('Map center updated to:', newCoordinates);
+    }
+  }, [googleMapsUrl, coordinates]);
+
+  return (
+    <div className={cn('w-full overflow-hidden transition-opacity duration-300', className)}>
+      <div ref={mapRef} className="bg-gray-100 aspect-square w-full h-auto" />
+      <style jsx>{`
+        :global(.mapboxgl-ctrl-logo) {
+          display: none !important;
+        }
+      `}</style>
+    </div>
+  );
+}
 
 function JournalImage({ src, alt }) {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -43,11 +166,15 @@ export async function getStaticProps() {
       database_id: process.env.NOTION_TASKS_ID,
     });
 
+    console.log('Notion database response:', databaseResponse.results);
+
     // Only include essential metadata in the initial props
     const entries = databaseResponse.results.map(page => ({
       id: page.id,
       properties: page.properties,
     }));
+
+    console.log('Processed entries:', entries);
 
     return {
       props: {
@@ -78,10 +205,11 @@ export default function Journal(props) {
   const [loading, setLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
   const [activeYearId, setActiveYearId] = useState(null);
+  const [activeEntry, setActiveEntry] = useState(null);
   const [isScrolling, setIsScrolling] = useState(false);
 
   // Set to false during development to always fetch fresh data
-  const useLocalCache = false;
+  const useLocalCache = true;
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -152,7 +280,6 @@ export default function Journal(props) {
           ...entry,
           content: results.find(r => r.id === entry.id)?.content || [],
         }));
-        console.log('entriesWithContent', entriesWithContent);
 
         setEntries(entriesWithContent);
       } catch (error) {
@@ -215,6 +342,34 @@ export default function Journal(props) {
     return acc;
   }, {});
 
+  // Update active entry when activeYearId changes
+  useEffect(() => {
+    if (!activeYearId || !entriesByYear) {
+      setActiveEntry(null);
+      return;
+    }
+
+    // Find the active entry across all years
+    for (const yearEntries of Object.values(entriesByYear)) {
+      const foundEntry = yearEntries.find(entry => {
+        const title = entry.properties.Name.title[0].plain_text;
+        const entryId = title.toLowerCase().replace(/\s+/g, '-');
+        return entryId === activeYearId;
+      });
+
+      if (foundEntry) {
+        setActiveEntry(foundEntry);
+        return;
+      }
+    }
+    setActiveEntry(null);
+  }, [activeYearId, entriesByYear]);
+
+  // Get location URL from active entry
+  const getActiveEntryLocationUrl = () => {
+    return activeEntry?.properties?.Location?.url || null;
+  };
+
   const scrollToEntry = id => {
     const element = document.getElementById(id);
     if (element) {
@@ -271,7 +426,7 @@ export default function Journal(props) {
 
       <GridContainer>
         {/* Table of Contents */}
-        <div className="col-start-1 col-end-5 hidden md:block sticky top-[79px] h-fit">
+        <div className="justify-between col-start-1 col-end-4 sticky flex-col hidden md:flex top-[79px] h-[calc(100vh-90px)]">
           <nav className="flex flex-col">
             {Object.entries(entriesByYear)
               .sort((a, b) => parseInt(b[0]) - parseInt(a[0])) // Sort years descending
@@ -287,21 +442,20 @@ export default function Journal(props) {
                       const entryDateTime = DateTime.fromISO(entry.properties.Date.date.start);
                       const monthDay = entryDateTime.toFormat('MM.dd');
 
-                      let activeEntry = activeYearId === id;
+                      let isActiveEntry = activeYearId === id;
                       return (
                         <button
                           key={id}
                           onClick={() => scrollToEntry(id)}
-                          onMouseDown={() => !activeEntry && setActiveYearId(null)}
                           className={cn(
-                            'w-full group gap-2 h-auto flex items-center justify-center'
+                            'relative w-full group gap-2 h-auto flex items-center justify-center'
                           )}
                         >
                           {/* horizontal bar */}
                           <div
                             className={cn(
                               ' duration-100 transition-all group-hover:w-12 h-[2px] rounded-full group-active:bg-yellow-300',
-                              activeEntry
+                              isActiveEntry
                                 ? 'bg-yellow-300 w-9 group-active:w-[46px]'
                                 : 'w-10 bg-white/20 hover:bg-white group-hover:bg-white group-active:w-8'
                             )}
@@ -310,13 +464,13 @@ export default function Journal(props) {
                           <p
                             className={cn(
                               'inline body w-full text-white text-left opacity-0 group-hover:opacity-100 truncate',
-                              activeEntry && 'group-active:text-yellow-300'
+                              isActiveEntry && 'group-active:text-yellow-300'
                             )}
                           >
                             <span
                               className={cn(
                                 'text-yellow-300 mr-1',
-                                activeEntry && 'group-active:text-yellow-300'
+                                isActiveEntry && 'group-active:text-yellow-300'
                               )}
                             >
                               {monthDay}
@@ -324,7 +478,7 @@ export default function Journal(props) {
                             <span
                               className={cn(
                                 'body text-white'
-                                // activeEntry && 'group-active:hidden'
+                                // isActiveEntry && 'group-active:hidden'
                               )}
                             >
                               {title}
@@ -332,7 +486,7 @@ export default function Journal(props) {
                             {/* <span
                               className={cn(
                                 'body text-white hidden',
-                                activeEntry && 'group-active:inline-block'
+                                isActiveEntry && 'group-active:inline-block'
                               )}
                             >
                               Entry already pinned
@@ -345,10 +499,30 @@ export default function Journal(props) {
                 </div>
               ))}
           </nav>
+
+          <div className="group w-[90%] h-auto aspect-square relative overflow-hidden mb-4">
+            <a
+              href={activeEntry?.properties?.Location?.url || null}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full h-full cursor-pointer"
+            >
+              <LocationMap
+                googleMapsUrl={activeEntry?.properties?.Location?.url || null}
+                className="duration-1000 transition-all ease-out group-hover:opacity-80 group-hover:scale-[1.02] aspect-square w-full h-full"
+              />
+              <div
+                className=" absolute left-0 right-0 bottom-0 top-0"
+                style={{
+                  background: 'radial-gradient(circle, rgba(17,17,17,0) 0%, rgba(17,17,17,1) 70%)',
+                }}
+              />
+            </a>
+          </div>
         </div>
 
         {/* Main Content */}
-        <div className="col-start-1 col-end-13 md:col-start-5 pt-6">
+        <div className="col-start-1 col-end-13 md:col-start-4 pt-6">
           {orderedEntries.map((entry, index) => {
             const EntryTitle = entry.properties.Name.title[0].plain_text;
             const EntryDate = entry.properties.Date.date;
@@ -414,13 +588,14 @@ export default function Journal(props) {
               <div className="pb-12 md:pb-16" key={entryId}>
                 <div id={entryId} className="text-white grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="pb-2">
+                    {/* title */}
                     <h1 className="body mb-1">{EntryTitle}</h1>
-
+                    {/* date */}
                     <p className="caption opacity-40">
                       {formattedDate}
                       {timeDisplay && <> • {timeDisplay}</>}
                     </p>
-
+                    {/* text */}
                     {TextBlocks.map(block => {
                       if (block.type === 'paragraph') {
                         // Only render if there is text content
@@ -444,6 +619,7 @@ export default function Journal(props) {
                     })}
                   </div>
                 </div>
+
                 {/* image */}
                 {MediaBlocks.length > 0 && (
                   <div className={cn('grid mt-2 gap-4', getMediaGridClassName(MediaBlocks.length))}>
