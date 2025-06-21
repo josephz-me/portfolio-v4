@@ -80,13 +80,51 @@ export default function Journal(props) {
   const [activeYearId, setActiveYearId] = useState(null);
   const [isScrolling, setIsScrolling] = useState(false);
 
+  // Set to false during development to always fetch fresh data
+  const useLocalCache = true;
+
   useEffect(() => {
     const fetchContent = async () => {
       // Fetch all entries
       const journalEntries = props.notionData;
       const ids = journalEntries.map(entry => entry.id);
 
+      // Create cache key based on the IDs
+      const cacheKey = `journal-blocks-${ids.sort().join('-')}`;
+      const cacheExpiry = 5 * 60 * 1000; // 5 minutes in milliseconds
+
+      // Check for cached data only if useLocalCache is true
+      if (useLocalCache) {
+        try {
+          const cached = localStorage.getItem(cacheKey);
+          const cacheTimestamp = localStorage.getItem(`${cacheKey}-timestamp`);
+
+          if (cached && cacheTimestamp) {
+            const isExpired = Date.now() - parseInt(cacheTimestamp) > cacheExpiry;
+
+            if (!isExpired) {
+              console.log('Using cached journal data');
+              const cachedData = JSON.parse(cached);
+
+              // Merge cached content into entries
+              const entriesWithContent = journalEntries.map(entry => ({
+                ...entry,
+                content: cachedData.find(r => r.id === entry.id)?.content || [],
+              }));
+
+              setEntries(entriesWithContent);
+              setLoading(false);
+              setIsVisible(false);
+              return;
+            }
+          }
+        } catch (error) {
+          console.warn('Error reading from cache:', error);
+        }
+      }
+
       try {
+        console.log('Fetching fresh journal data from API');
         const res = await fetch('/api/journal-blocks', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -98,6 +136,16 @@ export default function Journal(props) {
         }
 
         const { results } = await res.json();
+
+        // Cache the results only if useLocalCache is true
+        if (useLocalCache) {
+          try {
+            localStorage.setItem(cacheKey, JSON.stringify(results));
+            localStorage.setItem(`${cacheKey}-timestamp`, Date.now().toString());
+          } catch (error) {
+            console.warn('Error saving to cache:', error);
+          }
+        }
 
         // Merge content into entries
         const entriesWithContent = journalEntries.map(entry => ({

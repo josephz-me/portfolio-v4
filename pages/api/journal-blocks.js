@@ -14,6 +14,11 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'NOTION_API_KEY is not defined' });
   }
 
+  // Set cache headers
+  res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
+  res.setHeader('CDN-Cache-Control', 'public, s-maxage=300');
+  res.setHeader('Vercel-CDN-Cache-Control', 'public, s-maxage=300');
+
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
   try {
