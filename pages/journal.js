@@ -81,7 +81,7 @@ export default function Journal(props) {
   const [isScrolling, setIsScrolling] = useState(false);
 
   // Set to false during development to always fetch fresh data
-  const useLocalCache = true;
+  const useLocalCache = false;
 
   useEffect(() => {
     const fetchContent = async () => {
