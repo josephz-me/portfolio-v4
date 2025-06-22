@@ -653,7 +653,7 @@ export default function Journal(props) {
           })}
         </div>
       </GridContainer>
-      <div className="md:hidden sticky bottom-4 px-2 overflow-hidden group w-full flex justify-end z-40">
+      <div className="md:hidden sticky bottom-4 px-2 overflow-hidden md:group w-full flex justify-end z-40">
         <a
           href={activeEntry?.properties?.Location?.url || null}
           target="_blank"
