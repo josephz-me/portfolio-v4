@@ -141,6 +141,7 @@ function JournalImage({ src, alt }) {
         fill
         alt={alt}
         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+        unoptimized={true}
         className={cn(
           'object-cover transition duration-500',
           isImageLoaded ? 'opacity-100' : 'opacity-0'
