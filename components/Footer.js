@@ -51,23 +51,23 @@ export default function Footer() {
               Reading
             </TextLink>
           </p>
-          <p>
+          {/* <p>
             <TextLink sameTab super={2} link="/journal">
               Visual journal
             </TextLink>
-          </p>
+          </p> */}
           <p>
-            <TextLink super={3} link="https://www.linkedin.com/in/josephzme/">
+            <TextLink super={2} link="https://www.linkedin.com/in/josephzme/">
               Linkedin
             </TextLink>
           </p>
           <p>
-            <TextLink super={4} link="https://www.instagram.com/josephhhz/">
+            <TextLink super={3} link="https://www.instagram.com/josephhhz/">
               Instagram
             </TextLink>
           </p>
           <p>
-            <TextLink super={5} link="https://twitter.com/josephhhhz">
+            <TextLink super={4} link="https://twitter.com/josephhhhz">
               Twitter
             </TextLink>
           </p>
