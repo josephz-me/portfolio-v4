@@ -181,7 +181,7 @@ export async function getStaticProps() {
       props: {
         notionData: entries,
         meta: {
-          title: 'Journal',
+          title: 'Joseph Zhang – Journal',
           description: 'A visual collection of special moments and experiences',
           image: '/metadata/journal.jpg',
         },
