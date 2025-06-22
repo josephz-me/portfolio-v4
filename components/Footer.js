@@ -51,23 +51,23 @@ export default function Footer() {
               Reading
             </TextLink>
           </p>
-          {/* <p>
-            <TextLink sameTab super={2} link="/journal">
-              Visual journal
-            </TextLink>
-          </p> */}
           <p>
-            <TextLink super={2} link="https://www.linkedin.com/in/josephzme/">
+            <TextLink sameTab super={2} link="/journal">
+              Journal
+            </TextLink>
+          </p>
+          <p>
+            <TextLink super={3} link="https://www.linkedin.com/in/josephzme/">
               Linkedin
             </TextLink>
           </p>
           <p>
-            <TextLink super={3} link="https://www.instagram.com/josephhhz/">
+            <TextLink super={4} link="https://www.instagram.com/josephhhz/">
               Instagram
             </TextLink>
           </p>
           <p>
-            <TextLink super={4} link="https://twitter.com/josephhhhz">
+            <TextLink super={5} link="https://twitter.com/josephhhhz">
               Twitter
             </TextLink>
           </p>
@@ -75,7 +75,7 @@ export default function Footer() {
         <div className={`flex flex-col space-y-1 ${BREAKPOINT} md:col-start-9`}>
           <p>{`Let's build something together.`}</p>
           <span>
-            <TextLink super={5} link="mailto:jxsephz@gmail.com">{`jxsephz@gmail.com`}</TextLink>
+            <TextLink super={6} link="mailto:jxsephz@gmail.com">{`jxsephz@gmail.com`}</TextLink>
           </span>
         </div>
       </GridContainer>

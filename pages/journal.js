@@ -653,6 +653,25 @@ export default function Journal(props) {
           })}
         </div>
       </GridContainer>
+      <div className="md:hidden sticky bottom-4 px-2 overflow-hidden group w-full flex justify-end z-40">
+        <a
+          href={activeEntry?.properties?.Location?.url || null}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="shadow-2xl rounded-full relative block w-full h-[100px] cursor-pointer h-auto overflow-hidden"
+        >
+          <LocationMap
+            googleMapsUrl={activeEntry?.properties?.Location?.url || null}
+            className="duration-1000 transition-all ease-out group-hover:opacity-80 group-hover:scale-[1.02] w-full h-full"
+          />
+          <div
+            className=" absolute left-0 right-0 bottom-0 top-0"
+            style={{
+              background: 'radial-gradient(circle, rgba(17,17,17,0) 0%, rgba(17,17,17,1) 70%)',
+            }}
+          />
+        </a>
+      </div>
     </main>
   );
 }
