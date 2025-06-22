@@ -1,7 +1,12 @@
 import Head from 'next/head';
 import Script from 'next/script';
 
-function Meta() {
+function Meta({
+  title = 'Joseph Zhang – Interaction Designer',
+  description = 'Joseph is a designer interested in authoring tools and multimodal interaction',
+  image = '/metadata/main.jpg',
+  url = 'www.joseph.cv',
+}) {
   return (
     <Head>
       <meta key="charset" charSet="utf-8" />
@@ -12,33 +17,23 @@ function Meta() {
       />
 
       {/* Primary Meta Tag */}
-      <title>Joseph Zhang – Interaction Designer</title>
-      <meta name="title" content="Joseph Zhang – Interaction designer" />
-      <meta
-        name="description"
-        content="Joseph is a designer interested in authoring tools and multimodal interaction. "
-      ></meta>
+      <title>{title}</title>
+      <meta name="title" content={title} />
+      <meta name="description" content={description} />
 
       {/* Open Graph/FB */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://metatags.io/" />
-      <meta property="og:title" content="Joseph Zhang – Interaction designer" />
-
-      <meta
-        property="og:description"
-        content="Joseph is a designer interested in authoring tools and multimodal interaction. "
-      />
-      <meta property="og:image" content="/metatag-preview.jpg" />
+      <meta property="og:url" content={url} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={image} />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="https://metatags.io/" />
-      <meta property="twitter:title" content="Joseph Zhang – Interaction designer" />
-      <meta
-        property="twitter:description"
-        content="Joseph is a designer interested in authoring tools and multimodal interaction. "
-      />
-      <meta property="twitter:image" content="/metatag-preview.jpg" />
+      <meta property="twitter:url" content={url} />
+      <meta property="twitter:title" content={title} />
+      <meta property="twitter:description" content={description} />
+      <meta property="twitter:image" content={image} />
 
       {/* Favicon & fonts */}
       <link key="favicon" rel="icon" href="/favicon.jpg" importance="low" />

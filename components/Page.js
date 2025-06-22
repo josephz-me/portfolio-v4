@@ -2,7 +2,7 @@ import Footer from './Footer';
 import Meta from './Meta';
 import Navbar from './Navbar';
 
-export default function Page(props) {
+export default function Page({ meta, ...props }) {
   return (
     <>
       <div className="w-full flex items-center flex-col z-[200]">
@@ -10,7 +10,7 @@ export default function Page(props) {
           <div
             className={`flex relative flex-col px-3 pb-8 w-full border-b border-solid shadow-xl max-w-8xl z-[9] text-padding md:px-3 border-neutral-800`}
           >
-            <Meta />
+            <Meta {...meta} />
             <Navbar />
             {props.children}
           </div>

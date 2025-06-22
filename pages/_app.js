@@ -4,10 +4,12 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 // import { GoogleAnalytics } from '../components/googleAnalytics';
 
 function MyApp({ Component, pageProps }) {
+  const { meta, ...otherProps } = pageProps;
+
   return (
-    <Page>
+    <Page meta={meta}>
       {/* <GoogleAnalytics /> */}
-      <Component {...pageProps} />
+      <Component {...otherProps} />
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
     </Page>
   );

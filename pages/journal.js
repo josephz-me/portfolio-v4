@@ -180,6 +180,11 @@ export async function getStaticProps() {
     return {
       props: {
         notionData: entries,
+        meta: {
+          title: 'Journal',
+          description: 'A visual collection of special moments and experiences',
+          image: '/metadata/journal.jpg',
+        },
       },
       revalidate: 1,
     };
