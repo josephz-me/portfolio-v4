@@ -658,7 +658,7 @@ export default function Journal(props) {
           href={activeEntry?.properties?.Location?.url || null}
           target="_blank"
           rel="noopener noreferrer"
-          className="shadow-2xl rounded-full relative block w-full h-[100px] cursor-pointer h-auto overflow-hidden"
+          className="shadow-2xl rounded-full relative block w-full h-[100px] cursor-pointer overflow-hidden"
         >
           <LocationMap
             googleMapsUrl={activeEntry?.properties?.Location?.url || null}
