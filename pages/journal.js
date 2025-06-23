@@ -432,7 +432,7 @@ export default function Journal(props) {
 
       <GridContainer>
         {/* Table of Contents */}
-        <div className="justify-between col-start-1 col-end-4 sticky flex-col hidden md:flex top-[79px] h-[calc(100vh-90px)]">
+        <div className="justify-between overflow-y-auto col-start-1 col-end-4 sticky flex-col hidden md:flex top-[79px] h-[calc(100vh-80px)]">
           <nav className="flex flex-col">
             {Object.entries(entriesByYear)
               .sort((a, b) => parseInt(b[0]) - parseInt(a[0])) // Sort years descending
@@ -506,7 +506,7 @@ export default function Journal(props) {
               ))}
           </nav>
 
-          <div className="group w-[90%] h-auto aspect-square relative overflow-hidden mb-4">
+          <div className="group w-[90%] aspect-square relative overflow-hidden mb-4 flex-shrink-0">
             <a
               href={activeEntry?.properties?.Location?.url || null}
               target="_blank"
