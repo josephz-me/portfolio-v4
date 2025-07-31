@@ -71,11 +71,8 @@ export default function Animee() {
         </LinkCard>
         <Spacer></Spacer>
         <MobileMockupWithFrame src="/work/animee/navigation.mp4" />
-        <MobileMockupWithFrame src="/work/animee/export.mp4" />
-        <ProjectBody caption={true}>
-          {`Synthesized +9400 data points from AIGA's census and interactively
-          visualizing them through Matter.js, a Javascript physics engine.`}
-        </ProjectBody>
+        <MobileMockupWithFrame notchless src="/work/animee/export.mov" />
+        <MobileMockupWithFrame notchless src="/work/animee/clothing-switch.mp4" />
       </GridContainer>
     </main>
   );
