@@ -30,9 +30,9 @@ export default function Home() {
             <p
               className={`col-start-1 col-end-13 mb-4 text-white body z-1000 md:col-start-1 md:col-span-5 md:mb-0`}
             >
-              Jo (He/Him) designs interfaces. He thrives in complex, ambiguous problem spaces
-              focused around interactive media, digital tooling, and multimodal interaction. He
-              studied <TextLink link="https://design.cmu.edu/">Communication Design</TextLink> and{' '}
+              Joseph designs interfaces. He thrives in complex, ambiguous problem spaces focused
+              around interactive media, digital tooling, and multimodal interaction. He studied{' '}
+              <TextLink link="https://design.cmu.edu/">Communication Design</TextLink> and{' '}
               <TextLink link="https://www.hcii.cmu.edu/">Human-Computer Interaction</TextLink> at
               Carnegie Mellon University, an experience he holds fondly and will cherish for the
               rest of his life. If you have an interesting idea, please{' '}
@@ -84,7 +84,12 @@ export default function Home() {
           {/* COLUMN 1 */}
 
           <div className={`flex flex-col ${gapValue}`}>
-            <ProjectCard title="Animee" description="Mobile App" locked content={AnimeCom} />
+            <ProjectCard
+              title="Anime.com"
+              description="Consumer social"
+              locked
+              content={AnimeCom}
+            />
             <ProjectCard
               title="Azuki"
               description="Consumer Product"
@@ -112,12 +117,6 @@ export default function Home() {
               isVideo
               content={'/project-covers/thinkspace.mp4'}
             />
-            <ProjectCard
-              title="Skiff Icons"
-              description="Branding & Systems"
-              link="/skiff/#icons"
-              content={SkiffIcons}
-            />
           </div>
           {/* COLUMN 2 */}
           <div className={`flex flex-col ${gapValue}`}>
@@ -128,13 +127,6 @@ export default function Home() {
               isVideo
               content={'/project-covers/brain-nested-query.mp4'}
             />
-            {/* <ProjectCard
-              title="Collector Profile"
-              description="Azuki"
-              link="/azuki/#collector"
-              content={CollectorStatus}
-            /> */}
-            <ProjectCard title="Plane" link="/plane" description="Productivity" content={Plane} />
             <ProjectCard
               title="Skiff Pages"
               description="Editor Tool"
@@ -147,6 +139,12 @@ export default function Home() {
               link="/aiga"
               content={AIGA}
             />
+            {/* <ProjectCard
+              title="Skiff Icons"
+              description="Branding & Systems"
+              link="/skiff/#icons"
+              content={SkiffIcons}
+            /> */}
             <ProjectCard
               title="LIGHT ENGINE"
               description="Industrial Design"
@@ -184,13 +182,6 @@ export default function Home() {
               isVideo
               content={'/project-covers/pixel-push.mp4'}
             />
-
-            <ProjectCard
-              title="Metalink Labs"
-              description="Design systems"
-              link="/metalink"
-              content={Metalink}
-            ></ProjectCard>
           </div>
         </div>
       </GridContainer>
