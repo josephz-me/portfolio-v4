@@ -30,9 +30,9 @@ export default function Home() {
             <p
               className={`col-start-1 col-end-13 mb-4 text-white body z-1000 md:col-start-1 md:col-span-5 md:mb-0`}
             >
-              Jo (He/Him) designs interfaces. He thrives in complex, ambiguous problem spaces
-              focused around interactive media, digital tooling, and multimodal interaction. He
-              studied <TextLink link="https://design.cmu.edu/">Communication Design</TextLink> and{' '}
+              Joseph designs interfaces. He thrives in complex, ambiguous problem spaces focused
+              around interactive media, digital tooling, and multimodal interaction. He studied{' '}
+              <TextLink link="https://design.cmu.edu/">Communication Design</TextLink> and{' '}
               <TextLink link="https://www.hcii.cmu.edu/">Human-Computer Interaction</TextLink> at
               Carnegie Mellon University, an experience he holds fondly and will cherish for the
               rest of his life. If you have an interesting idea, please{' '}
