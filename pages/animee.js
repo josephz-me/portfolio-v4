@@ -59,7 +59,7 @@ export default function Animee() {
         </ProjectBody>
         <ProjectDetails
           role={['Frontend Developer', 'Visual Designer']}
-          collaborators={['Kyuha Shim (advisor)', 'Langston Wells', 'Stefanie Suk']}
+          collaborators={['Cooper Mor', 'Yihui Hu', 'Simon Streatfeild']}
           duration="2 months"
           tools={['HTML/CSS/JS', 'Figma', 'Cinema4D']}
         />
@@ -71,8 +71,9 @@ export default function Animee() {
         </LinkCard>
         <Spacer></Spacer>
         <MobileMockupWithFrame src="/work/animee/navigation.mp4" />
-        <MobileMockupWithFrame notchless src="/work/animee/export.mov" />
-        <MobileMockupWithFrame notchless src="/work/animee/clothing-switch.mp4" />
+        <MobileMockupWithFrame src="/work/animee/export.mov" />
+        <MobileMockupWithFrame src="/work/animee/stickers.mov" />
+        <MobileMockupWithFrame src="/work/animee/clothing-switch.mp4" />
       </GridContainer>
     </main>
   );

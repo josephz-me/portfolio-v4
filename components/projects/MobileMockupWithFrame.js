@@ -8,7 +8,7 @@ export default function MobileMockupWithFrame({ src, notchless = false, classNam
         <img
           alt="iphone frame"
           src={notchless ? '/iphone-frame-notchless.png' : '/iphone-frame.png'}
-          className="scale-[1.20] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          className="scale-[1.203] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         />
       </div>
     </div>
