@@ -57,22 +57,11 @@ export default function Animee() {
           industries. This project strives to break those stereotypes by providing a holistic
           understanding of the creative industry and all the viable career options that exist.
         </ProjectBody>
-        <ProjectDetails
-          role={['Frontend Developer', 'Visual Designer']}
-          collaborators={['Cooper Mor', 'Yihui Hu', 'Simon Streatfeild']}
-          duration="2 months"
-          tools={['HTML/CSS/JS', 'Figma', 'Cinema4D']}
-        />
-        <LinkCard col={1} link="https://josephz-me.github.io/aiga-hue/">
-          View live website
-        </LinkCard>
-        <LinkCard link="https://josephz.notion.site/AIGA-Hue-38cd5f40c38c464ab1c5885468a1a3de">
-          View complete documentation
-        </LinkCard>
+
         <Spacer></Spacer>
         <MobileMockupWithFrame src="/work/animee/navigation.mp4" />
-        <MobileMockupWithFrame src="/work/animee/export.mov" />
-        <MobileMockupWithFrame src="/work/animee/stickers.mov" />
+        <MobileMockupWithFrame src="/work/animee/export.mp4" />
+        <MobileMockupWithFrame src="/work/animee/stickers.mp4" />
         <MobileMockupWithFrame src="/work/animee/clothing-switch.mp4" />
       </GridContainer>
     </main>

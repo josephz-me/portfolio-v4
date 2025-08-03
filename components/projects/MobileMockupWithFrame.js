@@ -1,7 +1,7 @@
 export default function MobileMockupWithFrame({ src, notchless = false, className = '' }) {
   return (
     <div
-      className={`relative aspect-[16/12] py-12 overflow-hidden bg-white flex items-center justify-center col-end-13 transition duration-300 col-start-1 md:col-start-5 ${className}`}
+      className={`relative aspect-[16/12] py-12 overflow-hidden bg-[#E2E8F0] flex items-center justify-center col-end-13 transition duration-300 col-start-1 md:col-start-5 ${className}`}
     >
       <div className="relative h-full w-auto">
         <video className="h-full w-auto rounded-2xl" src={src} autoPlay muted loop />
