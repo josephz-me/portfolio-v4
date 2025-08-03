@@ -11,11 +11,11 @@
   .h2,
   .h3,
   .h4 {
-    @apply leading-[100%] tracking-[0.04em];
+    @apply leading-[100%] tracking-[0em];
   }
 
   .h1 {
-    @apply text-[28px] lg:text-[32px] font-display font-semibold uppercase;
+    @apply text-[28px] lg:text-[32px] font-sans font-bold uppercase;
   }
 
   .h2 {
