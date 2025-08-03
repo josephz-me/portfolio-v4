@@ -8,7 +8,7 @@ export default function ProjectTitle(props) {
         props.notSticky ? '' : 'md:sticky'
       )}
     >
-      <h1 className="mb-1 h1">{props.children}</h1>
+      <h1 className="mb-1 body">{props.children}</h1>
       <p className="caption text-zinc-500">{props.role}</p>
     </div>
   );
