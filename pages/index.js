@@ -86,9 +86,9 @@ export default function Home() {
 
           <div className={`flex flex-col ${gapValue}`}>
             <ProjectCard
-              title="Notion Calendar"
+              title="Notion"
               description="Toolmaking"
-              locked
+              link="/notion"
               content={NotionCalendar}
             />
             <ProjectCard
