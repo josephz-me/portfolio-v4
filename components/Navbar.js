@@ -46,7 +46,16 @@ export default function Navbar(props) {
   }, [router]);
 
   return (
-    <nav className="text-white body grid-layout sticky top-0 z-[100] main-bg py-4 border-solid border-b border-white/10">
+    <nav
+      className={cn(
+        'text-white body grid-layout sticky top-0 z-[100] main-bg py-4 border-solid border-b transition-opacity duration-300',
+        router.pathname === '/'
+          ? 'border-white/[.06]'
+          : scrollY > 0
+            ? 'border-white/[.06]'
+            : 'border-white/0'
+      )}
+    >
       {/* logo */}
       <Link className="col-span-4 col-start-1 hover:text-yellow-300" passHref href="/">
         <h1 className="">Joseph Zhang</h1>
