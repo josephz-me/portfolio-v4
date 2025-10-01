@@ -605,14 +605,17 @@ export default function Journal(props) {
                     {TextBlocks.map(block => {
                       if (block.type === 'paragraph') {
                         // Only render if there is text content
-                        if (block.paragraph.rich_text.length > 0) {
+                        if (
+                          block.paragraph.rich_text.length > 0 &&
+                          block.paragraph.rich_text[0]?.plain_text
+                        ) {
                           return (
                             <p
                               key={block.id}
                               className={cn(
                                 'body pt-2 text-white',
-                                block.paragraph.rich_text[0].annotations.bold && 'font-bold',
-                                block.paragraph.rich_text[0].annotations.italic && 'italic'
+                                block.paragraph.rich_text[0]?.annotations?.bold && 'font-bold',
+                                block.paragraph.rich_text[0]?.annotations?.italic && 'italic'
                               )}
                             >
                               {block.paragraph.rich_text[0].plain_text}
