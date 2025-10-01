@@ -8,6 +8,7 @@ import Brain from '../public/project-covers/natural.jpg';
 import Azuki from '../public/project-covers/azuki.jpg';
 import CollectorStatus from '../public/project-covers/collector-status.jpg';
 import Cursor from '../public/project-covers/cursor.jpg';
+import NotionCalendar from '../public/project-covers/notion-calendar.jpg';
 import AIGA from '../public/project-covers/aiga-square.jpg';
 import Metalink from '../public/project-covers/metalink.jpg';
 import SkiffIcons from '../public/project-covers/skiffIcons.jpg';
@@ -85,10 +86,10 @@ export default function Home() {
 
           <div className={`flex flex-col ${gapValue}`}>
             <ProjectCard
-              title="Anime.com"
-              description="Consumer social"
+              title="Notion Calendar"
+              description="Toolmaking"
               locked
-              content={AnimeCom}
+              content={NotionCalendar}
             />
             <ProjectCard
               title="Azuki"
