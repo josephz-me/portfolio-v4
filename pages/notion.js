@@ -13,13 +13,13 @@ export default function notion() {
     <motion.main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero content="/project-covers/calendar-long.jpg" />
-        <ProjectTitle role="digital tooling">Notion Calendar</ProjectTitle>
+        <ProjectTitle role="Digital toolmaking">Notion</ProjectTitle>
         <ProjectBody col={2}>
-          I design for the time layer of the Notion ecosystem, focusing on turning Notion Calendar
-          into the most powerful and intuitive calendar application on the market. I also work on
-          core Notion features that unlock connected workflows, such as AI Meeting Notes and Agent.
-          Every day I&apos;m fortunate to collaborate with some of the most talented people in the
-          industry.
+          I design for the time layer of the Notion ecosystem, primarily focusing on turning Notion
+          Calendar into the most powerful calendar application in the world. I also work on core
+          Notion features that build connective tissue between Notion, Mail, and Calendar. This
+          includes features such as AI Meeting Notes and Notin Agent. I&apos;m incredibly fortunate
+          to collaborate with some of the most talented people in the industry.
         </ProjectBody>
         <ProjectDetails
           role={['Product Designer']}

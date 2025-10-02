@@ -26,17 +26,19 @@ export default function Home() {
       <GridContainer>
         {/* ABOUT SECTION */}
         <section className="my-6 grid-layout">
-          <div className="flex flex-col col-start-1 col-end-13 gap-3 md:col-end-5">
+          <div className="flex flex-col col-start-1 col-end-13 gap-3 md:col-end-6">
             <p className="text-white opacity-40 caption">ABOUT</p>
             <p
-              className={`col-start-1 col-end-13 mb-4 text-white body z-1000 md:col-start-1 md:col-span-5 md:mb-0`}
+              className={`col-start-1 col-end-13 mb-4 text-white body z-1000 md:col-start-1 md:mb-0`}
             >
-              Joseph designs interfaces. He thrives in complex, ambiguous problem spaces focused
-              around interactive media, digital tooling, and multimodal interaction. He studied{' '}
+              I design interfaces with the belief that computing is one of the most malleable
+              mediums we have. Currently, I’m focused on digital toolmaking and its ability to
+              amplify innate human capabilities. This involves interoperability, agentic workflows,
+              and multimodal interaction. I studied{' '}
               <TextLink link="https://design.cmu.edu/">Communication Design</TextLink> and{' '}
               <TextLink link="https://www.hcii.cmu.edu/">Human-Computer Interaction</TextLink> at
-              Carnegie Mellon University, an experience he holds fondly and will cherish for the
-              rest of his life. If you have an interesting idea, please{' '}
+              Carnegie Mellon University, an experience I hold fondly and will cherish for the rest
+              of my life. If you have an interesting idea,{' '}
               <TextLink link="mailto:jxsephz@gmail.com">get in touch</TextLink>.
             </p>
           </div>
@@ -45,11 +47,11 @@ export default function Home() {
             <p className="col-start-1 text-white opacity-40 caption">Team</p>
             <p className="col-start-3 text-white opacity-40 caption">Description</p>
             <WorkExperience title="Notion" date="2025 - Present" description="">
-              Building beautiful tools for your life’s work.
+              Designing for the time layer of the Notion ecosystem
             </WorkExperience>
             <WorkExperience title="Azuki" date="2023 - 2025" description="">
               First full-time design hire. Scaled design team to 5 people. Built Anime.com, Animee,
-              and interactive experiences for the Azuki IP.
+              and interactive experiences for the Azuki IP
             </WorkExperience>
             <WorkExperience title="Independent Practice">
               Design consulting for emerging AI and productivity companies. Notable clients include{' '}
@@ -64,7 +66,6 @@ export default function Home() {
               <TextLink super={3} link="https://natural.ai/#/">
                 Brain Technologies (Natural AI)
               </TextLink>
-              .
             </WorkExperience>
             <WorkExperience title="Skiff" date="2022 - 2023">
               First full-time design hire. 0→1 design for Email, Editor, Drive, Calendar. Scaled
@@ -87,7 +88,7 @@ export default function Home() {
           <div className={`flex flex-col ${gapValue}`}>
             <ProjectCard
               title="Notion"
-              description="Toolmaking"
+              description="Digital toolmaking"
               link="/notion"
               content={NotionCalendar}
             />
