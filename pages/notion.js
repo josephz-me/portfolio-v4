@@ -18,7 +18,7 @@ export default function notion() {
           I design for the time layer of the Notion ecosystem, primarily focusing on turning Notion
           Calendar into the most powerful calendar application in the world. I also work on core
           Notion features that build connective tissue between Notion, Mail, and Calendar. This
-          includes features such as AI Meeting Notes and Notin Agent. I&apos;m incredibly fortunate
+          includes features such as AI Meeting Notes and Notion Agent. I&apos;m incredibly fortunate
           to collaborate with some of the most talented people in the industry.
         </ProjectBody>
         <ProjectDetails
