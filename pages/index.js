@@ -22,14 +22,14 @@ const gapValue = 'gap-6';
 
 export default function Home() {
   return (
-    <main>
+    <main className="main-bg">
       <GridContainer>
         {/* ABOUT SECTION */}
         <section className="my-6 grid-layout">
           <div className="flex flex-col col-start-1 col-end-13 gap-3 md:col-end-6">
-            <p className="text-white opacity-40 caption">ABOUT</p>
+            <p className="text-black opacity-40 caption">ABOUT</p>
             <p
-              className={`col-start-1 col-end-13 mb-4 text-white body z-1000 md:col-start-1 md:mb-0`}
+              className={`col-start-1 col-end-13 mb-4 text-black body z-1000 md:col-start-1 md:mb-0`}
             >
               I design interfaces with the belief that computing is one of the most malleable
               mediums we have. Currently, I’m focused on digital toolmaking and its ability to
@@ -44,8 +44,8 @@ export default function Home() {
           </div>
           {/* WORK EXPERIENCE */}
           <div className="grid grid-cols-6 col-start-1 col-end-13 gap-3 md:col-start-7">
-            <p className="col-start-1 text-white opacity-40 caption">Team</p>
-            <p className="col-start-3 text-white opacity-40 caption">Description</p>
+            <p className="col-start-1 text-black opacity-40 caption">Team</p>
+            <p className="col-start-3 text-black opacity-40 caption">Description</p>
             <WorkExperience title="Notion" date="2025 - Present" description="">
               Designing for the time layer of the Notion ecosystem
             </WorkExperience>
@@ -194,12 +194,12 @@ export default function Home() {
 function WorkExperience(props) {
   return (
     <>
-      <h1 className="col-span-2 col-start-1 col-end-3 text-white body">
+      <h1 className="col-span-2 col-start-1 col-end-3 text-black body">
         {props.title}
         <br />
         {props.date}
       </h1>
-      <p className="col-span-4 col-start-3 text-white body">{props.children}</p>
+      <p className="col-span-4 col-start-3 text-black body">{props.children}</p>
     </>
   );
 }
