@@ -31,10 +31,10 @@ export default function Home() {
             <p
               className={`col-start-1 col-end-13 mb-4 text-white body z-1000 md:col-start-1 md:mb-0`}
             >
-              I design interfaces with the belief that computing is one of the most malleable
-              mediums we have. Currently, I’m focused on digital toolmaking and its ability to
-              amplify innate human capabilities. This involves interoperability, agentic workflows,
-              and multimodal interaction. I studied{' '}
+              I design software with the belief that it&apos;s one of the most malleable mediums we
+              have. Currently, I&apos;m interested in digital toolmaking because of its ability to
+              significantly amplify innate human capabilities. Some of these topics include
+              interoperability, agentic workflows, and multimodal interaction. I studied{' '}
               <TextLink link="https://design.cmu.edu/">Communication Design</TextLink> and{' '}
               <TextLink link="https://www.hcii.cmu.edu/">Human-Computer Interaction</TextLink> at
               Carnegie Mellon University, an experience I hold fondly and will cherish for the rest
