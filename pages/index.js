@@ -32,9 +32,8 @@ export default function Home() {
               className={`col-start-1 col-end-13 mb-4 text-white body z-1000 md:col-start-1 md:mb-0`}
             >
               I design software with the belief it&apos;s one of the most malleable mediums we have.
-              I explore ideas around how tools connect with each other, how they act on our behalf,
-              and how we interact with them through different modalities. These problems interest me
-              because their answers can greatly expand what people are capable of. I studied{' '}
+              I&apos;m currently exploring how tools connect with each other, how they act on our
+              behalf, and how we interact with them across different modes. I studied{' '}
               <TextLink link="https://design.cmu.edu/">Communication Design</TextLink> and{' '}
               <TextLink link="https://www.hcii.cmu.edu/">Human-Computer Interaction</TextLink> at
               Carnegie Mellon University, an experience I hold fondly and will cherish for the rest
