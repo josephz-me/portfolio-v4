@@ -2,15 +2,11 @@ import GridContainer from './GridContainer';
 import React, { useState, useEffect } from 'react';
 import TextLink from './TextLink';
 import { useRouter } from 'next/router';
-const GLOBAL_SPACING = 'text-padding pb-10 pt-6 md:pb-10 md:pt-8';
+const GLOBAL_SPACING = 'pb-16 pt-4';
 const BREAKPOINT = 'col-start-1 col-end-13';
 
 export default function Footer() {
   const pageName = useRouter().asPath;
-  const [aboutText, setAboutText] = useState(
-    `▞▚▞▚▞▚▞_Copyright_2024_▞▚▞▚▞▚▞_Next.JS_Vercel_▞▚▞▚▞▚▞_INPUT MONO_▞▚▞▚▞▚▞_OFFBIT TYPE_`
-  );
-
   const [updatedTime, setUpdatedTime] = useState('...');
 
   useEffect(() => {
@@ -21,17 +17,9 @@ export default function Footer() {
       });
   }, []);
 
-  //change footer
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAboutText(aboutText => aboutText.slice(-1) + aboutText.slice(0, -1));
-    }, 300);
-    return () => clearInterval(interval);
-  }, [aboutText]);
-
   return (
     <footer
-      className={`flex flex-col items-center body bg-[#1C1C1C] dot-grid z-[1] w-full sticky bottom-0 text-zinc-100`}
+      className={`px-3 flex flex-col items-center body bg-[#1C1C1C] dot-grid z-[1] w-full sticky bottom-0 text-zinc-100`}
     >
       <GridContainer className="gap-y-8" footerSpacing={GLOBAL_SPACING}>
         <div className={`flex-col space-y-2 ${BREAKPOINT} caption md:col-start-1 md:col-end-6`}>
@@ -74,14 +62,6 @@ export default function Footer() {
           </span>
         </div>
       </GridContainer>
-      {/* animated text bar */}
-      <div
-        className={`overflow-hidden relative col-start-1 col-end-13 pb-2 w-full caption text-clip`}
-      >
-        <p className={`whitespace-nowrap text-clip text-zinc-600 hover:text-yellow-600`}>
-          {aboutText.repeat(10)}
-        </p>
-      </div>
     </footer>
   );
 }

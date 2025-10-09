@@ -42,10 +42,6 @@
     @apply bg-[#B14044];
   }
 
-  .text-padding {
-    @apply px-4 md:px-8;
-  }
-
   .grid-layout {
     @apply relative z-10 col-start-1 col-end-13 grid grid-cols-12 grid-gap;
   }
