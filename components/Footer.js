@@ -19,9 +19,9 @@ export default function Footer() {
 
   return (
     <footer
-      className={`px-3 flex flex-col items-center body bg-[#1C1C1C] dot-grid z-[1] w-full sticky bottom-0 text-zinc-100`}
+      className={` flex flex-col items-center body bg-[#1C1C1C] dot-grid z-[1] w-full sticky bottom-0 text-zinc-100`}
     >
-      <GridContainer className="gap-y-8" footerSpacing={GLOBAL_SPACING}>
+      <GridContainer className="px-3 gap-y-8" footerSpacing={GLOBAL_SPACING}>
         <div className={`flex-col space-y-2 ${BREAKPOINT} caption md:col-start-1 md:col-end-6`}>
           <span className="flex flex-row space-x-2 align-middle">
             <p className="self-center w-min px-2 pt-1 pb-[2px] mono lowercase text-yellow-300 border-yellow-300 border border-solid rounded-full">
