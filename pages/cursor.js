@@ -16,20 +16,21 @@ export default function Cursor() {
         <ProjectHero isImage={true} content="/project-covers/cursor-long.jpg" />
         <ProjectTitle role="AI INTERFACES">Cursor AI</ProjectTitle>
         <ProjectBody col={2}>
-          {`Cursor is a collaborative AI code editor backed by Open AI.
-          Natural language interfaces are often too flexible which makes it tricky for users to leverage the AI effectively, leading to suboptimal outcomes.
-           During my contract,
-          I designed tools to help users grasp what AI can do and make sense of it in its relevant context. 
-          If you are interested in learning more, please reach out.`}
+          I freelanced with Cursor in August 2023 before the world knew who they were. During my
+          time with the founding team, I explored features that helped users visualize what AI was
+          thinking and doing. Since then, the product has exponentially improved under the
+          leadership of my former Notion collaborators, who now shape Cursor&apos;s design language.
         </ProjectBody>
         <ProjectDetails
           role={['Product designer']}
-          collaborators={['Michael Truell']}
+          collaborators={['Michael Truell', 'Walden Yan', 'Sualeh Asif']}
           duration="2 months"
-          tools={['Figma']}
         />
-        <LinkCard col={1} link="https://www.cursor.so/">
-          Cursor Website
+        <LinkCard col={1} link="https://www.cursor.com/">
+          Website
+        </LinkCard>
+        <LinkCard col={2} link="https://x.com/Cursor_ai">
+          X.com
         </LinkCard>
       </GridContainer>
     </motion.main>

@@ -46,7 +46,7 @@ export default function Home() {
             <p className="col-start-1 text-white opacity-40 caption">Team</p>
             <p className="col-start-3 text-white opacity-40 caption">Description</p>
             <WorkExperience title="Notion" date="2025 - Present" description="">
-              Designing for the time layer of the Notion ecosystem
+              Notion Calendar, AI Meeting Notes, and much more
             </WorkExperience>
             <WorkExperience title="Azuki" date="2023 - 2025" description="">
               First full-time design hire. Scaled design team to 5 people. Built Anime.com, Animee,
@@ -55,16 +55,21 @@ export default function Home() {
             <WorkExperience title="Independent Practice">
               Design consulting for emerging AI and productivity companies. Notable clients include{' '}
               <TextLink super={1} link="https://cursor.sh/">
-                Anysphere (Cursor AI)
+                Cursor
               </TextLink>
               ,{' '}
               <TextLink super={2} link="https://www.rox.com">
                 Rox
               </TextLink>
-              , and
-              <TextLink super={3} link="https://natural.ai/#/">
-                Brain Technologies (Natural AI)
+              ,{' '}
+              <TextLink super={3} link="https://endex.ai/">
+                Endex
               </TextLink>
+              , and{' '}
+              <TextLink super={4} link="https://www.paraform.com/">
+                Paraform
+              </TextLink>
+              .
             </WorkExperience>
             <WorkExperience title="Skiff" date="2022 - 2023">
               First full-time design hire. 0→1 design for Email, Editor, Drive, Calendar. Scaled
