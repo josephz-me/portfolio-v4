@@ -7,7 +7,7 @@ import Compose from '../public/work/skiff/compose-modal.jpg';
 import Brain from '../public/project-covers/natural.jpg';
 import Azuki from '../public/project-covers/azuki.jpg';
 import CollectorStatus from '../public/project-covers/collector-status.jpg';
-import Cursor from '../public/project-covers/cursor.jpg';
+import Cursor from '../public/project-covers/cursor-long.jpg';
 import NotionCalendar from '../public/project-covers/notion-calendar.jpg';
 import AIGA from '../public/project-covers/aiga-square.jpg';
 import Metalink from '../public/project-covers/metalink.jpg';
