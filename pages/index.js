@@ -75,7 +75,7 @@ export default function Home() {
               First full-time design hire. 0→1 design for Email, Editor, Drive, Calendar. Scaled
               Skiff Mail to 1M+ users. Recently{' '}
               <TextLink link="https://www.notion.so/blog/meet-skiff-the-newest-member-of-the-notion-family">
-                acquired by Notion HQ
+                acquired by Notion
               </TextLink>
               .
             </WorkExperience>
