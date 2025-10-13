@@ -14,7 +14,7 @@ export default function Cursor() {
     <motion.main className="min-h-[70vh]">
       <GridContainer>
         <ProjectHero isImage={true} content="/project-covers/cursor-long.jpg" />
-        <ProjectTitle role="AI INTERFACES">Cursor AI</ProjectTitle>
+        <ProjectTitle role="AI code editor">Cursor AI</ProjectTitle>
         <ProjectBody col={2}>
           I freelanced with Cursor in August 2023 before the world knew who they were. During my
           time with the founding team, I explored features that helped users visualize what AI was

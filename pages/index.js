@@ -111,7 +111,7 @@ export default function Home() {
             />
             <ProjectCard
               title="Cursor AI"
-              description="AI Tooling"
+              description="AI code editor"
               link="/cursor"
               content={Cursor}
             />
@@ -152,7 +152,7 @@ export default function Home() {
               content={SkiffIcons}
             /> */}
             <ProjectCard
-              title="LIGHT ENGINE"
+              title="Lighting Engine"
               description="Industrial Design"
               link="/lightengines"
               content={Experiments}
