@@ -324,8 +324,7 @@ export default function Journal(props) {
       }
     );
 
-    // Observe all entry elements
-    document.querySelectorAll('[id]').forEach(el => {
+    document.querySelectorAll('.journal-entry').forEach(el => {
       observer.observe(el);
     });
 
@@ -592,7 +591,7 @@ export default function Journal(props) {
 
             return (
               <div className="pb-12 md:pb-16" key={entryId}>
-                <div id={entryId} className="text-white grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div id={entryId} className="journal-entry text-white grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="pb-2">
                     {/* title */}
                     <h1 className="body mb-1">{EntryTitle}</h1>

@@ -2,14 +2,52 @@ import React, { useState, useRef, useEffect } from 'react';
 
 export default function CardVideo(props) {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
+  const containerRef = useRef(null);
   const vidRef = useRef(null);
 
   const onLoadedData = () => {
     setIsVideoLoaded(true);
   };
 
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setShouldLoad(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        rootMargin: '50px',
+      }
+    );
+
+    observer.observe(container);
+
+    return () => {
+      if (container) {
+        observer.unobserve(container);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (shouldLoad && vidRef.current) {
+      vidRef.current.play().catch(error => {
+        console.error('Video play failed:', error);
+      });
+    }
+  }, [shouldLoad]);
+
   return (
     <div
+      ref={containerRef}
       className={`group relative h-auto overflow-hidden
       ${props.homePage && 'game-border'}
       ${props.hasControl ? 'cursor-pointer' : ''}
@@ -34,18 +72,19 @@ export default function CardVideo(props) {
         </p>
       </div>
 
-      <video
-        ref={vidRef}
-        className={`object-cover w-full h-full transition duration-1000 overflow-hidden ease-out ${
-          isVideoLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
-        playsInline
-        loop
-        autoPlay
-        muted
-        src={props.src}
-        onCanPlay={onLoadedData}
-      />
+      {shouldLoad && (
+        <video
+          ref={vidRef}
+          className={`object-cover w-full h-full transition duration-1000 overflow-hidden ease-out ${
+            isVideoLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          playsInline
+          loop
+          muted
+          src={props.src}
+          onCanPlay={onLoadedData}
+        />
+      )}
     </div>
   );
 }

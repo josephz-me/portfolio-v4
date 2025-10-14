@@ -38,12 +38,28 @@ function Meta({
       {/* Favicon & fonts */}
       <link key="favicon" rel="icon" href="/favicon.jpg" importance="low" />
       <link key="apple-touch-icon" rel="apple-touch-icon" href="/favicon.jpg" />
-      <link rel="stylesheet" href="https://use.typekit.net/liy8bpw.css"></link>
+      <link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link
+        rel="stylesheet"
+        href="https://use.typekit.net/liy8bpw.css"
+        media="print"
+        onLoad="this.media='all'"
+      />
       <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap"
         rel="stylesheet"
-      ></link>
-      <link rel="stylesheet" href="https://use.typekit.net/liy8bpw.css"></link>
+        media="print"
+        onLoad="this.media='all'"
+      />
+      <noscript>
+        <link rel="stylesheet" href="https://use.typekit.net/liy8bpw.css" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
+      </noscript>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-7T632FJ4W4"></script>
     </Head>
   );
