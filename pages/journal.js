@@ -10,7 +10,9 @@ import { DateTime } from 'luxon';
 function LocationMap({ className, isActive, coordinates, googleMapsUrl }) {
   const mapRef = useRef(null);
   const mapInstanceRef = useRef(null);
+  const containerRef = useRef(null);
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   // Parse Google Maps URL to extract coordinates
   const parseGoogleMapsUrl = url => {
@@ -42,7 +44,36 @@ function LocationMap({ className, isActive, coordinates, googleMapsUrl }) {
   };
 
   useEffect(() => {
-    // Load Mapbox GL JS
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !isVisible) {
+            setIsVisible(true);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '100px', // Load slightly before entering viewport
+        threshold: 0.01,
+      }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    // Load Mapbox GL JS only when visible
     const loadMapbox = async () => {
       if (typeof window === 'undefined') return;
 
@@ -107,7 +138,7 @@ function LocationMap({ className, isActive, coordinates, googleMapsUrl }) {
         mapInstanceRef.current = null;
       }
     };
-  }, []);
+  }, [isVisible]);
 
   // Update map center when googleMapsUrl changes
   useEffect(() => {
@@ -119,7 +150,7 @@ function LocationMap({ className, isActive, coordinates, googleMapsUrl }) {
   }, [googleMapsUrl, coordinates]);
 
   return (
-    <div className={cn('w-full overflow-hidden transition-opacity duration-300', className)}>
+    <div ref={containerRef} className={cn('w-full overflow-hidden transition-opacity duration-300', className)}>
       <div ref={mapRef} className="bg-gray-100 aspect-square w-full h-auto" />
       <style jsx>{`
         :global(.mapboxgl-ctrl-logo) {
@@ -141,7 +172,6 @@ function JournalImage({ src, alt }) {
         fill
         alt={alt}
         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-        unoptimized={true}
         className={cn(
           'object-cover transition duration-500',
           isImageLoaded ? 'opacity-100' : 'opacity-0'
@@ -186,7 +216,7 @@ export async function getStaticProps() {
           image: '/metadata/journal.jpg',
         },
       },
-      revalidate: 1,
+      revalidate: 3600,
     };
   } catch (error) {
     throw error;
@@ -225,7 +255,7 @@ export default function Journal(props) {
 
       // Create cache key based on the IDs
       const cacheKey = `journal-blocks-${ids.sort().join('-')}`;
-      const cacheExpiry = 5 * 60 * 1000; // 5 minutes in milliseconds
+      const cacheExpiry = 60 * 60 * 1000; // 1 hour in milliseconds
 
       // Check for cached data only if useLocalCache is true
       if (useLocalCache) {

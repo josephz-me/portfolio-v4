@@ -15,9 +15,9 @@ export default async function handler(req, res) {
   }
 
   // Set cache headers
-  res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
-  res.setHeader('CDN-Cache-Control', 'public, s-maxage=300');
-  res.setHeader('Vercel-CDN-Cache-Control', 'public, s-maxage=300');
+  res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=7200');
+  res.setHeader('CDN-Cache-Control', 'public, s-maxage=3600');
+  res.setHeader('Vercel-CDN-Cache-Control', 'public, s-maxage=3600');
 
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
 

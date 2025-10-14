@@ -11,7 +11,7 @@ export async function getStaticProps() {
     database_id: process.env.NOTION_READING_ID,
   });
 
-  return { props: { notionData: response.results }, revalidate: 1 };
+  return { props: { notionData: response.results }, revalidate: 3600 };
 }
 
 export default function ReadingList(props) {

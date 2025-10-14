@@ -39,11 +39,6 @@ function Meta({
       <link key="favicon" rel="icon" href="/favicon.jpg" importance="low" />
       <link key="apple-touch-icon" rel="apple-touch-icon" href="/favicon.jpg" />
       <link rel="stylesheet" href="https://use.typekit.net/liy8bpw.css"></link>
-      <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap"
-        rel="stylesheet"
-      ></link>
-      <link rel="stylesheet" href="https://use.typekit.net/liy8bpw.css"></link>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-7T632FJ4W4"></script>
     </Head>
   );
