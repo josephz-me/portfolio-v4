@@ -39,6 +39,13 @@ export default function ReadingList(props) {
     ? books.filter(book => book.properties.year.select.name === selectedYear)
     : books;
 
+  // Sort books alphabetically by title
+  const sortedBooks = [...filteredBooks].sort((a, b) => {
+    const titleA = a.properties.title.title[0]?.plain_text || '';
+    const titleB = b.properties.title.title[0]?.plain_text || '';
+    return titleA.localeCompare(titleB);
+  });
+
   return (
     <main className="pt-8">
       <GridContainer>
@@ -50,12 +57,12 @@ export default function ReadingList(props) {
             setSelectedYear={setSelectedYear}
           >
             Books
-            <span className="ml-2 text-yellow-300">{filteredBooks.length}</span>
+            <span className="ml-2 text-yellow-300">{sortedBooks.length}</span>
           </TitleCard>
         </div>
         {/* BOOKS */}
         <div className="col-start-1 md:col-start-5 col-end-13 grid-cols-12 grid grid-gap !gap-y-8">
-          {filteredBooks.map((book, index) => {
+          {sortedBooks.map((book, index) => {
             const author = book.properties.author.rich_text[0]?.plain_text || '';
             // const description = book.properties.description.rich_text[0]?.plain_text || '';
             const image = book.properties.image?.url || '';
