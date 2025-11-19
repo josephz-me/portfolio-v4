@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import TextLink from '../components/TextLink';
 import GridContainer from '../components/GridContainer';
 import { Client } from '@notionhq/client';
+import * as motion from 'motion/react-client';
 
 const gapValue = 'gap-6';
 
@@ -68,7 +69,17 @@ export default function ReadingList(props) {
             const image = book.properties.image?.url || '';
             const url = book.properties.url?.url || '';
             const title = book.properties.title.title[0]?.plain_text || '';
-            return <BookCard key={index} image={image} author={author} title={title} url={url} />;
+            const bookId = book.id;
+            return (
+              <BookCard
+                key={bookId}
+                image={image}
+                author={author}
+                title={title}
+                url={url}
+                index={index}
+              />
+            );
           })}
         </div>
       </GridContainer>
@@ -178,18 +189,27 @@ const BookCard = props => {
   };
 
   return (
-    <a
+    <motion.a
       href={props.url}
       rel="noreferrer"
       target="_blank"
       className="flex flex-col col-span-6 gap-3 text-white group md:col-span-4 lg:col-span-3"
       onMouseEnter={handleCardMouseEnter}
       onMouseLeave={handleCardMouseLeave}
+      layout
+      transition={{
+        type: 'spring',
+        duration: 0.3,
+        bounce: 0,
+      }}
     >
-      <div className="hover:bg-white/[.15] group flex items-center justify-center bg-white/10 h-[68vw] md:h-[28vw] lg:h-[22vw] border-white/10 p-6 md:p-8">
-        <img
-          className="overflow-hidden w-full h-auto rounded-sm shadow-md brightness-105 transition ease-out md:group-hover:brightness-110 md:group-active:scale-[.98] md:group-active:translate-y-1 md:group-hover:-translate-y-1"
+      <div className="group flex items-center justify-center bg-neutral-900 h-[68vw] md:h-[28vw] lg:h-[22vw] border-white/10 p-6 md:p-8">
+        <motion.img
+          className="overflow-hidden w-full h-auto rounded-sm shadow-md brightness-105 transition ease-out md:group-hover:brightness-[1.2] md:group-active:scale-[.98] md:group-active:translate-y-1 md:group-hover:-translate-y-1"
           src={props.image}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
         />
       </div>
 
@@ -251,6 +271,6 @@ const BookCard = props => {
           )}
         </div>
       </div>
-    </a>
+    </motion.a>
   );
 };
