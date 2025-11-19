@@ -49,7 +49,7 @@ export default function Navbar(props) {
     <nav
       className={cn(
         'text-white body grid-layout sticky top-0 z-[100] main-bg py-4 border-solid border-b transition-opacity duration-300',
-        router.pathname === '/'
+        router.pathname === '/' || router.pathname === '/reading'
           ? 'border-white/[.06]'
           : scrollY > 0
             ? 'border-white/[.06]'
