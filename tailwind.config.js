@@ -38,6 +38,13 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0%)' },
           '50%': { transform: 'translateY(-15%)' },
         },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(calc(-100% + 100%))' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 3s linear forwards',
       },
       maxWidth: {
         '8xl': '1800px',

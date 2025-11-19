@@ -86,12 +86,73 @@ const TitleCard = props => {
 };
 
 const BookCard = props => {
+  const titleRef = React.useRef(null);
+  const authorRef = React.useRef(null);
+  const titleContainerRef = React.useRef(null);
+  const authorContainerRef = React.useRef(null);
+  const [titleOverflows, setTitleOverflows] = useState(false);
+  const [authorOverflows, setAuthorOverflows] = useState(false);
+  const [titleTranslate, setTitleTranslate] = useState(0);
+  const [authorTranslate, setAuthorTranslate] = useState(0);
+  const [titleDuration, setTitleDuration] = useState(3);
+  const [authorDuration, setAuthorDuration] = useState(3);
+
+  // Speed in pixels per second
+  const SCROLL_SPEED = 80;
+
+  useEffect(() => {
+    const checkOverflow = () => {
+      if (titleRef.current && titleContainerRef.current) {
+        const overflow = titleRef.current.scrollWidth > titleContainerRef.current.clientWidth;
+        setTitleOverflows(overflow);
+        if (overflow) {
+          const distance = titleRef.current.scrollWidth - titleContainerRef.current.clientWidth;
+          setTitleTranslate(distance);
+          setTitleDuration(distance / SCROLL_SPEED);
+        }
+      }
+      if (authorRef.current && authorContainerRef.current) {
+        const overflow = authorRef.current.scrollWidth > authorContainerRef.current.clientWidth;
+        setAuthorOverflows(overflow);
+        if (overflow) {
+          const distance = authorRef.current.scrollWidth - authorContainerRef.current.clientWidth;
+          setAuthorTranslate(distance);
+          setAuthorDuration(distance / SCROLL_SPEED);
+        }
+      }
+    };
+
+    checkOverflow();
+    window.addEventListener('resize', checkOverflow);
+    return () => window.removeEventListener('resize', checkOverflow);
+  }, [props.title, props.author]);
+
+  const handleCardMouseEnter = () => {
+    if (titleOverflows && titleRef.current) {
+      titleRef.current.style.transform = `translateX(-${titleTranslate}px)`;
+    }
+    if (authorOverflows && authorRef.current) {
+      authorRef.current.style.transform = `translateX(-${authorTranslate}px)`;
+    }
+  };
+
+  const handleCardMouseLeave = () => {
+    if (titleRef.current) {
+      titleRef.current.style.transform = 'translateX(0)';
+    }
+    if (authorRef.current) {
+      authorRef.current.style.transform = 'translateX(0)';
+    }
+  };
+
   return (
     <a
       href={props.url}
       rel="noreferrer"
       target="_blank"
       className="flex flex-col col-span-6 gap-3 text-white group md:col-span-4 lg:col-span-3"
+      onMouseEnter={handleCardMouseEnter}
+      onMouseLeave={handleCardMouseLeave}
     >
       <div className="hover:bg-white/[.15] group flex items-center justify-center bg-white/10 h-[68vw] md:h-[28vw] lg:h-[22vw] border-white/10 p-6 md:p-8">
         <img
@@ -101,28 +162,62 @@ const BookCard = props => {
       </div>
 
       <div className="">
-        <h1
-          className="body text-zinc-50"
-          style={{
-            display: '-webkit-box',
-            WebkitBoxOrient: 'vertical',
-            WebkitLineClamp: 1,
-            overflow: 'hidden',
-          }}
-        >
-          {props.title}
-        </h1>
-        <p
-          style={{
-            display: '-webkit-box',
-            WebkitBoxOrient: 'vertical',
-            WebkitLineClamp: 1,
-            overflow: 'hidden',
-          }}
-          className="caption text-zinc-500"
-        >
-          {props.author}
-        </p>
+        <div ref={titleContainerRef} className="overflow-hidden relative">
+          <h1
+            ref={titleRef}
+            className="body text-zinc-50 whitespace-nowrap transition-transform ease-in-out"
+            style={{
+              transform: titleOverflows ? undefined : 'translateX(0)',
+              transitionDuration: `${titleDuration}s`,
+            }}
+          >
+            {props.title}
+          </h1>
+          {titleOverflows && (
+            <>
+              <div
+                className="absolute top-0 left-0 h-full w-12 pointer-events-none opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                style={{
+                  background: 'linear-gradient(to left, transparent, #111111)',
+                }}
+              />
+              <div
+                className="absolute top-0 right-0 h-full w-12 pointer-events-none transition-opacity duration-300 group-hover:opacity-0"
+                style={{
+                  background: 'linear-gradient(to right, transparent, #111111)',
+                }}
+              />
+            </>
+          )}
+        </div>
+        <div ref={authorContainerRef} className="overflow-hidden relative">
+          <p
+            ref={authorRef}
+            className="caption text-zinc-500 whitespace-nowrap transition-transform ease-in-out"
+            style={{
+              transform: authorOverflows ? undefined : 'translateX(0)',
+              transitionDuration: `${authorDuration}s`,
+            }}
+          >
+            {props.author}
+          </p>
+          {authorOverflows && (
+            <>
+              <div
+                className="absolute top-0 left-0 h-full w-12 pointer-events-none opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                style={{
+                  background: 'linear-gradient(to left, transparent, #111111)',
+                }}
+              />
+              <div
+                className="absolute top-0 right-0 h-full w-12 pointer-events-none transition-opacity duration-300 group-hover:opacity-0"
+                style={{
+                  background: 'linear-gradient(to right, transparent, #111111)',
+                }}
+              />
+            </>
+          )}
+        </div>
       </div>
     </a>
   );
