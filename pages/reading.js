@@ -102,22 +102,27 @@ const BookCard = props => {
 
       <div className="">
         <h1
-          className={`text-white body`}
+          className="body text-zinc-50"
           style={{
             display: '-webkit-box',
             WebkitBoxOrient: 'vertical',
-            WebkitLineClamp: 2,
+            WebkitLineClamp: 1,
             overflow: 'hidden',
           }}
         >
           {props.title}
         </h1>
-        <p className="body text-zinc-500">{props.author}</p>
-        {props.locked && (
-          <p className="absolute top-4 right-4 z-10 px-2 py-1 bg-gray-800 rounded-md shadow-xl text-neutral-100">
-            LOCKED
-          </p>
-        )}
+        <p
+          style={{
+            display: '-webkit-box',
+            WebkitBoxOrient: 'vertical',
+            WebkitLineClamp: 1,
+            overflow: 'hidden',
+          }}
+          className="caption text-zinc-500"
+        >
+          {props.author}
+        </p>
       </div>
     </a>
   );

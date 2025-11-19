@@ -35,7 +35,7 @@ export default function Footer() {
 
         <span className={`flex flex-col space-y-1 ${BREAKPOINT} md:col-start-7 md:col-end-9`}>
           <p>
-            <TextLink sameTab super={1} link="/reading-list">
+            <TextLink sameTab super={1} link="/reading">
               Reading
             </TextLink>
           </p>
