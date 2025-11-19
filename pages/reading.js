@@ -16,6 +16,7 @@ export async function getStaticProps() {
 
 export default function ReadingList(props) {
   const [yearCounter, setYearCounter] = useState({});
+  const [selectedYear, setSelectedYear] = useState(null);
   const books = props.notionData;
 
   useEffect(() => {
@@ -33,18 +34,28 @@ export default function ReadingList(props) {
     setYearCounter(countYears());
   }, []);
 
+  // Filter books based on selected year
+  const filteredBooks = selectedYear
+    ? books.filter(book => book.properties.year.select.name === selectedYear)
+    : books;
+
   return (
     <main className="pt-8">
       <GridContainer>
         <div className="col-start-1 col-end-13 md:col-end-5">
-          <TitleCard yearCounter={yearCounter} role="">
+          <TitleCard
+            yearCounter={yearCounter}
+            role=""
+            selectedYear={selectedYear}
+            setSelectedYear={setSelectedYear}
+          >
             Books
-            <span className="ml-2 text-yellow-300">{books.length}</span>
+            <span className="ml-2 text-yellow-300">{filteredBooks.length}</span>
           </TitleCard>
         </div>
         {/* BOOKS */}
         <div className="col-start-1 md:col-start-5 col-end-13 grid-cols-12 grid grid-gap !gap-y-8">
-          {books.map((book, index) => {
+          {filteredBooks.map((book, index) => {
             const author = book.properties.author.rich_text[0]?.plain_text || '';
             // const description = book.properties.description.rich_text[0]?.plain_text || '';
             const image = book.properties.image?.url || '';
@@ -59,6 +70,15 @@ export default function ReadingList(props) {
 }
 
 const TitleCard = props => {
+  const handleYearClick = year => {
+    // Toggle selection: if clicking the same year, clear filter
+    if (props.selectedYear === year) {
+      props.setSelectedYear(null);
+    } else {
+      props.setSelectedYear(year);
+    }
+  };
+
   return (
     <div className="col-span-full md:col-end-4 md:sticky md:top-[5.3em] text-zinc-100">
       <p className="caption text-zinc-500">{props.role}</p>
@@ -72,7 +92,14 @@ const TitleCard = props => {
       {Object.entries(props.yearCounter).map(([year, count]) => (
         <div
           key={year}
-          className="flex flex-auto gap-4 py-2 text-white border-t border-solid opacity-60 border-white/10 caption"
+          onClick={() => handleYearClick(year)}
+          className={`flex flex-auto gap-4 py-2 border-t border-solid border-white/[.06] caption cursor-pointer ${
+            props.selectedYear === year
+              ? 'text-yellow-300 opacity-100'
+              : props.selectedYear
+                ? 'text-white/20 hover:text-yellow-300'
+                : 'text-white/60 hover:text-yellow-300'
+          }`}
         >
           <p>
             {year} - {count} books{' '}
