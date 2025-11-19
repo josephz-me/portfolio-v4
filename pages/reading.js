@@ -101,29 +101,31 @@ const TitleCard = props => {
     <div className="col-span-full md:col-end-4 md:sticky md:top-[5.3em] text-zinc-100">
       <p className="caption text-zinc-500">{props.role}</p>
       <p className={`mb-6 text-white body z-1000 grid-gap md:mt-0`}>
-        Reading helps me better understand myself, my craft, and how to view the world. I use a
-        Notion database to track all my reading and {` `}
-        <TextLink url="https://developers.notion.com/">Notion&apos;s API</TextLink> to display them
-        here..
+        Reading sharpens my craft and understanding of the world. Many of my best ideas come from
+        applying tangential topics, such as linguistics, to software and interface design. I use
+        Notion to track my reading and their {` `}
+        <TextLink url="https://developers.notion.com/">API</TextLink> to render them here.
       </p>
 
-      {Object.entries(props.yearCounter).map(([year, count]) => (
-        <div
-          key={year}
-          onClick={() => handleYearClick(year)}
-          className={`flex flex-auto gap-4 py-2 border-t border-solid border-white/[.06] caption cursor-pointer ${
-            props.selectedYear === year
-              ? 'text-yellow-300 opacity-100'
-              : props.selectedYear
-                ? 'text-white/20 hover:text-yellow-300'
-                : 'text-white/60 hover:text-yellow-300'
-          }`}
-        >
-          <p>
-            {year} - {count} books{' '}
-          </p>
-        </div>
-      ))}
+      {Object.entries(props.yearCounter)
+        .sort(([yearA], [yearB]) => yearB.localeCompare(yearA))
+        .map(([year, count]) => (
+          <div
+            key={year}
+            onClick={() => handleYearClick(year)}
+            className={`flex flex-auto gap-4 py-2 border-t border-solid border-white/[.06] caption cursor-pointer ${
+              props.selectedYear === year
+                ? 'text-yellow-300 opacity-100'
+                : props.selectedYear
+                  ? 'text-white/20 hover:text-yellow-300'
+                  : 'text-white/60 hover:text-yellow-300'
+            }`}
+          >
+            <p>
+              {year} - {count} books{' '}
+            </p>
+          </div>
+        ))}
     </div>
   );
 };
@@ -139,12 +141,21 @@ const BookCard = props => {
   const [authorTranslate, setAuthorTranslate] = useState(0);
   const [titleDuration, setTitleDuration] = useState(3);
   const [authorDuration, setAuthorDuration] = useState(3);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Speed in pixels per second
   const SCROLL_SPEED = 80;
 
-  // Generate a stable random duration for this book instance
-  const imageFadeDuration = React.useMemo(() => 0.1 + Math.random() * 0.5, []);
+  // Detect mobile device (touch-capable) on mount
+  useEffect(() => {
+    const checkMobile = () => {
+      // Check if device has touch capability
+      const isTouchDevice =
+        'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+      setIsMobile(isTouchDevice);
+    };
+    checkMobile();
+  }, []);
 
   useEffect(() => {
     const checkOverflow = () => {
@@ -174,6 +185,7 @@ const BookCard = props => {
   }, [props.title, props.author]);
 
   const handleCardMouseEnter = () => {
+    if (isMobile) return;
     if (titleOverflows && titleRef.current) {
       titleRef.current.style.transform = `translateX(-${titleTranslate}px)`;
     }
@@ -183,6 +195,7 @@ const BookCard = props => {
   };
 
   const handleCardMouseLeave = () => {
+    if (isMobile) return;
     if (titleRef.current) {
       titleRef.current.style.transform = 'translateX(0)';
     }
@@ -200,14 +213,15 @@ const BookCard = props => {
       onMouseEnter={handleCardMouseEnter}
       onMouseLeave={handleCardMouseLeave}
       layout
+      style={{
+        willChange: 'transform',
+        transform: 'translateZ(0)',
+      }}
     >
       <div className="group flex items-center justify-center bg-neutral-900 h-[68vw] md:h-[28vw] lg:h-[22vw] border-white/10 p-6 md:p-8">
-        <motion.img
-          className="overflow-hidden w-full h-auto rounded-sm shadow-md brightness-105 transition ease-out md:group-hover:brightness-[1.2] md:group-active:scale-[.98] md:group-active:translate-y-1 md:group-hover:-translate-y-1"
+        <img
+          className="overflow-hidden w-full h-auto rounded-sm shadow-md transition ease-out md:group-active:scale-[.98] md:group-active:translate-y-1 md:group-hover:-translate-y-1"
           src={props.image}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: imageFadeDuration }}
         />
       </div>
 
@@ -223,7 +237,7 @@ const BookCard = props => {
           >
             {props.title}
           </h1>
-          {titleOverflows && (
+          {titleOverflows && !isMobile && (
             <>
               <div
                 className="absolute top-0 left-0 h-full w-12 pointer-events-none opacity-0 transition-opacity duration-300 group-hover:opacity-100"
@@ -251,7 +265,7 @@ const BookCard = props => {
           >
             {props.author}
           </p>
-          {authorOverflows && (
+          {authorOverflows && !isMobile && (
             <>
               <div
                 className="absolute top-0 left-0 h-full w-12 pointer-events-none opacity-0 transition-opacity duration-300 group-hover:opacity-100"
