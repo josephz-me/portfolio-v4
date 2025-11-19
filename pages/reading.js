@@ -38,7 +38,7 @@ export default function ReadingList(props) {
       <GridContainer>
         <div className="col-start-1 col-end-13 md:col-end-5">
           <TitleCard yearCounter={yearCounter} role="">
-            Reading List
+            Books
             <span className="ml-2 text-yellow-300">{books.length}</span>
           </TitleCard>
         </div>
@@ -61,14 +61,12 @@ export default function ReadingList(props) {
 const TitleCard = props => {
   return (
     <div className="col-span-full md:col-end-4 md:sticky md:top-[5.3em] text-zinc-100">
-      <h1 className="mb-1 h1">{props.children}</h1>
       <p className="caption text-zinc-500">{props.role}</p>
       <p className={`mb-6 text-white body z-1000 grid-gap md:mt-0`}>
-        One of my biggest goals is to read more books. This list is always evolving as I find new
-        stuff to read. I use Notion to keep track of everything, and the list here updates
-        automatically through the{' '}
-        <TextLink url="https://developers.notion.com/">Notion API</TextLink>. If you ever have
-        suggestions, send me a message!
+        Reading helps me better understand myself, my craft, and how to view the world. I use a
+        Notion database to track all my reading and {` `}
+        <TextLink url="https://developers.notion.com/">Notion&apos;s API</TextLink> to display them
+        here..
       </p>
 
       {Object.entries(props.yearCounter).map(([year, count]) => (
