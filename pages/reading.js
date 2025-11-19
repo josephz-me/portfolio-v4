@@ -143,6 +143,9 @@ const BookCard = props => {
   // Speed in pixels per second
   const SCROLL_SPEED = 80;
 
+  // Generate a stable random duration for this book instance
+  const imageFadeDuration = React.useMemo(() => 0.1 + Math.random() * 0.5, []);
+
   useEffect(() => {
     const checkOverflow = () => {
       if (titleRef.current && titleContainerRef.current) {
@@ -189,7 +192,7 @@ const BookCard = props => {
   };
 
   return (
-    <motion.a
+    <a
       href={props.url}
       rel="noreferrer"
       target="_blank"
@@ -197,11 +200,6 @@ const BookCard = props => {
       onMouseEnter={handleCardMouseEnter}
       onMouseLeave={handleCardMouseLeave}
       layout
-      transition={{
-        type: 'spring',
-        duration: 0.3,
-        bounce: 0,
-      }}
     >
       <div className="group flex items-center justify-center bg-neutral-900 h-[68vw] md:h-[28vw] lg:h-[22vw] border-white/10 p-6 md:p-8">
         <motion.img
@@ -209,7 +207,7 @@ const BookCard = props => {
           src={props.image}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: imageFadeDuration }}
         />
       </div>
 
@@ -271,6 +269,6 @@ const BookCard = props => {
           )}
         </div>
       </div>
-    </motion.a>
+    </a>
   );
 };
