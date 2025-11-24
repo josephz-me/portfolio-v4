@@ -100,6 +100,19 @@ export default function ReadingList(props) {
 }
 
 const TitleCard = props => {
+  const [isMobile, setIsMobile] = useState(false);
+  const SCROLL_SPEED = 80;
+
+  // Detect mobile device (touch-capable) on mount
+  useEffect(() => {
+    const checkMobile = () => {
+      const isTouchDevice =
+        'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+      setIsMobile(isTouchDevice);
+    };
+    checkMobile();
+  }, []);
+
   const handleYearClick = year => {
     // Toggle selection: if clicking the same year, clear filter
     if (props.selectedYear === year) {
@@ -119,7 +132,7 @@ const TitleCard = props => {
         <TextLink url="https://developers.notion.com/">API</TextLink> to render them here.
       </p>
 
-      <div className="grid grid-cols-1">
+      <div className="grid grid-cols-2 md:grid-cols-1 grid-gap gap-y-0">
         {props.sortedBooks.map((book, index) => {
           const author = book.properties.author.rich_text[0]?.plain_text || '';
           // const description = book.properties.description.rich_text[0]?.plain_text || '';
@@ -129,37 +142,17 @@ const TitleCard = props => {
           const year = book.properties.year.select.name;
           const bookId = book.id;
           return (
-            <a
-              href={url}
-              target="_blank"
-              rel="noreferrer"
-              className={`caption ${
-                props.hoveredBookId === bookId
-                  ? 'text-yellow-300'
-                  : props.hoveredBookId
-                    ? 'text-zinc-500/60'
-                    : 'text-zinc-500 hover:text-yellow-300'
-              }`}
+            <TitleLink
               key={bookId}
-              onMouseEnter={() => {
-                props.setHoveredBookId(bookId);
-                props.setHoverSource('link');
-              }}
-              onMouseLeave={() => {
-                props.setHoveredBookId(null);
-                props.setHoverSource(null);
-              }}
-            >
-              {title}
-            </a>
-            // <BookCard
-            //   key={bookId}
-            //   image={image}
-            //   author={author}
-            //   title={title}
-            //   url={url}
-            //   index={index}
-            // />
+              url={url}
+              title={title}
+              bookId={bookId}
+              hoveredBookId={props.hoveredBookId}
+              setHoveredBookId={props.setHoveredBookId}
+              setHoverSource={props.setHoverSource}
+              isMobile={isMobile}
+              scrollSpeed={SCROLL_SPEED}
+            />
           );
         })}
       </div>
@@ -184,6 +177,114 @@ const TitleCard = props => {
           </div>
         ))} */}
     </div>
+  );
+};
+
+const TitleLink = props => {
+  const textRef = React.useRef(null);
+  const containerRef = React.useRef(null);
+  const leftGradientRef = React.useRef(null);
+  const rightGradientRef = React.useRef(null);
+  const [textOverflows, setTextOverflows] = useState(false);
+  const [translateDistance, setTranslateDistance] = useState(0);
+  const [duration, setDuration] = useState(3);
+
+  useEffect(() => {
+    const checkOverflow = () => {
+      if (textRef.current && containerRef.current) {
+        const overflow = textRef.current.scrollWidth > containerRef.current.clientWidth;
+        setTextOverflows(overflow);
+        if (overflow) {
+          const distance = textRef.current.scrollWidth - containerRef.current.clientWidth;
+          setTranslateDistance(distance);
+          setDuration(distance / props.scrollSpeed);
+        }
+      }
+    };
+
+    checkOverflow();
+    window.addEventListener('resize', checkOverflow);
+    return () => window.removeEventListener('resize', checkOverflow);
+  }, [props.title]);
+
+  const handleMouseEnter = () => {
+    props.setHoveredBookId(props.bookId);
+    props.setHoverSource('link');
+
+    if (!props.isMobile && textOverflows) {
+      if (textRef.current) {
+        textRef.current.style.transform = `translateX(-${translateDistance}px)`;
+      }
+      if (leftGradientRef.current) {
+        leftGradientRef.current.style.opacity = '1';
+      }
+      if (rightGradientRef.current) {
+        rightGradientRef.current.style.opacity = '0';
+      }
+    }
+  };
+
+  const handleMouseLeave = () => {
+    props.setHoveredBookId(null);
+    props.setHoverSource(null);
+
+    if (textRef.current) {
+      textRef.current.style.transform = 'translateX(0)';
+    }
+    if (leftGradientRef.current) {
+      leftGradientRef.current.style.opacity = '0';
+    }
+    if (rightGradientRef.current) {
+      rightGradientRef.current.style.opacity = '1';
+    }
+  };
+
+  return (
+    <a
+      href={props.url}
+      target="_blank"
+      rel="noreferrer"
+      className={`caption block overflow-hidden ${
+        props.hoveredBookId === props.bookId
+          ? 'text-yellow-300'
+          : 'text-zinc-500 hover:text-yellow-300'
+      }`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div ref={containerRef} className="overflow-hidden relative">
+        <span
+          ref={textRef}
+          className="whitespace-nowrap transition-transform ease-in-out"
+          style={{
+            display: 'inline-block',
+            transitionDuration: `${duration}s`,
+          }}
+        >
+          {props.title}
+        </span>
+        {textOverflows && !props.isMobile && (
+          <>
+            <div
+              ref={leftGradientRef}
+              className="absolute top-0 left-0 h-full w-12 pointer-events-none transition-opacity duration-300"
+              style={{
+                background: 'linear-gradient(to left, transparent, #111111)',
+                opacity: 0,
+              }}
+            />
+            <div
+              ref={rightGradientRef}
+              className="absolute top-0 right-0 h-full w-12 pointer-events-none transition-opacity duration-300"
+              style={{
+                background: 'linear-gradient(to right, transparent, #111111)',
+                opacity: 1,
+              }}
+            />
+          </>
+        )}
+      </div>
+    </a>
   );
 };
 
@@ -276,7 +377,7 @@ const BookCard = props => {
       href={props.url}
       rel="noreferrer"
       target="_blank"
-      className={`flex flex-col col-span-6 gap-3 text-white group md:col-span-2 lg:col-span-2 ${props.isDimmed ? 'opacity-60' : 'opacity-100'}`}
+      className={`flex flex-col col-span-2 gap-3 text-white group md:col-span-2 lg:col-span-2 ${props.isDimmed ? 'opacity-60' : 'opacity-100'}`}
       onMouseEnter={handleCardMouseEnter}
       onMouseLeave={handleCardMouseLeave}
       layout
