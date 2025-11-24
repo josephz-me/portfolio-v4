@@ -67,7 +67,13 @@ export default function ReadingList(props) {
           </TitleCard>
         </div>
         {/* BOOKS */}
-        <div className="col-start-1 md:col-start-5 col-end-13 grid-cols-12 grid grid-gap">
+        <div
+          className="col-start-1 md:col-start-5 col-end-13 grid-cols-12 grid grid-gap"
+          onMouseLeave={() => {
+            setHoveredBookId(null);
+            setHoverSource(null);
+          }}
+        >
           {sortedBooks.map((book, index) => {
             const author = book.properties.author.rich_text[0]?.plain_text || '';
             // const description = book.properties.description.rich_text[0]?.plain_text || '';
@@ -85,9 +91,7 @@ export default function ReadingList(props) {
                 index={index}
                 bookId={bookId}
                 isHovered={hoveredBookId === bookId}
-                isDimmed={
-                  hoveredBookId !== null && hoveredBookId !== bookId && hoverSource === 'link'
-                }
+                isDimmed={hoveredBookId !== null && hoveredBookId !== bookId}
                 setHoveredBookId={setHoveredBookId}
                 setHoverSource={setHoverSource}
               />
@@ -244,7 +248,7 @@ const TitleLink = props => {
       href={props.url}
       target="_blank"
       rel="noreferrer"
-      className={`caption block overflow-hidden ${
+      className={`group caption gap-2 flex overflow-hidden max-w-full ${
         props.hoveredBookId === props.bookId
           ? 'text-yellow-300'
           : 'text-zinc-500 hover:text-yellow-300'
@@ -284,6 +288,7 @@ const TitleLink = props => {
           </>
         )}
       </div>
+      {props.hoveredBookId === props.bookId && <p className="caption ml-auto">[VIEW]</p>}
     </a>
   );
 };
@@ -359,11 +364,8 @@ const BookCard = props => {
 
   const handleCardMouseLeave = () => {
     if (isMobile) return;
-    // Clear hover state
-    if (props.setHoveredBookId) {
-      props.setHoveredBookId(null);
-      props.setHoverSource(null);
-    }
+    // Only reset the text scroll animations, not the hover state
+    // The parent grid container will handle clearing hover state when mouse leaves the entire grid
     if (titleRef.current) {
       titleRef.current.style.transform = 'translateX(0)';
     }
