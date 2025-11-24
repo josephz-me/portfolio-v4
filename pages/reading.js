@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import TextLink from '../components/TextLink';
 import GridContainer from '../components/GridContainer';
 import { Client } from '@notionhq/client';
-import * as motion from 'motion/react-client';
 
 const gapValue = 'gap-6';
 
@@ -18,6 +17,8 @@ export async function getStaticProps() {
 export default function ReadingList(props) {
   const [yearCounter, setYearCounter] = useState({});
   const [selectedYear, setSelectedYear] = useState(null);
+  const [hoveredBookId, setHoveredBookId] = useState(null);
+  const [hoverSource, setHoverSource] = useState(null); // 'link' or 'card'
   const books = props.notionData;
 
   useEffect(() => {
@@ -52,17 +53,21 @@ export default function ReadingList(props) {
       <GridContainer>
         <div className="col-start-1 col-end-13 md:col-end-5">
           <TitleCard
+            sortedBooks={sortedBooks}
             yearCounter={yearCounter}
             role=""
             selectedYear={selectedYear}
             setSelectedYear={setSelectedYear}
+            hoveredBookId={hoveredBookId}
+            setHoveredBookId={setHoveredBookId}
+            setHoverSource={setHoverSource}
           >
             Books
             <span className="ml-2 text-yellow-300">{sortedBooks.length}</span>
           </TitleCard>
         </div>
         {/* BOOKS */}
-        <div className="col-start-1 md:col-start-5 col-end-13 grid-cols-12 grid grid-gap !gap-y-8">
+        <div className="col-start-1 md:col-start-5 col-end-13 grid-cols-12 grid grid-gap">
           {sortedBooks.map((book, index) => {
             const author = book.properties.author.rich_text[0]?.plain_text || '';
             // const description = book.properties.description.rich_text[0]?.plain_text || '';
@@ -78,6 +83,13 @@ export default function ReadingList(props) {
                 title={title}
                 url={url}
                 index={index}
+                bookId={bookId}
+                isHovered={hoveredBookId === bookId}
+                isDimmed={
+                  hoveredBookId !== null && hoveredBookId !== bookId && hoverSource === 'link'
+                }
+                setHoveredBookId={setHoveredBookId}
+                setHoverSource={setHoverSource}
               />
             );
           })}
@@ -107,7 +119,52 @@ const TitleCard = props => {
         <TextLink url="https://developers.notion.com/">API</TextLink> to render them here.
       </p>
 
-      {Object.entries(props.yearCounter)
+      <div className="grid grid-cols-1">
+        {props.sortedBooks.map((book, index) => {
+          const author = book.properties.author.rich_text[0]?.plain_text || '';
+          // const description = book.properties.description.rich_text[0]?.plain_text || '';
+          const image = book.properties.image?.url || '';
+          const url = book.properties.url?.url || '';
+          const title = book.properties.title.title[0]?.plain_text || '';
+          const year = book.properties.year.select.name;
+          const bookId = book.id;
+          return (
+            <a
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              className={`caption ${
+                props.hoveredBookId === bookId
+                  ? 'text-yellow-300'
+                  : props.hoveredBookId
+                    ? 'text-zinc-500/60'
+                    : 'text-zinc-500 hover:text-yellow-300'
+              }`}
+              key={bookId}
+              onMouseEnter={() => {
+                props.setHoveredBookId(bookId);
+                props.setHoverSource('link');
+              }}
+              onMouseLeave={() => {
+                props.setHoveredBookId(null);
+                props.setHoverSource(null);
+              }}
+            >
+              {title}
+            </a>
+            // <BookCard
+            //   key={bookId}
+            //   image={image}
+            //   author={author}
+            //   title={title}
+            //   url={url}
+            //   index={index}
+            // />
+          );
+        })}
+      </div>
+
+      {/* {Object.entries(props.yearCounter)
         .sort(([yearA], [yearB]) => yearB.localeCompare(yearA))
         .map(([year, count]) => (
           <div
@@ -125,7 +182,7 @@ const TitleCard = props => {
               {year} - {count} books{' '}
             </p>
           </div>
-        ))}
+        ))} */}
     </div>
   );
 };
@@ -186,6 +243,11 @@ const BookCard = props => {
 
   const handleCardMouseEnter = () => {
     if (isMobile) return;
+    // Set this book as hovered to highlight its link
+    if (props.setHoveredBookId) {
+      props.setHoveredBookId(props.bookId);
+      props.setHoverSource('card');
+    }
     if (titleOverflows && titleRef.current) {
       titleRef.current.style.transform = `translateX(-${titleTranslate}px)`;
     }
@@ -196,6 +258,11 @@ const BookCard = props => {
 
   const handleCardMouseLeave = () => {
     if (isMobile) return;
+    // Clear hover state
+    if (props.setHoveredBookId) {
+      props.setHoveredBookId(null);
+      props.setHoverSource(null);
+    }
     if (titleRef.current) {
       titleRef.current.style.transform = 'translateX(0)';
     }
@@ -209,7 +276,7 @@ const BookCard = props => {
       href={props.url}
       rel="noreferrer"
       target="_blank"
-      className="flex flex-col col-span-6 gap-3 text-white group md:col-span-4 lg:col-span-3"
+      className={`flex flex-col col-span-6 gap-3 text-white group md:col-span-2 lg:col-span-2 ${props.isDimmed ? 'opacity-60' : 'opacity-100'}`}
       onMouseEnter={handleCardMouseEnter}
       onMouseLeave={handleCardMouseLeave}
       layout
@@ -218,14 +285,12 @@ const BookCard = props => {
         transform: 'translateZ(0)',
       }}
     >
-      <div className="group flex items-center justify-center bg-neutral-900 h-[68vw] md:h-[28vw] lg:h-[22vw] border-white/10 p-6 md:p-8">
-        <img
-          className="overflow-hidden w-full h-auto rounded-sm shadow-md transition ease-out md:group-active:scale-[.98] md:group-active:translate-y-1 md:group-hover:-translate-y-1"
-          src={props.image}
-        />
-      </div>
+      <img
+        className="object-cover object-top overflow-hidden w-full h-auto rounded-sm shadow-md transition ease-out h-[68vw] md:h-[15.5vw]"
+        src={props.image}
+      />
 
-      <div className="">
+      {/* <div className="">
         <div ref={titleContainerRef} className="overflow-hidden relative">
           <h1
             ref={titleRef}
@@ -282,7 +347,7 @@ const BookCard = props => {
             </>
           )}
         </div>
-      </div>
+      </div> */}
     </a>
   );
 };
