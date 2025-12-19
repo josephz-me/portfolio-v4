@@ -7,7 +7,7 @@ export default function Navbar(props) {
   const router = useRouter();
   const [activeBack, setActiveBack] = useState(false);
 
-  const pageName = useRouter().asPath;
+  const pageName = router.asPath;
 
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
