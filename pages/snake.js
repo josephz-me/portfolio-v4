@@ -163,6 +163,7 @@ export default function Snake() {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
         if (gameState === 'idle' || gameState === 'gameover') {
           startGame();
         }
@@ -178,21 +179,25 @@ export default function Snake() {
         case 'ArrowUp':
         case 'w':
         case 'W':
+          e.preventDefault();
           if (direction.y !== 1) game.nextDirection = { x: 0, y: -1 };
           break;
         case 'ArrowDown':
         case 's':
         case 'S':
+          e.preventDefault();
           if (direction.y !== -1) game.nextDirection = { x: 0, y: 1 };
           break;
         case 'ArrowLeft':
         case 'a':
         case 'A':
+          e.preventDefault();
           if (direction.x !== 1) game.nextDirection = { x: -1, y: 0 };
           break;
         case 'ArrowRight':
         case 'd':
         case 'D':
+          e.preventDefault();
           if (direction.x !== -1) game.nextDirection = { x: 1, y: 0 };
           break;
         default:
@@ -263,3 +268,5 @@ export default function Snake() {
     </div>
   );
 }
+
+Snake.getLayout = (page) => page;
