@@ -48,6 +48,9 @@ export default function Home() {
             <WorkExperience title="Notion" date="2025 - Present" description="">
               Notion Calendar, AI Meeting Notes, and much more
             </WorkExperience>
+            <WorkExperience title="Cognition" date="2025" description="">
+              Building autonomous software engineers.
+            </WorkExperience>
             <WorkExperience title="Azuki" date="2023 - 2025" description="">
               First full-time design hire. Scaled design team to 5 people. Built Anime.com, Animee,
               and interactive experiences for the Azuki IP
