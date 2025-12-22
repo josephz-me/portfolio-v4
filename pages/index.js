@@ -45,11 +45,11 @@ export default function Home() {
           <div className="grid grid-cols-6 col-start-1 col-end-13 gap-3 md:col-start-7">
             <p className="col-start-1 text-white opacity-40 caption">Team</p>
             <p className="col-start-3 text-white opacity-40 caption">Description</p>
-            <WorkExperience title="Notion" date="2025 - Present" description="">
-              Notion Calendar, AI Meeting Notes, and much more
-            </WorkExperience>
             <WorkExperience title="Cognition" date="2025" description="">
               Building autonomous software engineers.
+            </WorkExperience>
+            <WorkExperience title="Notion" date="2025 - Present" description="">
+              Notion Calendar, AI Meeting Notes, and much more
             </WorkExperience>
             <WorkExperience title="Azuki" date="2023 - 2025" description="">
               First full-time design hire. Scaled design team to 5 people. Built Anime.com, Animee,
