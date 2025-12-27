@@ -78,8 +78,8 @@ export default function Snake() {
     ctx.fill();
 
     game.snake.forEach((segment, index) => {
-      const isHead = index === 0;
-      ctx.fillStyle = isHead ? '#ffffff' : 'rgba(255, 255, 255, 0.7)';
+      const hue = (index * 30) % 360;
+      ctx.fillStyle = `hsl(${hue}, 100%, 50%)`;
       ctx.fillRect(
         segment.x * GRID_SIZE + 1,
         segment.y * GRID_SIZE + 1,
