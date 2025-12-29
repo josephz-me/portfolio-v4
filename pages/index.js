@@ -25,15 +25,17 @@ export default function Home() {
     <main>
       <GridContainer>
         {/* ABOUT SECTION */}
-        <section className="my-6 grid-layout">
-          <div className="flex flex-col col-start-1 col-end-13 gap-3 md:col-end-6">
-            <p className="text-white opacity-40 caption">ABOUT</p>
+        <section className="my-6 md:my-8 grid-layout">
+          <div className="flex flex-col col-start-1 col-end-13 md:col-end-6">
+            <p className="text-white opacity-40 caption mb-2">ABOUT</p>
             <p
               className={`col-start-1 col-end-13 mb-4 text-white body z-1000 md:col-start-1 md:mb-0`}
             >
               I design software with the belief it&apos;s one of the most malleable mediums we have.
               At the moment, I&apos;m interested in how tools connect with each other, how they act
-              on our behalf, and how we interact with them across different modes. I studied{' '}
+              on our behalf, and how we interact with them across different modes. I currently lead
+              Design at Cognition, an applied research lab building AI tooling for software
+              creation. I studied{' '}
               <TextLink link="https://design.cmu.edu/">Communication Design</TextLink> and{' '}
               <TextLink link="https://www.hcii.cmu.edu/">Human-Computer Interaction</TextLink> at
               Carnegie Mellon University, an experience I hold fondly and will cherish for the rest
@@ -41,18 +43,55 @@ export default function Home() {
               <TextLink link="mailto:jxsephz@gmail.com">get in touch</TextLink>.
             </p>
           </div>
-          {/* WORK EXPERIENCE */}
+
+          <span className={`body text-white col-start-1 col-end-7 md:col-end-9 md:col-start-7 flex flex-col items-start`}>
+            <p className="text-white opacity-40 caption mb-2">Teams</p>
+            
+              <TextLink inline={false} super={1} link="https://cognition.ai/">
+                Cognition
+              </TextLink>
+              <TextLink inline={false} super={2} link="https://www.notion.so/">
+                Notion
+              </TextLink>
+              <TextLink inline={false} super={3} link="https://www.azuki.com/">
+                Azuki
+              </TextLink>
+              <TextLink inline={false} super={4} link="https://www.skiff.com/">
+                Skiff
+              </TextLink>
+              <TextLink inline={false} super={5} link="https://www.apple.com/">
+                Apple
+              </TextLink>
+            
+          </span>
+          <span className={`body text-white col-start-7 col-end-13 md:col-start-9 flex flex-col items-start`}>
+            <p className="text-white opacity-40 caption mb-2">Links</p>
+              <TextLink inline={false} sameTab link="/reading">
+                Reading
+              </TextLink>
+              <TextLink inline={false} link="https://www.linkedin.com/in/josephhhz/">
+                Linkedin
+              </TextLink>
+              <TextLink inline={false} link="https://www.instagram.com/josephhhz/">
+                Instagram
+              </TextLink>
+              <TextLink inline={false} link="https://twitter.com/josephhhhz">
+                Twitter
+              </TextLink>
+          </span>
+          {/* WORK EXPERIENCE
           <div className="grid grid-cols-6 col-start-1 col-end-13 gap-3 md:col-start-7">
             <p className="col-start-1 text-white opacity-40 caption">Team</p>
             <p className="col-start-3 text-white opacity-40 caption">Description</p>
-            <WorkExperience title="Cognition" date="2025" description="">
-              Building autonomous software engineers.
+            <WorkExperience title="Cognition" date="2025 - Present" description="">
+              Head of Design and actively building a team. We&apos;re building autonomous agents
+             for software engineering.
             </WorkExperience>
-            <WorkExperience title="Notion" date="2025 - Present" description="">
-              Notion Calendar, AI Meeting Notes, and much more
+            <WorkExperience title="Notion" date="2025" description="">
+              Built next gen features for Notion Calendar. 
             </WorkExperience>
             <WorkExperience title="Azuki" date="2023 - 2025" description="">
-              First full-time design hire. Scaled design team to 5 people. Built Anime.com, Animee,
+              Founding designer. Scaled design team to 5 people. Built Anime.com, Animee,
               and interactive experiences for the Azuki IP
             </WorkExperience>
             <WorkExperience title="Independent Practice">
@@ -87,7 +126,7 @@ export default function Home() {
               Organization. Explored multimodal patterns and new behaviors empowered by natural
               language input.
             </WorkExperience>
-          </div>
+          </div> */}
         </section>
         <div className="grid relative z-10 col-start-1 col-end-13 md:grid-cols-3 grid-gap">
           {/* COLUMN 1 */}

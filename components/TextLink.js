@@ -1,6 +1,6 @@
 import Link from 'next/link';
 export default function TextLink(props) {
-  return (
+  const content = (
     <>
       <a
         className="cursor-pointer border-dotted hover:bg-yellow-300/10 px-[2px] hover:text-yellow-300 pt-[2px] dotted-underline"
@@ -19,4 +19,9 @@ export default function TextLink(props) {
       </sup>
     </>
   );
+
+  if (props.inline === false) {
+    return <p>{content}</p>;
+  }
+  return content;
 }
