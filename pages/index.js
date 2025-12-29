@@ -34,7 +34,7 @@ export default function Home() {
               I design software with the belief it&apos;s one of the most malleable mediums we have.
               At the moment, I&apos;m interested in how tools connect with each other, how they act
               on our behalf, and how we interact with them across different modes. I currently lead
-              Design at Cognition, an applied research lab building AI tooling for software
+              Design at  <TextLink link="https://cognition.ai/">Cognition</TextLink>, an applied research lab building AI tooling for software
               creation. I studied{' '}
               <TextLink link="https://design.cmu.edu/">Communication Design</TextLink> and{' '}
               <TextLink link="https://www.hcii.cmu.edu/">Human-Computer Interaction</TextLink> at
@@ -79,54 +79,6 @@ export default function Home() {
                 Twitter
               </TextLink>
           </span>
-          {/* WORK EXPERIENCE
-          <div className="grid grid-cols-6 col-start-1 col-end-13 gap-3 md:col-start-7">
-            <p className="col-start-1 text-white opacity-40 caption">Team</p>
-            <p className="col-start-3 text-white opacity-40 caption">Description</p>
-            <WorkExperience title="Cognition" date="2025 - Present" description="">
-              Head of Design and actively building a team. We&apos;re building autonomous agents
-             for software engineering.
-            </WorkExperience>
-            <WorkExperience title="Notion" date="2025" description="">
-              Built next gen features for Notion Calendar. 
-            </WorkExperience>
-            <WorkExperience title="Azuki" date="2023 - 2025" description="">
-              Founding designer. Scaled design team to 5 people. Built Anime.com, Animee,
-              and interactive experiences for the Azuki IP
-            </WorkExperience>
-            <WorkExperience title="Independent Practice">
-              Design consulting for emerging AI and productivity companies. Notable clients include{' '}
-              <TextLink super={1} link="https://cursor.sh/">
-                Cursor
-              </TextLink>
-              ,{' '}
-              <TextLink super={2} link="https://www.rox.com">
-                Rox
-              </TextLink>
-              ,{' '}
-              <TextLink super={3} link="https://endex.ai/">
-                Endex
-              </TextLink>
-              , and{' '}
-              <TextLink super={4} link="https://www.paraform.com/">
-                Paraform
-              </TextLink>
-              .
-            </WorkExperience>
-            <WorkExperience title="Skiff" date="2022 - 2023">
-              First full-time design hire. 0→1 design for Email, Editor, Drive, Calendar. Scaled
-              Skiff Mail to 1M+ users. Recently{' '}
-              <TextLink link="https://www.notion.so/blog/meet-skiff-the-newest-member-of-the-notion-family">
-                acquired by Notion
-              </TextLink>
-              .
-            </WorkExperience>
-            <WorkExperience title="Apple" date="2020 -2021">
-              Two summers at Apple working on conversational AI interfaces for Siri in the AI/ML
-              Organization. Explored multimodal patterns and new behaviors empowered by natural
-              language input.
-            </WorkExperience>
-          </div> */}
         </section>
         <div className="grid relative z-10 col-start-1 col-end-13 md:grid-cols-3 grid-gap">
           {/* COLUMN 1 */}
