@@ -25,15 +25,17 @@ export default function Home() {
     <main>
       <GridContainer>
         {/* ABOUT SECTION */}
-        <section className="my-6 grid-layout">
-          <div className="flex flex-col col-start-1 col-end-13 gap-3 md:col-end-6">
-            <p className="text-white opacity-40 caption">ABOUT</p>
+        <section className="my-6 md:my-8 grid-layout">
+          <div className="flex flex-col col-start-1 col-end-13 md:col-end-6">
+            <p className="text-white opacity-40 caption mb-2">ABOUT</p>
             <p
               className={`col-start-1 col-end-13 mb-4 text-white body z-1000 md:col-start-1 md:mb-0`}
             >
               I design software with the belief it&apos;s one of the most malleable mediums we have.
               At the moment, I&apos;m interested in how tools connect with each other, how they act
-              on our behalf, and how we interact with them across different modes. I studied{' '}
+              on our behalf, and how we interact with them across different modes. I currently lead
+              Design at  <TextLink link="https://cognition.ai/">Cognition</TextLink>, an applied research lab building AI tooling for software
+              creation. I studied{' '}
               <TextLink link="https://design.cmu.edu/">Communication Design</TextLink> and{' '}
               <TextLink link="https://www.hcii.cmu.edu/">Human-Computer Interaction</TextLink> at
               Carnegie Mellon University, an experience I hold fondly and will cherish for the rest
@@ -41,50 +43,42 @@ export default function Home() {
               <TextLink link="mailto:jxsephz@gmail.com">get in touch</TextLink>.
             </p>
           </div>
-          {/* WORK EXPERIENCE */}
-          <div className="grid grid-cols-6 col-start-1 col-end-13 gap-3 md:col-start-7">
-            <p className="col-start-1 text-white opacity-40 caption">Team</p>
-            <p className="col-start-3 text-white opacity-40 caption">Description</p>
-            <WorkExperience title="Notion" date="2025 - Present" description="">
-              Notion Calendar, AI Meeting Notes, and much more
-            </WorkExperience>
-            <WorkExperience title="Azuki" date="2023 - 2025" description="">
-              First full-time design hire. Scaled design team to 5 people. Built Anime.com, Animee,
-              and interactive experiences for the Azuki IP
-            </WorkExperience>
-            <WorkExperience title="Independent Practice">
-              Design consulting for emerging AI and productivity companies. Notable clients include{' '}
-              <TextLink super={1} link="https://cursor.sh/">
-                Cursor
+
+          <span className={`body text-white col-start-1 col-end-7 md:col-end-9 md:col-start-7 flex flex-col items-start`}>
+            <p className="text-white opacity-40 caption mb-2">Teams</p>
+            
+              <TextLink inline={false} super={1} link="https://cognition.ai/">
+                Cognition
               </TextLink>
-              ,{' '}
-              <TextLink super={2} link="https://www.rox.com">
-                Rox
+              <TextLink inline={false} super={2} link="https://www.notion.so/">
+                Notion
               </TextLink>
-              ,{' '}
-              <TextLink super={3} link="https://endex.ai/">
-                Endex
+              <TextLink inline={false} super={3} link="https://www.azuki.com/">
+                Azuki
               </TextLink>
-              , and{' '}
-              <TextLink super={4} link="https://www.paraform.com/">
-                Paraform
+              <TextLink inline={false} super={4} link="https://www.skiff.com/">
+                Skiff
               </TextLink>
-              .
-            </WorkExperience>
-            <WorkExperience title="Skiff" date="2022 - 2023">
-              First full-time design hire. 0→1 design for Email, Editor, Drive, Calendar. Scaled
-              Skiff Mail to 1M+ users. Recently{' '}
-              <TextLink link="https://www.notion.so/blog/meet-skiff-the-newest-member-of-the-notion-family">
-                acquired by Notion
+              <TextLink inline={false} super={5} link="https://www.apple.com/">
+                Apple
               </TextLink>
-              .
-            </WorkExperience>
-            <WorkExperience title="Apple" date="2020 -2021">
-              Two summers at Apple working on conversational AI interfaces for Siri in the AI/ML
-              Organization. Explored multimodal patterns and new behaviors empowered by natural
-              language input.
-            </WorkExperience>
-          </div>
+            
+          </span>
+          <span className={`body text-white col-start-7 col-end-13 md:col-start-9 flex flex-col items-start`}>
+            <p className="text-white opacity-40 caption mb-2">Links</p>
+              <TextLink inline={false} sameTab link="/reading">
+                Reading
+              </TextLink>
+              <TextLink inline={false} link="https://www.linkedin.com/in/josephhhz/">
+                Linkedin
+              </TextLink>
+              <TextLink inline={false} link="https://www.instagram.com/josephhhz/">
+                Instagram
+              </TextLink>
+              <TextLink inline={false} link="https://twitter.com/josephhhhz">
+                Twitter
+              </TextLink>
+          </span>
         </section>
         <div className="grid relative z-10 col-start-1 col-end-13 md:grid-cols-3 grid-gap">
           {/* COLUMN 1 */}
