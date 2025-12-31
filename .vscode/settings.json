@@ -1,7 +1,16 @@
 {
   "cSpell.enableFiletypes": ["!javascript"],
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "prettier.prettier-vscode",
   "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "prettier.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "prettier.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "prettier.prettier-vscode"
+  },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   }

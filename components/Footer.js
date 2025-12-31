@@ -35,17 +35,17 @@ export default function Footer() {
 
         <span className={`flex flex-col space-y-1 ${BREAKPOINT} md:col-start-7 md:col-end-9`}>
           <TextLink inline={false} sameTab link="/reading">
-              Reading
-            </TextLink>
-            <TextLink inline={false} link="https://www.linkedin.com/in/josephhhz/">
-              Linkedin
-            </TextLink>
-            <TextLink inline={false} link="https://www.instagram.com/josephhhz/">
-              Instagram
-            </TextLink>
-            <TextLink inline={false} link="https://twitter.com/josephhhhz">
-              Twitter
-            </TextLink>
+            Reading
+          </TextLink>
+          <TextLink inline={false} link="https://www.linkedin.com/in/josephhhz/">
+            Linkedin
+          </TextLink>
+          <TextLink inline={false} link="https://www.instagram.com/josephhhz/">
+            Instagram
+          </TextLink>
+          <TextLink inline={false} link="https://twitter.com/josephhhhz">
+            Twitter
+          </TextLink>
         </span>
         <div className={`flex flex-col space-y-1 ${BREAKPOINT} md:col-start-9`}>
           <p>{`Let's build something together.`}</p>
