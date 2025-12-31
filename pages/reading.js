@@ -68,7 +68,7 @@ export default function ReadingList(props) {
         </div>
         {/* BOOKS */}
         <div
-          className="col-start-1 md:col-start-5 col-end-13 grid-cols-12 grid grid-gap"
+          className="h-fit col-start-1 md:col-start-5 col-end-13 grid-cols-12 grid grid-gap"
           onMouseLeave={() => {
             setHoveredBookId(null);
             setHoverSource(null);
@@ -130,13 +130,13 @@ const TitleCard = props => {
     <div className="col-span-full md:col-end-4 md:sticky md:top-[5.3em] text-zinc-100">
       <p className="caption text-zinc-500">{props.role}</p>
       <p className={`mb-6 text-white body z-1000 grid-gap md:mt-0`}>
-        Reading sharpens my craft and understanding of the world. Many of my best ideas come from
-        applying tangential topics, such as linguistics, to software and interface design. I use
-        Notion to track my reading and their {` `}
-        <TextLink url="https://developers.notion.com/">API</TextLink> to render them here.
+        Reading sharpens my craft and broadens my understanding of the world. Many of my best ideas
+        come from applying tangential topics, such as linguistics or architecture, to software
+        design. I use Notion to track my reading and their {` `}
+        <TextLink link="https://developers.notion.com/">API</TextLink> to render them.
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-1 grid-gap gap-y-0">
+      <div className="grid grid-cols-1 grid-gap gap-y-0 mb-4 md:mb-0">
         {props.sortedBooks.map((book, index) => {
           const author = book.properties.author.rich_text[0]?.plain_text || '';
           // const description = book.properties.description.rich_text[0]?.plain_text || '';
@@ -379,14 +379,9 @@ const BookCard = props => {
       href={props.url}
       rel="noreferrer"
       target="_blank"
-      className={`flex flex-col col-span-2 gap-3 text-white group md:col-span-2 lg:col-span-2 ${props.isDimmed ? 'opacity-60' : 'opacity-100'}`}
+      className={`flex flex-col col-span-3 h-fit gap-3 text-white group md:col-span-2 lg:col-span-2 ${props.isDimmed ? 'opacity-60' : 'opacity-100'}`}
       onMouseEnter={handleCardMouseEnter}
       onMouseLeave={handleCardMouseLeave}
-      layout
-      style={{
-        willChange: 'transform',
-        transform: 'translateZ(0)',
-      }}
     >
       <img
         className="object-cover object-top overflow-hidden w-full h-auto rounded-sm shadow-md transition ease-out h-[68vw] md:h-[15.5vw]"

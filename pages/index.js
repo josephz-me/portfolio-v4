@@ -34,8 +34,8 @@ export default function Home() {
               I design software with the belief it&apos;s one of the most malleable mediums we have.
               At the moment, I&apos;m interested in how tools connect with each other, how they act
               on our behalf, and how we interact with them across different modes. I currently lead
-              Design at  <TextLink link="https://cognition.ai/">Cognition</TextLink>, an applied research lab building AI tooling for software
-              creation. I studied{' '}
+              Design at <TextLink link="https://cognition.ai/">Cognition</TextLink>, an applied
+              research lab building AI tooling for software creation. I studied{' '}
               <TextLink link="https://design.cmu.edu/">Communication Design</TextLink> and{' '}
               <TextLink link="https://www.hcii.cmu.edu/">Human-Computer Interaction</TextLink> at
               Carnegie Mellon University, an experience I hold fondly and will cherish for the rest
@@ -44,9 +44,11 @@ export default function Home() {
             </p>
           </div>
 
-          <span className={`body text-white col-start-1 col-end-7 md:col-end-9 md:col-start-7 flex flex-col items-start`}>
+          <span
+            className={`body text-white col-start-1 col-end-7 md:col-end-9 md:col-start-7 flex flex-col items-start`}
+          >
             <p className="text-white opacity-40 caption mb-2">Teams</p>
-            
+            <span className="translate-x-[-2px]">
               <TextLink inline={false} super={1} link="https://cognition.ai/">
                 Cognition
               </TextLink>
@@ -62,10 +64,13 @@ export default function Home() {
               <TextLink inline={false} super={5} link="https://www.apple.com/">
                 Apple
               </TextLink>
-            
+            </span>
           </span>
-          <span className={`body text-white col-start-7 col-end-13 md:col-start-9 flex flex-col items-start`}>
+          <span
+            className={`body text-white col-start-7 col-end-13 md:col-start-9 flex flex-col items-start`}
+          >
             <p className="text-white opacity-40 caption mb-2">Links</p>
+            <span className="translate-x-[-2px]">
               <TextLink inline={false} sameTab link="/reading">
                 Reading
               </TextLink>
@@ -78,6 +83,7 @@ export default function Home() {
               <TextLink inline={false} link="https://twitter.com/josephhhhz">
                 Twitter
               </TextLink>
+            </span>
           </span>
         </section>
         <div className="grid relative z-10 col-start-1 col-end-13 md:grid-cols-3 grid-gap">
