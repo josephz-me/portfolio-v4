@@ -15,6 +15,14 @@ export default function Page({ meta, ...props }) {
         </div>
       </div>
       <Footer />
+      <div 
+        className="fixed bottom-0 left-0 right-0 h-10 z-10 backdrop-blur-md"
+        style={{
+          maskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)',
+          background: 'linear-gradient(to bottom, white 0%, transparent 100%)'
+        }}
+      />
     </>
   );
 }
