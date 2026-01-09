@@ -6,12 +6,14 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 function MyApp({ Component, pageProps }) {
   const { meta, ...otherProps } = pageProps;
 
+  const getLayout =
+    Component.getLayout ?? ((page) => <Page meta={meta}>{page}</Page>);
+
   return (
-    <Page meta={meta}>
-      {/* <GoogleAnalytics /> */}
-      <Component {...otherProps} />
+    <>
+      {getLayout(<Component {...otherProps} />)}
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
-    </Page>
+    </>
   );
 }
 
