@@ -63,7 +63,7 @@ export default function Snake() {
     const ctx = canvas.getContext('2d');
     const game = gameRef.current;
 
-    ctx.fillStyle = '#111111';
+    ctx.fillStyle = '#0a5c0a';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = '#e9dd34';
@@ -216,7 +216,7 @@ export default function Snake() {
   }, [gameState, draw]);
 
   return (
-    <div className="fixed inset-0 bg-[#111111] overflow-hidden">
+    <div className="fixed inset-0 bg-[#0a5c0a] overflow-hidden">
       <canvas ref={canvasRef} className="block" />
 
       <div className="fixed top-4 left-4 text-white font-mono text-sm z-10">
