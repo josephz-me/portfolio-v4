@@ -91,10 +91,6 @@ function LocationMap({ className, isActive, coordinates, googleMapsUrl }) {
         console.error('Mapbox error:', e);
       });
 
-      map.on('load', () => {
-        console.log('Map loaded successfully');
-      });
-
       mapInstanceRef.current = map;
     };
 
@@ -114,7 +110,6 @@ function LocationMap({ className, isActive, coordinates, googleMapsUrl }) {
     if (mapInstanceRef.current) {
       const newCoordinates = getCoordinates();
       mapInstanceRef.current.setCenter(newCoordinates);
-      console.log('Map center updated to:', newCoordinates);
     }
   }, [googleMapsUrl, coordinates]);
 
@@ -167,15 +162,11 @@ export async function getStaticProps() {
       database_id: process.env.NOTION_TASKS_ID,
     });
 
-    console.log('Notion database response:', databaseResponse.results);
-
     // Only include essential metadata in the initial props
     const entries = databaseResponse.results.map(page => ({
       id: page.id,
       properties: page.properties,
     }));
-
-    console.log('Processed entries:', entries);
 
     return {
       props: {
@@ -237,7 +228,6 @@ export default function Journal(props) {
             const isExpired = Date.now() - parseInt(cacheTimestamp) > cacheExpiry;
 
             if (!isExpired) {
-              console.log('Using cached journal data');
               const cachedData = JSON.parse(cached);
 
               // Merge cached content into entries
@@ -258,7 +248,6 @@ export default function Journal(props) {
       }
 
       try {
-        console.log('Fetching fresh journal data from API');
         const res = await fetch('/api/journal-blocks', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -312,7 +301,6 @@ export default function Journal(props) {
             if (rect.top < window.innerHeight / 2 && !isScrolling) {
               currentActiveId = entry.target.id;
               setActiveYearId(currentActiveId);
-              console.log('currentActiveId', currentActiveId);
             }
           }
         });
