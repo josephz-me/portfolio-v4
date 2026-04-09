@@ -11,9 +11,17 @@ export default function Footer() {
 
   useEffect(() => {
     fetch('https://api.github.com/repos/josephz-me/portfolio-v4/commits?per_page=1')
-      .then(res => res.json())
       .then(res => {
-        setUpdatedTime(res[0].commit.author.date);
+        if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
+        return res.json();
+      })
+      .then(res => {
+        if (Array.isArray(res) && res[0]?.commit?.author?.date) {
+          setUpdatedTime(res[0].commit.author.date);
+        }
+      })
+      .catch(() => {
+        // Silently fail — keep default "..." display
       });
   }, []);
 
