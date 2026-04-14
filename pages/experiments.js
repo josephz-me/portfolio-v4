@@ -32,8 +32,8 @@ const container = {
 export default function Brain() {
   const [scrollY, setScrollY] = useState(0);
 
-  Number.prototype.map = function (in_min, in_max, out_min, out_max) {
-    return ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+  const mapRange = (value, in_min, in_max, out_min, out_max) => {
+    return ((value - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
   };
 
   useEffect(() => {
